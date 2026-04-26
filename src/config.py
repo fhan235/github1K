@@ -13,13 +13,7 @@ class Settings(BaseSettings):
 
     # ── GitHub API ──────────────────────────────────────────────
     github_token: str = ""
-    """Personal Access Token（可选，但强烈推荐，能把速率限制从 10/min 提升到 30/min）"""
-
-    per_page: int = 100
-    """每次 Search API 请求返回的条目数（最大 100）"""
-
-    max_pages: int = 10
-    """最多翻页数（Search API 最多返回 1000 条 = 100×10）"""
+    """Personal Access Token（强烈推荐：认证后 Search API 30次/分钟，匿名仅 10次/分钟）"""
 
     # ── 通知 ────────────────────────────────────────────────────
     wecom_webhook_url: str = ""
