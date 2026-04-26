@@ -1,0 +1,50 @@
+name: "🚀 Daily 1K Milestone Tracker"
+
+on:
+  schedule:
+    # UTC 01:00 = BJT 09:00，每天运行一次
+    - cron: "0 1 * * *"
+  workflow_dispatch:  # 支持手动触发
+
+permissions:
+  contents: write  # 允许 git push 快照和报告回仓库
+
+jobs:
+  track-1k:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -e .
+
+      - name: Run tracker
+        env:
+          G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
+          G1K_WECOM_WEBHOOK_URL: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
+        run: python -m src.main --notify
+
+      - name: Upload report as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: "1k-report-${{ github.run_id }}"
+          path: "reports/*.md"
+          retention-days: 30
+
+      - name: Commit data & report back to repo
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f reports/*.md
+          git add -f data/snapshot_*.json
+          git diff --cached --quiet || git commit -m "data: 🚀 $(date -u +%Y-%m-%d) 1K 突破记录 + 快照"
+          git push
