@@ -52,6 +52,16 @@
   估计 30-60 次请求 → 1-2 分钟
 
 合计：**3-6 分钟**（相比旧方案 30-60 分钟，提速 10 倍）
+
+=======================================================================
+Step C — 爆款补漏（stars > UPPER_BOUND）
+=======================================================================
+问题：一个项目（如 OpenClaw）一天从 0 暴涨到 6 万 Star，
+超出突破区上限 50000，Step A 抓不到。
+
+解决：全 GitHub stars > 50000 的仓库只有 ~200-300 个，
+3 次 API 请求即可全部拿完。扫一遍看哪些不在昨天快照里，
+不在的就是爆款新项目。代价：约 5 秒，几乎免费。
 """
 from __future__ import annotations
 
@@ -308,6 +318,41 @@ def _fetch_range_all_languages(
 # 公开接口
 # ══════════════════════════════════════════════════════════════════════
 
+def _fetch_viral_repos(
+    client: httpx.Client,
+    stats: dict[str, int],
+) -> dict[str, dict[str, Any]]:
+    """
+    爆款补漏：抓取 stars > UPPER_BOUND 的全部仓库。
+
+    全 GitHub stars > 50000 的仓库只有约 200-300 个，
+    不需要语言切分或日期二分，直接翻页即可拿完（最多 3 页）。
+    """
+    results: dict[str, dict[str, Any]] = {}
+    query = f"stars:>{_ABOVE_UPPER}"
+
+    console.rule(f"[bold blue]Step C / 爆款补漏 stars:>{_ABOVE_UPPER}[/bold blue]")
+
+    for page in range(1, 11):  # 最多 10 页（1000条），实际 ~3 页就够了
+        total, items = _search_once(client, query, page=page)
+        stats["requests"] = stats.get("requests", 0) + 1
+
+        if not items:
+            break
+
+        for item in items:
+            repo = _parse_repo(item)
+            results[repo["full_name"]] = repo
+
+        if len(items) < _PER_PAGE:
+            break
+
+    console.print(
+        f"[green]  爆款补漏完成：{len(results):,} 个超高星仓库[/green]"
+    )
+    return results
+
+
 def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
     """
     边界区快速扫描（日常模式）。
@@ -315,7 +360,7 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
     Returns
     -------
     (above_repos, candidate_repos)
-        above_repos:     stars 1000..UPPER 的仓库（用于与昨日快照差分）
+        above_repos:     stars >= 1000 的仓库（突破区 + 爆款补漏，用于差分）
         candidate_repos: stars LOWER..999 的仓库（存入今日快照，为明天差分做准备）
     """
     above: dict[str, dict[str, Any]] = {}
@@ -324,7 +369,7 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
     stats: dict[str, int] = {"requests": 0}
 
     with httpx.Client(base_url=_BASE_URL, headers=headers, timeout=30) as client:
-        # ── Step A: 突破区 ────────────────────────────────────────
+        # ── Step A: 突破区 stars:1000..50000 ──────────────────────
         console.rule(f"[bold blue]Step A / 突破区 stars:1000..{_ABOVE_UPPER}[/bold blue]")
         _fetch_range_all_languages(
             client,
@@ -337,7 +382,7 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
             f"[green]  突破区完成：{len(above):,} 个仓库[/green]"
         )
 
-        # ── Step B: 候选区 ────────────────────────────────────────
+        # ── Step B: 候选区 stars:800..999 ─────────────────────────
         console.rule(
             f"[bold blue]Step B / 候选区 stars:{_CANDIDATE_LOWER}..999[/bold blue]"
         )
@@ -352,9 +397,16 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
             f"[green]  候选区完成：{len(candidates):,} 个仓库[/green]"
         )
 
+        # ── Step C: 爆款补漏 stars:>50000 ─────────────────────────
+        # 全 GitHub 只有 ~200-300 个，3 次请求即可拿完，约 5 秒
+        # 覆盖 OpenClaw 这类一夜暴涨到超高星的现象级项目
+        viral = _fetch_viral_repos(client, stats)
+        above.update(viral)  # 合并到突破区，一起参与差分
+
     console.print(
         f"\n[bold green]✅ 边界区扫描完毕："
-        f"突破区 {len(above):,} + 候选区 {len(candidates):,} = "
+        f"突破区 {len(above):,}（含爆款补漏）"
+        f" + 候选区 {len(candidates):,} = "
         f"{len(above) + len(candidates):,} 个仓库，"
         f"共 {stats['requests']} 次 API 请求[/bold green]"
     )
