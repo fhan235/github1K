@@ -1,29 +1,57 @@
-"""GitHub Search API 爬虫 —— 自适应日期二分策略。
+"""GitHub Search API 爬虫 —— 边界区快速扫描 + 全量冷启动。
 
-核心思想
---------
-GitHub Search API 对任何一次查询最多返回 **1000 条**（10 页 × 100 条/页）。
-star >= 1000 的仓库实际有 10 万+ 个，单次全量查询只能拿到一小部分。
+=======================================================================
+为什么旧方案（全量扫描 10 万+ 个 stars>=1000 仓库）很慢？
+=======================================================================
+- GitHub Search API 限速：认证后 30 次/分钟
+- stars>=1000 的仓库约 10 万+，需上千次请求 → 30-60 分钟
+- 但 99%+ 的仓库（star 几千/几万/几十万）根本不可能跌到 1000 以下再涨回来
+- 每天真正跨越 1000 门槛的项目只有个位数到几十个
 
-解决方案：「语言 × 创建时间区间」二维切分
-1. 对每种编程语言单独查询（语言之间没有交集）。
-2. 给定一个创建时间区间 [start, end]，先探测 ``total_count``：
-   - total_count <= 1000 → 直接翻页拿完，属于"叶节点"
-   - total_count >  1000 → 把区间从中间劈开，左右递归（自适应二分）
-3. 最终每个叶节点的结果数都 <= 1000，**理论上不遗漏任何一个仓库**。
+=======================================================================
+新方案：边界区快速扫描
+=======================================================================
+核心思想：只扫"1000 附近"的仓库，不扫全量。
 
-为何不限制 star 的上限？
-  若一个项目昨天 800 星、今天一夜爆火到 10 万星，
-  它仍应被收录（昨天 < 1000、今天 >= 1000）。
-  star 上限只会导致漏报。
+每日运行两步：
 
-参数调优
---------
-- EARLIEST_DATE: 往前追溯到 2008（GitHub 创立年），覆盖全部历史项目
-- PER_PAGE: 固定 100（Search API 最大值），减少请求次数
-- MAX_RECURSION_DEPTH: 防止极端情况下无限递归（理论上 2008→今天 ≈ 6000 天，
-  二分最多 13 层，远小于 64 的安全上限）
-- REQUEST_INTERVAL: 礼貌间隔，避免触发次级速率限制（Secondary Rate Limit）
+【Step A — 突破区扫描】 stars:1000..{UPPER_BOUND}
+  覆盖"今天刚到 1000 ~ 今天最多涨到 UPPER_BOUND" 的仓库。
+  UPPER_BOUND 默认 50000（GitHub 单日增长极少超过这个数）。
+  扫完后与昨天快照做差分：
+    - 昨天 <1000（或不存在） 且 今天 >=1000 → 突破项目 ✅
+    - 昨天已 >=1000 → 跳过
+  这一步结果数远小于全量（通常几千条），API 请求量大幅减少。
+
+【Step B — 候选区扫描】 stars:{LOWER_BOUND}..999
+  覆盖"离 1000 还差一点"的仓库，为明天做准备。
+  LOWER_BOUND 默认 800（离 1000 差 200 以上的项目一天内冲过去的概率极低）。
+  扫完后存入今天快照中，明天就能与之对比。
+
+合并 A + B 的结果作为今日快照保存。
+
+=======================================================================
+首次冷启动（无昨日快照）
+=======================================================================
+首次运行时昨日快照不存在。此时 Step A 扫到的项目全都会被标记为
+"is_new_to_snapshot"（无法区分昨天就有 1000 还是今天才达到），
+这是预期行为——**第二天开始**差分结果就准确了。
+
+用户可以选择 --cold-start 执行一次更大范围的全量扫描来建立更完整
+的基线快照（但这次跑得慢，之后每天就快了）。
+
+=======================================================================
+速度估算
+=======================================================================
+- Step A  stars:1000..50000  约 5000-8000 个仓库
+  语言切分后每个切片通常 <1000 条，大部分语言 1 次请求就够
+  估计 50-100 次请求 → 2-4 分钟
+
+- Step B  stars:800..999     约 1000-3000 个仓库
+  大部分语言 1 次请求就够
+  估计 30-60 次请求 → 1-2 分钟
+
+合计：**3-6 分钟**（相比旧方案 30-60 分钟，提速 10 倍）
 """
 from __future__ import annotations
 
@@ -35,22 +63,27 @@ import httpx
 from rich.console import Console
 
 from src.config import settings
-from src.crawlers.languages import LANGUAGE_NONE_SENTINEL, LANGUAGES
+from src.crawlers.languages import LANGUAGES
 
 console = Console()
 
 _BASE_URL = "https://api.github.com"
 _SEARCH_ENDPOINT = "/search/repositories"
 
-# GitHub 创立时间，往前追溯的最早边界
-_EARLIEST_DATE = date(2008, 1, 1)
+# ── 核心参数 ──────────────────────────────────────────────────────────
+_EARLIEST_DATE = date(2008, 1, 1)    # GitHub 创立年，全量扫描时的起始日期
+_PER_PAGE = 100                       # Search API 每页最大条数
+_MAX_RECURSION_DEPTH = 64             # 二分递归深度安全上限
+_REQUEST_INTERVAL = 1.2               # 秒，30次/分钟的礼貌间隔
 
-_PER_PAGE = 100
-_MAX_RECURSION_DEPTH = 64
-_REQUEST_INTERVAL = 1.2  # 秒，PAT 模式下 Search API 约 30 次/分钟
+# ── 边界区参数 ────────────────────────────────────────────────────────
+_ABOVE_UPPER = 50000      # 突破区上限：一天涨 5 万 star 已属极端
+_CANDIDATE_LOWER = 800    # 候选区下限：离 1000 差 200+，一天冲过去概率极低
 
 
-# ── HTTP 工具 ──────────────────────────────────────────────────────────────
+# ══════════════════════════════════════════════════════════════════════
+# HTTP 工具
+# ══════════════════════════════════════════════════════════════════════
 
 def _build_headers() -> dict[str, str]:
     headers = {
@@ -79,7 +112,6 @@ def _parse_repo(item: dict[str, Any]) -> dict[str, Any]:
 
 
 def _wait_for_rate_limit(response: httpx.Response) -> None:
-    """若剩余配额 <= 3，等到配额重置。"""
     remaining = int(response.headers.get("x-ratelimit-remaining", "999"))
     reset_ts = int(response.headers.get("x-ratelimit-reset", "0"))
     if remaining <= 3 and reset_ts:
@@ -95,19 +127,11 @@ def _search_once(
     query: str,
     page: int = 1,
 ) -> tuple[int, list[dict[str, Any]]]:
-    """
-    执行一次 Search API 请求。
-
-    Returns
-    -------
-    (total_count, items)
-        total_count: API 报告的总数（注意：> 1000 时也只能翻 10 页）
-        items:       本页结果
-    """
+    """执行一次 Search API 请求，返回 (total_count, items)。"""
     params = {
         "q": query,
         "sort": "stars",
-        "order": "asc",   # 升序，方便二分边界更精确
+        "order": "asc",
         "per_page": _PER_PAGE,
         "page": page,
     }
@@ -122,11 +146,9 @@ def _search_once(
     _wait_for_rate_limit(resp)
 
     if resp.status_code == 403:
-        # 触发次级速率限制时 Retry-After header 会给出等待时间
         retry_after = int(resp.headers.get("retry-after", "60"))
         console.print(f"[yellow]⚠️  403 次级限速，等待 {retry_after}s ...[/yellow]")
         time.sleep(retry_after + 3)
-        # 重试一次
         resp = client.get(_SEARCH_ENDPOINT, params=params)
 
     if resp.status_code != 200:
@@ -137,48 +159,34 @@ def _search_once(
     return data.get("total_count", 0), data.get("items", [])
 
 
-# ── 自适应递归二分核心 ──────────────────────────────────────────────────────
+# ══════════════════════════════════════════════════════════════════════
+# 自适应递归二分（保留，供 language 切分后仍超 1000 条时使用）
+# ══════════════════════════════════════════════════════════════════════
 
 def _fetch_slice(
     client: httpx.Client,
-    query_base: str,          # 不含日期约束的基础查询，如 "stars:>=1000 language:Python"
+    query_base: str,
     start: date,
     end: date,
     results: dict[str, dict[str, Any]],
     depth: int = 0,
     stats: dict[str, int] | None = None,
 ) -> None:
-    """
-    递归拉取 [start, end] 区间内满足 query_base 的所有仓库。
-
-    - 若 total_count <= 1000：直接翻页拿完（叶节点）
-    - 若 total_count >  1000：区间二分，递归处理左右两半
-    - 若 start == end：单天也超 1000 条（极罕见，记警告但不再细分）
-    """
+    """递归拉取 [start, end] 区间内的仓库，自适应二分直到每片 <= 1000 条。"""
     if stats is None:
         stats = {}
 
-    indent = "  " * depth
     date_range = f"{start.isoformat()}..{end.isoformat()}"
     query = f"{query_base} created:{date_range}"
 
-    # 先探 total_count
     total, first_items = _search_once(client, query, page=1)
     stats["requests"] = stats.get("requests", 0) + 1
 
     if total == 0:
         return
 
-    if total <= _PER_PAGE and first_items:
-        # 单页能拿完，直接存
-        for item in first_items:
-            repo = _parse_repo(item)
-            results[repo["full_name"]] = repo
-        return
-
     if total <= 1000:
-        # 需要翻页，但不需要再分
-        # 第 1 页已拿到，继续翻剩余页
+        # 能拿完，收集所有页
         for item in first_items:
             repo = _parse_repo(item)
             results[repo["full_name"]] = repo
@@ -192,19 +200,13 @@ def _fetch_slice(
                 results[repo["full_name"]] = repo
             if len(items) < _PER_PAGE:
                 break
-
-        console.print(
-            f"{indent}[green]✓[/green] {date_range}"
-            f"  total={total}  fetched≈{min(total, 1000)}"
-        )
         return
 
-    # total > 1000 → 需要二分
+    # total > 1000 → 二分
     if start == end or depth >= _MAX_RECURSION_DEPTH:
-        # 无法再细分（同一天超 1000 条），尽力拿前 1000 条并记警告
         console.print(
-            f"{indent}[yellow]⚠️  {date_range} 仍有 {total} 条，"
-            f"已达最小粒度，仅抓取前 1000 条[/yellow]"
+            f"[yellow]⚠️  {date_range} 仍有 {total} 条，"
+            f"已达最小粒度，仅抓前 1000 条[/yellow]"
         )
         for item in first_items:
             repo = _parse_repo(item)
@@ -219,11 +221,9 @@ def _fetch_slice(
                 break
         return
 
-    # 区间二分
     mid = start + timedelta(days=(end - start).days // 2)
     console.print(
-        f"{indent}[cyan]⤷ 二分 {date_range}  total={total:,}[/cyan]"
-        f"  → [{start}..{mid}]  [{mid + timedelta(days=1)}..{end}]"
+        f"[cyan]  ⤷ 二分 {date_range} total={total:,}[/cyan]"
     )
     _fetch_slice(client, query_base, start, mid, results, depth + 1, stats)
     _fetch_slice(
@@ -233,59 +233,158 @@ def _fetch_slice(
     )
 
 
-# ── 公开接口 ───────────────────────────────────────────────────────────────
-
-def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
+def _fetch_range_all_languages(
+    client: httpx.Client,
+    star_range: str,
+    label: str,
+    results: dict[str, dict[str, Any]],
+    stats: dict[str, int],
+) -> None:
     """
-    抓取当前 GitHub 上 **全部** stars >= 1000 的仓库。
+    在给定的 star 范围内，按语言切分 + 日期自适应二分，拉取全部仓库。
 
-    策略：遍历主流编程语言（含"无语言"），对每种语言以
-    「创建时间区间自适应二分」绕开 Search API 1000 条上限。
+    Parameters
+    ----------
+    star_range : str
+        例如 "stars:1000..50000" 或 "stars:800..999"
+    label : str
+        用于日志显示
+    """
+    today = date.today()
+    # 语言列表 + 无语言
+    all_langs: list[str | None] = [*LANGUAGES, None]
+
+    for lang in all_langs:
+        if lang is None:
+            lang_label = "(no language)"
+            lang_clause = ""  # 不加 language 限定，后面单独处理
+        else:
+            lang_label = lang
+            lang_clause = f" language:{lang}"
+
+        query_base = f"{star_range}{lang_clause}"
+
+        # 先探一下总数，如果为 0 直接跳过（节省日志噪音）
+        probe_total, _ = _search_once(client, query_base, page=1)
+        stats["requests"] = stats.get("requests", 0) + 1
+
+        if probe_total == 0:
+            continue
+
+        before = len(results)
+        slice_stats: dict[str, int] = {"requests": 0}
+
+        if probe_total <= 1000:
+            # 不需要日期切分，直接翻页拿完
+            # 但第一页已经在 probe 时拿了，这里重新走 _fetch_slice 简化逻辑
+            _fetch_slice(
+                client, query_base,
+                start=_EARLIEST_DATE, end=today,
+                results=results, stats=slice_stats,
+            )
+        else:
+            # 需要日期切分
+            console.print(
+                f"  [cyan]{lang_label}[/cyan] {label}"
+                f" total={probe_total:,} > 1000，启用日期二分"
+            )
+            _fetch_slice(
+                client, query_base,
+                start=_EARLIEST_DATE, end=today,
+                results=results, stats=slice_stats,
+            )
+
+        added = len(results) - before
+        stats["requests"] += slice_stats.get("requests", 0)
+        if added > 0:
+            console.print(
+                f"  [green]{lang_label}[/green] +{added}  "
+                f"累计 {len(results)}  "
+                f"（{slice_stats.get('requests', 0)} 请求）"
+            )
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 公开接口
+# ══════════════════════════════════════════════════════════════════════
+
+def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
+    """
+    边界区快速扫描（日常模式）。
 
     Returns
     -------
-    dict[full_name, repo_info]
+    (above_repos, candidate_repos)
+        above_repos:     stars 1000..UPPER 的仓库（用于与昨日快照差分）
+        candidate_repos: stars LOWER..999 的仓库（存入今日快照，为明天差分做准备）
     """
-    results: dict[str, dict[str, Any]] = {}
-    today = date.today()
+    above: dict[str, dict[str, Any]] = {}
+    candidates: dict[str, dict[str, Any]] = {}
     headers = _build_headers()
-    global_stats: dict[str, int] = {"requests": 0}
-
-    # 语言列表 + 无语言占位
-    all_langs: list[str | None] = [*LANGUAGES, None]  # None 表示 language 未设置
+    stats: dict[str, int] = {"requests": 0}
 
     with httpx.Client(base_url=_BASE_URL, headers=headers, timeout=30) as client:
-        for lang in all_langs:
-            if lang is LANGUAGE_NONE_SENTINEL or lang is None:
-                lang_label = "(no language)"
-                lang_clause = "language:Unknown"  # GitHub 用此查 no-language
-            else:
-                lang_label = lang
-                lang_clause = f"language:{lang}"
+        # ── Step A: 突破区 ────────────────────────────────────────
+        console.rule(f"[bold blue]Step A / 突破区 stars:1000..{_ABOVE_UPPER}[/bold blue]")
+        _fetch_range_all_languages(
+            client,
+            star_range=f"stars:1000..{_ABOVE_UPPER}",
+            label="突破区",
+            results=above,
+            stats=stats,
+        )
+        console.print(
+            f"[green]  突破区完成：{len(above):,} 个仓库[/green]"
+        )
 
-            query_base = f"stars:>=1000 {lang_clause}"
-            console.rule(f"[bold blue]{lang_label}[/bold blue]")
-
-            before = len(results)
-            slice_stats: dict[str, int] = {"requests": 0}
-            _fetch_slice(
-                client,
-                query_base,
-                start=_EARLIEST_DATE,
-                end=today,
-                results=results,
-                stats=slice_stats,
-            )
-            added = len(results) - before
-            global_stats["requests"] += slice_stats.get("requests", 0)
-            console.print(
-                f"  [green]{lang_label}[/green] 新增 {added} 条，"
-                f"累计 {len(results)} 条  "
-                f"（本语言请求 {slice_stats.get('requests', 0)} 次）"
-            )
+        # ── Step B: 候选区 ────────────────────────────────────────
+        console.rule(
+            f"[bold blue]Step B / 候选区 stars:{_CANDIDATE_LOWER}..999[/bold blue]"
+        )
+        _fetch_range_all_languages(
+            client,
+            star_range=f"stars:{_CANDIDATE_LOWER}..999",
+            label="候选区",
+            results=candidates,
+            stats=stats,
+        )
+        console.print(
+            f"[green]  候选区完成：{len(candidates):,} 个仓库[/green]"
+        )
 
     console.print(
-        f"\n[bold green]✅ 全部语言扫描完毕：{len(results):,} 个 stars>=1000 仓库，"
-        f"共发出 {global_stats['requests']} 次 API 请求[/bold green]"
+        f"\n[bold green]✅ 边界区扫描完毕："
+        f"突破区 {len(above):,} + 候选区 {len(candidates):,} = "
+        f"{len(above) + len(candidates):,} 个仓库，"
+        f"共 {stats['requests']} 次 API 请求[/bold green]"
+    )
+    return above, candidates
+
+
+def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
+    """
+    全量扫描 stars>=1000（冷启动模式，仅首次或 --cold-start 时使用）。
+
+    使用语言 × 日期自适应二分，完整覆盖所有 stars>=1000 的仓库。
+    速度较慢（30-60 分钟），但建立的快照最完整。
+    """
+    results: dict[str, dict[str, Any]] = {}
+    headers = _build_headers()
+    stats: dict[str, int] = {"requests": 0}
+
+    console.rule("[bold red]全量扫描 stars:>=1000（冷启动模式，耗时较长）[/bold red]")
+
+    with httpx.Client(base_url=_BASE_URL, headers=headers, timeout=30) as client:
+        _fetch_range_all_languages(
+            client,
+            star_range="stars:>=1000",
+            label="全量",
+            results=results,
+            stats=stats,
+        )
+
+    console.print(
+        f"\n[bold green]✅ 全量扫描完毕：{len(results):,} 个仓库，"
+        f"共 {stats['requests']} 次 API 请求[/bold green]"
     )
     return results

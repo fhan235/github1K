@@ -72,6 +72,12 @@ def save_snapshot(d: date, repos: dict[str, Any]) -> Path:
     return path
 
 
+def has_yesterday_snapshot() -> bool:
+    """检查昨天的快照文件是否存在。"""
+    yesterday = date.today() - timedelta(days=1)
+    return _snapshot_path(yesterday).exists()
+
+
 def get_yesterday_stars() -> dict[str, int]:
     """返回昨天快照的 {full_name: star_count}，无记录则返回空字典。"""
     yesterday = date.today() - timedelta(days=1)
