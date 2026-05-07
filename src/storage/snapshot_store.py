@@ -124,6 +124,52 @@ def get_yesterday_stars() -> dict[str, int]:
     return load_snapshot(yesterday).repos
 
 
+def _iter_snapshot_dates() -> list[date]:
+    """扫描 data/ 目录，返回所有已存在快照的日期（升序）。"""
+    if not _DATA_DIR.exists():
+        return []
+    dates: set[date] = set()
+    for pattern in ("snapshot_*.json", "snapshot_*.json.gz"):
+        for path in _DATA_DIR.glob(pattern):
+            stem = path.name
+            for suffix in (_SUFFIX_GZ, _SUFFIX_PLAIN):
+                if stem.endswith(suffix):
+                    stem = stem[: -len(suffix)]
+                    break
+            date_part = stem.removeprefix("snapshot_")
+            try:
+                dates.add(date.fromisoformat(date_part))
+            except ValueError:
+                continue
+    return sorted(dates)
+
+
+def find_latest_snapshot_date(before: date | None = None) -> date | None:
+    """找到早于 ``before`` 的最近一次快照日期（不含 before 当天）。
+
+    ``before`` 默认为今天。若 data/ 中无任何历史快照则返回 ``None``。
+    """
+    cutoff = before or date.today()
+    candidates = [d for d in _iter_snapshot_dates() if d < cutoff]
+    return candidates[-1] if candidates else None
+
+
+def load_latest_stars(
+    before: date | None = None,
+) -> tuple[date | None, dict[str, int]]:
+    """加载最近一次历史快照的 ``{full_name: star_count}``。
+
+    Returns
+    -------
+    (snapshot_date, stars)
+        若无任何历史快照，返回 ``(None, {})``。
+    """
+    latest = find_latest_snapshot_date(before)
+    if latest is None:
+        return None, {}
+    return latest, load_snapshot(latest).repos
+
+
 def cleanup_old_snapshots(keep_days: int = 30) -> None:
     """删除超过 keep_days 天的快照文件（.json 和 .json.gz 都清）。"""
     if not _DATA_DIR.exists():

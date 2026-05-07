@@ -37,8 +37,7 @@ from src.notifiers.wecom import send_wecom
 from src.reporters.markdown_reporter import generate_report, save_report
 from src.storage.snapshot_store import (
     cleanup_old_snapshots,
-    get_yesterday_stars,
-    has_yesterday_snapshot,
+    load_latest_stars,
     save_snapshot,
 )
 
@@ -196,25 +195,44 @@ def main() -> int:
     yesterday = today - timedelta(days=1)
 
     console.rule("[bold cyan]github1K — 1000 Star 突破追踪器[/bold cyan]")
-    console.print(f"📅 运行日期: {today}  |  对比昨天: {yesterday}")
+
+    # ── 加载最近一次历史快照（优先昨天，缺失则回退到更早） ──────
+    baseline_date, baseline_stars = load_latest_stars(before=today)
+    has_baseline = baseline_date is not None
+    use_cold_start = args.cold_start or not has_baseline
+
+    if has_baseline:
+        gap_days = (today - baseline_date).days
+        if baseline_date == yesterday:
+            console.print(f"📅 运行日期: {today}  |  对比昨天: {baseline_date}")
+        else:
+            console.print(
+                f"📅 运行日期: {today}  |  对比最近一次快照: {baseline_date}"
+                f"（{gap_days} 天前）"
+            )
+            console.print(
+                f"[yellow]⚠️  未找到昨天（{yesterday}）的快照，回退使用 "
+                f"{baseline_date} 的快照作为对比基准。[/yellow]"
+            )
+    else:
+        console.print(f"📅 运行日期: {today}")
+        if not args.cold_start:
+            console.print(
+                "[yellow]⚠️  未找到任何历史快照。首次运行将自动使用冷启动模式，"
+                "建立基线快照。之后每天运行会自动切换为快速模式（3-6 分钟）。[/yellow]"
+            )
     console.print()
 
-    # ── 判断运行模式 ──────────────────────────────────────────────
-    has_yesterday = has_yesterday_snapshot()
-    use_cold_start = args.cold_start or not has_yesterday
-
-    if not has_yesterday and not args.cold_start:
-        console.print(
-            "[yellow]⚠️  未找到昨天的快照。首次运行将自动使用冷启动模式，"
-            "建立基线快照。之后每天运行会自动切换为快速模式（3-6 分钟）。[/yellow]"
-        )
-        console.print()
-
     try:
-        # ── Step 1: 加载昨天快照 ──────────────────────────────────
-        console.rule("[bold]Step 1 / 加载昨天快照[/bold]")
-        yesterday_stars = get_yesterday_stars()
-        console.print(f"  昨天快照记录数: {len(yesterday_stars):,}")
+        # ── Step 1: 加载对比基准快照 ──────────────────────────────
+        console.rule("[bold]Step 1 / 加载对比基准快照[/bold]")
+        yesterday_stars = baseline_stars
+        if has_baseline:
+            console.print(
+                f"  基准快照日期: {baseline_date}  |  记录数: {len(yesterday_stars):,}"
+            )
+        else:
+            console.print("  基准快照: 无（冷启动）")
 
         # ── Step 2: 抓取今天数据 ──────────────────────────────────
         if use_cold_start:
@@ -248,7 +266,11 @@ def main() -> int:
         # ── Step 5: 生成报告 ──────────────────────────────────────
         console.rule("[bold]Step 5 / 生成 Markdown 报告[/bold]")
         report_top_n = settings.report_top_n
-        content = generate_report(milestones, today, yesterday, top_n=report_top_n)
+        # 报告中的"昨天"使用实际的基准快照日期
+        baseline_for_report = baseline_date or yesterday
+        content = generate_report(
+            milestones, today, baseline_for_report, top_n=report_top_n
+        )
         report_path = save_report(content, today)
         console.print(f"[green]📄 报告已生成: {report_path}[/green]")
 
@@ -266,6 +288,8 @@ def main() -> int:
         _print_table(milestones, top_n=args.top)
 
         mode_str = "冷启动（全量）" if use_cold_start else "日常（边界区快速扫描）"
+        if not use_cold_start and baseline_date and baseline_date != yesterday:
+            mode_str += f" · 基准快照 {baseline_date}（非昨天）"
         console.rule(f"[bold green]✅ 完成 · 模式: {mode_str}[/bold green]")
         return 0
 
