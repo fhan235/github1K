@@ -14,7 +14,36 @@ class Settings(BaseSettings):
 
     # ── GitHub API ──────────────────────────────────────────────
     github_token: str = ""
-    """Personal Access Token（强烈推荐：认证后 Search API 30次/分钟，匿名仅 10次/分钟）"""
+    """Personal Access Token（强烈推荐：认证后 Search API 30次/分钟，匿名仅 10次/分钟）。
+
+    单 token 场景使用此字段。
+    若需多 token 轮询加速，请改填 ``G1K_GITHUB_TOKENS``（逗号分隔）。
+    """
+
+    github_tokens: str = ""
+    """多个 PAT，以英文逗号分隔（可选）。
+
+    每个 token 享有独立的 30次/分钟 限额，
+    通过轮询最早可用的 token 实现并行节流，冷启动可成倍提速。
+    留空时自动回落到 ``github_token``。
+    """
+
+    @property
+    def token_list(self) -> list[str]:
+        """返回去重后的 token 列表；若全部为空则返回空列表（匿名访问）。"""
+        raw: list[str] = []
+        if self.github_tokens:
+            raw.extend(self.github_tokens.split(","))
+        if self.github_token:
+            raw.append(self.github_token)
+        seen: set[str] = set()
+        out: list[str] = []
+        for tok in raw:
+            t = tok.strip()
+            if t and t not in seen:
+                seen.add(t)
+                out.append(t)
+        return out
 
     # ── 通知 ────────────────────────────────────────────────────
     wecom_webhook_url: str = ""
@@ -26,7 +55,11 @@ class Settings(BaseSettings):
 
     # ── 爬虫参数（可通过环境变量覆盖，方便调试）──────────────────
     request_interval: float = 2.0
-    """API 请求间隔（秒）。30次/分钟的 Search API 限额 → 2.0s 精确节流"""
+    """单 token 下的 API 请求间隔（秒）。30次/分钟的 Search API 限额 → 2.0s 精确节流。
+
+    使用 N 个 token 轮询时，整体吞吐自动提升 N 倍（每个 token 仍按此间隔节流），
+    无需手动调小此值。
+    """
 
     above_upper: int = 50000
     """突破区上界，一天涨幅极少超过此值"""

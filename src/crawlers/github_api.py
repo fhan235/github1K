@@ -66,14 +66,82 @@ _MAX_RECURSION_DEPTH = 64             # 二分递归深度安全上限
 # ══════════════════════════════════════════════════════════════════════
 
 
-def _build_headers() -> dict[str, str]:
+# ══════════════════════════════════════════════════════════════════════
+# Token 池：多 token 轮询 + 独立节流
+# ══════════════════════════════════════════════════════════════════════
+
+class TokenPool:
+    """管理一个或多个 GitHub PAT，按"最早可用时间"轮询挑选下一个可用 token。
+
+    设计要点
+    --------
+    - 每个 token 独立节流：发一次请求后，将其 ``next_available_at`` 设为
+      ``now + request_interval``。
+    - ``acquire()`` 总是返回"最早可用"的 token；若尚未到期则 sleep 到期再返回。
+    - 当 API 响应头返回 ``x-ratelimit-remaining<=2`` 或命中 403 次级限速时，
+      通过 ``penalize()`` 将该 token 冷却到 reset 时刻，其它 token 仍可继续。
+    - 匿名模式下 token 列表为空，用一个空字符串占位（走匿名配额）。
+    """
+
+    def __init__(self, tokens: list[str], request_interval: float) -> None:
+        self._interval = request_interval
+        # (token, next_available_epoch)
+        self._tokens: list[list[float | str]] = [
+            [tok, 0.0] for tok in (tokens or [""])
+        ]
+        self._anonymous = not tokens
+
+    @property
+    def size(self) -> int:
+        return len(self._tokens)
+
+    @property
+    def is_anonymous(self) -> bool:
+        return self._anonymous
+
+    def acquire(self) -> str:
+        """阻塞直到某个 token 可用，返回该 token 字符串（匿名时返回 ""）。"""
+        # 选 next_available_at 最小的那个
+        slot = min(self._tokens, key=lambda s: s[1])  # type: ignore[arg-type]
+        wait = float(slot[1]) - time.time()
+        if wait > 0:
+            time.sleep(wait)
+        # 发出后立刻为该 token 安排下一次可用时刻
+        slot[1] = time.time() + self._interval
+        return str(slot[0])
+
+    def penalize(self, token: str, until_epoch: float) -> None:
+        """把某个 token 冷却到指定时刻（命中限速时调用）。"""
+        for slot in self._tokens:
+            if slot[0] == token:
+                slot[1] = max(float(slot[1]), until_epoch)
+                return
+
+
+def _build_headers(token: str) -> dict[str, str]:
+    """（保留备用）构造带单个 token 的请求头。新版请求由 _search_once 直接注入。"""
     headers = {
         "Accept": "application/vnd.github.v3+json",
         "X-GitHub-Api-Version": "2022-11-28",
     }
-    if settings.github_token:
-        headers["Authorization"] = f"Bearer {settings.github_token}"
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
     return headers
+
+
+def _print_pool_banner(pool: TokenPool) -> None:
+    if pool.is_anonymous:
+        console.print(
+            "[yellow]⚠️  未配置 GitHub token，使用匿名访问（限速 10 次/分钟，"
+            "强烈建议设置 G1K_GITHUB_TOKEN）[/yellow]"
+        )
+    elif pool.size == 1:
+        console.print("[dim]🔑 单 token 模式 (30 req/min)[/dim]")
+    else:
+        console.print(
+            f"[bold green]🔑 多 token 模式：{pool.size} 个 token 轮询，"
+            f"总吞吐约 {pool.size * 30} req/min[/bold green]"
+        )
 
 
 def _parse_repo(item: dict[str, Any]) -> dict[str, Any]:
@@ -92,19 +160,19 @@ def _parse_repo(item: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _wait_for_rate_limit(response: httpx.Response) -> None:
-    """根据响应头的 x-ratelimit-* 动态等待，避免被 429/403 拦截。"""
+def _check_rate_limit(response: httpx.Response) -> float:
+    """解析响应头的 x-ratelimit-*。
+
+    返回该 token 应冷却到的 epoch 时刻（0 表示无需冷却）。
+    """
     try:
         remaining = int(response.headers.get("x-ratelimit-remaining", "999"))
         reset_ts = int(response.headers.get("x-ratelimit-reset", "0"))
     except (TypeError, ValueError):
-        return
+        return 0.0
     if remaining <= 2 and reset_ts:
-        wait = max(reset_ts - int(time.time()), 0) + 5
-        console.print(
-            f"[yellow]⏳ 速率限制剩余 {remaining}，等待 {wait}s ...[/yellow]"
-        )
-        time.sleep(wait)
+        return float(reset_ts) + 5.0
+    return 0.0
 
 
 class SearchAPIError(Exception):
@@ -113,12 +181,14 @@ class SearchAPIError(Exception):
 
 def _search_once(
     client: httpx.Client,
+    pool: TokenPool,
     query: str,
     page: int = 1,
     stats: dict[str, int] | None = None,
 ) -> tuple[int, list[dict[str, Any]]]:
-    """执行一次 Search API 请求，自带指数退避重试。
+    """执行一次 Search API 请求，自带指数退避重试 + 多 token 轮询。
 
+    节流由 ``pool.acquire()`` 完成（每个 token 独立计时）。
     失败超过 ``settings.http_max_retries`` 次后抛 ``SearchAPIError``，
     由调用方决定继续还是中止。
     """
@@ -133,9 +203,12 @@ def _search_once(
     last_exc: Exception | None = None
 
     for attempt in range(max_retries + 1):
-        time.sleep(settings.request_interval)
+        token = pool.acquire()
+        headers = (
+            {"Authorization": f"Bearer {token}"} if token else None
+        )
         try:
-            resp = client.get(_SEARCH_ENDPOINT, params=params)
+            resp = client.get(_SEARCH_ENDPOINT, params=params, headers=headers)
         except httpx.RequestError as exc:
             last_exc = exc
             backoff = min(2 ** attempt, 30)
@@ -146,15 +219,18 @@ def _search_once(
             time.sleep(backoff)
             continue
 
-        _wait_for_rate_limit(resp)
+        cooldown_until = _check_rate_limit(resp)
+        if cooldown_until:
+            pool.penalize(token, cooldown_until)
 
         if resp.status_code == 403:
-            # 次级限速，按 Retry-After 等待后重试
+            # 次级限速：将该 token 冷却到 retry-after 后，换下一个 token 继续
             retry_after = int(resp.headers.get("retry-after", "60"))
+            pool.penalize(token, time.time() + retry_after + 3)
             console.print(
-                f"[yellow]⚠️  403 次级限速，等待 {retry_after}s ...[/yellow]"
+                f"[yellow]⚠️  403 次级限速，该 token 冷却 {retry_after}s"
+                f"{'，切换下一个 token' if pool.size > 1 else ''}[/yellow]"
             )
-            time.sleep(retry_after + 3)
             continue
 
         if resp.status_code == 422:
@@ -208,6 +284,7 @@ def _search_once(
 
 def _paginate(
     client: httpx.Client,
+    pool: TokenPool,
     query: str,
     first_items: list[dict[str, Any]],
     total: int,
@@ -222,7 +299,7 @@ def _paginate(
     total_pages = min((total + _PER_PAGE - 1) // _PER_PAGE, _MAX_PAGES_PER_QUERY)
     for page in range(2, total_pages + 1):
         try:
-            _, items = _search_once(client, query, page=page, stats=stats)
+            _, items = _search_once(client, pool, query, page=page, stats=stats)
         except SearchAPIError as exc:
             console.print(f"[red]翻页失败（忽略该页，继续）: {exc}[/red]")
             break
@@ -236,32 +313,41 @@ def _paginate(
 
 def _fetch_slice(
     client: httpx.Client,
+    pool: TokenPool,
     query_base: str,
     start: date,
     end: date,
     results: dict[str, dict[str, Any]],
     depth: int = 0,
     stats: dict[str, int] | None = None,
+    preloaded: tuple[int, list[dict[str, Any]]] | None = None,
 ) -> None:
-    """递归拉取 [start, end] 区间内的仓库，自适应二分直到每片 <= 1000 条。"""
+    """递归拉取 [start, end] 区间内的仓库，自适应二分直到每片 <= 1000 条。
+
+    ``preloaded`` 允许外部把刚做过的 probe 请求结果直接喂进来，
+    避免该查询重复执行第一次请求（方案 1 优化）。
+    """
     if stats is None:
         stats = {}
 
     date_range = f"{start.isoformat()}..{end.isoformat()}"
     query = f"{query_base} created:{date_range}"
 
-    try:
-        total, first_items = _search_once(client, query, page=1, stats=stats)
-    except SearchAPIError as exc:
-        console.print(f"[red]切片抓取失败，跳过: {exc}[/red]")
-        return
-    stats["requests"] = stats.get("requests", 0) + 1
+    if preloaded is not None:
+        total, first_items = preloaded
+    else:
+        try:
+            total, first_items = _search_once(client, pool, query, page=1, stats=stats)
+        except SearchAPIError as exc:
+            console.print(f"[red]切片抓取失败，跳过: {exc}[/red]")
+            return
+        stats["requests"] = stats.get("requests", 0) + 1
 
     if total == 0:
         return
 
     if total <= 1000:
-        _paginate(client, query, first_items, total, results, stats)
+        _paginate(client, pool, query, first_items, total, results, stats)
         return
 
     # total > 1000 → 二分
@@ -271,16 +357,16 @@ def _fetch_slice(
             f"已达最小粒度，仅抓前 1000 条[/yellow]"
         )
         stats["truncated"] = stats.get("truncated", 0) + 1
-        _paginate(client, query, first_items, 1000, results, stats)
+        _paginate(client, pool, query, first_items, 1000, results, stats)
         return
 
     mid = start + timedelta(days=(end - start).days // 2)
     console.print(
         f"[cyan]  ⤷ 二分 {date_range} total={total:,}[/cyan]"
     )
-    _fetch_slice(client, query_base, start, mid, results, depth + 1, stats)
+    _fetch_slice(client, pool, query_base, start, mid, results, depth + 1, stats)
     _fetch_slice(
-        client, query_base,
+        client, pool, query_base,
         mid + timedelta(days=1), end,
         results, depth + 1, stats,
     )
@@ -288,6 +374,7 @@ def _fetch_slice(
 
 def _fetch_range_all_languages(
     client: httpx.Client,
+    pool: TokenPool,
     star_range: str,
     label: str,
     results: dict[str, dict[str, Any]],
@@ -311,7 +398,9 @@ def _fetch_range_all_languages(
 
         # 探一下总数
         try:
-            probe_total, _ = _search_once(client, query_base, page=1, stats=stats)
+            probe_total, probe_items = _search_once(
+                client, pool, query_base, page=1, stats=stats
+            )
         except SearchAPIError as exc:
             console.print(f"[red]探测失败（跳过语言 {lang_label}）: {exc}[/red]")
             continue
@@ -323,16 +412,25 @@ def _fetch_range_all_languages(
         before = len(results)
         slice_stats: dict[str, int] = {"requests": 0}
 
-        if probe_total > 1000:
+        if probe_total <= 1000:
+            # 方案 1：probe 已覆盖全量，直接翻页即可，不再进 _fetch_slice
+            _paginate(
+                client, pool, query_base, probe_items, probe_total,
+                results, slice_stats,
+            )
+        else:
             console.print(
                 f"  [cyan]{lang_label}[/cyan] {label}"
                 f" total={probe_total:,} > 1000，启用日期二分"
             )
-        _fetch_slice(
-            client, query_base,
-            start=_EARLIEST_DATE, end=today,
-            results=results, stats=slice_stats,
-        )
+            # probe 的查询（不带 created）与 _fetch_slice 内首轮查询
+            # （带 created:2008..today）不等价，但结果集必然包含后者，
+            # 为保守起见让 _fetch_slice 重做一次 probe，不复用 probe_items
+            _fetch_slice(
+                client, pool, query_base,
+                start=_EARLIEST_DATE, end=today,
+                results=results, stats=slice_stats,
+            )
 
         added = len(results) - before
         stats["requests"] += slice_stats.get("requests", 0)
@@ -354,6 +452,7 @@ def _fetch_range_all_languages(
 
 def _fetch_viral_repos(
     client: httpx.Client,
+    pool: TokenPool,
     stats: dict[str, int],
 ) -> dict[str, dict[str, Any]]:
     """
@@ -370,7 +469,7 @@ def _fetch_viral_repos(
     console.rule(f"[bold blue]Step C / 爆款补漏 stars:>{upper}[/bold blue]")
 
     try:
-        total, first_items = _search_once(client, query, page=1, stats=stats)
+        total, first_items = _search_once(client, pool, query, page=1, stats=stats)
     except SearchAPIError as exc:
         console.print(f"[red]爆款补漏失败: {exc}[/red]")
         return results
@@ -380,7 +479,7 @@ def _fetch_viral_repos(
         return results
 
     if total <= 1000:
-        _paginate(client, query, first_items, total, results, stats)
+        _paginate(client, pool, query, first_items, total, results, stats)
     else:
         # 极罕见：超高星仓库超过 1000 个
         # 退化为按语言切分扫描
@@ -389,6 +488,7 @@ def _fetch_viral_repos(
         )
         _fetch_range_all_languages(
             client,
+            pool,
             star_range=query,
             label="爆款区",
             results=results,
@@ -413,15 +513,21 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
     """
     above: dict[str, dict[str, Any]] = {}
     candidates: dict[str, dict[str, Any]] = {}
-    headers = _build_headers()
     stats: dict[str, int] = {"requests": 0, "errors": 0, "truncated": 0}
+
+    tokens = settings.token_list
+    pool = TokenPool(tokens, settings.request_interval)
+    _print_pool_banner(pool)
 
     upper = settings.above_upper
     lower = settings.candidate_lower
 
     with httpx.Client(
         base_url=_BASE_URL,
-        headers=headers,
+        headers={
+            "Accept": "application/vnd.github.v3+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        },
         timeout=settings.http_timeout,
     ) as client:
         # ── Step A: 突破区 stars:1000..upper ─────────────────────
@@ -429,7 +535,7 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
             f"[bold blue]Step A / 突破区 stars:1000..{upper}[/bold blue]"
         )
         _fetch_range_all_languages(
-            client,
+            client, pool,
             star_range=f"stars:1000..{upper}",
             label="突破区",
             results=above,
@@ -444,7 +550,7 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
             f"[bold blue]Step B / 候选区 stars:{lower}..999[/bold blue]"
         )
         _fetch_range_all_languages(
-            client,
+            client, pool,
             star_range=f"stars:{lower}..999",
             label="候选区",
             results=candidates,
@@ -455,26 +561,28 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
         )
 
         # ── Step C: 爆款补漏 stars:>upper ────────────────────────
-        viral = _fetch_viral_repos(client, stats)
+        viral = _fetch_viral_repos(client, pool, stats)
         above.update(viral)
 
     _print_stats_summary(stats, above, candidates)
     return above, candidates
-
 
 def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
     """
     全量扫描 stars>=1000（冷启动模式，仅首次或 --cold-start 时使用）。
 
     使用语言 × 日期自适应二分，完整覆盖所有 stars>=1000 的仓库。
-    速度较慢（30-60 分钟），但建立的快照最完整。
+    速度较慢（单 token 30-60 分钟，多 token 可成倍缩短），但建立的快照最完整。
 
     注意：会额外合并 ``_fetch_viral_repos()`` 的结果以确保超高星仓库
     不因日期二分在极端情况下被截断。
     """
     results: dict[str, dict[str, Any]] = {}
-    headers = _build_headers()
     stats: dict[str, int] = {"requests": 0, "errors": 0, "truncated": 0}
+
+    tokens = settings.token_list
+    pool = TokenPool(tokens, settings.request_interval)
+    _print_pool_banner(pool)
 
     console.rule(
         "[bold red]全量扫描 stars:>=1000（冷启动模式，耗时较长）[/bold red]"
@@ -482,11 +590,14 @@ def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
 
     with httpx.Client(
         base_url=_BASE_URL,
-        headers=headers,
+        headers={
+            "Accept": "application/vnd.github.v3+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        },
         timeout=settings.http_timeout,
     ) as client:
         _fetch_range_all_languages(
-            client,
+            client, pool,
             star_range="stars:>=1000",
             label="全量",
             results=results,
@@ -494,7 +605,7 @@ def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
         )
 
         # 爆款补漏：确保超高星项目不被日期二分截断丢失
-        viral = _fetch_viral_repos(client, stats)
+        viral = _fetch_viral_repos(client, pool, stats)
         before = len(results)
         results.update(viral)
         added = len(results) - before
