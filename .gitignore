@@ -15,3 +15,6 @@ venv/
 data/*.tmp
 data/*.bak
 reports/*.tmp
+
+# 运行日志（仅本地留存，不入库）
+logs/

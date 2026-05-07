@@ -83,5 +83,12 @@ class Settings(BaseSettings):
     snapshot_compact: bool = True
     """快照 JSON 是否紧凑保存（不缩进），大幅减小体积"""
 
+    # ── 日志 ────────────────────────────────────────────────────
+    log_dir: str = "logs"
+    """运行日志目录（自动创建）。按日期拆分，每次运行追加。"""
+
+    log_keep_days: int = 30
+    """日志保留天数，超过自动清理。0 = 永不清理。"""
+
 
 settings = Settings()

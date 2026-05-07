@@ -27,11 +27,11 @@ import sys
 from datetime import date, datetime, timedelta, timezone
 
 from rich.console import Console
-from rich.logging import RichHandler
 from rich.table import Table
 
 from src.config import settings
 from src.crawlers.github_api import fetch_all_repos_above_1k, fetch_boundary_repos
+from src.logging_setup import cleanup_old_logs, log_console_line, setup_logging
 from src.models import Milestone1KRepo
 from src.notifiers.wecom import send_wecom
 from src.reporters.markdown_reporter import generate_report, save_report
@@ -43,6 +43,18 @@ from src.storage.snapshot_store import (
 
 console = Console()
 logger = logging.getLogger("github1k")
+
+
+def _rule(title: str) -> None:
+    """Rich 分隔线 + 同步写入日志文件。"""
+    console.rule(title)
+    log_console_line(f"──── {title} ────")
+
+
+def _say(text: str) -> None:
+    """console.print + 同步写入日志文件。"""
+    console.print(text)
+    log_console_line(text)
 
 _RECENT_REPO_DAYS = 30  # 创建于近 N 天内的视为"新项目"
 
@@ -157,13 +169,8 @@ def _print_table(repos: list[Milestone1KRepo], top_n: int = 30) -> None:
 
 
 def _setup_logging(verbose: bool) -> None:
-    level = logging.DEBUG if verbose else logging.INFO
-    logging.basicConfig(
-        level=level,
-        format="%(message)s",
-        datefmt="[%X]",
-        handlers=[RichHandler(console=console, rich_tracebacks=True, show_path=False)],
-    )
+    log_path = setup_logging(console, verbose=verbose)
+    logger.info("日志文件: %s", log_path)
 
 
 def main() -> int:
@@ -194,7 +201,7 @@ def main() -> int:
     today = date.today()
     yesterday = today - timedelta(days=1)
 
-    console.rule("[bold cyan]github1K — 1000 Star 突破追踪器[/bold cyan]")
+    _rule("[bold cyan]github1K — 1000 Star 突破追踪器[/bold cyan]")
 
     # ── 加载最近一次历史快照（优先昨天，缺失则回退到更早） ──────
     baseline_date, baseline_stars = load_latest_stars(before=today)
@@ -204,20 +211,20 @@ def main() -> int:
     if has_baseline:
         gap_days = (today - baseline_date).days
         if baseline_date == yesterday:
-            console.print(f"📅 运行日期: {today}  |  对比昨天: {baseline_date}")
+            _say(f"📅 运行日期: {today}  |  对比昨天: {baseline_date}")
         else:
-            console.print(
+            _say(
                 f"📅 运行日期: {today}  |  对比最近一次快照: {baseline_date}"
                 f"（{gap_days} 天前）"
             )
-            console.print(
+            _say(
                 f"[yellow]⚠️  未找到昨天（{yesterday}）的快照，回退使用 "
                 f"{baseline_date} 的快照作为对比基准。[/yellow]"
             )
     else:
-        console.print(f"📅 运行日期: {today}")
+        _say(f"📅 运行日期: {today}")
         if not args.cold_start:
-            console.print(
+            _say(
                 "[yellow]⚠️  未找到任何历史快照。首次运行将自动使用冷启动模式，"
                 "建立基线快照。之后每天运行会自动切换为快速模式（3-6 分钟）。[/yellow]"
             )
@@ -225,46 +232,50 @@ def main() -> int:
 
     try:
         # ── Step 1: 加载对比基准快照 ──────────────────────────────
-        console.rule("[bold]Step 1 / 加载对比基准快照[/bold]")
+        _rule("[bold]Step 1 / 加载对比基准快照[/bold]")
         yesterday_stars = baseline_stars
         if has_baseline:
-            console.print(
+            _say(
                 f"  基准快照日期: {baseline_date}  |  记录数: {len(yesterday_stars):,}"
             )
         else:
-            console.print("  基准快照: 无（冷启动）")
+            _say("  基准快照: 无（冷启动）")
 
         # ── Step 2: 抓取今天数据 ──────────────────────────────────
         if use_cold_start:
-            console.rule("[bold]Step 2 / 冷启动：全量扫描 stars>=1000[/bold]")
+            _rule("[bold]Step 2 / 冷启动：全量扫描 stars>=1000[/bold]")
             today_all = fetch_all_repos_above_1k()
             today_above = today_all
             today_candidates: dict = {}
         else:
-            console.rule("[bold]Step 2 / 日常模式：边界区快速扫描[/bold]")
+            _rule("[bold]Step 2 / 日常模式：边界区快速扫描[/bold]")
             today_above, today_candidates = fetch_boundary_repos()
 
+        _say(
+            f"  抓取结果: above={len(today_above):,}  candidates={len(today_candidates):,}"
+        )
+
         if not today_above:
-            console.print(
+            _say(
                 "[red]❌ 未抓取到任何今日仓库数据（可能 API 异常），终止。[/red]"
             )
             return 1
 
         # ── Step 3: 差分，找突破项目 ──────────────────────────────
-        console.rule("[bold]Step 3 / 差分计算突破项目[/bold]")
+        _rule("[bold]Step 3 / 差分计算突破项目[/bold]")
         milestones = find_milestone_repos(today_above, yesterday_stars, today)
-        console.print(
+        _say(
             f"[bold green]🎯 发现 {len(milestones)} 个项目在此期间突破 1000 Star[/bold green]"
         )
 
         # ── Step 4: 保存今天快照 ──────────────────────────────────
         if not args.skip_save:
-            console.rule("[bold]Step 4 / 保存今天快照[/bold]")
+            _rule("[bold]Step 4 / 保存今天快照[/bold]")
             all_repos = {**today_above, **today_candidates}
             save_snapshot(today, all_repos)
 
         # ── Step 5: 生成报告 ──────────────────────────────────────
-        console.rule("[bold]Step 5 / 生成 Markdown 报告[/bold]")
+        _rule("[bold]Step 5 / 生成 Markdown 报告[/bold]")
         report_top_n = settings.report_top_n
         # 报告中的"昨天"使用实际的基准快照日期
         baseline_for_report = baseline_date or yesterday
@@ -272,29 +283,32 @@ def main() -> int:
             milestones, today, baseline_for_report, top_n=report_top_n
         )
         report_path = save_report(content, today)
-        console.print(f"[green]📄 报告已生成: {report_path}[/green]")
+        _say(f"[green]📄 报告已生成: {report_path}[/green]")
 
         # ── Step 6: 推送通知（可选）──────────────────────────────
         if args.notify:
-            console.rule("[bold]Step 6 / 推送企业微信[/bold]")
+            _rule("[bold]Step 6 / 推送企业微信[/bold]")
             send_wecom(milestones, today)
 
-        # ── Step 7: 清理旧快照 ────────────────────────────────────
-        console.rule("[bold]Step 7 / 清理旧快照[/bold]")
+        # ── Step 7: 清理旧快照 & 旧日志 ──────────────────────────
+        _rule("[bold]Step 7 / 清理旧快照 & 旧日志[/bold]")
         cleanup_old_snapshots(keep_days=settings.snapshot_keep_days)
+        removed_logs = cleanup_old_logs()
+        if removed_logs:
+            _say(f"  清理了 {removed_logs} 个过期日志")
 
         # ── Step 8: 终端展示 ──────────────────────────────────────
-        console.rule("[bold]结果预览[/bold]")
+        _rule("[bold]结果预览[/bold]")
         _print_table(milestones, top_n=args.top)
 
         mode_str = "冷启动（全量）" if use_cold_start else "日常（边界区快速扫描）"
         if not use_cold_start and baseline_date and baseline_date != yesterday:
             mode_str += f" · 基准快照 {baseline_date}（非昨天）"
-        console.rule(f"[bold green]✅ 完成 · 模式: {mode_str}[/bold green]")
+        _rule(f"[bold green]✅ 完成 · 模式: {mode_str}[/bold green]")
         return 0
 
     except KeyboardInterrupt:
-        console.print("\n[yellow]⚠️  用户中断[/yellow]")
+        _say("\n[yellow]⚠️  用户中断[/yellow]")
         return 130
     except Exception as exc:
         logger.exception("运行失败: %s", exc)
