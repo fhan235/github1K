@@ -1,5 +1,5 @@
 .env
-data/
+.env.local
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -8,4 +8,10 @@ build/
 .venv/
 venv/
 .idea/
+.vscode/
 .DS_Store
+
+# 中间产物（临时调试用），但允许提交 data/snapshot_*.json 和 reports/*.md
+data/*.tmp
+data/*.bak
+reports/*.tmp

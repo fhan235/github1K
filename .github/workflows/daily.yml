@@ -2,9 +2,15 @@ name: "🚀 Daily 1K Milestone Tracker"
 
 on:
   schedule:
-    # UTC 01:00 = BJT 09:00，每天运行一次
+    # UTC 01:00 = BJT 09:00（GitHub Actions 实际执行可能延迟 5-30 分钟）
     - cron: "0 1 * * *"
-  workflow_dispatch:  # 支持手动触发
+  workflow_dispatch:
+    inputs:
+      cold_start:
+        description: "全量冷启动（30-60 分钟，仅首次使用）"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write  # 允许 git push 快照和报告回仓库
@@ -12,7 +18,8 @@ permissions:
 jobs:
   track-1k:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # 日常模式 <10 分钟；冷启动最多 90 分钟
+    timeout-minutes: ${{ inputs.cold_start && 90 || 25 }}
 
     steps:
       - uses: actions/checkout@v4
@@ -29,14 +36,22 @@ jobs:
         env:
           G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
           G1K_WECOM_WEBHOOK_URL: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
-        run: python -m src.main --notify
+        run: |
+          if [ "${{ inputs.cold_start }}" = "true" ]; then
+            python -m src.main --cold-start --notify
+          else
+            python -m src.main --notify
+          fi
 
       - name: Upload report as artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: "1k-report-${{ github.run_id }}"
-          path: "reports/*.md"
+          path: |
+            reports/*.md
+            data/snapshot_*.json
+            data/snapshot_*.json.gz
           retention-days: 30
 
       - name: Commit data & report back to repo
@@ -44,7 +59,25 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f reports/*.md
-          git add -f data/snapshot_*.json
-          git diff --cached --quiet || git commit -m "data: 🚀 $(date -u +%Y-%m-%d) 1K 突破记录 + 快照"
-          git push
+          git add reports/*.md data/snapshot_*.json data/snapshot_*.json.gz 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "没有新的变更需要提交"
+          else
+            git commit -m "data: 🚀 $(date -u +%Y-%m-%d) 1K 突破记录 + 快照"
+            # 推送时重试一次（避免他人并发 push 导致的 non-fast-forward）
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          WEBHOOK: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
+        run: |
+          if [ -z "$WEBHOOK" ]; then
+            echo "未配置 WECOM webhook，跳过告警"
+            exit 0
+          fi
+          curl -sS -X POST "$WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d "{\"msgtype\":\"markdown\",\"markdown\":{\"content\":\"## ⚠️ github1K CI 运行失败\n\n- 时间: $(date -u +%Y-%m-%dT%H:%M:%SZ)\n- 运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}}"

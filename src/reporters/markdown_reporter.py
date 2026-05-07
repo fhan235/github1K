@@ -15,7 +15,25 @@ def _stars_bar(n: int, max_n: int, width: int = 10) -> str:
         filled = 0
     else:
         filled = round(n / max_n * width)
+    filled = max(0, min(width, filled))
     return "█" * filled + "░" * (width - filled)
+
+
+def _format_medal(idx: int) -> str:
+    return {1: "🥇", 2: "🥈", 3: "🥉"}.get(idx, f"#{idx}")
+
+
+def _format_gained(n: int) -> str:
+    return f"+{n:,}" if n > 0 else f"{n:,}"
+
+
+def _tag(repo: Milestone1KRepo) -> str:
+    """生成状态标签（新项目 / 昨日未追踪）。"""
+    if repo.is_recently_created:
+        return "  🆕 *新项目*"
+    if repo.unknown_yesterday:
+        return "  ❓ *昨日未追踪*"
+    return ""
 
 
 def generate_report(
@@ -51,7 +69,11 @@ def generate_report(
     )
     lines.append(
         f"> 共发现 **{len(repos)}** 个项目在此期间突破 1000 Star"
-        + (f"，展示 Top {top_n}" if top_n > 0 and top_n < len(repos) else "，全部展示")
+        + (
+            f"，展示 Top {top_n}"
+            if top_n > 0 and top_n < len(repos)
+            else "，全部展示"
+        )
     )
     lines.append("")
     lines.append("---")
@@ -59,37 +81,31 @@ def generate_report(
 
     # ── 各仓库条目 ────────────────────────────────────────────────
     for idx, repo in enumerate(display, start=1):
-        medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(idx, f"#{idx}")
+        medal = _format_medal(idx)
 
-        # 标题行
-        lines.append(
-            f"### {medal} [{repo.full_name}]({repo.url})"
-        )
+        lines.append(f"### {medal} [{repo.full_name}]({repo.url})")
 
-        # 统计行
-        gained_str = f"+{repo.stars_gained:,}" if repo.stars_gained > 0 else str(repo.stars_gained)
+        gained_str = _format_gained(repo.stars_gained)
         lang_str = f"  `{repo.language}`" if repo.language else ""
-        new_flag = "  🆕 *首次出现*" if repo.is_new_to_snapshot else ""
+        yday_display = (
+            f"{repo.stars_yesterday:,}" if not repo.unknown_yesterday else "—"
+        )
         lines.append(
             f"⭐ **{repo.stars_today:,}** 星  "
-            f"（昨天 {repo.stars_yesterday:,}，增量 **{gained_str}**）"
-            f"{lang_str}{new_flag}"
+            f"（昨天 {yday_display}，增量 **{gained_str}**）"
+            f"{lang_str}{_tag(repo)}"
         )
 
-        # 进度条
         bar = _stars_bar(repo.stars_today, max_stars)
         lines.append(f"`{bar}` {repo.stars_today:,} stars")
 
-        # 描述
         if repo.description:
             lines.append(f"> {repo.description}")
 
-        # Topics
         if repo.topics:
             topic_badges = " ".join(f"`{t}`" for t in repo.topics[:8])
             lines.append(f"🏷️ {topic_badges}")
 
-        # Fork & 创建时间
         meta_parts: list[str] = []
         if repo.forks:
             meta_parts.append(f"🍴 {repo.forks:,} forks")
@@ -117,11 +133,11 @@ def generate_report(
         lines.append(f"| {lang} | {cnt} |")
     lines.append("")
 
-    # ── 页脚 ──────────────────────────────────────────────────────
     lines.append("---")
     lines.append("")
     lines.append(
-        f"*由 [github1K](https://github.com/fhan235/github1K) 自动生成 · {run_date.isoformat()}*"
+        f"*由 [github1K](https://github.com/fhan235/github1K) "
+        f"自动生成 · {run_date.isoformat()}*"
     )
 
     return "\n".join(lines)

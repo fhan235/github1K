@@ -25,46 +25,20 @@
 
 【Step B — 候选区扫描】 stars:{LOWER_BOUND}..999
   覆盖"离 1000 还差一点"的仓库，为明天做准备。
-  LOWER_BOUND 默认 800（离 1000 差 200 以上的项目一天内冲过去的概率极低）。
+  LOWER_BOUND 默认 500（离 1000 差 500 以上的项目一天内冲过去的概率极低）。
   扫完后存入今天快照中，明天就能与之对比。
 
 合并 A + B 的结果作为今日快照保存。
 
 =======================================================================
-首次冷启动（无昨日快照）
-=======================================================================
-首次运行时昨日快照不存在。此时 Step A 扫到的项目全都会被标记为
-"is_new_to_snapshot"（无法区分昨天就有 1000 还是今天才达到），
-这是预期行为——**第二天开始**差分结果就准确了。
-
-用户可以选择 --cold-start 执行一次更大范围的全量扫描来建立更完整
-的基线快照（但这次跑得慢，之后每天就快了）。
-
-=======================================================================
-速度估算
-=======================================================================
-- Step A  stars:1000..50000  约 5000-8000 个仓库
-  语言切分后每个切片通常 <1000 条，大部分语言 1 次请求就够
-  估计 50-100 次请求 → 2-4 分钟
-
-- Step B  stars:800..999     约 1000-3000 个仓库
-  大部分语言 1 次请求就够
-  估计 30-60 次请求 → 1-2 分钟
-
-合计：**3-6 分钟**（相比旧方案 30-60 分钟，提速 10 倍）
-
-=======================================================================
 Step C — 爆款补漏（stars > UPPER_BOUND）
 =======================================================================
-问题：一个项目（如 OpenClaw）一天从 0 暴涨到 6 万 Star，
-超出突破区上限 50000，Step A 抓不到。
-
-解决：全 GitHub stars > 50000 的仓库只有 ~200-300 个，
-3 次 API 请求即可全部拿完。扫一遍看哪些不在昨天快照里，
-不在的就是爆款新项目。代价：约 5 秒，几乎免费。
+问题：一个项目一天从 0 暴涨到 6 万 Star，超出突破区上限，Step A 抓不到。
+解决：全 GitHub stars > 50000 的仓库只有 ~200-300 个，翻几页即可。
 """
 from __future__ import annotations
 
+import logging
 import time
 from datetime import date, timedelta
 from typing import Any
@@ -76,24 +50,21 @@ from src.config import settings
 from src.crawlers.languages import LANGUAGES
 
 console = Console()
+logger = logging.getLogger(__name__)
 
 _BASE_URL = "https://api.github.com"
 _SEARCH_ENDPOINT = "/search/repositories"
 
-# ── 核心参数 ──────────────────────────────────────────────────────────
+# ── 核心参数（非配置项，属于 API 协议硬性约束）────────────────────────
 _EARLIEST_DATE = date(2008, 1, 1)    # GitHub 创立年，全量扫描时的起始日期
 _PER_PAGE = 100                       # Search API 每页最大条数
+_MAX_PAGES_PER_QUERY = 10             # Search API 单查询最多返回 1000 条 = 10 页
 _MAX_RECURSION_DEPTH = 64             # 二分递归深度安全上限
-_REQUEST_INTERVAL = 1.2               # 秒，30次/分钟的礼貌间隔
-
-# ── 边界区参数 ────────────────────────────────────────────────────────
-_ABOVE_UPPER = 50000      # 突破区上限：一天涨 5 万 star 已属极端
-_CANDIDATE_LOWER = 800    # 候选区下限：离 1000 差 200+，一天冲过去概率极低
-
 
 # ══════════════════════════════════════════════════════════════════════
 # HTTP 工具
 # ══════════════════════════════════════════════════════════════════════
+
 
 def _build_headers() -> dict[str, str]:
     headers = {
@@ -122,9 +93,13 @@ def _parse_repo(item: dict[str, Any]) -> dict[str, Any]:
 
 
 def _wait_for_rate_limit(response: httpx.Response) -> None:
-    remaining = int(response.headers.get("x-ratelimit-remaining", "999"))
-    reset_ts = int(response.headers.get("x-ratelimit-reset", "0"))
-    if remaining <= 3 and reset_ts:
+    """根据响应头的 x-ratelimit-* 动态等待，避免被 429/403 拦截。"""
+    try:
+        remaining = int(response.headers.get("x-ratelimit-remaining", "999"))
+        reset_ts = int(response.headers.get("x-ratelimit-reset", "0"))
+    except (TypeError, ValueError):
+        return
+    if remaining <= 2 and reset_ts:
         wait = max(reset_ts - int(time.time()), 0) + 5
         console.print(
             f"[yellow]⏳ 速率限制剩余 {remaining}，等待 {wait}s ...[/yellow]"
@@ -132,12 +107,21 @@ def _wait_for_rate_limit(response: httpx.Response) -> None:
         time.sleep(wait)
 
 
+class SearchAPIError(Exception):
+    """GitHub Search API 不可恢复错误（多次重试后仍失败）。"""
+
+
 def _search_once(
     client: httpx.Client,
     query: str,
     page: int = 1,
+    stats: dict[str, int] | None = None,
 ) -> tuple[int, list[dict[str, Any]]]:
-    """执行一次 Search API 请求，返回 (total_count, items)。"""
+    """执行一次 Search API 请求，自带指数退避重试。
+
+    失败超过 ``settings.http_max_retries`` 次后抛 ``SearchAPIError``，
+    由调用方决定继续还是中止。
+    """
     params = {
         "q": query,
         "sort": "stars",
@@ -145,33 +129,110 @@ def _search_once(
         "per_page": _PER_PAGE,
         "page": page,
     }
-    time.sleep(_REQUEST_INTERVAL)
+    max_retries = settings.http_max_retries
+    last_exc: Exception | None = None
 
-    try:
-        resp = client.get(_SEARCH_ENDPOINT, params=params)
-    except httpx.RequestError as exc:
-        console.print(f"[red]网络错误: {exc}[/red]")
-        return 0, []
+    for attempt in range(max_retries + 1):
+        time.sleep(settings.request_interval)
+        try:
+            resp = client.get(_SEARCH_ENDPOINT, params=params)
+        except httpx.RequestError as exc:
+            last_exc = exc
+            backoff = min(2 ** attempt, 30)
+            console.print(
+                f"[yellow]⚠️  网络错误（第 {attempt + 1}/{max_retries + 1} 次）: "
+                f"{exc}，{backoff}s 后重试[/yellow]"
+            )
+            time.sleep(backoff)
+            continue
 
-    _wait_for_rate_limit(resp)
+        _wait_for_rate_limit(resp)
 
-    if resp.status_code == 403:
-        retry_after = int(resp.headers.get("retry-after", "60"))
-        console.print(f"[yellow]⚠️  403 次级限速，等待 {retry_after}s ...[/yellow]")
-        time.sleep(retry_after + 3)
-        resp = client.get(_SEARCH_ENDPOINT, params=params)
+        if resp.status_code == 403:
+            # 次级限速，按 Retry-After 等待后重试
+            retry_after = int(resp.headers.get("retry-after", "60"))
+            console.print(
+                f"[yellow]⚠️  403 次级限速，等待 {retry_after}s ...[/yellow]"
+            )
+            time.sleep(retry_after + 3)
+            continue
 
-    if resp.status_code != 200:
-        console.print(f"[red]HTTP {resp.status_code}: {resp.text[:200]}[/red]")
-        return 0, []
+        if resp.status_code == 422:
+            # 非法查询（通常是语法错误），无需重试
+            console.print(
+                f"[red]HTTP 422 无效查询: {query[:80]} → {resp.text[:200]}[/red]"
+            )
+            if stats is not None:
+                stats["errors"] = stats.get("errors", 0) + 1
+            return 0, []
 
-    data = resp.json()
-    return data.get("total_count", 0), data.get("items", [])
+        if resp.status_code in (500, 502, 503, 504):
+            backoff = min(2 ** attempt, 30)
+            console.print(
+                f"[yellow]⚠️  HTTP {resp.status_code}（第 {attempt + 1} 次），"
+                f"{backoff}s 后重试[/yellow]"
+            )
+            time.sleep(backoff)
+            continue
+
+        if resp.status_code != 200:
+            console.print(
+                f"[red]HTTP {resp.status_code}: {resp.text[:200]}[/red]"
+            )
+            if stats is not None:
+                stats["errors"] = stats.get("errors", 0) + 1
+            return 0, []
+
+        try:
+            data = resp.json()
+        except ValueError as exc:
+            last_exc = exc
+            console.print("[yellow]⚠️  响应 JSON 解析失败，重试[/yellow]")
+            continue
+
+        return data.get("total_count", 0), data.get("items", [])
+
+    # 所有重试均失败
+    if stats is not None:
+        stats["errors"] = stats.get("errors", 0) + 1
+    raise SearchAPIError(
+        f"Search API 请求失败超过 {max_retries} 次: query={query[:80]} "
+        f"last_error={last_exc}"
+    )
 
 
 # ══════════════════════════════════════════════════════════════════════
-# 自适应递归二分（保留，供 language 切分后仍超 1000 条时使用）
+# 自适应递归二分
 # ══════════════════════════════════════════════════════════════════════
+
+
+def _paginate(
+    client: httpx.Client,
+    query: str,
+    first_items: list[dict[str, Any]],
+    total: int,
+    results: dict[str, dict[str, Any]],
+    stats: dict[str, int],
+) -> None:
+    """已知 total<=1000 时，收集第一页后继续翻页到结束。"""
+    for item in first_items:
+        repo = _parse_repo(item)
+        results[repo["full_name"]] = repo
+
+    total_pages = min((total + _PER_PAGE - 1) // _PER_PAGE, _MAX_PAGES_PER_QUERY)
+    for page in range(2, total_pages + 1):
+        try:
+            _, items = _search_once(client, query, page=page, stats=stats)
+        except SearchAPIError as exc:
+            console.print(f"[red]翻页失败（忽略该页，继续）: {exc}[/red]")
+            break
+        stats["requests"] = stats.get("requests", 0) + 1
+        for item in items:
+            repo = _parse_repo(item)
+            results[repo["full_name"]] = repo
+        if len(items) < _PER_PAGE:
+            break
+
 
 def _fetch_slice(
     client: httpx.Client,
@@ -189,27 +250,18 @@ def _fetch_slice(
     date_range = f"{start.isoformat()}..{end.isoformat()}"
     query = f"{query_base} created:{date_range}"
 
-    total, first_items = _search_once(client, query, page=1)
+    try:
+        total, first_items = _search_once(client, query, page=1, stats=stats)
+    except SearchAPIError as exc:
+        console.print(f"[red]切片抓取失败，跳过: {exc}[/red]")
+        return
     stats["requests"] = stats.get("requests", 0) + 1
 
     if total == 0:
         return
 
     if total <= 1000:
-        # 能拿完，收集所有页
-        for item in first_items:
-            repo = _parse_repo(item)
-            results[repo["full_name"]] = repo
-
-        total_pages = min((total + _PER_PAGE - 1) // _PER_PAGE, 10)
-        for page in range(2, total_pages + 1):
-            _, items = _search_once(client, query, page=page)
-            stats["requests"] = stats.get("requests", 0) + 1
-            for item in items:
-                repo = _parse_repo(item)
-                results[repo["full_name"]] = repo
-            if len(items) < _PER_PAGE:
-                break
+        _paginate(client, query, first_items, total, results, stats)
         return
 
     # total > 1000 → 二分
@@ -218,17 +270,8 @@ def _fetch_slice(
             f"[yellow]⚠️  {date_range} 仍有 {total} 条，"
             f"已达最小粒度，仅抓前 1000 条[/yellow]"
         )
-        for item in first_items:
-            repo = _parse_repo(item)
-            results[repo["full_name"]] = repo
-        for page in range(2, 11):
-            _, items = _search_once(client, query, page=page)
-            stats["requests"] = stats.get("requests", 0) + 1
-            for item in items:
-                repo = _parse_repo(item)
-                results[repo["full_name"]] = repo
-            if len(items) < _PER_PAGE:
-                break
+        stats["truncated"] = stats.get("truncated", 0) + 1
+        _paginate(client, query, first_items, 1000, results, stats)
         return
 
     mid = start + timedelta(days=(end - start).days // 2)
@@ -252,30 +295,26 @@ def _fetch_range_all_languages(
 ) -> None:
     """
     在给定的 star 范围内，按语言切分 + 日期自适应二分，拉取全部仓库。
-
-    Parameters
-    ----------
-    star_range : str
-        例如 "stars:1000..50000" 或 "stars:800..999"
-    label : str
-        用于日志显示
     """
     today = date.today()
-    # 语言列表 + 无语言
     all_langs: list[str | None] = [*LANGUAGES, None]
 
     for lang in all_langs:
         if lang is None:
             lang_label = "(no language)"
-            lang_clause = ""  # 不加 language 限定，后面单独处理
+            lang_clause = ""
         else:
             lang_label = lang
             lang_clause = f" language:{lang}"
 
         query_base = f"{star_range}{lang_clause}"
 
-        # 先探一下总数，如果为 0 直接跳过（节省日志噪音）
-        probe_total, _ = _search_once(client, query_base, page=1)
+        # 探一下总数
+        try:
+            probe_total, _ = _search_once(client, query_base, page=1, stats=stats)
+        except SearchAPIError as exc:
+            console.print(f"[red]探测失败（跳过语言 {lang_label}）: {exc}[/red]")
+            continue
         stats["requests"] = stats.get("requests", 0) + 1
 
         if probe_total == 0:
@@ -284,28 +323,22 @@ def _fetch_range_all_languages(
         before = len(results)
         slice_stats: dict[str, int] = {"requests": 0}
 
-        if probe_total <= 1000:
-            # 不需要日期切分，直接翻页拿完
-            # 但第一页已经在 probe 时拿了，这里重新走 _fetch_slice 简化逻辑
-            _fetch_slice(
-                client, query_base,
-                start=_EARLIEST_DATE, end=today,
-                results=results, stats=slice_stats,
-            )
-        else:
-            # 需要日期切分
+        if probe_total > 1000:
             console.print(
                 f"  [cyan]{lang_label}[/cyan] {label}"
                 f" total={probe_total:,} > 1000，启用日期二分"
             )
-            _fetch_slice(
-                client, query_base,
-                start=_EARLIEST_DATE, end=today,
-                results=results, stats=slice_stats,
-            )
+        _fetch_slice(
+            client, query_base,
+            start=_EARLIEST_DATE, end=today,
+            results=results, stats=slice_stats,
+        )
 
         added = len(results) - before
         stats["requests"] += slice_stats.get("requests", 0)
+        stats["truncated"] = (
+            stats.get("truncated", 0) + slice_stats.get("truncated", 0)
+        )
         if added > 0:
             console.print(
                 f"  [green]{lang_label}[/green] +{added}  "
@@ -318,6 +351,7 @@ def _fetch_range_all_languages(
 # 公开接口
 # ══════════════════════════════════════════════════════════════════════
 
+
 def _fetch_viral_repos(
     client: httpx.Client,
     stats: dict[str, int],
@@ -325,27 +359,41 @@ def _fetch_viral_repos(
     """
     爆款补漏：抓取 stars > UPPER_BOUND 的全部仓库。
 
-    全 GitHub stars > 50000 的仓库只有约 200-300 个，
-    不需要语言切分或日期二分，直接翻页即可拿完（最多 3 页）。
+    用翻页直到 ``total_count`` 耗尽（而不是写死页数），
+    这样即使将来超高星仓库数量增长到 >1000 也能正确处理
+    （若真超过 1000 则启用语言切分兜底，当前不会触发）。
     """
     results: dict[str, dict[str, Any]] = {}
-    query = f"stars:>{_ABOVE_UPPER}"
+    upper = settings.above_upper
+    query = f"stars:>{upper}"
 
-    console.rule(f"[bold blue]Step C / 爆款补漏 stars:>{_ABOVE_UPPER}[/bold blue]")
+    console.rule(f"[bold blue]Step C / 爆款补漏 stars:>{upper}[/bold blue]")
 
-    for page in range(1, 11):  # 最多 10 页（1000条），实际 ~3 页就够了
-        total, items = _search_once(client, query, page=page)
-        stats["requests"] = stats.get("requests", 0) + 1
+    try:
+        total, first_items = _search_once(client, query, page=1, stats=stats)
+    except SearchAPIError as exc:
+        console.print(f"[red]爆款补漏失败: {exc}[/red]")
+        return results
+    stats["requests"] = stats.get("requests", 0) + 1
 
-        if not items:
-            break
+    if total == 0:
+        return results
 
-        for item in items:
-            repo = _parse_repo(item)
-            results[repo["full_name"]] = repo
-
-        if len(items) < _PER_PAGE:
-            break
+    if total <= 1000:
+        _paginate(client, query, first_items, total, results, stats)
+    else:
+        # 极罕见：超高星仓库超过 1000 个
+        # 退化为按语言切分扫描
+        console.print(
+            f"[yellow]⚠️  stars:>{upper} 总数 {total:,} > 1000，启用语言切分[/yellow]"
+        )
+        _fetch_range_all_languages(
+            client,
+            star_range=query,
+            label="爆款区",
+            results=results,
+            stats=stats,
+        )
 
     console.print(
         f"[green]  爆款补漏完成：{len(results):,} 个超高星仓库[/green]"
@@ -366,14 +414,23 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
     above: dict[str, dict[str, Any]] = {}
     candidates: dict[str, dict[str, Any]] = {}
     headers = _build_headers()
-    stats: dict[str, int] = {"requests": 0}
+    stats: dict[str, int] = {"requests": 0, "errors": 0, "truncated": 0}
 
-    with httpx.Client(base_url=_BASE_URL, headers=headers, timeout=30) as client:
-        # ── Step A: 突破区 stars:1000..50000 ──────────────────────
-        console.rule(f"[bold blue]Step A / 突破区 stars:1000..{_ABOVE_UPPER}[/bold blue]")
+    upper = settings.above_upper
+    lower = settings.candidate_lower
+
+    with httpx.Client(
+        base_url=_BASE_URL,
+        headers=headers,
+        timeout=settings.http_timeout,
+    ) as client:
+        # ── Step A: 突破区 stars:1000..upper ─────────────────────
+        console.rule(
+            f"[bold blue]Step A / 突破区 stars:1000..{upper}[/bold blue]"
+        )
         _fetch_range_all_languages(
             client,
-            star_range=f"stars:1000..{_ABOVE_UPPER}",
+            star_range=f"stars:1000..{upper}",
             label="突破区",
             results=above,
             stats=stats,
@@ -382,13 +439,13 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
             f"[green]  突破区完成：{len(above):,} 个仓库[/green]"
         )
 
-        # ── Step B: 候选区 stars:800..999 ─────────────────────────
+        # ── Step B: 候选区 stars:lower..999 ──────────────────────
         console.rule(
-            f"[bold blue]Step B / 候选区 stars:{_CANDIDATE_LOWER}..999[/bold blue]"
+            f"[bold blue]Step B / 候选区 stars:{lower}..999[/bold blue]"
         )
         _fetch_range_all_languages(
             client,
-            star_range=f"stars:{_CANDIDATE_LOWER}..999",
+            star_range=f"stars:{lower}..999",
             label="候选区",
             results=candidates,
             stats=stats,
@@ -397,19 +454,11 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
             f"[green]  候选区完成：{len(candidates):,} 个仓库[/green]"
         )
 
-        # ── Step C: 爆款补漏 stars:>50000 ─────────────────────────
-        # 全 GitHub 只有 ~200-300 个，3 次请求即可拿完，约 5 秒
-        # 覆盖 OpenClaw 这类一夜暴涨到超高星的现象级项目
+        # ── Step C: 爆款补漏 stars:>upper ────────────────────────
         viral = _fetch_viral_repos(client, stats)
-        above.update(viral)  # 合并到突破区，一起参与差分
+        above.update(viral)
 
-    console.print(
-        f"\n[bold green]✅ 边界区扫描完毕："
-        f"突破区 {len(above):,}（含爆款补漏）"
-        f" + 候选区 {len(candidates):,} = "
-        f"{len(above) + len(candidates):,} 个仓库，"
-        f"共 {stats['requests']} 次 API 请求[/bold green]"
-    )
+    _print_stats_summary(stats, above, candidates)
     return above, candidates
 
 
@@ -419,14 +468,23 @@ def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
 
     使用语言 × 日期自适应二分，完整覆盖所有 stars>=1000 的仓库。
     速度较慢（30-60 分钟），但建立的快照最完整。
+
+    注意：会额外合并 ``_fetch_viral_repos()`` 的结果以确保超高星仓库
+    不因日期二分在极端情况下被截断。
     """
     results: dict[str, dict[str, Any]] = {}
     headers = _build_headers()
-    stats: dict[str, int] = {"requests": 0}
+    stats: dict[str, int] = {"requests": 0, "errors": 0, "truncated": 0}
 
-    console.rule("[bold red]全量扫描 stars:>=1000（冷启动模式，耗时较长）[/bold red]")
+    console.rule(
+        "[bold red]全量扫描 stars:>=1000（冷启动模式，耗时较长）[/bold red]"
+    )
 
-    with httpx.Client(base_url=_BASE_URL, headers=headers, timeout=30) as client:
+    with httpx.Client(
+        base_url=_BASE_URL,
+        headers=headers,
+        timeout=settings.http_timeout,
+    ) as client:
         _fetch_range_all_languages(
             client,
             star_range="stars:>=1000",
@@ -435,8 +493,35 @@ def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
             stats=stats,
         )
 
-    console.print(
-        f"\n[bold green]✅ 全量扫描完毕：{len(results):,} 个仓库，"
-        f"共 {stats['requests']} 次 API 请求[/bold green]"
-    )
+        # 爆款补漏：确保超高星项目不被日期二分截断丢失
+        viral = _fetch_viral_repos(client, stats)
+        before = len(results)
+        results.update(viral)
+        added = len(results) - before
+        if added > 0:
+            console.print(
+                f"[green]  爆款补漏新增 {added} 个超高星仓库[/green]"
+            )
+
+    _print_stats_summary(stats, results, {})
     return results
+
+
+def _print_stats_summary(
+    stats: dict[str, int],
+    above: dict[str, Any],
+    candidates: dict[str, Any],
+) -> None:
+    """统一的统计信息输出。"""
+    errors = stats.get("errors", 0)
+    truncated = stats.get("truncated", 0)
+    err_str = f"，错误 {errors}" if errors else ""
+    trunc_str = f"，截断 {truncated}" if truncated else ""
+    total = len(above) + len(candidates)
+    console.print(
+        f"\n[bold green]✅ 扫描完毕："
+        f"{len(above):,}"
+        + (f" + {len(candidates):,}" if candidates else "")
+        + f" = {total:,} 个仓库，"
+        f"共 {stats['requests']} 次 API 请求{err_str}{trunc_str}[/bold green]"
+    )
