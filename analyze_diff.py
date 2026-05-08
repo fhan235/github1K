@@ -58,7 +58,7 @@ print()
 # ── 4. 核心诊断：看看 2627 个伪新增里有多少"stars > 5000"的 ──
 fake_high = [r for r in only_in_newer if newer[r] > 5000]
 print(f"伪新增中 star > 5000 的数量: {len(fake_high)}")
-print(f"这些项目理论上早在 4/26 前就已 >= 1000，属于漏抓")
+print("这些项目理论上早在 4/26 前就已 >= 1000，属于漏抓")
 print()
 
 # ── 5. 检查一个典型漏抓项目在两个快照中的情况 ──

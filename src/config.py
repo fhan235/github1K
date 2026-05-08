@@ -54,6 +54,9 @@ class Settings(BaseSettings):
     """报告展示前 N 条（0 = 全部展示）"""
 
     # ── 爬虫参数（可通过环境变量覆盖，方便调试）──────────────────
+    created_since: str = ""
+    """仅扫描此日期之后创建的仓库（YYYY-MM-DD，留空表示不限制）。"""
+
     request_interval: float = 2.0
     """单 token 下的 API 请求间隔（秒）。30次/分钟的 Search API 限额 → 2.0s 精确节流。
 
@@ -66,9 +69,6 @@ class Settings(BaseSettings):
 
     candidate_lower: int = 500
     """候选区下界。距离 1000 差值大于此阈值的仓库不追踪"""
-
-    viral_max_pages: int = 10
-    """爆款补漏区最大翻页数"""
 
     http_max_retries: int = 3
     """HTTP 请求失败时的最大重试次数"""

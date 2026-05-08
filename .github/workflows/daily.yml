@@ -11,6 +11,11 @@ on:
         type: boolean
         required: false
         default: false
+      created_since:
+        description: "仅扫描此日期之后创建的仓库（YYYY-MM-DD，留空使用仓库变量 G1K_CREATED_SINCE）"
+        type: string
+        required: false
+        default: ""
 
 permissions:
   contents: write  # 允许 git push 快照和报告回仓库
@@ -36,6 +41,7 @@ jobs:
         env:
           G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
           G1K_WECOM_WEBHOOK_URL: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
+          G1K_CREATED_SINCE:     ${{ inputs.created_since || vars.G1K_CREATED_SINCE }}
         run: |
           if [ "${{ inputs.cold_start }}" = "true" ]; then
             python -m src.main --cold-start --notify

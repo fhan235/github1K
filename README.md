@@ -43,6 +43,9 @@ python -m src.main --cold-start
 # 4. 之后每天运行（快速模式，3-6 分钟）
 python -m src.main
 
+# 5. 找创建时间在2020-01-01后的项目
+python -m src.main --created-since 2020-01-01
+
 # 带企业微信通知
 python -m src.main --notify
 
@@ -62,6 +65,7 @@ python -m src.main -v
 | `G1K_GITHUB_TOKEN` | GitHub PAT（强烈推荐，认证后 30次/分钟） | `""` |
 | `G1K_WECOM_WEBHOOK_URL` | 企业微信 Webhook（留空则不推送） | `""` |
 | `G1K_REPORT_TOP_N` | 报告展示前 N 条（0 = 全部） | `0` |
+| `G1K_CREATED_SINCE` | 仅扫描此日期之后创建的仓库，例如 `2020-01-01` 表示 `created:>2020-01-01` | `""` |
 | `G1K_REQUEST_INTERVAL` | API 请求间隔秒数（30/min 配 2.0s） | `2.0` |
 | `G1K_ABOVE_UPPER` | 突破区上界 Star 数 | `50000` |
 | `G1K_CANDIDATE_LOWER` | 候选区下界 Star 数 | `500` |
@@ -83,6 +87,7 @@ python -m src.main -v
 
 - `reports/milestone-1k-YYYY-MM-DD.md` — Markdown 格式的每日报告
 - `data/snapshot_YYYY-MM-DD.json` — 每日 Star 快照（保留 30 天，紧凑 JSON）
+- 使用 `--created-since YYYY-MM-DD` 时，报告、快照和日志文件名会追加 `_created-since-YYYY-MM-DD` 后缀，避免不同扫描范围混用。
 
 ## 测试
 

@@ -5,6 +5,7 @@ from datetime import date
 from pathlib import Path
 
 from src.models import Milestone1KRepo
+from src.storage.snapshot_store import build_created_since_suffix
 
 _REPORTS_DIR = Path(__file__).parent.parent.parent / "reports"
 
@@ -41,6 +42,7 @@ def generate_report(
     run_date: date,
     yesterday: date,
     top_n: int = 0,
+    created_since: date | None = None,
 ) -> str:
     """
     生成 Markdown 报告字符串。
@@ -67,6 +69,10 @@ def generate_report(
     lines.append(
         f"> 统计区间：{yesterday.isoformat()} → {run_date.isoformat()}  "
     )
+    if created_since is not None:
+        lines.append(
+            f"> 创建时间过滤：仅包含 **{created_since.isoformat()}** 之后创建的仓库  "
+        )
     lines.append(
         f"> 共发现 **{len(repos)}** 个项目在此期间突破 1000 Star"
         + (
@@ -143,9 +149,10 @@ def generate_report(
     return "\n".join(lines)
 
 
-def save_report(content: str, run_date: date) -> Path:
-    """将报告写入 reports/milestone-1k-YYYY-MM-DD.md 并返回路径。"""
+def save_report(content: str, run_date: date, created_since: date | None = None) -> Path:
+    """将报告写入 reports/milestone-1k-YYYY-MM-DD*.md 并返回路径。"""
     _REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    path = _REPORTS_DIR / f"milestone-1k-{run_date.isoformat()}.md"
+    suffix = build_created_since_suffix(created_since)
+    path = _REPORTS_DIR / f"milestone-1k-{run_date.isoformat()}{suffix}.md"
     path.write_text(content, encoding="utf-8")
     return path

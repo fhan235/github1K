@@ -8,7 +8,9 @@ from pathlib import Path
 
 import pytest
 
-from src.storage import snapshot_store as ss
+import src.storage.snapshot_store as ss
+from src.crawlers.github_api import _build_language_clause
+from src.crawlers.languages import LANGUAGE_NONE_SENTINEL
 
 
 @pytest.fixture
@@ -81,3 +83,57 @@ def test_cleanup_handles_malformed_filename(tmp_data_dir: Path):
 def test_load_missing_returns_empty(tmp_data_dir: Path):
     loaded = ss.load_snapshot(date(2020, 1, 1))
     assert loaded.repos == {}
+
+
+def test_save_and_load_created_since_snapshot(tmp_data_dir: Path):
+    d = date(2026, 5, 9)
+    created_since = date(2020, 1, 1)
+
+    path = ss.save_snapshot(d, {"a/b": _repo(1234)}, created_since=created_since)
+
+    assert path.name == "snapshot_2026-05-09_created-since-2020-01-01.json"
+    assert ss.load_snapshot(d, created_since=created_since).repos == {"a/b": 1234}
+    assert ss.load_snapshot(d).repos == {}
+
+
+def test_load_latest_uses_same_created_since_range(tmp_data_dir: Path):
+    ss.save_snapshot(date(2026, 5, 1), {"wide/repo": _repo(1000)}, date(2020, 1, 1))
+    ss.save_snapshot(date(2026, 5, 2), {"narrow/repo": _repo(1000)}, date(2022, 1, 1))
+
+    latest, stars = ss.load_latest_stars(
+        before=date(2026, 5, 9),
+        created_since=date(2020, 1, 1),
+    )
+
+    assert latest == date(2026, 5, 1)
+    assert stars == {"wide/repo": 1000}
+
+
+def test_load_latest_without_range_prefers_earliest_created_since(tmp_data_dir: Path):
+    ss.save_snapshot(date(2026, 5, 1), {"wide/repo": _repo(1000)}, date(2020, 1, 1))
+    ss.save_snapshot(date(2026, 5, 2), {"narrow/repo": _repo(1000)}, date(2022, 1, 1))
+
+    latest, stars = ss.load_latest_stars(before=date(2026, 5, 9))
+
+    assert latest == date(2026, 5, 1)
+    assert stars == {"wide/repo": 1000}
+
+
+def test_find_latest_snapshot_date_handles_created_since_suffix(tmp_data_dir: Path):
+    ss.save_snapshot(date(2026, 5, 7), {"old/repo": _repo(1000)}, date(2020, 1, 1))
+    ss.save_snapshot(date(2026, 5, 8), {"new/repo": _repo(1000)}, date(2020, 1, 1))
+
+    latest = ss.find_latest_snapshot_date(
+        before=date(2026, 5, 9),
+        created_since=date(2020, 1, 1),
+    )
+
+    assert latest == date(2026, 5, 8)
+
+
+def test_build_language_clause_handles_none_and_spaced_languages():
+    assert _build_language_clause(LANGUAGE_NONE_SENTINEL) == (" no:language", "(no language)")
+    assert _build_language_clause("Jupyter Notebook") == (
+        ' language:"Jupyter Notebook"',
+        "Jupyter Notebook",
+    )

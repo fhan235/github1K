@@ -30,9 +30,18 @@ _SUFFIX_GZ = ".json.gz"
 _SUFFIX_PLAIN = ".json"
 
 
-def _candidate_paths(d: date) -> list[Path]:
+def build_created_since_suffix(created_since: date | None = None) -> str:
+    """生成用于快照/报告/日志文件名的创建日期范围后缀。"""
+    return f"_created-since-{created_since.isoformat()}" if created_since else ""
+
+
+def _snapshot_stem(d: date, created_since: date | None = None) -> str:
+    return f"snapshot_{d.isoformat()}{build_created_since_suffix(created_since)}"
+
+
+def _candidate_paths(d: date, created_since: date | None = None) -> list[Path]:
     """按优先级返回两种可能的快照路径。"""
-    stem = f"snapshot_{d.isoformat()}"
+    stem = _snapshot_stem(d, created_since)
     return [_DATA_DIR / (stem + _SUFFIX_GZ), _DATA_DIR / (stem + _SUFFIX_PLAIN)]
 
 
@@ -60,9 +69,9 @@ def _write_snapshot_file(path: Path, payload: dict[str, Any]) -> None:
             )
 
 
-def load_snapshot(d: date) -> DailySnapshot:
+def load_snapshot(d: date, created_since: date | None = None) -> DailySnapshot:
     """加载某天的快照，找不到则返回空快照。"""
-    for path in _candidate_paths(d):
+    for path in _candidate_paths(d, created_since):
         if not path.exists():
             continue
         try:
@@ -72,11 +81,11 @@ def load_snapshot(d: date) -> DailySnapshot:
             console.print(f"[yellow]⚠️  读取快照 {path.name} 失败: {exc}[/yellow]")
             return DailySnapshot(date=d.isoformat())
 
-    console.print(f"[dim]快照文件不存在: snapshot_{d.isoformat()}.*[/dim]")
+    console.print(f"[dim]快照文件不存在: {_snapshot_stem(d, created_since)}.*[/dim]")
     return DailySnapshot(date=d.isoformat())
 
 
-def save_snapshot(d: date, repos: dict[str, Any]) -> Path:
+def save_snapshot(d: date, repos: dict[str, Any], created_since: date | None = None) -> Path:
     """
     保存当天快照。
 
@@ -95,7 +104,7 @@ def save_snapshot(d: date, repos: dict[str, Any]) -> Path:
     _DATA_DIR.mkdir(parents=True, exist_ok=True)
     # 固定使用 .json 后缀（避免 Git 二进制 diff 困扰）。
     # 如需要 gzip 压缩可以手动切换后缀为 .json.gz。
-    path = _DATA_DIR / f"snapshot_{d.isoformat()}{_SUFFIX_PLAIN}"
+    path = _DATA_DIR / f"{_snapshot_stem(d, created_since)}{_SUFFIX_PLAIN}"
 
     snapshot = DailySnapshot(
         date=d.isoformat(),
@@ -124,38 +133,85 @@ def get_yesterday_stars() -> dict[str, int]:
     return load_snapshot(yesterday).repos
 
 
-def _iter_snapshot_dates() -> list[date]:
-    """扫描 data/ 目录，返回所有已存在快照的日期（升序）。"""
+def _parse_snapshot_name(path: Path) -> tuple[date, date | None] | None:
+    """从快照文件名解析运行日期和 created_since 范围。"""
+    stem = path.name
+    for suffix in (_SUFFIX_GZ, _SUFFIX_PLAIN):
+        if stem.endswith(suffix):
+            stem = stem[: -len(suffix)]
+            break
+
+    if not stem.startswith("snapshot_"):
+        return None
+
+    rest = stem.removeprefix("snapshot_")
+    date_part, sep, created_part = rest.partition("_created-since-")
+    try:
+        snapshot_date = date.fromisoformat(date_part)
+        created_since = date.fromisoformat(created_part) if sep else None
+    except ValueError:
+        return None
+    return snapshot_date, created_since
+
+
+def _iter_snapshot_entries() -> list[tuple[date, date | None]]:
+    """扫描 data/ 目录，返回所有已存在快照的日期和创建日期范围。"""
     if not _DATA_DIR.exists():
         return []
-    dates: set[date] = set()
+    entries: set[tuple[date, date | None]] = set()
     for pattern in ("snapshot_*.json", "snapshot_*.json.gz"):
         for path in _DATA_DIR.glob(pattern):
-            stem = path.name
-            for suffix in (_SUFFIX_GZ, _SUFFIX_PLAIN):
-                if stem.endswith(suffix):
-                    stem = stem[: -len(suffix)]
-                    break
-            date_part = stem.removeprefix("snapshot_")
-            try:
-                dates.add(date.fromisoformat(date_part))
-            except ValueError:
-                continue
-    return sorted(dates)
+            parsed = _parse_snapshot_name(path)
+            if parsed is not None:
+                entries.add(parsed)
+    return sorted(entries, key=lambda item: (item[0], item[1] or date.min))
 
 
-def find_latest_snapshot_date(before: date | None = None) -> date | None:
+def _iter_snapshot_dates() -> list[date]:
+    """扫描 data/ 目录，返回所有已存在快照的日期（升序）。"""
+    return sorted({snapshot_date for snapshot_date, _ in _iter_snapshot_entries()})
+
+
+def _choose_default_created_since(before: date) -> date | None:
+    """未指定范围时，选择历史快照中覆盖最广的 created_since。"""
+    candidates = [
+        created_since
+        for snapshot_date, created_since in _iter_snapshot_entries()
+        if snapshot_date < before
+    ]
+    if not candidates:
+        return None
+    if None in candidates:
+        return None
+    return min(candidates)
+
+
+def find_latest_snapshot_date(
+    before: date | None = None,
+    created_since: date | None = None,
+) -> date | None:
     """找到早于 ``before`` 的最近一次快照日期（不含 before 当天）。
 
-    ``before`` 默认为今天。若 data/ 中无任何历史快照则返回 ``None``。
+    ``created_since`` 为 ``None`` 时，自动使用历史快照中覆盖最广的范围；
+    例如同时存在 2020-01-01 和 2022-01-01 两组快照时，默认选择 2020-01-01。
     """
     cutoff = before or date.today()
-    candidates = [d for d in _iter_snapshot_dates() if d < cutoff]
+    effective_created_since = (
+        _choose_default_created_since(cutoff)
+        if created_since is None
+        else created_since
+    )
+    candidates = [
+        d
+        for d, entry_created_since in _iter_snapshot_entries()
+        if d < cutoff and entry_created_since == effective_created_since
+    ]
     return candidates[-1] if candidates else None
 
 
 def load_latest_stars(
     before: date | None = None,
+    created_since: date | None = None,
 ) -> tuple[date | None, dict[str, int]]:
     """加载最近一次历史快照的 ``{full_name: star_count}``。
 
@@ -164,10 +220,16 @@ def load_latest_stars(
     (snapshot_date, stars)
         若无任何历史快照，返回 ``(None, {})``。
     """
-    latest = find_latest_snapshot_date(before)
+    cutoff = before or date.today()
+    effective_created_since = (
+        _choose_default_created_since(cutoff)
+        if created_since is None
+        else created_since
+    )
+    latest = find_latest_snapshot_date(cutoff, effective_created_since)
     if latest is None:
         return None, {}
-    return latest, load_snapshot(latest).repos
+    return latest, load_snapshot(latest, effective_created_since).repos
 
 
 def cleanup_old_snapshots(keep_days: int = 30) -> None:
@@ -178,17 +240,10 @@ def cleanup_old_snapshots(keep_days: int = 30) -> None:
     deleted = 0
     for pattern in ("snapshot_*.json", "snapshot_*.json.gz"):
         for path in _DATA_DIR.glob(pattern):
-            # 从文件名提取日期
-            stem = path.name
-            for suffix in (_SUFFIX_GZ, _SUFFIX_PLAIN):
-                if stem.endswith(suffix):
-                    stem = stem[: -len(suffix)]
-                    break
-            date_part = stem.removeprefix("snapshot_")
-            try:
-                file_date = date.fromisoformat(date_part)
-            except ValueError:
+            parsed = _parse_snapshot_name(path)
+            if parsed is None:
                 continue
+            file_date, _ = parsed
             if file_date < cutoff:
                 path.unlink()
                 deleted += 1

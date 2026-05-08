@@ -106,6 +106,7 @@ G1K_WECOM_WEBHOOK_URL=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=your-
 
 - 快照文件应位于 `data/` 目录下
 - 文件名格式应为 `snapshot_YYYY-MM-DD.json` 或 `snapshot_YYYY-MM-DD.json.gz`
+- 使用创建时间过滤时，也支持 `snapshot_YYYY-MM-DD_created-since-YYYY-MM-DD.json` 或 `.json.gz`
 
 ## 示例输出
 

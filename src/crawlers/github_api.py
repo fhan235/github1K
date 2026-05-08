@@ -47,7 +47,7 @@ import httpx
 from rich.console import Console
 
 from src.config import settings
-from src.crawlers.languages import LANGUAGES
+from src.crawlers.languages import LANGUAGE_NONE_SENTINEL, LANGUAGES
 
 console = Console()
 logger = logging.getLogger(__name__)
@@ -60,6 +60,21 @@ _EARLIEST_DATE = date(2008, 1, 1)    # GitHub 创立年，全量扫描时的起�
 _PER_PAGE = 100                       # Search API 每页最大条数
 _MAX_PAGES_PER_QUERY = 10             # Search API 单查询最多返回 1000 条 = 10 页
 _MAX_RECURSION_DEPTH = 64             # 二分递归深度安全上限
+
+
+def _resolve_created_since(created_since: date | None) -> date:
+    """返回本次扫描的 created 起始日期。"""
+    if created_since is None:
+        return _EARLIEST_DATE
+    return created_since + timedelta(days=1)
+
+
+def _build_language_clause(lang: str) -> tuple[str, str]:
+    """返回 GitHub Search 语言过滤子句和展示标签。"""
+    if lang == LANGUAGE_NONE_SENTINEL:
+        return " no:language", "(no language)"
+    escaped = lang.replace('"', '\\"')
+    return f' language:"{escaped}"', lang
 
 # ══════════════════════════════════════════════════════════════════════
 # HTTP 工具
@@ -379,27 +394,26 @@ def _fetch_range_all_languages(
     label: str,
     results: dict[str, dict[str, Any]],
     stats: dict[str, int],
+    created_since: date | None = None,
 ) -> None:
     """
     在给定的 star 范围内，按语言切分 + 日期自适应二分，拉取全部仓库。
     """
     today = date.today()
-    all_langs: list[str | None] = [*LANGUAGES, None]
+    start_date = _resolve_created_since(created_since)
+    created_filter = f" created:{start_date.isoformat()}..{today.isoformat()}"
+    all_langs = [*LANGUAGES, LANGUAGE_NONE_SENTINEL]
 
     for lang in all_langs:
-        if lang is None:
-            lang_label = "(no language)"
-            lang_clause = ""
-        else:
-            lang_label = lang
-            lang_clause = f" language:{lang}"
+        lang_clause, lang_label = _build_language_clause(lang)
 
         query_base = f"{star_range}{lang_clause}"
+        probe_query = f"{query_base}{created_filter}"
 
         # 探一下总数
         try:
             probe_total, probe_items = _search_once(
-                client, pool, query_base, page=1, stats=stats
+                client, pool, probe_query, page=1, stats=stats
             )
         except SearchAPIError as exc:
             console.print(f"[red]探测失败（跳过语言 {lang_label}）: {exc}[/red]")
@@ -415,7 +429,7 @@ def _fetch_range_all_languages(
         if probe_total <= 1000:
             # 方案 1：probe 已覆盖全量，直接翻页即可，不再进 _fetch_slice
             _paginate(
-                client, pool, query_base, probe_items, probe_total,
+                client, pool, probe_query, probe_items, probe_total,
                 results, slice_stats,
             )
         else:
@@ -428,8 +442,9 @@ def _fetch_range_all_languages(
             # 为保守起见让 _fetch_slice 重做一次 probe，不复用 probe_items
             _fetch_slice(
                 client, pool, query_base,
-                start=_EARLIEST_DATE, end=today,
+                start=start_date, end=today,
                 results=results, stats=slice_stats,
+                preloaded=(probe_total, probe_items),
             )
 
         added = len(results) - before
@@ -454,6 +469,7 @@ def _fetch_viral_repos(
     client: httpx.Client,
     pool: TokenPool,
     stats: dict[str, int],
+    created_since: date | None = None,
 ) -> dict[str, dict[str, Any]]:
     """
     爆款补漏：抓取 stars > UPPER_BOUND 的全部仓库。
@@ -464,7 +480,11 @@ def _fetch_viral_repos(
     """
     results: dict[str, dict[str, Any]] = {}
     upper = settings.above_upper
-    query = f"stars:>{upper}"
+    base_query = f"stars:>{upper}"
+    query = base_query
+    start_date = _resolve_created_since(created_since)
+    if created_since is not None:
+        query = f"{base_query} created:{start_date.isoformat()}..{date.today().isoformat()}"
 
     console.rule(f"[bold blue]Step C / 爆款补漏 stars:>{upper}[/bold blue]")
 
@@ -489,10 +509,11 @@ def _fetch_viral_repos(
         _fetch_range_all_languages(
             client,
             pool,
-            star_range=query,
+            star_range=base_query,
             label="爆款区",
             results=results,
             stats=stats,
+            created_since=created_since,
         )
 
     console.print(
@@ -501,7 +522,9 @@ def _fetch_viral_repos(
     return results
 
 
-def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
+def fetch_boundary_repos(
+    created_since: date | None = None,
+) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
     """
     边界区快速扫描（日常模式）。
 
@@ -540,6 +563,7 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
             label="突破区",
             results=above,
             stats=stats,
+            created_since=created_since,
         )
         console.print(
             f"[green]  突破区完成：{len(above):,} 个仓库[/green]"
@@ -555,19 +579,22 @@ def fetch_boundary_repos() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
             label="候选区",
             results=candidates,
             stats=stats,
+            created_since=created_since,
         )
         console.print(
             f"[green]  候选区完成：{len(candidates):,} 个仓库[/green]"
         )
 
         # ── Step C: 爆款补漏 stars:>upper ────────────────────────
-        viral = _fetch_viral_repos(client, pool, stats)
+        viral = _fetch_viral_repos(client, pool, stats, created_since=created_since)
         above.update(viral)
 
     _print_stats_summary(stats, above, candidates)
     return above, candidates
 
-def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
+def fetch_all_repos_above_1k(
+    created_since: date | None = None,
+) -> dict[str, dict[str, Any]]:
     """
     全量扫描 stars>=1000（冷启动模式，仅首次或 --cold-start 时使用）。
 
@@ -602,10 +629,11 @@ def fetch_all_repos_above_1k() -> dict[str, dict[str, Any]]:
             label="全量",
             results=results,
             stats=stats,
+            created_since=created_since,
         )
 
         # 爆款补漏：确保超高星项目不被日期二分截断丢失
-        viral = _fetch_viral_repos(client, pool, stats)
+        viral = _fetch_viral_repos(client, pool, stats, created_since=created_since)
         before = len(results)
         results.update(viral)
         added = len(results) - before

@@ -45,6 +45,28 @@ console = Console()
 logger = logging.getLogger("github1k")
 
 
+def _parse_iso_date(value: str, option_name: str) -> date:
+    """解析 YYYY-MM-DD 格式日期。"""
+    try:
+        return date.fromisoformat(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(
+            f"{option_name} 必须是 YYYY-MM-DD 格式，例如 2020-01-01"
+        ) from exc
+
+
+def _resolve_created_since(cli_value: str | None) -> date | None:
+    """解析命令行或环境变量中的 created_since。"""
+    raw = cli_value if cli_value is not None else settings.created_since
+    raw = raw.strip() if raw else ""
+    if not raw:
+        return None
+    created_since = _parse_iso_date(raw, "--created-since/G1K_CREATED_SINCE")
+    if created_since > date.today():
+        raise argparse.ArgumentTypeError("--created-since 不能晚于今天")
+    return created_since
+
+
 def _rule(title: str) -> None:
     """Rich 分隔线 + 同步写入日志文件。"""
     console.rule(title)
@@ -168,8 +190,9 @@ def _print_table(repos: list[Milestone1KRepo], top_n: int = 30) -> None:
     console.print(table)
 
 
-def _setup_logging(verbose: bool) -> None:
-    log_path = setup_logging(console, verbose=verbose)
+def _setup_logging(verbose: bool, created_since: date | None = None) -> None:
+    suffix = f"_created-since-{created_since.isoformat()}" if created_since else ""
+    log_path = setup_logging(console, verbose=verbose, filename_suffix=suffix)
     logger.info("日志文件: %s", log_path)
 
 
@@ -192,11 +215,24 @@ def main() -> int:
         "--skip-save", action="store_true", help="跳过保存快照（调试用）"
     )
     parser.add_argument(
+        "--created-since",
+        metavar="YYYY-MM-DD",
+        help=(
+            "仅扫描此日期之后创建的仓库；例如 2020-01-01 会让本次任务只考虑 "
+            "created:>2020-01-01 的项目"
+        ),
+    )
+    parser.add_argument(
         "-v", "--verbose", action="store_true", help="DEBUG 级别日志"
     )
     args = parser.parse_args()
 
-    _setup_logging(args.verbose)
+    try:
+        created_since = _resolve_created_since(args.created_since)
+    except argparse.ArgumentTypeError as exc:
+        parser.error(str(exc))
+
+    _setup_logging(args.verbose, created_since=created_since)
 
     today = date.today()
     yesterday = today - timedelta(days=1)
@@ -204,7 +240,10 @@ def main() -> int:
     _rule("[bold cyan]github1K — 1000 Star 突破追踪器[/bold cyan]")
 
     # ── 加载最近一次历史快照（优先昨天，缺失则回退到更早） ──────
-    baseline_date, baseline_stars = load_latest_stars(before=today)
+    baseline_date, baseline_stars = load_latest_stars(
+        before=today,
+        created_since=created_since,
+    )
     has_baseline = baseline_date is not None
     use_cold_start = args.cold_start or not has_baseline
 
@@ -229,6 +268,17 @@ def main() -> int:
                 "建立基线快照。之后每天运行会自动切换为快速模式（3-6 分钟）。[/yellow]"
             )
     console.print()
+    if created_since is not None:
+        _say(
+            f"🧭 创建时间过滤: 仅扫描 created:>{created_since.isoformat()}"
+        )
+        _say(
+            "   快照、报告和日志文件名会携带 "
+            f"created-since-{created_since.isoformat()}，避免不同范围混用。"
+        )
+    else:
+        _say("🧭 创建时间过滤: 不限制（兼容全量历史快照）")
+    console.print()
 
     try:
         # ── Step 1: 加载对比基准快照 ──────────────────────────────
@@ -244,12 +294,14 @@ def main() -> int:
         # ── Step 2: 抓取今天数据 ──────────────────────────────────
         if use_cold_start:
             _rule("[bold]Step 2 / 冷启动：全量扫描 stars>=1000[/bold]")
-            today_all = fetch_all_repos_above_1k()
+            today_all = fetch_all_repos_above_1k(created_since=created_since)
             today_above = today_all
             today_candidates: dict = {}
         else:
             _rule("[bold]Step 2 / 日常模式：边界区快速扫描[/bold]")
-            today_above, today_candidates = fetch_boundary_repos()
+            today_above, today_candidates = fetch_boundary_repos(
+                created_since=created_since,
+            )
 
         _say(
             f"  抓取结果: above={len(today_above):,}  candidates={len(today_candidates):,}"
@@ -272,7 +324,7 @@ def main() -> int:
         if not args.skip_save:
             _rule("[bold]Step 4 / 保存今天快照[/bold]")
             all_repos = {**today_above, **today_candidates}
-            save_snapshot(today, all_repos)
+            save_snapshot(today, all_repos, created_since=created_since)
 
         # ── Step 5: 生成报告 ──────────────────────────────────────
         _rule("[bold]Step 5 / 生成 Markdown 报告[/bold]")
@@ -280,9 +332,13 @@ def main() -> int:
         # 报告中的"昨天"使用实际的基准快照日期
         baseline_for_report = baseline_date or yesterday
         content = generate_report(
-            milestones, today, baseline_for_report, top_n=report_top_n
+            milestones,
+            today,
+            baseline_for_report,
+            top_n=report_top_n,
+            created_since=created_since,
         )
-        report_path = save_report(content, today)
+        report_path = save_report(content, today, created_since=created_since)
         _say(f"[green]📄 报告已生成: {report_path}[/green]")
 
         # ── Step 6: 推送通知（可选）──────────────────────────────
@@ -302,6 +358,8 @@ def main() -> int:
         _print_table(milestones, top_n=args.top)
 
         mode_str = "冷启动（全量）" if use_cold_start else "日常（边界区快速扫描）"
+        if created_since is not None:
+            mode_str += f" · created>{created_since.isoformat()}"
         if not use_cold_start and baseline_date and baseline_date != yesterday:
             mode_str += f" · 基准快照 {baseline_date}（非昨天）"
         _rule(f"[bold green]✅ 完成 · 模式: {mode_str}[/bold green]")

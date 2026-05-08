@@ -16,7 +16,6 @@ import logging
 import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Optional
 
 from rich.console import Console
 from rich.logging import RichHandler
@@ -43,10 +42,14 @@ class _DropHttpNoiseFilter(logging.Filter):
 
 
 # 供主程序复用的文件 logger（把 Console 输出也同步到日志文件）
-_console_file_logger: Optional[logging.Logger] = None
+_console_file_logger: logging.Logger | None = None
 
 
-def setup_logging(console: Console, verbose: bool = False) -> Path:
+def setup_logging(
+    console: Console,
+    verbose: bool = False,
+    filename_suffix: str = "",
+) -> Path:
     """配置 root logger，返回当天日志文件路径。
 
     Parameters
@@ -55,6 +58,8 @@ def setup_logging(console: Console, verbose: bool = False) -> Path:
         Rich Console 实例，用于控制台彩色输出。
     verbose :
         ``True`` → DEBUG 级别；否则 INFO 级别。
+    filename_suffix :
+        附加到日志文件名中的标识，例如 ``_created-since-2020-01-01``。
     """
     global _console_file_logger
 
@@ -62,7 +67,7 @@ def setup_logging(console: Console, verbose: bool = False) -> Path:
 
     log_dir = Path(settings.log_dir)
     log_dir.mkdir(parents=True, exist_ok=True)
-    log_path = log_dir / f"run-{date.today():%Y-%m-%d}.log"
+    log_path = log_dir / f"run-{date.today():%Y-%m-%d}{filename_suffix}.log"
 
     # ── Rich 控制台 handler ──
     rich_handler = RichHandler(
@@ -150,9 +155,10 @@ def cleanup_old_logs(keep_days: int | None = None) -> int:
     cutoff = date.today() - timedelta(days=days)
     removed = 0
     for path in log_dir.glob("run-*.log"):
-        stem = path.stem  # run-YYYY-MM-DD
+        stem = path.stem  # run-YYYY-MM-DD[_created-since-YYYY-MM-DD]
+        date_part = stem[4:].split("_", 1)[0]
         try:
-            d = datetime.strptime(stem[4:], "%Y-%m-%d").date()
+            d = datetime.strptime(date_part, "%Y-%m-%d").date()
         except ValueError:
             continue
         if d < cutoff:
