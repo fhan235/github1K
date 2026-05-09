@@ -67,7 +67,7 @@ python -m src.main -v
 | `G1K_REPORT_TOP_N` | 报告展示前 N 条（0 = 全部） | `0` |
 | `G1K_SUMMARY_TOP_N` | 摘要报告和企业微信展示前 N 条 | `20` |
 | `G1K_REPORT_PUBLIC_BASE_URL` | 完整报告公开访问基础地址，例如腾讯云 COS 域名 | `""` |
-| `G1K_CREATED_SINCE` | 仅扫描此日期之后创建的仓库，例如 `2020-01-01` 表示 `created:>2020-01-01` | `""` |
+| `G1K_CREATED_SINCE` | 仅扫描此日期之后创建的仓库，例如 `2020-01-01` 表示 `created:>2020-01-01` | `2020-01-01` |
 | `G1K_REQUEST_INTERVAL` | API 请求间隔秒数（30/min 配 2.0s） | `2.0` |
 | `G1K_ABOVE_UPPER` | 突破区上界 Star 数 | `50000` |
 | `G1K_CANDIDATE_LOWER` | 候选区下界 Star 数 | `500` |

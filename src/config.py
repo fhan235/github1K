@@ -60,8 +60,8 @@ class Settings(BaseSettings):
     """完整报告公开访问基础地址，例如腾讯云 COS 自定义域名或默认访问域名。"""
 
     # ── 爬虫参数（可通过环境变量覆盖，方便调试）──────────────────
-    created_since: str = ""
-    """仅扫描此日期之后创建的仓库（YYYY-MM-DD，留空表示不限制）。"""
+    created_since: str = "2020-01-01"
+    """仅扫描此日期之后创建的仓库（YYYY-MM-DD，默认 2020-01-01）。"""
 
     request_interval: float = 2.0
     """单 token 下的 API 请求间隔（秒）。30次/分钟的 Search API 限额 → 2.0s 精确节流。

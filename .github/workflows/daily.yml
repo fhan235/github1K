@@ -12,10 +12,10 @@ on:
         required: false
         default: false
       created_since:
-        description: "仅扫描此日期之后创建的仓库（YYYY-MM-DD，留空使用仓库变量 G1K_CREATED_SINCE）"
+        description: "仅扫描此日期之后创建的仓库（YYYY-MM-DD，留空使用 2020-01-01）"
         type: string
         required: false
-        default: ""
+        default: "2020-01-01"
 
 permissions:
   contents: write  # 允许 git push 快照和报告回仓库
@@ -41,7 +41,7 @@ jobs:
         env:
           G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
           G1K_WECOM_WEBHOOK_URL: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
-          G1K_CREATED_SINCE:     ${{ inputs.created_since || vars.G1K_CREATED_SINCE }}
+          G1K_CREATED_SINCE:     ${{ inputs.created_since || vars.G1K_CREATED_SINCE || '2020-01-01' }}
           G1K_REPORT_PUBLIC_BASE_URL: ${{ vars.G1K_REPORT_PUBLIC_BASE_URL }}
         run: |
           if [ "${{ inputs.cold_start }}" = "true" ]; then
