@@ -25,11 +25,26 @@ def _repo(stars: int) -> dict:
 
 def test_save_and_load_plain_json(tmp_data_dir: Path):
     d = date(2026, 1, 15)
-    ss.save_snapshot(d, {"a/b": _repo(1234), "c/d": _repo(2000)})
+    path = ss.save_snapshot(d, {"a/b": _repo(1234), "c/d": _repo(2000)})
 
+    assert path.name == "snapshot_2026-01-15.json.gz"
     loaded = ss.load_snapshot(d)
     assert loaded.date == "2026-01-15"
     assert loaded.repos == {"a/b": 1234, "c/d": 2000}
+
+
+def test_load_plain_json_snapshot(tmp_data_dir: Path):
+    d = date(2026, 1, 16)
+    payload = {
+        "date": d.isoformat(),
+        "repos": {"plain/repo": 888},
+        "collected_at": "2026-01-16T00:00:00",
+    }
+    json_path = tmp_data_dir / f"snapshot_{d.isoformat()}.json"
+    json_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    loaded = ss.load_snapshot(d)
+    assert loaded.repos == {"plain/repo": 888}
 
 
 def test_load_gz_snapshot(tmp_data_dir: Path):
@@ -91,7 +106,7 @@ def test_save_and_load_created_since_snapshot(tmp_data_dir: Path):
 
     path = ss.save_snapshot(d, {"a/b": _repo(1234)}, created_since=created_since)
 
-    assert path.name == "snapshot_2026-05-09_created-since-2020-01-01.json"
+    assert path.name == "snapshot_2026-05-09_created-since-2020-01-01.json.gz"
     assert ss.load_snapshot(d, created_since=created_since).repos == {"a/b": 1234}
     assert ss.load_snapshot(d).repos == {}
 

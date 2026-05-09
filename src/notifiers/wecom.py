@@ -15,13 +15,18 @@ _MAX_BYTES = 4096  # WeCom Markdown 单条消息上限
 
 
 def _build_markdown(
-    repos: list[Milestone1KRepo], run_date: date, top_n: int = 10
+    repos: list[Milestone1KRepo],
+    run_date: date,
+    top_n: int = 10,
+    full_report_url: str | None = None,
 ) -> str:
     display = repos[:top_n]
     lines = [
         f"## 🚀 GitHub 1K 突破榜 {run_date.isoformat()}",
         f"> 今日共 **{len(repos)}** 个项目突破 1000 Star，展示 Top {len(display)}\n",
     ]
+    if full_report_url:
+        lines.append(f"> [查看完整报告]({full_report_url})\n")
     for idx, repo in enumerate(display, start=1):
         medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(idx, f"#{idx}")
         gained = (
@@ -51,6 +56,7 @@ def send_wecom(
     repos: list[Milestone1KRepo],
     run_date: date,
     webhook_url: str | None = None,
+    full_report_url: str | None = None,
 ) -> bool:
     """推送到企业微信，超长自动缩减 top_n。
 
@@ -65,11 +71,11 @@ def send_wecom(
         console.print("[dim]WeCom Webhook 未配置，跳过推送[/dim]")
         return False
 
-    top_n = 10
-    content = _build_markdown(repos, run_date, top_n)
+    top_n = max(settings.summary_top_n, 3)
+    content = _build_markdown(repos, run_date, top_n, full_report_url)
     while top_n >= 3 and len(content.encode("utf-8")) > _MAX_BYTES:
         top_n -= 1
-        content = _build_markdown(repos, run_date, top_n)
+        content = _build_markdown(repos, run_date, top_n, full_report_url)
 
     payload = {"msgtype": "markdown", "markdown": {"content": content}}
     try:

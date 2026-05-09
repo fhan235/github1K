@@ -42,6 +42,7 @@ jobs:
           G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
           G1K_WECOM_WEBHOOK_URL: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
           G1K_CREATED_SINCE:     ${{ inputs.created_since || vars.G1K_CREATED_SINCE }}
+          G1K_REPORT_PUBLIC_BASE_URL: ${{ vars.G1K_REPORT_PUBLIC_BASE_URL }}
         run: |
           if [ "${{ inputs.cold_start }}" = "true" ]; then
             python -m src.main --cold-start --notify
@@ -49,27 +50,45 @@ jobs:
             python -m src.main --notify
           fi
 
-      - name: Upload report as artifact
+      - name: Upload full report as artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: "1k-report-${{ github.run_id }}"
           path: |
-            reports/*.md
+            reports/milestone-1k-*.md
+            reports/summary-1k-*.md
             data/snapshot_*.json
             data/snapshot_*.json.gz
           retention-days: 30
 
-      - name: Commit data & report back to repo
+      - name: Upload full report to Tencent COS
+        if: success()
+        env:
+          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+          TENCENT_COS_BUCKET: ${{ secrets.TENCENT_COS_BUCKET }}
+          TENCENT_COS_REGION: ${{ secrets.TENCENT_COS_REGION }}
+        run: |
+          if [ -z "$TENCENT_SECRET_ID" ] || [ -z "$TENCENT_SECRET_KEY" ] || [ -z "$TENCENT_COS_BUCKET" ] || [ -z "$TENCENT_COS_REGION" ]; then
+            echo "未配置腾讯云 COS Secrets，跳过对象存储上传"
+            exit 0
+          fi
+          pip install coscmd
+          coscmd config -a "$TENCENT_SECRET_ID" -s "$TENCENT_SECRET_KEY" -b "$TENCENT_COS_BUCKET" -r "$TENCENT_COS_REGION"
+          find reports -name 'milestone-1k-*.md' -print0 | xargs -0 -I{} coscmd upload -r "{}" "{}"
+          find data -name 'snapshot_*.json.gz' -print0 | xargs -0 -I{} coscmd upload -r "{}" "{}"
+
+      - name: Commit summary & compressed snapshot back to repo
         if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/*.md data/snapshot_*.json data/snapshot_*.json.gz 2>/dev/null || true
+          git add reports/summary-1k-*.md data/snapshot_*.json.gz 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "没有新的变更需要提交"
           else
-            git commit -m "data: 🚀 $(date -u +%Y-%m-%d) 1K 突破记录 + 快照"
+            git commit -m "data: 🚀 $(date -u +%Y-%m-%d) 1K 摘要 + 压缩快照"
             # 推送时重试一次（避免他人并发 push 导致的 non-fast-forward）
             git pull --rebase origin "${GITHUB_REF_NAME}" || true
             git push

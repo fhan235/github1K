@@ -149,10 +149,90 @@ def generate_report(
     return "\n".join(lines)
 
 
+def generate_summary_report(
+    repos: list[Milestone1KRepo],
+    run_date: date,
+    yesterday: date,
+    top_n: int = 20,
+    created_since: date | None = None,
+    full_report_url: str | None = None,
+) -> str:
+    """生成适合提交到仓库和推送通知的轻量摘要报告。"""
+    display = repos[:top_n] if top_n > 0 else repos
+    lines: list[str] = [
+        f"# 🚀 GitHub 1K 突破摘要 | {run_date.isoformat()}",
+        "",
+        f"> 统计区间：{yesterday.isoformat()} → {run_date.isoformat()}",
+    ]
+    if created_since is not None:
+        lines.append(
+            f"> 创建时间过滤：仅包含 **{created_since.isoformat()}** 之后创建的仓库"
+        )
+    lines.extend(
+        [
+            f"> 共发现 **{len(repos)}** 个项目突破 1000 Star，展示 Top {len(display)}",
+            "",
+        ]
+    )
+    if full_report_url:
+        lines.extend([f"> [查看完整报告]({full_report_url})", ""])
+
+    if display:
+        lines.extend(["## 🏆 Top 项目", ""])
+        lines.append("| # | 仓库 | Stars | 增量 | 语言 | 说明 |")
+        lines.append("|---|------|------:|-----:|------|------|")
+        for idx, repo in enumerate(display, start=1):
+            medal = _format_medal(idx)
+            lang = repo.language or "—"
+            desc = (repo.description or "").replace("\n", " ").replace("|", "\\|")
+            if len(desc) > 80:
+                desc = desc[:77] + "…"
+            flag = " 🆕" if repo.is_recently_created else " ❓" if repo.unknown_yesterday else ""
+            lines.append(
+                f"| {medal} | [{repo.full_name}]({repo.url}){flag} | "
+                f"{repo.stars_today:,} | {_format_gained(repo.stars_gained)} | "
+                f"{lang} | {desc} |"
+            )
+        lines.append("")
+    else:
+        lines.extend(["今天没有发现新的 1K 突破项目。", ""])
+
+    lang_count: dict[str, int] = {}
+    for repo in repos:
+        key = repo.language or "Unknown"
+        lang_count[key] = lang_count.get(key, 0) + 1
+    sorted_langs = sorted(lang_count.items(), key=lambda x: -x[1])[:10]
+    if sorted_langs:
+        lines.extend(["## 📊 语言分布", ""])
+        lines.append("| 语言 | 项目数 |")
+        lines.append("|------|-------:|")
+        for lang, cnt in sorted_langs:
+            lines.append(f"| {lang} | {cnt} |")
+        lines.append("")
+
+    lines.append(
+        f"*完整明细请查看 Actions Artifact 或对象存储归档 · {run_date.isoformat()}*"
+    )
+    return "\n".join(lines)
+
+
 def save_report(content: str, run_date: date, created_since: date | None = None) -> Path:
     """将报告写入 reports/milestone-1k-YYYY-MM-DD*.md 并返回路径。"""
     _REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     suffix = build_created_since_suffix(created_since)
     path = _REPORTS_DIR / f"milestone-1k-{run_date.isoformat()}{suffix}.md"
+    path.write_text(content, encoding="utf-8")
+    return path
+
+
+def save_summary_report(
+    content: str,
+    run_date: date,
+    created_since: date | None = None,
+) -> Path:
+    """将摘要报告写入 reports/summary-1k-YYYY-MM-DD*.md 并返回路径。"""
+    _REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    suffix = build_created_since_suffix(created_since)
+    path = _REPORTS_DIR / f"summary-1k-{run_date.isoformat()}{suffix}.md"
     path.write_text(content, encoding="utf-8")
     return path

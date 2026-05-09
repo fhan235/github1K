@@ -11,10 +11,16 @@ venv/
 .vscode/
 .DS_Store
 
-# 中间产物（临时调试用），但允许提交 data/snapshot_*.json 和 reports/*.md
+# 中间产物（临时调试用）
 data/*.tmp
 data/*.bak
 reports/*.tmp
+
+# 大体积产物：完整报告只上传 Artifact/COS，仓库只提交摘要报告和压缩快照
+reports/milestone-1k-*.md
+data/snapshot_*.json
+!reports/summary-1k-*.md
+!data/snapshot_*.json.gz
 
 # 运行日志（仅本地留存，不入库）
 logs/

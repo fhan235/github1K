@@ -102,9 +102,8 @@ def save_snapshot(d: date, repos: dict[str, Any], created_since: date | None = N
         写入的文件路径。
     """
     _DATA_DIR.mkdir(parents=True, exist_ok=True)
-    # 固定使用 .json 后缀（避免 Git 二进制 diff 困扰）。
-    # 如需要 gzip 压缩可以手动切换后缀为 .json.gz。
-    path = _DATA_DIR / f"{_snapshot_stem(d, created_since)}{_SUFFIX_PLAIN}"
+    # 默认使用 gzip 压缩快照，便于在仓库中保留差分基线且控制体积。
+    path = _DATA_DIR / f"{_snapshot_stem(d, created_since)}{_SUFFIX_GZ}"
 
     snapshot = DailySnapshot(
         date=d.isoformat(),

@@ -25,6 +25,7 @@ import argparse
 import logging
 import sys
 from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
 
 from rich.console import Console
 from rich.table import Table
@@ -34,7 +35,12 @@ from src.crawlers.github_api import fetch_all_repos_above_1k, fetch_boundary_rep
 from src.logging_setup import cleanup_old_logs, log_console_line, setup_logging
 from src.models import Milestone1KRepo
 from src.notifiers.wecom import send_wecom
-from src.reporters.markdown_reporter import generate_report, save_report
+from src.reporters.markdown_reporter import (
+    generate_report,
+    generate_summary_report,
+    save_report,
+    save_summary_report,
+)
 from src.storage.snapshot_store import (
     cleanup_old_snapshots,
     load_latest_stars,
@@ -77,6 +83,15 @@ def _say(text: str) -> None:
     """console.print + 同步写入日志文件。"""
     console.print(text)
     log_console_line(text)
+
+
+def _build_public_report_url(report_path: Path) -> str | None:
+    """根据公开基础地址生成完整报告访问链接。"""
+    base_url = settings.report_public_base_url.strip().rstrip("/")
+    if not base_url:
+        return None
+    return f"{base_url}/{report_path.parent.name}/{report_path.name}"
+
 
 _RECENT_REPO_DAYS = 30  # 创建于近 N 天内的视为"新项目"
 
@@ -339,12 +354,30 @@ def main() -> int:
             created_since=created_since,
         )
         report_path = save_report(content, today, created_since=created_since)
-        _say(f"[green]📄 报告已生成: {report_path}[/green]")
+        full_report_url = _build_public_report_url(report_path)
+        _say(f"[green]📄 完整报告已生成: {report_path}[/green]")
+        if full_report_url:
+            _say(f"[green]🔗 完整报告公开链接: {full_report_url}[/green]")
+
+        summary_content = generate_summary_report(
+            milestones,
+            today,
+            baseline_for_report,
+            top_n=settings.summary_top_n,
+            created_since=created_since,
+            full_report_url=full_report_url,
+        )
+        summary_path = save_summary_report(
+            summary_content,
+            today,
+            created_since=created_since,
+        )
+        _say(f"[green]📝 摘要报告已生成: {summary_path}[/green]")
 
         # ── Step 6: 推送通知（可选）──────────────────────────────
         if args.notify:
             _rule("[bold]Step 6 / 推送企业微信[/bold]")
-            send_wecom(milestones, today)
+            send_wecom(milestones, today, full_report_url=full_report_url)
 
         # ── Step 7: 清理旧快照 & 旧日志 ──────────────────────────
         _rule("[bold]Step 7 / 清理旧快照 & 旧日志[/bold]")

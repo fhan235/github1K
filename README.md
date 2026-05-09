@@ -65,6 +65,8 @@ python -m src.main -v
 | `G1K_GITHUB_TOKEN` | GitHub PAT（强烈推荐，认证后 30次/分钟） | `""` |
 | `G1K_WECOM_WEBHOOK_URL` | 企业微信 Webhook（留空则不推送） | `""` |
 | `G1K_REPORT_TOP_N` | 报告展示前 N 条（0 = 全部） | `0` |
+| `G1K_SUMMARY_TOP_N` | 摘要报告和企业微信展示前 N 条 | `20` |
+| `G1K_REPORT_PUBLIC_BASE_URL` | 完整报告公开访问基础地址，例如腾讯云 COS 域名 | `""` |
 | `G1K_CREATED_SINCE` | 仅扫描此日期之后创建的仓库，例如 `2020-01-01` 表示 `created:>2020-01-01` | `""` |
 | `G1K_REQUEST_INTERVAL` | API 请求间隔秒数（30/min 配 2.0s） | `2.0` |
 | `G1K_ABOVE_UPPER` | 突破区上界 Star 数 | `50000` |
@@ -75,19 +77,44 @@ python -m src.main -v
 
 ## 自动化
 
-通过 GitHub Actions 每天 **BJT 09:00** 左右自动运行（GitHub Actions 定时任务可能延迟 5-30 分钟），报告和快照自动提交回仓库；CI 失败时会通过企业微信告警。
+通过 GitHub Actions 每天 **BJT 09:00** 左右自动运行（GitHub Actions 定时任务可能延迟 5-30 分钟）。完整报告和快照会上传到 Actions Artifact；仓库只提交轻量摘要报告和压缩快照，避免 Git 历史被大文件撑大；CI 失败时会通过企业微信告警。
 
 需要在仓库 Settings → Secrets 中添加：
 - `G1K_GITHUB_TOKEN`
 - `G1K_WECOM_WEBHOOK_URL`（可选，但强烈推荐：用于失败告警和每日推送）
 
+可选：如果要上传完整报告到腾讯云 COS，需要继续添加：
+- `TENCENT_SECRET_ID`
+- `TENCENT_SECRET_KEY`
+- `TENCENT_COS_BUCKET`
+- `TENCENT_COS_REGION`
+
+需要在仓库 Settings → Secrets and variables → Actions → Variables 中添加：
+- `G1K_REPORT_PUBLIC_BASE_URL`：完整报告公开访问基础地址，例如 `https://your-bucket-1250000000.cos.ap-guangzhou.myqcloud.com`
+- `G1K_CREATED_SINCE`（可选）：默认创建时间过滤范围
+
 手动运行冷启动：仓库 Actions → Daily 1K Milestone Tracker → Run workflow → 勾选 "全量冷启动"。
 
 ## 输出
 
-- `reports/milestone-1k-YYYY-MM-DD.md` — Markdown 格式的每日报告
-- `data/snapshot_YYYY-MM-DD.json` — 每日 Star 快照（保留 30 天，紧凑 JSON）
+- `reports/milestone-1k-YYYY-MM-DD.md` — 完整 Markdown 报告，只上传 Actions Artifact / 腾讯云 COS，不提交仓库
+- `reports/summary-1k-YYYY-MM-DD.md` — 轻量摘要报告，会提交回仓库，也适合企业微信推送
+- `data/snapshot_YYYY-MM-DD.json.gz` — 每日 Star 压缩快照，会提交回仓库，用于下一天差分
 - 使用 `--created-since YYYY-MM-DD` 时，报告、快照和日志文件名会追加 `_created-since-YYYY-MM-DD` 后缀，避免不同扫描范围混用。
+
+## 腾讯云 COS 配置
+
+1. 登录腾讯云控制台，进入对象存储 COS，创建一个 Bucket，例如 `github1k-reports-1250000000`。
+2. 选择离你最近的地域，例如广州地域对应 `ap-guangzhou`。这个地域值就是 `TENCENT_COS_REGION`。
+3. 如果希望企业微信里的完整报告链接可直接打开，把 Bucket 访问权限设为公有读私有写，或绑定自定义 CDN/域名后开放读取。
+4. 进入访问管理 CAM，创建一个子用户或访问密钥，授予该 Bucket 的对象读写权限。不要使用主账号长期密钥。
+5. 在 GitHub 仓库 Settings → Secrets and variables → Actions → Secrets 中添加：
+   - `TENCENT_SECRET_ID`：腾讯云访问密钥 ID
+   - `TENCENT_SECRET_KEY`：腾讯云访问密钥 Key
+   - `TENCENT_COS_BUCKET`：Bucket 名，例如 `github1k-reports-1250000000`
+   - `TENCENT_COS_REGION`：地域，例如 `ap-guangzhou`
+6. 在 Variables 中添加 `G1K_REPORT_PUBLIC_BASE_URL`，通常是 Bucket 访问域名，例如 `https://github1k-reports-1250000000.cos.ap-guangzhou.myqcloud.com`。
+7. 之后 Actions 每次成功运行时，会把完整报告上传到 COS 的 `reports/` 目录，把压缩快照上传到 `data/` 目录；企业微信会推送摘要和完整报告链接。
 
 ## 测试
 

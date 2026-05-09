@@ -4,7 +4,7 @@ from __future__ import annotations
 from datetime import date
 
 from src.models import Milestone1KRepo
-from src.reporters.markdown_reporter import _stars_bar, generate_report
+from src.reporters.markdown_reporter import _stars_bar, generate_report, generate_summary_report
 
 
 def _repo(**kw) -> Milestone1KRepo:
@@ -73,3 +73,20 @@ def test_report_top_n_limits_display():
 def test_report_empty_repos():
     content = generate_report([], date(2026, 5, 1), date(2026, 4, 30))
     assert "共发现 **0**" in content
+
+
+def test_generate_summary_report_includes_full_report_url_and_limits_top_n():
+    repos = [_repo(full_name=f"o/r{i}", stars_today=2000 - i) for i in range(3)]
+    content = generate_summary_report(
+        repos,
+        date(2026, 5, 1),
+        date(2026, 4, 30),
+        top_n=2,
+        full_report_url="https://example.com/reports/full.md",
+    )
+
+    assert "GitHub 1K 突破摘要" in content
+    assert "查看完整报告" in content
+    assert "o/r0" in content
+    assert "o/r1" in content
+    assert "o/r2" not in content
