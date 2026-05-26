@@ -2,8 +2,9 @@ name: "🚀 Daily 1K Milestone Tracker"
 
 on:
   schedule:
-    # UTC 01:00 = BJT 09:00（GitHub Actions 实际执行可能延迟 5-30 分钟）
-    - cron: "0 1 * * *"
+    # UTC 22:00 = BJT 次日 06:00（GitHub Actions 实际执行可能延迟 5-30 分钟，
+    # 起床时即可收到推送）
+    - cron: "0 22 * * *"
   workflow_dispatch:
     inputs:
       cold_start:
@@ -23,8 +24,8 @@ permissions:
 jobs:
   track-1k:
     runs-on: ubuntu-latest
-    # 日常模式 <10 分钟（多 token 模式）；冷启动最多 90 分钟
-    timeout-minutes: ${{ inputs.cold_start && 90 || 30 }}
+    # 不限制运行时间（公开仓库免费），让爬虫稳稳跑完。
+    # GitHub Actions 默认 job 超时为 6 小时，已远超实际所需。
 
     steps:
       - uses: actions/checkout@v4
