@@ -23,8 +23,8 @@ permissions:
 jobs:
   track-1k:
     runs-on: ubuntu-latest
-    # 日常模式 <10 分钟；冷启动最多 90 分钟
-    timeout-minutes: ${{ inputs.cold_start && 90 || 25 }}
+    # 日常模式 <10 分钟（多 token 模式）；冷启动最多 90 分钟
+    timeout-minutes: ${{ inputs.cold_start && 90 || 30 }}
 
     steps:
       - uses: actions/checkout@v4
@@ -40,6 +40,7 @@ jobs:
       - name: Run tracker
         env:
           G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
+          G1K_GITHUB_TOKENS:     ${{ secrets.G1K_GITHUB_TOKENS }}
           G1K_WECOM_WEBHOOK_URL: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
           G1K_CREATED_SINCE:     ${{ inputs.created_since || vars.G1K_CREATED_SINCE || '2020-01-01' }}
           G1K_REPORT_PUBLIC_BASE_URL: ${{ vars.G1K_REPORT_PUBLIC_BASE_URL }}
