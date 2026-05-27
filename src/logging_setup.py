@@ -21,6 +21,7 @@ from rich.console import Console
 from rich.logging import RichHandler
 
 from src.config import settings
+from src.utils.timezone import today_bjt
 
 # ── 过滤 HTTP 噪音 ──────────────────────────────────────────────
 # 形如：HTTP Request: GET https://api.github.com/... "HTTP/1.1 200 OK"
@@ -67,7 +68,7 @@ def setup_logging(
 
     log_dir = Path(settings.log_dir)
     log_dir.mkdir(parents=True, exist_ok=True)
-    log_path = log_dir / f"run-{date.today():%Y-%m-%d}{filename_suffix}.log"
+    log_path = log_dir / f"run-{today_bjt():%Y-%m-%d}{filename_suffix}.log"
 
     # ── Rich 控制台 handler ──
     rich_handler = RichHandler(
@@ -152,7 +153,7 @@ def cleanup_old_logs(keep_days: int | None = None) -> int:
     if not log_dir.is_dir():
         return 0
 
-    cutoff = date.today() - timedelta(days=days)
+    cutoff = today_bjt() - timedelta(days=days)
     removed = 0
     for path in log_dir.glob("run-*.log"):
         stem = path.stem  # run-YYYY-MM-DD[_created-since-YYYY-MM-DD]

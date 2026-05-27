@@ -46,6 +46,7 @@ from src.storage.snapshot_store import (
     load_latest_stars,
     save_snapshot,
 )
+from src.utils.timezone import today_bjt
 
 console = Console()
 logger = logging.getLogger("github1k")
@@ -68,7 +69,7 @@ def _resolve_created_since(cli_value: str | None) -> date | None:
     if not raw:
         return None
     created_since = _parse_iso_date(raw, "--created-since/G1K_CREATED_SINCE")
-    if created_since > date.today():
+    if created_since > today_bjt():
         raise argparse.ArgumentTypeError("--created-since 不能晚于今天")
     return created_since
 
@@ -127,7 +128,7 @@ def find_milestone_repos(
     today :
         参考日期（用于判断是否新创建仓库）。默认今天。
     """
-    ref_date = today or date.today()
+    ref_date = today or today_bjt()
     milestones: list[Milestone1KRepo] = []
 
     for full_name, info in today_repos.items():
@@ -249,7 +250,7 @@ def main() -> int:
 
     _setup_logging(args.verbose, created_since=created_since)
 
-    today = date.today()
+    today = today_bjt()
     yesterday = today - timedelta(days=1)
 
     _rule("[bold cyan]github1K — 1000 Star 突破追踪器[/bold cyan]")

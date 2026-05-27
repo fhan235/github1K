@@ -20,6 +20,7 @@ from rich.console import Console
 
 from src.config import settings
 from src.models import DailySnapshot
+from src.utils.timezone import today_bjt
 
 console = Console()
 
@@ -122,13 +123,12 @@ def save_snapshot(d: date, repos: dict[str, Any], created_since: date | None = N
 
 def has_yesterday_snapshot() -> bool:
     """检查昨天的快照文件是否存在（支持 .json 和 .json.gz）。"""
-    yesterday = date.today() - timedelta(days=1)
+    yesterday = today_bjt() - timedelta(days=1)
     return any(p.exists() for p in _candidate_paths(yesterday))
-
 
 def get_yesterday_stars() -> dict[str, int]:
     """返回昨天快照的 {full_name: star_count}，无记录则返回空字典。"""
-    yesterday = date.today() - timedelta(days=1)
+    yesterday = today_bjt() - timedelta(days=1)
     return load_snapshot(yesterday).repos
 
 
@@ -194,7 +194,7 @@ def find_latest_snapshot_date(
     ``created_since`` 为 ``None`` 时，自动使用历史快照中覆盖最广的范围；
     例如同时存在 2020-01-01 和 2022-01-01 两组快照时，默认选择 2020-01-01。
     """
-    cutoff = before or date.today()
+    cutoff = before or today_bjt()
     effective_created_since = (
         _choose_default_created_since(cutoff)
         if created_since is None
@@ -219,7 +219,7 @@ def load_latest_stars(
     (snapshot_date, stars)
         若无任何历史快照，返回 ``(None, {})``。
     """
-    cutoff = before or date.today()
+    cutoff = before or today_bjt()
     effective_created_since = (
         _choose_default_created_since(cutoff)
         if created_since is None
@@ -235,7 +235,7 @@ def cleanup_old_snapshots(keep_days: int = 30) -> None:
     """删除超过 keep_days 天的快照文件（.json 和 .json.gz 都清）。"""
     if not _DATA_DIR.exists():
         return
-    cutoff = date.today() - timedelta(days=keep_days)
+    cutoff = today_bjt() - timedelta(days=keep_days)
     deleted = 0
     for pattern in ("snapshot_*.json", "snapshot_*.json.gz"):
         for path in _DATA_DIR.glob(pattern):

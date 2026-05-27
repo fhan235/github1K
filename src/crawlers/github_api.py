@@ -48,6 +48,7 @@ from rich.console import Console
 
 from src.config import settings
 from src.crawlers.languages import LANGUAGE_NONE_SENTINEL, LANGUAGES
+from src.utils.timezone import today_bjt
 
 console = Console()
 logger = logging.getLogger(__name__)
@@ -399,7 +400,7 @@ def _fetch_range_all_languages(
     """
     在给定的 star 范围内，按语言切分 + 日期自适应二分，拉取全部仓库。
     """
-    today = date.today()
+    today = today_bjt()
     start_date = _resolve_created_since(created_since)
     created_filter = f" created:{start_date.isoformat()}..{today.isoformat()}"
     all_langs = [*LANGUAGES, LANGUAGE_NONE_SENTINEL]
@@ -484,7 +485,7 @@ def _fetch_viral_repos(
     query = base_query
     start_date = _resolve_created_since(created_since)
     if created_since is not None:
-        query = f"{base_query} created:{start_date.isoformat()}..{date.today().isoformat()}"
+        query = f"{base_query} created:{start_date.isoformat()}..{today_bjt().isoformat()}"
 
     console.rule(f"[bold blue]Step C / 爆款补漏 stars:>{upper}[/bold blue]")
 

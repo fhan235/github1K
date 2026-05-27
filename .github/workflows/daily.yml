@@ -90,7 +90,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "没有新的变更需要提交"
           else
-            git commit -m "data: 🚀 $(date -u +%Y-%m-%d) 1K 摘要 + 压缩快照"
+            git commit -m "data: 🚀 $(TZ='Asia/Shanghai' date +%Y-%m-%d) 1K 摘要 + 压缩快照"
             # 推送时重试一次（避免他人并发 push 导致的 non-fast-forward）
             git pull --rebase origin "${GITHUB_REF_NAME}" || true
             git push
@@ -107,4 +107,4 @@ jobs:
           fi
           curl -sS -X POST "$WEBHOOK" \
             -H "Content-Type: application/json" \
-            -d "{\"msgtype\":\"markdown\",\"markdown\":{\"content\":\"## ⚠️ github1K CI 运行失败\n\n- 时间: $(date -u +%Y-%m-%dT%H:%M:%SZ)\n- 运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}}"
+            -d "{\"msgtype\":\"markdown\",\"markdown\":{\"content\":\"## ⚠️ github1K CI 运行失败\n\n- 时间: $(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M:%S+08:00)\n- 运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}}"
