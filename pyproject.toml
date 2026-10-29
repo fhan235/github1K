@@ -9,6 +9,8 @@ dependencies = [
     "rich>=13.0.0",
     "pydantic>=2.0.0",
     "pydantic-settings>=2.0.0",
+    "markdown>=3.5",
+    "cos-python-sdk-v5>=1.9",
 ]
 
 [project.optional-dependencies]
@@ -20,6 +22,8 @@ dev = [
 
 [project.scripts]
 github1k = "src.main:main"
+g1k-peek = "src.tools.peek_snapshot:main"
+g1k-weekly = "src.weekly.main:main"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]

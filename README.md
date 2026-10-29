@@ -100,6 +100,7 @@ python -m src.main -v
 - `reports/milestone-1k-YYYY-MM-DD.md` — 完整 Markdown 报告，只上传 Actions Artifact / 腾讯云 COS，不提交仓库
 - `reports/summary-1k-YYYY-MM-DD.md` — 轻量摘要报告，会提交回仓库，也适合企业微信推送
 - `data/snapshot_YYYY-MM-DD.json.gz` — 每日 Star 压缩快照，会提交回仓库，用于下一天差分
+- `data/daily/milestones_YYYY-MM-DD.json.gz` — 结构化日榜（全量突破项目，机器可读），提交回仓库并上传 COS，供周榜等下游消费；历史数据可用 `python scripts/backfill_daily_json.py` 回填
 - 使用 `--created-since YYYY-MM-DD` 时，报告、快照和日志文件名会追加 `_created-since-YYYY-MM-DD` 后缀，避免不同扫描范围混用。
 
 ## 腾讯云 COS 配置
@@ -115,6 +116,40 @@ python -m src.main -v
    - `TENCENT_COS_REGION`：地域，例如 `ap-guangzhou`
 6. 在 Variables 中添加 `G1K_REPORT_PUBLIC_BASE_URL`，通常是 Bucket 访问域名，例如 `https://github1k-reports-1250000000.cos.ap-guangzhou.myqcloud.com`。
 7. 之后 Actions 每次成功运行时，会把完整报告上传到 COS 的 `reports/` 目录，把压缩快照上传到 `data/` 目录；企业微信会推送摘要和完整报告链接。
+
+## 周榜（weekly）
+
+基于每日完整报告，每周自动选出最值得关注的 Top 30 项目，并调用大模型生成结构化介绍。
+
+```bash
+# 默认统计「昨天往前 7 天」
+python -m src.weekly.main
+
+# 免费调试：跳过 LLM，只验证聚合 + 复查 + 打分
+python -m src.weekly.main --dry-run
+
+# 指定窗口 / ISO 周 / 推送企微
+python -m src.weekly.main --start 2026-10-12 --end 2026-10-18
+python -m src.weekly.main --week 2026-W42 --notify
+```
+
+流水线：读取一周结构化日榜（本地 `data/daily/*.json.gz` → COS JSON → 历史 Markdown
+解析兜底）→ 跨天去重聚合 → 规则预过滤（合集类、存量巨型老项目）→ REST 复查最新元数据
+（得出**真实周涨幅**）→ 可信度闸门 + 多因子打分（增长/持续性/真新/工程质量，
+刷星与伪增量扣分）→ LLM 粗筛打标签 → 多样性筛选（同 owner 只取一个、历史已上榜去重）
+→ LLM 逐个生成介绍（带磁盘缓存）→ 渲染 Markdown + 自包含 HTML（可上传 COS，
+企微推送携带完整周报链接）。
+
+输出：
+- `reports/weekly/weekly-*.md` — 周报（含「持续走强」附榜，会提交仓库）
+- `data/weekly/weekly-*.json` — 含打分明细的结构化数据，供人工复核
+- `data/weekly/seen.json` — 历史已上榜名单（dry-run 不更新）
+
+GitHub Actions 每周六 BJT 09:00 自动运行（`weekly.yml`）。需要额外配置：
+
+- Secrets：`G1K_LLM_API_KEY`（OpenAI 兼容接口密钥，**仅环境变量注入**）
+- Variables（可选）：`G1K_LLM_BASE_URL`、`G1K_LLM_MODEL_TRIAGE`、`G1K_LLM_MODEL_WRITER`
+  （默认走 DeepSeek 兼容接口；周榜依赖日榜已配置的 `G1K_REPORT_PUBLIC_BASE_URL` 拉取数据）
 
 ## 测试
 

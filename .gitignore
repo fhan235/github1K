@@ -16,6 +16,9 @@ data/*.tmp
 data/*.bak
 reports/*.tmp
 
+# peek_snapshot 工具解压出来的 .json 副本，仅本地查看
+data/_peek/
+
 # 大体积产物：完整报告只上传 Artifact/COS，仓库只提交摘要报告和压缩快照
 reports/milestone-1k-*.md
 data/snapshot_*.json
@@ -24,3 +27,9 @@ data/snapshot_*.json
 
 # 运行日志（仅本地留存，不入库）
 logs/
+
+# 周榜 LLM 缓存（体积大且可再生，不入库）
+data/weekly/llm_cache/
+
+# 周榜 HTML（由 md 渲染而来，仅用于上传 COS / 本地预览，不入库）
+reports/weekly/*.html

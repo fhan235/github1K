@@ -1,0 +1,103 @@
+name: "📅 Weekly 1K Top Picks"
+
+on:
+  schedule:
+    # UTC 周六 01:00 = BJT 周六 09:00，统计「昨天往前 7 天」
+    - cron: "0 1 * * 6"
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "窗口起始日期（YYYY-MM-DD，留空自动取最近 7 天）"
+        type: string
+        required: false
+        default: ""
+      end:
+        description: "窗口结束日期（YYYY-MM-DD，留空自动取昨天）"
+        type: string
+        required: false
+        default: ""
+      dry_run:
+        description: "Dry-run（不调大模型，只验证打分规则）"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write  # 允许 git push 周报与 seen.json 回仓库
+
+jobs:
+  weekly-top:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -e .
+
+      - name: Run weekly pipeline
+        env:
+          G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
+          G1K_LLM_API_KEY:       ${{ secrets.G1K_LLM_API_KEY }}
+          G1K_LLM_BASE_URL:      ${{ vars.G1K_LLM_BASE_URL }}
+          G1K_LLM_MODEL_TRIAGE:  ${{ vars.G1K_LLM_MODEL_TRIAGE }}
+          G1K_LLM_MODEL_WRITER:  ${{ vars.G1K_LLM_MODEL_WRITER }}
+          G1K_WECOM_WEBHOOK_URL: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
+          G1K_REPORT_PUBLIC_BASE_URL: ${{ vars.G1K_REPORT_PUBLIC_BASE_URL }}
+          G1K_CREATED_SINCE:     ${{ vars.G1K_CREATED_SINCE || '2020-01-01' }}
+          # 复用日榜已有的腾讯云 Secrets，用于上传周报 HTML 到 COS
+          G1K_COS_SECRET_ID:     ${{ secrets.TENCENT_SECRET_ID }}
+          G1K_COS_SECRET_KEY:    ${{ secrets.TENCENT_SECRET_KEY }}
+          G1K_COS_BUCKET:        ${{ secrets.TENCENT_COS_BUCKET }}
+          G1K_COS_REGION:        ${{ secrets.TENCENT_COS_REGION }}
+        run: |
+          ARGS="--notify"
+          if [ -n "${{ inputs.start }}" ] && [ -n "${{ inputs.end }}" ]; then
+            ARGS="$ARGS --start ${{ inputs.start }} --end ${{ inputs.end }}"
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          python -m src.weekly.main $ARGS
+
+      - name: Upload weekly artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: "weekly-report-${{ github.run_id }}"
+          path: |
+            reports/weekly/*.md
+            data/weekly/*.json
+          retention-days: 30
+
+      - name: Commit weekly report back to repo
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/weekly/*.md data/weekly/*.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "没有新的变更需要提交"
+          else
+            git commit -m "data: 📅 $(TZ='Asia/Shanghai' date +%Y-%m-%d) 破千周榜"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          WEBHOOK: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
+        run: |
+          if [ -z "$WEBHOOK" ]; then
+            echo "未配置 WECOM webhook，跳过告警"
+            exit 0
+          fi
+          curl -sS -X POST "$WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d "{\"msgtype\":\"markdown\",\"markdown\":{\"content\":\"## ⚠️ github1K 周榜 CI 运行失败\n\n- 时间: $(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M:%S+08:00)\n- 运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}}"

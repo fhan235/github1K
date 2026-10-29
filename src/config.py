@@ -89,6 +89,41 @@ class Settings(BaseSettings):
     snapshot_compact: bool = True
     """快照 JSON 是否紧凑保存（不缩进），大幅减小体积"""
 
+    # ── 周榜 COS 发布（可选，用于企微推送完整周报链接）─────────────
+    cos_secret_id: str = ""
+    """腾讯云访问密钥 ID（G1K_COS_SECRET_ID，仅环境变量注入）"""
+
+    cos_secret_key: str = ""
+    """腾讯云访问密钥 Key（G1K_COS_SECRET_KEY，仅环境变量注入）"""
+
+    cos_bucket: str = ""
+    """COS Bucket 名，例如 github1k-reports-1250000000-1302095294"""
+
+    cos_region: str = ""
+    """COS 地域，例如 ap-guangzhou"""
+
+    # ── 周榜 / LLM ──────────────────────────────────────────────
+    llm_api_key: str = ""
+    """OpenAI 兼容接口的 API Key（仅环境变量注入，禁止提交仓库）"""
+
+    llm_base_url: str = "https://api.deepseek.com"
+    """OpenAI 兼容接口基础地址（DeepSeek / Qwen / Kimi / OpenAI 均可）"""
+
+    llm_model_triage: str = "deepseek-chat"
+    """周榜粗筛（打标签/判垃圾）用的便宜模型"""
+
+    llm_model_writer: str = "deepseek-chat"
+    """周榜最终项目介绍用的模型"""
+
+    weekly_top_n: int = 30
+    """周榜最终展示项目数"""
+
+    weekly_enrich_limit: int = 120
+    """周榜进入 REST 元数据复查环节的候选上限（控制 API 请求量）"""
+
+    weekly_readme_max_chars: int = 8000
+    """喂给 LLM 的 README 截断长度"""
+
     # ── 日志 ────────────────────────────────────────────────────
     log_dir: str = "logs"
     """运行日志目录（自动创建）。按日期拆分，每次运行追加。"""

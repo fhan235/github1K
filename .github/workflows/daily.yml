@@ -78,19 +78,47 @@ jobs:
           fi
           pip install coscmd
           coscmd config -a "$TENCENT_SECRET_ID" -s "$TENCENT_SECRET_KEY" -b "$TENCENT_COS_BUCKET" -r "$TENCENT_COS_REGION"
-          find reports -name 'milestone-1k-*.md' -print0 | xargs -0 -I{} coscmd upload -r "{}" "{}"
-          find data -name 'snapshot_*.json.gz' -print0 | xargs -0 -I{} coscmd upload -r "{}" "{}"
+
+          TODAY=$(TZ='Asia/Shanghai' date +%F)
+          # 只上传今天新生成的文件：历史产物不可变，已由之前的运行上传过，
+          # 全量重传会让本步骤随时间越来越慢，且跨境链路偶发挂死曾导致 job 失败。
+          FILES=$( {
+            find reports -maxdepth 1 -name "milestone-1k-${TODAY}*.md"
+            find data -maxdepth 1 -name "snapshot_${TODAY}*.json.gz"
+            find data/daily -maxdepth 1 -name "milestones_${TODAY}*.json.gz" 2>/dev/null
+          } )
+          if [ -z "$FILES" ]; then
+            echo "没有找到今天的产物文件，跳过上传"
+            exit 0
+          fi
+
+          FAILED=0
+          for f in $FILES; do
+            ok=0
+            for attempt in 1 2 3; do
+              # 单文件 3 分钟硬超时：宁可重试，不让一个挂死的连接拖垮整个 job
+              if timeout 180 coscmd upload -r "$f" "$f"; then
+                ok=1
+                break
+              fi
+              echo "⚠️ 上传失败（第 ${attempt} 次）: $f"
+              sleep 5
+            done
+            [ $ok -eq 0 ] && FAILED=1
+          done
+          [ $FAILED -eq 1 ] && { echo "❌ 存在上传失败的文件"; exit 1; }
+          echo "✅ 今日产物已全部上传"
 
       - name: Commit summary & compressed snapshot back to repo
         if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/summary-1k-*.md data/snapshot_*.json.gz 2>/dev/null || true
+          git add reports/summary-1k-*.md data/snapshot_*.json.gz data/daily/*.json.gz 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "没有新的变更需要提交"
           else
-            git commit -m "data: 🚀 $(TZ='Asia/Shanghai' date +%Y-%m-%d) 1K 摘要 + 压缩快照"
+            git commit -m "data: 🚀 $(TZ='Asia/Shanghai' date +%Y-%m-%d) 1K 摘要 + 压缩快照 + 结构化日榜"
             # 推送时重试一次（避免他人并发 push 导致的 non-fast-forward）
             git pull --rebase origin "${GITHUB_REF_NAME}" || true
             git push

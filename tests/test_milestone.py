@@ -42,13 +42,36 @@ def test_already_above_1000_yesterday_is_skipped():
 
 
 def test_unknown_yesterday_flag():
-    """昨天快照中不存在：标记 unknown_yesterday。"""
+    """昨天快照中不存在：标记 unknown_yesterday，增量为 None（伪增量）。"""
     today_repos = {"a/b": _make_repo(1100)}
     yesterday_stars = {}
     result = find_milestone_repos(today_repos, yesterday_stars)
     assert len(result) == 1
     assert result[0].unknown_yesterday is True
     assert result[0].stars_yesterday == 0
+    assert result[0].stars_gained is None
+    assert result[0].gain_reliable is False
+
+
+def test_gain_reliable_only_when_baseline_is_yesterday():
+    """基准恰好是前一天 → gain_reliable；断跑回退多日 → 不可信。"""
+    today = date(2026, 10, 21)
+    yesterday = date(2026, 10, 20)
+    today_repos = {"a/b": _make_repo(1500)}
+    yesterday_stars = {"a/b": 900}
+
+    r1 = find_milestone_repos(today_repos, yesterday_stars, today, baseline_date=yesterday)
+    assert r1[0].stars_gained == 600
+    assert r1[0].gain_reliable is True
+
+    r2 = find_milestone_repos(
+        today_repos, yesterday_stars, today, baseline_date=date(2026, 10, 19)
+    )
+    assert r2[0].stars_gained == 600  # 多日累计增量仍展示
+    assert r2[0].gain_reliable is False  # 但标记为不可信
+
+    r3 = find_milestone_repos(today_repos, yesterday_stars, today, baseline_date=None)
+    assert r3[0].gain_reliable is False
 
 
 def test_recently_created_flag():

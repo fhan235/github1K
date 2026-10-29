@@ -29,11 +29,12 @@ def _build_markdown(
         lines.append(f"> [查看完整报告]({full_report_url})\n")
     for idx, repo in enumerate(display, start=1):
         medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(idx, f"#{idx}")
-        gained = (
-            f"+{repo.stars_gained:,}"
-            if repo.stars_gained > 0
-            else str(repo.stars_gained)
-        )
+        if repo.stars_gained is None:
+            gained = "—"
+        elif repo.stars_gained > 0:
+            gained = f"+{repo.stars_gained:,}"
+        else:
+            gained = str(repo.stars_gained)
         desc = (
             (repo.description[:60] + "…")
             if len(repo.description) > 60

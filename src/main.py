@@ -41,6 +41,7 @@ from src.reporters.markdown_reporter import (
     save_report,
     save_summary_report,
 )
+from src.storage.milestone_store import save_milestones
 from src.storage.snapshot_store import (
     cleanup_old_snapshots,
     load_latest_stars,
@@ -115,6 +116,7 @@ def find_milestone_repos(
     today_repos: dict,
     yesterday_stars: dict[str, int],
     today: date | None = None,
+    baseline_date: date | None = None,
 ) -> list[Milestone1KRepo]:
     """
     差分：找出昨天 <1000、今天 >=1000 的仓库。
@@ -127,8 +129,15 @@ def find_milestone_repos(
         昨天快照中的 {full_name: star_count}。
     today :
         参考日期（用于判断是否新创建仓库）。默认今天。
+    baseline_date :
+        对比基准快照的实际日期。``None`` 表示冷启动（无基准）。
+        断跑后基准可能回退多日，此时 gained 是多日累计，
+        ``gain_reliable`` 会标记为 False。
     """
     ref_date = today or today_bjt()
+    baseline_is_yesterday = (
+        baseline_date is not None and (ref_date - baseline_date).days == 1
+    )
     milestones: list[Milestone1KRepo] = []
 
     for full_name, info in today_repos.items():
@@ -149,7 +158,11 @@ def find_milestone_repos(
             # 昨天已经 >=1000，跳过
             continue
 
-        gained = today_stars - stars_yday
+        if unknown_yesterday:
+            # 「昨天不存在」无法推出真实增量，stars - 0 是伪增量
+            gained = None
+        else:
+            gained = today_stars - stars_yday
         milestones.append(
             Milestone1KRepo(
                 full_name=full_name,
@@ -159,10 +172,13 @@ def find_milestone_repos(
                 stars_today=today_stars,
                 stars_yesterday=stars_yday,
                 stars_gained=gained,
+                gain_reliable=not unknown_yesterday and baseline_is_yesterday,
                 forks=info["forks"],
                 topics=info["topics"],
                 created_at=info["created_at"],
                 updated_at=info["updated_at"],
+                is_fork=info.get("is_fork", False),
+                is_archived=info.get("is_archived", False),
                 unknown_yesterday=unknown_yesterday,
                 is_recently_created=_is_recently_created(
                     info.get("created_at"), ref_date
@@ -190,9 +206,12 @@ def _print_table(repos: list[Milestone1KRepo], top_n: int = 30) -> None:
     table.add_column("描述", max_width=50)
 
     for idx, repo in enumerate(display, start=1):
-        gained = (
-            f"+{repo.stars_gained:,}" if repo.stars_gained > 0 else str(repo.stars_gained)
-        )
+        if repo.stars_gained is None:
+            gained = "—"
+        elif repo.stars_gained > 0:
+            gained = f"+{repo.stars_gained:,}"
+        else:
+            gained = str(repo.stars_gained)
         table.add_row(
             str(idx),
             repo.full_name,
@@ -331,7 +350,12 @@ def main() -> int:
 
         # ── Step 3: 差分，找突破项目 ──────────────────────────────
         _rule("[bold]Step 3 / 差分计算突破项目[/bold]")
-        milestones = find_milestone_repos(today_above, yesterday_stars, today)
+        milestones = find_milestone_repos(
+            today_above,
+            yesterday_stars,
+            today,
+            baseline_date=baseline_date if has_baseline else None,
+        )
         _say(
             f"[bold green]🎯 发现 {len(milestones)} 个项目在此期间突破 1000 Star[/bold green]"
         )
@@ -341,6 +365,13 @@ def main() -> int:
             _rule("[bold]Step 4 / 保存今天快照[/bold]")
             all_repos = {**today_above, **today_candidates}
             save_snapshot(today, all_repos, created_since=created_since)
+            # 结构化日榜：给周榜等下游消费的机器可读产物
+            save_milestones(
+                today,
+                milestones,
+                baseline_date=baseline_date if has_baseline else None,
+                created_since=created_since,
+            )
 
         # ── Step 5: 生成报告 ──────────────────────────────────────
         _rule("[bold]Step 5 / 生成 Markdown 报告[/bold]")

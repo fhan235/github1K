@@ -24,7 +24,10 @@ def _format_medal(idx: int) -> str:
     return {1: "🥇", 2: "🥈", 3: "🥉"}.get(idx, f"#{idx}")
 
 
-def _format_gained(n: int) -> str:
+def _format_gained(n: int | None) -> str:
+    """None 表示伪增量（昨天未追踪），展示为 —。"""
+    if n is None:
+        return "—"
     return f"+{n:,}" if n > 0 else f"{n:,}"
 
 
