@@ -11,10 +11,12 @@ from __future__ import annotations
 import logging
 import re
 import time
+from datetime import date, timedelta
 
 import httpx
 
 from src.config import settings
+from src.storage import snapshot_store
 from src.weekly.models import EnrichedCandidate, WeeklyCandidate
 
 logger = logging.getLogger(__name__)
@@ -127,6 +129,40 @@ def enrich_candidates(candidates: list[WeeklyCandidate]) -> list[EnrichedCandida
                 enriched.weekly_gain = enriched.current_stars - enriched.stars_at_first_seen
             out.append(enriched)
     return out
+
+
+def apply_snapshot_stars(
+    candidates: list[EnrichedCandidate],
+    window_end: date,
+    created_since: date | None,
+    max_lookback: int = 3,
+) -> int:
+    """回溯往期时，用「窗口结束次日」的快照还原当时的 star 与一周涨幅。
+
+    REST 只能拿到今天的 star，对几个月前的周榜来说 weekly_gain 会变成
+    「几个月的涨幅」。快照偶尔漏掉个别仓库，因此从结束次日往前最多回看
+    ``max_lookback`` 天，但不早于该项目最后一次上榜的日期。
+    找不到时置空 current_stars / weekly_gain（打分会回落到单日增量）。
+
+    返回成功还原的项目数。
+    """
+    days = [window_end + timedelta(days=1 - i) for i in range(max_lookback + 1)]
+    snaps = {d: snapshot_store.load_snapshot(d, created_since).repos for d in days}
+
+    hit = 0
+    for c in candidates:
+        stars = next(
+            (
+                snaps[d][c.full_name]
+                for d in days
+                if d >= c.last_seen and c.full_name in snaps[d]
+            ),
+            None,
+        )
+        c.current_stars = stars
+        c.weekly_gain = stars - c.stars_at_first_seen if stars is not None else None
+        hit += stars is not None
+    return hit
 
 
 def make_readme_client() -> httpx.Client:

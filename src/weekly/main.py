@@ -32,6 +32,7 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -43,6 +44,7 @@ from src.config import settings
 from src.utils.timezone import today_bjt
 from src.weekly.aggregate import aggregate, shortlist
 from src.weekly.enrich import (
+    apply_snapshot_stars,
     enrich_candidates,
     fetch_readme,
     make_readme_client,
@@ -159,6 +161,14 @@ def main() -> int:
         "--include-seen", action="store_true", help="允许历史已上榜项目再次入榜"
     )
     parser.add_argument("--notify", action="store_true", help="推送企业微信通知")
+    parser.add_argument(
+        "--historical", action="store_true",
+        help="回溯往期：一周涨幅用窗口结束次日的快照计算，而不是今天的 star 数",
+    )
+    parser.add_argument(
+        "--workers", type=int, default=4,
+        help="LLM 生成介绍的并发数（默认 4）",
+    )
     parser.add_argument("-v", "--verbose", action="store_true", help="DEBUG 日志")
     args = parser.parse_args()
 
@@ -212,6 +222,9 @@ def main() -> int:
     else:
         console.rule(f"[bold]Step 3 / REST 复查（{len(shortlisted)} 项）[/bold]")
         enriched = enrich_candidates(shortlisted)
+        if args.historical:
+            hit = apply_snapshot_stars(enriched, end, created_since)
+            console.print(f"  回溯模式：{hit}/{len(enriched)} 个用快照还原了周末 star")
         ok = sum(1 for e in enriched if e.enrich_ok)
         growing = sum(
             1 for e in enriched if e.weekly_gain is not None and e.weekly_gain > 0
@@ -257,8 +270,13 @@ def main() -> int:
     # ── Step 6: 最终筛选 ─────────────────────────────────────────
     console.rule("[bold]Step 6 / 多样性筛选 + 历史去重[/bold]")
     seen_map = load_seen()
+    # 只排除「本窗口之前」上过榜的项目：重跑同一周或回溯往期时结果不受后来的周榜影响
+    seen_before = {
+        name for name, v in seen_map.items()
+        if isinstance(v, dict) and str(v.get("date", "")) < start.isoformat()
+    }
     finalists, continuing = select_final(
-        scored, args.top, set(seen_map), include_seen=args.include_seen
+        scored, args.top, seen_before, include_seen=args.include_seen
     )
     console.print(
         f"  最终入榜 {len(finalists)} 个，持续走强 {len(continuing)} 个"
@@ -268,12 +286,18 @@ def main() -> int:
     intros: dict[str, ProjectIntro] = {}
     if llm_client is not None:
         console.rule(f"[bold]Step 7 / LLM 生成介绍（{len(finalists)} 项）[/bold]")
-        with make_readme_client() as readme_client:
-            for i, c in enumerate(finalists, 1):
-                readme = fetch_readme(readme_client, c.full_name)
-                intro = generate_intro(
-                    llm_client, settings.llm_model_writer, c, readme
-                )
+        model = settings.llm_model_writer
+
+        def _write(c: ScoredCandidate) -> ProjectIntro:
+            readme = fetch_readme(readme_client, c.full_name)
+            return generate_intro(llm_client, model, c, readme)
+
+        with make_readme_client() as readme_client, ThreadPoolExecutor(
+            max_workers=max(1, args.workers)
+        ) as pool:
+            for i, (c, intro) in enumerate(
+                zip(finalists, pool.map(_write, finalists), strict=True), 1
+            ):
                 intros[c.full_name] = intro
                 console.print(
                     f"  [{i}/{len(finalists)}] {c.full_name}: {intro.one_liner[:30]}"
