@@ -281,7 +281,9 @@ def main() -> int:
         dry_run=args.dry_run,
     )
     md_path, json_path = save_weekly_outputs(
-        md, finalists, intros, continuing, start, end, missing_days
+        md, finalists, intros, continuing, start, end, missing_days,
+        total_breakthroughs=len(candidates),
+        dry_run=args.dry_run,
     )
     console.print(f"[green]📄 周报: {md_path}[/green]")
     console.print(f"[green]📦 结构化数据: {json_path}[/green]")

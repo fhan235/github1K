@@ -205,6 +205,8 @@ def save_weekly_outputs(
     start: date,
     end: date,
     missing_days: list[date],
+    total_breakthroughs: int | None = None,
+    dry_run: bool = False,
 ) -> tuple[Path, Path]:
     """写入 reports/weekly/*.md 与 data/weekly/*.json，返回两者路径。"""
     stem = f"weekly-{start.isoformat()}_to_{end.isoformat()}"
@@ -217,6 +219,8 @@ def save_weekly_outputs(
     payload = {
         "window": {"start": start.isoformat(), "end": end.isoformat()},
         "missing_days": [d.isoformat() for d in missing_days],
+        "total_breakthroughs": total_breakthroughs,
+        "dry_run": dry_run,
         "finalists": [
             {
                 **c.model_dump(mode="json"),

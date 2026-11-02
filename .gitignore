@@ -33,3 +33,6 @@ data/weekly/llm_cache/
 
 # 周榜 HTML（由 md 渲染而来，仅用于上传 COS / 本地预览，不入库）
 reports/weekly/*.html
+
+# 静态站点构建产物（由 scripts/build_site.py 生成，CI 发布到 GitHub Pages）
+_site/

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="每周精选刚突破 1000 Star 的 GitHub 新项目">
+<title>GitHub 破千周榜</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%AD%90%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <h1>GitHub 破千周榜</h1>
+      <p class="tagline">每周精选刚突破 1000 Star 的新项目</p>
+    </div>
+    <label class="week-picker">
+      <span>期数</span>
+      <select id="week-select" aria-label="选择周榜期数"></select>
+    </label>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="summary" class="summary" aria-live="polite"></section>
+
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="搜索项目名、描述、话题…" autocomplete="off" maxlength="100">
+    <select id="lang-select" aria-label="按语言筛选"></select>
+    <select id="sort-select" aria-label="排序方式">
+      <option value="rank">按榜单排名</option>
+      <option value="score">按评分</option>
+      <option value="gain">按一周涨幅</option>
+      <option value="stars">按 Star 数</option>
+      <option value="created">按创建时间（新→旧）</option>
+    </select>
+  </section>
+
+  <nav id="category-chips" class="chips" aria-label="按类别筛选"></nav>
+
+  <p id="result-count" class="result-count"></p>
+  <section id="cards" class="cards"></section>
+
+  <section id="continuing" class="continuing" hidden>
+    <h2>持续走强 <small>往期上榜，本周仍在涨</small></h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>项目</th><th class="num">上榜时 Star</th><th class="num">当前 Star</th><th class="num">一周增量</th></tr></thead>
+      <tbody id="continuing-body"></tbody>
+    </table></div>
+  </section>
+</main>
+
+<footer class="site-footer wrap">
+  <p>项目介绍由大模型根据 GitHub 公开信息和 README 生成，可能有偏差，请以项目主页为准。</p>
+  <p>数据来自 <a href="https://github.com/fhan235/github1K" target="_blank" rel="noopener noreferrer">github1K</a> 流水线 · <span id="generated-at"></span></p>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

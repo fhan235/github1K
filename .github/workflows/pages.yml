@@ -1,0 +1,56 @@
+name: "🌐 Deploy Site"
+
+on:
+  # 周榜跑完后自动发布（bot 用 GITHUB_TOKEN 推送的提交不会触发 push 事件，所以要靠 workflow_run）
+  workflow_run:
+    workflows: ["📅 Weekly 1K Top Picks"]
+    types: [completed]
+  # 手动修改前端或数据时自动发布
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "scripts/build_site.py"
+      - "data/weekly/*.json"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build static site
+        run: python scripts/build_site.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
