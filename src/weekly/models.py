@@ -124,3 +124,12 @@ class ProjectIntro(BaseModel):
     risk_notes: str = ""
     evidence: list[str] = Field(default_factory=list)
     """支撑结论的 README 原句（防幻觉抽查用）。"""
+
+
+class WeeklyHighlights(BaseModel):
+    """LLM 提炼的「本周看点」（主编视角的趋势总结）。"""
+
+    headline: str = ""
+    """一句话概括本周最显著的趋势。"""
+    points: list[str] = Field(default_factory=list)
+    """3-5 条看点。"""

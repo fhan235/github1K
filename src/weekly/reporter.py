@@ -8,7 +8,7 @@ from pathlib import Path
 
 import markdown as _md
 
-from src.weekly.models import ProjectIntro, ScoredCandidate
+from src.weekly.models import ProjectIntro, ScoredCandidate, WeeklyHighlights
 
 _ROOT = Path(__file__).parent.parent.parent
 _WEEKLY_REPORTS_DIR = _ROOT / "reports" / "weekly"
@@ -131,6 +131,7 @@ def render_weekly_md(
     total_breakthroughs: int,
     continuing: list[ScoredCandidate],
     dry_run: bool = False,
+    highlights: WeeklyHighlights | None = None,
 ) -> str:
     """渲染周报 Markdown。"""
     lines: list[str] = []
@@ -150,6 +151,18 @@ def render_weekly_md(
     lines.append("")
     lines.append("---")
     lines.append("")
+
+    if highlights and highlights.points:
+        lines.append("## 💡 本周看点")
+        lines.append("")
+        if highlights.headline:
+            lines.append(f"**{_esc(highlights.headline)}**")
+            lines.append("")
+        for p in highlights.points:
+            lines.append(f"- {_esc(p)}")
+        lines.append("")
+        lines.append("---")
+        lines.append("")
 
     # 类别分布
     cat_count: dict[str, int] = {}
@@ -207,6 +220,7 @@ def save_weekly_outputs(
     missing_days: list[date],
     total_breakthroughs: int | None = None,
     dry_run: bool = False,
+    highlights: WeeklyHighlights | None = None,
 ) -> tuple[Path, Path]:
     """写入 reports/weekly/*.md 与 data/weekly/*.json，返回两者路径。"""
     stem = f"weekly-{start.isoformat()}_to_{end.isoformat()}"
@@ -221,6 +235,7 @@ def save_weekly_outputs(
         "missing_days": [d.isoformat() for d in missing_days],
         "total_breakthroughs": total_breakthroughs,
         "dry_run": dry_run,
+        "highlights": highlights.model_dump(mode="json") if highlights else None,
         "finalists": [
             {
                 **c.model_dump(mode="json"),

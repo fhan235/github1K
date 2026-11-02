@@ -47,8 +47,13 @@ from src.weekly.enrich import (
     fetch_readme,
     make_readme_client,
 )
-from src.weekly.llm import LLMClient, generate_intro, triage_candidates
-from src.weekly.models import ProjectIntro, ScoredCandidate
+from src.weekly.llm import (
+    LLMClient,
+    generate_highlights,
+    generate_intro,
+    triage_candidates,
+)
+from src.weekly.models import ProjectIntro, ScoredCandidate, WeeklyHighlights
 from src.weekly.publish import upload_report
 from src.weekly.reporter import (
     load_seen,
@@ -270,6 +275,17 @@ def main() -> int:
                     f"  [{i}/{len(finalists)}] {c.full_name}: {intro.one_liner[:30]}"
                 )
 
+    highlights: WeeklyHighlights | None = None
+    if llm_client is not None and finalists:
+        console.rule("[bold]Step 7.5 / LLM 提炼本周看点[/bold]")
+        highlights = generate_highlights(
+            llm_client, settings.llm_model_writer, finalists, intros
+        )
+        if highlights:
+            console.print(f"  {highlights.headline}（{len(highlights.points)} 条）")
+        else:
+            console.print("  [yellow]⚠️  本周看点生成失败，跳过[/yellow]")
+
     # ── Step 8: 渲染 + 落盘 ──────────────────────────────────────
     console.rule("[bold]Step 8 / 生成周报[/bold]")
     md = render_weekly_md(
@@ -279,11 +295,13 @@ def main() -> int:
         total_breakthroughs=len(candidates),
         continuing=continuing,
         dry_run=args.dry_run,
+        highlights=highlights,
     )
     md_path, json_path = save_weekly_outputs(
         md, finalists, intros, continuing, start, end, missing_days,
         total_breakthroughs=len(candidates),
         dry_run=args.dry_run,
+        highlights=highlights,
     )
     console.print(f"[green]📄 周报: {md_path}[/green]")
     console.print(f"[green]📦 结构化数据: {json_path}[/green]")

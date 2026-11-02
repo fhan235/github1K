@@ -43,6 +43,7 @@ jobs:
       - name: Run weekly pipeline
         env:
           G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
+          G1K_GITHUB_TOKENS:     ${{ secrets.G1K_GITHUB_TOKENS }}
           G1K_LLM_API_KEY:       ${{ secrets.G1K_LLM_API_KEY }}
           G1K_LLM_BASE_URL:      ${{ vars.G1K_LLM_BASE_URL }}
           G1K_LLM_MODEL_TRIAGE:  ${{ vars.G1K_LLM_MODEL_TRIAGE }}

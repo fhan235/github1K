@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from datetime import date
 
-from src.weekly.models import ProjectIntro, ScoredCandidate
+from src.weekly.models import ProjectIntro, ScoredCandidate, WeeklyHighlights
 from src.weekly.reporter import render_weekly_html, render_weekly_md
 
 _START = date(2026, 10, 15)
@@ -91,3 +91,34 @@ def test_dry_run_banner_and_coverage_note():
     assert "覆盖 1/2 天" in md
     assert "缺：2026-10-21" in md
     assert "> A useful tool" in md  # 无 intro 时回退原始描述
+
+
+def test_highlights_rendered_and_escaped():
+    hl = WeeklyHighlights(
+        headline="AI Agent 霸榜",
+        points=["owner/repo 一周涨 1,900", "<script>x</script>"],
+    )
+    md = render_weekly_md(
+        [_scored()],
+        {},
+        _START, _END,
+        covered_days=[_START, _END],
+        missing_days=[],
+        total_breakthroughs=3,
+        continuing=[],
+        highlights=hl,
+    )
+    assert "## 💡 本周看点" in md
+    assert "**AI Agent 霸榜**" in md
+    assert "- owner/repo 一周涨 1,900" in md
+    assert "<script>" not in md
+
+
+def test_highlights_section_omitted_when_empty():
+    md = render_weekly_md(
+        [_scored()], {}, _START, _END,
+        covered_days=[_START], missing_days=[],
+        total_breakthroughs=1, continuing=[],
+        highlights=WeeklyHighlights(),
+    )
+    assert "本周看点" not in md
