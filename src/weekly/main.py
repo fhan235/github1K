@@ -232,8 +232,9 @@ def main() -> int:
         try:
             llm_client = LLMClient()
         except RuntimeError as exc:
-            console.print(f"[yellow]⚠️  {exc}，降级为 dry-run[/yellow]")
-            args.dry_run = True
+            # 不再静默降级：否则 CI 显示成功，却产出没有 AI 内容的周报
+            console.print(f"[red]❌ {exc}（如只想调试规则请加 --dry-run）[/red]")
+            return 1
 
     if llm_client is not None and not args.no_triage:
         console.rule("[bold]Step 5 / LLM 粗筛（打标签/判垃圾）[/bold]")
@@ -241,6 +242,9 @@ def main() -> int:
         triage = triage_candidates(
             llm_client, settings.llm_model_triage, triage_pool
         )
+        if triage_pool and not triage:
+            console.print("[red]❌ LLM 粗筛全部失败，终止（未写入任何产物）[/red]")
+            return 1
         for c in scored:
             if c.full_name in triage:
                 item = triage[c.full_name]
@@ -274,6 +278,10 @@ def main() -> int:
                 console.print(
                     f"  [{i}/{len(finalists)}] {c.full_name}: {intro.one_liner[:30]}"
                 )
+        ok_intros = sum(1 for v in intros.values() if v.one_liner != "unknown")
+        if finalists and ok_intros == 0:
+            console.print("[red]❌ LLM 介绍全部生成失败，终止（未写入任何产物）[/red]")
+            return 1
 
     highlights: WeeklyHighlights | None = None
     if llm_client is not None and finalists:

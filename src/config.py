@@ -10,6 +10,8 @@ class Settings(BaseSettings):
         env_file=".env",
         env_file_encoding="utf-8",
         extra="ignore",
+        # CI 中未定义的 vars.* 会以空字符串注入，空值一律视为未设置，回落到默认值
+        env_ignore_empty=True,
     )
 
     # ── GitHub API ──────────────────────────────────────────────

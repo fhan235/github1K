@@ -20,6 +20,7 @@ import logging
 import re
 import time
 from pathlib import Path
+from urllib.parse import urlparse
 
 import httpx
 from pydantic import ValidationError
@@ -95,8 +96,14 @@ class LLMClient:
         key = api_key if api_key is not None else settings.llm_api_key
         if not key:
             raise RuntimeError("未配置 G1K_LLM_API_KEY，无法调用大模型")
+        base = (base_url or settings.llm_base_url or "").strip().rstrip("/")
+        parsed = urlparse(base)
+        if parsed.scheme not in ("https", "http") or not parsed.netloc:
+            raise RuntimeError(
+                f"G1K_LLM_BASE_URL 无效（需以 https:// 开头）：{base!r}"
+            )
         self._key = key
-        self._base = (base_url or settings.llm_base_url).rstrip("/")
+        self._base = base
         self._timeout = timeout
 
     def chat_json(

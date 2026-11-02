@@ -45,9 +45,9 @@ jobs:
           G1K_GITHUB_TOKEN:      ${{ secrets.G1K_GITHUB_TOKEN }}
           G1K_GITHUB_TOKENS:     ${{ secrets.G1K_GITHUB_TOKENS }}
           G1K_LLM_API_KEY:       ${{ secrets.G1K_LLM_API_KEY }}
-          G1K_LLM_BASE_URL:      ${{ vars.G1K_LLM_BASE_URL }}
-          G1K_LLM_MODEL_TRIAGE:  ${{ vars.G1K_LLM_MODEL_TRIAGE }}
-          G1K_LLM_MODEL_WRITER:  ${{ vars.G1K_LLM_MODEL_WRITER }}
+          G1K_LLM_BASE_URL:      ${{ vars.G1K_LLM_BASE_URL || 'https://api.deepseek.com' }}
+          G1K_LLM_MODEL_TRIAGE:  ${{ vars.G1K_LLM_MODEL_TRIAGE || 'deepseek-chat' }}
+          G1K_LLM_MODEL_WRITER:  ${{ vars.G1K_LLM_MODEL_WRITER || 'deepseek-chat' }}
           G1K_WECOM_WEBHOOK_URL: ${{ secrets.G1K_WECOM_WEBHOOK_URL }}
           G1K_REPORT_PUBLIC_BASE_URL: ${{ vars.G1K_REPORT_PUBLIC_BASE_URL }}
           G1K_CREATED_SINCE:     ${{ vars.G1K_CREATED_SINCE || '2020-01-01' }}
