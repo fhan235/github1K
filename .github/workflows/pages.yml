@@ -12,6 +12,7 @@ on:
       - "web/**"
       - "scripts/build_site.py"
       - "data/weekly/*.json"
+      - "data/daily/digest_*.json"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 

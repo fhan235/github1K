@@ -20,45 +20,78 @@
         <p class="tagline">每周精选刚突破 1000 Star 的新项目</p>
       </div>
     </div>
-    <label class="week-picker">
+    <label class="week-picker" id="week-picker-box">
       <span>期数</span>
       <select id="week-select" aria-label="选择周榜期数"></select>
+    </label>
+    <label class="week-picker" id="day-picker-box" hidden>
+      <span>日期</span>
+      <select id="day-select" aria-label="选择日报日期"></select>
     </label>
   </div>
 </header>
 
 <main class="wrap">
-  <section id="hero" class="hero" aria-live="polite"></section>
+  <nav class="tabs" role="tablist" aria-label="切换榜单">
+    <button class="tab active" id="tab-week" role="tab" aria-selected="true">📅 周榜</button>
+    <button class="tab" id="tab-daily" role="tab" aria-selected="false">🚀 日报</button>
+  </nav>
 
-  <section id="podium" class="podium" hidden></section>
+  <div id="view-week">
+    <section id="hero" class="hero" aria-live="polite"></section>
 
-  <section class="list-section">
-    <div class="list-head">
-      <h2 id="list-title">全部精选</h2>
-      <div class="toolbar">
-        <input id="search" type="search" placeholder="搜索项目名、描述、话题…" autocomplete="off" maxlength="100">
-        <select id="lang-select" aria-label="按语言筛选"></select>
-        <select id="sort-select" aria-label="排序方式">
-          <option value="rank">按榜单排名</option>
-          <option value="score">按评分</option>
-          <option value="gain">按一周涨幅</option>
-          <option value="stars">按 Star 数</option>
-          <option value="created">按创建时间（新→旧）</option>
-        </select>
+    <section id="podium" class="podium" hidden></section>
+
+    <section class="list-section">
+      <div class="list-head">
+        <h2 id="list-title">全部精选</h2>
+        <div class="toolbar">
+          <input id="search" type="search" placeholder="搜索项目名、描述、话题…" autocomplete="off" maxlength="100">
+          <select id="lang-select" aria-label="按语言筛选"></select>
+          <select id="sort-select" aria-label="排序方式">
+            <option value="rank">按榜单排名</option>
+            <option value="score">按评分</option>
+            <option value="gain">按一周涨幅</option>
+            <option value="stars">按 Star 数</option>
+            <option value="created">按创建时间（新→旧）</option>
+          </select>
+        </div>
       </div>
-    </div>
-    <nav id="category-chips" class="chips" aria-label="按类别筛选"></nav>
-    <p id="result-count" class="result-count"></p>
-    <div id="list" class="list"></div>
-  </section>
+      <nav id="category-chips" class="chips" aria-label="按类别筛选"></nav>
+      <p id="result-count" class="result-count"></p>
+      <div id="list" class="list"></div>
+    </section>
 
-  <section id="continuing" class="continuing" hidden>
-    <h2>持续走强 <small>往期上榜，本周仍在涨</small></h2>
-    <div class="table-wrap"><table>
-      <thead><tr><th>项目</th><th class="num">上榜时 Star</th><th class="num">当前 Star</th><th class="num">一周增量</th></tr></thead>
-      <tbody id="continuing-body"></tbody>
-    </table></div>
-  </section>
+    <section id="continuing" class="continuing" hidden>
+      <h2>持续走强 <small>往期上榜，本周仍在涨</small></h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>项目</th><th class="num">上榜时 Star</th><th class="num">当前 Star</th><th class="num">一周增量</th></tr></thead>
+        <tbody id="continuing-body"></tbody>
+      </table></div>
+    </section>
+  </div>
+
+  <div id="view-daily" hidden>
+    <section id="daily-hero" class="hero" aria-live="polite"></section>
+
+    <section class="list-section">
+      <div class="list-head">
+        <h2>当日破千项目</h2>
+        <div class="toolbar">
+          <input id="d-search" type="search" placeholder="搜索项目名、描述、话题…" autocomplete="off" maxlength="100">
+          <select id="d-lang-select" aria-label="按语言筛选"></select>
+          <select id="d-sort-select" aria-label="排序方式">
+            <option value="gain">按当日增量</option>
+            <option value="stars">按 Star 数</option>
+            <option value="created">按创建时间（新→旧）</option>
+          </select>
+        </div>
+      </div>
+      <nav id="d-category-chips" class="chips" aria-label="按类别筛选"></nav>
+      <p id="d-result-count" class="result-count"></p>
+      <div id="d-list" class="list"></div>
+    </section>
+  </div>
 </main>
 
 <footer class="site-footer wrap">

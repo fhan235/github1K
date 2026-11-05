@@ -23,9 +23,11 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 
 const $ = (id) => document.getElementById(id);
 const state = {
+  view: "week",
   index: null,
   weekId: null,
   week: null,
+  daily: { index: null, dayId: null, day: null, projects: [], q: "", cat: "", lang: "", sort: "gain", pendingDay: null },
   projects: [],
   q: "",
   cat: "",
@@ -95,9 +97,19 @@ async function fetchJSON(path) {
   return data;
 }
 
-function readHashWeek() {
-  const m = /(?:^|[#&])w=([^&]+)/.exec(location.hash);
-  return m ? decodeURIComponent(m[1]) : null;
+function readHash() {
+  const get = (k) => {
+    const m = new RegExp(`(?:^|[#&])${k}=([^&]+)`).exec(location.hash);
+    return m ? decodeURIComponent(m[1]) : null;
+  };
+  return { v: get("v"), w: get("w"), d: get("d") };
+}
+
+function writeHash() {
+  const parts = [];
+  if (state.view === "daily") parts.push("v=daily", `d=${encodeURIComponent(state.daily.dayId || "")}`);
+  else parts.push(`w=${encodeURIComponent(state.weekId || "")}`);
+  history.replaceState(null, "", `#${parts.join("&")}`);
 }
 
 const isKnownWeek = (id) => id === ALL || state.index.weeks.some((w) => w.id === id);
@@ -157,7 +169,7 @@ function sparkline(spark, { width = 130, height = 32 } = {}) {
 async function loadWeek(id) {
   state.weekId = id;
   $("week-select").value = id;
-  history.replaceState(null, "", `#w=${encodeURIComponent(id)}`);
+  writeHash();
   $("list").replaceChildren(el("p", { class: "empty", text: "加载中…" }));
 
   const tag = (w) => (p, i) => ({ ...p, rank: i + 1, weekEnd: w.end, weekText: weekLabel(w) });
@@ -462,6 +474,189 @@ function debounce(fn, ms) {
 function showError(e) {
   console.error(e);
   $("list").replaceChildren(el("p", { class: "empty", text: "数据加载失败，请稍后刷新重试。" }));
+  $("d-list").replaceChildren(el("p", { class: "empty", text: "数据加载失败，请稍后刷新重试。" }));
+}
+
+/* ---------------- 日报 ---------------- */
+
+function setView(view) {
+  state.view = view;
+  $("view-week").hidden = view !== "week";
+  $("view-daily").hidden = view !== "daily";
+  $("week-picker-box").hidden = view !== "week";
+  $("day-picker-box").hidden = view !== "daily";
+  $("tab-week").classList.toggle("active", view === "week");
+  $("tab-daily").classList.toggle("active", view === "daily");
+  $("tab-week").setAttribute("aria-selected", String(view === "week"));
+  $("tab-daily").setAttribute("aria-selected", String(view === "daily"));
+  writeHash();
+  if (view === "daily" && !state.daily.index) initDaily().catch(showError);
+}
+
+async function initDaily() {
+  state.daily.index = await fetchJSON("data/daily/index.json");
+  const days = state.daily.index.days || [];
+  if (!days.length) {
+    $("d-list").replaceChildren(el("p", { class: "empty", text: "还没有日报数据。" }));
+    return;
+  }
+  const sel = $("day-select");
+  sel.replaceChildren(
+    ...days.map((d, i) =>
+      el("option", { value: d.date, text: `${d.date}（${d.count} 个）${i === 0 ? " 最新" : ""}` })),
+  );
+  sel.addEventListener("change", () => loadDay(sel.value).catch(showError));
+  $("d-search").addEventListener("input", debounce((e) => { state.daily.q = e.target.value; renderDaily(); }, 150));
+  $("d-lang-select").addEventListener("change", (e) => { state.daily.lang = e.target.value; renderDaily(); });
+  $("d-sort-select").addEventListener("change", (e) => { state.daily.sort = e.target.value; renderDaily(); });
+  const valid = new Set(days.map((d) => d.date));
+  const first = state.daily.pendingDay && valid.has(state.daily.pendingDay)
+    ? state.daily.pendingDay
+    : days[0].date;
+  state.daily.pendingDay = null;
+  await loadDay(first).catch(showError);
+}
+
+async function loadDay(day) {
+  state.daily.dayId = day;
+  $("day-select").value = day;
+  writeHash();
+  $("d-list").replaceChildren(el("p", { class: "empty", text: "加载中…" }));
+
+  const d = await fetchJSON(`data/daily/${encodeURIComponent(day)}.json`);
+  state.daily.day = d;
+  state.daily.projects = d.projects.map((p, i) => ({ ...p, rank: i + 1 }));
+
+  const cats = new Set(state.daily.projects.map((p) => p.category));
+  const langs = new Set(state.daily.projects.map((p) => p.language).filter(Boolean));
+  if (!cats.has(state.daily.cat)) state.daily.cat = "";
+  if (!langs.has(state.daily.lang)) state.daily.lang = "";
+
+  renderDailyHero();
+  renderDailyLangs();
+  renderDaily();
+}
+
+function renderDailyHero() {
+  const d = state.daily.day;
+  const s = state.daily;
+  const box = $("daily-hero");
+
+  const gainers = s.projects.filter((p) => (p.gained || 0) > 0);
+  const top = gainers[0];
+  const langs = new Map();
+  for (const p of s.projects) if (p.language) langs.set(p.language, (langs.get(p.language) || 0) + 1);
+  const langTop = [...langs.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
+
+  const highlights = d.points?.length
+    ? el("div", { class: "highlights" },
+        el("div", { class: "eyebrow", text: "今日看点" }),
+        d.headline ? el("p", { class: "headline", text: d.headline }) : null,
+        el("ul", {}, d.points.map((t) => el("li", { text: t }))),
+      )
+    : null;
+
+  box.replaceChildren(...[
+    el("div", { class: "hero-title" },
+      el("h2", { text: `${d.date} 日报` }),
+      el("span", { class: "range", text: `${s.projects.length} 个项目破千` }),
+    ),
+    highlights,
+    el("div", { class: "stats" },
+      stat("当日破千", String(s.projects.length), d.has_digest ? "全部带 AI 解读" : "无 AI 解读"),
+      d.gained_total ? stat("合计增量", fmtGain(d.gained_total), "可信增量的总和", "up") : null,
+      top ? stat("日增第一", fmtGain(top.gained), [repoLink(top)]) : null,
+      langTop.length ? stat("热门语言", langTop[0][0], langTop.map(([l, n]) => `${l} ${n}`).join(" · ")) : null,
+    ),
+    d.unreliable
+      ? el("div", { class: "notice", text: "当天的对比基线不完整，多数项目的单日增量是伪增量（多日积少成多），请只看 Star 总数。" })
+      : null,
+    !d.has_digest
+      ? el("div", { class: "notice", text: "这天没有 AI 解读（只有历史日报做过 AI 处理，之后的新日报是原始数据）。" })
+      : null,
+  ].filter(Boolean));
+}
+
+function renderDailyLangs() {
+  const counts = new Map();
+  for (const p of state.daily.projects) if (p.language) counts.set(p.language, (counts.get(p.language) || 0) + 1);
+  const sel = $("d-lang-select");
+  sel.replaceChildren(
+    el("option", { value: "", text: "全部语言" }),
+    ...[...counts.entries()].sort((a, b) => b[1] - a[1]).map(([lang, n]) =>
+      el("option", { value: lang, text: `${lang} (${n})` })
+    ),
+  );
+  sel.value = state.daily.lang;
+}
+
+function renderDailyChips(list) {
+  const counts = new Map();
+  for (const p of list) counts.set(p.category, (counts.get(p.category) || 0) + 1);
+  const box = $("d-category-chips");
+  if (counts.size <= 1) { box.replaceChildren(); return; }
+  const chip = (value, label, n) =>
+    el("button", {
+      type: "button",
+      class: "chip" + (state.daily.cat === value ? " active" : ""),
+      "aria-pressed": state.daily.cat === value ? "true" : "false",
+      onclick: () => { state.daily.cat = state.daily.cat === value ? "" : value; renderDaily(); },
+    }, label, el("span", { class: "count", text: String(n) }));
+  box.replaceChildren(
+    chip("", "全部", list.length),
+    ...[...counts.entries()].sort((a, b) => b[1] - a[1]).map(([c, n]) => chip(c, catLabel(c), n)),
+  );
+}
+
+const DAILY_SORTERS = {
+  gain: (a, b) => (b.gained ?? -Infinity) - (a.gained ?? -Infinity) || (b.stars ?? 0) - (a.stars ?? 0),
+  stars: (a, b) => (b.stars ?? 0) - (a.stars ?? 0),
+  created: (a, b) => (b.created_at || "").localeCompare(a.created_at || ""),
+};
+
+function matchesDaily(p, q) {
+  if (!q) return true;
+  const hay = [p.name, p.description, p.language, p.one_liner, ...(p.topics || [])]
+    .filter(Boolean).join(" ").toLowerCase();
+  return q.split(/\s+/).every((t) => hay.includes(t));
+}
+
+function renderDaily() {
+  const s = state.daily;
+  const q = s.q.trim().toLowerCase();
+  const base = s.projects.filter((p) => matchesDaily(p, q) && (!s.lang || p.language === s.lang));
+  renderDailyChips(base);
+
+  const list = base.filter((p) => !s.cat || p.category === s.cat);
+  list.sort(DAILY_SORTERS[s.sort] || DAILY_SORTERS.gain);
+
+  $("d-result-count").textContent = `显示 ${list.length} / ${s.projects.length} 个项目`;
+  $("d-list").replaceChildren(
+    ...(list.length ? list.map(renderDailyRow) : [el("p", { class: "empty", text: "没有符合条件的项目" })])
+  );
+}
+
+function renderDailyRow(p) {
+  const sp = sparkline(p.spark, { width: 130, height: 32 });
+  const line = p.one_liner || p.description || "（作者未填写描述）";
+  return el("details", { class: "row" },
+    el("summary", {},
+      el("span", { class: "rank", text: String(p.rank), title: `当日第 ${p.rank}` }),
+      el("div", { class: "main" },
+        el("div", { class: "title" }, repoLink(p), el("span", { class: "cat", text: catLabel(p.category) }),
+          p.is_fork ? el("span", { class: "tag", text: "fork" }) : null),
+        el("div", { class: "line", text: line, title: line }),
+      ),
+      el("div", { class: "col-spark" }, sp ? sp.node : el("div", { class: "spark-none", text: "暂无走势" })),
+      el("div", { class: "col-num col-stars" }, fmtShort(p.stars), el("small", { text: "Star" })),
+      el("div", { class: "col-num" + ((p.gained || 0) > 0 ? " up" : "") }, fmtGain(p.gained), el("small", { text: p.gained == null ? "增量未知" : "当日" })),
+      el("span", { class: "chev", "aria-hidden": "true", text: "›" }),
+    ),
+    el("div", { class: "row-body" },
+      p.description ? el("p", { class: "desc", text: p.description }) : null,
+      metaTags(p, 6),
+    ),
+  );
 }
 
 async function init() {
@@ -491,13 +686,25 @@ async function init() {
   $("search").addEventListener("input", debounce((e) => { state.q = e.target.value; render(); }, 150));
   $("lang-select").addEventListener("change", (e) => { state.lang = e.target.value; render(); });
   $("sort-select").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
+  $("tab-week").addEventListener("click", () => setView("week"));
+  $("tab-daily").addEventListener("click", () => setView("daily"));
   window.addEventListener("hashchange", () => {
-    const id = readHashWeek();
-    if (id && id !== state.weekId && isKnownWeek(id)) loadWeek(id).catch(showError);
+    const h = readHash();
+    if (h.v === "daily" && state.view !== "daily") setView("daily");
+    else if (h.v === "daily" && h.d && h.d !== state.daily.dayId) loadDay(h.d).catch(showError);
+    else if (h.w && h.w !== state.weekId && isKnownWeek(h.w)) {
+      if (state.view !== "week") setView("week");
+      loadWeek(h.w).catch(showError);
+    }
   });
 
-  const fromHash = readHashWeek();
-  await loadWeek(fromHash && isKnownWeek(fromHash) ? fromHash : weeks[0].id).catch(showError);
+  const h = readHash();
+  const firstWeek = h.w && isKnownWeek(h.w) ? h.w : weeks[0].id;
+  if (h.v === "daily") {
+    state.daily.pendingDay = h.d;
+    setView("daily");
+  }
+  await loadWeek(firstWeek).catch(showError);
 }
 
 init();

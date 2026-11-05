@@ -37,6 +37,8 @@
 
 * { box-sizing: border-box; }
 
+[hidden] { display: none !important; }
+
 html, body { overflow-x: hidden; }
 
 body {
@@ -52,6 +54,20 @@ a:hover { text-decoration: underline; }
 h2 { font-size: 1.15rem; margin: 0; }
 
 .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Tabs ──────────────────────────────────────────── */
+.tabs { display: flex; gap: 4px; margin-top: 16px; }
+.tab {
+  font: inherit; font-weight: 600; cursor: pointer;
+  border: 1px solid var(--border); border-bottom: none;
+  background: var(--bg); color: var(--muted);
+  padding: 8px 20px; border-radius: 10px 10px 0 0;
+}
+.tab:hover { color: var(--text); }
+.tab.active { background: var(--panel); color: var(--text); border-color: var(--border); position: relative; }
+.tab.active::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--panel);
+}
 
 /* ── Header ─────────────────────────────────────────── */
 .site-header {

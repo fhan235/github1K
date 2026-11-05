@@ -200,13 +200,20 @@ def _spark_dates(week: dict) -> list[str]:
     return [(start + timedelta(days=i)).isoformat() for i in range((end - start).days + 1)]
 
 
-def _attach_sparklines(weeks: list[dict], snapshots: SnapshotIndex) -> None:
-    """为每个精选项目附上 Star 走势。每份快照只读一次，只抽取需要的仓库。"""
-    plan = {w["id"]: _spark_dates(w) for w in weeks}
+def _attach_sparks(
+    groups: list[tuple[list[dict], list[str]]],
+    snapshots: SnapshotIndex,
+    last_fallback: dict[str, int] | None = None,
+) -> None:
+    """为每组项目附上 Star 走势。每份快照只读一次，只抽取需要的仓库。
+
+    groups: (项目列表, 日期列表)。last_fallback: {仓库名: 点数}，快照缺最后一个点时用
+    （周榜复查 star 发生在窗口结束次日，正好补曲线末端）。
+    """
     needs: dict[str, set[str]] = defaultdict(set)
-    for w in weeks:
-        for d in plan[w["id"]]:
-            needs[d].update(p["name"] for p in w["finalists"])
+    for projects, dates in groups:
+        for d in dates:
+            needs[d].update(p["name"] for p in projects)
 
     stars: dict[tuple[str, str], int] = {}
     for d, names in needs.items():
@@ -218,16 +225,122 @@ def _attach_sparklines(weeks: list[dict], snapshots: SnapshotIndex) -> None:
             if v is not None:
                 stars[(d, n)] = v
 
-    for w in weeks:
-        dates = plan[w["id"]]
-        for p in w["finalists"]:
+    for projects, dates in groups:
+        for p in projects:
             values = [stars.get((d, p["name"])) for d in dates]
-            # 快照来自 Search API，偶尔会漏掉个别仓库；用周榜复查的 current_stars
-            # 补上最后一个点（复查发生在窗口结束次日，正好对应曲线末端）
-            if values[-1] is None and p["current_stars"] is not None:
-                values[-1] = p["current_stars"]
+            fb = (last_fallback or {}).get(p["name"])
+            if values[-1] is None and fb is not None:
+                values[-1] = fb
             enough = sum(v is not None for v in values) >= 2
             p["spark"] = {"start": dates[0], "values": values} if enough else None
+
+
+def _attach_sparklines(weeks: list[dict], snapshots: SnapshotIndex) -> None:
+    fallback = {
+        p["name"]: p["current_stars"]
+        for w in weeks
+        for p in w["finalists"]
+        if p["current_stars"] is not None
+    }
+    _attach_sparks(
+        [(w["finalists"], _spark_dates(w)) for w in weeks], snapshots, fallback
+    )
+
+
+# ── 日报 ────────────────────────────────────────────────────────────────────
+
+MAX_DAILY_PROJECTS = 2000
+"""超过此数视为冷启动基线日，不在网站显示。"""
+
+DAILY_SPARK_DAYS = 13
+"""日报走势曲线看当天往前多少天。"""
+
+
+def _load_milestones(path: Path) -> dict | None:
+    try:
+        data = json.loads(gzip.decompress(path.read_bytes()))
+    except (OSError, EOFError, ValueError) as e:
+        print(f"⚠️  日报读取失败 {path.name}: {e}", file=sys.stderr)
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def _daily_unreliable(data: dict, repos: list[dict]) -> bool:
+    """当日增量整体不可信：多数是伪增量，或对比基线不是前一天。"""
+    if not repos:
+        return False
+    unknown = sum(1 for r in repos if r.get("unknown_yesterday"))
+    if unknown / len(repos) > 0.5:
+        return True
+    try:
+        base = date.fromisoformat(data["baseline_date"])
+        day = date.fromisoformat(data["date"])
+        return (day - base).days != 1
+    except (KeyError, TypeError, ValueError):
+        return True
+
+
+def _slim_daily_project(raw: object, digest: dict) -> dict | None:
+    if not isinstance(raw, dict):
+        return None
+    name = _str(raw.get("full_name"), 201)
+    if not _REPO_RE.match(name):
+        return None
+    gained = _int(raw.get("stars_gained")) if raw.get("gain_reliable") else None
+    topics = [_str(t, 50) for t in raw.get("topics") or [] if _str(t)]
+    item = digest.get(name) if isinstance(digest, dict) else None
+    return {
+        "name": name,
+        "url": f"https://github.com/{name}",
+        "description": _str(raw.get("description"), 400),
+        "language": _str(raw.get("language"), 40) or None,
+        "topics": topics[:6],
+        "created_at": _date(_str(raw.get("created_at"))[:10]),
+        "stars": _int(raw.get("stars_today")),
+        "gained": gained,
+        "is_fork": bool(raw.get("is_fork")),
+        "category": _str((item or {}).get("category"), 40) or "other",
+        "one_liner": _str((item or {}).get("one_liner"), 40),
+    }
+
+
+def _build_day(path: Path) -> dict | None:
+    data = _load_milestones(path)
+    if data is None:
+        return None
+    day = _date(data.get("date"))
+    repos = [p for p in map(dict, data.get("repos") or [])]
+    if not day or not repos or len(repos) > MAX_DAILY_PROJECTS:
+        return None
+
+    digest: dict = {}
+    dpath = DATA_DIR / "daily" / f"digest_{day}.json"
+    if dpath.exists():
+        try:
+            raw = json.loads(dpath.read_text(encoding="utf-8"))
+            digest = raw if isinstance(raw, dict) else {}
+        except (OSError, json.JSONDecodeError):
+            pass
+    items = digest.get("items") if isinstance(digest.get("items"), dict) else {}
+
+    projects = [p for p in (_slim_daily_project(r, items) for r in repos) if p]
+    # 默认排序：可信日增高的在前，其余按破千时 star
+    projects.sort(key=lambda p: (p["gained"] or 0, p["stars"] or 0), reverse=True)
+    return {
+        "date": day,
+        "unreliable": _daily_unreliable(data, repos),
+        "headline": _str(digest.get("headline"), 60),
+        "points": [_str(p, 120) for p in digest.get("points") or [] if _str(p)][:3],
+        "has_digest": bool(items),
+        "gained_total": sum(p["gained"] or 0 for p in projects),
+        "projects": projects,
+    }
+
+
+def _daily_spark_dates(day: str) -> list[str]:
+    end = date.fromisoformat(day)
+    start = end - timedelta(days=DAILY_SPARK_DAYS)
+    return [(start + timedelta(days=i)).isoformat() for i in range(DAILY_SPARK_DAYS + 1)]
 
 
 # ── 组装 ────────────────────────────────────────────────────────────────────
@@ -294,10 +407,17 @@ def build(out: Path, created_since: str) -> int:
 
     weeks = [w for w in map(_build_week, sorted(WEEKLY_DIR.glob("weekly-*.json"))) if w]
     weeks.sort(key=lambda w: w["end"], reverse=True)
+    days = [
+        d
+        for d in map(_build_day, sorted((DATA_DIR / "daily").glob("milestones_*.json.gz")))
+        if d
+    ]
+    days.sort(key=lambda d: d["date"], reverse=True)
 
     snapshots = SnapshotIndex(DATA_DIR, created_since)
     if len(snapshots):
         _attach_sparklines(weeks, snapshots)
+        _attach_sparks([(d["projects"], _daily_spark_dates(d["date"])) for d in days], snapshots)
     else:
         print(f"⚠️  未找到 created-since={created_since} 的快照，跳过走势曲线", file=sys.stderr)
 
@@ -308,6 +428,24 @@ def build(out: Path, created_since: str) -> int:
 
     for w in weeks:
         _dump(w, out / "data" / "weeks" / f"{w['id']}.json")
+
+    for d in days:
+        _dump(d, out / "data" / "daily" / f"{d['date']}.json")
+    _dump(
+        {
+            "days": [
+                {
+                    "date": d["date"],
+                    "count": len(d["projects"]),
+                    "gained_total": d["gained_total"],
+                    "unreliable": d["unreliable"],
+                    "has_digest": d["has_digest"],
+                }
+                for d in days
+            ]
+        },
+        out / "data" / "daily" / "index.json",
+    )
 
     _dump(
         {
