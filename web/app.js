@@ -81,6 +81,23 @@ function addDays(iso, n) {
   return d.toISOString().slice(0, 10);
 }
 
+const AVATAR_HOST_RE = /^[a-z0-9](?:[a-z0-9-]{0,38})$/i;
+
+/** 作者头像。加载失败时露出底下的首字母色块。 */
+function avatar(p, size = 22) {
+  const owner = p.name.split("/")[0];
+  const letter = (owner[0] || "?").toUpperCase();
+  const box = el("span", { class: "avatar", "aria-hidden": "true" }, letter);
+  box.style.width = box.style.height = `${size}px`;
+  if (AVATAR_HOST_RE.test(owner)) {
+    box.append(el("img", {
+      src: `https://github.com/${encodeURIComponent(owner)}.png?size=${size * 2}`,
+      width: size, height: size, loading: "lazy", alt: "",
+    }));
+  }
+  return box;
+}
+
 function repoLink(p) {
   const [owner, repo] = p.name.split("/");
   const url = safeGithubUrl(p.url);
@@ -425,6 +442,7 @@ function renderFeature(p) {
   return el("article", { class: `feature rank-${p.rank}` },
     el("div", { class: "feature-head" },
       el("span", { class: "medal", text: MEDALS[p.rank] || `#${p.rank}`, title: `第 ${p.rank} 名` }),
+      avatar(p, 30),
       el("div", { class: "repo" }, repoLink(p)),
       el("span", { class: "cat", text: catLabel(p.category) }),
     ),
@@ -469,7 +487,7 @@ function renderRow(p) {
     el("summary", {},
       el("span", { class: "rank", text: MEDALS[p.rank] || String(p.rank), title: state.weekId === ALL ? p.weekText : `第 ${p.rank} 名` }),
       el("div", { class: "main" },
-        el("div", { class: "title" }, repoLink(p), el("span", { class: "cat", text: catLabel(p.category) })),
+        el("div", { class: "title" }, avatar(p), repoLink(p), el("span", { class: "cat", text: catLabel(p.category) })),
         el("div", { class: "line", text: line, title: line }),
       ),
       el("div", { class: "col-spark" }, sp ? sp.node : el("div", { class: "spark-none", text: "暂无走势" })),
@@ -691,7 +709,7 @@ function renderDailyRow(p) {
     el("summary", {},
       el("span", { class: "rank", text: String(p.rank), title: `当日第 ${p.rank}` }),
       el("div", { class: "main" },
-        el("div", { class: "title" }, repoLink(p), el("span", { class: "cat", text: catLabel(p.category) }),
+        el("div", { class: "title" }, avatar(p), repoLink(p), el("span", { class: "cat", text: catLabel(p.category) }),
           p.is_fork ? el("span", { class: "tag", text: "fork" }) : null,
           no ? el("a", { class: "tag week-badge", href: `#w=${encodeURIComponent(p.week)}`, title: "该项目入选了周榜" }, `🏆 第 ${no} 期周榜`) : null),
         el("div", { class: "line", text: line, title: line }),

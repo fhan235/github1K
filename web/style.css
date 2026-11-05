@@ -151,6 +151,15 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); box-shad
 .metrics .up { color: var(--up); }
 
 .cat { flex: none; font-size: .76rem; color: var(--muted); border: 1px solid var(--border); padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+
+/* 作者头像：底下是首字母色块，图片加载失败也能看 */
+.avatar {
+  position: relative; flex: none; overflow: hidden;
+  display: inline-grid; place-items: center;
+  border-radius: 7px; background: var(--accent-soft); color: var(--accent);
+  font-weight: 700; font-size: .72em;
+}
+.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .meta { display: flex; flex-wrap: wrap; gap: 6px; font-size: .76rem; }
 .tag { background: var(--bg); color: var(--muted); padding: 1px 8px; border-radius: 6px; }
 .tag.lang { color: var(--text); }
