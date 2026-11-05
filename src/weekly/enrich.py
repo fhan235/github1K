@@ -38,6 +38,24 @@ def _token() -> str:
     return tokens[0] if tokens else ""
 
 
+class _TokenRotator:
+    """在多个 PAT 间轮流发请求：每个 token 有独立的 5000 次/小时 REST 配额。"""
+
+    def __init__(self) -> None:
+        self._tokens = settings.token_list
+        self._i = 0
+
+    def headers(self) -> dict[str, str]:
+        if not self._tokens:
+            return {}
+        tok = self._tokens[self._i % len(self._tokens)]
+        self._i += 1
+        return {"Authorization": f"Bearer {tok}"}
+
+
+_rotator = _TokenRotator()
+
+
 def _headers() -> dict[str, str]:
     headers = {
         "Accept": "application/vnd.github.v3+json",
@@ -73,7 +91,7 @@ def fetch_readme(client: httpx.Client, full_name: str) -> str:
     try:
         resp = client.get(
             f"/repos/{full_name}/readme",
-            headers={"Accept": "application/vnd.github.raw+json"},
+            headers={"Accept": "application/vnd.github.raw+json", **_rotator.headers()},
         )
         if resp.status_code != 200:
             return ""
@@ -113,7 +131,7 @@ def enrich_candidates(candidates: list[WeeklyCandidate]) -> list[EnrichedCandida
             _throttle(last_call)
             merged = c.model_dump()
             try:
-                resp = client.get(f"/repos/{c.full_name}")
+                resp = client.get(f"/repos/{c.full_name}", headers=_rotator.headers())
                 if resp.status_code == 200:
                     merged.update(_parse_repo_json(resp.json()))
                 elif resp.status_code in (404, 451):

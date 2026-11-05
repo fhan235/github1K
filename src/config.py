@@ -117,10 +117,19 @@ class Settings(BaseSettings):
     llm_model_writer: str = "deepseek-chat"
     """周榜最终项目介绍用的模型"""
 
-    weekly_top_n: int = 30
+    llm_timeout: float = 120.0
+    """单次 LLM 请求超时（秒）。推理模型（如 hy4）思考时间长，需要调大"""
+
+    llm_reasoning_effort: str = ""
+    """透传给接口的 reasoning_effort（留空不传）。
+
+    混元 Hy 系列填 ``no_think`` 可关闭思考，速度快几十倍；DeepSeek 等不支持的接口留空。
+    """
+
+    weekly_top_n: int = 100
     """周榜最终展示项目数"""
 
-    weekly_enrich_limit: int = 120
+    weekly_enrich_limit: int = 300
     """周榜进入 REST 元数据复查环节的候选上限（控制 API 请求量）"""
 
     weekly_readme_max_chars: int = 8000

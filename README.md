@@ -2,7 +2,7 @@
 
 # GitHub 破千周榜 · github1K
 
-**每天追踪刚突破 1000 Star 的 GitHub 新项目，每周精选 30 个，由 AI 写好中文解读。**
+**每天追踪刚突破 1000 Star 的 GitHub 新项目，每周精选 100 个，由 AI 写好中文解读。**
 
 [![在线浏览](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%B5%8F%E8%A7%88-fhan235.github.io%2Fgithub1K-2563eb?style=for-the-badge&logo=githubpages&logoColor=white)](https://fhan235.github.io/github1K/)
 
@@ -26,12 +26,12 @@
 
 GitHub Trending 只看「今天谁涨得多」，老牌大项目常年霸榜，真正的新项目很难被看到。
 
-**1000 Star 是一个很好的分水岭**：项目已经被足够多的人验证过，又还没火到人尽皆知。github1K 每天找出「昨天还不到 1000、今天过了 1000」的仓库，每周再从中挑出最值得关注的 30 个，把它们是什么、解决什么问题、谁该关注写成中文。
+**1000 Star 是一个很好的分水岭**：项目已经被足够多的人验证过，又还没火到人尽皆知。github1K 每天找出「昨天还不到 1000、今天过了 1000」的仓库，每周再从中挑出最值得关注的 100 个，把它们是什么、解决什么问题、谁该关注写成中文。
 
 ## ✨ 特性
 
 - **每日破千追踪**：只扫描 Star 数在 1000 附近的边界区，与昨日快照对比，3–6 分钟找出当天全部破千项目，包括一夜暴涨的爆款
-- **每周精选 Top 30**：综合真实周涨幅、持续性、新鲜度和工程质量打分，识别刷星和伪增量，同一作者只取一个，历史上过榜的不再重复
+- **每周精选 Top 100**：综合真实周涨幅、持续性、新鲜度和工程质量打分，识别刷星和伪增量，同一作者只取一个，历史上过榜的不再重复
 - **AI 中文解读**：大模型读 README 后写出一句话定位、解决的问题、适合谁、同类对比和风险提示；README 按不可信内容处理，防提示词注入
 - **本周看点**：每期一段主编式趋势总结，其中的数字和排名都由代码先算好，大模型只负责写文字
 - **展示网站**：本周看点、前三名大卡片、Star 走势曲线、按类别 / 语言筛选、搜索、往期切换，支持手机和暗色模式
@@ -57,7 +57,7 @@ flowchart LR
     C --> D[(日报<br/>data/daily)]
     D -->|每周六 BJT 09:00| E[聚合 · 复查 · 打分]
     E --> F[LLM 粗筛分类]
-    F --> G[精选 Top 30]
+    F --> G[精选 Top 100]
     G --> H[LLM 写解读 + 本周看点]
     H --> I[(周报<br/>data/weekly)]
     I --> J[构建静态站点]
@@ -84,7 +84,7 @@ flowchart LR
 </details>
 
 <details>
-<summary><b>周榜：从几百个破千项目里挑 30 个</b></summary>
+<summary><b>周榜：从几百个破千项目里挑 100 个</b></summary>
 
 1. 读取一周日报（本地 JSON → COS JSON → 历史 Markdown 兜底）
 2. 跨天去重合并，过滤合集 / 教程类和存量老项目
@@ -191,7 +191,7 @@ python -m http.server -d _site 8000         # 打开 http://localhost:8000 预�
 | `G1K_LLM_BASE_URL` | OpenAI 兼容接口地址 | `https://api.deepseek.com` |
 | `G1K_LLM_MODEL_TRIAGE` | 粗筛模型 | `deepseek-chat` |
 | `G1K_LLM_MODEL_WRITER` | 写介绍和看点的模型 | `deepseek-chat` |
-| `G1K_WEEKLY_TOP_N` | 周榜精选数量 | `30` |
+| `G1K_WEEKLY_TOP_N` | 周榜精选数量 | `100` |
 | `G1K_COS_SECRET_ID` / `G1K_COS_SECRET_KEY` / `G1K_COS_BUCKET` / `G1K_COS_REGION` | 周报 HTML 上传 COS（CI 中复用 `TENCENT_*`） | — |
 
 </details>

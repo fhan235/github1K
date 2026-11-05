@@ -3,7 +3,7 @@
 用法
 ----
 ```bash
-# 默认：统计「昨天往前 7 天」，产出 Top 30，带 LLM 介绍
+# 默认：统计「昨天往前 7 天」，产出 Top 100（G1K_WEEKLY_TOP_N），带 LLM 介绍
 python -m src.weekly.main
 
 # 免费调试：跳过 LLM，只看规则打分选出什么
@@ -32,6 +32,7 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
 from pathlib import Path
@@ -53,6 +54,7 @@ from src.weekly.llm import (
     LLMClient,
     generate_highlights,
     generate_intro,
+    load_cached_intro,
     triage_candidates,
 )
 from src.weekly.models import ProjectIntro, ScoredCandidate, WeeklyHighlights
@@ -253,7 +255,8 @@ def main() -> int:
         console.rule("[bold]Step 5 / LLM 粗筛（打标签/判垃圾）[/bold]")
         triage_pool = scored[: min(len(scored), args.top * 2)]
         triage = triage_candidates(
-            llm_client, settings.llm_model_triage, triage_pool
+            llm_client, settings.llm_model_triage, triage_pool,
+            batch_size=15, max_workers=args.workers,
         )
         if triage_pool and not triage:
             console.print("[red]❌ LLM 粗筛全部失败，终止（未写入任何产物）[/red]")
@@ -288,19 +291,24 @@ def main() -> int:
         console.rule(f"[bold]Step 7 / LLM 生成介绍（{len(finalists)} 项）[/bold]")
         model = settings.llm_model_writer
 
-        def _write(c: ScoredCandidate) -> ProjectIntro:
+        def _write(c: ScoredCandidate) -> tuple[ProjectIntro, str]:
+            cached = load_cached_intro(model, c.full_name)
+            if cached is not None:
+                return cached, "缓存"
+            t0 = time.monotonic()
             readme = fetch_readme(readme_client, c.full_name)
-            return generate_intro(llm_client, model, c, readme)
+            intro = generate_intro(llm_client, model, c, readme)
+            return intro, f"{model} {time.monotonic() - t0:.0f}s"
 
         with make_readme_client() as readme_client, ThreadPoolExecutor(
             max_workers=max(1, args.workers)
         ) as pool:
-            for i, (c, intro) in enumerate(
+            for i, (c, (intro, src)) in enumerate(
                 zip(finalists, pool.map(_write, finalists), strict=True), 1
             ):
                 intros[c.full_name] = intro
                 console.print(
-                    f"  [{i}/{len(finalists)}] {c.full_name}: {intro.one_liner[:30]}"
+                    f"  [{i}/{len(finalists)}] ({src}) {c.full_name}: {intro.one_liner[:30]}"
                 )
         ok_intros = sum(1 for v in intros.values() if v.one_liner != "unknown")
         if finalists and ok_intros == 0:
@@ -334,8 +342,8 @@ def main() -> int:
         total_breakthroughs=len(candidates),
         dry_run=args.dry_run,
         highlights=highlights,
+        top_n=args.top,
     )
-    console.print(f"[green]📄 周报: {md_path}[/green]")
     console.print(f"[green]📦 结构化数据: {json_path}[/green]")
 
     # ── Step 9: 渲染 HTML + 上传 COS（企微里可读完整周报）─────────
