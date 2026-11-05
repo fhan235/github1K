@@ -289,6 +289,8 @@ def _slim_daily_project(raw: object, digest: dict) -> dict | None:
     gained = _int(raw.get("stars_gained")) if raw.get("gain_reliable") else None
     topics = [_str(t, 50) for t in raw.get("topics") or [] if _str(t)]
     item = digest.get(name) if isinstance(digest, dict) else None
+    intro = _slim_intro((item or {}).get("intro"))
+    one_liner = _str((item or {}).get("one_liner"), 40) or (intro or {}).get("one_liner", "")
     return {
         "name": name,
         "url": f"https://github.com/{name}",
@@ -300,7 +302,8 @@ def _slim_daily_project(raw: object, digest: dict) -> dict | None:
         "gained": gained,
         "is_fork": bool(raw.get("is_fork")),
         "category": _str((item or {}).get("category"), 40) or "other",
-        "one_liner": _str((item or {}).get("one_liner"), 40),
+        "one_liner": one_liner,
+        "intro": intro,
     }
 
 
@@ -331,7 +334,7 @@ def _build_day(path: Path) -> dict | None:
         "unreliable": _daily_unreliable(data, repos),
         "headline": _str(digest.get("headline"), 60),
         "points": [_str(p, 120) for p in digest.get("points") or [] if _str(p)][:3],
-        "has_digest": bool(items),
+        "has_digest": any(p["intro"] for p in projects),
         "gained_total": sum(p["gained"] or 0 for p in projects),
         "projects": projects,
     }

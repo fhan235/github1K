@@ -27,6 +27,7 @@ from src.config import settings  # noqa: E402
 from src.daily_digest import (  # noqa: E402
     DailyDigest,
     digest_daily_projects,
+    fill_daily_intros,
     generate_daily_headline,
 )
 from src.weekly.llm import LLMClient  # noqa: E402
@@ -64,6 +65,26 @@ def _unreliable(data: dict) -> bool:
         return True
 
 
+def _day_status(data: dict) -> tuple[int, int]:
+    """返回 (项目数, 已有完整介绍数)，用于判断是否续跑。"""
+    day = str(data.get("date", ""))
+    repos = data.get("repos") or []
+    out = _digest_path(day)
+    have = 0
+    if out.exists():
+        try:
+            digest = DailyDigest(**json.loads(out.read_text(encoding="utf-8")))
+            have = sum(
+                1 for r in repos
+                if (it := digest.items.get(r["full_name"])) is not None
+                and it.intro is not None
+                and it.intro.one_liner != "unknown"
+            )
+        except Exception:
+            have = 0
+    return len(repos), have
+
+
 def process_day(path: Path, client: LLMClient, workers: int) -> str:
     data = _load_milestones(path)
     if data is None:
@@ -75,10 +96,6 @@ def process_day(path: Path, client: LLMClient, workers: int) -> str:
     if len(repos) > MAX_PROJECTS:
         return f"跳过（{len(repos)} 条，冷启动基线日）"
 
-    out = _digest_path(day)
-    if out.exists():
-        return "已完成，跳过"
-
     # 按可信增量排序，看点优先引用涨得多的项目
     def _gain(r: dict) -> int:
         gained = r.get("stars_gained")
@@ -86,19 +103,34 @@ def process_day(path: Path, client: LLMClient, workers: int) -> str:
 
     repos.sort(key=_gain, reverse=True)
     model = settings.llm_model_writer
-    items = digest_daily_projects(client, model, repos, max_workers=workers)
-    headline, points = generate_daily_headline(client, model, day, repos, items)
+    out = _digest_path(day)
 
-    digest = DailyDigest(
-        date=day,
-        headline=headline,
-        points=points,
-        items={name: item for name, item in items.items()},
-    )
+    # 续跑：读取已有产物，只补缺的（分类/定位、介绍、看点分别判断）
+    digest = DailyDigest(date=day)
+    if out.exists():
+        try:
+            digest = DailyDigest(**json.loads(out.read_text(encoding="utf-8")))
+        except Exception:
+            digest = DailyDigest(date=day)
+    items = digest.items
+
+    if not all(r["full_name"] in items for r in repos):
+        new_items = digest_daily_projects(client, model, repos, max_workers=workers)
+        for name, it in new_items.items():
+            items.setdefault(name, it)
+
+    filled = fill_daily_intros(client, model, day, repos, items, max_workers=workers)
+
+    if not digest.headline:
+        digest.headline, digest.points = generate_daily_headline(
+            client, model, day, repos, items
+        )
+    digest.items = items
     out.write_text(
         digest.model_dump_json(exclude_none=True), encoding="utf-8"
     )
-    return f"完成（{len(repos)} 条，命中 {len(items)}）"
+    total, have = _day_status(data)
+    return f"完成（{len(repos)} 条，介绍 {have}/{total}，本次新增 {filled}）"
 
 
 def main() -> int:
@@ -123,8 +155,9 @@ def main() -> int:
         if len(repos) > MAX_PROJECTS:
             print(f"  {day}  跳过（{len(repos)} 条，冷启动基线日）")
             continue
-        done = _digest_path(str(day)).exists()
-        print(f"  {day}  {'已完成，跳过' if done else f'待生成（{len(repos)} 条）'}")
+        total, have = _day_status(data)
+        done = total > 0 and have >= total
+        print(f"  {day}  {'已完成，跳过' if done else f'待补（介绍 {have}/{total}）'}")
         if not done:
             todo.append(p)
 

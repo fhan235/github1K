@@ -10,7 +10,9 @@ from concurrent.futures import ThreadPoolExecutor
 
 from pydantic import BaseModel, Field, ValidationError
 
-from src.weekly.llm import _CATEGORIES, LLMClient
+from src.weekly.enrich import fetch_readme, make_readme_client
+from src.weekly.llm import _CATEGORIES, LLMClient, generate_intro
+from src.weekly.models import ProjectIntro, ScoredCandidate
 
 logger = logging.getLogger(__name__)
 
@@ -41,10 +43,71 @@ _DAILY_HEADLINE_SYSTEM = """你是中文技术日报主编。给你某天 GitHub
 
 
 class DailyDigestItem(BaseModel):
-    """单个项目的日报摘要（AI 产物）。"""
+    """单个项目的日报摘要（AI 产物，与周榜同一标准：分类 + 完整解读）。"""
 
     category: str = "other"
     one_liner: str = ""
+    intro: ProjectIntro | None = None
+
+
+def repo_to_candidate(repo: dict, day: str) -> ScoredCandidate:
+    """把日报条目包装成周榜候选，复用周榜的介绍生成逻辑。"""
+    stars = repo.get("stars_today") or 0
+    return ScoredCandidate(
+        full_name=repo["full_name"],
+        url=repo.get("url") or f"https://github.com/{repo['full_name']}",
+        description=repo.get("description") or "",
+        language=repo.get("language"),
+        topics=repo.get("topics") or [],
+        created_at=(repo.get("created_at") or "")[:10] or None,
+        stars_at_breakthrough=stars,
+        stars_at_first_seen=stars,
+        first_seen=day,
+        last_seen=day,
+        current_forks=repo.get("forks"),
+    )
+
+
+def fill_daily_intros(
+    client: LLMClient,
+    model: str,
+    day: str,
+    repos: list[dict],
+    items: dict[str, DailyDigestItem],
+    max_workers: int = 4,
+) -> int:
+    """按周榜同一标准（读 README、结构化解读、带缓存）为每个项目生成介绍。
+
+    只处理还没有介绍的项目；已写入的 intro 就地更新。返回成功数。
+    """
+    todo = [
+        r for r in repos
+        if (items.get(r["full_name"]) is None
+            or items[r["full_name"]].intro is None
+            or items[r["full_name"]].intro.one_liner == "unknown")
+    ]
+    if not todo:
+        return 0
+    done = 0
+    with make_readme_client() as rc:
+
+        def _one(repo: dict) -> ProjectIntro:
+            return generate_intro(
+                client, model, repo_to_candidate(repo, day),
+                fetch_readme(rc, repo["full_name"]),
+            )
+
+        with ThreadPoolExecutor(max_workers=max(1, max_workers)) as pool:
+            intros = list(pool.map(_one, todo))
+    for repo, intro in zip(todo, intros, strict=True):
+        if intro.one_liner == "unknown":
+            continue
+        item = items.setdefault(repo["full_name"], DailyDigestItem())
+        item.intro = intro
+        if not item.one_liner:
+            item.one_liner = intro.one_liner[:40]
+        done += 1
+    return done
 
 
 class DailyDigest(BaseModel):

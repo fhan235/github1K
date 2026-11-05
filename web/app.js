@@ -616,7 +616,8 @@ const DAILY_SORTERS = {
 
 function matchesDaily(p, q) {
   if (!q) return true;
-  const hay = [p.name, p.description, p.language, p.one_liner, ...(p.topics || [])]
+  const hay = [p.name, p.description, p.language, p.one_liner,
+    p.intro?.what_it_is, p.intro?.problem_solved, ...(p.topics || [])]
     .filter(Boolean).join(" ").toLowerCase();
   return q.split(/\s+/).every((t) => hay.includes(t));
 }
@@ -654,6 +655,7 @@ function renderDailyRow(p) {
     ),
     el("div", { class: "row-body" },
       p.description ? el("p", { class: "desc", text: p.description }) : null,
+      introList(p.intro),
       metaTags(p, 6),
     ),
   );
