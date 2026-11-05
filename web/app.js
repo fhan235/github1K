@@ -420,6 +420,39 @@ function dailyLink(p) {
     : null;
 }
 
+const SITE_URL = "https://fhan235.github.io/github1K";
+
+/** 上榜徽章：一行可复制的 Markdown，作者贴到自己 README 里，点徽章跳回本期周榜。 */
+function badgeBlock(p) {
+  if (state.weekId === ALL) return null;
+  const no = weekNo(state.weekId);
+  if (!no) return null;
+  const text = `github1K 第${no}期周榜`;
+  const img = `https://img.shields.io/badge/${encodeURIComponent(text)}-f5b301`;
+  const link = `${SITE_URL}/#w=${encodeURIComponent(state.weekId)}`;
+  const md = `[![${text}](${img})](${link})`;
+  const btn = el("button", { type: "button", class: "chip", onclick: async (e) => {
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(md);
+      btn.textContent = "已复制 ✓";
+    } catch {
+      const input = btn.parentElement.querySelector("input");
+      input.select();
+      btn.textContent = "请手动复制";
+    }
+    setTimeout(() => { btn.textContent = "复制 Markdown"; }, 1500);
+  } }, "复制 Markdown");
+  return el("div", { class: "badge-box" },
+    el("span", { class: "badge-label", text: "🏆 上榜徽章（贴到项目 README 可跳回本期）" }),
+    el("span", { class: "badge-row" },
+      el("img", { src: img, alt: text, height: "20", loading: "lazy" }),
+      el("input", { type: "text", readonly: true, value: md, class: "badge-md", onclick: (e) => e.target.select(), "aria-label": "徽章 Markdown" }),
+      btn,
+    ),
+  );
+}
+
 function metaTags(p, topicLimit = 4) {
   return el("div", { class: "meta" },
     p.language ? el("span", { class: "tag lang", text: p.language }) : null,
@@ -472,6 +505,7 @@ function renderFeature(p) {
     intro
       ? el("details", { class: "more" }, el("summary", { text: "完整解读" }), introList(intro, { skipWhat: true }))
       : null,
+    badgeBlock(p),
   );
 }
 
@@ -508,6 +542,7 @@ function renderRow(p) {
       metaTags(p, 8),
       riskNote(p),
       dailyLink(p),
+      badgeBlock(p),
     ),
   );
 }

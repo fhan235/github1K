@@ -12,6 +12,7 @@
 [![Weekly](https://github.com/fhan235/github1K/actions/workflows/weekly.yml/badge.svg)](https://github.com/fhan235/github1K/actions/workflows/weekly.yml)
 [![Deploy Site](https://github.com/fhan235/github1K/actions/workflows/pages.yml/badge.svg)](https://github.com/fhan235/github1K/actions/workflows/pages.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
 ![Stars](https://img.shields.io/github/stars/fhan235/github1K?style=social)
 
 ### 👉 [fhan235.github.io/github1K](https://fhan235.github.io/github1K/)

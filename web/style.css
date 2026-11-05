@@ -226,6 +226,17 @@ dl.intro ul { margin: 0; padding-left: 1.1em; }
 .xlink { font-size: .84rem; }
 .week-badge { background: var(--accent-soft); color: var(--accent) !important; }
 .week-badge:hover { text-decoration: none; opacity: .85; }
+
+/* 上榜徽章 */
+.badge-box { border-top: 1px dashed var(--border); padding-top: 10px; display: grid; gap: 6px; }
+.badge-label { color: var(--muted); font-size: .8rem; }
+.badge-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.badge-md {
+  flex: 1; min-width: 200px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .74rem; color: var(--muted); background: var(--bg);
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 .row { border-bottom: 1px solid var(--border); }
 .row:last-child { border-bottom: none; }
 .row > summary {
