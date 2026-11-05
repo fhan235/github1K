@@ -1,1 +1,852 @@
-{"date":"2026-09-05","headline":"AI Agent 项目领跑今日热度","points":["AI Agent 有 10 个项目，写作风格技能 larashero3-dotcom/writing-dna-skill 增长 413。","开发工具同样活跃：shadcn-ui/cn 增长 150，聚焦 Tailwind 类名合并。","Python 出现 10 次；renderffx/raw-bits-to-react 以 React 原理教学获 95 增长。"],"items":{"larashero3-dotcom/writing-dna-skill":{"category":"ai-agent","one_liner":"复刻写作风格的智能体技能"},"Player-YN/PawWork_ZhuaZhua":{"category":"ai-agent","one_liner":"网页圈选生成可编辑文档"},"shadcn-ui/cn":{"category":"web-frontend","one_liner":"高速合并 Tailwind 类名"},"renderffx/raw-bits-to-react":{"category":"learning-resource","one_liner":"从底层讲透 React 原理"},"BagelHole/DevOps-Security-Agent-Skills":{"category":"ai-agent","one_liner":"运维安全智能体技能库"},"RankFTW/RHI":{"category":"game","one_liner":"ReShade HDR 安装器"},"jprx/darwin-vm":{"category":"desktop-system","one_liner":"Qemu 运行苹果系统虚拟机"},"LanceZPF/agent-as-a-router":{"category":"ai-agent","one_liner":"编码任务模型路由实现"},"fy-agent/fyagent":{"category":"ai-agent","one_liner":"随身个人数字人格智能体"},"jdx/usage":{"category":"dev-tools","one_liner":"命令行工具规范"},"jonexaiorg/jonex":{"category":"ai-model","one_liner":"多模态解析与知识引擎"},"webbrain-one/webbrain":{"category":"ai-agent","one_liner":"开源浏览器智能体"},"DadsMmoLab/dads-mmo-lab":{"category":"game","one_liner":"离线 MMO 私服部署指南"},"jsmastery-pro/skills":{"category":"ai-agent","one_liner":"智能体开发工作流技能"},"software-mansion/enriched-markdown":{"category":"web-frontend","one_liner":"跨平台 Markdown 富文本方案"},"inspatio/inspatio-world":{"category":"other","one_liner":"信息不足的 Python 项目"},"Anil-matcha/awesome-agent-apis":{"category":"ai-agent","one_liner":"智能体可用 API 目录"},"alchaincyf/fanbox":{"category":"dev-tools","one_liner":"氛围编程文件终端驾驶舱"},"nlewo/comin":{"category":"dev-tools","one_liner":"NixOS 主机 GitOps 部署"},"summer-rs/summer-rs":{"category":"dev-tools","one_liner":"Rust 风格应用开发框架"},"zjyzip/AdClose":{"category":"mobile","one_liner":"Xposed 去广告解除限制"},"BloothOfYouth/Computer-Network-Notes":{"category":"learning-resource","one_liner":"计算机网络学习笔记"},"LRitzdorf/TheJeffDeanFacts":{"category":"content-media","one_liner":"Jeff Dean 梗段子集"},"vorssaint/vorssaint-utils":{"category":"desktop-system","one_liner":"macOS 菜单栏工具箱"},"TokenRhythm/opensquilla":{"category":"ai-agent","one_liner":"省 Token 的高密度智能体"},"nunchux-ai/nunchaku":{"category":"ai-model","one_liner":"四比特扩散模型量化方案"},"weave-os/router":{"category":"ai-agent","one_liner":"智能体系统模型路由器"},"ictnlp/LLaMA-Omni":{"category":"ai-model","one_liner":"低延迟端到端语音模型"},"nunchux-ai/ComfyUI-nunchaku":{"category":"ai-model","one_liner":"ComfyUI 量化推理插件"},"geerlingguy/raspberry-pi-pcie-devices":{"category":"hardware-iot","one_liner":"树莓派 PCIe 兼容数据库"},"lnkiai/m3e-canvas":{"category":"web-frontend","one_liner":"草图转氛围编程提示词"},"Edge0-AI/Audio8_TTS":{"category":"ai-model","one_liner":"紧凑规模高性能语音合成"},"metasequoiaime/MSIME-Windows":{"category":"desktop-system","one_liner":"Windows 水杉输入法"},"LING71671/open-reverselab":{"category":"security","one_liner":"智能体原生逆向工程实验室"},"ifer47/markeron":{"category":"desktop-system","one_liner":"轻量屏幕标注工具"}}}
+{
+  "date": "2026-09-05",
+  "headline": "AI Agent 项目领跑今日热度",
+  "points": [
+    "AI Agent 有 10 个项目，写作风格技能 larashero3-dotcom/writing-dna-skill 增长 413。",
+    "开发工具同样活跃：shadcn-ui/cn 增长 150，聚焦 Tailwind 类名合并。",
+    "Python 出现 10 次；renderffx/raw-bits-to-react 以 React 原理教学获 95 增长。"
+  ],
+  "items": {
+    "larashero3-dotcom/writing-dna-skill": {
+      "category": "ai-agent",
+      "one_liner": "复刻写作风格的智能体技能",
+      "intro": {
+        "one_liner": "把任意作者写作风格蒸馏成 Agent 可复用 DNA",
+        "what_it_is": "一个面向 AI Agent 的写作风格蒸馏 skill：让 agent 系统分析一批完整文章，把风格拆成语言、结构、选题、素材、认知框架与视觉风格六个层次，输出可复用的风格文档。",
+        "problem_solved": "解决“给几篇例文让 AI 模仿风格”容易失真、只抓到表面语气的问题，把模糊的风格感受拆成可记录、可复用、可自检的规则。",
+        "who_should_care": "需要稳定复刻特定写作风格的写作者、内容运营、Newsletter 作者，以及为 agent 构建写作上下文的开发者。",
+        "use_cases": [
+          "分析某个账号或作者的稳定写作风格并沉淀为文档",
+          "沉淀个人过往文章的写作资产，供后续写作复用",
+          "对比不同作者在同一议题上的表达差异",
+          "为 agent 提供写作前的风格上下文并逐项自检"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 agent skill 与风格复刻的轻量工具，周增约 449 星，但依赖用户自备至少 20 篇语料才能体现效果。",
+        "risk_notes": "README 明确提示不要用于冒充作者、误导读者或侵犯版权，开源仓库不应包含未授权原文语料；效果依赖语料数量与质量，示例目录仅演示格式。",
+        "evidence": [
+          "它并不是简单的“模仿某某风格”提示词，整个 skill 包含了一套完整的蒸馏流程",
+          "至少 20 篇完整文章",
+          "这个项目用于学习、分析、风格研究和个人写作资产沉淀。请不要用于冒充作者本人、误导读者，或侵犯他人版权。"
+        ]
+      }
+    },
+    "Player-YN/PawWork_ZhuaZhua": {
+      "category": "ai-agent",
+      "one_liner": "网页圈选生成可编辑文档",
+      "intro": {
+        "one_liner": "网页转办公文件的浏览器代理",
+        "what_it_is": "这是一个 Chrome 扩展，在侧边栏运行代理，操作当前已登录网页，并保留表格、文档和网页产物。",
+        "problem_solved": "让用户从实时网页中选取内容、描述目标，再带走可编辑的办公文件，无需服务端和托管模型。",
+        "who_should_care": "需要把网页资料整理成办公文件的 Chrome 用户。",
+        "use_cases": [
+          "选取网页内容生成表格",
+          "整理页面信息为文档",
+          "在已登录页面执行代理任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,507 星，但仅一天上日榜。",
+        "risk_notes": "疑似刷星，星数与分叉数差距较大；需手动加载未打包扩展，且不在 Chrome 应用店；要求自带密钥，并受 Chrome 版本与页面限制影响。",
+        "evidence": [
+          "Paw Work - selection-first web agent for Chrome: select on the live page, describe the outcome, take away an editable office file. BYOK, sandboxed, no server.",
+          "Not on the Chrome Web Store. No hosted model — bring your own key.",
+          "Needs Chrome 135+. On Chrome 138+, enable Allow User Scripts on the extension details page if you want sys.eval or page-identity fetch."
+        ]
+      }
+    },
+    "shadcn-ui/cn": {
+      "category": "web-frontend",
+      "one_liner": "高速合并 Tailwind 类名",
+      "intro": {
+        "one_liner": "Tailwind 类名合并新引擎，替代 clsx 与 tailwind-merge",
+        "what_it_is": "cn 是一个用于 Tailwind CSS 类名合并与冲突消解的新引擎，用 TypeScript 编写，宣称可替代 tailwind-merge 和 clsx，并保持相同的 API。",
+        "problem_solved": "它解决的是前端组件中条件拼接类名与 Tailwind 冲突类名覆盖这两个问题，把原本需要 clsx 加 tailwind-merge 两步完成的工作合并到一个零依赖的库中。",
+        "who_should_care": "使用 Tailwind CSS 的 React、Vue、Svelte、Solid、Astro 项目开发者，尤其是已经在用 shadcn/ui 或 clsx 加 tailwind-merge 组合的团队。",
+        "use_cases": [
+          "把现有 shadcn/ui 项目的 lib/utils.ts 中 clsx 加 twMerge 的封装替换为 cn",
+          "在组件中按条件拼接类名并自动消解 Tailwind 冲突类",
+          "通过 cn/config 扩展自定义主题的 classGroups 与冲突规则"
+        ],
+        "alternatives": "README 称其与 tailwind-merge 输出完全一致（356,000 条差分测试），API 同名或相近，并宣称比 clsx 加 tailwind-merge 更快、体积更小；但 experimentalParseClassName 不支持。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建时间很短、周增星约 314，且性能宣称主要来自作者自建 benchmark，尚需社区独立验证。",
+        "risk_notes": "性能数字（30×、37×）均为项目自述 benchmark，未经第三方复现；仅支持 Tailwind CSS v4，v3 需继续用 tailwind-merge v2；CLI 需要 Node 22+；项目创建于 2026-08-31，历史很短，长期维护情况未知。",
+        "evidence": [
+          "cn is a new engine for Tailwind class merging and conflict resolution. It replaces tailwind-merge and clsx. Same APIs. Full parity. And it is 30× faster.",
+          "cn produces the same output as tailwind-merge for every input. We verify this with 356,000 differential tests.",
+          "cn supports Tailwind CSS v4, like tailwind-merge v3. On Tailwind v3, stay with tailwind-merge v2."
+        ]
+      }
+    },
+    "renderffx/raw-bits-to-react": {
+      "category": "learning-resource",
+      "one_liner": "从底层讲透 React 原理",
+      "intro": {
+        "one_liner": "从底层到 React 的课程",
+        "what_it_is": "一个以从零构建 CPU 模拟器、网络层、浏览器渲染引擎、JavaScript 引擎、虚拟 DOM 和迷你 React 为主线的学习计划。",
+        "problem_solved": "帮助开发者从底层理解界面卡顿、重渲染、事件循环、布局与合成等问题的来源，而不是停留在表层性能技巧。",
+        "who_should_care": "资深前端、系统方向开发者，以及想深入 React 原理的人。",
+        "use_cases": [
+          "系统学习浏览器到 React 的链路",
+          "从零实现迷你 React 与渲染引擎",
+          "排查界面卡顿和重渲染问题"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千星且曾有一天登上日榜。",
+        "risk_notes": "内容主要是课程大纲，仓库实现与完成度不明；要求 fluent C++ or Rust，学习门槛高；README 含外部链接，需自行辨别。",
+        "evidence": [
+          "CPU → cache → TCP → browser engine → JS VM → Fiber React → 60 fps / learn react like god !",
+          "What You Build From Scratch",
+          "12 core weeks of deep focus"
+        ]
+      }
+    },
+    "BagelHole/DevOps-Security-Agent-Skills": {
+      "category": "ai-agent",
+      "one_liner": "运维安全智能体技能库",
+      "intro": {
+        "one_liner": "运维安全智能体技能库",
+        "what_it_is": "面向智能体的运维、安全、基础设施与合规知识库，包含技能文档、脚本、模板和预案。",
+        "problem_solved": "把分散的运维安全经验整理成智能体可读取、可匹配、可执行的知识，减少查资料和写配置的成本。",
+        "who_should_care": "站点可靠性、平台、安全团队，以及使用智能体辅助运维的开发者。",
+        "use_cases": [
+          "让智能体排查 Kubernetes 问题",
+          "生成云基础设施配置模板",
+          "辅助合规检查与事件响应"
+        ],
+        "alternatives": "相比只给链接的清单，它提供可复制配置、命令、脚本和排障说明。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 50 星并曾进入日榜。",
+        "risk_notes": "创建于 2026 年，资料较新；技能数量在描述与文档口径不一致；仍有 5 个未关闭问题。",
+        "evidence": [
+          "Agent-ready DevOps, security, infrastructure, and compliance knowledge base with 80+ skills across Kubernetes, Terraform, AWS/Azure/GCP, AI platform operations, container hardening, SOC2/ISO27001, and incident response—plus ready-to-run scripts, templates, and playbooks for SRE, platform, and security teams.",
+          "160+ production-ready skills for Claude Code, Cursor, Codex, and every AI agent that reads files.",
+          "Most \"awesome lists\" give you links. This repo gives your AI agent production-ready knowledge it can act on:"
+        ]
+      }
+    },
+    "RankFTW/RHI": {
+      "category": "game",
+      "one_liner": "ReShade HDR 安装器",
+      "intro": {
+        "one_liner": "游戏画质增强安装器",
+        "what_it_is": "这是一个 Windows 桌面工具，用 C# 编写，集中发现电脑游戏并管理 ReShade、HDR 模组、DLSS、帧生成、帧限制和 NVIDIA 驱动设置。",
+        "problem_solved": "它把多个游戏商店里的游戏与大量画质增强组件的安装、更新、备份、移除和逐游戏配置集中到一个窗口，减少手工改文件和切换工具的麻烦。",
+        "who_should_care": "想批量管理单机游戏画质增强、HDR 模组和驱动配置的 Windows 玩家。",
+        "use_cases": [
+          "为游戏安装并更新 HDR 模组",
+          "逐游戏配置 ReShade 与着色器",
+          "批量切换 DLSS 版本和预设"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 274 星，曾有一天进入日榜。",
+        "risk_notes": "明确提示仅限单机游戏，相关组件可能触发联机游戏反作弊；部分功能需要管理员模式，DLSS 预设、驱动和 Neural Rendering 功能需要 NVIDIA GPU。",
+        "evidence": [
+          "RHI finds your games across eight storefronts, then installs, updates and removes ReShade, RenoDX and Luma HDR mods, frame limiters, DLSS/Streamline files, OptiScaler, Neural Rendering tools and more, with per-game control over every one of them.",
+          "Single-player only. ReShade with addon support, OptiScaler and DLSS/Streamline changes can trigger anti-cheat in online games. Uninstall them before playing multiplayer.",
+          "An NVIDIA GPU for the DLSS preset, driver and Neural Rendering features. ReShade, RenoDX, Luma and OptiScaler work on any GPU."
+        ]
+      }
+    },
+    "jprx/darwin-vm": {
+      "category": "desktop-system",
+      "one_liner": "Qemu 运行苹果系统虚拟机",
+      "intro": {
+        "one_liner": "在 Qemu 运行 Darwin",
+        "what_it_is": "一个用 Python 脚本和定制 Qemu 启动精简 iOS 或 macOS 系统的工具，可直接进入 root shell。",
+        "problem_solved": "让开发者无需完整设备或图形界面，就能运行命令行程序、修改根文件系统并调试 Darwin 内核与底层组件。",
+        "who_should_care": "关注 Darwin 内核、系统安全机制和 iOS 或 macOS 底层调试的开发者。",
+        "use_cases": [
+          "调试或修补内核组件",
+          "在 root shell 运行程序",
+          "编辑自定义根文件系统"
+        ],
+        "alternatives": "类似在 Qemu 中启动精简 Linux 做内核开发，但面向 Darwin 系统。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 62 星，曾有一天进入日榜。",
+        "risk_notes": "不是完整模拟器，屏幕、无线、蓝牙、图形界面和图形应用不可用；准备文件需要 Mac；部分配置启动失败。",
+        "evidence": [
+          "Run iOS/ macOS in Qemu. Virtual iPhone 17, 16, 15, 14, 13, 12 and M5-M1 Apple Si Macs supported.",
+          "This is not a full iPhone/ Mac emulator. Don't expect the screen, wifi, bluetooth, graphics, GUI apps, or full springboard to work.",
+          "This step requires a Mac."
+        ]
+      }
+    },
+    "LanceZPF/agent-as-a-router": {
+      "category": "ai-agent",
+      "one_liner": "编码任务模型路由实现",
+      "intro": {
+        "one_liner": "编码任务模型路由实现",
+        "what_it_is": "这是 Agent-as-a-Router 的官方实现，面向编码任务提供智能体式模型路由，主要使用 TypeScript。",
+        "problem_solved": "面向编码任务中的模型选择问题，提供智能体式路由方案；具体能力边界缺少资料说明。",
+        "who_should_care": "关注编码任务模型路由的开发者与研究者。",
+        "use_cases": [
+          "编码任务的模型路由",
+          "智能体式路由实现参考"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾登上日榜，但资料不足。",
+        "risk_notes": "缺少说明文档，功能细节、成熟度、许可证和同类差异均无法确认，结论置信度较低。",
+        "evidence": [
+          "The official implementations of Agent-as-a-Router: Agentic Model Routing for Coding Tasks.",
+          "主要语言：TypeScript",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "fy-agent/fyagent": {
+      "category": "ai-agent",
+      "one_liner": "随身个人数字人格智能体",
+      "intro": {
+        "one_liner": "个人智能体配置中心",
+        "what_it_is": "FyAgent 是本地桌面应用，集中管理多种 AI 软件的模型、账号、Skills、MCP、提示词和记忆配置。",
+        "problem_solved": "它把分散、隐蔽且容易改错的 AI 工具配置变得可见、可改，并支持随用户迁移。",
+        "who_should_care": "同时使用多款 AI Agent、AI Worker 或智能助手的开发者。",
+        "use_cases": [
+          "统一查看和修改模型设置",
+          "为软件分配 Skills 与 MCP",
+          "集中管理提示词和记忆"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨 18 星，上日榜一天。",
+        "risk_notes": "仍在持续开发，升级前需备份；非开源软件，商业使用需书面授权；Windows 安装包未包含 Authenticode 签名。",
+        "evidence": [
+          "FyAgent 仍在持续开发。升级前请备份重要配置，并在安装前阅读当次发布的可信度说明。",
+          "FyAgent 是源码可用软件，不是 OSI 定义的开源软件。FyAgent 自有组件和修改采用 PolyForm Noncommercial License 1.0.0；继承自 CC Switch 的部分继续使用 MIT 许可证。",
+          "目前 Windows 安装包尚未包含 Authenticode 签名，在 Release 页面显示为 `NotSigned`。"
+        ]
+      }
+    },
+    "jdx/usage": {
+      "category": "dev-tools",
+      "one_liner": "命令行工具规范",
+      "intro": {
+        "one_liner": "命令行接口规范工具",
+        "what_it_is": "Usage 是一套可移植的 KDL 规范、命令行工具和 Rust 框架，用一份定义描述命令、参数、选项和设置。",
+        "problem_solved": "把命令行接口定义集中到一处，用于解析、帮助、补全、文档、手册页和类型化客户端生成。",
+        "who_should_care": "开发 Rust 命令行工具、维护脚本或需要生成命令行客户端的开发者。",
+        "use_cases": [
+          "为 Rust 命令行程序派生解析器",
+          "生成补全、文档和手册页",
+          "从脚本注释声明并解析参数"
+        ],
+        "alternatives": "设计借鉴 clap，但以可移植规范和生成能力为中心，并有独立的派生属性。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时有一千零八星。",
+        "risk_notes": "Go 框架仍是开发预览，不适合采用或测试；生成的补全脚本在补全时需要 usage。",
+        "evidence": [
+          "Usage is a portable [KDL](https://kdl.dev/) specification, a command-line utility,\nand a Rust framework.",
+          "Describe commands, flags, arguments, and settings in one\nplace, then use that definition for parsing, help, shell completions, Markdown\ndocs, man pages, and typed clients.",
+          "The [Go framework](https://usage.jdx.dev/go/) is a development\npreview and is not ready for adoption or testing."
+        ]
+      }
+    },
+    "jonexaiorg/jonex": {
+      "category": "ai-model",
+      "one_liner": "多模态解析与知识引擎",
+      "intro": {
+        "one_liner": "多模态企业知识引擎",
+        "what_it_is": "Jonex 是把多模态解析、本体编译、向量与图谱索引、带来源检索串起来的企业知识平台。",
+        "problem_solved": "把文档、音视频等原始内容转成可复用、可追溯、可检索的知识服务。",
+        "who_should_care": "做企业知识库、智能体检索和领域问答的开发者。",
+        "use_cases": [
+          "搭建企业领域知识库",
+          "解析文档与音视频内容",
+          "为智能体提供带来源检索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但创建时间很新。",
+        "risk_notes": "本地演示账号仅供评估，部署到网络前需修改或移除；首次构建依赖较多；未关闭问题有 35 个。",
+        "evidence": [
+          "Jonex unifies an all-in-one multimodal parsing engine with an AI-ready knowledge engine.",
+          "It is an end-to-end enterprise AI knowledge platform that turns raw content into reusable knowledge services.",
+          "These credentials are for local evaluation only. Change or remove the default administrator account before binding Jonex to a non-loopback interface, sharing the deployment, or exposing it to any network."
+        ]
+      }
+    },
+    "webbrain-one/webbrain": {
+      "category": "ai-agent",
+      "one_liner": "开源浏览器智能体",
+      "intro": {
+        "one_liner": "开源浏览器智能体",
+        "what_it_is": "WebBrain 是面向 Chrome 和 Firefox 的开源浏览器扩展，可在侧栏用所选模型与网页对话、执行点击输入和多步骤任务。",
+        "problem_solved": "它把网页阅读、表单填写、导航操作和调试查看交给智能体处理，减少在页面与工具之间反复切换。",
+        "who_should_care": "需要网页自动化、页面问答或调试辅助的开发者与重度浏览器用户。",
+        "use_cases": [
+          "总结当前网页内容",
+          "查找页面中的定价链接",
+          "自动填写表单并搜索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 21 星，曾有一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0-or-later；部分本地模型能力标注为预览；Firefox 源码加载为临时安装。",
+        "evidence": [
+          "Open-source AI browser agent for chatting with pages, automating tasks, and running multi-step workflows with your choice of LLM.",
+          "WebBrain is a web browser extension that puts an AI agent in a side panel next to your tabs.",
+          "GPL-3.0-or-later"
+        ]
+      }
+    },
+    "DadsMmoLab/dads-mmo-lab": {
+      "category": "game",
+      "one_liner": "离线 MMO 私服部署指南",
+      "intro": {
+        "one_liner": "离线经典网游服务器工具集",
+        "what_it_is": "它收集经典 MMO 离线私服的图文指南、Docker 脚本和自动安装器，面向 Steam Deck、Linux 与 Windows 的 WSL2 环境。",
+        "problem_solved": "把开源模拟器、依赖和启动流程打包成一键安装与新手指南，降低在掌机或本机离线运行老网游的门槛。",
+        "who_should_care": "想在 Steam Deck 或本机离线重温经典 MMO 的玩家，以及愿意折腾私服脚本的开发者。",
+        "use_cases": [
+          "在 Steam Deck 离线运行经典 MMO",
+          "用一键脚本安装模拟器服务器",
+          "按新手指南配置和管理本地私服"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 21 星且仅一天上日榜，破千后增速有限。",
+        "risk_notes": "采用 AGPL-3.0，二次分发需注意义务；不提供游戏文件，用户需自备合法客户端；部分游戏仍在推进或计划中。",
+        "evidence": [
+          "Offline MMO private servers on Steam Deck. Free guides, Docker scripts & shell installers for classic MMOs. No subscription. No internet. Forever.",
+          "This is a collaborative collection of step-by-step guides, Docker scripts, and automated installers for running classic MMO private servers completely offline on a Steam Deck, any Linux machine, or Windows 10/11 (via WSL2).",
+          "Open source emulators only — no copyrighted assets, no game files distributed"
+        ]
+      }
+    },
+    "jsmastery-pro/skills": {
+      "category": "ai-agent",
+      "one_liner": "智能体开发工作流技能",
+      "intro": {
+        "one_liner": "智能体开发工作流技能集",
+        "what_it_is": "一组供人工智能编码智能体使用的技能，把模糊想法推进到已交付、已验证、已记录的代码，状态保存在项目文件中。",
+        "problem_solved": "解决智能体编码依赖聊天上下文、跨会话易丢失、团队难共享的问题，用文件承载范围、规范、上下文和测试。",
+        "who_should_care": "使用编码智能体协作开发、需要跨会话和团队沉淀流程的开发者。",
+        "use_cases": [
+          "从想法规划到交付验证",
+          "为既有代码库补齐上下文",
+          "按变更生成测试与文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但创建时间较新。",
+        "risk_notes": "部分能力被临时移除；流程依赖提示词约束，不能保证绝对正确；创建日期较新，成熟度仍需观察。",
+        "evidence": [
+          "A set of [Agent Skills](https://agentskills.io) that take a change from a vague idea to shipped, verified, documented code, for any AI coding agent.",
+          "The state lives in files (a scope, specs, AGENTS.md, tests), not in a chat session. So work survives across sessions, picks up where it left off, and works for a whole team.",
+          "Hardening (systems level failure mode analysis) is temporarily removed and will return as a system design specialization."
+        ]
+      }
+    },
+    "software-mansion/enriched-markdown": {
+      "category": "web-frontend",
+      "one_liner": "跨平台 Markdown 富文本方案",
+      "intro": {
+        "one_liner": "跨平台富文本方案",
+        "what_it_is": "这是一个多平台开发工具包，用原生文本能力渲染 Markdown，并提供输出 Markdown 的富文本输入组件。",
+        "problem_solved": "它解决跨端 Markdown 展示和编辑体验不一致的问题，避免依赖网页视图，并支持常见语法、数学公式和流式内容。",
+        "who_should_care": "做 React Native、iOS、Android 富文本或聊天界面的开发者。",
+        "use_cases": [
+          "在移动端原生渲染 Markdown",
+          "构建输出 Markdown 的输入框",
+          "为对话界面接入流式文本"
+        ],
+        "alternatives": "差异在于不用网页视图，覆盖 React Native、iOS、Android、macOS 和 Web，并提供原生开发包。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾上日榜，但一周只涨了 18 星。",
+        "risk_notes": "未关闭议题有 117 个；各平台版本较早期；创建日期与最近提交日期存在时间异常。",
+        "evidence": [
+          "A multi-platform SDK for rendering Markdown as native text and editing rich text with Markdown output.",
+          "Ships as a React Native library with iOS, Android, macOS, and Web support, plus standalone native SDKs for iOS (Swift) and Android (Kotlin).",
+          "Enriched Markdown is licensed under [The MIT License](./LICENSE)."
+        ]
+      }
+    },
+    "inspatio/inspatio-world": {
+      "category": "other",
+      "one_liner": "信息不足的 Python 项目",
+      "intro": {
+        "one_liner": "轨迹可控视频生成工具",
+        "what_it_is": "这是一个基于 Python 的视频到视频推理项目，通过字幕生成、深度估计和新视角推理，把输入视频按指定相机轨迹生成结果。",
+        "problem_solved": "它解决普通视频缺少可控相机运动的问题，让开发者用轨迹文件控制俯仰、偏航、推拉和定格等效果。",
+        "who_should_care": "做视频生成、新视角合成、自动驾驶数据增强的开发者。",
+        "use_cases": [
+          "按轨迹生成环绕视角视频",
+          "制作推拉镜头或时间定格",
+          "生成自动驾驶相关视角数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "依赖多个外部模型权重和 CUDA 环境；许可证只覆盖本项目代码，依赖需单独确认；部分加速能力依赖特定显卡。",
+        "evidence": [
+          "The full pipeline runs in three steps: 1. **Step 1** — Generate video captions using Florence-2。 2. **Step 2** — Estimate depth with DA3, convert to inference format, render point clouds 3. **Step 3** — Run InSpatio-World v2v inference",
+          "The `--traj_txt_path` argument controls the camera trajectory for novel-view synthesis.",
+          "Note that this license only applies to code in our library, the dependencies and submodules of which ([Depth-Anything-3](https://github.com/ByteDance-Seed/depth-anything-3), [Florence-2](https://github.com/anyantudre/Florence-2-Vision-Language-Model), [TAEHV](https://github.com/madebyollin/taehv.git)) are separate and individually licensed."
+        ]
+      }
+    },
+    "Anil-matcha/awesome-agent-apis": {
+      "category": "ai-agent",
+      "one_liner": "智能体可用 API 目录",
+      "intro": {
+        "one_liner": "智能体接口目录",
+        "what_it_is": "这是一个用 YAML 条目整理智能体可调用接口的参考目录，收录生成媒体模型和第三方工具，可按能力浏览。",
+        "problem_solved": "它把分散在各厂商文档中的认证方式、价格、调用说明和示例响应统一整理，方便调用前判断成本与返回内容。",
+        "who_should_care": "开发智能体工具选择、接口接入或能力路由的开发者。",
+        "use_cases": [
+          "按能力查找可用接口",
+          "接入前核对认证与价格",
+          "为智能体准备工具目录"
+        ],
+        "alternatives": "相比统一接口服务，它只做文档目录，不代为调用接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，星数破千。",
+        "risk_notes": "草稿条目未经维护者独立验证，依赖前需自行核验；模型条目不开放任意修改，且不含调用地址和认证细节。",
+        "evidence": [
+          "A catalog of API tools an agent can call — 660+ generative-media models available",
+          "This is a **reference catalog, not a live proxy**. Every entry is documentation",
+          "Treat `draft` entries as a starting point, not a guarantee — verify before relying on one yourself."
+        ]
+      }
+    },
+    "alchaincyf/fanbox": {
+      "category": "dev-tools",
+      "one_liner": "氛围编程文件终端驾驶舱",
+      "intro": {
+        "one_liner": "本地编码智能体驾驶舱",
+        "what_it_is": "FanBox 是一款本地桌面工具，把文件浏览、预览、轻编辑、内嵌终端和编码智能体改动追踪放在一个窗口里。",
+        "problem_solved": "它解决智能体批量生成项目后难找回、难看清改动、需要在多个窗口间来回切换的问题。",
+        "who_should_care": "常用 Claude Code、Codex 等本地编码智能体的开发者。",
+        "use_cases": [
+          "找回并预览本地项目",
+          "在窗口内运行编码智能体",
+          "查看改动、差异并回滚"
+        ],
+        "alternatives": "不与 Finder 拼文件操作，也不与 VS Code 拼编辑，专注找回、预览、轻改和指挥智能体。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 9 星且上过一天日榜。",
+        "risk_notes": "创建日期与最近提交日期晚于当前常见时间线，数据时间口径需留意；未关闭问题 2 个。",
+        "evidence": [
+          "vibe coding 的驾驶舱：左边文件，右边/下边终端，中间看清每一次改动。",
+          "FanBox 把这条链路收进一个窗口：**左边文件 × 右边/下边终端 × 原地预览**，一个有机整体。",
+          "不做云、不做远程、不做账号。本地、零配置、运行时零依赖。"
+        ]
+      }
+    },
+    "nlewo/comin": {
+      "category": "dev-tools",
+      "one_liner": "NixOS 主机 GitOps 部署",
+      "intro": {
+        "one_liner": "NixOS 拉取式部署工具",
+        "what_it_is": "comin 是运行在机器上的 NixOS 部署工具，定期轮询 Git 仓库，并部署与该机器对应的系统配置。",
+        "problem_solved": "它让服务器和笔记本通过 Git 提交更新 NixOS 配置，减少手工登录部署，并支持测试分支与多远端。",
+        "who_should_care": "使用 NixOS 管理服务器或笔记本、希望采用 GitOps 部署的开发者和运维人员。",
+        "use_cases": [
+          "推送提交后自动部署配置",
+          "用测试分支验证变更",
+          "轮询多个远端降低单点故障"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，但缺少更多趋势信息。",
+        "risk_notes": "资料未提供许可证、版本状态和生产案例；部署工具涉及系统配置，采用前应自行验证。",
+        "evidence": [
+          "GitOps For NixOS Servers and Laptops",
+          "**comin** is a NixOS deployment tool operating in pull mode.",
+          "it periodically polls Git repositories and deploys the NixOS configuration associated to the machine."
+        ]
+      }
+    },
+    "summer-rs/summer-rs": {
+      "category": "dev-tools",
+      "one_liner": "Rust 风格应用开发框架",
+      "intro": {
+        "one_liner": "Rust 应用框架",
+        "what_it_is": "这是一个受 Java SpringBoot 启发的 Rust 应用框架，强调约定优于配置，并提供可扩展的插件系统。",
+        "problem_solved": "它把 Web、数据库、定时任务、Redis 等常见能力以插件方式整合，减少应用搭建和配置样板代码。",
+        "who_should_care": "熟悉 SpringBoot 思路、想用 Rust 写服务或微服务的开发者。",
+        "use_cases": [
+          "用 Axum 编写 Web 接口",
+          "接入数据库与 Redis",
+          "编写定时任务服务"
+        ],
+        "alternatives": "差异是借鉴 SpringBoot 的约定式开发，并以插件整合 Rust 生态组件。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，星标达到一千。",
+        "risk_notes": "资料未提供许可证、稳定版本承诺和生产案例；成熟度难以判断。",
+        "evidence": [
+          "summer-rs is application framework written in Rust, inspired by Java's SpringBoot",
+          "summer-rs provides an easily extensible plug-in system for integrating excellent projects in the Rust community, such as axum, sqlx, sea-orm, etc.",
+          "破千时的 Star 数：1000；本周上日榜天数：1"
+        ]
+      }
+    },
+    "zjyzip/AdClose": {
+      "category": "mobile",
+      "one_liner": "Xposed 去广告解除限制",
+      "intro": {
+        "one_liner": "Android 广告屏蔽模块",
+        "what_it_is": "AdClose 是基于 Xposed 框架的 Android 广告屏蔽工具，需在 LSPosed 环境中使用，通过阻止广告 SDK 初始化和拦截广告请求来减少干扰。",
+        "problem_solved": "它用于减少应用内广告、摇一摇跳转，以及截图录屏、代理、Root 和框架检测带来的限制。",
+        "who_should_care": "已使用 LSPosed、希望自定义应用去广告规则的 Android 用户。",
+        "use_cases": [
+          "屏蔽应用内广告请求",
+          "禁用摇一摇广告跳转",
+          "移除截图录屏限制"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "依赖 LSPosed 框架；涉及 Root、检测规避和 Hook 功能，兼容性与合规风险需自行评估。",
+        "evidence": [
+          "AdClose 是一个基于Xposed框架的Android广告屏蔽工具",
+          "请在LSPosed框架环境中使用",
+          "AdClose的核心功能是阻止应用内的广告SDK初始化加载，并拦截应用广告请求以屏蔽广告"
+        ]
+      }
+    },
+    "BloothOfYouth/Computer-Network-Notes": {
+      "category": "learning-resource",
+      "one_liner": "计算机网络学习笔记",
+      "intro": {
+        "one_liner": "计算机网络学习笔记",
+        "what_it_is": "这是一个整理计算机网络知识的笔记仓库，内容参考了计算机网络微课堂视频，并提供 PDF 网盘地址。",
+        "problem_solved": "把计算机网络课程内容整理成笔记和 PDF，方便学习者集中查阅与复习。",
+        "who_should_care": "学习计算机网络课程、需要复习笔记的开发者和学生。",
+        "use_cases": [
+          "按课程复习计算机网络知识",
+          "查阅配套笔记与 PDF",
+          "备考时快速梳理知识点"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时为一千星。",
+        "risk_notes": "资料依赖外部网盘分享，存在链接失效风险；仓库信息未说明维护状态与许可证。",
+        "evidence": [
+          "作者填写的描述：计算机网络笔记",
+          "笔记所参考的 [计算机网络微课堂-湖科大教书匠](https://www.bilibili.com/video/BV1c4411d7jb) 的视频",
+          "pdf百度云地址"
+        ]
+      }
+    },
+    "LRitzdorf/TheJeffDeanFacts": {
+      "category": "content-media",
+      "one_liner": "Jeff Dean 梗段子集",
+      "intro": {
+        "one_liner": "程序员幽默段子集",
+        "what_it_is": "汇总 Jeff Dean Facts 的仓库，收集围绕一位 Google 员工编程能力展开的夸张笑话。",
+        "problem_solved": "把散落在不同来源、可能已消失的程序员幽默集中保存，方便查阅和流传。",
+        "who_should_care": "喜欢程序员文化、技术梗和 Google 相关幽默的开发者。",
+        "use_cases": [
+          "团队分享技术笑话",
+          "查找经典程序员梗",
+          "保存社区幽默素材"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千星时为一千星。",
+        "risk_notes": "内容以幽默段子为主，并非技术工具；资料中未提供许可证信息。",
+        "evidence": [
+          "A consolidated list of the Jeff Dean Facts!",
+          "The \"Jeff Dean facts\" are a set of jokes that revolve around the extraordinary programming prowess of their titular Google employee",
+          "in order to preserve this invaluable cache of programmer humor for posterity, I decided to create this repository"
+        ]
+      }
+    },
+    "vorssaint/vorssaint-utils": {
+      "category": "desktop-system",
+      "one_liner": "macOS 菜单栏工具箱",
+      "intro": {
+        "one_liner": "macOS 菜单栏工具箱",
+        "what_it_is": "这是一个用 Swift 编写的免费开源 macOS 菜单栏工具集，按功能选择安装，把音量、监控、窗口、剪贴板等工具集中到一个图标里。",
+        "problem_solved": "它把 Mac 用户通常分别购买或安装的多类小工具整合起来，减少订阅、账号和多个常驻应用，并允许只启用自己需要的功能。",
+        "who_should_care": "想集中管理音量、窗口、系统状态和效率工具的 macOS 用户。",
+        "use_cases": [
+          "按应用调音量或切换输出设备",
+          "查看系统状态与菜单栏读数",
+          "管理窗口切换、吸附和程序坞预览"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 42 星，且本周上过一天日榜。",
+        "risk_notes": "采用 GPL-3.0；风扇控制标为测试版；麦克风静音明确不是隐私锁，部分应用仍可能听到声音。",
+        "evidence": [
+          "Free open-source macOS menu bar toolkit. Per-app volume mixer, system monitor, dock-preview, keep awake, window switcher (Alt Tab), shelf, app uninstaller, and much more.",
+          "One menu bar icon doing the job of a dozen paid Mac apps.<br>\nInstall only what you use.",
+          "Fan Control (beta).",
+          "Siri and some apps may still hear you; Mic Mute is not a privacy lock."
+        ]
+      }
+    },
+    "TokenRhythm/opensquilla": {
+      "category": "ai-agent",
+      "one_liner": "省 Token 的高密度智能体",
+      "intro": {
+        "one_liner": "省词元智能体框架",
+        "what_it_is": "OpenSquilla 是 Python 编写的微内核 AI 智能体，提供命令行、网页界面和聊天渠道入口，并共享同一套任务循环。",
+        "problem_solved": "它通过本地模型路由把每轮请求交给能处理且更便宜的模型，并统一工具调度、重试、决策日志和记忆管理。",
+        "who_should_care": "关注智能体成本、多模型接入和统一交互入口的开发者。",
+        "use_cases": [
+          "在命令行运行智能体任务",
+          "用网页界面管理智能体",
+          "接入多种模型服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 94 星，且本周上过 1 次日榜。",
+        "risk_notes": "未关闭 Issue 有 290 个；部分安装方式需额外系统依赖，路由依赖缺失时会退回单模型路由。",
+        "evidence": [
+          "OpenSquilla is a token-efficient, microkernel AI agent.",
+          "A local model router sends each turn to the cheapest model that can handle it, while persistent memory, a layered sandbox, built-in web search, and on-device embeddings round out a single shared turn loop.",
+          "OpenSquilla 0.5.7 is the current stable release."
+        ]
+      }
+    },
+    "nunchux-ai/nunchaku": {
+      "category": "ai-model",
+      "one_liner": "四比特扩散模型量化方案",
+      "intro": {
+        "one_liner": "四比特扩散模型推理引擎",
+        "what_it_is": "Nunchaku 是面向四比特神经网络的高性能推理引擎，基于 SVDQuant，提供 Python 后端、模型与 ComfyUI 支持。",
+        "problem_solved": "它面向扩散模型的四比特量化推理，帮助降低显存占用，并支持 FLUX、Qwen-Image、LoRA 等使用需求。",
+        "who_should_care": "关注扩散模型本地推理、低显存部署和 ComfyUI 工作流的开发者。",
+        "use_cases": [
+          "低显存运行四比特图像模型",
+          "在 ComfyUI 中使用量化模型",
+          "尝试 LoRA 与图像编辑模型"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 3,943 星，且一周上过日榜。",
+        "risk_notes": "资料未给出许可证信息；版本更新频繁，部分功能曾标注即将支持，兼容性需留意。",
+        "evidence": [
+          "**Nunchaku** is a high-performance inference engine optimized for 4-bit neural networks, as introduced in our paper [SVDQuant](http://arxiv.org/abs/2411.05007).",
+          "**Nunchaku v1.0.0**! Qwen-Image now supports **asynchronous offloading**, reducing VRAM usage to as little as **3 GiB** with no performance loss.",
+          "破千时的 Star 数：3943"
+        ]
+      }
+    },
+    "weave-os/router": {
+      "category": "ai-agent",
+      "one_liner": "智能体系统模型路由器",
+      "intro": {
+        "one_liner": "智能体模型路由代理",
+        "what_it_is": "这是一个为智能体系统按请求选择模型的代理，兼容 Anthropic、OpenAI 和 Gemini 接口，可托管使用或自托管。",
+        "problem_solved": "它让不同提示自动交给合适的模型处理，减少手工切换模型，并支持流式响应、工具调用和视觉请求。",
+        "who_should_care": "使用多种模型、编码工具和自建智能体应用的开发者。",
+        "use_cases": [
+          "为编码工具统一接入模型路由",
+          "自托管代理管理多家模型密钥",
+          "检查路由决策与用量成本"
+        ],
+        "alternatives": "相比单一模型网关，它按请求用嵌入和聚类评分选择模型。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 421 星，并曾进入日榜。",
+        "risk_notes": "自托管策略是冻结的简化版本，不含托管服务的训练、在线学习和注册表；未关闭 Issue 有 214 个；早期版本许可证不同。",
+        "evidence": [
+          "Weave Router is a proxy that selects a model for each API request.",
+          "The router uses an embedding and a cluster scorer to choose from enabled models.",
+          "The optional self-hosted HMM is a barebones, frozen version of the policy. It doesn't include the managed service's training, online learning, or registry."
+        ]
+      }
+    },
+    "ictnlp/LLaMA-Omni": {
+      "category": "ai-model",
+      "one_liner": "低延迟端到端语音模型",
+      "intro": {
+        "one_liner": "低延迟语音交互模型",
+        "what_it_is": "基于 Llama-3.1-8B-Instruct 的语音语言模型，可根据语音指令同时生成文本和语音回复。",
+        "problem_solved": "面向语音交互场景，提供低延迟、高质量的端到端语音到文本与语音回复能力。",
+        "who_should_care": "研究语音交互、多模态模型和语音对话系统的开发者与研究者。",
+        "use_cases": [
+          "搭建语音问答演示",
+          "研究语音到语音交互",
+          "本地运行语音推理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星数达 3148，且本周上日榜一天。",
+        "risk_notes": "模型仅限学术研究，不可商用；流式音频播放不稳定，演示未启用自动播放。",
+        "evidence": [
+          "LLaMA-Omni is a speech-language model built upon Llama-3.1-8B-Instruct. It supports low-latency and high-quality speech interactions, simultaneously generating both text and speech responses based on speech instructions.",
+          "Our code is released under the Apache-2.0 License. Our model is intended for academic research purposes only and may **NOT** be used for commercial purposes.",
+          "Due to the instability of streaming audio playback in Gradio, we have only implemented streaming audio synthesis without enabling autoplay."
+        ]
+      }
+    },
+    "nunchux-ai/ComfyUI-nunchaku": {
+      "category": "ai-model",
+      "one_liner": "ComfyUI 量化推理插件",
+      "intro": {
+        "one_liner": "ComfyUI 量化推理插件",
+        "what_it_is": "这是 Nunchaku 的 ComfyUI 插件，用于接入基于 SVDQuant 的四比特神经网络高效推理引擎。",
+        "problem_solved": "让 ComfyUI 用户通过工作流使用四比特量化模型，降低生成式图像模型推理门槛。",
+        "who_should_care": "使用 ComfyUI、关注量化模型和图像生成工作流的开发者。",
+        "use_cases": [
+          "在 ComfyUI 中加载四比特模型",
+          "运行官方示例工作流",
+          "安装或更新 Nunchaku wheel"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2,921 星，且本周上过一次日榜。",
+        "risk_notes": "依赖 Nunchaku 引擎和量化模型；文档、工作流与版本更新较多，部署兼容性需留意。",
+        "evidence": [
+          "This repository provides the ComfyUI plugin for Nunchaku, an efficient inference engine for 4-bit neural networks quantized with SVDQuant.",
+          "Starting from v0.3.2, you can now easily install or update the Nunchaku wheel using this workflow!",
+          "破千时的 Star 数：2921"
+        ]
+      }
+    },
+    "geerlingguy/raspberry-pi-pcie-devices": {
+      "category": "hardware-iot",
+      "one_liner": "树莓派 PCIe 兼容数据库",
+      "intro": {
+        "one_liner": "树莓派 PCIe 兼容库",
+        "what_it_is": "这是一个记录 Raspberry Pi PCI Express 设备兼容性的数据库，并构建对应的 GitHub Pages 网站。",
+        "problem_solved": "帮助开发者查询树莓派上哪些 PCI Express 设备可用，也支持通过提交 Pull Request 补充或修正设备信息。",
+        "who_should_care": "使用树莓派扩展 PCI Express 设备的开发者和硬件爱好者。",
+        "use_cases": [
+          "选购前查询设备兼容情况",
+          "提交新设备或修正信息",
+          "本地编辑兼容性网站"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，关注集中在树莓派硬件兼容信息。",
+        "risk_notes": "兼容性信息依赖社区提交，可能需要自行核验；资料未说明许可证。",
+        "evidence": [
+          "Raspberry Pi PCI Express device compatibility database",
+          "This repository builds the GitHub pages site: [http://pipci.jeffgeerling.com](http://pipci.jeffgeerling.com)",
+          "If you would like to add a new device to the site, or correct the information about an existing device, please file a Pull Request against this repository."
+        ]
+      }
+    },
+    "lnkiai/m3e-canvas": {
+      "category": "web-frontend",
+      "one_liner": "草图转氛围编程提示词",
+      "intro": {
+        "one_liner": "浏览器里的界面草图工具",
+        "what_it_is": "一个基于浏览器的开源草图工具，用 Material 3 Expressive 组件拼出手机和桌面界面，并把设计转成给 AI 编码工具使用的提示词。",
+        "problem_solved": "它让开发者先用真实设计组件画出页面与跳转流程，再生成简短设计说明，减少把界面意图口头转述给 AI 编码工具的偏差。",
+        "who_should_care": "用 AI 编码工具做应用原型、重视 Material 3 风格界面的前端和独立开发者。",
+        "use_cases": [
+          "拖拽组件绘制应用页面",
+          "预览页面点击与切换流程",
+          "复制提示词交给编码工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 4,220 星，并曾登上日榜一天。",
+        "risk_notes": "创建于 2026 年 9 月，项目较新；仍有 15 个未关闭问题；可选 AI 功能需要自带密钥。",
+        "evidence": [
+          "Sketch Material 3 Expressive screens in the browser and turn them into vibe-coding prompts.",
+          "M3E Canvas is a free, open-source sketchpad for app screens made of real Material 3 Expressive parts. It runs entirely in your browser: no account, no server, nothing to install.",
+          "What you sketch becomes a precise prompt that any AI coding tool that takes one, such as Claude Code, Codex, Gemini CLI or Cursor, can turn into a working app."
+        ]
+      }
+    },
+    "Edge0-AI/Audio8_TTS": {
+      "category": "ai-model",
+      "one_liner": "紧凑规模高性能语音合成",
+      "intro": {
+        "one_liner": "紧凑型语音克隆模型",
+        "what_it_is": "Audio8 TTS 是紧凑型文本转语音模型，支持零样本声音克隆，提供 0.6B 与 0.1B 两个系列。",
+        "problem_solved": "它面向多语言语音生成与声音克隆，并提供推理、微调、部署和服务配置，降低较小模型的试用门槛。",
+        "who_should_care": "关注语音合成、声音克隆、本地部署和多语言生成的开发者。",
+        "use_cases": [
+          "生成多语言语音",
+          "用参考音频克隆声音",
+          "本地或服务端部署推理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 116 星，并曾进入日榜。",
+        "risk_notes": "部分版本仍标为预览版；0.1B 检查点另有模型许可证；Realistic Air 目前没有 ONNX 导出；各语言质量有差异。",
+        "evidence": [
+          "Compact text-to-speech models for zero-shot voice cloning.",
+          "**ONNX:** There is currently no Realistic Air ONNX export.",
+          "The 0.1B checkpoint has its own [model license](https://huggingface.co/Edge0/Audio8-TTS-Preview-0.1b#license); consult the license packaged with each model/export."
+        ]
+      }
+    },
+    "metasequoiaime/MSIME-Windows": {
+      "category": "desktop-system",
+      "one_liner": "Windows 水杉输入法",
+      "intro": {
+        "one_liner": "开源 Windows 输入法",
+        "what_it_is": "水杉输入法的 Windows 版，面向 Windows 10 和 Windows 11，采用纯 TSF 方案，使用 C++ 开发。",
+        "problem_solved": "为 Windows 用户提供开源、自由的中文等语言输入方案，并提供安装、文档和贡献入口。",
+        "who_should_care": "Windows 输入法用户、中文与日文输入用户、TSF 开发者。",
+        "use_cases": [
+          "在 Windows 10 或 11 上打字",
+          "参与输入法功能与文档贡献",
+          "研究纯 TSF 输入法实现"
+        ],
+        "alternatives": "资料列出 weasel、PIME、WindInput 等参考项目，但未提供具体差异。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 143 星，并曾有一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 352 个；安装可能依赖 Visual C++ 2015–2022 Redistributable（x64）；许可证为 GPL-3.0。",
+        "evidence": [
+          "一款开源的自由 Windows 输入法，面向 Windows 10 / Windows 11，采用纯 TSF 方案。",
+          "如果切换不过去、Server 反复退出或设置窗口一闪即关，多半是缺少 Visual C++ 2015–2022 Redistributable（**x64**）",
+          "GPL-3.0"
+        ]
+      }
+    },
+    "LING71671/open-reverselab": {
+      "category": "security",
+      "one_liner": "智能体原生逆向工程实验室",
+      "intro": {
+        "one_liner": "Agent 原生逆向工程实验室",
+        "what_it_is": "Open-ReverseLab 是一个面向 AI Agent 的开源逆向工程平台，包含结构化知识库、100+ 个 MCP 工具，以及 CTF、APK、PE 自动化工作流。",
+        "problem_solved": "把逆向工程知识组织成「场景→输入信号→方法→攻击链→MCP 工具映射」的可执行链路，让人类或 Agent 从任意入口信号出发，一步步走到证据，而不是只浏览教程。",
+        "who_should_care": "CTF 选手、安全研究员、逆向工程师，以及为 Agent 接入逆向工具链的 AI Agent 开发者。",
+        "use_cases": [
+          "CTF Web、APK、PE 题目按知识库链路排查",
+          "样本初步分析（triage）与完整分析工作流",
+          "为 Claude Code、Codex 等 MCP Agent 配置逆向工具并做冒烟测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：AI Agent 与安全工具链（MCP、Ghidra、Frida）结合是持续方向，但项目本身较新，仍需观察。",
+        "risk_notes": "许可证为 GPL-3.0，商用或二次分发需注意传染性条款；README 明确提示安装 CTF、ExploitDB 工具后可能被 Windows Defender 拦截，并建议添加路径排除，存在安全与合规风险；项目创建于 2026-06，维护时间较短。",
+        "evidence": [
+          "Agent-native reverse-engineering lab with a 197-article knowledge base, MCP tools, and CTF/APK/PE automation workflows.",
+          "Every article is structured as `Scenario → Input signal → Method → Attack chain → MCP tool mapping`",
+          "After installing CTF / ExploitDB tools, Windows Defender may flag exploit samples or payload documentation"
+        ]
+      }
+    },
+    "ifer47/markeron": {
+      "category": "desktop-system",
+      "one_liner": "轻量屏幕标注工具",
+      "intro": {
+        "one_liner": "轻量屏幕标注工具",
+        "what_it_is": "一个开源桌面屏幕标注工具，支持点击穿透和键盘优先快捷键，面向演示、教学、会议与录屏，支持 Windows 和 macOS。",
+        "problem_solved": "让用户在共享屏幕或录制时直接标注内容，并尽量不打断原有操作与演示流程。",
+        "who_should_care": "经常做演示、线上教学、会议共享或录屏讲解的开发者与讲者。",
+        "use_cases": [
+          "演示时圈画重点",
+          "教学中标注步骤",
+          "录屏时临时批注"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但缺少更多成熟度信息。",
+        "risk_notes": "缺少 README，功能细节、许可证、版本状态和安装方式均无法确认；创建时间较新，成熟度未知。",
+        "evidence": [
+          "Lightweight (~1.5 MB) open-source screen annotation with click-through mode and keyboard-first shortcuts. For demos, teaching, meetings & screen recording. Windows, macOS.",
+          "破千时的 Star 数：1009",
+          "本周上日榜天数：1"
+        ]
+      }
+    }
+  }
+}

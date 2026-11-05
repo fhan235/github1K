@@ -373,22 +373,22 @@
       "triage_reason": "fork比例异常",
       "intro": {
         "one_liner": "纯 Rust 开源文字处理器",
-        "what_it_is": "WordCraft 是一个用纯 Rust 编写的开源现代文字处理器，提供类似 Microsoft Word 的 Ribbon 界面、样式、表格、修订和邮件合并等功能，可读写 .docx，并支持 macOS、Windows、Linux、BSD 与 WebAssembly。",
-        "problem_solved": "为需要离线、私有、跨平台的文档编辑用户提供可替代 Word 的开源方案，并支持 .docx 等常见文档格式的读写与 PDF 导出。",
-        "who_should_care": "关注开源办公套件、需要离线文档编辑、重视隐私或希望在 Rust 技术栈上做文档处理的开发者与团队。",
+        "what_it_is": "WordCraft 是用纯 Rust 构建的开源现代文字处理器，提供熟悉的文档编辑与排版工作流，并支持读写 .docx。",
+        "problem_solved": "它试图提供可离线、跨平台、开放实现的文档编辑体验，覆盖样式、表格、修订、参考文献和邮件合并等功能。",
+        "who_should_care": "关注文档格式兼容、Rust 桌面应用和开源办公工具开发者。",
         "use_cases": [
-          "日常文档撰写与排版（样式、表格、页眉页脚）",
-          "带修订、批注与引用（目录、脚注、参考文献）的协作审阅",
-          "通过 CLI 或 MCP 服务让 agent 自动化处理文档转换与编辑"
+          "编辑和保存 .docx 文档",
+          "处理样式、表格与修订",
+          "跨平台或浏览器写作"
         ],
-        "alternatives": "README 自称是 Microsoft Word 的 clean-room 重实现，强调纯 Rust、无 Electron/Tauri、原生 egui 渲染，并内置 422 条命令供 CLI 与 MCP 调用；与其他开源办公套件的具体对比未提供，unknown。",
-        "maturity": "可试用",
-        "hype_or_trend": "短期热点：一周新增约 1.17 万星、创建不足一月，热度集中但项目仍处早期，README 自述功能清单与路线图并存。",
-        "risk_notes": "仓库创建于 2026-10-07、不足一月即获大量关注，open issues 达 2396，成熟度与稳定性待验证；README 中性能数字（如 188 页文档重排约 1.4 ms）为作者自述，未独立核实；许可证为 MIT OR Apache-2.0（项目事实字段标注 Apache-2.0）。",
+        "alternatives": "强调纯 Rust、洁净室重实现、原生界面与命令化控制，具体同类对比 unknown。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 11,754 星且上过一次日榜。",
+        "risk_notes": "创建时间较新，未关闭 Issue 有 2,628 个；许可证信息不一致，项目数据为 Apache-2.0，资料称 MIT OR Apache-2.0。",
         "evidence": [
           "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
-          "It reads and writes .docx, runs natively on macOS, Windows, Linux and BSD, and in the browser via WebAssembly.",
-          "Every action is a command with an id. The same 422 commands drive the ribbon, keyboard shortcuts, the command search, a command-line tool, a JSON control channel and an MCP server."
+          "Writing and document design; an open-source, modern word processor, built in pure Rust.",
+          "It reads and writes .docx, runs natively on macOS, Windows, Linux and BSD, and in the browser via WebAssembly."
         ]
       }
     },
@@ -630,23 +630,23 @@
       "triage_quality": "suspicious",
       "triage_reason": "fork比例异常",
       "intro": {
-        "one_liner": "纯 Rust 参数化 3D CAD 应用",
-        "what_it_is": "SolidCraft 是一个用纯 Rust 编写的开源参数化 3D CAD 应用，支持草图约束、实体特征与可编辑的参数化时间线，可运行在桌面、浏览器，并提供 headless CLI 与 MCP 服务。",
-        "problem_solved": "为需要参数化建模的用户提供开源、跨平台（桌面/Web/自动化）的 CAD 工具，修改尺寸后模型可自动重建，并让 AI agent 通过 MCP 参与建模。",
-        "who_should_care": "需要开源参数化 CAD 的机械/硬件设计者、Rust 与 CAD 技术爱好者，以及希望用 AI agent 自动化建模的开发者。",
+        "one_liner": "纯 Rust 参数化三维 CAD",
+        "what_it_is": "SolidCraft 是开源参数化三维 CAD 应用，使用 Rust 编写，提供桌面端、浏览器端、命令行和 MCP 服务。",
+        "problem_solved": "它让建模者通过草图、约束、参数和特征时间线创建实体，修改尺寸后可重建模型，也支持脚本与智能体自动化。",
+        "who_should_care": "关注 Rust、三维建模、参数化 CAD 与自动化建模的开发者。",
         "use_cases": [
-          "从草图开始设计带参数的外壳类零件（如树莓派机箱）",
-          "通过 STEP/STL/3MF 等格式与外部工具交换模型",
-          "用 solidcraft-cli 脚本或 MCP 服务做无头/自动化建模"
+          "参数化零件建模",
+          "浏览器里试用建模",
+          "通过 MCP 自动建模"
         ],
-        "alternatives": "README 仅声明与 Fusion、SolidWorks、Onshape 等商业 CAD 在兼容性上作对比，并强调自身独立、非任何厂商背书；未给出与开源同类项目的具体差异，故具体对比 unknown。",
+        "alternatives": "unknown",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：一周新增约 1600 star、登上 daily board，但项目自述为 early but usable，且 open issues 数量庞大。",
-        "risk_notes": "README 自述为 early but usable；open_issues 高达 5073，维护压力与稳定性存疑；Windows 安装包未签名；许可证为 MIT OR Apache-2.0（项目事实标注 Apache-2.0）。",
+        "hype_or_trend": "短期热点，一周涨了 1,600 星且曾上日榜。",
+        "risk_notes": "仍属早期，仅称可用于简单零件；未关闭 Issue 较多；许可证信息在项目数据与说明中不一致。",
         "evidence": [
+          "SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP.",
           "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box",
-          "Desktop app, browser app, headless CLI and MCP server, all running the same commands",
-          "The Windows downloads aren't signed yet: choose More info, then Run anyway in SmartScreen"
+          "MIT OR Apache-2.0, at your option."
         ]
       }
     },
@@ -1260,22 +1260,22 @@
       "triage_quality": "ok",
       "triage_reason": "Rust GIS项目",
       "intro": {
-        "one_liner": "纯 Rust 编写的跨平台开源 GIS 桌面与网页应用",
-        "what_it_is": "RustGIS 是一个用纯 Rust 编写的免费开源 GIS 软件，用于制图、分析和共享地理空间数据，可在 Windows、macOS、Linux 原生运行，也可通过 WebAssembly 在浏览器中运行。",
-        "problem_solved": "它把传统 GIS 桌面软件的功能整合进单个原生程序：无需安装运行时或服务器，数据默认保存在本地，并且每个操作都可以通过命令行脚本化。",
-        "who_should_care": "需要本地化、可脚本化 GIS 工具的地理信息从业者、遥感与空间数据分析人员，以及希望用 Rust 或 WebAssembly 扩展 GIS 能力的开发者。",
+        "one_liner": "纯 Rust 开源桌面 GIS",
+        "what_it_is": "RustGIS 是用 Rust 编写的免费开源地理信息系统，可在 Windows、macOS、Linux 和浏览器中运行，用于地图制作、空间分析与数据共享。",
+        "problem_solved": "它把地理数据读取、制图、编辑、分析、发布和脚本化操作放进一个本地优先的应用，减少安装运行时、启动服务器和上传数据的需求。",
+        "who_should_care": "地理空间开发者、遥感与地形分析人员，以及需要本地处理数据的 GIS 用户。",
         "use_cases": [
-          "矢量与栅格数据的浏览、符号化制图与版面出图",
-          "通过 ModelBuilder 或 CLI 串联缓冲区、裁剪、水文、LiDAR 等分析工具",
-          "在浏览器中打开 WebAssembly 版本，查看和分享地理数据"
+          "浏览并样式化矢量与栅格数据",
+          "运行地形、水文和遥感分析",
+          "用命令或笔记本编排制图流程"
         ],
-        "alternatives": "README 未与其他 GIS 项目做直接对比，仅自述为“纯 Rust”实现并强调单程序、GPU 绘制、无运行时依赖；具体差异填 unknown。",
-        "maturity": "可试用",
-        "hype_or_trend": "短期热点：项目创建于 2026-10-10，一周内新增约 729 stars，属于新近快速升温的项目，长期价值尚待观察。",
-        "risk_notes": "项目创建时间极短（2026-10-10），尚无长期维护记录；README 中“1,000+ 工具”“AI Assistant”等能力描述未在项目事实中独立验证；AI 功能会将问题及所读数据发送给用户所选模型，需注意数据外发风险。",
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 291 星，并曾有一天登上日榜。",
+        "risk_notes": "创建时间较新，未关闭 Issue 有 99 个；部分能力依赖外部组件或用户选择的网络服务。",
         "evidence": [
           "A fast, free and open-source GIS in pure Rust.",
-          "Native on Windows, macOS and Linux, and in your web browser.",
+          "Native on Windows, macOS and Linux, and in your web browser. Your data stays on your machine",
           "Every button in the ribbon is a command with an id. Script it from `rustgis-cli`, chain it in notebooks and models"
         ]
       }
@@ -1506,23 +1506,23 @@
       "triage_quality": "ok",
       "triage_reason": "macOS防休眠工具",
       "intro": {
-        "one_liner": "macOS 菜单栏定时保持唤醒工具",
-        "what_it_is": "Insomnia 是一个 macOS 菜单栏应用，用眼睛图标表示，没有 Dock 图标和主窗口；用户可以设定 Mac 保持唤醒的时长，并选择合盖时执行哪些动作。",
-        "problem_solved": "解决合盖后 Mac 进入睡眠、导致定时运行的 AI agent 会话或长任务中断的问题，同时为唤醒会话设定明确的结束时间。",
-        "who_should_care": "在 MacBook 上运行 Claude Code、Codex 等长时间 agent 会话，或需要合盖继续跑任务的开发者。",
+        "one_liner": "定时保持 Mac 唤醒",
+        "what_it_is": "Insomnia 是 macOS 菜单栏应用，用倒计时管理合盖不休眠会话，并记录、恢复会话期间的系统改动。",
+        "problem_solved": "让需要限时运行的智能体任务在合盖后继续，同时提供结束时间、恢复机制，以及电量、温度等保护规则。",
+        "who_should_care": "在 MacBook 上跑限时智能体会话、需要合盖保持唤醒的开发者。",
         "use_cases": [
-          "合盖后让 Claude Code 或 Codex 会话继续运行到设定结束时间",
-          "合盖时冻结 Slack、Discord 等应用并静音，减少干扰与耗电",
-          "断网后自动连接 iPhone 热点，并向 tmux 中的 agent 发送 continue"
+          "合盖运行限时编码智能体",
+          "定时保持远程会话不中断",
+          "断网后切换到手机热点"
         ],
-        "alternatives": "README 将其定位为 amphetamine、caffeinate 的替代方案，差异在于提供定时结束、合盖动作控制和恢复日志机制；未与其他项目做直接对比。",
+        "alternatives": "标签称其为 Amphetamine alternative；提供限时会话、合盖动作和恢复日志。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：围绕 AI agent 长任务运行的外围工具，热度随 agent 编码工具流行而上升，但项目自述为 experimental。",
-        "risk_notes": "README 明确标注 experimental，恢复可能失败，运行中的计时器不构成安全保障；安装需写入 /etc/sudoers.d/insomnia，使当前用户可免密执行 pmset 命令，任何以该用户身份运行的程序都能使用该规则；要求 macOS 26 及 Apple Silicon；合盖会硬件断开内置麦克风；open_issues 达 73 个。",
+        "hype_or_trend": "短期热点，一周涨了 284 星，并曾登上日榜。",
+        "risk_notes": "资料称其仍属实验性，恢复可能失败；安装会加入免密 sudoers 规则，且要求 macOS 26 或更高版本与 Apple Silicon Mac。",
         "evidence": [
           "A macOS menu bar app for timed awake sessions.",
           "Insomnia is experimental. Recovery can fail, and a running timer is not a safety guarantee.",
-          "Any program running as you can use that rule too, so review it before you install."
+          "Requires macOS 26 or later on an Apple Silicon Mac."
         ]
       }
     },
@@ -1826,23 +1826,23 @@
       "triage_quality": "ok",
       "triage_reason": "跨设备个人代理",
       "intro": {
-        "one_liner": "跨设备开源个人 AI agent",
-        "what_it_is": "nanoMuse 是一个开源个人 agent，覆盖 Android、iPhone/iPad、Windows/macOS/Linux 和浏览器；手机应用、桌面应用、Web 控制台与中继服务都放在同一仓库中，采用 GPL-3.0-or-later 协议。",
-        "problem_solved": "它试图让个人 agent 不只存在于他人的云服务中：用户可以自托管中继、自选模型，并让 agent 在应用关闭后继续执行任务，在删除、发送、支付等不可撤销操作前先询问用户。",
-        "who_should_care": "希望自托管个人 agent、重视数据留在自有设备上的开发者与进阶用户，以及关注跨端 GUI agent 的研究者。",
+        "one_liner": "跨设备个人智能体",
+        "what_it_is": "nanoMuse 是开源个人智能体，包含手机、桌面、网页控制台和自托管中继，可在多设备间执行任务并记住用户。",
+        "problem_solved": "让个人智能体不只停留在他人云端，可通过自选模型、自有设备和自托管中继完成跨设备操作。",
+        "who_should_care": "关注个人智能体、跨设备自动化和自托管方案的开发者。",
         "use_cases": [
-          "在手机上发起任务，交由 PC 执行，例如以 @Mac 开头的消息",
-          "让 agent 通过屏幕操作没有 API 的手机应用和桌面窗口",
-          "定时检查目标、在应用关闭时运行例行任务、生成每日信息流"
+          "在手机上派任务给电脑执行",
+          "让智能体定时检查目标与例行事务",
+          "通过屏幕操作没有接口的应用"
         ],
-        "alternatives": "README 自述为 Meta Muse 风格个人 agent 的开源、低成本替代方案，强调设备端、自选模型与可自托管中继；未与其他开源项目做具体对比。",
+        "alternatives": "强调自有设备、自选模型、可自托管中继，以及撤销前先询问。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：发布约一个月即登上 GitHub Trending Swift 榜，并伴随 arXiv 论文与 Hugging Face Daily Papers 曝光，但跨端 agent 的长期价值仍需观察。",
-        "risk_notes": "采用 GPL-3.0 许可证，商用或二次分发需注意传染性条款；桌面端 macOS 未公证、Windows 需手动放行，安装体验有摩擦；open_issues 达 120，项目仍处快速迭代期。",
+        "hype_or_trend": "短期热点，一周涨了 243 星，且曾有一天进入日榜。",
+        "risk_notes": "浏览器版本是演示；苹果端为测试版；桌面安装包有未公证或需手动放行提示；未关闭议题较多。",
         "evidence": [
           "nanoMuse is an open-source personal agent for every device you own.",
           "the phone app, the desktop app, the web console and the relay that joins them are all in this repository, under GPL-3.0-or-later",
-          "A stop before deleting, sending or paying, remembered for once, this chat or always"
+          "A demo; the apps below are the real thing"
         ]
       }
     },
@@ -2262,23 +2262,23 @@
       "triage_quality": "suspicious",
       "triage_reason": "描述夸张插件",
       "intro": {
-        "one_liner": "面向编码 Agent 的上下文压缩代理插件",
-        "what_it_is": "billion-context 是一个 TypeScript 编写的上下文压缩插件/代理，位于任意 Agent 与模型 API 之间，用 acp-kernel 对 Anthropic/OpenAI 流式请求做分层摘要压缩。",
-        "problem_solved": "解决长编码会话中上下文窗口爆掉、按 token 计费成本高、会话被迫中断的问题，通过增量、可逆、前缀缓存友好的压缩让单会话跑数十亿 token。",
-        "who_should_care": "重度使用 Claude Code、Codex、OpenCode、Gemini CLI 等编码 Agent 并受上下文窗口与 token 成本困扰的开发者。",
+        "one_liner": "上下文压缩插件",
+        "what_it_is": "这是一个用 TypeScript 编写的上下文压缩插件，位于编码代理与模型接口之间，通过分层摘要管理长会话。",
+        "problem_solved": "它用于缓解长编码会话撑爆上下文窗口、消耗大量 token 以及会话中断的问题，支持按需压缩和恢复历史内容。",
+        "who_should_care": "长期运行编码代理、受上下文窗口和 token 成本困扰的开发者。",
         "use_cases": [
-          "长时间连续编码会话，避免上下文溢出导致会话中断",
-          "降低按 token 计费的模型调用成本",
-          "在 100K 小窗口模型上运行超长任务"
+          "数月级单会话编码",
+          "压缩并检索历史对话",
+          "适配多种编码代理"
         ],
-        "alternatives": "README 称相比宿主内置摘要器，其压缩是增量、可逆且对前缀缓存友好的，摘要可分范围写入并按需解压；具体同类项目对比为 unknown。",
+        "alternatives": "相比内置摘要，强调增量、可逆和前缀缓存友好；其他同类差异 unknown。",
         "maturity": "unknown",
-        "hype_or_trend": "短期热点：上下文压缩是编码 Agent 生态当前高频需求，但项目创建时间短、open issues 高达 705，尚待观察。",
-        "risk_notes": "未声明 license（项目事实 license 为 null）；open issues 705 相对 1545 stars 偏高，维护压力与稳定性存疑；README 中的性能与基准数字均为作者自述，未经独立验证。",
+        "hype_or_trend": "短期热点，一周涨了 443 星，且曾有一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 805 个；创建于 2026 年 8 月 6 日，项目较新；许可证信息 unknown。",
         "evidence": [
-          "A context-compression plugin for small context windows (a 100K context is enough), token savings (5x fewer tokens), and month-long single sessions (billions of tokens)",
-          "billion-context sits between any agent and its model API, rewriting Anthropic/OpenAI streams with acp-kernel compression",
-          "Unlike a host's built-in summarizer, compression here is incremental, reversible, and prefix-cache friendly"
+          "A context-compression plugin for small context windows (a 100K context is enough), token savings (5x fewer tokens), and month-long single sessions (billions of tokens).",
+          "compression here is **incremental, reversible, and prefix-cache friendly**",
+          "The proxy injects four context-management tools into the conversation"
         ]
       }
     },
@@ -3066,24 +3066,23 @@
       "triage_quality": "ok",
       "triage_reason": "浏览器客户端",
       "intro": {
-        "one_liner": "herdr 的浏览器与手机客户端",
-        "what_it_is": "Ovis 是 herdr 的浏览器与手机客户端，以 PWA 形式提供聊天界面和实时终端，可远程连接运行在电脑上的 Claude Code、Codex 等编码 agent 会话。",
-        "problem_solved": "让用户离开电脑后仍能查看并回复本机正在运行的 agent 会话，并在 agent 需要输入或完成任务时收到提醒。",
-        "who_should_care": "重度使用 Claude Code、Codex 等编码 agent，且希望用手机或浏览器远程接管会话的开发者。",
+        "one_liner": "手机浏览器里的编码代理客户端",
+        "what_it_is": "这是 herdr 的浏览器和手机客户端，把本机编码代理、实时终端和远程电脑会话集中到网页或手机里使用。",
+        "problem_solved": "它让开发者离开电脑时也能查看代理进度、回答提示与审批，并通过推送提醒及时介入。",
+        "who_should_care": "经常使用编码代理、需要远程查看终端或及时审批的开发者。",
         "use_cases": [
-          "在手机上查看并回复本机 Claude Code 会话",
-          "通过 SSH 远程连接其他电脑上的 agent pane",
-          "在聊天与实时终端之间切换以处理审批或命令",
-          "从手机上传截图给 agent 读取"
+          "手机上回复代理提问",
+          "浏览器查看实时终端",
+          "接收代理完成推送"
         ],
-        "alternatives": "unknown",
+        "alternatives": "提供浏览器演示、手机测试版、卡片式审批和可选加密中继；同类比较细节 unknown。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：围绕编码 agent 的移动端远程控制需求集中出现，但项目创建时间很短。",
-        "risk_notes": "安装脚本通过 curl | sh 方式执行；README 提到 Tailscale 免登录路径存在安全前提，配置不当可能暴露端口；open_issues 达 175，维护压力需观察。",
+        "hype_or_trend": "短期热点，一周涨了 83 星，曾有一天进入日榜。",
+        "risk_notes": "手机端为测试版；依赖 herdr 和保持开机的电脑；桌面终端仅支持 Linux 和 macOS；匿名用量统计默认开启。",
         "evidence": [
           "Browser and phone client for herdr: chat and live terminal for every agent pane, remote PCs over SSH, web push alerts",
-          "Claude Code and Codex, from your phone.",
-          "herdr owns the agents; this app connects to them."
+          "Ovis brings the coding agents on your computer to your phone, any browser and the Mac app",
+          "Limits: Ovis needs herdr and your own computer, switched on, and your phone has to reach it"
         ]
       }
     },

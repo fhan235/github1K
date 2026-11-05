@@ -1,1 +1,709 @@
-{"date":"2026-06-06","headline":"代码安全框架领跑今日热度","points":["anthropics/defending-code-reference-harness 单日增长 2118，代码威胁处置与扫描框架最受关注。","AI Agent 有 7 个、开发工具有 6 个，仍是今日热门方向；Python 出现 13 次。","FufuLauncher/FufuLauncher 增长 556，ideogram-oss/ideogram4 增长 303，游戏与开放图像模型也有热度。"],"items":{"anthropics/defending-code-reference-harness":{"category":"security","one_liner":"代码威胁处置与扫描框架"},"FufuLauncher/FufuLauncher":{"category":"game","one_liner":"原神第三方启动器"},"ideogram-oss/ideogram4":{"category":"ai-model","one_liner":"面向设计的开放图像模型"},"openlake-project/openlake":{"category":"dev-tools","one_liner":"高速供数对象存储"},"cyberpapiii/chipotlai-max":{"category":"ai-agent","one_liner":"恶搞版 AI 编程代理"},"tinyfish-io/bigset":{"category":"data-finance","one_liner":"世界数据集合工具"},"v0id4real/Void-Tools":{"category":"security","one_liner":"终端 OSINT 网络工具箱"},"a9gent/mindfs":{"category":"ai-agent","one_liner":"随处访问个人代理数据"},"juanjuandog/FinSight-AI":{"category":"ai-agent","one_liner":"AI 股票研究代理"},"hero8152/Infinite-Canvas":{"category":"content-media","one_liner":"支持模型调用的无限画布"},"simonlin1212/TradingAgents-astock":{"category":"ai-agent","one_liner":"A股多代理投研框架"},"Geekgineer/YOLOs-CPP":{"category":"ai-model","one_liner":"跨平台 YOLO 推理引擎"},"aipoch/medical-research-skills":{"category":"ai-agent","one_liner":"医学研究代理技能库"},"thomluther/ha-anker-solix":{"category":"hardware-iot","one_liner":"Anker Solix 家居集成"},"TanStack/tanstack.com":{"category":"web-frontend","one_liner":"TanStack 官网与文档站"},"Rabithua/Rote":{"category":"content-media","one_liner":"独特个人笔记仓库"},"ZTE-AICloud/Co-Sight":{"category":"ai-agent","one_liner":"中兴 AICloud 代理项目"},"prehisle/relay-pulse":{"category":"dev-tools","one_liner":"LLM 中转可用性监控"},"acl-org/aclpubcheck":{"category":"learning-resource","one_liner":"ACL 投稿检查工具"},"steffest/DPaint-js":{"category":"content-media","one_liner":"网页版复古图像编辑器"},"Whisparr/Whisparr":{"category":"automation","one_liner":"媒体资源自动化管理器"},"feder-cr/Jobs_Applier_AI_Agent_AIHawk":{"category":"ai-agent","one_liner":"自动定制投递求职代理"},"grafana-cold-storage/oncall":{"category":"dev-tools","one_liner":"开发者友好值班响应系统"},"msgspec/msgspec":{"category":"dev-tools","one_liner":"高速序列化校验库"},"grafana-cold-storage/phlare":{"category":"dev-tools","one_liner":"可扩展持续性能分析系统"},"xt42io/avnac":{"category":"web-frontend","one_liner":"免费浏览器设计软件"},"nexu-io/html-video":{"category":"content-media","one_liner":"HTML 转 MP4 视频工具"},"zedless-editor/old-school-zedless":{"category":"dev-tools","one_liner":"本地优先隐私编辑器"},"feder-cr/invisible_playwright":{"category":"automation","one_liner":"反检测浏览器自动化替代"}}}
+{
+  "date": "2026-06-06",
+  "headline": "代码安全框架领跑今日热度",
+  "points": [
+    "anthropics/defending-code-reference-harness 单日增长 2118，代码威胁处置与扫描框架最受关注。",
+    "AI Agent 有 7 个、开发工具有 6 个，仍是今日热门方向；Python 出现 13 次。",
+    "FufuLauncher/FufuLauncher 增长 556，ideogram-oss/ideogram4 增长 303，游戏与开放图像模型也有热度。"
+  ],
+  "items": {
+    "anthropics/defending-code-reference-harness": {
+      "category": "security",
+      "one_liner": "代码威胁处置与扫描框架",
+      "intro": {
+        "one_liner": "Claude 驱动的漏洞发现与修复参考实现",
+        "what_it_is": "Anthropic 开源的参考实现仓库，提供 Claude Code skills（/threat-model、/vuln-scan、/triage、/patch、/customize）与自主扫描 harness，覆盖 recon → find → verify → report → patch 的漏洞发现与修复流程。",
+        "problem_solved": "为安全团队提供一套可复用、可定制的 LLM 辅助源代码漏洞发现、分诊与修补流水线，减少从零搭建的成本。",
+        "who_should_care": "希望用 Claude 构建自有漏洞扫描与修复流水线的安全工程师、应用安全团队，以及需要把流程移植到自有语言或漏洞类型的开发者。",
+        "use_cases": [
+          "为 C/C++ 库构建威胁模型并运行静态扫描与分诊",
+          "在 gVisor 沙箱中运行自主漏洞发现与补丁验证流水线",
+          "通过 /customize 将 harness 移植到 Java 等其它语言或漏洞类别",
+          "用 /dnr-hunt 与 /dnr-respond 在日志中排查已入侵的攻击活动"
+        ],
+        "alternatives": "README 提到 Anthropic 自家托管产品 Claude Security 提供多阶段验证以降低误报；本仓库定位为可自行定制、可搭配 Bedrock/Vertex/Azure 使用的开源参考实现，而非产品。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 2742 stars，但 README 明确声明仓库不再维护、不接受贡献，热度更多来自 Anthropic 品牌与 LLM 安全话题。",
+        "risk_notes": "README 明确写明该仓库不再维护且不接受贡献；未提供 license 字段；自主流水线会执行目标代码，默认要求 gVisor 沙箱，否则拒绝运行；harness 为参考实现，无法开箱即用于所有代码库。",
+        "evidence": [
+          "This repo is not maintained and is not accepting contributions.",
+          "This harness is a **reference, not a product**.",
+          "the autonomous pipelines (`vuln-pipeline`, `dnr-pipeline`, and `/patch` on pipeline results) **execute target code**, so they refuse to run outside of a gVisor sandbox"
+        ]
+      }
+    },
+    "FufuLauncher/FufuLauncher": {
+      "category": "game",
+      "one_liner": "原神第三方启动器",
+      "intro": {
+        "one_liner": "原神第三方启动器",
+        "what_it_is": "一个用 C# 编写的原神第三方启动器，提供账号管理、签到、游戏下载更新、数据查看和可选注入模块等功能。",
+        "problem_solved": "把多账号切换、每日签到、版本与兑换码提醒、启动参数、游戏数据查看等分散操作集中到一个桌面工具里。",
+        "who_should_care": "需要多账号管理、批量签到和本地启动配置的原神玩家。",
+        "use_cases": [
+          "多账号快速切换并批量签到",
+          "管理下载、更新、预下载与修复",
+          "查看便签、抽卡分析和角色数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 185 星，曾有一天进入日榜。",
+        "risk_notes": "注入功能需管理员权限；动态视频背景相对不稳定；项目声明仅用于学习交流。",
+        "evidence": [
+          "A third-party launcher for Genshin Impact, supporting game injection, auto check-in, and some practical utility features.",
+          "The injection feature requires **running the program as an administrator**",
+          "This project is for learning and communication purposes only; please support the official genuine game."
+        ]
+      }
+    },
+    "ideogram-oss/ideogram4": {
+      "category": "ai-model",
+      "one_liner": "面向设计的开放图像模型",
+      "intro": {
+        "one_liner": "Ideogram 开源文生图模型",
+        "what_it_is": "Ideogram 4 是 Ideogram 首个开放权重的文生图基础模型，从零训练而非微调，参数量 9.3B，提供 nf4 与 fp8 两种量化权重。",
+        "problem_solved": "为开源社区提供具备设计级排版与多语言文字渲染能力的图像生成模型，并通过结构化 JSON 提示接口支持布局与配色控制。",
+        "who_should_care": "需要高质量文字渲染与版面控制的设计类图像生成研究者、开源模型开发者及设计工具团队。",
+        "use_cases": [
+          "生成含多语言文字的海报或平面设计图",
+          "通过 bounding-box 与配色控制做可控版式生成",
+          "本地部署 2k 分辨率文生图推理"
+        ],
+        "alternatives": "README 称其为从零训练的基础模型而非微调，9.3B 参数下文字渲染优于 Qwen-Image(20B)、FLUX.2 [dev](32B)、HunyuanImage 3.0(80B MoE) 等更大模型。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：发布一周多即获约 744 星，但模型权重为门控访问且仅限非商用，生态尚在早期。",
+        "risk_notes": "仓库为 Apache-2.0，但模型权重采用 Ideogram 4 Non-Commercial 非商用许可，商用受限；权重在 Hugging Face 需申请门控；默认 magic-prompt 与 Hive 安全审核依赖第三方 API 与密钥。",
+        "evidence": [
+          "Ideogram 4 is Ideogram's first open-weight text-to-image model",
+          "It is a state-of-the-art foundation model trained from scratch — not a fine-tune of any existing model",
+          "The model weights are gated on Hugging Face"
+        ]
+      }
+    },
+    "openlake-project/openlake": {
+      "category": "dev-tools",
+      "one_liner": "高速供数对象存储",
+      "intro": {
+        "one_liner": "面向 GPU 的高速存储",
+        "what_it_is": "OpenLake 是用 Rust 编写的分布式存储引擎，面向大模型推理和训练，提供 KV 缓存池与兼容 S3 的对象存储。",
+        "problem_solved": "它试图减少 GPU 等待数据的时间，支撑小文件读写、检查点存取、向量索引和大规模上下文缓存。",
+        "who_should_care": "做大模型训练、推理服务、GPU 集群存储优化的开发者。",
+        "use_cases": [
+          "为 vLLM 提供 KV 缓存卸载",
+          "保存和读取训练检查点",
+          "搭建兼容 S3 的对象存储"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 212 星，并曾上榜日榜一天。",
+        "risk_notes": "项目创建较新，未关闭议题有 146 个；部分能力需从源码构建，部署依赖较多。",
+        "evidence": [
+          "High performance object store for fast LLM Inference and GPU Training. Feed your GPUs at blazing fast speeds",
+          "Fast, easy and efficient storage for LLM Inference and Training",
+          "OpenLake is a storage engine for AI infrastructure. With OpenLake you get high throughput for small I/O and cache like performance while being fully persistent and durable."
+        ]
+      }
+    },
+    "cyberpapiii/chipotlai-max": {
+      "category": "ai-agent",
+      "one_liner": "恶搞版 AI 编程代理",
+      "intro": {
+        "one_liner": "恶搞型编程智能体",
+        "what_it_is": "一个基于 OpenCode 的 TypeScript 恶搞分支，默认接入 Pepper AI，并尝试扩展更多零售客服机器人提供方。",
+        "problem_solved": "把客服机器人包装成本地兼容接口，供终端里的编程智能体调用，主要面向玩梗和教学实验。",
+        "who_should_care": "关注编程智能体、接口适配和开源梗项目的开发者。",
+        "use_cases": [
+          "本地体验终端编程智能体",
+          "研究客服机器人接口适配",
+          "参与新增提供方实验"
+        ],
+        "alternatives": "相比 OpenCode，它固定默认模型并加入零售客服机器人适配，但明确不建议用于生产。",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，一周涨了 240 星，且仅一天进入日榜。",
+        "risk_notes": "可能违反服务条款；代理随时可能失效；受匿名会话限流；明确标注仅供教学和玩梗，勿用于生产代码库。",
+        "evidence": [
+          "The AI coding agent that runs on stolen Chipotle compute 🌯 Fork of OpenCode with Pepper AI as default model. Community project to add providers from Home Depot, Lowes, Target, Starbucks & more.",
+          "This reverse-engineers Chipotle's production support bot. TOS violation likely.",
+          "Purely for educational/meme purposes. Do not use for production codebases."
+        ]
+      }
+    },
+    "tinyfish-io/bigset": {
+      "category": "data-finance",
+      "one_liner": "世界数据集合工具",
+      "intro": {
+        "one_liner": "一句话生成可定时刷新的结构化数据集",
+        "what_it_is": "BigSet 是一个基于 TypeScript 的实验性工具：用户用一句自然语言描述所需数据集，系统自动推断 schema，派发自主 agent 在实时网页上检索、核验、去重，最终产出可导出为 CSV/XLSX 的结构化表格。",
+        "problem_solved": "把散落在网页上的信息整理成可用表格，通常需要自行拼接搜索、抽取、schema 设计、去重、验证和定时任务；BigSet 把这些环节整合为「一句话输入、结构化数据输出」的流程。",
+        "who_should_care": "需要快速构建外部数据表的数据分析师、增长/销售运营、以及希望让 AI agent 拿到实时结构化数据的开发者。",
+        "use_cases": [
+          "按融资阶段、地点、招聘岗位等条件生成公司清单",
+          "为 AI agent 提供可定期刷新的实时数据源",
+          "通过 CLI 批量创建数据集并导出 CSV 供后续分析"
+        ],
+        "alternatives": "README 自述与抓取框架、搜索 API、特定站点 actor、线索生成平台等部分重叠，但强调跨类别、端到端覆盖 schema 推断、去重、验证与定时刷新；未给出具体竞品对比。",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点：依赖 LLM agent 自动生成数据集的概念新颖，但项目自述为 experimental、schema 推断不总是准确，且数据集仅可下载不可查询。",
+        "risk_notes": "许可证为 AGPL-3.0，商用集成需注意传染性条款；README 明确标注 experimental、会有 rough edges；依赖 TinyFish 与 OpenRouter 两个外部 API 及自备密钥；无法获取登录后或付费墙内数据；SQL 查询仍在路线图中。",
+        "evidence": [
+          "BigSet is experimental. It works, sometimes surprisingly well, but expect rough edges.",
+          "BigSet infers the schema automatically, sends autonomous agents to research it on the live web, verifies what they find against real sources, deduplicates, and hands you a structured dataset.",
+          "Datasets are downloadable, not queryable. You can browse in the UI and export CSV/XLSX. SQL query support is on the roadmap."
+        ]
+      }
+    },
+    "v0id4real/Void-Tools": {
+      "category": "security",
+      "one_liner": "终端 OSINT 网络工具箱",
+      "intro": {
+        "one_liner": "终端多功能工具集",
+        "what_it_is": "这是一个用 Python 编写的终端多功能工具集，带 Rich 文本界面，汇集公开信息查询、网络诊断、Discord 辅助和常用命令行工具。",
+        "problem_solved": "它把多类研究、网络与管理小工具集中到一个终端面板，减少在多个脚本或网站之间切换。",
+        "who_should_care": "关注公开信息查询、授权网络测试与自有服务器管理的 Python 开发者。",
+        "use_cases": [
+          "查询公开信息与域名情报",
+          "检查网络连通与端口状态",
+          "管理自有 Discord 服务器"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 240 星且曾上日榜。",
+        "risk_notes": "仓库自述为旧版归档，当前功能与更新转向另一版本；仅限教育和授权研究使用；话题标签包含 Discord 攻击类词，需留意合规边界。",
+        "evidence": [
+          "Python terminal multitool — OSINT, network utilities, Rich TUI dashboard. Educational use only.",
+          "This repo is the **v1 archive**. Download **v2.0** for the current version.",
+          "This project is for **education and authorized research only**."
+        ]
+      }
+    },
+    "a9gent/mindfs": {
+      "category": "ai-agent",
+      "one_liner": "随处访问个人代理数据",
+      "intro": {
+        "one_liner": "AI Agent 远程访问网关",
+        "what_it_is": "MindFS 是一个用 TypeScript 编写的 AI Agent 远程访问网关，把本地安装的多种 Agent CLI（如 Claude Code、Codex、Gemini CLI 等）的会话、文件与任务板通过浏览器或 PWA 远程访问。",
+        "problem_solved": "解决本地 AI Agent 只能在单机终端使用、无法随时随地访问和可视化查看结果的问题，提供远程接入、实时流式渲染与多设备同步。",
+        "who_should_care": "重度使用多个 AI 编码 Agent 的开发者、需要远程或移动端查看 Agent 会话与工作站文件的人。",
+        "use_cases": [
+          "在手机或平板上远程查看并继续本地 Claude Code/Codex 会话",
+          "多 Agent 并行编排任务并统一查看结果与文件变更",
+          "通过插件为特定文件类型自定义可视化视图"
+        ],
+        "alternatives": "README 中提供了与 remote-vibe 类项目的对比文档，但具体差异未在给定材料中展开，unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：多 Agent CLI 生态快速扩张带来的远程接入与可视化需求，但项目创建时间短、仍在快速迭代。",
+        "risk_notes": "许可证为 AGPL-3.0，商用或二次分发需注意 copyleft 义务；项目创建于 2026-03-31、尚属早期，open issues 26 个，长期维护性待观察；Relay 远程模式依赖第三方服务 a9gent.com。",
+        "evidence": [
+          "Access your personal AI agents and workstation data anywhere, anytime through MindFS.",
+          "Multi-Agent support: Claude Code · OpenAI Codex · Gemini CLI · Grok · Cursor ... installed agents are detected automatically.",
+          "Relay remote mode: Access your local instance from anywhere on the public internet without opening firewall ports, via an encrypted tunnel through a9gent.com."
+        ]
+      }
+    },
+    "juanjuandog/FinSight-AI": {
+      "category": "ai-agent",
+      "one_liner": "AI 股票研究代理",
+      "intro": {
+        "one_liner": "可追溯证据的 A 股 AI 研究代理",
+        "what_it_is": "FinSight AI 是一个开源 A 股研究工具，同时也是构建可靠 AI agent 的后端工程参考实现；它由 Spring Boot 后端和 FastAPI AI sidecar 组成，把行情、财务指标、公告与公司事件转化为结构化、可检查、可复现的 AI 研究报告。",
+        "problem_solved": "它解决长耗时 AI 研究任务中途失败后无法恢复、重复请求造成重复计算、数据变化后缓存报告过期，以及 RAG 结论难以核验等问题；具体做法包括工作流状态机与重试、Redis Lua single-flight 幂等租约、快照绑定报告版本和证据追踪。",
+        "who_should_care": "关注 AI agent 工程可靠性的 Java 后端开发者、需要可审计研究流程的金融研究或投研工具开发者，以及想学习 RAG 评估与混合检索落地的团队。",
+        "use_cases": [
+          "对 A 股公司生成带置信度、支撑因素与风险因素的结构化 AI 分析",
+          "在公告、财报与结构化指标中检索可验证的证据来源",
+          "复现或对比不同版本报告，并追踪其数据快照与模型来源",
+          "作为 AI agent 工作流恢复、幂等控制与 RAG 评估的后端参考实现"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：项目重点在 agent 工作流可靠性、快照绑定与 RAG 评估等工程基础设施，而非单次模型调用效果，属于可沉淀的长期方向。",
+        "risk_notes": "README 明确声明它只是研究辅助工具，不是自动交易系统，输出不构成投资建议；完整 Docker Compose 栈约需 8 GB 空闲内存；项目创建于 2026-05-11，仍处早期阶段。",
+        "evidence": [
+          "FinSight AI is an open-source A-share research workspace and a backend engineering reference for reliable AI agents.",
+          "FinSight is a research aid, not an automated trading system. Its output is not investment advice.",
+          "Allow roughly 8 GB of free memory for the complete Compose stack."
+        ]
+      }
+    },
+    "hero8152/Infinite-Canvas": {
+      "category": "content-media",
+      "one_liner": "支持模型调用的无限画布",
+      "intro": {
+        "one_liner": "无限画布 AI 创作工具",
+        "what_it_is": "这是一个 Python 项目，提供无限画布，并支持调用 ComfyUI、多种接口和 Modelscope。",
+        "problem_solved": "把画布素材整理、工作流调用和多类模型接口放进同一软件，减少切换工具。",
+        "who_should_care": "使用 ComfyUI、图像视频模型和画布协作的 AI 创作者。",
+        "use_cases": [
+          "在画布中整理图片与视频素材",
+          "调用本地 ComfyUI 工作流",
+          "通过接口生成图像或视频"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 178 星，曾有一天进入日榜。",
+        "risk_notes": "项目已声明停更；禁止商业用途，二次开发须开源并注明来源；未关闭 Issue 有 141 个。",
+        "evidence": [
+          "Supports comfyui/API calls/modelscope calls",
+          "此项目已停更，全新版本请前往：www.DX-OS.com 下载。",
+          "已经申请著作权，禁止商业用途"
+        ]
+      }
+    },
+    "simonlin1212/TradingAgents-astock": {
+      "category": "ai-agent",
+      "one_liner": "A股多代理投研框架",
+      "intro": {
+        "one_liner": "A股多智能体投研框架",
+        "what_it_is": "这是一个基于 TradingAgents 深度改造的 Python 框架，用七位分析师、辩论与风险评估生成 A 股投研报告。",
+        "problem_solved": "它把面向美股的多智能体投研流程适配到 A 股，覆盖本地数据源、政策、游资、解禁和交易规则。",
+        "who_should_care": "关注 A 股量化研究、多智能体框架和投研教学复现的开发者。",
+        "use_cases": [
+          "生成中文 A 股投研报告",
+          "复现多智能体辩论流程",
+          "研究 A 股规则与特色数据"
+        ],
+        "alternatives": "相较上游，它增加 A 股数据源、政策、游资、解禁角色及交易约束。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 154 星，且曾进入日榜。",
+        "risk_notes": "明确面向研究与教学，不构成投资建议；默认需配置大模型密钥，每次分析需 30 到 50 次调用；部分数据源依赖免费直连接口。",
+        "evidence": [
+          "A股多Agent投研框架 — 适配A股数据源(龙虎榜/游资/解禁等)，7位分析师基于A股规则的辩论决策，基于TradingAgents深度改造，适配大A。",
+          "本项目是 TradingAgents 论文框架的工程实现与研究复现，面向研究与教学。不构成任何投资建议，也不提供任何投资服务。",
+          "默认走 API Key 计费。每次分析需 30-50 次 LLM 调用。"
+        ]
+      }
+    },
+    "Geekgineer/YOLOs-CPP": {
+      "category": "ai-model",
+      "one_liner": "跨平台 YOLO 推理引擎",
+      "intro": {
+        "one_liner": "跨平台 YOLO C++ 推理引擎",
+        "what_it_is": "一个基于 ONNX Runtime 和 OpenCV 的 C++ 推理库，用统一接口支持多版本 YOLO 的检测、分割、姿态估计、旋转框和分类。",
+        "problem_solved": "它把分散的 YOLO C++ 实现和不一致接口整合起来，补齐错误处理、测试、优化等工程化环节。",
+        "who_should_care": "需要在 C++ 应用里部署 YOLO 模型、且不依赖 Python 运行时的开发者。",
+        "use_cases": [
+          "在桌面端做实时目标检测",
+          "在 C++ 服务中批量推理图像",
+          "集成分割、姿态或旋转框任务"
+        ],
+        "alternatives": "相比零散实现，强调统一接口、多任务覆盖、跨平台和测试流程。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，一周上过一次日榜，星数破千。",
+        "risk_notes": "README 含未来日期新闻和性能表述，需自行核验；许可证信息未给出。",
+        "evidence": [
+          "Cross-Platform Production-ready C++ inference engine for YOLO models (v5-v12, YOLO26). Unified API for detection, segmentation, pose estimation, OBB, and classification. Built on ONNX Runtime and OpenCV. Optimized for CPU/GPU with quantization support.",
+          "YOLOs-CPP is a production-grade inference engine that brings the entire YOLO ecosystem to C++. Unlike scattered implementations, YOLOs-CPP provides a unified, consistent API across all YOLO versions and tasks.",
+          "Fragmented ecosystem: Each YOLO version has different C++ implementations; Inconsistent APIs: Different interfaces for detection, segmentation, pose; Production gaps: Most implementations lack proper error handling, testing, and optimization"
+        ]
+      }
+    },
+    "aipoch/medical-research-skills": {
+      "category": "ai-agent",
+      "one_liner": "医学研究代理技能库",
+      "intro": {
+        "one_liner": "医学研究智能体技能库",
+        "what_it_is": "这是面向医学与生物医学研究的智能体技能库，包含五百多项技能，覆盖证据洞察、方案设计、数据分析和学术写作。",
+        "problem_solved": "它把文献检索、研究设计、统计与生信分析、论文写作等环节整理成可复用技能，帮助智能体辅助科研流程。",
+        "who_should_care": "医学研究者、生信分析人员，以及使用兼容技能文件的智能体平台的开发者。",
+        "use_cases": [
+          "设计检索策略并梳理证据",
+          "起草研究方案与统计分析计划",
+          "辅助论文、摘要和投稿信写作"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 118 星，并曾登上日榜一天。",
+        "risk_notes": "创建于 2026 年，时间较新；仍有 11 个未关闭问题；技能质量依赖其所述审核流程。",
+        "evidence": [
+          "A curated library of 550+ medical research agent skills created by [AIPOCH](https://www.aipoch.com), designed to work with **Claude Code, Codex**, and other `SKILL.md`-compatible agent platforms.",
+          "It supports the research workflow across four core areas: Evidence Insights, Protocol Design, Data Analysis, and Academic Writing.",
+          "Every skill in this library is reviewed and evaluated through [**MedSkillAudit**](https://www.aipoch.com/benchmark) — A Domain-Specific Audit Framework for Medical Research Agent Skills — before going live."
+        ]
+      }
+    },
+    "thomluther/ha-anker-solix": {
+      "category": "hardware-iot",
+      "one_liner": "Anker Solix 家居集成",
+      "intro": {
+        "one_liner": "Anker Solix 家用集成",
+        "what_it_is": "这是一个 Home Assistant 自定义集成，用 Python 库连接 Anker power cloud，也可选连接 Anker MQTT server，接入 Anker Solix 设备。",
+        "problem_solved": "让 Home Assistant 用户监控 Anker Solix 电源系统设备，并补充部分设备通过云端或 MQTT 获取数据的能力。",
+        "who_should_care": "使用 Home Assistant 并拥有 Anker Solix 电源设备的智能家居用户。",
+        "use_cases": [
+          "在 Home Assistant 查看设备数据",
+          "监控 Solarbank 系统状态",
+          "通过 MQTT 补充设备信息"
+        ],
+        "alternatives": "相比本地接口项目，它依赖云端，且明确不集成第三种接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星数为一千零一。",
+        "risk_notes": "依赖非官方云端接口，接口变化可能随时破坏功能；使用可能带来设备损坏或失去厂商保修风险；部分设备数据需先解码描述。",
+        "evidence": [
+          "Home Assistant integration for Anker Solix Power devices",
+          "This Home Assistant custom integration utilizes the [anker-solix Python library][anker-solix-api], allowing seamless integration with Anker Solix devices via the Anker power cloud and optionally via the Anker MQTT server.",
+          "The cloud server Api access or communication may change or break any time without notice and therefore also change or break the integration functionality."
+        ]
+      }
+    },
+    "TanStack/tanstack.com": {
+      "category": "web-frontend",
+      "one_liner": "TanStack 官网与文档站",
+      "intro": {
+        "one_liner": "TanStack 官网与文档站",
+        "what_it_is": "这是 TanStack 生态的官网和文档站源码，使用 TypeScript，基于 TanStack Router 构建并部署在 Cloudflare Workers。",
+        "problem_solved": "集中承载各 TanStack 项目的文档、展示和站点功能，并支持本地开发时读取本地或远程文档。",
+        "who_should_care": "维护或编辑 TanStack 文档的开发者，以及想研究其官网实现的开发者。",
+        "use_cases": [
+          "本地预览和编辑 TanStack 文档",
+          "研究官网与文档站实现",
+          "参与站点问题反馈和贡献"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "本地开发要求较新的 Node.js 与 pnpm；部分功能依赖可选凭据，未配置时会被禁用或显示为空。",
+        "evidence": [
+          "The marketing and docs site for all TanStack projects",
+          "The home of the TanStack ecosystem. Built with [TanStack Router](https://tanstack.com/router) and deployed on [Cloudflare Workers](https://workers.cloudflare.com/).",
+          "Requires Node.js 22.12 or newer and pnpm 11."
+        ]
+      }
+    },
+    "Rabithua/Rote": {
+      "category": "content-media",
+      "one_liner": "独特个人笔记仓库",
+      "intro": {
+        "one_liner": "可自托管的个人笔记库",
+        "what_it_is": "Rote 是主打克制交互、开放接口和自托管的个人笔记仓库，支持笔记、Markdown 文章、网页端与 iOS 客户端。",
+        "problem_solved": "它让用户把记录内容掌握在自己手里，支持自由导出、通过接口接入不同记录场景，并可用 Docker 或 Dokploy 部署。",
+        "who_should_care": "重视数据掌控、想自托管笔记并需要接口扩展的个人开发者。",
+        "use_cases": [
+          "自建个人笔记与文章库",
+          "通过开放接口记录内容",
+          "用 iOS 客户端连接自建服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时星标数为 1001。",
+        "risk_notes": "采用非商业的 PolyForm Noncommercial License 1.0.0，不属于开源协议；商业用途需另行授权。Memory 功能默认关闭，且目前仅在开发版镜像提供。",
+        "evidence": [
+          "A personal note repository that looks different🤔",
+          "Open API, more than one way to record 🤩, supports Self-Hosted, take control of your own data, come and go freely, no data hostage 🙅🏻",
+          "This is a noncommercial source-available license, not an OSI-approved open-source license."
+        ]
+      }
+    },
+    "ZTE-AICloud/Co-Sight": {
+      "category": "ai-agent",
+      "one_liner": "中兴 AICloud 代理项目",
+      "intro": {
+        "one_liner": "私有化智能研究系统",
+        "what_it_is": "Co-Sight 是一个用 Python 编写的智能研究引擎，支持配置大模型、搜索和 MCP 工具，可本地或容器部署。",
+        "problem_solved": "它面向闭源平台成本高、访问受限、难私有化，以及开源框架功能与稳定性不足的问题，提供自建类 Manus 系统方案。",
+        "who_should_care": "需要私有部署报告生成与研究助手的企业、个人开发者。",
+        "use_cases": [
+          "生成行业研究报告",
+          "制作个人旅行攻略",
+          "分析热点新闻影响"
+        ],
+        "alternatives": "强调低成本模型、报告质量、稳定性、易用性与私有部署之间的平衡。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且已有部署示例。",
+        "risk_notes": "需自行配置模型、搜索服务及密钥；文档提供离线镜像版本为 v0.0.1；未给出许可证信息。",
+        "evidence": [
+          "Co-Sight Committed to striking the best balance between cost, quality, stability and ease of use.",
+          "It supports low-cost large models to generate high-quality and beautiful reports comparable to Claude models, and can be flexibly deployed in private environments",
+          "python version >= 3.11"
+        ]
+      }
+    },
+    "prehisle/relay-pulse": {
+      "category": "dev-tools",
+      "one_liner": "LLM 中转可用性监控",
+      "intro": {
+        "one_liner": "LLM 中转可用性监控台",
+        "what_it_is": "这是一个用 Go 编写的企业级 LLM 中转服务可用性监控系统，通过真实调用追踪服务状态，并提供可视化仪表板。",
+        "problem_solved": "它解决传统连通性监测无法发现接口返回空内容或错误码的问题，用真实请求校验响应，识别服务假活。",
+        "who_should_care": "自建或采购 LLM 中转服务、需要持续观测服务质量的开发者与运维。",
+        "use_cases": [
+          "持续跟踪中转服务可用率",
+          "对比多云供应商服务质量",
+          "监测外部接口假活风险"
+        ],
+        "alternatives": "相比只测连通性的工具，它强调真实调用与响应内容校验，并提供可用率热力图。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 9 星且仅一天进入日榜。",
+        "risk_notes": "探测会消耗真实 Token；自动探测结果可能受网络、地域和缓存影响；首次构建需先执行前端资源准备脚本。",
+        "evidence": [
+          "企业级 LLM 中转服务可用性监控系统，实时追踪服务状态并提供可视化仪表板。",
+          "传统监测工具（如 Uptime Kuma）监测的是 HTTP 连通性——但在 LLM 中转场景下，**\"HTTP 200 却返回空内容或错误码\"** 的\"假活\"现象屡见不鲜。",
+          "**RelayPulse** 通过消耗真实 Token 定时发起 API 请求，并校验响应内容。只有 LLM 真的\"吐字\"了，才算可用。"
+        ]
+      }
+    },
+    "acl-org/aclpubcheck": {
+      "category": "learning-resource",
+      "one_liner": "ACL 投稿检查工具",
+      "intro": {
+        "one_liner": "ACL 论文格式检查工具",
+        "what_it_is": "一个用 Python 编写的检查工具，依据 ACL 会议的 LaTeX 样式文件，自动发现论文 PDF 中常见排版问题，并生成报告。",
+        "problem_solved": "帮助作者在投稿前和定稿前发现字体、作者格式、页边距、引用等问题，减少作者与出版主席的返工。",
+        "who_should_care": "准备向 ACL 系列会议投稿或提交定稿的作者，以及负责批量核查的出版人员。",
+        "use_cases": [
+          "投稿前检查论文 PDF",
+          "定稿前复核最终排版",
+          "批量检查并生成报告"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星时为一千星。",
+        "risk_notes": "匿名或带行号的评审版本可能产生误报；引用姓名检查可能有解析和索引错误；报告同名会覆盖，旧标注图片可能残留。",
+        "evidence": [
+          "Tools for checking ACL paper submissions",
+          "ACL pubcheck automatically detects common formatting problems in papers using the LaTeX style files for ACL venues, including font errors, author formatting errors, margin violations, outdated citations, and other issues.",
+          "Some of the warnings generated for citations may be spurious and inaccurate, due to parsing and indexing errors."
+        ]
+      }
+    },
+    "steffest/DPaint-js": {
+      "category": "content-media",
+      "one_liner": "网页版复古图像编辑器",
+      "intro": {
+        "one_liner": "复古图像编辑器",
+        "what_it_is": "一个浏览器中的图像编辑器，借鉴 Deluxe Paint，重点支持 Amiga 图标、IFF ILBM 图像和动画格式。",
+        "problem_solved": "让开发者在浏览器里编辑、转换和预览复古 Amiga 图像文件，并处理调色板、抖动和逐帧动画。",
+        "who_should_care": "复古计算爱好者、像素画作者和 Amiga 图像格式使用者。",
+        "use_cases": [
+          "编辑 Amiga 图标和 IFF 图像",
+          "制作调色板受限的像素画",
+          "转换复古动画与磁盘文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，破千星且有一周上日榜记录。",
+        "risk_notes": "当前版本仍为 alpha，可能有缺陷和缺失功能；模拟器文件未包含在仓库中；Brave 浏览器可能影响功能。",
+        "evidence": [
+          "Webbased image editor, modeled after the legendary Deluxe Paint with a focus on retro Amiga file formats: read and write Amiga icon files and IFF ILBM images/animations",
+          "Current version is still alpha. I'm sure there are bugs and missing features.",
+          "The only part that is not included in this repository is the Amiga Emulator Files."
+        ]
+      }
+    },
+    "Whisparr/Whisparr": {
+      "category": "automation",
+      "one_liner": "媒体资源自动化管理器",
+      "intro": {
+        "one_liner": "成人影片收藏管理器",
+        "what_it_is": "Whisparr 是面向 Usenet 和 BitTorrent 用户的成人影片收藏管理器，可监控订阅源，并联动下载客户端与索引器抓取、整理和重命名文件。",
+        "problem_solved": "它把新片发现、下载、导入、重命名、质量升级和媒体库更新串成自动流程，减少手工维护收藏的负担。",
+        "who_should_care": "使用 Usenet、BitTorrent 和 Plex、Kodi 管理成人影片库的用户。",
+        "use_cases": [
+          "监控订阅源自动获取新片",
+          "自动导入并重命名下载文件",
+          "发现更高质量版本后升级"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千星时为一千星。",
+        "risk_notes": "内容类型较敏感；同一影片只支持一种版本，多版本需运行多个实例；许可证为 GNU GPL v3。",
+        "evidence": [
+          "Whisparr is an adult movie collection manager for Usenet and BitTorrent users.",
+          "It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them.",
+          "Note that only one type of a given movie is supported."
+        ]
+      }
+    },
+    "feder-cr/Jobs_Applier_AI_Agent_AIHawk": {
+      "category": "ai-agent",
+      "one_liner": "自动定制投递求职代理",
+      "intro": {
+        "one_liner": "AI 求职投递代理",
+        "what_it_is": "一个用 Python 编写的终端工具，读取简历，筛选职位，生成针对性简历，并在可见浏览器中辅助填写和投递申请表。",
+        "problem_solved": "把找工作时的职位搜索、匹配打分、材料改写和表单填写串起来，减少重复操作，并让用户确认后再发送申请。",
+        "who_should_care": "正在批量求职、愿意用命令行并接受自动化辅助的开发者。",
+        "use_cases": [
+          "按简历筛选匹配职位",
+          "为岗位生成针对性简历",
+          "辅助填写求职申请表"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 29,862 星，本周上过 1 天日榜。",
+        "risk_notes": "简历、回答、页面内容和截图会发给模型网关及供应商，且需要付费密钥；部分招聘网站不允许自动投递；发送拦截可能被异常按钮绕过，部分站点仍停在验证码、问题或登录环节。",
+        "evidence": [
+          "AIHawk aims to easy job hunt process by automating the job application process. Utilizing artificial intelligence, it enables users to apply for multiple jobs in a tailored way.",
+          "Give it your resume, get the jobs that fit, select them and apply. Runs in your terminal, with a browser you can watch. Needs Python 3.11 or newer.",
+          "Your CV, your answers, the postings' texts and the pages' contents, screenshots included, go to the model gateway OrcaRouter and its providers; an application goes to the employer's site."
+        ]
+      }
+    },
+    "grafana-cold-storage/oncall": {
+      "category": "dev-tools",
+      "one_liner": "开发者友好值班响应系统",
+      "intro": {
+        "one_liner": "告警值班响应工具",
+        "what_it_is": "Grafana OnCall 是面向开发者的事件响应与值班管理工具，可汇总多套监控系统的告警，并通过 Slack、Telegram、短信和电话等渠道通知。",
+        "problem_solved": "它解决告警分散、排班和升级流程难管理的问题，提供基于日程的值班轮转、自动升级和多渠道通知。",
+        "who_should_care": "使用 Grafana、需要集中处理告警和安排值班的开发与运维团队。",
+        "use_cases": [
+          "汇总多套监控告警",
+          "安排值班轮转与升级",
+          "通过 Slack 或 Telegram 通知"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，但开源版本已进入维护模式并被归档。",
+        "risk_notes": "开源版本已进入维护模式并被归档；资料建议使用另一个受支持且持续维护的替代方案。部署要求 Grafana 11 或更新版本，并启用相关功能开关。",
+        "evidence": [
+          "On 2025-03-11 Grafana OnCall (OSS) entered maintenance mode and was archived on 2026-03-24.",
+          "Developer-friendly incident response with brilliant Slack integration.",
+          "- Collect and analyze alerts from multiple monitoring systems\n- On-call rotations based on schedules\n- Automatic escalations\n- Phone calls, SMS, Slack, Telegram notifications"
+        ]
+      }
+    },
+    "msgspec/msgspec": {
+      "category": "dev-tools",
+      "one_liner": "高速序列化校验库",
+      "intro": {
+        "one_liner": "Python 序列化校验库",
+        "what_it_is": "msgspec 是 Python 序列化与校验库，内置支持 JSON、MessagePack、YAML 和 TOML，并提供结构化数据类型。",
+        "problem_solved": "它把消息定义、编码、解码和类型校验放在同一套流程里，减少数据格式转换与校验的负担。",
+        "who_should_care": "需要处理接口数据、配置或消息格式的 Python 开发者。",
+        "use_cases": [
+          "接口请求与响应校验",
+          "JSON 和 MessagePack 编解码",
+          "读取 YAML 或 TOML 配置"
+        ],
+        "alternatives": "相比只做 JSON 编解码的库，它覆盖多种协议，并结合类型注解做校验。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，序列化与校验是 Python 服务开发的基础需求。",
+        "risk_notes": "未关闭议题较多；性能优势来自资料中的基准说明，实际效果需自行验证。",
+        "evidence": [
+          "A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML",
+          "**Define** your message schemas using standard Python type annotations.",
+          "**Decode** messages back into Python objects, with optional schema validation."
+        ]
+      }
+    },
+    "grafana-cold-storage/phlare": {
+      "category": "dev-tools",
+      "one_liner": "可扩展持续性能分析系统",
+      "intro": {
+        "one_liner": "持续性能剖析聚合系统",
+        "what_it_is": "一个用 Go 编写的水平可扩展、高可用、多租户持续性能剖析聚合系统，聚焦监控与性能分析。",
+        "problem_solved": "用于集中聚合持续性能剖析数据，帮助在 Kubernetes 等环境中观察服务性能。",
+        "who_should_care": "关注服务性能监控、持续剖析和 Grafana 生态的开发者。",
+        "use_cases": [
+          "聚合多服务性能剖析数据",
+          "监控 Kubernetes 应用性能",
+          "构建多租户性能观测平台"
+        ],
+        "alternatives": "后续开发转向 Grafana Pyroscope，本仓库已归档。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时星数为 2,030。",
+        "risk_notes": "仓库已归档，后续开发不在本仓库进行；项目数据未说明当前维护状态。",
+        "evidence": [
+          "🔥 horizontally-scalable, highly-available, multi-tenant continuous profiling aggregation system",
+          "# Grafana Phlare is archived",
+          "All future development will happen in [Grafana Pyroscope](https://github.com/grafana/pyroscope)."
+        ]
+      }
+    },
+    "xt42io/avnac": {
+      "category": "web-frontend",
+      "one_liner": "免费浏览器设计软件",
+      "intro": {
+        "one_liner": "浏览器端设计编辑器",
+        "what_it_is": "一个以浏览器为主、使用 TypeScript 开发的画布设计编辑器，可制作海报、版式和社交图片，并支持本地文件管理与导入导出。",
+        "problem_solved": "把画布排版、图形编辑、文件保存和图片导出放进浏览器，减少对外部画布运行时和后端服务的依赖。",
+        "who_should_care": "需要轻量浏览器设计工具、关注本地优先编辑和前端画布实现的开发者。",
+        "use_cases": [
+          "制作海报和社交图片",
+          "编辑图形与文字排版",
+          "导入旧文件并导出图片"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 11 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0，使用与分发需留意义务；应用以桌面端为主，移动端编辑被有意阻止；文件主要保存在浏览器本地。",
+        "evidence": [
+          "Free browser-based design software.",
+          "Avnac is a browser-first design editor for posters, layouts, social graphics, and other canvas-based compositions.",
+          "The app is desktop-first; mobile editing is intentionally blocked"
+        ]
+      }
+    },
+    "nexu-io/html-video": {
+      "category": "content-media",
+      "one_liner": "HTML 转 MP4 视频工具",
+      "intro": {
+        "one_liner": "本地生成视频工具",
+        "what_it_is": "它把网页、样式和数据交给编码代理编排成多帧动画，并在本机渲染成 MP4。内置模板、可插拔渲染引擎和可选配乐。",
+        "problem_solved": "降低把文章、仓库或提示词做成动画视频的门槛，并减少学习不同渲染框架、切换引擎和拼接流程的成本。",
+        "who_should_care": "想用编码代理批量做演示、数据可视化或内容短视频的开发者。",
+        "use_cases": [
+          "把文章链接转成动画视频",
+          "用仓库内容生成项目介绍片",
+          "制作数据图表和片头片尾"
+        ],
+        "alternatives": "以统一适配层连接代理、模板和渲染引擎；目前仅 Hyperframes 引擎可用，其他引擎仍在规划或研究。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,583 星，并曾进入日榜一天。",
+        "risk_notes": "多个渲染引擎尚未实现；未关闭问题有 54 个；创建时间较新，稳定性仍待观察。",
+        "evidence": [
+          "Programmatic video for coding agents — turn HTML, CSS & data into real MP4s on your laptop. Pluggable render engines, 21 templates, AI soundtrack. Apache-2.0, no per-render fees.",
+          "Status: the pluggable-engine architecture is in place, and the Hyperframes engine is fully wired up and renders real MP4",
+          "Remotion, Motion Canvas / Revideo, and Manim are on the roadmap: the adapter interface is designed for them, but their adapters aren't built yet."
+        ]
+      }
+    },
+    "zedless-editor/old-school-zedless": {
+      "category": "dev-tools",
+      "one_liner": "本地优先隐私编辑器",
+      "intro": {
+        "one_liner": "隐私优先的本地编辑器",
+        "what_it_is": "这是一个基于 Zed 的编辑器分支，主打隐私友好和本地优先，主要用 Rust 编写。",
+        "problem_solved": "它计划移除遥测、自动崩溃上报和依赖专有云的功能，并让网络服务可自行配置且默认关闭。",
+        "who_should_care": "重视隐私、希望自建服务或本地使用编辑器的开发者。",
+        "use_cases": [
+          "本地优先的代码编辑",
+          "避免遥测与崩溃上报",
+          "接入自建网络服务"
+        ],
+        "alternatives": "与上游相比，计划去除专有云依赖、默认提供商和贡献者版权转让要求。",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时有一千三百星。",
+        "risk_notes": "仍处于开发中；资料提示已有新仓库，当前仓库可能不是后续主线；许可证信息未明确给出。",
+        "evidence": [
+          "Zedless is currently work-in-progress. Feel free to contribute!",
+          "This is Zedless, a fork of Zed that's designed to be privacy-friendly and local-first.",
+          "(old variant) Zed fork focused on privacy and being local-first"
+        ]
+      }
+    },
+    "feder-cr/invisible_playwright": {
+      "category": "automation",
+      "one_liner": "反检测浏览器自动化替代",
+      "intro": {
+        "one_liner": "反检测浏览器自动化库",
+        "what_it_is": "一个兼容现有 Playwright 代码的 Python 浏览器自动化库，基于改造过的 Firefox，提供随机或可复现的浏览器指纹与拟人操作。",
+        "problem_solved": "面向普通 Playwright 容易被反机器人机制和验证码识别的问题，提供引擎层指纹设置、代理与时区配置，以及更接近真人的鼠标和输入行为。",
+        "who_should_care": "已有 Playwright 脚本、需要处理浏览器指纹与自动化检测的开发者。",
+        "use_cases": [
+          "迁移现有 Playwright 自动化脚本",
+          "按会话生成不同浏览器指纹",
+          "用固定种子复现自动化运行"
+        ],
+        "alternatives": "相比普通 Playwright，强调引擎层指纹、拟人输入和代理配置；部分 Playwright 能力不支持。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 100 星，并有一天进入日榜。",
+        "risk_notes": "创建于 2026 年，时间较新；仅支持 Windows x86_64 和 Linux x86_64；追踪、HAR、CDP 和请求上下文等能力不在支持范围内。",
+        "evidence": [
+          "Anti-Detect Browser that passes every bot detection test. Drop-in Playwright replacement.",
+          "Playwright gets caught by anti-bots and captchas.<br>\nThis one runs on an anti-detect Firefox with an undetected fingerprint, compatible with your existing Playwright code.",
+          "A few surfaces are out of scope - tracing, HAR, CDP, the API request context - and each one refuses with a sentence saying why rather than misbehaving quietly."
+        ]
+      }
+    }
+  }
+}

@@ -1,1 +1,635 @@
-{"date":"2026-06-19","headline":"AI Agent 项目领跑今日热度","points":["AI Agent 最集中，共 7 个项目；vercel/eve 与 BuilderIO/skills 聚焦智能体开发框架和技能集。","vercel/eve 单日新增 728，BuilderIO/skills 新增 409，智能体工具链最受关注。","Python 有 6 个项目，TypeScript 有 5 个；网页前端和学习资源各有 4 个项目。"],"items":{"vercel/eve":{"category":"ai-agent","one_liner":"构建智能体的开发框架"},"BuilderIO/skills":{"category":"ai-agent","one_liner":"面向编码智能体的技能集"},"loc567/loc567":{"category":"mobile","one_liner":"网页端 iOS 模拟定位工具"},"WeiboAI/VibeThinker":{"category":"ai-model","one_liner":"小模型强逻辑推理模型"},"moorcheh-ai/memanto":{"category":"ai-agent","one_liner":"智能体专用记忆系统"},"levy-street/world-of-claudecraft":{"category":"other","one_liner":"Claude 主题游戏世界"},"Anurella/reset-css":{"category":"web-frontend","one_liner":"浏览器元素样式重置集"},"CRui5in/paper-ppt-agent":{"category":"ai-agent","one_liner":"论文转可编辑演示稿"},"iampedii/WhiteDNS":{"category":"mobile","one_liner":"安卓 DNS 隧道客户端"},"xxtomm/spell-ui":{"category":"web-frontend","one_liner":"可复制的 React 组件库"},"weiesky/cc-viewer":{"category":"dev-tools","one_liner":"Claude Code 请求监控器"},"gravity-ui/uikit":{"category":"web-frontend","one_liner":"React 设计系统组件库"},"teest114514/chatlog_alpha":{"category":"automation","one_liner":"微信消息读取转发工具"},"louiszengCN/CarlaAir":{"category":"ai-agent","one_liner":"空地具身智能仿真设施"},"yaoyao-liu/minimal-light":{"category":"web-frontend","one_liner":"简洁学术主页主题"},"lxc/incus-os":{"category":"desktop-system","one_liner":"运行 Incus 的不可变系统"},"EuniAI/Prometheus":{"category":"ai-agent","one_liner":"知识图谱驱动修码智能体"},"Alpha-VLLM/Lumina-DiMOO":{"category":"ai-model","one_liner":"开源多模态扩散语言模型"},"jasontang-ai/Context-Engineering":{"category":"learning-resource","one_liner":"上下文工程原理手册"},"hey-api/hey-api":{"category":"dev-tools","one_liner":"OpenAPI 多语言代码生成器"},"emilkowalski/skills":{"category":"learning-resource","one_liner":"设计工程师技能资源"},"webfuse-com/awesome-autoresearch":{"category":"learning-resource","one_liner":"自主研究智能体资源清单"},"Agentchengfeng/videocut-skills":{"category":"ai-agent","one_liner":"Claude Code 视频剪辑智能体"},"HHHHHejia/Awesome-AgenticLLM-RL-Papers":{"category":"learning-resource","one_liner":"智能体强化学习论文清单"},"palmier-io/palmier-pro":{"category":"content-media","one_liner":"面向 AI 的 macOS 剪辑器"},"matlab/matlab-mcp-server":{"category":"dev-tools","one_liner":"AI 调用 MATLAB 的服务端"}}}
+{
+  "date": "2026-06-19",
+  "headline": "AI Agent 项目领跑今日热度",
+  "points": [
+    "AI Agent 最集中，共 7 个项目；vercel/eve 与 BuilderIO/skills 聚焦智能体开发框架和技能集。",
+    "vercel/eve 单日新增 728，BuilderIO/skills 新增 409，智能体工具链最受关注。",
+    "Python 有 6 个项目，TypeScript 有 5 个；网页前端和学习资源各有 4 个项目。"
+  ],
+  "items": {
+    "vercel/eve": {
+      "category": "ai-agent",
+      "one_liner": "构建智能体的开发框架",
+      "intro": {
+        "one_liner": "文件系统式智能体框架",
+        "what_it_is": "eve 是用 TypeScript 编写的智能体框架，以文件系统组织提示词、工具、技能、消息通道和定时任务。",
+        "problem_solved": "它把智能体能力放进约定目录，让项目更容易检查、扩展和运行，也便于加入网页聊天与部署流程。",
+        "who_should_care": "构建、维护智能体应用的 TypeScript 开发者。",
+        "use_cases": [
+          "初始化并本地开发智能体",
+          "为智能体添加工具和技能",
+          "接入网页聊天并部署"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 283 星，并有一天登上日榜。",
+        "risk_notes": "未关闭 Issue 有 829 个，维护压力值得关注；快速上手依赖初始化命令和交互式终端界面。",
+        "evidence": [
+          "The Framework for Building Agents",
+          "eve is a filesystem-first framework for durable AI agents. Core agent capabilities live in conventional locations, so projects are easier to inspect, extend, and operate.",
+          "npx eve@latest init my-agent"
+        ]
+      }
+    },
+    "BuilderIO/skills": {
+      "category": "ai-agent",
+      "one_liner": "面向编码智能体的技能集",
+      "intro": {
+        "one_liner": "面向编码 agent 的可组合技能集",
+        "what_it_is": "BuilderIO/skills 是一个用 JavaScript 编写的技能集合，为编码 agent 提供小型、可组合的 skills，可通过 npx @agent-native/skills@latest add 安装。",
+        "problem_solved": "把反馈、产品遥测、错误和交付信号转化为受策略约束的软件变更，并覆盖 PR 审查、发布、复盘、可视化计划等 agent 工作流环节。",
+        "who_should_care": "使用 Claude、Codex、ChatGPT 等编码 agent 并希望扩展其工作流的开发者，以及需要把 agent 接入 PR 与交付流程的团队。",
+        "use_cases": [
+          "用 /factory 系列技能收集反馈与错误，并生成受策略约束的修复 PR",
+          "用 /visual-plan、/visual-recap 把文本计划或 diff 转成可视化内容",
+          "用 /agent-watchdog、/plan-arbiter 审计其他 agent 的工作或比较多个方案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕编码 agent 的技能与工作流扩展是当前活跃方向，但项目创建时间短，Factory 模块仍标注 experimental。",
+        "risk_notes": "Factory 与 /factory-human-digest 标注为 experimental；README 提到部分集成（如 Slack、Sentry、GitHub）需自行配置，项目不代为安装；项目创建于 2026-06-10，历史较短。",
+        "evidence": [
+          "Skills for coding agents",
+          "Small, composable skills for your favorite agent.",
+          "Factory is an experimental set of agent skills for turning feedback, product telemetry, errors, and delivery signals into policy-gated software changes."
+        ]
+      }
+    },
+    "loc567/loc567": {
+      "category": "mobile",
+      "one_liner": "网页端 iOS 模拟定位工具",
+      "intro": {
+        "one_liner": "纯网页端 iOS 模拟定位工具",
+        "what_it_is": "loc567 是一款开源免费的纯网页端 iOS 模拟定位工具，用户通过 iPhone 原生 Safari 浏览器访问网页即可使用，无需电脑、越狱或 TrollStore 环境。",
+        "problem_solved": "传统 iOS 模拟定位方案通常需要连接电脑、依赖 TrollStore 或越狱环境，且定位容易在数分钟内掉线；loc567 试图用纯网页方式降低使用门槛并保持定位长期有效。",
+        "who_should_care": "需要在地图 SDK 或网页地理接口开发中做定位测试的 iOS 开发者，以及关注网页地理接口能力的技术人员。",
+        "use_cases": [
+          "iOS 地图 SDK 与网页地理接口的本地开发测试",
+          "在无电脑、无越狱条件下临时验证基于地理位置的网页功能"
+        ],
+        "alternatives": "README 中的对比表声称同类工具大多收费、闭源且依赖 TrollStore，定位数分钟即掉线；loc567 自称免费开源、无需额外环境且长期稳定。该对比为项目自述，未经独立验证。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，理由是该工具依赖网页地理接口实现模拟定位，属于特定场景的取巧方案，且项目创建时间很短、维护记录有限。",
+        "risk_notes": "README 明确禁止用于考勤打卡、外勤篡改、游戏作弊等场景，违规使用可能导致账号封禁或法律追责；项目采用 LGPL-2.1 许可证，但 README 又声明禁止二次闭源打包、倒卖与商用分发，两者可能存在冲突；项目创建于 2026-06-11，维护历史极短，且 README 自述“可绕过任何定位安全检测”，实际效果缺乏独立验证。",
+        "evidence": [
+          "loc567 是一款完全开源免费的纯网页端iOS模拟定位工具",
+          "无需电脑、无需越狱、无需巨魔(TrollStore)环境，兼容iOS12-iOS26全版本系统",
+          "本项目仅限iOS开发者用于地图SDK、网页地理接口合法开发测试与技术学习"
+        ]
+      }
+    },
+    "WeiboAI/VibeThinker": {
+      "category": "ai-model",
+      "one_liner": "小模型强逻辑推理模型",
+      "intro": {
+        "one_liner": "小型推理模型项目",
+        "what_it_is": "这是围绕 VibeThinker 系列小型推理模型的开源项目，提供模型下载、技术报告、评测程序和使用说明。",
+        "problem_solved": "它探索小参数模型在数学、竞赛编程和可验证推理任务上的能力，降低高性能推理模型的训练与使用门槛。",
+        "who_should_care": "关注小型推理模型、数学与代码评测的研究者和开发者。",
+        "use_cases": [
+          "竞赛风格数学题求解",
+          "竞赛编程与代码推理",
+          "复现模型评测结果"
+        ],
+        "alternatives": "强调以小参数规模结合后训练方法提升可验证推理能力，并提供模型权重与评测资料。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 79 星，并曾登上日榜一天。",
+        "risk_notes": "推荐用于可验证的竞赛数学、编程等任务；开放域知识任务可能仍更适合更大的通用模型。评测程序不支持用大模型判断答案等价性。",
+        "evidence": [
+          "VibeThinker-1.5B is a 1.5B-parameter dense model that challenges the prevailing notion that small models inherently lack robust reasoning capabilities.",
+          "We recommend using VibeThinker-3B for competitive-style math, coding, STEM reasoning, and other tasks where the target answer can be verified. For broad open-domain knowledge tasks, larger general-purpose models may still be more suitable.",
+          "This code does not support LLM-based judgment of whether the extracted model answers are equivalent to the ground truth."
+        ]
+      }
+    },
+    "moorcheh-ai/memanto": {
+      "category": "ai-agent",
+      "one_liner": "智能体专用记忆系统",
+      "intro": {
+        "one_liner": "智能体记忆管家",
+        "what_it_is": "Memanto 是管理其他智能体记忆的伴随智能体，负责提取、合并、校正、遗忘和分发知识。",
+        "problem_solved": "它解决多个智能体记忆分散、冲突、过期和重复劳动的问题，让共享记忆可被持续整理。",
+        "who_should_care": "使用多个智能体、需要共享长期记忆的开发者和团队。",
+        "use_cases": [
+          "多智能体共享决策记忆",
+          "处理冲突与过期知识",
+          "迁移或导出记忆资产"
+        ],
+        "alternatives": "强调由独立智能体主动管理记忆，并提供开放知识格式用于跨框架迁移。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 35 星，且曾有一天进入日榜。",
+        "risk_notes": "创建时间较新；分叉数相对星数偏高；未关闭问题仍有 6 个。",
+        "evidence": [
+          "Memanto is a Memory Agent; a companion agent that manages the memories of your other agents",
+          "When new knowledge contradicts old, Memanto supersedes rather than appends",
+          "Your estate is a file. memanto memory export --okf gives you the Open Knowledge Format"
+        ]
+      }
+    },
+    "levy-street/world-of-claudecraft": {
+      "category": "other",
+      "one_liner": "Claude 主题游戏世界",
+      "intro": {
+        "one_liner": "浏览器开源多人在线游戏",
+        "what_it_is": "一个可在浏览器游玩、也能自托管的经典风格多人在线游戏，包含共享持久世界、离线单人世界和用于训练智能体的无界面环境。",
+        "problem_solved": "把多人在线游戏、本地开发用单人模拟和智能体训练环境统一到同一套游戏核心与世界种子上，降低自托管和实验门槛。",
+        "who_should_care": "游戏开发者、多人在线游戏爱好者、自托管玩家和智能体训练研究者。",
+        "use_cases": [
+          "在浏览器体验共享在线世界",
+          "一条命令自托管游戏世界",
+          "用无界面环境训练智能体"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，创建后破千星且本周一天登上日榜。",
+        "risk_notes": "创建时间很新，分叉数相对破千星偏高；资料提到可选链上功能，但 marketplace 默认关闭。",
+        "evidence": [
+          "World of ClaudeCraft is a complete classic-era MMO you can play right now in your browser, host yourself with one command, and even train AI agents to play.",
+          "One shared world runs in three places, all from the same game core",
+          "破千时的 Star 数：1008"
+        ]
+      }
+    },
+    "Anurella/reset-css": {
+      "category": "web-frontend",
+      "one_liner": "浏览器元素样式重置集",
+      "intro": {
+        "one_liner": "现代 CSS 重置样式表",
+        "what_it_is": "这是一个用 CSS 编写的重置样式表，提供一组可按需修改的通用基础样式，用于覆盖浏览器部分元素的默认样式。",
+        "problem_solved": "它用于减少浏览器默认样式差异带来的间距、高度和对齐问题，让新项目从较一致的样式基线开始。",
+        "who_should_care": "前端开发者，尤其是新建网页项目、需要统一样式基线的人。",
+        "use_cases": [
+          "新项目初始化样式基线",
+          "减少跨浏览器默认样式差异",
+          "作为自定义重置样式模板"
+        ],
+        "alternatives": "相比早期广泛使用的重置样式表，它强调按现代网站实践更新，并建议按项目需要调整。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 17 星，曾有一天进入日榜。",
+        "risk_notes": "更适合作为新项目起点；加入现有代码库可能引发布局和样式变化。",
+        "evidence": [
+          "A collection of styles that reset the styles of certain elements in the browser",
+          "Browsers ship with default styles. Those defaults can create or seem like inconsistencies when building across different browsers—for example, differences in line-height can affect spacing, height, and alignment.",
+          "Avoid introducing it into an existing codebase unless you are prepared to address layout/style changes."
+        ]
+      }
+    },
+    "CRui5in/paper-ppt-agent": {
+      "category": "ai-agent",
+      "one_liner": "论文转可编辑演示稿",
+      "intro": {
+        "one_liner": "论文转可编辑演示文稿",
+        "what_it_is": "这是一个用 Python 编写的工具，可从论文 PDF 或 TeX 源码生成可编辑的 PowerPoint，并提供多智能体流水线、视觉审查和编辑器。",
+        "problem_solved": "它解决学术论文汇报制作耗时的问题，自动完成内容提炼、结构规划、版式设计、质量检查和反馈迭代。",
+        "who_should_care": "需要把论文快速做成汇报幻灯片的科研人员和学生。",
+        "use_cases": [
+          "将论文 PDF 生成汇报幻灯片",
+          "用 TeX 源码制作组会演示",
+          "导入模板并编辑生成结果"
+        ],
+        "alternatives": "相比参考项目，它强调多智能体协作、视觉质量审查、反馈迭代和内置编辑器。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但一周只新增 6 星。",
+        "risk_notes": "采用 AGPL-3.0，商业集成需注意开源义务；视觉质量审查曾标注为实验性；需要模型接口密钥及本机运行环境。",
+        "evidence": [
+          "Generate editable PPT decks from paper PDFs or LaTeX sources",
+          "基于多智能体协作的学术论文演示文稿自动生成工具。上传论文 PDF 或 TeX 源码，由 AI 完成内容提炼、结构规划、版式设计与视觉质量审查，最终输出可编辑的 PowerPoint 文件。",
+          "本项目基于 [GNU Affero General Public License v3.0 (AGPL-3.0)](./LICENSE) 发布。"
+        ]
+      }
+    },
+    "iampedii/WhiteDNS": {
+      "category": "mobile",
+      "one_liner": "安卓 DNS 隧道客户端",
+      "intro": {
+        "one_liner": "安卓 DNS 隧道客户端",
+        "what_it_is": "WhiteDNS 是一款 Kotlin 编写的安卓应用，可运行本地 DNS 隧道客户端，提供代理和 VPN 两种模式，并支持多种连接引擎与配置管理。",
+        "problem_solved": "它把 DNS 隧道连接、服务器配置、订阅导入、分流、日志和流量统计集中到安卓端，方便在代理或 VPN 模式下建立和管理连接。",
+        "who_should_care": "需要安卓端 DNS 隧道、代理或 VPN 连接管理的开发者与进阶用户。",
+        "use_cases": [
+          "用 VPN 模式运行 DNS 隧道",
+          "用本地 SOCKS5 代理连接",
+          "导入订阅并管理连接配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 12 星，仅一天进入日榜。",
+        "risk_notes": "源码可用但为专有软件，禁止复制、改版发布、重打包或分发二进制；CottenMax 仍是测试版，尚无稳定应用发布；官方提醒应用商店版本可能非官方且不安全。",
+        "evidence": [
+          "WhiteDNS is an Android application for running a local DNS tunneling client with proxy and VPN modes.",
+          "NOTICE: WhiteDNS is source-available proprietary software. The code is published for transparency, review, and contribution to this official project only.",
+          "these are beta builds, with no stable app release published by this update."
+        ]
+      }
+    },
+    "xxtomm/spell-ui": {
+      "category": "web-frontend",
+      "one_liner": "可复制的 React 组件库",
+      "intro": {
+        "one_liner": "React 组件集合",
+        "what_it_is": "一个面向 React 与 Tailwind CSS 应用的界面组件集合，提供可复制粘贴到项目中的高质量组件。",
+        "problem_solved": "帮助开发者快速获得美观、精致的界面组件，减少从零编写常见交互与样式的工作。",
+        "who_should_care": "使用 React、Next.js 和 Tailwind CSS 的前端开发者。",
+        "use_cases": [
+          "快速搭建现代界面",
+          "复用动效组件",
+          "补充组件库样式"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾上日榜且星数破千，但一周新增为负。",
+        "risk_notes": "创建日期与最近提交日期异常；一周新增为负，热度可能回落；成熟度信息不足。",
+        "evidence": [
+          "A large collection of high-quality React components that you can copy and paste into any project.",
+          "Beautiful, sophisticated UI components designed for modern React and Tailwind CSS applications.",
+          "Licensed under the [MIT license](https://github.com/xxtomm/spell-ui/blob/main/LICENSE)."
+        ]
+      }
+    },
+    "weiesky/cc-viewer": {
+      "category": "dev-tools",
+      "one_liner": "Claude Code 请求监控器",
+      "intro": {
+        "one_liner": "Claude Code 请求监控器",
+        "what_it_is": "一个面向 Claude Code 的请求监控系统，实时捕获并可视化接口请求与响应，提供网页查看器、桌面应用和日志模式。",
+        "problem_solved": "帮助开发者查看 Claude Code 的上下文、会话日志和用量信息，便于在编程过程中审查与调试请求。",
+        "who_should_care": "使用 Claude Code 并需要排查请求、上下文或会话日志的开发者。",
+        "use_cases": [
+          "实时查看请求与响应",
+          "审查会话上下文和日志",
+          "在浏览器中调试无头会话"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 2 星且仅 1 天上日榜，热度较集中。",
+        "risk_notes": "创建于 2026 年，未关闭问题 26 个；与 claude-code-switch 和 claude-code-router 存在代理冲突；升级涉及日志格式迁移。",
+        "evidence": [
+          "A request monitoring system for Claude Code that captures and visualizes all API requests and responses in real time.",
+          "ccv is a drop-in replacement for claude — all arguments are passed through to claude while the Web Viewer is launched alongside it.",
+          "Note: this app conflicts with claude-code-switch and claude-code-router — there is a proxy contention problem"
+        ]
+      }
+    },
+    "gravity-ui/uikit": {
+      "category": "web-frontend",
+      "one_liner": "React 设计系统组件库",
+      "intro": {
+        "one_liner": "React 组件库",
+        "what_it_is": "一套用于构建富 Web 应用的 React 组件，属于 Gravity UI 设计系统，提供组件、主题、样式和工具入口。",
+        "problem_solved": "把主题、无障碍、从右到左布局、服务端渲染和国际化等界面基础能力封装起来，减少重复建设。",
+        "who_should_care": "使用 React 开发 Web 应用、希望统一界面规范的团队。",
+        "use_cases": [
+          "搭建后台或产品界面",
+          "统一明暗与高对比主题",
+          "处理多语言与从右到左布局"
+        ],
+        "alternatives": "unknown",
+        "maturity": "生产可用",
+        "hype_or_trend": "长期趋势，组件库是持续复用的前端基础设施。",
+        "risk_notes": "需要 React 18 或 19；不稳定入口的接口可能变动；部分入口需额外安装可选依赖。",
+        "evidence": [
+          "A set of flexible, highly practical, and efficient React components for creating rich web applications. Part of the [Gravity UI](https://gravity-ui.com) design system.",
+          "UIKit is the foundational package of the [Gravity UI](https://gravity-ui.com) design system — a battle-tested set of 70+ React components built for production web applications. It handles the hard parts: theming, accessibility, RTL layout, server-side rendering, and internationalization, so you can focus on building your product.",
+          "React 18 or 19 must be installed in your project."
+        ]
+      }
+    },
+    "teest114514/chatlog_alpha": {
+      "category": "automation",
+      "one_liner": "微信消息读取转发工具",
+      "intro": {
+        "one_liner": "微信本地数据读取工具",
+        "what_it_is": "面向微信 4.x 的本地聊天数据读取与自动化工具，提供密钥提取、只读查询、媒体解密、消息推送及本机接口。",
+        "problem_solved": "把本机微信聊天数据、媒体和密钥管理集中到统一入口，便于结构化查询、导出和自动化推送。",
+        "who_should_care": "需要管理本机微信聊天数据、做只读查询或本地自动化的开发者。",
+        "use_cases": [
+          "查询会话、联系人和消息",
+          "解密并导出图片附件",
+          "推送指定消息到机器人"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但源码已停止公开。",
+        "risk_notes": "因侵权投诉停止公开源代码、构建产物和历史版本；仅可在可信本机运行；为非官方项目，需自行承担数据与账号安全责任。",
+        "evidence": [
+          "因收到腾讯方面关于侵权问题的投诉，本仓库已停止公开源代码、构建产物和历史 Release，仅保留项目说明。",
+          "Chatlog Alpha 是面向微信 4.x 的本地聊天数据读取与自动化工具。",
+          "Chatlog Alpha 为非官方项目，与腾讯或微信不存在隶属、授权或合作关系。"
+        ]
+      }
+    },
+    "louiszengCN/CarlaAir": {
+      "category": "ai-agent",
+      "one_liner": "空地具身智能仿真设施",
+      "intro": {
+        "one_liner": "空地一体仿真基础设施",
+        "what_it_is": "一个把城市驾驶仿真与多旋翼飞行仿真放进同一 Unreal Engine 进程的开源基础设施，面向空地具身智能研究。",
+        "problem_solved": "它解决车辆与无人机联合仿真需要桥接、坐标不对齐、脚本迁移成本高的问题，提供统一场景、传感器和接口。",
+        "who_should_care": "做自动驾驶、无人机、ROS 2 和具身智能仿真的研究者与开发者。",
+        "use_cases": [
+          "车辆与无人机联合仿真",
+          "空地传感器数据采集",
+          "复用现有仿真脚本"
+        ],
+        "alternatives": "相比单独使用 CARLA 或 AirSim，强调单进程、共享渲染、坐标对齐和原生接口兼容。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾有一天登上日榜，并提供预构建包与文档。",
+        "risk_notes": "版本为 0.1.7，仍属早期发布；预构建包依赖第三方下载渠道；许可证信息 unknown。",
+        "evidence": [
+          "CARLA-Air is an open-source infrastructure that unifies high-fidelity urban driving and physics-accurate multirotor flight within a single Unreal Engine process, providing a practical simulation foundation for air-ground embodied intelligence research.",
+          "Pre-built executable — Ubuntu (20.04 / 22.04), no compilation required",
+          "Existing CARLA and AirSim Python scripts and ROS 2 nodes run on CARLA-Air without any code changes. 89/89 CARLA API tests passing."
+        ]
+      }
+    },
+    "yaoyao-liu/minimal-light": {
+      "category": "web-frontend",
+      "one_liner": "简洁学术主页主题",
+      "intro": {
+        "one_liner": "学术个人主页主题",
+        "what_it_is": "这是一个简洁优雅的 Jekyll 学术个人主页主题，支持 GitHub Pages 自动部署，也可用本地 Jekyll 生成静态页面。",
+        "problem_solved": "它帮助需要展示个人信息、论文、服务和链接的学术人员快速搭建主页，并提供基础搜索优化、移动端适配和深色模式。",
+        "who_should_care": "适合学生、研究者等需要轻量学术主页的人。",
+        "use_cases": [
+          "搭建学术个人主页",
+          "展示论文与服务信息",
+          "用 GitHub Pages 发布"
+        ],
+        "alternatives": "基于 minimal 改进，提供深色模式、搜索优化和学术信息配置。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "主页源码已有更新版本；远程主题方式会直接应用默认设置；许可证为 Creative Commons Zero v1.0 Universal。",
+        "evidence": [
+          "A simple and elegant Jekyll theme for an academic personal homepage",
+          "Jekyll theme, automatically deployed by GitHub Pages",
+          "This work is licensed under a [Creative Commons Zero v1.0 Universal](https://github.com/yaoyao-liu/minimal-light/blob/master/LICENSE) License."
+        ]
+      }
+    },
+    "lxc/incus-os": {
+      "category": "desktop-system",
+      "one_liner": "运行 Incus 的不可变系统",
+      "intro": {
+        "one_liner": "运行 Incus 的不可变系统",
+        "what_it_is": "这是用于运行 Incus 的不可变 Linux 系统镜像，基于 Debian 13，使用 mkosi 构建，支持现代 amd64 与 arm64 设备。",
+        "problem_solved": "它提供快速、安全、可靠的 Incus 服务器部署方式，重点通过 UEFI Secure Boot 与 TPM 2.0 加强启动安全和磁盘加密。",
+        "who_should_care": "需要部署或维护 Incus 服务器的系统管理员与虚拟化平台开发者。",
+        "use_cases": [
+          "物理机安装 Incus 服务器",
+          "虚拟机平台运行 IncusOS",
+          "构建和验证系统镜像"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，星数达到一千。",
+        "risk_notes": "镜像需先进入 testing 渠道，经人工验证后才提升到 stable；项目创建于 2024 年，资料未说明生产采用情况。",
+        "evidence": [
+          "IncusOS is an immutable OS image dedicated to running Incus.",
+          "It's based on Debian 13 and built using mkosi.",
+          "The image is then made available in the `testing` channel until it's manually validated and promoted to the `stable` channel."
+        ]
+      }
+    },
+    "EuniAI/Prometheus": {
+      "category": "ai-agent",
+      "one_liner": "知识图谱驱动修码智能体",
+      "intro": {
+        "one_liner": "知识图谱驱动的代码智能体",
+        "what_it_is": "Prometheus 是用 Python 编写的代码智能体平台，借助统一知识图谱和多智能体流程理解、检索并修复复杂代码库。",
+        "problem_solved": "它面向大型多语言代码库，尝试把问题分类、缺陷复现、上下文检索、补丁生成与验证串成自动化流程。",
+        "who_should_care": "关注自动修缺陷、仓库级代码理解和智能体编排的开发者。",
+        "use_cases": [
+          "自动复现并修复缺陷",
+          "分析并实现功能需求",
+          "基于图谱检索代码上下文"
+        ],
+        "alternatives": "相比单智能体或通用执行框架，强调统一知识图谱、长期记忆和仓库级语义推理。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但持续热度未知。",
+        "risk_notes": "资料自称生产可用，但缺少可核验的部署与稳定性信息；部分能力依赖外部服务与容器环境。",
+        "evidence": [
+          "Prometheus is a research-backed, production-ready platform that leverages **unified knowledge graphs** and **multi-agent systems** to perform intelligent operations on multilingual codebases.",
+          "Automated Issue Resolution: End-to-end bug fixing with reproduction, patch generation, and multi-level validation",
+          "破千时的 Star 数：1000；本周上日榜天数：1"
+        ]
+      }
+    },
+    "Alpha-VLLM/Lumina-DiMOO": {
+      "category": "ai-model",
+      "one_liner": "开源多模态扩散语言模型",
+      "intro": {
+        "one_liner": "开源多模态扩散大模型",
+        "what_it_is": "Lumina-DiMOO 是开源的多模态扩散语言模型，采用统一离散扩散架构，支持图像生成、编辑与理解。",
+        "problem_solved": "它尝试用统一模型处理多模态理解与生成，减少不同任务间架构割裂，并提供采样加速方案。",
+        "who_should_care": "关注多模态生成、图像编辑和扩散语言模型的研究者与开发者。",
+        "use_cases": [
+          "文本生成高分辨率图像",
+          "图像编辑与局部修复",
+          "图像理解与基准评测"
+        ],
+        "alternatives": "相比以往自回归或混合架构，强调全离散扩散统一建模。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅新增 1 星，热度有限。",
+        "risk_notes": "测试时扩展尚未完成；仍有 9 个未关闭问题；部分性能与速度结论来自自述。",
+        "evidence": [
+          "Lumina-DiMOO - An Open-Sourced Multi-Modal Large Diffusion Language Model",
+          "Unified Discrete Diffusion Architecture: Lumina-DiMOO sets itself apart from prior unified models by utilizing a fully discrete diffusion modeling to handle inputs and outputs across various modalities.",
+          "[ ] Test-Time Scaling"
+        ]
+      }
+    },
+    "jasontang-ai/Context-Engineering": {
+      "category": "learning-resource",
+      "one_liner": "上下文工程原理手册",
+      "intro": {
+        "one_liner": "上下文工程手册",
+        "what_it_is": "这是一个以第一性原理讲解上下文工程的前沿手册，内容涵盖上下文设计、编排与优化，并配有渐进式课程和图示。",
+        "problem_solved": "它把关注点从单条提示词扩展到模型推理时看到的完整信息，帮助开发者系统理解示例、记忆、检索、工具、状态和控制流。",
+        "who_should_care": "构建大模型应用、智能体和检索增强系统的开发者，以及想系统学习上下文设计的读者。",
+        "use_cases": [
+          "学习上下文工程基础概念",
+          "设计智能体的记忆与工具上下文",
+          "梳理多步骤编排与评测方法"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有九千多星，但一周只涨了五星。",
+        "risk_notes": "课程标注为建设中；内容大量引用外部研究资料；未关闭问题三项，仓库仍在更新。",
+        "evidence": [
+          "A frontier, first-principles handbook for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.",
+          "Context is the complete information payload provided to a LLM at inference time, encompassing all structured informational components that the model needs to plausibly accomplish a given task.",
+          "Comprehensive Course Under Construction"
+        ]
+      }
+    },
+    "hey-api/hey-api": {
+      "category": "dev-tools",
+      "one_liner": "OpenAPI 多语言代码生成器",
+      "intro": {
+        "one_liner": "OpenAPI 代码生成工具",
+        "what_it_is": "Hey API 是把 OpenAPI 规范转成生产可用代码的开源工具集，包含 TypeScript 与 Python 生成器，并提供二十多个插件。",
+        "problem_solved": "它减少手写接口客户端、类型、校验模型与请求钩子的重复工作，让 API 规范直接生成可编译代码。",
+        "who_should_care": "维护 OpenAPI 规范、需要多语言客户端和类型定义的前后端开发者。",
+        "use_cases": [
+          "从接口规范生成 TypeScript SDK",
+          "生成 Python SDK 与 Pydantic 模型",
+          "生成 Zod 校验与 TanStack Query 钩子"
+        ],
+        "alternatives": "unknown",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时星数为四千九百七十三。",
+        "risk_notes": "运行环境要求 Node.js 22 及以上；README 中的第三方推荐与赞助链接需自行辨别。",
+        "evidence": [
+          "Hey API is an ecosystem for turning API specifications into production-ready code.",
+          "TypeScript code generator with 20+ plugins for SDKs, Zod schemas, TanStack Query hooks, and more.",
+          "runs in any Node.js 22+ environment"
+        ]
+      }
+    },
+    "emilkowalski/skills": {
+      "category": "learning-resource",
+      "one_liner": "设计工程师技能资源",
+      "intro": {
+        "one_liner": "界面设计技能集",
+        "what_it_is": "这是一组面向设计师和工程师的技能说明，帮助构建更好的用户界面，重点覆盖动画、设计判断、移动端体验和界面审查。",
+        "problem_solved": "它想解决智能体缺少界面品味、容易在缓动、阴影、动画取舍等细节上做错选择的问题，并给出修正建议。",
+        "who_should_care": "用智能体开发界面、关注动画细节和移动端体验的开发者与设计师。",
+        "use_cases": [
+          "审查并改进现有动画",
+          "从零生成合适的动画",
+          "排查界面与移动端细节"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 36 星，且本周上过一天日榜。",
+        "risk_notes": "创建日期与最近提交日期晚于当前时间，数据时间线存疑；分叉数高于星数，需留意数据异常。",
+        "evidence": [
+          "Skills for Design Engineers.",
+          "For designers and engineers to help them build better user interfaces.",
+          "Agents don’t have great taste"
+        ]
+      }
+    },
+    "webfuse-com/awesome-autoresearch": {
+      "category": "learning-resource",
+      "one_liner": "自主研究智能体资源清单",
+      "intro": {
+        "one_liner": "自主研究资源索引",
+        "what_it_is": "这是一个精选清单，汇总自主改进循环、研究代理和受 autoresearch 启发的系统，并按用途、平台、评测等分类。",
+        "problem_solved": "它把分散的自主研究代理、改进循环、平台移植、领域适配和评测资料集中整理，便于查找与比较。",
+        "who_should_care": "关注智能体、自动化研究和可度量优化循环的开发者。",
+        "use_cases": [
+          "查找自主研究代理实现",
+          "比较不同改进循环工具",
+          "浏览评测与案例资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 2,219 星，且本周上日榜一天。",
+        "risk_notes": "创建于 2026 年 3 月 20 日，资料较新；清单收录项目质量需自行核验。",
+        "evidence": [
+          "A curated, high-signal index of autonomous improvement loops, research agents, and descendants inspired by karpathy/autoresearch.",
+          "A curated list of autonomous improvement loops, research agents, and autoresearch-style systems inspired by Karpathy's autoresearch.",
+          "破千时的 Star 数：2219"
+        ]
+      }
+    },
+    "Agentchengfeng/videocut-skills": {
+      "category": "ai-agent",
+      "one_liner": "Claude Code 视频剪辑智能体",
+      "intro": {
+        "one_liner": "视频剪辑插件入口",
+        "what_it_is": "这是视频剪辑 Agent 的公开插件安装入口，提供固定安装、来源回执、检查命令和包内使用方法。",
+        "problem_solved": "把插件安装、运行时准备和视频剪辑能力分开，减少版本漂移、来源不明和误判兼容的问题。",
+        "who_should_care": "使用 Codex CLI 接入视频剪辑插件的开发者。",
+        "use_cases": [
+          "安装并核对固定插件版本",
+          "检查插件来源与安装状态",
+          "验收工作台操作能力"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 7 星，仅 1 天上日榜。",
+        "risk_notes": "新工作台操作要求运行时不低于 0.5.9，但公开下载仍为 0.4.11；预发行、兼容边界和已有会话加载都需单独验收。",
+        "evidence": [
+          "chengfeng-videocut 的公开 **Codex Plugin 安装入口**",
+          "兼容提醒：新 Skill 要求 Runtime >=0.5.9 且实际 workbench 能力匹配。当前公开下载仍是 v0.4.11，不满足新命令要求。",
+          "一周新增 Star：7"
+        ]
+      }
+    },
+    "HHHHHejia/Awesome-AgenticLLM-RL-Papers": {
+      "category": "learning-resource",
+      "one_liner": "智能体强化学习论文清单",
+      "intro": {
+        "one_liner": "智能体强化学习论文清单",
+        "what_it_is": "这是综述论文《The Landscape of Agentic Reinforcement Learning for LLMs: A Survey》的官方仓库，整理相关论文、算法分类和资源链接。",
+        "problem_solved": "把大语言模型智能体强化学习方向的论文与方法集中归类，方便查阅算法、信号、代码和模型资源。",
+        "who_should_care": "研究大语言模型强化学习、智能体训练与综述写法的开发者和研究者。",
+        "use_cases": [
+          "按算法家族查找论文",
+          "对比方法机制与信号",
+          "寻找代码和模型资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 1,816 星，且本周上过一次日榜。",
+        "risk_notes": "仓库创建于 2025 年 8 月 29 日，内容主要是论文清单；部分资源栏为空，成熟度未说明。",
+        "evidence": [
+          "This is the Official repo for the survey paper: The Landscape of Agentic Reinforcement Learning for LLMs: A Survey",
+          "## Sec2.7 Agentic RL: Algorithms",
+          "创建日期：2025-08-29；破千时的 Star 数：1816；本周上日榜天数：1"
+        ]
+      }
+    },
+    "palmier-io/palmier-pro": {
+      "category": "content-media",
+      "one_liner": "面向 AI 的 macOS 剪辑器",
+      "intro": {
+        "one_liner": "面向 AI 的 macOS 视频编辑器",
+        "what_it_is": "Palmier Pro 是用 Swift 构建的 macOS 视频编辑器，内置生成式 AI，并通过 MCP 让智能体直接编辑时间线。",
+        "problem_solved": "它把视频、图像生成与剪辑时间线放在一起，并让 Claude、Codex、Cursor 等智能体参与同一项目编辑。",
+        "who_should_care": "使用 macOS 26 和 Apple Silicon、想让智能体参与视频剪辑的开发者与创作者。",
+        "use_cases": [
+          "在时间线里生成视频素材",
+          "让智能体协助剪辑项目",
+          "连接 Claude、Codex 或 Cursor"
+        ],
+        "alternatives": "以 Premiere Pro 为目标，并把生成式 AI 与 MCP 智能体协作放进原生剪辑流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 693 星，并曾进入日榜一天。",
+        "risk_notes": "后续二进制版本转为专有且源码未公开；仅支持 macOS 26 及以上和 Apple Silicon；仓库不再接受代码贡献。",
+        "evidence": [
+          "Palmier Pro is a macOS video editor with built-in AI generation and MCP support, allowing agents to create and edit directly on the timeline.",
+          "Later binary releases are proprietary, and their corresponding source is not published.",
+          "macOS 26 (Tahoe) or later on Apple Silicon (M series) only.",
+          "一周新增 Star：693"
+        ]
+      }
+    },
+    "matlab/matlab-mcp-server": {
+      "category": "dev-tools",
+      "one_liner": "AI 调用 MATLAB 的服务端",
+      "intro": {
+        "one_liner": "让智能应用运行 MATLAB",
+        "what_it_is": "这是 MathWorks 提供的官方 MATLAB MCP Server，用 Go 编写，可让支持模型上下文协议的智能应用启动、退出 MATLAB，并编写、运行和检查 MATLAB 代码。",
+        "problem_solved": "它把 MATLAB 接入智能编码工具，让开发者能在 Claude Code、Visual Studio Code 等环境中调用 MATLAB 能力，减少手工切换和配置。",
+        "who_should_care": "使用 MATLAB 并尝试智能编码助手的工程师、研究人员和教学用户。",
+        "use_cases": [
+          "在智能编码工具中运行 MATLAB 代码",
+          "检查 MATLAB 代码风格和正确性",
+          "为多种智能应用配置 MATLAB 接入"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周只涨了 3 星，且仅一天进入日榜。",
+        "risk_notes": "需要本机安装 R2021a 或更新版本并加入系统路径；Windows 下 Codex 需额外配置环境变量；仍有 24 个未关闭问题。",
+        "evidence": [
+          "Run MATLAB® using AI applications with the official MATLAB MCP Server from MathWorks®.",
+          "Start and quit MATLAB. - Write and run MATLAB code. - Assess your MATLAB code for style and correctness.",
+          "Install MATLAB (MathWorks) R2021a or later and add it to the system PATH."
+        ]
+      }
+    }
+  }
+}

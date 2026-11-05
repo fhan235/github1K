@@ -1,1 +1,1019 @@
-{"date":"2026-06-23","headline":"Astrid 文档双项目领跑","points":["unicity-astrid/book 与 unicity-astrid/handbook 分别新增 1644 和 1619，权威手册与协作指南同受热捧。","AI Agent 相关项目达 8 个，Forward-Future/loop-library、mex-memory/mex 聚焦循环复用与项目记忆。","TypeScript 14 个、Python 13 个最集中；开发工具和学习资源各有 6 个，实用向项目活跃。"],"items":{"unicity-astrid/book":{"category":"desktop-system","one_liner":"Astrid OS 权威参考手册"},"unicity-astrid/handbook":{"category":"learning-resource","one_liner":"Astrid 开发协作指南"},"Forward-Future/loop-library":{"category":"ai-agent","one_liner":"可复用智能体循环库"},"steipete/birdclaw":{"category":"ai-agent","one_liner":"让智能体可检索推文库"},"Yeachan-Heo/gajae-code":{"category":"dev-tools","one_liner":"Gajae Code 最小原型"},"mex-memory/mex":{"category":"ai-agent","one_liner":"编码智能体项目记忆工具"},"webstonehq/tuxedo":{"category":"dev-tools","one_liner":"键盘驱动的待办终端界面"},"ArnasDon/wacrm":{"category":"other","one_liner":"TypeScript 客户关系项目"},"AlphaGBM/skills":{"category":"data-finance","one_liner":"面向智能体的期权数据技能"},"oxylabs/paid-proxy-servers":{"category":"security","one_liner":"付费代理服务资源页"},"seadog007/smc.peering.tw":{"category":"data-finance","one_liner":"台湾海缆状态仪表盘"},"mmalmi/nostr-vpn":{"category":"security","one_liner":"Nostr 相关 VPN 项目"},"handsome-rich/Awesome-Auto-Research-Tools":{"category":"learning-resource","one_liner":"自动化科研工具精选集"},"byJoey/Actions-bbr-v3":{"category":"automation","one_liner":"同步官方内核的自动化"},"MattMoony/figaro":{"category":"content-media","one_liner":"实时语音变声器"},"cortexkit/magic-context":{"category":"ai-agent","one_liner":"自管理编码智能体记忆"},"sybil-solutions/codex-shim":{"category":"dev-tools","one_liner":"Codex 桌面本地模型适配层"},"Agustinm28/Optiscaler-Client":{"category":"desktop-system","one_liner":"OptiScaler 现代管理器"},"AlgRUC/JittorGeometric":{"category":"ai-model","one_liner":"Jittor 图机器学习库"},"microsoft/mxc":{"category":"security","one_liner":"策略驱动的分层隔离方案"},"fudan-zvg/4d-gaussian-splatting":{"category":"ai-model","one_liner":"实时动态场景渲染模型"},"serpapi/awesome-seo-tools":{"category":"learning-resource","one_liner":"SEO 工具精选清单"},"jerry-ai-dev/MODULAR-RAG-MCP-SERVER":{"category":"ai-agent","one_liner":"模块化 RAG MCP 服务"},"kitlangton/ghui":{"category":"dev-tools","one_liner":"GitHub 终端交互界面"},"prajwalch/TorrentSearch":{"category":"mobile","one_liner":"安卓多源种子搜索应用"},"lhndo/LH-Stinger":{"category":"hardware-iot","one_liner":"笛卡尔式 FDM 3D 打印机"},"anufrievroman/waypaper":{"category":"desktop-system","one_liner":"Linux 图形壁纸管理器"},"tegnike/aituber-kit":{"category":"web-frontend","one_liner":"易部署 AI 角色聊天应用"},"snipeship/ccflare":{"category":"dev-tools","one_liner":"Claude Code 代理工具"},"mtymek/opencode-obsidian":{"category":"ai-agent","one_liner":"Obsidian 侧栏 AI 助手"},"dj95/zjstatus":{"category":"dev-tools","one_liner":"zellij 可配置状态栏插件"},"maplibre/awesome-maplibre":{"category":"learning-resource","one_liner":"MapLibre 生态资源精选"},"motional/nuplan-devkit":{"category":"ai-model","one_liner":"nuPlan 自动驾驶开发工具包"},"bowang-lab/U-Mamba":{"category":"ai-model","one_liner":"生物医学图像分割模型"},"Gen-Verse/LatentMAS":{"category":"ai-model","one_liner":"多智能体隐式协作研究"},"headroomlabs-ai/headroom":{"category":"ai-agent","one_liner":"压缩上下文以节省 Token"},"zerostaticthemes/square-ui":{"category":"web-frontend","one_liner":"shadcn/ui 开源布局合集"},"next-terminal/next-terminal":{"category":"security","one_liner":"多协议运维审计系统"},"trustgraph-ai/trustgraph":{"category":"ai-agent","one_liner":"跨智能体复用上下文图谱"},"DanKE123abc/NoUnityCN":{"category":"learning-resource","one_liner":"Unity 国际版下载资源站"},"yossdotpro/removerized":{"category":"ai-model","one_liner":"浏览器离线 AI 图像工具箱"},"meganokeefe/learn-istio":{"category":"learning-resource","one_liner":"Istio 服务网格学习资源"}}}
+{
+  "date": "2026-06-23",
+  "headline": "Astrid 文档双项目领跑",
+  "points": [
+    "unicity-astrid/book 与 unicity-astrid/handbook 分别新增 1644 和 1619，权威手册与协作指南同受热捧。",
+    "AI Agent 相关项目达 8 个，Forward-Future/loop-library、mex-memory/mex 聚焦循环复用与项目记忆。",
+    "TypeScript 14 个、Python 13 个最集中；开发工具和学习资源各有 6 个，实用向项目活跃。"
+  ],
+  "items": {
+    "unicity-astrid/book": {
+      "category": "desktop-system",
+      "one_liner": "Astrid OS 权威参考手册",
+      "intro": {
+        "one_liner": "Astrid 系统参考书",
+        "what_it_is": "这是 Astrid 的权威参考文档，介绍内核、capsule 模型、host ABI、总线和安全模型，并用 mdBook 构建。",
+        "problem_solved": "把 Astrid 的核心架构、接口约定和安全模型集中成册，并生成能力目录、错误码、主题注册表等附录。",
+        "who_should_care": "开发或研究 Astrid 内核、capsule、host ABI 与安全模型的工程师。",
+        "use_cases": [
+          "查阅 Astrid 架构说明",
+          "生成参考附录",
+          "本地预览文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾登上日榜，且星数已破千。",
+        "risk_notes": "创建日期较新，Fork 数较少；附录生成依赖同级源码目录，单独仓库使用可能受限。",
+        "evidence": [
+          "The canonical reference for Astrid: the kernel, the capsule model, the host ABI, the bus, and the security model.",
+          "Built with [mdBook](https://github.com/rust-lang/mdBook).",
+          "Both read the polyrepo source tree, so run them from a checkout that has `core/`, `wit/`, and `capsules/` as siblings."
+        ]
+      }
+    },
+    "unicity-astrid/handbook": {
+      "category": "learning-resource",
+      "one_liner": "Astrid 开发协作指南",
+      "intro": {
+        "one_liner": "Astrid 贡献者手册",
+        "what_it_is": "这是介绍如何参与 Astrid 的贡献者手册，内容涵盖多仓库协作、内核设计原则、提案触发条件、贡献层级和发布流程，并使用 mdBook 构建。",
+        "problem_solved": "它把 Astrid 项目的协作规则、贡献路径和发布流程集中说明，帮助参与者理解该按什么方式提交改动与推进工作。",
+        "who_should_care": "准备参与 Astrid 的贡献者、维护者和评审者。",
+        "use_cases": [
+          "查阅 Astrid 贡献流程",
+          "了解多仓库协作规则",
+          "本地预览手册内容"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周新增四千九百零二星且曾上日榜。",
+        "risk_notes": "许可证信息不一致：项目数据为 Apache-2.0，资料称 MIT 与 Apache 2.0 双许可；创建日期为 2026 年，需留意时间信息。",
+        "evidence": [
+          "How to work on Astrid: the polyrepo, the kernel-is-dumb law, the RFC trigger, contribution tiers, and the release process.",
+          "Built with [mdBook](https://github.com/rust-lang/mdBook).",
+          "Dual-licensed under [MIT](LICENSE-MIT) and [Apache 2.0](LICENSE-APACHE)."
+        ]
+      }
+    },
+    "Forward-Future/loop-library": {
+      "category": "ai-agent",
+      "one_liner": "可复用智能体循环库",
+      "intro": {
+        "one_liner": "AI Agent 可复用循环工作流库",
+        "what_it_is": "Loop Library 是一个收录实用 AI Agent 循环（loop）的公开目录网站，同时提供一个名为 Loopy 的可安装 skill；该 skill 帮助 Agent 查找、审计、改造和设计可重复的 Agent 工作流。",
+        "problem_solved": "解决一次性 prompt 缺乏反馈与终止条件的问题：loop 为 Agent 规定目标、检查方式、下一步动作和停止条件，使工作可验证、可重复、可复用。",
+        "who_should_care": "使用 Codex、Cursor、Claude Code 等 Agent 工具的开发者，以及需要把重复性工程任务（修 bug、补测试、文档维护）流程化的团队。",
+        "use_cases": [
+          "从代码库或编码会话中识别重复工作并沉淀为 bounded loop",
+          "在目录中检索现成 loop 并适配到本地工具与验收标准",
+          "审计已有 loop 的检查点、安全性与停止条件并修复"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 agent skills 与 agentic workflow 的生态正快速升温，但项目创建时间短、尚缺长期维护证据。",
+        "risk_notes": "项目创建于 2026-06-12，距今仅约三个月，成熟度与长期维护情况待观察；README 中的安装命令与外部链接需自行核验。",
+        "evidence": [
+          "A library of practical AI-agent loops and an installable skill for finding, adapting, and designing repeatable agent workflows.",
+          "Each published loop tells an agent what to do, how to check its work, what to try next, and when to stop.",
+          "Loopy checks the live catalog when it recommends a published loop. It does not quietly start schedules, change production, publish content, or send messages on your behalf."
+        ]
+      }
+    },
+    "steipete/birdclaw": {
+      "category": "ai-agent",
+      "one_liner": "让智能体可检索推文库",
+      "intro": {
+        "one_liner": "本地推文归档助手",
+        "what_it_is": "把 Twitter/X 归档导入本地 SQLite，并通过网页、命令行和可选的只读 MCP server 提供搜索与浏览。",
+        "problem_solved": "让用户无需云端后端，也能保存并检索自己的推文、私信、收藏、喜欢和关注关系。",
+        "who_should_care": "重视本地数据掌控、需要检索社交历史或给智能体提供只读资料的人。",
+        "use_cases": [
+          "离线搜索个人推文和私信",
+          "浏览收藏、喜欢与关注关系",
+          "为智能体提供只读检索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 218 星且曾上日榜。",
+        "risk_notes": "实时同步依赖外部工具或已有安装；源码开发依赖校验固定的 Bun canary；创建日期较新，仍有 5 个未关闭 Issue。",
+        "evidence": [
+          "Stores all your tweets nicely claw-able for agents.",
+          "Birdclaw imports Twitter/X archives into local SQLite, adds explicit cached live reads, and exposes the result through a web app, CLI, and optional read-only MCP server.",
+          "It is for people who want their own searchable history, DMs, saved posts, and follow graph without a cloud backend."
+        ]
+      }
+    },
+    "Yeachan-Heo/gajae-code": {
+      "category": "dev-tools",
+      "one_liner": "Gajae Code 最小原型",
+      "intro": {
+        "one_liner": "可接入已有订阅的编码 Agent 工具",
+        "what_it_is": "Gajae-Code（命令名 gjc）是一个外部编码 Agent harness，可放入任意仓库或 worktree 中运行，支持通过 /login 接入多种编码订阅或 API key，并带有计划审批、远程问答等工作流。",
+        "problem_solved": "针对编码 Agent 常见的三个问题：重复计费（既付订阅费又付 API 费用）、未理解代码就先改动、离开终端后会话停滞；它通过复用已有编码订阅、先规划后执行的流程，以及把提问转发到 Telegram/Discord/Slack 来应对。",
+        "who_should_care": "已经购买 Claude、Codex、Cursor、Copilot 等编码订阅，希望复用这些订阅额度，并且需要远程或异步处理 Agent 提问的开发者。",
+        "use_cases": [
+          "在现有仓库或隔离 worktree 中运行编码 Agent 并执行任务",
+          "通过 /skill:deep-interview 与 /skill:ralplan 先澄清需求、生成并评审计划，再授权执行",
+          "离开电脑时通过 Telegram/Discord/Slack 回答 Agent 的提问"
+        ],
+        "alternatives": "README 未与其他同类项目做直接对比，仅自述差异点：复用已有编码订阅而非单独 API 计费、可选先规划后变更的流程、提问可路由到即时通讯工具、上下文压缩与结构化摘要。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 理由：项目自述为 experimental、beta 阶段，创建于 2026-05-26，一周新增约 167 star，属于早期快速升温阶段。",
+        "risk_notes": "README 明确标注为实验性 beta 项目，提示可能存在粗糙之处，重要工作需自行验证输出；安装脚本存在从 main 分支管道执行可变内容的方式，README 自身也提示仅在明确需要最新安装器时使用；第三方 GUI 应用为社区实验项目，非官方一方产品。",
+        "evidence": [
+          "Gajae-Code (`gjc`) is an external coding-agent harness: drop it into any repository or worktree.",
+          "Gajae-Code is an experimental, beta-stage project. Expect rough edges and verify outputs before relying on it for important work.",
+          "Opt-in plan-gated workflow: interview → plan → critique → *then* authorized execution"
+        ]
+      }
+    },
+    "mex-memory/mex": {
+      "category": "ai-agent",
+      "one_liner": "编码智能体项目记忆工具",
+      "intro": {
+        "one_liner": "AI 编程代理的项目记忆工具",
+        "what_it_is": "把项目知识以 Markdown 存入 .mex/，随 Git 共享，并提供本地 Hub、命令行和代理技能来维护上下文。",
+        "problem_solved": "让工程师和编码代理发现的架构原因、调试线索、决策与交接信息沉淀到仓库，减少重复拼凑上下文。",
+        "who_should_care": "多人协作开发团队，以及使用 Claude Code、Codex 等编码代理的工程师。",
+        "use_cases": [
+          "沉淀架构决策与代码依据",
+          "审阅代理提交的知识提案",
+          "用交接记录延续未完成工作"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 100 星，且本周上过 1 次日榜。",
+        "risk_notes": "版本为 0.8.5，部分工具仅有指令锚点或模板；Hub 的部分产品流程仍列为未来工作；未关闭 Issue 有 35 个。",
+        "evidence": [
+          "Persistent project memory for AI coding agents. Structured scaffold + drift detection CLI.",
+          "**Shared project memory for engineers and their coding agents.**",
+          "Memory lives as Markdown in `.mex/`, travels with Git, and stays linked to the code. Local Hub for people. CLI + skills for agents."
+        ]
+      }
+    },
+    "webstonehq/tuxedo": {
+      "category": "dev-tools",
+      "one_liner": "键盘驱动的待办终端界面",
+      "intro": {
+        "one_liner": "键盘驱动的待办终端工具",
+        "what_it_is": "tuxedo 是用 Rust 编写的 todo.txt 终端界面，也提供兼容 todo.txt-cli 的一次性命令，读写纯文本待办文件。",
+        "problem_solved": "让习惯键盘和终端的用户快速管理 todo.txt，同时保持文件可被编辑器、脚本和同步工具直接处理。",
+        "who_should_care": "偏好 Vim 键位、纯文本工作流和终端待办管理的开发者。",
+        "use_cases": [
+          "在终端增删改待办",
+          "用脚本批量处理任务",
+          "手机快速收集任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 87 星，曾有一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 85 个；创建于 2026 年，成熟度信息不足；README 提到自定义主题文件字段必须齐全。",
+        "evidence": [
+          "A fast, keyboard-driven terminal UI for [todo.txt](http://todotxt.org/).",
+          "**Pure todo.txt.** Reads and writes the [standard format](https://github.com/todotxt/todo.txt) — every line is plain text you can edit with anything else.",
+          "**No daemon, no database, no cloud.** One file in, one file out."
+        ]
+      }
+    },
+    "ArnasDon/wacrm": {
+      "category": "other",
+      "one_liner": "TypeScript 客户关系项目",
+      "intro": {
+        "one_liner": "可自托管的 WhatsApp CRM 模板",
+        "what_it_is": "这是一个用 TypeScript 编写的、可自托管的 WhatsApp 客户关系管理模板，提供共享收件箱、联系人、销售管道、群发和自动化。",
+        "problem_solved": "它让团队围绕官方 WhatsApp Business API 自建客户管理系统，减少订阅服务锁定，并支持按自身需求定制。",
+        "who_should_care": "需要自建 WhatsApp 客服、销售和客户运营系统的开发者与小团队。",
+        "use_cases": [
+          "多人共管客户会话",
+          "搭建销售跟进管道",
+          "配置消息自动回复"
+        ],
+        "alternatives": "强调可 fork、自托管、完整拥有代码与数据，并自带部署路径。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 95 星且曾上日榜。",
+        "risk_notes": "创建于 2026 年，项目较新；Fork 数远高于星数，需留意数据异常；依赖 Supabase 与 Meta 凭据配置。",
+        "evidence": [
+          "Self-hostable CRM template for WhatsApp® — shared inbox, contacts, sales pipelines, broadcasts, and no-code automations. Fork it, brand it, host it.",
+          "This is a **template**, not a product.",
+          "Fork 数：6786"
+        ]
+      }
+    },
+    "AlphaGBM/skills": {
+      "category": "data-finance",
+      "one_liner": "面向智能体的期权数据技能",
+      "intro": {
+        "one_liner": "AI 工作区市场研究技能集",
+        "what_it_is": "面向 Claude Code、Cursor 等工具的 Python 技能集合，提供股票、期权、新闻影响和投研复盘等研究方法包。",
+        "problem_solved": "把市场研究、策略比较、新闻影响和报告拆解放进 AI 工作区，并说明数据、额度与验证边界。",
+        "who_should_care": "在 AI 编程工具里做投研辅助的开发者和量化研究者。",
+        "use_cases": [
+          "让 AI 查询股票机会与依据",
+          "比较期权策略和风险限制",
+          "拆解研报或复盘投资快照"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 67 星，曾有一天进入日榜。",
+        "risk_notes": "部分内容标注为预览或方法参考，不代表实时数据接入；账户研究受网站额度和订阅规则约束；示例不声称是实时付费响应。",
+        "evidence": [
+          "Real-data options intelligence for AI agents — 29 Skills for Claude Code, Cursor & beyond",
+          "a preview is not a claim of verified production availability",
+          "account-backed research shares the website's allowance and subscription rules"
+        ]
+      }
+    },
+    "oxylabs/paid-proxy-servers": {
+      "category": "security",
+      "one_liner": "付费代理服务资源页",
+      "intro": {
+        "one_liner": "付费代理服务介绍页",
+        "what_it_is": "这是介绍 Oxylabs 付费代理服务的仓库，涵盖住宅、移动、SOCKS5 与数据中心代理，并说明定位能力与免费代理风险。",
+        "problem_solved": "面向需要采集公开数据、访问地域限制内容、减少 IP 封锁与验证码的场景，提供付费代理服务信息与购买入口。",
+        "who_should_care": "需要稳定代理、地域定位或大规模公开数据采集的开发者与团队。",
+        "use_cases": [
+          "采集公开网页数据",
+          "访问地域限制内容",
+          "降低 IP 封锁影响"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千零三星，本周上日榜一天。",
+        "risk_notes": "仓库以服务推广为主，含推广码与购买引导；分叉数为零，代码成熟度不明；免费代理风险由资料自行提示。",
+        "evidence": [
+          "The Oxylabs team guarantees exceptional proxy uptime and stability through round-the-clock system maintenance conducted by our engineers.",
+          "We keep one of the largest proxy pools in the market with [102M+ IPs in 195 countries]",
+          "While free proxy servers may seem convenient, it's often advisable to choose more reputable paid proxy services prioritizing security and privacy."
+        ]
+      }
+    },
+    "seadog007/smc.peering.tw": {
+      "category": "data-finance",
+      "one_liner": "台湾海缆状态仪表盘",
+      "intro": {
+        "one_liner": "台湾海缆状态看板",
+        "what_it_is": "一个用 TypeScript 编写的交互式地图应用，展示台湾对外海底电缆的线路、登陆点、当前状态和历史事件。",
+        "problem_solved": "把海缆故障、维修进度、可用路径和依赖关系集中可视化，方便理解事件对网络连通性的影响。",
+        "who_should_care": "网络运维、互联生态研究者，以及关注台湾对外连通性的开发者。",
+        "use_cases": [
+          "查看海缆线路与登陆点",
+          "跟踪故障和维修状态",
+          "分析事件影响范围"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 38 星，并曾进入日榜一天。",
+        "risk_notes": "本地运行需自行准备数据文件；仍有 5 个未关闭问题；数据依赖外部仓库自动更新。",
+        "evidence": [
+          "A dashboard that shows the current status of submarine cables that connected Taiwan to the world",
+          "An interactive map application that displays the status and historical incidents of Taiwan's submarine cables. Built with React, TypeScript, and Vite.",
+          "Data is automatically updated and converted to static format using GitHub Actions."
+        ]
+      }
+    },
+    "mmalmi/nostr-vpn": {
+      "category": "security",
+      "one_liner": "Nostr 相关 VPN 项目",
+      "intro": {
+        "one_liner": "去中心化网状 VPN",
+        "what_it_is": "一个用 Rust 编写的 Tailscale 风格私有网状 VPN，包含命令行、守护进程和多平台原生应用。",
+        "problem_solved": "让设备、服务器和代理主机无需邮箱、手机号或 VPN 服务商账号即可组网，并提供 DNS、子网路由和出口节点。",
+        "who_should_care": "需要自建私有网络、无账号设备接入或实验性付费出口节点的开发者。",
+        "use_cases": [
+          "多设备组建私有网状网络",
+          "服务器与代理主机无账号接入",
+          "配置子网路由和出口节点"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾破千星且上过一次日榜。",
+        "risk_notes": "付费出口节点被描述为实验性；容器和 DNS 配置有较多限制；创建日期为 2026 年，需留意时间信息。",
+        "evidence": [
+          "`nostr-vpn` is a Tailscale-style private mesh VPN with a data plane powered by [our independently evolved FIPS implementation](https://github.com/mmalmi/fips), based on the [original FIPS project](https://github.com/jmcorgan/fips). It also includes an experimental marketplace for byte-metered public exit nodes paid in Bitcoin through Cashu.",
+          "Connect people, servers, and agent hosts without an email, phone number, or VPN provider account.",
+          "MagicDNS, subnet routes, exit nodes, and WireGuard upstream egress are built in."
+        ]
+      }
+    },
+    "handsome-rich/Awesome-Auto-Research-Tools": {
+      "category": "learning-resource",
+      "one_liner": "自动化科研工具精选集",
+      "intro": {
+        "one_liner": "自动化科研工具精选清单",
+        "what_it_is": "这是一个精选的开源项目清单，汇总自动化科研工具，覆盖文献检索、论文阅读、实验管理、代码生成等环节。",
+        "problem_solved": "它把文献综述、想法生成、实验执行、论文写作和评审相关工具集中整理，帮助研究者更快找到可用方案。",
+        "who_should_care": "科研人员、学生，以及关注自动化科研工具的开发者。",
+        "use_cases": [
+          "查找文献检索与综述工具",
+          "挑选实验执行与代码生成工具",
+          "了解论文写作与评审工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾登上日榜，破千时有一千零二星。",
+        "risk_notes": "创建于二〇二六年三月十六日；清单内容依赖第三方项目，收录质量与维护状态需自行核验。",
+        "evidence": [
+          "A curated collection of automated research tools, covering literature search, paper reading, experiment management, and code generation to help researchers accelerate their workflow.",
+          "A curated list of open-source projects that automate scientific research — from literature review to idea generation, experiment execution, paper writing, and peer review.",
+          "20 projects · Ideas, experiments & papers"
+        ]
+      }
+    },
+    "byJoey/Actions-bbr-v3": {
+      "category": "automation",
+      "one_liner": "同步官方内核的自动化",
+      "intro": {
+        "one_liner": "BBRv3 内核管理脚本",
+        "what_it_is": "一个面向 Debian 和 Ubuntu 服务器的 Shell 脚本，用于安装 BBRv3 内核、切换加速模式并管理网络调优配置。",
+        "problem_solved": "把内核安装、版本选择、状态检查、队列算法和 TCP 参数调整集中到交互菜单，降低服务器网络加速配置门槛。",
+        "who_should_care": "使用 Debian 或 Ubuntu 的 VPS、云服务器和独立服务器运维者。",
+        "use_cases": [
+          "安装或更新 BBRv3 内核",
+          "切换拥塞控制与队列算法",
+          "按线路调优 TCP 参数"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过日榜，但仅上榜一天。",
+        "risk_notes": "仅支持部分系统、架构和可控制内核的宿主机；激进模式不建议日常生产使用；快捷命令每次联网拉取脚本执行。",
+        "evidence": [
+          "一个用于 Debian/Ubuntu VPS 的 BBRv3 内核安装与网络加速管理脚本。",
+          "最低支持系统 | Ubuntu 24.04+ / Debian 12+",
+          "该模式只面向自有链路的极限测速挑战，不建议日常使用。"
+        ]
+      }
+    },
+    "MattMoony/figaro": {
+      "category": "content-media",
+      "one_liner": "实时语音变声器",
+      "intro": {
+        "one_liner": "实时变声与音效工具",
+        "what_it_is": "Figaro 是开源的实时语音修改程序和音效板，提供命令行、图形界面与脚本热键，主要用 Python 编写。",
+        "problem_solved": "它让语音聊天中的麦克风声音可实时加滤镜、播放音效，并可配合虚拟音频设备接入 Discord 等应用。",
+        "who_should_care": "语音聊天用户、直播或整活玩家、想做实时音频处理的 Python 开发者。",
+        "use_cases": [
+          "语音聊天中实时变声",
+          "用热键播放音效",
+          "配合虚拟声卡接入 Discord"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但功能仍列有未完成路线图。",
+        "risk_notes": "发布版本标注为 alpha；图形界面音效板高级功能、脚本高级内置命令和安全细粒度设置仍未完成；脚本命令可能调整。",
+        "evidence": [
+          "Real-time open-source voice modification program & sound board. Can be useful for many things, especially when used in combination with virtual sound i/o devices.",
+          "If you're just looking to use *Figaro* and not work on it, then there's no reason to set up the development environment like described below, simply download the appropriate release for your platform from the [releases](https://github.com/MattMoony/figaro/releases) page and you're good to go!",
+          "_More docs coming soon! Disclaimer: Some of the commands described above might still be removed or altered..._"
+        ]
+      }
+    },
+    "cortexkit/magic-context": {
+      "category": "ai-agent",
+      "one_liner": "自管理编码智能体记忆",
+      "intro": {
+        "one_liner": "为编码 Agent 提供长期记忆的上下文管理插件",
+        "what_it_is": "Magic Context 是一个 TypeScript 编写的编码 Agent 记忆与上下文管理插件，自称是编码 Agent 的“海马体”，属于 CortexKit 项目的一部分。它通过 historian 压缩历史、dreamer 定期整合记忆、以及自动召回机制，让 Agent 在单个会话中持续保留项目知识。",
+        "problem_solved": "解决编码 Agent 每次任务都从零开始、会话结束即遗忘项目背景的问题，以及任务中途因 compaction（上下文压缩）暂停而打断流程、丢失已有知识的问题。",
+        "who_should_care": "长期使用 OpenCode、Pi、OMP 等编码 Agent 框架、希望 Agent 跨会话保留项目记忆的开发者与团队。",
+        "use_cases": [
+          "在单个项目上维持数周乃至数月的长期 Agent 会话，持续积累项目决策与约定",
+          "让 Agent 自动检索历史会话、记忆与 git 历史来回答项目相关问题",
+          "通过 historian 与 dreamer 在后台自动整理、去重和校验记忆，减少手动维护上下文"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，理由是 Agent 记忆与上下文工程是编码 Agent 长期使用中的结构性需求，而非一次性热点。",
+        "risk_notes": "需禁用宿主自带的 compaction 以避免冲突；historian 模型配置为必填项，缺失会导致历史摘要失败；项目创建于 2026-03-26，仍属较新项目，open issues 43 个。",
+        "evidence": [
+          "Unbounded context. Memory that manages itself. One session, for life.",
+          "It is the hippocampus for coding agents, the part of the brain that forms memories, consolidates them, and recalls them, entirely in the background.",
+          "Why disable built-in compaction? Magic Context manages context itself. The host's compaction would interfere with its cache-aware deferred operations and double-compress."
+        ]
+      }
+    },
+    "sybil-solutions/codex-shim": {
+      "category": "dev-tools",
+      "one_liner": "Codex 桌面本地模型适配层",
+      "intro": {
+        "one_liner": "Codex 本地模型适配层",
+        "what_it_is": "一个本地 Python 服务，向 Codex Desktop 提供兼容 Responses 的接口，把请求路由到配置的自带密钥模型或订阅模型。",
+        "problem_solved": "让 Codex Desktop 在不重打包的情况下使用自定义模型，并保留原生交互、工具调用和流式响应。",
+        "who_should_care": "想在 Codex Desktop 接入自带密钥模型或订阅通道的开发者。",
+        "use_cases": [
+          "在模型选择器加入自带密钥模型",
+          "把请求转发到多种上游接口",
+          "用本地代理改写或路由提示词"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 15 星，曾有一天进入日榜。",
+        "risk_notes": "仅在特定 macOS 版桌面端测试；可选桌面补丁依赖修改应用文件；部分 Windows 桌面版可能限制自定义模型。",
+        "evidence": [
+          "Tested on Codex Desktop 0.133.0-alpha.1 for macOS arm64.",
+          "The shim is a local Python/aiohttp server that exposes an OpenAI Responses-compatible endpoint on loopback.",
+          "Windows Store/MSIX Codex Desktop builds are stricter than the CLI."
+        ]
+      }
+    },
+    "Agustinm28/Optiscaler-Client": {
+      "category": "desktop-system",
+      "one_liner": "OptiScaler 现代管理器",
+      "intro": {
+        "one_liner": "OptiScaler 桌面管理器",
+        "what_it_is": "一个用 C# 和 Avalonia UI 构建的桌面工具，用于发现游戏库，并安装、卸载、更新和配置 OptiScaler 及相关组件。",
+        "problem_solved": "把跨多个游戏平台的 OptiScaler 安装、组件下载、备份恢复、配置档案和版本管理集中到图形界面，减少手工处理。",
+        "who_should_care": "经常给多款游戏安装或调整 OptiScaler、超分和帧生成组件的桌面用户。",
+        "use_cases": [
+          "批量为游戏安装 OptiScaler",
+          "管理配置档案和推荐设置",
+          "切换组件版本与注入方式"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 21 星，曾有一天进入日榜。",
+        "risk_notes": "并非 OptiScaler 官方项目，使用需自担风险；含实验功能和非官方镜像下载；采用 GPL-3.0 许可证。",
+        "evidence": [
+          "A modern manager for OptiScaler",
+          "This is not an official OptiScaler project.",
+          "designed to simplify the installation, management, and update of the OptiScaler mod across your entire game library"
+        ]
+      }
+    },
+    "AlgRUC/JittorGeometric": {
+      "category": "ai-model",
+      "one_liner": "Jittor 图机器学习库",
+      "intro": {
+        "one_liner": "Jittor 图机器学习库",
+        "what_it_is": "JittorGeometric 是基于 Jittor 的图机器学习库，面向图神经网络研究与应用，提供模型、数据集加载和稀疏运算支持。",
+        "problem_solved": "它把图数据预处理、常用图神经网络模型、训练示例和大规模图训练能力集中到一套库中，降低基于 Jittor 开展图学习实验的门槛。",
+        "who_should_care": "使用 Jittor 的图学习研究者、算法开发者和学生。",
+        "use_cases": [
+          "复现经典图神经网络模型",
+          "训练节点分类任务",
+          "研究动态图与分子图"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天。",
+        "risk_notes": "资料未提供许可证、稳定版本和生产部署信息；README 为 2.0 介绍，需留意版本兼容性。",
+        "evidence": [
+          "JittorGeometric is a Jittor-based graph machine learning library.",
+          "**JittorGeometric 2.0** is a state-of-the-art graph machine learning library built on the [Jittor](https://cg.cs.tsinghua.edu.cn/jittor/) framework.",
+          "**🎯 Comprehensive Model Zoo**: 40+ implemented models covering classic, spectral, dynamic, molecular, and transformer-based GNNs"
+        ]
+      }
+    },
+    "microsoft/mxc": {
+      "category": "security",
+      "one_liner": "策略驱动的分层隔离方案",
+      "intro": {
+        "one_liner": "策略驱动代码沙箱",
+        "what_it_is": "MXC 是嵌入应用的代码执行隔离系统，用统一模型和多种后端在三大平台运行不可信代码，并提供多语言开发包。",
+        "problem_solved": "它解决运行模型输出、插件和工具时的隔离问题，用策略限制文件、网络、界面访问，并帮助排查访问被拒。",
+        "who_should_care": "需要在应用中执行不可信代码或第三方插件的开发者。",
+        "use_cases": [
+          "隔离运行模型生成代码",
+          "限制插件文件与网络访问",
+          "调试沙箱访问拒绝问题"
+        ],
+        "alternatives": "提供统一策略模型，覆盖进程沙箱、系统沙箱、容器和虚拟机等多种后端。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 34 星且曾上日榜，但未关闭议题较多。",
+        "risk_notes": "部分后端为实验性；审计模式会关闭全部沙箱安全；开发版请求合约包含必需诊断数据。",
+        "evidence": [
+          "MXC is a **sandboxed code execution system** for running untrusted code\n(model output, plugins, and tools) on Windows, Linux, and macOS.",
+          "\\* These backends are **experimental**. MicroVM is currently available on Windows x64 only.",
+          "> **Warning:** `--audit` turns off all sandbox security for the workload being\n> analyzed. Never use it to run untrusted code."
+        ]
+      }
+    },
+    "fudan-zvg/4d-gaussian-splatting": {
+      "category": "ai-model",
+      "one_liner": "实时动态场景渲染模型",
+      "intro": {
+        "one_liner": "动态场景实时渲染实现",
+        "what_it_is": "这是 ICLR 2024 论文的官方实现，用 4D Gaussian Splatting 建模并渲染动态场景。",
+        "problem_solved": "它面向动态场景的时空统一建模，提供写实感的新视角合成与实时渲染流程。",
+        "who_should_care": "关注三维重建、动态场景渲染和新视角合成的研究者与开发者。",
+        "use_cases": [
+          "动态新视角合成",
+          "子弹时间效果制作",
+          "单目动态场景重建"
+        ],
+        "alternatives": "代码基于 3D Gaussian Splatting，差异在于面向动态场景加入时空建模。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，且已破千星。",
+        "risk_notes": "依赖与 3D Gaussian Splatting 相同的软硬件环境；数据准备需下载外部数据集。",
+        "evidence": [
+          "[ICLR 2024] Real-time Photorealistic Dynamic Scene Representation and Rendering with 4D Gaussian Splatting",
+          "This repository is the official implementation of \"Real-time Photorealistic Dynamic Scene Representation and Rendering with 4D Gaussian Splatting\".",
+          "The hardware and software requirements are the same as those of the [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting), which this code is built upon."
+        ]
+      }
+    },
+    "serpapi/awesome-seo-tools": {
+      "category": "learning-resource",
+      "one_liner": "SEO 工具精选清单",
+      "intro": {
+        "one_liner": "SEO 工具精选清单",
+        "what_it_is": "这是一个按类别整理的 SEO 工具清单，涵盖关键词研究、外链分析、内容优化、排名跟踪和技术 SEO 等方向。",
+        "problem_solved": "把分散的 SEO 工具集中分类，方便查找适合提升网站排名和搜索可见性的资源。",
+        "who_should_care": "SEO 初学者、网站运营、内容营销和需要选型工具的人。",
+        "use_cases": [
+          "查找关键词研究工具",
+          "对比外链分析工具",
+          "寻找内容优化工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星且有 251 次分叉。",
+        "risk_notes": "清单类项目依赖社区维护，链接和工具状态可能过时；未提供许可证信息。",
+        "evidence": [
+          "Curated list of awesome SEO tools",
+          "A curated list of awesome SEO (Search Engine Optimization) tools to help improve your website's ranking and visibility on search engines.",
+          "If you know any other SEO tools that deserve to be on this list, feel free to open a pull request or drop an issue with your suggestions."
+        ]
+      }
+    },
+    "jerry-ai-dev/MODULAR-RAG-MCP-SERVER": {
+      "category": "ai-agent",
+      "one_liner": "模块化 RAG MCP 服务",
+      "intro": {
+        "one_liner": "模块化 RAG 服务框架",
+        "what_it_is": "这是一个用 Python 编写、以 MCP 协议暴露工具接口的模块化检索增强生成服务框架，也包含面向大模型岗位学习与面试的实战资料。",
+        "problem_solved": "它把文档摄取、混合检索、重排、评估、生成和可视化追踪串成可运行工程，帮助开发者学习、演示和扩展完整 RAG 流程。",
+        "who_should_care": "学习 RAG、准备大模型岗位面试，或需要快速搭建知识检索原型的开发者与产品经理。",
+        "use_cases": [
+          "学习完整 RAG 流程",
+          "准备面试实战项目",
+          "为现有项目接入检索能力"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 4 星且上日榜 2 天，但增长已明显放缓。",
+        "risk_notes": "创建于 2026 年，时间较新；未关闭问题 3 个；资料强调面试与求职用途，直接用于生产前需自行验证。",
+        "evidence": [
+          "A modular RAG (Retrieval-Augmented Generation) system with MCP Server architecture. Using Skill to make AI follow each step of the spec and complete the code 100% by AI.",
+          "一个可插拔、可观测的模块化 RAG（检索增强生成）服务框架，通过 MCP（Model Context Protocol）协议对外暴露工具接口，支持 Copilot / Claude 等 AI 助手直接调用。同时也是一份专为**大模型相关岗位学习与面试求职**设计的实战项目与配套教学资源。",
+          "本项目将 RAG 面试中最常见的核心环节——**检索（Hybrid Search + Rerank）**、**多模态视觉处理（Image Captioning）**、**RAG 评估（Ragas + Custom）**、**生成（LLM Response）**——以及当下热门的应用协议 **MCP（Model Context Protocol）** 串联为一个完整的、可运行的工程项目。"
+        ]
+      }
+    },
+    "kitlangton/ghui": {
+      "category": "dev-tools",
+      "one_liner": "GitHub 终端交互界面",
+      "intro": {
+        "one_liner": "终端里的 GitHub 拉取请求工具",
+        "what_it_is": "ghui 是一个终端界面工具，用键盘集中查看和处理多个仓库里的开放拉取请求，支持差异、评论、标签、合并等操作。",
+        "problem_solved": "它把拉取请求审阅、差异评论、状态切换、合并和工作流检查集中到终端，减少在网页与命令行之间来回切换。",
+        "who_should_care": "经常在终端审阅或处理 GitHub 拉取请求的开发者和维护者。",
+        "use_cases": [
+          "集中查看多个仓库的开放拉取请求",
+          "在终端查看差异并提交行级评论",
+          "检查拉取请求对应的工作流运行"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增五星且仅一天进入日榜。",
+        "risk_notes": "依赖已安装并登录的 GitHub 命令行工具；未关闭问题二十二个；创建于二〇二六年，项目较新。",
+        "evidence": [
+          "Terminal UI for keeping up with your open GitHub pull requests across repositories.",
+          "Requirements:\n\n- GitHub CLI installed and authenticated with `gh auth login`",
+          "MIT"
+        ]
+      }
+    },
+    "prajwalch/TorrentSearch": {
+      "category": "mobile",
+      "one_liner": "安卓多源种子搜索应用",
+      "intro": {
+        "one_liner": "安卓种子聚合搜索应用",
+        "what_it_is": "这是一个用 Kotlin 开发的 Android 应用，可跨多个来源搜索种子，并提供结果详情、浏览、书签和种子操作。",
+        "problem_solved": "它把分散的种子来源聚合到一处，支持分类、排序、筛选和并行搜索，减少在多个站点间反复查找。",
+        "who_should_care": "安卓用户、种子搜索使用者，以及关注 Jetpack Compose 应用的人。",
+        "use_cases": [
+          "按分类聚合搜索种子",
+          "查看结果详情并打开磁力链接",
+          "收藏种子或接入自有索引器"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨了 8 星，本周上日榜 1 天。",
+        "risk_notes": "夜间构建可能不稳定；不托管内容，用户需自行遵守当地法律；仍有 8 个未关闭问题。",
+        "evidence": [
+          "TorrentSearch is an Android app for searching torrents across multiple providers.",
+          "Nightly builds are available in the [Actions workflow](https://github.com/prajwalch/TorrentSearch/actions/workflows/staging_build.yml) runs.\n> They are generated automatically for each commit and may be unstable.",
+          "TorrentSearch **does not host, store, or distribute any torrent files or copyrighted content**.\nIt searches publicly accessible third-party sources and displays the results."
+        ]
+      }
+    },
+    "lhndo/LH-Stinger": {
+      "category": "hardware-iot",
+      "one_liner": "笛卡尔式 FDM 3D 打印机",
+      "intro": {
+        "one_liner": "高速精密笛卡尔 3D 打印机",
+        "what_it_is": "LH Stinger 是一个社区驱动的笛卡尔结构熔融沉积成型 3D 打印机项目，提供物料清单、装配指南、配置、设计文件与改装资料。",
+        "problem_solved": "面向追求高速与高精度的打印需求，提供强调刚性、稳定、可维护与长期扩展的整机平台。",
+        "who_should_care": "想自组高速熔融沉积成型打印机、愿意研究装配与调校的硬件爱好者。",
+        "use_cases": [
+          "按物料清单自行采购并组装整机",
+          "使用现成配置与切片配置调机",
+          "参考设计文件做社区改装"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "状态标为 V1.0，但部分附加件仍在进行中；自组需自行采购零件并具备装配调试能力。",
+        "evidence": [
+          "Status: **V1.0**",
+          "A no-compromise cartesian 3D Printer designed for speed and precision, created as a long-lasting platform for those who like to push quality and speed to the extreme.",
+          "This project can be self-sourced by following the [**BOM Guide**]"
+        ]
+      }
+    },
+    "anufrievroman/waypaper": {
+      "category": "desktop-system",
+      "one_liner": "Linux 图形壁纸管理器",
+      "intro": {
+        "one_liner": "桌面壁纸图形管理器",
+        "what_it_is": "Waypaper 是面向 Wayland、Xorg 和 macOS 的图形壁纸设置器，作为多种壁纸后端的前端使用。",
+        "problem_solved": "它把不同系统、不同壁纸后端的设置方式统一到图形界面，并支持多显示器、动态壁纸和重启恢复。",
+        "who_should_care": "使用 Linux 桌面、Wayland 或 Xorg，并需要统一管理壁纸的开发者。",
+        "use_cases": [
+          "图形化切换静态壁纸",
+          "配置多显示器壁纸",
+          "播放 GIF 或视频壁纸"
+        ],
+        "alternatives": "差异在于统一封装多种后端，并覆盖 Wayland、Xorg 和 macOS。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：本周曾上日榜，且已达到一千星。",
+        "risk_notes": "需要额外安装壁纸后端和依赖；部分发行版安装可能遇到问题；部分后端标注为归档。",
+        "evidence": [
+          "GUI wallpaper setter for Wayland, Xorg, and macOS. It works as a frontend for popular wallpaper backends like `swaybg`, `swww`, `awww`, `wallutils`, `hyprpaper`, `mpvpaper`, `gslapper`, `xwallpaper`, `feh`, `linux-wallpaperengine`, and `macos`.",
+          "Install Waypaper and at least one wallpaper backend, unless you use a custom wallpaper command with `backend = none`.",
+          "Users of OpenSUSE [reported issue with installation](https://github.com/anufrievroman/waypaper/issues/30) via `pipx install waypaper`."
+        ]
+      }
+    },
+    "tegnike/aituber-kit": {
+      "category": "web-frontend",
+      "one_liner": "易部署 AI 角色聊天应用",
+      "intro": {
+        "one_liner": "AI 角色对话工具箱",
+        "what_it_is": "这是一个用 TypeScript 编写的开源工具箱，可搭建与 AI 角色聊天的网页应用，并支持虚拟主播直播、数字标牌等扩展模式。",
+        "problem_solved": "它降低搭建 AI 角色应用的门槛，把多种模型、语音合成、角色模型、对话记忆和部署方式整合到一套可配置方案中。",
+        "who_should_care": "想做 AI 角色聊天、虚拟主播直播或互动展示的开发者。",
+        "use_cases": [
+          "搭建可对话的 AI 角色网页",
+          "让角色自动回应直播评论",
+          "制作展会互动数字标牌"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千星且已有 191 次分叉。",
+        "risk_notes": "2.0.0 起采用自定义许可证，商用需查看条款；网页部署需妥善管理密钥、鉴权和限流。",
+        "evidence": [
+          "A web application for chatting with AI characters that anyone can easily set up and deploy.",
+          "AITuberKitは、誰でも簡単にAIキャラクターとチャットできるWebアプリケーションを構築できるオープンソースのツールキットです。",
+          "お知らせ: 本プロジェクトはバージョン v2.0.0 以降、カスタムライセンスを採用しています。商用目的でご利用の場合は、[利用規約](#利用規約) セクションをご確認ください。"
+        ]
+      }
+    },
+    "snipeship/ccflare": {
+      "category": "dev-tools",
+      "one_liner": "Claude Code 代理工具",
+      "intro": {
+        "one_liner": "多供应商原生代理",
+        "what_it_is": "一个用 TypeScript 编写的代理服务，按地址前缀转发 Anthropic 与 OpenAI 请求，并提供账户管理、仪表盘和用量分析。",
+        "problem_solved": "集中管理多家模型服务凭证与请求，支持多账户负载均衡、限流后切换，并保留请求历史和可观测数据。",
+        "who_should_care": "同时使用 Claude、Codex 或多个模型账户的开发者与工具维护者。",
+        "use_cases": [
+          "统一代理多家模型接口",
+          "多账户限流时自动切换",
+          "查看请求历史与用量统计"
+        ],
+        "alternatives": "强调原生透传，不转换供应商请求体，并提供兼容路由、账户切换和内置观测。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增五星且仅一天进入日榜。",
+        "risk_notes": "创建时间较新，未关闭问题二十二个；需要 Bun 与供应商凭证，兼容性路由依赖模型前缀。",
+        "evidence": [
+          "A multi-provider native proxy for Anthropic and OpenAI.",
+          "ccflare routes each provider by URL prefix, load-balances across multiple accounts, and keeps full request history, rate-limit state, and usage analytics without translating provider payloads.",
+          "Requirements\n\n- [Bun](https://bun.sh) >= 1.2.8\n- Anthropic and/or OpenAI credentials"
+        ]
+      }
+    },
+    "mtymek/opencode-obsidian": {
+      "category": "ai-agent",
+      "one_liner": "Obsidian 侧栏 AI 助手",
+      "intro": {
+        "one_liner": "Obsidian 内嵌 AI 助手插件",
+        "what_it_is": "这是一个把 OpenCode AI 助手嵌入 Obsidian 侧边栏的第三方插件，使用 TypeScript 开发。",
+        "problem_solved": "让用户在笔记软件内直接调用 AI 总结、写作、查询知识库和生成结构化内容。",
+        "who_should_care": "重度使用 Obsidian、并已安装 OpenCode 命令行的桌面端用户。",
+        "use_cases": [
+          "总结和提炼长文内容",
+          "起草、编辑和润色写作",
+          "查询并探索个人知识库"
+        ],
+        "alternatives": "不实现自定义聊天界面，也不走 ACP 协议，而是嵌入 OpenCode 网页视图。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周仅新增三星且只上榜一天。",
+        "risk_notes": "仅支持桌面端，依赖 OpenCode 命令行、Bun 和 Node.js 子进程；上下文注入仍为实验性；作者声明与 OpenCode、Obsidian 无隶属关系。",
+        "evidence": [
+          "Embed OpenCode AI assistant directly in Obsidian's sidebar.",
+          "Desktop only (uses Node.js child processes)",
+          "Context injection (experimental)"
+        ]
+      }
+    },
+    "dj95/zjstatus": {
+      "category": "dev-tools",
+      "one_liner": "zellij 可配置状态栏插件",
+      "intro": {
+        "one_liner": "可定制状态栏插件",
+        "what_it_is": "这是为 zellij 提供的可配置、可换主题状态栏插件，使用 Rust 编写，并附带可按条件切换窗格边框的 zjframes。",
+        "problem_solved": "它让终端复用器的状态栏能按模块单独格式化，并便于扩展新模块；也能在不加载状态栏时控制窗格边框显示。",
+        "who_should_care": "使用 zellij、想自定义状态栏或窗格边框的终端用户。",
+        "use_cases": [
+          "定制 zellij 状态栏样式",
+          "显示时间、标签和分支",
+          "按条件切换窗格边框"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜。",
+        "risk_notes": "更新后需重新授权；配置不当会影响布局切换；插件缓存可能导致崩溃或异常。",
+        "evidence": [
+          "A configurable and themable statusbar for zellij.",
+          "The goal of this statusbar is to provide a highly customizable and extensible statusbar for zellij. Single modules can be formatted separately. Due to the widget structure new modules can be created with ease.",
+          "As an addition, this repository contains *zjframes* which can be used to toggle pane frames based on different conditions even without loading *zjstatus*, e.g. when using the default status bars."
+        ]
+      }
+    },
+    "maplibre/awesome-maplibre": {
+      "category": "learning-resource",
+      "one_liner": "MapLibre 生态资源精选",
+      "intro": {
+        "one_liner": "MapLibre 资源清单",
+        "what_it_is": "这是一个汇总 MapLibre 相关工具、绑定、插件、样式编辑器、导航组件等资源的清单仓库。",
+        "problem_solved": "它把分散的 MapLibre 生态项目按用途整理，方便开发者查找渲染、样式、导航和多语言集成方案。",
+        "who_should_care": "使用或评估 MapLibre 的前端、移动端、地理信息开发者。",
+        "use_cases": [
+          "查找地图渲染库",
+          "挑选样式编辑工具",
+          "寻找框架绑定与插件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天进入日榜，破千星时为一千星。",
+        "risk_notes": "清单中收录实验性项目，部分链接可能指向外部站点；仓库本身不提供生产可用性说明。",
+        "evidence": [
+          "A collection of awesome things that use or support MapLibre!",
+          "MapLibre [Core projects](https://github.com/maplibre/maplibre/blob/main/PROJECT_TIERS.md)\nare designated with a ✅, and hosted projects with a 💙.",
+          "- 💙 [MapLibre RS](https://github.com/maplibre/maplibre-rs) - Experimental map rendering library written in Rust."
+        ]
+      }
+    },
+    "motional/nuplan-devkit": {
+      "category": "ai-model",
+      "one_liner": "nuPlan 自动驾驶开发工具包",
+      "intro": {
+        "one_liner": "自动驾驶规划开发套件",
+        "what_it_is": "这是 nuPlan 数据集的开发套件，提供数据接入、规划模型训练、仿真、评测、可视化和提交流程。",
+        "problem_solved": "它把自动驾驶规划研究所需的数据、教程、指标、仿真和竞赛提交流程集中起来，降低复现与评估门槛。",
+        "who_should_care": "自动驾驶规划、机器学习、仿真和竞赛方向的研究者与开发者。",
+        "use_cases": [
+          "训练并评测机器学习规划器",
+          "可视化自动驾驶场景类型",
+          "开发规划器并参与规划挑战"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，自动驾驶规划基准与仿真评测需求持续存在。",
+        "risk_notes": "传感器数据分批发布且文件结构曾变化；竞赛提交基础镜像更新后需重建容器；数据集需另行下载配置。",
+        "evidence": [
+          "The devkit of the nuPlan dataset.",
+          "The world's first benchmark for autonomous vehicle planning.",
+          "It describes how to 1) train an ML planner, 2) simulate it, 3) measure the performance and 4) visualize the results."
+        ]
+      }
+    },
+    "bowang-lab/U-Mamba": {
+      "category": "ai-model",
+      "one_liner": "生物医学图像分割模型",
+      "intro": {
+        "one_liner": "生物医学图像分割模型",
+        "what_it_is": "U-Mamba 是面向生物医学图像分割的官方代码仓库，基于 nnU-Net，提供二维和三维模型训练与推理流程。",
+        "problem_solved": "它用于增强生物医学图像分割中的长距离依赖建模，并给出数据预处理、训练、预测和路径配置方法。",
+        "who_should_care": "做医学影像分割研究、使用 nnU-Net 或关注 Mamba 的开发者。",
+        "use_cases": [
+          "训练二维医学分割模型",
+          "训练三维医学分割模型",
+          "用已有模型执行推理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时达到一千星。",
+        "risk_notes": "依赖 Ubuntu 20.04、CUDA 11.8 和特定版本组件；混合精度可能导致 Mamba 模块出现 nan；未见许可证信息。",
+        "evidence": [
+          "Official repository for U-Mamba: Enhancing Long-range Dependency for Biomedical Image Segmentation.",
+          "U-Mamaba is built on the popular [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) framework.",
+          "AMP could lead to nan in the Mamba module."
+        ]
+      }
+    },
+    "Gen-Verse/LatentMAS": {
+      "category": "ai-model",
+      "one_liner": "多智能体隐式协作研究",
+      "intro": {
+        "one_liner": "潜空间多智能体协作框架",
+        "what_it_is": "LatentMAS 是一个 Python 多智能体推理框架，让智能体在模型潜空间通过工作记忆传递潜在想法，而非生成长文本推理轨迹。",
+        "problem_solved": "它试图减少多智能体协作中的文本推理轨迹和令牌消耗，并提供免训练的潜空间对齐，用于多步推理与生成。",
+        "who_should_care": "研究多智能体系统、潜空间推理和大模型推理效率的开发者。",
+        "use_cases": [
+          "复现多智能体推理实验",
+          "对比文本协作与潜空间协作",
+          "测试免训练潜空间对齐"
+        ],
+        "alternatives": "相比文本协作，它把智能体通信从令牌空间移到潜空间，并可选支持 vLLM。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 20 星且仅一天上日榜，关注增量有限。",
+        "risk_notes": "描述标注为 ICML 2026 Spotlight，但项目创建于 2025 年；仍有 21 个未关闭问题；README 提到更多模型支持尚待完善。",
+        "evidence": [
+          "LatentMAS is a multi-agent reasoning framework that moves agent collaboration from token space into the model’s latent space.",
+          "Instead of producing long textual reasoning traces, agents communicate by passing latent thoughts through their own working memory.",
+          "Stay tuned for more model-backbone supports and advanced features!"
+        ]
+      }
+    },
+    "headroomlabs-ai/headroom": {
+      "category": "ai-agent",
+      "one_liner": "压缩上下文以节省 Token",
+      "intro": {
+        "one_liner": "压缩大模型输入上下文",
+        "what_it_is": "Headroom 是 Python 项目，提供库、代理、命令行封装和服务端，在工具输出、日志、文件、检索片段和会话历史进入大模型前压缩它们。",
+        "problem_solved": "它用于减少智能体读取大量上下文时占用的输入词元，并尽量保持回答不变；原文可本地缓存并按需取回。",
+        "who_should_care": "开发大模型应用、智能体或编程助手，并关心上下文成本的人。",
+        "use_cases": [
+          "压缩应用消息后调用大模型",
+          "用代理接入现有智能体",
+          "压缩日志、文件和检索片段"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 4,953 星，但疑似存量老项目。",
+        "risk_notes": "数据提示疑似存量老项目，并非本周新破千；未关闭问题有 371 个；压缩效果依赖内容类型。",
+        "evidence": [
+          "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+          "**Headroom** (`headroom-ai` on PyPI and npm) compresses everything your AI agent reads — tool outputs, logs, RAG chunks, files, and conversation history — before it reaches the LLM. Same answers, fewer input tokens.",
+          "Compression runs on your machine; no prompt or file content is sent anywhere to be compressed."
+        ]
+      }
+    },
+    "zerostaticthemes/square-ui": {
+      "category": "web-frontend",
+      "one_liner": "shadcn/ui 开源布局合集",
+      "intro": {
+        "one_liner": "开源后台模板集合",
+        "what_it_is": "Square UI 是基于 shadcn/ui 的免费开源后台管理模板集合，使用 Next.js、Tailwind CSS 和 TypeScript 构建，提供多套完整页面布局。",
+        "problem_solved": "它提供可直接克隆、复制和上线的后台界面起点，减少仪表盘、邮件、聊天、日历、文件管理等页面从零搭建的工作。",
+        "who_should_care": "使用 shadcn/ui、Next.js 快速搭建后台或管理界面的前端开发者。",
+        "use_cases": [
+          "搭建管理后台仪表盘",
+          "制作任务或客户管理页",
+          "复用文件、地图、日历布局"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 34 星，本周上日榜 1 天。",
+        "risk_notes": "资料提到另有商业授权的付费模板集合；免费模板分别放在 Radix UI 与 Base UI 两套目录，选用时需确认依赖差异。",
+        "evidence": [
+          "Collection of beautifully crafted open-source layouts UI built with shadcn/ui.",
+          "Square UI is a collection of free, open-source admin dashboard templates for [shadcn/ui](https://ui.shadcn.com/).",
+          "The layouts are built with Next.js and Tailwind CSS, and each one is a complete starting point you can clone, copy, and ship — dashboards, email, chat, calendars, file managers, and more."
+        ]
+      }
+    },
+    "next-terminal/next-terminal": {
+      "category": "security",
+      "one_liner": "多协议运维审计系统",
+      "intro": {
+        "one_liner": "运维审计系统",
+        "what_it_is": "Next Terminal 是支持多种远程访问协议的运维审计系统，可记录和回放会话，用于安全审计与合规追踪。",
+        "problem_solved": "它解决企业远程运维入口分散、操作难追溯的问题，提供会话记录、审计跟踪和合规报告支持。",
+        "who_should_care": "企业运维、安全审计和合规管理人员。",
+        "use_cases": [
+          "统一管理远程资产访问",
+          "回放远程操作会话",
+          "生成审计与合规记录"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星数为 5,563。",
+        "risk_notes": "从 2.0.0 起后端代码不再开源；使用前需阅读并同意许可证；按现状提供，无保证且需自担风险。",
+        "evidence": [
+          "Next Terminal is a simple, secure, and user-friendly interactive auditing system that supports multiple remote access protocols including RDP, SSH, VNC, Telnet, and HTTP.",
+          "It is designed for enterprise IT environments and helps facilitate session recording, audit tracking, and compliance reporting.",
+          "Note: Starting with v2.0.0, the backend code for this project is no longer open source."
+        ]
+      }
+    },
+    "trustgraph-ai/trustgraph": {
+      "category": "ai-agent",
+      "one_liner": "跨智能体复用上下文图谱",
+      "intro": {
+        "one_liner": "智能体上下文治理平台",
+        "what_it_is": "TrustGraph 把企业知识、系统和业务规则整理成上下文档案，并为智能体动作提供策略执行与证据留存。",
+        "problem_solved": "它解决智能体上下文分散、动作缺少规则约束、决策难以解释和复现的问题。",
+        "who_should_care": "构建企业智能体、知识图谱和治理能力的开发者。",
+        "use_cases": [
+          "构建企业知识上下文图",
+          "按策略约束智能体动作",
+          "留存证据以复核决策"
+        ],
+        "alternatives": "将上下文图、策略执行和证据留存放在同一平台，并内置多种检索技术。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，企业智能体治理与可解释决策需求持续存在。",
+        "risk_notes": "部署依赖多组容器与存储、消息组件；仍有十九个未关闭问题；一周仅新增八星，热度有限。",
+        "evidence": [
+          "TrustGraph turns enterprise knowledge, systems, and business logic into a unified ontology-grounded context graph and policy runtime that governs what AI agents can do.",
+          "Govern agent actions: Enforce explicit rules for authority, scope, risk, uncertainty, time, and value at the point of action.",
+          "TrustGraph deploys as a set of Docker containers."
+        ]
+      }
+    },
+    "DanKE123abc/NoUnityCN": {
+      "category": "learning-resource",
+      "one_liner": "Unity 国际版下载资源站",
+      "intro": {
+        "one_liner": "Unity 国际版检索站",
+        "what_it_is": "这是一个用 TypeScript 开发的 Unity 国际版下载站，提供编辑器版本检索、组件添加与国际版 Unity Hub 下载入口。",
+        "problem_solved": "帮助有中文使用需求的海外开发者查找 Unity Editor 国际版、长期支持版、技术支持版、测试版和预览版。",
+        "who_should_care": "在华办公或使用中文工作的海外 Unity 开发者，以及需要远程协助的开发者。",
+        "use_cases": [
+          "检索 Unity Editor 国际版",
+          "下载国际版 Unity Hub",
+          "查找长期支持版和测试版"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 11 星，仅一天进入日榜。",
+        "risk_notes": "下载服务由公益项目提供，可能随时中断；不提供技术授权文件；需确认符合所在地区软件使用规定，且不得用于商业用途。",
+        "evidence": [
+          "🔥Unity国际版下载站，可通过直链或者Unity Hub下载例如Unity 6等Unity Editor的国际版，支持添加组件、下载国际版Unity Hub、包含长期支持版、技术支持版、测试版、预览版的Unity。",
+          "下载服务由公益项目提供，可能会因技术原因随时中断",
+          "本项目下载服务由[开源项目](https://github.com/zwc456baby/file-proxy)提供，请勿用于商业用途。"
+        ]
+      }
+    },
+    "yossdotpro/removerized": {
+      "category": "ai-model",
+      "one_liner": "浏览器离线 AI 图像工具箱",
+      "intro": {
+        "one_liner": "浏览器本地图像工具箱",
+        "what_it_is": "Removerized 是开源、本地优先的图像处理工具，完全在浏览器中借助 ONNX Runtime Web 运行，提供背景移除、图像放大和批量处理。",
+        "problem_solved": "它让图片处理无需上传、无需服务器，也不收集数据，适合希望保护隐私、离线使用或避开使用限制的用户。",
+        "who_should_care": "重视隐私的图片处理用户，以及想研究浏览器端推理的开发者。",
+        "use_cases": [
+          "本地批量去除图片背景",
+          "离线放大图片分辨率",
+          "调试浏览器端模型推理"
+        ],
+        "alternatives": "差异是完全在浏览器本地运行，模型缓存后可离线复用。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 45 星，仅一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0；贡献条款允许维护者以其他许可再分发贡献，包括专有和商业许可；部分功能仍在规划中。",
+        "evidence": [
+          "AI Image Toolkit that runs fully in your browser — free, private, and offline-first.",
+          "All processing happens directly on your device.",
+          "Relicensing grant — You also grant the project maintainer, Yoannis Sánchez Soto ([@yossdotpro](https://github.com/yossdotpro)), a perpetual, worldwide, non-exclusive, royalty-free and irrevocable license to use, modify, sublicense and distribute your contribution under other license terms, including proprietary and commercial ones (for example, a paid desktop edition of Removerized)."
+        ]
+      }
+    },
+    "meganokeefe/learn-istio": {
+      "category": "learning-resource",
+      "one_liner": "Istio 服务网格学习资源",
+      "intro": {
+        "one_liner": "Istio 学习资源清单",
+        "what_it_is": "这是一个围绕 Istio 与 service mesh 的资料清单，汇总入门、可观测性、安全、流量管理等主题的外部文章、文档、视频和示例。",
+        "problem_solved": "它把分散的 Istio 学习与实践资料按主题整理起来，帮助开发者查找服务网格概念、使用案例和上手路径。",
+        "who_should_care": "准备学习 Istio、评估服务网格或查找相关实践资料的开发者。",
+        "use_cases": [
+          "按主题查找 Istio 入门资料",
+          "了解服务网格适用场景",
+          "查阅安全与流量管理示例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时有一千三百三十七星。",
+        "risk_notes": "资料以外部链接清单为主，部分内容可能过时；仓库创建于二〇二〇年，维护状态 unknown。",
+        "evidence": [
+          "An [Istio](https://istio.io) + service mesh resource list.",
+          "## 🔎 Why Use a Service Mesh?",
+          "话题标签：envoy、istio、microservices、service-mesh"
+        ]
+      }
+    }
+  }
+}

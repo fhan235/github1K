@@ -1,1 +1,472 @@
-{"date":"2026-06-14","headline":"AI 与开发工具领跑今日热度","points":["DietrichGebert/ponytail 以 554 领跑，主打让 AI 少写代码的智能体规则。","YusufB5/ASCILINE 获 530，实时低延迟 ASCII 视频渲染引擎受关注。","开发工具 4 个、AI Agent 3 个，TypeScript 5 个，工程化与智能体热度集中。"],"items":{"DietrichGebert/ponytail":{"category":"ai-agent","one_liner":"让 AI 少写代码的智能体规则"},"YusufB5/ASCILINE":{"category":"content-media","one_liner":"实时低延迟 ASCII 视频渲染引擎"},"ZenNotes/zennotes":{"category":"desktop-system","one_liner":"键盘优先的本地 Markdown 笔记"},"hyhmrright/brooks-lint":{"category":"dev-tools","one_liner":"经典工程书驱动的 AI 代码审查"},"bookorbit/bookorbit":{"category":"content-media","one_liner":"个人电子书与有声书阅读空间"},"extend-hq/ui":{"category":"web-frontend","one_liner":"前端 UI 组件库"},"code-yeongyu/lazycodex":{"category":"ai-agent","one_liner":"复杂代码库的 Codex 智能体框架"},"luolangaga/tubatools":{"category":"desktop-system","one_liner":"图吧工具箱 WinUI3 版"},"nevertoday/zhongguo-traditional-colors":{"category":"learning-resource","one_liner":"中华传统色演示与科普"},"yifanfeng97/Hyper-Extract":{"category":"ai-model","one_liner":"文本转结构化知识的抽取工具"},"NativePHP/mobile-air":{"category":"mobile","one_liner":"用 PHP 构建移动应用"},"BeingBeyond/Being-H":{"category":"ai-model","one_liner":"以人为中心的具身基础模型"},"dgreenheck/webgpu-claude-skill":{"category":"ai-agent","one_liner":"开发 WebGPU 应用的 Claude 技能"},"X1Plus/X1Plus":{"category":"hardware-iot","one_liner":"拓竹 X1 系列 3D 打印机固件"},"zhangyu1818/appicon-forge":{"category":"dev-tools","one_liner":"可定制样式的应用图标生成器"},"aimeos/ai-woocommerce":{"category":"dev-tools","one_liner":"迁移 WooCommerce 数据到 Aimeos"},"sailor-sh/CK-X":{"category":"learning-resource","one_liner":"Kubernetes 认证模拟考试与实验"},"nix-community/colmena":{"category":"dev-tools","one_liner":"简洁无状态的 NixOS 部署工具"},"rudrankriyam/Foundation-Models-Framework-Lab":{"category":"learning-resource","one_liner":"Apple 基础模型应用实践实验室"}}}
+{
+  "date": "2026-06-14",
+  "headline": "AI 与开发工具领跑今日热度",
+  "points": [
+    "DietrichGebert/ponytail 以 554 领跑，主打让 AI 少写代码的智能体规则。",
+    "YusufB5/ASCILINE 获 530，实时低延迟 ASCII 视频渲染引擎受关注。",
+    "开发工具 4 个、AI Agent 3 个，TypeScript 5 个，工程化与智能体热度集中。"
+  ],
+  "items": {
+    "DietrichGebert/ponytail": {
+      "category": "ai-agent",
+      "one_liner": "让 AI 少写代码的智能体规则",
+      "intro": {
+        "one_liner": "让 AI 编程助手少写代码的提示词技能",
+        "what_it_is": "Ponytail 是一个面向 AI 编程助手的提示词技能（skill），核心是一份 SKILL.md 提示词，让 agent 像“最懒的资深开发者”那样，优先复用已有代码、只写任务必需的代码。仓库其余部分负责把这份提示词接入 Claude Code、Codex、Cursor 等不同 agent。",
+        "problem_solved": "针对 AI agent 过度生成代码、引入多余依赖和冗余实现的问题，通过“能少写就少写”的规则压缩代码量，同时明确不削减校验、错误处理、安全与无障碍逻辑。",
+        "who_should_care": "日常使用 Claude Code、Codex、Cursor 等 AI 编程助手的开发者，以及关注 AI 生成代码质量与成本的团队。",
+        "use_cases": [
+          "在 Claude Code 中安装插件，让 agent 生成更精简的实现",
+          "用 /ponytail-review 按 bug、安全、负载、缺测试等维度审查当前 diff",
+          "用 /ponytail-audit 对整个仓库做优先级排序的体检",
+          "把 AGENTS.md 复制进项目，供其他 agent 读取规则"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周内 star 从约 1.5k 涨到近 4 万，属于典型的病毒式传播，长期价值取决于提示词效果能否稳定复现。",
+        "risk_notes": "README 中的性能数字（-53% 代码、-41% 时间等）为作者自述基准，未独立验证；项目创建于 2026-06-12，历史很短；一周 star 暴涨且 fork 数异常高，需警惕刷星可能；README 特别提示只应从官方 GitHub 仓库或 npm 包安装，并称不会分发 .exe/.dll 文件。",
+        "evidence": [
+          "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+          "Ponytail is one prompt: skills/ponytail/SKILL.md",
+          "Only install ponytail from DietrichGebert/ponytail on GitHub or @dietrichgebert/ponytail on npm. It never ships .exe or .dll files"
+        ]
+      }
+    },
+    "YusufB5/ASCILINE": {
+      "category": "content-media",
+      "one_liner": "实时低延迟 ASCII 视频渲染引擎",
+      "intro": {
+        "one_liner": "实时 ASCII 视频流渲染引擎",
+        "what_it_is": "ASCILINE 是一个跨平台的实时 ASCII 视频渲染引擎：后端用 Python/FastAPI 解码视频并把像素映射成字符或色块，再通过 WebSocket 以二进制帧流式发送，前端用 HTML5 Canvas 渲染。",
+        "problem_solved": "它让视频以纯文本或色块的形式在浏览器中播放，不依赖 GPU 硬件解码，也不受自动播放限制，在低带宽和没有 GPU 的设备上也能流畅播放。",
+        "who_should_care": "想在弱设备、低带宽或复古终端风格场景中播放视频的开发者，以及需要把视频嵌入网页并叠加 CSS 特效的前端和创意编程人员。",
+        "use_cases": [
+          "在网页或大屏上做 ASCII 风格的视频播放与视觉特效",
+          "在低带宽、无 GPU 的嵌入式或终端设备上播放视频",
+          "通过 JS SDK 把 ASCII 播放器嵌入自有页面或 React 应用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，因为该项目近期 star 增长快，但核心是 ASCII 渲染这一细分玩法，长期需求有限。",
+        "risk_notes": "仓库未声明许可证（license 为 null），商用或二次分发前需确认授权；创建与推送时间字段异常，需核实仓库真实性。",
+        "evidence": [
+          "A high-performance, real-time ASCII video rendering engine.",
+          "No GPU required, ultra-low bandwidth (ASCII modes)",
+          "License 章节存在但项目事实中 license 为 null"
+        ]
+      }
+    },
+    "ZenNotes/zennotes": {
+      "category": "desktop-system",
+      "one_liner": "键盘优先的本地 Markdown 笔记",
+      "intro": {
+        "one_liner": "键盘优先的本地 Markdown 笔记应用",
+        "what_it_is": "ZenNotes 是一个以纯 Markdown 文件为存储的笔记应用，提供 Electron 桌面端和基于 Go 服务端的自托管 Web 端，共享同一套产品核心。",
+        "problem_solved": "让用户在不依赖隐藏数据库的前提下，用键盘和 Vim 操作快速写作、组织笔记，并把任务、标签、搜索、图表和 MCP 工具接入同一个 vault。",
+        "who_should_care": "习惯 Vim 或键盘操作、重视本地纯文件存储的开发者与知识工作者，以及希望自托管笔记服务的人。",
+        "use_cases": [
+          "用 Vim motions 和命令面板快速撰写、检索本地 Markdown 笔记",
+          "在笔记中渲染 KaTeX 数学公式、Mermaid/TikZ 图表并做分屏预览",
+          "通过内置 MCP server 让 AI 工具直接读写同一 vault",
+          "在家庭服务器或局域网自托管 Web 版笔记应用"
+        ],
+        "alternatives": "README 未与其他笔记项目做直接对比，仅说明其差异点在于纯 .md 文件存储、键盘优先、内置 MCP server 与桌面/自托管双运行时；具体同类对比填 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：MCP 集成与 local-first 是当前关注点，但项目创建于 2026-04，仍处早期迭代阶段。",
+        "risk_notes": "项目创建时间很短（2026-04-11），open issues 98 个相对偏高；README 自述大量借助 AI 工具编写代码；hosted 多用户模式仍为计划中，尚未落地。",
+        "evidence": [
+          "Keyboard-first local Markdown notes with Vim motions, diagrams, and MCP integration.",
+          "ZenNotes keeps your notes as ordinary Markdown files on disk.",
+          "a self-hosted web app backed by a Go server"
+        ]
+      }
+    },
+    "hyhmrright/brooks-lint": {
+      "category": "dev-tools",
+      "one_liner": "经典工程书驱动的 AI 代码审查",
+      "intro": {
+        "one_liner": "基于12本经典工程书的AI代码审查工具",
+        "what_it_is": "brooks-lint 是一个 AI 代码审查工具，它依据 12 本经典软件工程书籍，从六个代码腐化风险维度诊断代码，并输出带书籍引用、严重级别和修复建议的结构化报告。",
+        "problem_solved": "传统代码质量工具只统计行数和圈复杂度，难以指出设计层面的腐化问题；brooks-lint 试图把经典工程著作中的设计原则转化为可执行的诊断维度，让审查结论可追溯、可操作。",
+        "who_should_care": "关注代码设计质量与架构腐化的开发者、技术负责人和代码审查者，尤其是使用 Claude Code 或其他 Agent Skills 平台的团队。",
+        "use_cases": [
+          "在提交 PR 前做代码审查，获得带书籍依据的问题清单",
+          "对项目做架构审计并生成依赖关系图",
+          "识别技术债与测试套件腐化风险",
+          "在 CI/CD 中集成自动化代码健康检查"
+        ],
+        "alternatives": "README 称多数代码质量工具只统计行数与圈复杂度，而本项目以书籍引用的六维腐化风险诊断和六种分析模式为差异点；未提供与其他具体工具的对比数据。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 AI 代码审查与 Claude Code 插件生态获得关注，周增 73 星，但项目创建时间较短，长期价值待验证。",
+        "risk_notes": "项目创建于 2026-03-26，历史较短；README 中的效果示例与基准数据来自作者自述，未经独立验证；安装脚本通过 curl 管道执行，需自行评估安全性。",
+        "evidence": [
+          "AI code reviews grounded in 12 classic engineering books — decay risk diagnostics with book citations, severity labels, and 6 analysis modes including full-sweep auto-fix",
+          "Most code quality tools count lines and cyclomatic complexity. brooks-lint goes deeper — it diagnoses your code against six decay risk dimensions synthesized from twelve classic engineering books",
+          "Every finding comes back as Symptom → Source → Consequence → Remedy with a book citation and a 0–100 Health Score"
+        ]
+      }
+    },
+    "bookorbit/bookorbit": {
+      "category": "content-media",
+      "one_liner": "个人电子书与有声书阅读空间",
+      "intro": {
+        "one_liner": "自托管电子书与有声书阅读平台",
+        "what_it_is": "BookOrbit 是一个自托管的数字图书馆与阅读平台，支持电子书、PDF、有声书和漫画，并提供 Web 阅读器、多设备进度同步与元数据管理。",
+        "problem_solved": "解决个人书库分散、阅读进度与标注无法跨设备同步、元数据整理繁琐的问题，让用户在自己控制的基础设施上统一管理与阅读。",
+        "who_should_care": "拥有大量电子书/有声书、希望自托管并跨设备同步阅读进度的技术用户与家庭/小团队。",
+        "use_cases": [
+          "搭建个人或家庭数字图书馆并统一管理多格式书籍",
+          "在 Kobo、KOReader、Web 与 iPhone 之间同步阅读进度与高亮",
+          "通过 OPDS、Send-to-Kindle 等方式分发书籍并统计阅读数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：自托管数字图书馆与跨设备阅读同步属于稳定需求，但项目较新且 open issues 数量较多。",
+        "risk_notes": "许可证为 AGPL-3.0，商用或分发需注意开源义务；open issues 达 583 个，维护压力与稳定性需自行评估；README 含外部托管与 beta 招募引导，仅作信息参考。",
+        "evidence": [
+          "A self-hosted library and reading platform for ebooks, PDFs, audiobooks, and comics.",
+          "Your reading progress, highlights, and status stay synchronized, so you can start a chapter in one place and continue in another.",
+          "Multi-User & SSO: Granular per-user permissions and isolated reading data, with native support for Authentik, Keycloak, and Authelia via OIDC."
+        ]
+      }
+    },
+    "extend-hq/ui": {
+      "category": "web-frontend",
+      "one_liner": "前端 UI 组件库",
+      "intro": {
+        "one_liner": "文档应用开源组件库",
+        "what_it_is": "Extend UI 是面向文档代理、用户文档流程和内部工具的开源组件集合，提供十四类组件，可通过组件注册表安装源码。",
+        "problem_solved": "为文档密集型产品补齐文件预览、引用标注、上传、拆分、签名和文件浏览等界面，减少从通用查看器起步的重复工作。",
+        "who_should_care": "做文档处理、审阅、文件管理和文档代理界面的前端开发者。",
+        "use_cases": [
+          "搭建 PDF、DOCX、XLSX 预览",
+          "制作抽取结果人工复核页",
+          "构建类文件管理器浏览界面"
+        ],
+        "alternatives": "相比通用查看器库，更覆盖文档流程界面，并以源码形式安装便于定制。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，一周涨了 137 星，且曾有一天进入日榜。",
+        "risk_notes": "组件依赖现有基础组件和当前接口；旧样式需先迁移，别名或设计系统路径也要自行调整。",
+        "evidence": [
+          "Extend UI is a set of open-source components for document agents, user-facing document flows, and internal tools.",
+          "The library includes 14 components and examples for PDF, DOCX, and XLSX viewers, plus bounding box citations, file upload, file thumbnails, e-signature, document splitting, layout blocks, and Finder-style file browsing.",
+          "The components are maintained in production at Extend and are used across workflows that process millions of pages, so fixes and improvements continue to flow back into the project."
+        ]
+      }
+    },
+    "code-yeongyu/lazycodex": {
+      "category": "ai-agent",
+      "one_liner": "复杂代码库的 Codex 智能体框架",
+      "intro": {
+        "one_liner": "Codex 代码库代理套件",
+        "what_it_is": "LazyCodex 把 OmO 代理框架打包到 Codex，提供项目记忆、规划、执行、验证完成、技能、钩子和诊断。",
+        "problem_solved": "为复杂代码库中的代理工作补齐上下文、计划执行和结果验证，减少手工配置与流程散乱。",
+        "who_should_care": "使用 Codex 处理大型代码库、需要多代理协作的开发者。",
+        "use_cases": [
+          "为大型仓库生成分层项目记忆",
+          "先写计划再按清单执行开发",
+          "循环执行任务直到验证完成"
+        ],
+        "alternatives": "以 Codex 分发方式打包 OmO，并类比 LazyVim 的即用配置体验。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 465 星，并曾进入日榜一天。",
+        "risk_notes": "市场安装路径仍标为实验性；升级后需重新批准钩子；仍有 18 个未关闭问题。",
+        "evidence": [
+          "The one and only agent harness for complex codebases. Project memory, planning, execution, and verified completion inside Codex.",
+          "LazyCodex packages [OmO (oh-my-openagent)](https://github.com/code-yeongyu/oh-my-openagent) as the Codex agent harness for complex codebases.",
+          "Install from the Codex marketplace (experimental)"
+        ]
+      }
+    },
+    "luolangaga/tubatools": {
+      "category": "desktop-system",
+      "one_liner": "图吧工具箱 WinUI3 版",
+      "intro": {
+        "one_liner": "图吧工具箱 WinUI3 重制版",
+        "what_it_is": "图吧工具箱的 WinUI 3 版本，用 C# 编写，把 89 款经典硬件工具和 47 款原生 Fluent 工具整合到同一个界面中，并附带本地 AI 试炼场。",
+        "problem_solved": "把新机验机、跑分、装驱动、日常清理维护所需的零散工具集中到一个工具箱里，避免在多个软件之间来回切换。",
+        "who_should_care": "需要验机、跑分或维护 Windows 电脑的普通用户、装机爱好者和硬件玩家。",
+        "use_cases": [
+          "新电脑开箱验机与硬件检测",
+          "温度、频率、功耗监控与跑分测试",
+          "图片、音视频、Office、PDF 格式转换与 OCR",
+          "系统清理、启动项与右键菜单管理",
+          "本地 LLM 对话与图像分类、目标检测试跑"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由是近期周增 225 star，并登上日榜，但项目创建于 2026-05-25，仍处于早期阶段",
+        "risk_notes": "采用 GPL-3.0 许可证，二次分发需遵守其条款；README 提示存在非官方下载渠道，需从官方渠道获取；51 个 open issues，维护压力需观察",
+        "evidence": [
+          "图吧工具箱 winUI3 版",
+          "收录的 89 款经典工具 + 内置的 47 款原生工具，共用同一套卡片、收藏、排序与桌面快捷方式",
+          "近期有许多非官方下载渠道，请注意甄别风险！请仅通过官方文档「安装」列出的官方渠道下载。"
+        ]
+      }
+    },
+    "nevertoday/zhongguo-traditional-colors": {
+      "category": "learning-resource",
+      "one_liner": "中华传统色演示与科普",
+      "intro": {
+        "one_liner": "中华传统色工作台",
+        "what_it_is": "这是一个中华传统色演示、色卡浏览与颜色知识科普项目，提供静态设计工作区、配色数据、场景预览和主题导出。",
+        "problem_solved": "它把找颜色、判断搭配、检查可读性、预览真实布局和生成开发主题串成一套流程，减少只拿到色值后反复试错。",
+        "who_should_care": "做国风视觉、界面主题、演示文稿、品牌稿或终端配色的设计与前端开发者。",
+        "use_cases": [
+          "按名称或色值查找传统色卡",
+          "从主色生成五色配色方案",
+          "导出界面语义主题与终端配色"
+        ],
+        "alternatives": "相比单纯色值表，它强调场景测试、搭配数据、对比检查和主题导出。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 54 星且仅一天进入日榜。",
+        "risk_notes": "项目数据标注为 GPL-3.0，而说明文字写的是 MIT License，许可证信息不一致；传统色值需按实际媒介复核后再用于印刷生产。",
+        "evidence": [
+          "中华传统色演示、色卡浏览与颜色知识科普开源项目",
+          "This is a practical workspace for moving from **finding a Chinese color to pairing, testing, and shipping it**",
+          "Traditional color values vary across sources, screens, print processes, inks, and materials. Use this project to search, compare, prototype, and communicate; verify against the real medium before production printing."
+        ]
+      }
+    },
+    "yifanfeng97/Hyper-Extract": {
+      "category": "ai-model",
+      "one_liner": "文本转结构化知识的抽取工具",
+      "intro": {
+        "one_liner": "文档转结构化知识工具",
+        "what_it_is": "一个 Python 命令行工具，用大模型把非结构化文档抽取为图谱、超图、时空图等结构化知识，并提供查询、可视化和导出。",
+        "problem_solved": "把论文、报告、合同等文档中的实体、关系和事实整理成可检索、可追溯、可增量更新的知识库。",
+        "who_should_care": "需要整理大量文档、构建知识库或做信息抽取的开发者与研究人员。",
+        "use_cases": [
+          "把论文转成知识图谱",
+          "抽取财报实体与关系",
+          "维护可追溯知识库"
+        ],
+        "alternatives": "提供超图、时空图、多种抽取引擎和模板，并支持来源追溯与增量更新。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 977 星，且曾登上日榜。",
+        "risk_notes": "依赖支持函数调用的大模型；部分平台还需另配嵌入服务；本地部署需要图形处理器。",
+        "evidence": [
+          "Transform documents into structured knowledge with one command.",
+          "9 Knowledge Structures | From raw chunk corpora and simple Lists to advanced Graphs, Hypergraphs, and Spatio-Temporal Graphs",
+          "Incremental Evolution & Provenance | Feed new documents anytime — every source is attributed and the index updates incrementally"
+        ]
+      }
+    },
+    "NativePHP/mobile-air": {
+      "category": "mobile",
+      "one_liner": "用 PHP 构建移动应用",
+      "intro": {
+        "one_liner": "PHP 原生移动开发框架",
+        "what_it_is": "这是一个让开发者用 PHP 和 Laravel 构建原生 iOS、Android 应用的项目，应用内运行 Laravel 并内置 PHP 运行时。",
+        "problem_solved": "它让熟悉 PHP 的开发者无需改用 Swift 或 Kotlin，也能调用设备能力并交付移动应用。",
+        "who_should_care": "Laravel 开发者、PHP 团队，以及想复用现有代码做移动应用的人。",
+        "use_cases": [
+          "用单一 Laravel 代码构建双端应用",
+          "在设备上运行队列和定时任务",
+          "为应用接入推送通知"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 20 星，曾有一天进入日榜。",
+        "risk_notes": "未关闭议题有 95 个；项目创建于 2026 年，成熟度信息不足。",
+        "evidence": [
+          "Create mobile applications with PHP",
+          "NativePHP for Mobile lets you build truly native iOS and Android apps using PHP and Laravel.",
+          "Your Laravel application runs directly on the device with an embedded PHP runtime"
+        ]
+      }
+    },
+    "BeingBeyond/Being-H": {
+      "category": "ai-model",
+      "one_liner": "以人为中心的具身基础模型",
+      "intro": {
+        "one_liner": "以人为中心的具身基础模型",
+        "what_it_is": "Being-H 是面向机器人学习的模型家族，包含旗舰 WAM 模型 Being-H0.7、旗舰 VLA 模型 Being-H0.5，以及早期版本 Being-H0。",
+        "problem_solved": "它围绕人类视频预训练、跨本体泛化和统一动作空间，提供模型、教程、数据与部署示例，支持机器人策略适配与后训练。",
+        "who_should_care": "关注具身智能、机器人操作、VLA 与 WAM 的研究者和开发者。",
+        "use_cases": [
+          "用人类视频做 VLA 预训练",
+          "对机器人模型做后训练",
+          "在教育机器人上部署示例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 25 星，曾有一天进入日榜。",
+        "risk_notes": "Being-H0.7 的代码和权重仍标注即将发布；未关闭问题有 22 个；部分内容依赖外部模型与数据集合。",
+        "evidence": [
+          "Being-H is BeingBeyond's family of human-centric embodied foundation models.",
+          "Within this repository, **Being-H0.7** is our flagship **WAM** model and **Being-H0.5** is our flagship **VLA** model.",
+          "Code and checkpoints are coming soon!"
+        ]
+      }
+    },
+    "dgreenheck/webgpu-claude-skill": {
+      "category": "ai-agent",
+      "one_liner": "开发 WebGPU 应用的 Claude 技能",
+      "intro": {
+        "one_liner": "WebGPU 开发技能包",
+        "what_it_is": "这是给 Claude 和 Cursor 使用的技能资料库，整理 Three.js WebGPU 与 TSL 开发知识、示例和模板。",
+        "problem_solved": "它把 WebGPU 渲染器、TSL 着色器、计算着色器、后处理和设备丢失处理等资料集中起来，降低查阅与接入成本。",
+        "who_should_care": "用 Three.js 开发 WebGPU 应用，并借助 Claude 或 Cursor 的开发者。",
+        "use_cases": [
+          "搭建 WebGPU 渲染器",
+          "编写 TSL 节点材质",
+          "实现 GPU 粒子与后处理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 16 星且曾上日榜。",
+        "risk_notes": "内容对齐 Three.js r183+，但推荐版本写为 r171+；浏览器支持存在差异，Firefox 需开启标志，Safari 为预览支持。",
+        "evidence": [
+          "A Claude skill for developing WebGPU applications with Three.js",
+          "An Agent Skill for developing WebGPU-enabled Three.js applications using TSL (Three.js Shading Language).",
+          "Last updated: April 1, 2026 — aligned with Three.js r183+ API changes."
+        ]
+      }
+    },
+    "X1Plus/X1Plus": {
+      "category": "hardware-iot",
+      "one_liner": "拓竹 X1 系列 3D 打印机固件",
+      "intro": {
+        "one_liner": "3D 打印机定制固件",
+        "what_it_is": "X1Plus 是面向 Bambu Lab X1 和 X1 Carbon 3D 打印机的定制固件，主要使用 Python，并提供构建与安装说明。",
+        "problem_solved": "它在原厂固件之上建立覆盖层，只替换启动所需部分，让用户能安装和使用定制固件功能。",
+        "who_should_care": "拥有相关机型、愿意自行安装固件或参与开发的用户。",
+        "use_cases": [
+          "为打印机安装定制固件",
+          "构建和调试固件镜像",
+          "参与界面与安装器开发"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且已有七十次分叉。",
+        "risk_notes": "构建需要从运行中的打印机取得文件系统解密密钥；资料称部分代码仍较混乱；安装涉及固件覆盖和设备重启。",
+        "evidence": [
+          "Custom firmware for Bambu Lab X1 and X1 Carbon 3D printers",
+          "The core concept of X1Plus is that we build an overlay on top of the Bambu Lab firmware, and replace only the parts that we need in order to launch X1Plus.",
+          "You'll need the filesystem decryption key from a live printer (running either X1Plus or the Official Rootable Firmware) in order to build X1Plus."
+        ]
+      }
+    },
+    "zhangyu1818/appicon-forge": {
+      "category": "dev-tools",
+      "one_liner": "可定制样式的应用图标生成器",
+      "intro": {
+        "one_liner": "可视化应用图标生成器",
+        "what_it_is": "AppIcon Forge 是一个用 TypeScript 编写的应用图标生成工具，可调整颜色、边框、阴影、文字和图片，并实时预览、导出图标。",
+        "problem_solved": "它让没有设计经验的人也能制作可用的应用图标，省去复杂设计流程，并支持本地运行或直接通过网页使用。",
+        "who_should_care": "需要快速制作应用图标的开发者、独立开发者和小型产品团队。",
+        "use_cases": [
+          "为应用生成基础图标",
+          "调整图标配色与阴影",
+          "用图标库或本地图片制作图标"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千星且有一百四十一分叉。",
+        "risk_notes": "文字图标使用系统默认字体，资料提示无法保证版权合规；Docker 说明中出现疑似拼写错误。",
+        "evidence": [
+          "A simple tool that allows you to generate usable app icons without any design expertise.",
+          "Customize icon size, position, color, background color, border, gradient, and shadow.",
+          "The text icons use the system's default fonts, and copyright compliance cannot be guaranteed."
+        ]
+      }
+    },
+    "aimeos/ai-woocommerce": {
+      "category": "dev-tools",
+      "one_liner": "迁移 WooCommerce 数据到 Aimeos",
+      "intro": {
+        "one_liner": "WooCommerce 数据迁移工具",
+        "what_it_is": "这是一个 PHP 扩展包，用于把 WooCommerce 数据库迁移到 Aimeos 电商系统数据库。",
+        "problem_solved": "帮助已有 WordPress 与 WooCommerce 数据的站点转入 Aimeos，减少商品、分类等数据重建工作。",
+        "who_should_care": "使用 WooCommerce 并计划迁移到 Aimeos 的开发者。",
+        "use_cases": [
+          "迁移商品与分类数据",
+          "迁移供应商和品牌",
+          "迁移属性及部分扩展选项"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，但复刻数较少。",
+        "risk_notes": "要求 Aimeos 安装不含演示数据；配置顺序有明确限制；迁移完成后需移除数据库连接配置。",
+        "evidence": [
+          "Migrate your WooCommerce database to your Aimeos ecommerce installation.",
+          "Aimeos 2023.10+",
+          "Make sure the Aimeos installation contains no demo data and `db-woocommerce` is at the end of the `resource` list!"
+        ]
+      }
+    },
+    "sailor-sh/CK-X": {
+      "category": "learning-resource",
+      "one_liner": "Kubernetes 认证模拟考试与实验",
+      "intro": {
+        "one_liner": "Kubernetes 认证模拟练习器",
+        "what_it_is": "一个面向 CKAD、CKA、CKS 的模拟考试环境，提供计时考试、实操实验和预配置集群。",
+        "problem_solved": "帮助备考者在接近真实考试的条件下练习 Kubernetes 操作，并通过实时校验了解解题结果。",
+        "who_should_care": "准备 Kubernetes 认证考试、需要动手练习的开发者与运维人员。",
+        "use_cases": [
+          "按倒计时完成模拟考试",
+          "练习 CKAD、CKA、CKS 实验",
+          "用网页界面验证解题结果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，破千时星数达到一千。",
+        "risk_notes": "采用 Business Source License 1.1，商业、生产用途和软件服务变现需另购许可；不保证考试通过。",
+        "evidence": [
+          "A mock exams for CKAD, CKA, and CKS featuring timed sessions and hands-on labs with pre-configured clusters.",
+          "Smart evaluation system with real-time solution verification",
+          "This project is licensed under the Business Source License 1.1 (BSL 1.1). Personal, educational, research, and non-production use is allowed, but commercial/production usage and SaaS monetization require a separate commercial license from Sailor.sh."
+        ]
+      }
+    },
+    "nix-community/colmena": {
+      "category": "dev-tools",
+      "one_liner": "简洁无状态的 NixOS 部署工具",
+      "intro": {
+        "one_liner": "无状态 NixOS 部署工具",
+        "what_it_is": "Colmena 是用 Rust 编写的简单、无状态 NixOS 部署工具，封装 Nix 命令，支持并行部署与 Nix Flakes。",
+        "problem_solved": "它把多台 NixOS 主机的配置构建、复制和激活集中管理，并支持按标签筛选目标主机。",
+        "who_should_care": "使用 NixOS、NixOps 或 morph 管理多台主机的运维与开发者。",
+        "use_cases": [
+          "批量部署 NixOS 主机",
+          "按标签发布到部分节点",
+          "在 Flakes 中定义集群"
+        ],
+        "alternatives": "参考 NixOps 和 morph，强调无状态、薄封装与并行部署。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，一周涨了 11 星，增长平稳。",
+        "risk_notes": "必须使用 SSH 密钥登录远程主机，交互式认证不可用；错误报告能力不足；未关闭问题有 145 个。",
+        "evidence": [
+          "A simple, stateless NixOS deployment tool",
+          "It's a thin wrapper over Nix commands like `nix-instantiate` and `nix-copy-closure`, and supports parallel deployment.",
+          "It's required to use SSH keys to log into the remote hosts, and interactive authentication will not work."
+        ]
+      }
+    },
+    "rudrankriyam/Foundation-Models-Framework-Lab": {
+      "category": "learning-resource",
+      "one_liner": "Apple 基础模型应用实践实验室",
+      "intro": {
+        "one_liner": "苹果模型开发实验台",
+        "what_it_is": "一个用 Swift 编写的原生 iOS 和 macOS 工作台，用于学习、测试和评估 Apple's Foundation Models framework 应用，集中管理提示词、配置、工具、运行记录和证据。",
+        "problem_solved": "把提示词、模型配置、工具调用、结构化输出和运行证据放在一处，方便开发者快速改动配方、检查每次运行并导出可复现结果。",
+        "who_should_care": "做苹果端生成式 AI 应用、需要调试模型与工具链的 Swift 开发者。",
+        "use_cases": [
+          "编辑提示词并立即运行",
+          "检查运行记录与工具调用",
+          "比较基础模型和适配器"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 23 星，曾有一天进入日榜。",
+        "risk_notes": "实时模型运行要求兼容实体设备、Apple Silicon 和 Apple Intelligence；模拟器只适合编译与界面验证。部分最新实验依赖 Xcode 27 与新版系统接口。",
+        "evidence": [
+          "A practical lab for building, testing, and evaluating apps with Apple's Foundation Models framework.",
+          "Foundation Lab is a native iOS and macOS workbench for learning, testing, and shipping with Apple's Foundation Models framework.",
+          "Live model execution requires a compatible physical device. Simulator builds remain useful for compilation and interface validation."
+        ]
+      }
+    }
+  }
+}

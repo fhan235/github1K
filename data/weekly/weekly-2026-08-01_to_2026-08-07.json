@@ -1282,24 +1282,23 @@
       "triage_quality": "ok",
       "triage_reason": "编码智能体",
       "intro": {
-        "one_liner": "可自我改进的 RLM 编码智能体",
-        "what_it_is": "Prime Agent 是一个开源的编码与研究智能体，基于 Recursive Language Model（RLM）与 Continual Harness 两个核心抽象构建，用 TypeScript 实现，通过持久化 Python REPL 以编程方式完成文件操作、命令执行与子智能体调度。",
-        "problem_solved": "面向长周期、自主运行的工作流，解决单次对话窗口无法保留工作上下文与可复用操作模式的问题，让会话、目标与子智能体在终端断开后仍能继续推进。",
-        "who_should_care": "需要长时间自主编码或研究型评测的开发者、AI 研究者，以及希望把重复工作流沉淀为可执行 skill 的团队。",
+        "one_liner": "自改进编程智能体",
+        "what_it_is": "一个开源的编程与研究智能体，围绕递归语言模型和可持续改进的运行框架，支持长时间自主工作。",
+        "problem_solved": "让工作上下文、记忆、技能和子智能体状态跨会话保留，减少长任务在单次聊天窗口后丢失进度的问题。",
+        "who_should_care": "做编程自动化、研究评测和长任务编排的开发者。",
         "use_cases": [
-          "在代码仓库中执行长周期自主编码与重构任务",
-          "研究场景下的长时程智能体评测与实验",
-          "把重复工作流固化为可导入的 Python skill 并复用",
-          "通过子智能体并行或后台处理任务并程序化回收结果"
+          "后台运行并恢复长任务",
+          "把重复流程沉淀为技能",
+          "并行调用子智能体协作"
         ],
-        "alternatives": "unknown",
+        "alternatives": "强调持久运行环境、可回滚改进和后台会话连续性。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点，一周新增约 1951 star 且首次登上日榜，但项目创建于 2026-05-08、仍处于快速迭代阶段",
-        "risk_notes": "项目事实中 license 为 null，使用前需确认授权；README 明确说明其 worker 与 kernel 进程并非安全沙箱，会以用户权限执行模型生成的 Python 与项目命令，仅应在可信仓库与指令下使用；安装方式为 curl 管道执行远程脚本，需自行评估。",
+        "hype_or_trend": "短期热点，一周涨了 1,951 星且曾上日榜。",
+        "risk_notes": "会执行模型生成的 Python 和项目命令，并非安全沙箱；未关闭问题 132 个，需留意稳定性。",
         "evidence": [
           "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
-          "Its worker and kernel processes improve lifecycle isolation and recovery; they are **not** a security sandbox.",
-          "The **Continual Harness** stores supplemental prompts, memories, skill descriptions, and reusable subagent specifications as durable state"
+          "Prime Agent is an open-source coding and research agent for general and long-running work.",
+          "Prime Agent executes model-generated Python and project commands with your user permissions. Its worker and kernel processes improve lifecycle isolation and recovery; they are **not** a security sandbox."
         ]
       }
     },
@@ -1779,23 +1778,23 @@
       "triage_quality": "ok",
       "triage_reason": "桌面AI助手",
       "intro": {
-        "one_liner": "本地优先、可审计的 AI Agent 桌面工作台",
-        "what_it_is": "Maka 是一个 Apache 孵化中的 AI agent 工作台，提供 Desktop、TUI 和 CLI 三种入口，把模型消息、工具调用、权限决策和终止过程都记录为 append-only 的 RuntimeEvent 日志。",
-        "problem_solved": "它解决 agent 执行过程不可追溯、结果难以复现的问题：所有运行记录都保存在本地，UI、下一次 prompt 和崩溃恢复都只是这份日志的投影，因此可以按任务逐条核查。",
-        "who_should_care": "需要本地数据可控、要求 agent 行为可审计的开发者，以及想自选模型（云 API、本地模型或兼容网关）的团队。",
+        "one_liner": "本地优先智能体工作台",
+        "what_it_is": "Maka 是本地优先的 AI 桌面助手，也是记录完整执行过程的智能体工作台，提供桌面端、终端界面、命令行和评估入口。",
+        "problem_solved": "它把模型消息、工具调用、权限决定和终止记录为只追加日志，用于任务执行、界面展示、崩溃恢复和可核验评估。",
+        "who_should_care": "关注本地数据、执行可追溯和智能体评估的开发者。",
         "use_cases": [
-          "在桌面端运行需要完整记录每一步的编码或调研任务",
-          "用 CLI/TUI 非交互执行任务，并保留可复查的 RuntimeEvent 日志",
-          "用内置 eval 框架在同一模型和官方 verifier 下对比不同 harness 的逐任务结果"
+          "在本机运行智能体任务",
+          "复盘工具调用与权限决定",
+          "用统一运行时做评估"
         ],
-        "alternatives": "README 称其与其他 harness 在同一模型和官方 verifier 下做基准对比，并公开逐任务结果；但未点名具体竞品，差异细节 unknown。",
+        "alternatives": "强调完整运行日志、本地留存和统一执行权威，并公开逐任务评估记录。",
         "maturity": "可试用",
-        "hype_or_trend": "长期趋势：agent 运行的可观测性与本地数据主权是持续需求，但项目仍处 Apache 孵化阶段，最新发布为 0.2.2。",
-        "risk_notes": "项目处于 Apache Incubating 阶段；open_issues 高达 461，维护响应能力需观察；README 中仓库地址为 apache/maka，与项目事实中的 maka-agent/maka-agent 不一致，需核实官方仓库归属。",
+        "hype_or_trend": "短期热点，一周涨了 236 星，曾有一天进入日榜。",
+        "risk_notes": "处于孵化状态，最新发布版为 0.2.2；未关闭 Issue 有 456 个；开发构建不是正式发布版。",
         "evidence": [
           "Apache Maka (Incubating) is a high-performance agent workspace that keeps a complete record of everything it did.",
-          "Every model message, tool call, permission decision and termination is an append-only RuntimeEvent.",
-          "Sessions, settings and run records stay local. You bring the model: a cloud API, a local model or a compatible gateway."
+          "The log is the runtime. Every model message, tool call, permission decision and termination is an append-only RuntimeEvent.",
+          "The latest Apache release is 0.2.2 (incubating)."
         ]
       }
     },
@@ -2145,23 +2144,23 @@
       "triage_quality": "ok",
       "triage_reason": "代理开发系统",
       "intro": {
-        "one_liner": "本地优先的规格驱动编码 Agent",
-        "what_it_is": "GSD Pi 是一个本地优先的命令行编码 Agent，把终端 Agent、项目工作流工具、worktree 感知的 Git 自动化和可选的 UI 集成组合在一起，覆盖从规划、实现、验证到跟踪的完整项目流程。",
-        "problem_solved": "它解决的是让 Agent 长时间自主工作时容易偏离整体目标的问题：通过把工作拆成里程碑、切片和任务，并在本地保存需求、决策、计划和验证证据，使 Agent 能持续按规格推进，同时保持可审查性。",
-        "who_should_care": "需要在命令行里用 Agent 推进多步骤工程任务、并希望保留可审查 Git 流程与本地项目记忆的开发者与团队。",
+        "one_liner": "本地优先的命令行编码智能体",
+        "what_it_is": "GSD Pi 是本地优先的命令行编码智能体，用终端工作流规划、实现、验证并跟踪项目工作，也提供可选的网页界面。",
+        "problem_solved": "它把需求、决策、计划、验证证据和项目状态集中管理，减少长时间编码任务中上下文丢失和人工协调。",
+        "who_should_care": "需要命令行智能体、规范驱动开发和 Git 工作树隔离的开发者。",
         "use_cases": [
-          "用 /gsd auto 让 Agent 自主完成里程碑式的规划、实现与验证",
-          "用 worktree 隔离实现工作，同时保留可审查的主检出",
-          "在 CI 或脚本中通过 gsd quick --output-format json 非交互执行任务"
+          "把想法拆成里程碑并自动推进",
+          "在隔离工作树中实现和验证",
+          "用终端或网页跟踪项目状态"
         ],
         "alternatives": "unknown",
         "maturity": "可试用",
-        "hype_or_trend": "长期趋势：规格驱动开发与上下文工程是 Agent 工程化的持续方向，但项目公开基线从 1.0.0 重启，仍需观察。",
-        "risk_notes": "项目于 2026-05-22 创建，README 说明公开开发从 1.0.0 干净基线重启，历史版本已归档；open_issues 为 66，相对 1030 stars 偏高；包名从 gsd-pi 迁移到 @opengsd/gsd-pi，旧全局安装会遮蔽新包，升级需按文档清理。",
+        "hype_or_trend": "短期热点，一周涨了 29 星，仅一天进入日榜。",
+        "risk_notes": "公开开发从干净基线重启，旧版本迁移需先卸载旧包；未关闭问题 74 个。",
         "evidence": [
-          "A powerful meta-prompting, context engineering and spec-driven development system that enables agents to work for long periods of time autonomously without losing track of the big picture",
-          "The `open-gsd/gsd-pi` project restarted public development from a clean baseline at version `1.0.0`.",
-          "GSD Pi now installs from the scoped package `@opengsd/gsd-pi`. If you previously installed the older unscoped `gsd-pi` package, remove it first so the old global binary does not shadow the new package."
+          "GSD Pi is a local-first coding agent for planning, implementing, verifying, and tracking project work from the command line.",
+          "Autonomous project workflow — Break work into milestones, slices, and tasks, then let auto mode plan, implement, verify, and advance.",
+          "The `open-gsd/gsd-pi` project restarted public development from a clean baseline at version `1.0.0`."
         ]
       }
     },

@@ -308,23 +308,23 @@
       "triage_quality": "suspicious",
       "triage_reason": "叉数超星",
       "intro": {
-        "one_liner": "阿里开源的混合架构 AI 代码审查 CLI",
-        "what_it_is": "Open Code Review 是一个 AI 驱动的代码审查命令行工具，通过确定性工程流程与 LLM Agent 相结合，读取 Git diff 并生成行级精确的结构化审查意见。",
-        "problem_solved": "针对通用 Agent 做代码审查时出现的覆盖不全、行号定位漂移、质量不稳定等问题，用确定性工程约束审查流程，并降低 token 消耗。",
-        "who_should_care": "需要在 CI 或日常开发流程中引入自动化代码审查的研发团队、代码质量与安全审查负责人，以及使用 OpenAI 或 Anthropic 兼容模型接口的团队。",
+        "one_liner": "混合式代码审查工具",
+        "what_it_is": "一个用 Go 编写的代码审查命令行工具，结合确定性流程与大模型代理，生成精确到代码行的审查意见。",
+        "problem_solved": "它针对通用代理审查大改动时漏看文件、定位漂移和质量波动的问题，用工程约束保证覆盖与位置准确。",
+        "who_should_care": "需要在本地或流水线中做代码审查的开发者与团队。",
         "use_cases": [
-          "在 CI 流水线中对 Pull Request 的 diff 自动生成行级审查评论",
-          "用 ocr scan 对陌生代码库或无 diff 的目录做全文件审计",
-          "按分支区间或单个 commit 做定向代码审查并支持中断续跑"
+          "审查工作区改动",
+          "审查分支或提交范围",
+          "扫描整仓或指定目录"
         ],
-        "alternatives": "README 称与通用 Agent（如 Claude Code）相比，在相同底层模型下 Precision 与 F1 更高、token 消耗约为其 1/9，但 Recall 更低，这是有意偏向精确率、减少噪声的取舍。",
-        "maturity": "可试用",
-        "hype_or_trend": "短期热点：项目创建时间较新、周增星约 1746，热度上升快，但公开的成熟度与长期维护信息有限。",
-        "risk_notes": "项目创建于 2026-05-18，距今时间很短，长期维护情况未知；open_issues 达 369 个；README 中的 benchmark 与效果对比为项目自述，未独立验证；使用前需自行配置 LLM 端点并承担 API 成本。",
+        "alternatives": "相比通用代理，强调确定性文件选择、规则匹配和评论定位。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,746 星且曾登上日榜。",
+        "risk_notes": "创建于 2026 年，未关闭议题 347 个；需配置大模型端点，审查效果依赖所选模型。",
         "evidence": [
-          "Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments",
-          "Compared to general-purpose agents (Claude Code), Open Code Review achieves significantly higher Precision and F1 with the same underlying model, while consuming only ~1/9 of the tokens",
-          "Note that its Recall is lower than general-purpose agents — a deliberate trade-off favoring precision over noise."
+          "Battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "It reads Git diffs, sends changed files to a configurable LLM via an agent with tool-use capabilities, and generates structured review comments with line-level precision.",
+          "The root cause: a purely language-driven architecture lacks hard constraints on the review process."
         ]
       }
     },
@@ -561,23 +561,23 @@
       "triage_quality": "ok",
       "triage_reason": "Agent微VM",
       "intro": {
-        "one_liner": "AI agent 微虚拟机 fork 与快照沙箱",
-        "what_it_is": "forkd 是一个用 Rust 编写的 AI agent 微虚拟机沙箱项目，基于 KVM 隔离，支持从预热父实例快速派生大量子沙箱，并对运行中的 VM 做快照与分支。",
-        "problem_solved": "解决 AI agent 需要大量隔离执行环境时启动慢、内存占用高的问题，通过 fork 与写时复制快照让沙箱快速创建和恢复。",
-        "who_should_care": "需要为 AI agent 或代码执行场景搭建隔离沙箱平台的基础设施与平台工程师。",
+        "one_liner": "智能体沙箱调度器",
+        "what_it_is": "Sandstorm 是管理智能体沙箱生命周期的系统，支持 gVisor 容器和 Firecracker 微虚拟机，并提供主控、节点与网页控制台。",
+        "problem_solved": "它让空闲沙箱暂停、快照到磁盘，并在请求到来时快速恢复，以提高单机可承载的沙箱数量。",
+        "who_should_care": "需要大规模运行智能体沙箱、关注隔离与资源调度的开发者和平台团队。",
         "use_cases": [
-          "为 AI agent 批量派生隔离执行环境",
-          "对运行中的沙箱做快照并分支复现状态",
-          "在单机上承载大量按需唤醒的沙箱"
+          "按流量唤醒空闲智能体沙箱",
+          "统一管理容器与微虚拟机沙箱",
+          "查看沙箱状态和节点余量"
         ],
-        "alternatives": "README 中与 Firecracker、CubeSandbox、microsandbox、Kata、Docker、Podman、bubblewrap 等做了延迟对比，强调 fork 与快照分支能力；但 README 正文主体描述的是 Sandstorm 的多节点调度与分层休眠机制，与项目简介中的 fork 定位存在不一致，具体差异需自行核实。",
-        "maturity": "unknown",
-        "hype_or_trend": "短期热点，AI agent 沙箱隔离是当前活跃方向，但项目创建时间与 star 增长数据存在异常，热度真实性存疑。",
-        "risk_notes": "项目事实中 created_at 为 2026-05-11、pushed_at 为 2026-11-01，时间线异常；README 内容与项目名 forkd 及简介描述不符，大量篇幅在讲 Sandstorm 的调度与基准测试，文档可信度存疑；周增 474 star 且仅上榜 1 天，需警惕刷星可能。",
+        "alternatives": "同时支持 gVisor 与 Firecracker，并用分层休眠、流量唤醒和网页控制台管理沙箱。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 474 星，并曾有一天登上日榜。",
+        "risk_notes": "部分延迟数据基于单次样本；不同主机配置的结果不宜直接横比；唤醒失败会直接拒绝请求。",
         "evidence": [
-          "Fork() for AI agent microVMs. Spawn 100 children in ~100ms from a warm parent; BRANCH a live VM in ~150ms. KVM-isolated, snapshot CoW.",
-          "One machine, thousands of sandboxes. Sandstorm pauses idle sandboxes and snapshots them to disk",
-          "It supports two sandbox backends, gVisor containers and Firecracker microVMs."
+          "One machine, thousands of sandboxes.",
+          "Sandstorm pauses idle sandboxes and snapshots them to disk, then restores them quickly when a request arrives",
+          "It supports two sandbox backends, [gVisor](https://gvisor.dev) containers and [Firecracker](https://firecracker-microvm.github.io) microVMs."
         ]
       }
     },
@@ -1780,23 +1780,22 @@
       "triage_quality": "ok",
       "triage_reason": "官方发布问题页",
       "intro": {
-        "one_liner": "GitHub Copilot 桌面智能体工作台",
-        "what_it_is": "GitHub Copilot app 是 GitHub 官方推出的 agent-native 桌面应用，用于在 GitHub 仓库中查找、运行、引导并落地软件工作，覆盖从想法到 pull request 的全流程。",
-        "problem_solved": "解决多终端、编辑器、浏览器标签与 GitHub 页面之间频繁切换的问题，并让多个 agent 在隔离的 git worktree 或云端环境中并行工作而不冲突。",
-        "who_should_care": "日常使用 GitHub 与 Copilot、希望以 agent 并行方式处理 issue、bug 与代码评审的开发者及团队。",
+        "one_liner": "Copilot 桌面工作台",
+        "what_it_is": "这是 GitHub Copilot app 的发布与问题反馈仓库，介绍一款面向仓库软件工作的桌面应用，可集中查找、启动、引导并交付任务。",
+        "problem_solved": "它解决多仓库、多代理并行开发时频繁切换终端、编辑器、浏览器和页面的问题，用隔离工作区、可视化画布和任务汇总减少上下文切换。",
+        "who_should_care": "使用 GitHub 仓库、并行调度 Copilot 代理的开发者和团队。",
         "use_cases": [
-          "并行让多个 agent 调查 bug、实现 issue、处理评审反馈",
-          "通过 Canvases 查看并干预 agent 的计划、终端、diff 与预览",
-          "用 Automations 将重复提示词与工作流转为定时或后台任务",
-          "借助 Agent Merge 推动 pull request 通过评审、检查与合并条件"
+          "并行排查缺陷和实现问题",
+          "集中查看会话、议题与合并请求",
+          "把重复提示设为后台自动化"
         ],
         "alternatives": "unknown",
         "maturity": "可试用",
-        "hype_or_trend": "长期趋势：README 显示其围绕并行 agent 开发、隔离 worktree 与云端会话构建，属于 agent 原生开发工作流的持续方向。",
-        "risk_notes": "许可证为 GitHub, Inc. 保留所有权利，非开源许可；仓库仅托管发布与 issue，无源码；open_issues 达 2386，issue 积压明显；README 说明会收集使用数据与对话数据。",
+        "hype_or_trend": "短期热点，一周涨了 264 星，仅一天进入日榜。",
+        "risk_notes": "权利保留，未给出开源许可证；未关闭议题有 2252 个；使用账号时可能收集使用与会话数据。",
         "evidence": [
           "This is the home for releases and issues for the GitHub Copilot app",
-          "Each local session runs in its own isolated git worktree, and cloud sessions let agents keep working in isolated GitHub-hosted environments",
+          "The GitHub Copilot app is an agent-native desktop experience for managing software work from idea to pull request.",
           "© GitHub, Inc. All rights reserved."
         ]
       }
@@ -2343,23 +2342,23 @@
       "triage_quality": "ok",
       "triage_reason": "代理编排工具",
       "intro": {
-        "one_liner": "为 AI Agent 工作流提供确定性编排与强制约束",
-        "what_it_is": "Babysitter 是一个 JavaScript 编写的 Agent 编排框架，用代码定义工作流，强制每一步执行、质量门禁通过后才推进，并在断点处要求人工审批，同时把每个决策记录到不可变日志中。",
-        "problem_solved": "解决 AI Agent 执行复杂任务时偏离流程、幻觉和不可控的问题，让 Agent 只做流程允许的事。",
-        "who_should_care": "需要在 Claude Code、Codex 等 AI 编码工具中运行复杂多步骤流程的开发者与团队，以及关注 Agent 可控性的工程负责人。",
+        "one_liner": "智能体流程编排器",
+        "what_it_is": "Babysitter 是用代码定义并约束智能体工作流的工具，强调按步骤执行、质量门禁、人工审批和不可变决策记录。",
+        "problem_solved": "它试图解决复杂智能体任务难以按既定流程执行的问题，让流程推进前检查质量，并在关键节点要求人工确认。",
+        "who_should_care": "需要管理多智能体复杂流程的开发者和团队。",
         "use_cases": [
-          "在 Claude Code 等 harness 中编排多步骤开发工作流并设置质量门禁",
-          "在 CI/CD 或脚本中以 internal harness 无头运行流程",
-          "对关键步骤强制人工审批并留存决策审计日志"
+          "用代码定义复杂工作流",
+          "在流程中设置质量门禁",
+          "在持续集成中无头编排"
         ],
-        "alternatives": "unknown",
+        "alternatives": "强调确定性自编排、审批断点、不可变日志，并支持多种编码工具适配。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点，Agent 编排与可控性是当前 AI 工程的热门方向，但项目较新且多数 harness 集成为 Experimental。",
-        "risk_notes": "open_issues 达 460 个，多数 harness 插件标注为 Experimental 或 Beta；项目创建于 2026-01，历史较短。",
+        "hype_or_trend": "短期热点，一周涨了 232 星且曾上日榜。",
+        "risk_notes": "多个适配器和命令行工具标注为测试或实验性质；未关闭议题有 461 个；需要 Node.js 20 及以上，部分命令行工具要求更高版本。",
         "evidence": [
+          "Babysitter enforces obedience to agentic workforces, enabling them to manage extremely complex tasks and workflows through deterministic, hallucination-free self-orchestration.",
           "Define your workflow in code - Babysitter enforces every step, ensures quality gates pass before progression, requires human approval at breakpoints, and records every decision in an immutable journal.",
-          "As of v6, Babysitter is harness-agnostic via its Adapters runtime: the same processes run across the 12 supported AI coding harnesses",
-          "Cursor IDE and CLI (Experimental)"
+          "Node.js: Version 20.0.0+ (22.x LTS recommended). The host-side `adapters` CLI pins a higher floor of 22.13.0+"
         ]
       }
     },

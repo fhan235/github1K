@@ -1,1 +1,661 @@
-{"date":"2026-08-13","headline":"AI 评测与短剧技能领跑","points":["pathwaycom/arc-task-gen 生成 ARC 风格评测任务，当日新增 440，居前。","eternityspring/shuohao-skills 聚焦 AI 短剧制作技能集，当日新增 299。","AI 模型与 AI Agent 各有 6 个项目，Python 项目有 10 个，仍是热门方向。"],"items":{"pathwaycom/arc-task-gen":{"category":"ai-model","one_liner":"生成 ARC 风格评测任务"},"eternityspring/shuohao-skills":{"category":"ai-agent","one_liner":"AI 短剧制作技能集"},"RubberDuck-com/rubberduck-use-case-playground":{"category":"other","one_liner":"用途不明的项目演示场"},"litu54/DevOps-Interview-Guide":{"category":"learning-resource","one_liner":"DevOps 面试指南"},"hongjin-he/MicroWorld":{"category":"data-finance","one_liner":"美股多智能体市场模拟"},"yc-duan/fastctx":{"category":"dev-tools","one_liner":"智能体高效仓库工具"},"orca-wm/Orca":{"category":"ai-model","one_liner":"世界模型项目 Orca"},"nvk/llm-wiki":{"category":"ai-agent","one_liner":"多智能体编译知识库"},"Nathan-code-development/AIApplication":{"category":"ai-model","one_liner":"AI 模型广场与聊天"},"wozulong/open-wegram-bot":{"category":"automation","one_liner":"零成本双向私聊机器人"},"tempoxyz/tempo":{"category":"data-finance","one_liner":"面向支付的区块链"},"hku-mars/SUPER":{"category":"other","one_liner":"信息不足的机器人项目"},"Algebra-FUN/WeReadScan":{"category":"content-media","one_liner":"微信读书购书转 PDF"},"sematic-ai/sematic":{"category":"ai-model","one_liner":"开源机器学习流水线平台"},"AHEKOT/ComfyUI_VNCCS_Utils":{"category":"ai-model","one_liner":"ComfyUI 实用节点集合"},"metacontroller/metacontroller":{"category":"dev-tools","one_liner":"简化 Kubernetes 控制器开发"},"koide3/small_gicp":{"category":"ai-model","one_liner":"高效并行点云配准库"},"Jaysce/Spaceman":{"category":"desktop-system","one_liner":"菜单栏查看 macOS 桌面空间"},"craftzdog/dotfiles":{"category":"desktop-system","one_liner":"个人终端配置文件"},"nowork-studio/notfair-plugin":{"category":"ai-agent","one_liner":"智能体营销技能插件"},"guillaumemeyer/watermarks-remover":{"category":"security","one_liner":"移除 AI 溯源水印工具"},"PhyAgentOS/PhyAgentOS":{"category":"ai-agent","one_liner":"自演进具身智能体系统"},"ZimengXiong/tinyTouch":{"category":"security","one_liner":"无线指纹认证工具"},"darwin-lau/langmanus":{"category":"ai-agent","one_liner":"社区驱动 AI 自动化框架"},"shift-labs-ai/markit":{"category":"content-media","one_liner":"万物转 Markdown 工具"},"Minima-AI-Inc/minima":{"category":"ai-agent","one_liner":"本地化对话式检索问答"},"fromhgbwithluv/WSA-Script":{"category":"mobile","one_liner":"WSA 集成 root 与谷歌服务"}}}
+{
+  "date": "2026-08-13",
+  "headline": "AI 评测与短剧技能领跑",
+  "points": [
+    "pathwaycom/arc-task-gen 生成 ARC 风格评测任务，当日新增 440，居前。",
+    "eternityspring/shuohao-skills 聚焦 AI 短剧制作技能集，当日新增 299。",
+    "AI 模型与 AI Agent 各有 6 个项目，Python 项目有 10 个，仍是热门方向。"
+  ],
+  "items": {
+    "pathwaycom/arc-task-gen": {
+      "category": "ai-model",
+      "one_liner": "生成 ARC 风格评测任务",
+      "intro": {
+        "one_liner": "生成 ARC 风格评测任务",
+        "what_it_is": "这是一个用 Python 编写的任务生成工具，产出与公开评测集分布相近、符合标准 ARC 格式的原创 ARC-AGI-1 风格任务。",
+        "problem_solved": "公开基准可能让模型因见过类似题目而占便宜；它提供新生成的私有评测集，便于比较公开集与新任务上的表现。",
+        "who_should_care": "做 ARC 评测、少样本规则归纳和模型鲁棒性研究的开发者。",
+        "use_cases": [
+          "生成私有 ARC 风格评测集",
+          "对比公开集与新题表现",
+          "接入现有 ARC 评测流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 863 星，曾有一天登上日榜。",
+        "risk_notes": "创建时间较新，最近提交距今较近；仍有 2 个未关闭问题。README 含模型成绩与成本数字，需自行核验。",
+        "evidence": [
+          "Generates original ARC-AGI-1-style tasks distribution-matched to the public eval set.",
+          "As a public benchmark, ARC-AGI-1 cannot fully isolate few-shot rule induction from potential prior familiarity with its tasks.",
+          "It is compatible with existing ARC evaluation harnesses."
+        ]
+      }
+    },
+    "eternityspring/shuohao-skills": {
+      "category": "ai-agent",
+      "one_liner": "AI 短剧制作技能集",
+      "intro": {
+        "one_liner": "AI 短剧制作全流程 Agent skills 集",
+        "what_it_is": "一套与具体 Agent 无关的 skill 集合，覆盖从小说到可拍摄素材的短剧制作流程，包括角色设定、改编大纲、场景与道具设定、剧本、开场走位和分镜，每个 skill 都自带 SKILL.md 和配套脚本。",
+        "problem_solved": "把 AI 短剧制作中分散的改编、角色设定、美术设定、剧本和分镜环节整理成可复用、带质量校验的标准化流程，减少人工反复对齐。",
+        "who_should_care": "用 Claude Code、Codex 等 Agent 做 AI 短剧或视频内容生产的创作者、小型制作团队和编剧。",
+        "use_cases": [
+          "把小说改编成短剧大纲与分集梗概",
+          "批量生成角色设定与参考图",
+          "生成场景与道具美术设定",
+          "按阅读速度估算时长并写分集剧本",
+          "规划开场走位并输出分镜与生产包"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：AI 短剧与 Agent skills 生态同时升温，但项目创建时间很短，长期维护仍待观察。",
+        "risk_notes": "README 含作者求职、赞助与商业产品推广内容；项目创建于 2026-08-06，历史很短；fork 数（811）与 star 数（1413）比例偏高，需留意 star 增长是否自然。",
+        "evidence": [
+          "Agent-agnostic skills for AI short-drama production",
+          "The repository now contains seven skills: six production stages plus standalone character reference generation",
+          "All six pipeline skills render their reports in English too"
+        ]
+      }
+    },
+    "RubberDuck-com/rubberduck-use-case-playground": {
+      "category": "other",
+      "one_liner": "用途不明的项目演示场",
+      "intro": {
+        "one_liner": "RubberDuck 实操演练场",
+        "what_it_is": "这是一个面向 RubberDuck 的动手训练仓库，提供可启动的披萨店演示应用、控制台、健康图和十组用例提示词。",
+        "problem_solved": "它把演示项目、预期结果和提示词集中到一条路径，方便在 Cursor 或 Claude 中配合 RubberDuck MCP 练习代码理解、审计和修复。",
+        "who_should_care": "想试用 RubberDuck MCP 或练习代码分析提示词的开发者。",
+        "use_cases": [
+          "运行披萨店演示应用",
+          "练习安全审计提示词",
+          "对比代码版本差异"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,062 星且曾上日榜一天。",
+        "risk_notes": "创建日期为 2026 年 7 月 1 日，仓库较新；旧演示栈已移除，只保留单一路径；主要语言为 CSS，但核心演示涉及 Python 应用。",
+        "evidence": [
+          "Hands-on training for [RubberDuck](https://rubberduck.com): launch a real demo app, copy UC-01…UC-10 prompts, and run them in Cursor / Claude with RubberDuck MCP.",
+          "The older `demoapp/` / `labs/` / `run-lab.py` stack was removed so the repo has **one** clear path: the demo-projects hub.",
+          "MIT — see [LICENSE](LICENSE)."
+        ]
+      }
+    },
+    "litu54/DevOps-Interview-Guide": {
+      "category": "learning-resource",
+      "one_liner": "DevOps 面试指南",
+      "intro": {
+        "one_liner": "DevOps 面试题库",
+        "what_it_is": "按公司和岗位整理的 DevOps、SRE、云工程真实面试题与面试经历合集，包含 151 份面试记录、85 家公司及未具名公司目录。",
+        "problem_solved": "帮助求职者按目标公司查找曾被问到的具体题目，也可跨公司浏览，了解 Kubernetes、云、持续集成、Linux、站点可靠性等考察范围。",
+        "who_should_care": "准备 DevOps、SRE、云工程岗位面试的开发者，以及贡献面经的人。",
+        "use_cases": [
+          "按公司名搜索面试题",
+          "按主题广泛浏览备考",
+          "提交自己的面试经历"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时有一千零三十七星。",
+        "risk_notes": "内容依赖个人时间维护和社区投稿；题目来自候选人回忆，覆盖与准确性可能不均；仓库创建于二〇二五年四月。",
+        "evidence": [
+          "Real interview questions collected from people who actually sat through DevOps, SRE, and Cloud engineering interviews in 2025 and 2026.",
+          "151 interview write-ups",
+          "85 companies, plus an `Others/` folder for interviews where the company wasn't named"
+        ]
+      }
+    },
+    "hongjin-he/MicroWorld": {
+      "category": "data-finance",
+      "one_liner": "美股多智能体市场模拟",
+      "intro": {
+        "one_liner": "美股多智能体世界模型",
+        "what_it_is": "这是一个用 Python 编写的美股市场多智能体世界模型，模拟机构参与者、信息不对称和价格动态。",
+        "problem_solved": "用于研究不同市场参与者与信息差异如何影响价格形成，并观察涌现的价格动态。",
+        "who_should_care": "关注市场仿真、多智能体系统和量化研究的开发者。",
+        "use_cases": [
+          "模拟机构参与者互动",
+          "研究信息不对称影响",
+          "观察涌现价格动态"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但资料不足。",
+        "risk_notes": "缺少 README，功能细节、使用方式、许可证和成熟度均无法确认；创建时间很新，结论置信度较低。",
+        "evidence": [
+          "A multi-agent world model of US equity markets — simulating institutional players, information asymmetry, and emergent price dynamics",
+          "破千时的 Star 数：1025",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "yc-duan/fastctx": {
+      "category": "dev-tools",
+      "one_liner": "智能体高效仓库工具",
+      "intro": {
+        "one_liner": "跨机器智能体工具",
+        "what_it_is": "Fastctx 是一个用 Rust 编写的 MCP 工具，让已有智能体通过一个 run 工具在多台机器上执行命令、查看编辑文件、复制文件和运行后台任务。",
+        "problem_solved": "它让智能体无需更换使用习惯，就能跨 Windows、macOS 和 Linux 设备工作，并记录通过它执行的操作。",
+        "who_should_care": "需要在多台电脑或服务器上使用智能体的开发者。",
+        "use_cases": [
+          "在远端服务器跑测试",
+          "跨机器查看和编辑文件",
+          "后台运行长任务并追踪"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 40 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间较新，未关闭问题 27 个；Hub 可见中转流量，需按敏感机器级别保护。",
+        "evidence": [
+          "Fast, context-efficient repository tools for AI agents (MCP)",
+          "Fastctx is an MCP tool. When you connect it to the agents you already use—23 supported agents, including Claude Code, Codex, and Cursor—the agent gets a single tool named `run`.",
+          "Because the Hub can see traffic passing through it, protect it as carefully as your most sensitive machine."
+        ]
+      }
+    },
+    "orca-wm/Orca": {
+      "category": "ai-model",
+      "one_liner": "世界模型项目 Orca",
+      "intro": {
+        "one_liner": "通用世界基础模型",
+        "what_it_is": "Orca 是以 Next-State-Prediction 为中心的通用世界基础模型，从视觉与语言信号学习统一世界潜空间，并提供文本、图像和动作读出接口。",
+        "problem_solved": "它试图把下一词、下一帧、下一动作等孤立目标统一为状态转移建模，用于理解、预测世界并支持下游任务。",
+        "who_should_care": "关注世界模型、多模态预训练、视频理解与动作生成的研究者和开发者。",
+        "use_cases": [
+          "视频状态转移建模",
+          "文本与图像读出",
+          "动作生成研究"
+        ],
+        "alternatives": "相比只优化下一词、下一帧或下一动作，它强调统一状态预测与冻结主干的轻量读出。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 2 星且仅 1 天上日榜，热度回落明显。",
+        "risk_notes": "仍称 initial instantiation；轻量检查点与下游微调代码尚未发布；许可证信息 unknown。",
+        "evidence": [
+          "A general world foundation model centered on Next-State-Prediction.",
+          "Orca is an initial instantiation of a general world foundation model.",
+          "Release the Orca-0.8B checkpoint for lightweight research and reproduction."
+        ]
+      }
+    },
+    "nvk/llm-wiki": {
+      "category": "ai-agent",
+      "one_liner": "多智能体编译知识库",
+      "intro": {
+        "one_liner": "智能体知识库编译工具",
+        "what_it_is": "这是一个用 Python 编写、以 MIT 协议发布的智能体知识库工具，支持并行研究、资料摄取、维基编译、查询和产物生成。",
+        "problem_solved": "它把粗略想法、研究资料和来源整理成可查询的知识库，并提供审计、会话记忆和交付项目衔接。",
+        "who_should_care": "使用 Claude Code、OpenAI Codex 等智能体做资料研究的人。",
+        "use_cases": [
+          "把调研资料整理成维基",
+          "按主题并行研究并审计",
+          "查询知识库并生成产物"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 18 星且上过一次日榜。",
+        "risk_notes": "部分运行环境仍标注为开发者预览；OpenCode 配置被描述为尽力而为的预设；有 18 个未关闭问题。",
+        "evidence": [
+          "LLM-compiled knowledge bases for any AI agent. Parallel multi-agent research, thesis-driven investigation, source ingestion, wiki compilation, querying, and artifact generation.",
+          "Ships for Claude Code, OpenAI Codex, DeepSeek Harness, OpenCode, and portable agents. Obsidian-compatible.",
+          "The OpenCode profile is sync- and budget-tested, but not tied to one model, so it does not have a provider-specific live quality gate. Treat it as a portable best-effort preset"
+        ]
+      }
+    },
+    "Nathan-code-development/AIApplication": {
+      "category": "ai-model",
+      "one_liner": "AI 模型广场与聊天",
+      "intro": {
+        "one_liner": "跨平台多模型聊天应用",
+        "what_it_is": "这是一个用 C# 和 .NET MAUI 构建的跨平台移动应用，提供多模型聊天、模型展示、用户资料与会话记录管理。",
+        "problem_solved": "它把多个 AI 模型的对话、图片和文件附件、历史会话以及账号资料集中到统一界面，减少切换成本。",
+        "who_should_care": "想体验或改造 .NET MAUI 多模型聊天客户端的开发者。",
+        "use_cases": [
+          "切换模型并连续对话",
+          "发送图片或文本文件",
+          "浏览模型资料与评价"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周仅涨三星且只上过一天日榜。",
+        "risk_notes": "密钥硬编码在客户端，仅供本地测试；依赖自建后端；当前演示后端明文比较密码，不适合生产。",
+        "evidence": [
+          "AI Tools is a cross-platform mobile application built with **.NET MAUI** that provides a unified interface to interact with multiple AI models including **DeepSeek**, **Doubao**, and **Qwen**.",
+          "All API keys are stored on the client (for demonstration). For production, use a backend proxy to keep keys secure.",
+          "Passwords are compared as plain text in the current demo backend. In a real application, always hash passwords."
+        ]
+      }
+    },
+    "wozulong/open-wegram-bot": {
+      "category": "automation",
+      "one_liner": "零成本双向私聊机器人",
+      "intro": {
+        "one_liner": "零费用双向私聊机器人",
+        "what_it_is": "这是一个基于 Cloudflare Worker、Vercel 等平台的 Telegram 双向私聊机器人，无需服务器、数据库或自有域名即可部署。",
+        "problem_solved": "让个人通过自建机器人接收并回复 Telegram 私聊消息，降低部署和托管成本，也免去数据库维护。",
+        "who_should_care": "想低成本自建 Telegram 私聊转发机器人的个人开发者。",
+        "use_cases": [
+          "接收陌生人发来的私聊消息",
+          "在 Telegram 中回复转发消息",
+          "一个部署注册多个机器人"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "采用 GPL v3，改动后需继续开源；默认域名访问可能受限；免费套餐有每日请求限制。",
+        "evidence": [
+          "这是一个基于 Cloudflare Worker / Vercel 的 Telegram 双向私聊机器人，无需服务器、无需数据库、无需自己的域名即可轻松部署。",
+          "用户可以通过您的机器人向您发送消息，您可以直接回复这些消息，实现双向通信。",
+          "GPL v3，希望你能完善并继续开源，而不是改头换面闭源，谢谢。"
+        ]
+      }
+    },
+    "tempoxyz/tempo": {
+      "category": "data-finance",
+      "one_liner": "面向支付的区块链",
+      "intro": {
+        "one_liner": "面向支付的区块链",
+        "what_it_is": "Tempo 是专为稳定币支付设计的区块链，兼容以太坊虚拟机，提供测试网、节点程序、开发工具和多语言开发套件。",
+        "problem_solved": "它试图解决通用链上支付吞吐、费用、对账、合规和定时付款等基础设施问题，并保留以太坊开发工具习惯。",
+        "who_should_care": "支付服务商、金融科技平台、稳定币应用开发者和节点运营者。",
+        "use_cases": [
+          "接入公共测试网体验支付",
+          "批量发薪、结算与退款",
+          "运行节点或本地开发网"
+        ],
+        "alternatives": "相比通用链，强调支付专用通道、稳定币手续费、原生智能账户和内置合规策略。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，创建不久已破千星，本周有一天登上日榜。",
+        "risk_notes": "仍在审计中，暂无有效漏洞赏金；部分能力标注为即将推出；项目较新，仅有公共测试网信息。",
+        "evidence": [
+          "Tempo is a blockchain designed specifically for stablecoin payments.",
+          "You can connect to Tempo's public testnet using the following details:",
+          "Note: Tempo is still undergoing audit and does not have an active bug bounty."
+        ]
+      }
+    },
+    "hku-mars/SUPER": {
+      "category": "other",
+      "one_liner": "信息不足的机器人项目",
+      "intro": {
+        "one_liner": "安全高速无人机导航",
+        "what_it_is": "SUPER 是面向微型飞行器的安全高速导航项目，提供规划模块、仿真示例和日志工具，支持 ROS1 与 ROS2。",
+        "problem_solved": "它解决微型飞行器在复杂、密集环境中高速自主飞行时的安全导航问题，并支持自定义地图仿真。",
+        "who_should_care": "做无人机导航、运动规划和 ROS 仿真的开发者与研究者。",
+        "use_cases": [
+          "高速导航仿真测试",
+          "密集环境敏捷飞行",
+          "目标跟踪与自主探索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且复刻数达一百五十三。",
+        "risk_notes": "规划模块为预览版；ROS2 仍在开发且可能不稳定；真机部署详细指南尚未提供。",
+        "evidence": [
+          "The preview version of SUPER's planning module, supporting both ROS1 and ROS2, is now available!",
+          "The ROS2 version is still under development and may be unstable, with some issues such as imperfect visualization.",
+          "A detailed guide for deploying SUPER on real-world hardware will be available soon."
+        ]
+      }
+    },
+    "Algebra-FUN/WeReadScan": {
+      "category": "content-media",
+      "one_liner": "微信读书购书转 PDF",
+      "intro": {
+        "one_liner": "微信读书本地导出工具",
+        "what_it_is": "这是一个用 Python 编写的爬虫库，借助 selenium 扫描微信读书网页内容，并将图书转换保存为本地 PDF 或 HTML。",
+        "problem_solved": "它解决已购图书只能在微信读书应用内阅读、不便用其他笔记工具做手写批注和本地保存的问题。",
+        "who_should_care": "已购微信读书、需要本地阅读或手写笔记的开发者。",
+        "use_cases": [
+          "导出已购图书为本地 PDF",
+          "批量获取图书 HTML",
+          "配合笔记应用做手写批注"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "仅限已购图书、私人学习用途，禁止商业和扩散；依赖 selenium 与无头浏览器；需登录才能扫描完整图书。",
+        "evidence": [
+          "一个用于的将`微信读书`上的图书扫描转换本地PDF/HTML的爬虫库.",
+          "本脚本仅限用于**已购**图书的爬取，用于私人学习目的，禁止用于商业目的和网上资源扩散，尊重微信读书方面的利益",
+          "只有登陆后，才能扫描完整的图书资源；若不登陆，也可以扫描部分无需解锁的部分"
+        ]
+      }
+    },
+    "sematic-ai/sematic": {
+      "category": "ai-model",
+      "one_liner": "开源机器学习流水线平台",
+      "intro": {
+        "one_liner": "开源机器学习流水线平台",
+        "what_it_is": "Sematic 是开源机器学习开发平台，可用 Python 定义端到端流水线，并在本机、云虚拟机或 Kubernetes 集群运行。",
+        "problem_solved": "把数据处理、模型训练和任意业务逻辑串成类型安全、可追踪、可复现的流水线，并提供网页面板监控与可视化。",
+        "who_should_care": "机器学习工程师、数据科学家，以及需要本地到云端一致运行流水线的团队。",
+        "use_cases": [
+          "本地快速搭建机器学习流水线",
+          "在 Kubernetes 上调度训练任务",
+          "追踪输入输出并复现实验"
+        ],
+        "alternatives": "强调纯 Python 定义、本地与云端一致、端到端追踪和网页可视化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且星数达到一千。",
+        "risk_notes": "项目数据未提供许可证信息；云端部署依赖 Kubernetes 与相关组件，使用门槛可能更高。",
+        "evidence": [
+          "An open-source ML pipeline development platform",
+          "Build ML pipelines with only Python, run on your laptop, or in the cloud.",
+          "type-safe, traceable, reproducible end-to-end pipelines that can be monitored and visualized in a modern web dashboard."
+        ]
+      }
+    },
+    "AHEKOT/ComfyUI_VNCCS_Utils": {
+      "category": "ai-model",
+      "one_liner": "ComfyUI 实用节点集合",
+      "intro": {
+        "one_liner": "ComfyUI 实用节点集",
+        "what_it_is": "这是从 VNCCS 项目拆出的 ComfyUI 实用节点集合，包含三维场景、无限画布、姿态、提示词和生成辅助工具。",
+        "problem_solved": "它把三维高斯场景管理、区域生成编辑、姿态参考和提示词设计整合到 ComfyUI 日常工作流中，减少在多个工具间切换。",
+        "who_should_care": "使用 ComfyUI 做图像编辑、三维高斯场景或角色姿态控制的开发者与创作者。",
+        "use_cases": [
+          "在无限画布中分区生成和修补",
+          "管理并导出三维高斯场景",
+          "用姿态人偶辅助角色生成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾有一天登上日榜。",
+        "risk_notes": "创建时间较新，成熟度未说明；部分功能提到发布仓库当前禁用，依赖本地模型与权重下载。",
+        "evidence": [
+          "A collection of utility nodes from the VNCCS project that are useful not only for the project's primary goals but also for everyday ComfyUI workflows.",
+          "A collection of utility nodes from the [VNCCS](https://github.com/AHEKOT/ComfyUI_VNCCS) project for everyday ComfyUI workflows, including **VNCCS 3D Factory**, **VNCCS UniCanvas**, **VNCCS Pose Studio**, **VNCCS Prompt Designer**, and supporting generation utilities.",
+          "Public repository assets can be  downloaded; publishing repositories is currently disabled."
+        ]
+      }
+    },
+    "metacontroller/metacontroller": {
+      "category": "dev-tools",
+      "one_liner": "简化 Kubernetes 控制器开发",
+      "intro": {
+        "one_liner": "简化 Kubernetes 控制器开发",
+        "what_it_is": "这是 Kubernetes 附加组件，用声明式配置描述要监听的资源，并通过接收和返回 JSON 的 webhook 编写、部署自定义控制器。",
+        "problem_solved": "它减少完整 Go 控制器中的客户端库、informer 和样板代码，并接管监听、缓存、队列、重试与协调等机制。",
+        "who_should_care": "需要开发自定义控制器或上层运维抽象的 Kubernetes 开发者。",
+        "use_cases": [
+          "用任意语言编写控制器",
+          "组合现有接口构建抽象",
+          "复用内置协调与重试机制"
+        ],
+        "alternatives": "相比完整 Go 控制器，它用 JSON webhook 替代样板代码，并内置生产化协调行为。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，本周仅一天登上日榜，但已破千星。",
+        "risk_notes": "需要部署并维护额外组件；控制器逻辑依赖 webhook 服务；迁移旧项目需参考专门指南。",
+        "evidence": [
+          "Metacontroller is an add-on for Kubernetes that makes it easy to write and deploy custom controllers in the form of simple scripts",
+          "Instead of writing and maintaining a full Go controller with client libraries, informers, and boilerplate, you describe what resources to watch declaratively and provide a webhook (in any language) that receives the current state as JSON and returns the desired state as JSON.",
+          "Production-ready behavior for free - label selectors, adopt/orphan semantics, garbage collection, watches, caching, work queues, optimistic concurrency, and retries with backoff all come built in."
+        ]
+      }
+    },
+    "koide3/small_gicp": {
+      "category": "ai-model",
+      "one_liner": "高效并行点云配准库",
+      "intro": {
+        "one_liner": "并行点云配准库",
+        "what_it_is": "这是一个头文件式 C++ 点云精配准库，提供 ICP、点到面 ICP、GICP、VGICP 等算法，并提供 Python 绑定。",
+        "problem_solved": "它用于高效对齐两组点云，支持并行预处理与配准，减少依赖，并可接入 PCL 或配合 Open3D 使用。",
+        "who_should_care": "做三维重建、机器人定位、点云处理的 C++ 或 Python 开发者。",
+        "use_cases": [
+          "扫描帧间配准",
+          "点云地图对齐",
+          "替换 PCL 配准模块"
+        ],
+        "alternatives": "相较前作，重写并优化核心实现，依赖更少，Python 绑定不依赖 PCL。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜一天。",
+        "risk_notes": "不包含 GPU 实现；PCL 接口不兼容使用旧式智能指针的旧版 PCL；要求 C++17。",
+        "evidence": [
+          "Efficient and parallel algorithms for point cloud registration [C++, Python]",
+          "**small_gicp** is a header-only C++ library providing efficient and parallelized algorithms for fine point cloud registration (ICP, Point-to-Plane ICP, GICP, VGICP, etc.).",
+          "Note that GPU-based implementations are NOT included in this package."
+        ]
+      }
+    },
+    "Jaysce/Spaceman": {
+      "category": "desktop-system",
+      "one_liner": "菜单栏查看 macOS 桌面空间",
+      "intro": {
+        "one_liner": "macOS 虚拟桌面菜单栏工具",
+        "what_it_is": "Spaceman 是一款 macOS 应用，可在菜单栏显示虚拟桌面状态，并支持给桌面命名。",
+        "problem_solved": "帮助多桌面、多显示器用户快速看清当前所在空间及与其他空间的相对位置。",
+        "who_should_care": "常用虚拟桌面或多显示器工作流的 macOS 用户。",
+        "use_cases": [
+          "查看当前虚拟桌面位置",
+          "区分多显示器上的空间",
+          "给不同工作桌面命名"
+        ],
+        "alternatives": "基于 WhichSpace，提供四种图标样式、命名和后台刷新选项。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜。",
+        "risk_notes": "要求 macOS 15 Sequoia 或更高版本；图标可能更新失败，需要手动或后台刷新。",
+        "evidence": [
+          "A macOS app to view Spaces / Virtual Desktops in the menu bar",
+          "Spaceman requires macOS 15 Sequoia or greater.",
+          "If the icon fails to update, you can choose to force a refresh of the icon using a custom keyboard shortcut or allow Spaceman to refresh them automatically every 5 seconds"
+        ]
+      }
+    },
+    "craftzdog/dotfiles": {
+      "category": "desktop-system",
+      "one_liner": "个人终端配置文件",
+      "intro": {
+        "one_liner": "个人终端配置集",
+        "what_it_is": "这是一套个人 dotfiles，使用 chezmoi 管理，收录 Neovim、终端、shell、Git 与包列表等配置。",
+        "problem_solved": "把多平台命令行与编辑器配置集中整理，便于复用和参考一套完整开发环境。",
+        "who_should_care": "想参考 Neovim、终端与命令行工作流配置的开发者。",
+        "use_cases": [
+          "参考 Neovim 配置",
+          "搭建终端工作流",
+          "整理多平台包列表"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时已有七千一百四十二星。",
+        "risk_notes": "明确提醒不要盲目套用，需了解设置含义并自担风险；Neovim 配置要求 0.12 及以上版本。",
+        "evidence": [
+          "My personal dotfiles",
+          "Managed with [chezmoi](https://www.chezmoi.io/).",
+          "**Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!"
+        ]
+      }
+    },
+    "nowork-studio/notfair-plugin": {
+      "category": "ai-agent",
+      "one_liner": "智能体营销技能插件",
+      "intro": {
+        "one_liner": "营销智能体技能库",
+        "what_it_is": "一个开源的营销工作流技能库，供 Claude Code、Codex、Hermes 等兼容智能体调用，覆盖 SEO、生成式引擎优化、广告与分析。",
+        "problem_solved": "把营销任务拆成可检查、可复用的流程，减少泛化提示词带来的不可靠输出，并让广告改动先审阅再执行。",
+        "who_should_care": "做 SEO、投放、内容和分析，并已使用智能体的开发者或营销团队。",
+        "use_cases": [
+          "审计站点并排查流量下滑",
+          "分析广告账户与浪费预算",
+          "生成内容计划和落地页"
+        ],
+        "alternatives": "相比单一营销智能体，它以可测试、可改写、跨宿主的技能文件组织流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 13 星，仅一天进入日榜。",
+        "risk_notes": "部分安装方式依赖浏览器授权和托管连接；市场收录仍提到待批准；未关闭问题有 6 个。",
+        "evidence": [
+          "Open-source SEO, GEO, and marketing skills for AI agents.",
+          "The NotFair Plugin currently ships **48 skills** across SEO, GEO, paid media, advertising platforms, analytics, WordPress, CRM, and cross-model review.",
+          "Safe by design: read-only review comes before mutation, paid-media changes stay explicit, and unsupported capabilities are never implied."
+        ]
+      }
+    },
+    "guillaumemeyer/watermarks-remover": {
+      "category": "security",
+      "one_liner": "移除 AI 溯源水印工具",
+      "intro": {
+        "one_liner": "清除 AI 溯源标记",
+        "what_it_is": "一个 Python 服务和智能体技能，用于清理自有文本与文件中的多厂商 AI 溯源标记、不可见 Unicode 和文件元数据。",
+        "problem_solved": "帮助清理内容中可能暴露 AI 生成痕迹的不可见字符、统计水印和 C2PA、EXIF、XMP 等元数据。",
+        "who_should_care": "关注自有内容隐私与文本、文件清理的开发者和智能体使用者。",
+        "use_cases": [
+          "清理智能体写入的文件",
+          "移除文档和图片元数据",
+          "检查提交前的溯源标记"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 5,870 星且曾上日榜。",
+        "risk_notes": "涉及移除 AI 溯源标记，使用范围需自行把关；统计文本水印依赖改写，属于尽力而为；仍有 44 个未关闭问题。",
+        "evidence": [
+          "Agent skill + stdlib Python service to strip **multi-vendor AI provenance marks** from text and files — for privacy and hygiene on content **you own**.",
+          "Statistical (token-sampling) text watermarks | Agent rewrite + optional `rewrite_text.py` hook",
+          "Text that only ever exists in the chat transcript still depends on the skill workflow, which is model-instruction-based and therefore best-effort."
+        ]
+      }
+    },
+    "PhyAgentOS/PhyAgentOS": {
+      "category": "ai-agent",
+      "one_liner": "自演进具身智能体系统",
+      "intro": {
+        "one_liner": "具身智能自改进框架",
+        "what_it_is": "PhyAgentOS 是面向具身智能体的递归自改进框架，用 Python 实现，连接认知规划、物理执行和任务验证，并从已验证经验中改进技能与经验。",
+        "problem_solved": "它解决物理任务中规划、执行和结果验证割裂的问题，让失败可恢复、结果可核验，并把验证过的流程沉淀为可复用能力。",
+        "who_should_care": "做机器人控制、仿真任务、智能体工作流和技能运行时集成的开发者。",
+        "use_cases": [
+          "在 MuJoCo 中控制仿真机械臂",
+          "为机器人封装可复用技能",
+          "验证任务结果并有限重规划"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 309 星，且曾登上日榜。",
+        "risk_notes": "创建日期与最近提交日期较异常；仿真节点依赖 Linux x86_64、图形显示和 Dora；本地技能开发仍带警告与严格校验。",
+        "evidence": [
+          "PhyAgentOS is a Recursive Self-Improvement (RSI) framework for embodied agents.",
+          "It connects cognitive planning, Physical Execution, and task verification in a runtime-wide feedback loop, improving Skills and Lessons from verified experience for future tasks.",
+          "The prebuilt simulation Nodes used here target Linux x86_64 and require a working graphical display or virtual display for MuJoCo and the image viewer."
+        ]
+      }
+    },
+    "ZimengXiong/tinyTouch": {
+      "category": "security",
+      "one_liner": "无线指纹认证工具",
+      "intro": {
+        "one_liner": "低成本指纹认证设备",
+        "what_it_is": "这是一个用 C 编写的自制指纹认证设备项目，支持在 Mac 上通过 HID 或 PIV/PAM 方式完成登录、sudo 等认证。",
+        "problem_solved": "它想让用户不用购买高价带指纹的键盘，也能用指纹完成部分系统认证，但明确以降低安全性为代价。",
+        "who_should_care": "愿意动手制作硬件、接受安全取舍的 Mac 用户和嵌入式爱好者。",
+        "use_cases": [
+          "指纹解锁 Mac 锁屏",
+          "指纹确认 sudo 认证",
+          "录入和管理多个指纹"
+        ],
+        "alternatives": "相比高价 Magic Keyboard，成本更低、可自制，但安全边界更弱。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 103 星且曾上日榜。",
+        "risk_notes": "传感器与主控之间的串口未认证，存在伪造风险；HID 模式会输入真实密码；部分场景需物理接触设备才可利用。",
+        "evidence": [
+          "authenticate, sudo, and log in with your fingerprint wire(less)ly without having to spend $149.",
+          "this is the major security issue with this device. since all authentication happens inside the fingerprint sensor, and the sensor communicates with the esp over unauthenticated uart, it can be easily spoofed.",
+          "一周新增 Star：103"
+        ]
+      }
+    },
+    "darwin-lau/langmanus": {
+      "category": "ai-agent",
+      "one_liner": "社区驱动 AI 自动化框架",
+      "intro": {
+        "one_liner": "社区驱动的 AI 自动化框架",
+        "what_it_is": "这是一个社区驱动的 AI 自动化框架，目标是把语言模型与网页搜索、抓取、Python 代码执行等专用工具结合起来。",
+        "problem_solved": "它试图解决通用语言模型难以直接完成外部信息获取、网页处理和代码执行等任务的问题。",
+        "who_should_care": "关注语言模型工具编排和自动化任务开发的开发者。",
+        "use_cases": [
+          "结合搜索工具完成信息收集",
+          "抓取网页内容供模型处理",
+          "调用 Python 执行代码任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星时达 1,317 星，且一周内有一天登上日榜。",
+        "risk_notes": "缺少 README，功能细节、安装方式、许可证和成熟度均无法确认；Fork 数较高但原因未知。",
+        "evidence": [
+          "A community-driven AI automation framework that builds upon the incredible work of the open source community.",
+          "Our goal is to combine language models with specialized tools for tasks like web search, crawling, and Python code execution, while giving back to the community that made this possible.",
+          "破千时的 Star 数：1317"
+        ]
+      }
+    },
+    "shift-labs-ai/markit": {
+      "category": "content-media",
+      "one_liner": "万物转 Markdown 工具",
+      "intro": {
+        "one_liner": "多格式转 Markdown 工具",
+        "what_it_is": "一个用 Rust 实现的转换工具，可作为命令行和 Node 库，把文档、网页、表格、图片、音频等来源转成 Markdown。",
+        "problem_solved": "把分散格式统一整理为 Markdown，便于阅读、检索、写入文件、管道传递或供程序解析。",
+        "who_should_care": "需要批量整理资料、构建文档处理流程或给智能体准备文本的开发者。",
+        "use_cases": [
+          "把 PDF、Word、演示稿转 Markdown",
+          "抓取网页正文并转为 Markdown",
+          "为智能体输出结构化转换结果"
+        ],
+        "alternatives": "内置 Rust 引擎覆盖多种格式，并提供页面标记、结构化输出和 Node 库接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星时达 1,297 星，且本周上日榜一天。",
+        "risk_notes": "创建日期为 2026 年 3 月 25 日，项目较新；基准数据来自自述材料，需自行复核；原生包仅说明支持 macOS 和 Linux。",
+        "evidence": [
+          "Convert anything to markdown. PDF, DOCX, PPTX, XLSX, HTML, EPUB, Jupyter, RSS, images, audio, URLs, and more. Works as a CLI and as a library.",
+          "Every command supports `--json`. Raw markdown with `-q`.",
+          "Releases publish `@shiftlabs/markit` plus six scoped native binary packages for macOS and Linux (x64/ARM64, glibc/musl)."
+        ]
+      }
+    },
+    "Minima-AI-Inc/minima": {
+      "category": "ai-agent",
+      "one_liner": "本地化对话式检索问答",
+      "intro": {
+        "one_liner": "本地文档问答系统",
+        "what_it_is": "Minima 是开源本地检索增强生成系统，用容器索引本地文件，并可接入多种大模型与聊天应用。",
+        "problem_solved": "让用户在本地或自有环境中检索文档并问答，同时可选择完全离线、自有模型或外部聊天应用。",
+        "who_should_care": "重视数据留在本地、已有文档库并想接入大模型问答的开发者。",
+        "use_cases": [
+          "本地 PDF 与文档问答",
+          "接入自有大模型服务",
+          "从聊天应用查询本地资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，星数破千。",
+        "risk_notes": "配置涉及环境变量、容器和模型选择；部分模式依赖外部聊天应用或兼容接口。",
+        "evidence": [
+          "On-premises conversational RAG with configurable containers",
+          "Minima is an open source RAG on-premises containers, with ability to integrate with ChatGPT and MCP.",
+          "Minima can also be used as a fully local RAG or with your own deployed LLM."
+        ]
+      }
+    },
+    "fromhgbwithluv/WSA-Script": {
+      "category": "mobile",
+      "one_liner": "WSA 集成 root 与谷歌服务",
+      "intro": {
+        "one_liner": "WSA 定制构建脚本",
+        "what_it_is": "这是一个用 Shell 编写的脚本项目，借助 GitHub Actions 把 Magisk root 和 Google Apps 集成进 Windows Subsystem for Android。",
+        "problem_solved": "它帮助需要定制 WSA 的开发者生成带 Google Play 服务和 Magisk 的构建包，省去手工整合流程。",
+        "who_should_care": "在 Windows 10 或 11 上使用 WSA、需要 root 和 Google Apps 的进阶用户。",
+        "use_cases": [
+          "生成带 Magisk 的 WSA 包",
+          "安装带 Google Play 服务的 WSA",
+          "选择稳定版或预览版构建"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "资料明确提醒不要随意复刻，以免因滥用 GitHub Actions 导致仓库被警告、停用或封禁；安装前需卸载官方 WSA，并满足虚拟化、分区和系统版本要求。",
+        "evidence": [
+          "Integrate Magisk root and Google Apps into WSA (Windows Subsystem for Android) with GitHub Actions",
+          "Windows Subsystem For Android™ (WSA) with Google Play Services and Magisk",
+          "This repository is designed specifically not to be forked. MagiskOnWSA and some of the various forks and clones that have sprung up on the platform (***potentially***) violate GitHub's Terms of Service due to abuse of GitHub Actions and have been ultimately warned, disabled or banned."
+        ]
+      }
+    }
+  }
+}

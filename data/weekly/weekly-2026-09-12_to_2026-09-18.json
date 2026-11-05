@@ -691,23 +691,23 @@
       "triage_quality": "ok",
       "triage_reason": "Windows终端模拟器",
       "intro": {
-        "one_liner": "面向 AI CLI 的 GPU 加速终端工作台",
-        "what_it_is": "Pebrel 是一个用 Rust 和 GPUI 构建的 GPU 加速终端模拟器，把本地 shell、SSH/SFTP 远程主机、文件浏览和 AI 命令行工具整合进同一个桌面工作区。",
-        "problem_solved": "解决开发者在使用 Claude Code、Codex 等 AI CLI 时，终端、远程会话、文件与多任务窗口分散的问题，让 AI 代理的活动和输出可以在同一应用内跟踪和阅读。",
-        "who_should_care": "经常在 Windows 上使用 AI 编程 CLI、需要同时管理本地与 SSH 会话的开发者。",
+        "one_liner": "面向 AI 命令行的终端工作台",
+        "what_it_is": "Pebrel 是用 Rust 编写的图形加速终端，集成本地终端、远程主机、文件浏览与 AI 命令行会话，支持分屏和持久会话。",
+        "problem_solved": "把本地 shell、SSH、文件操作和 AI 命令行工具集中到一个桌面工作区，减少多窗口切换，并方便跟踪会话输出。",
+        "who_should_care": "常用 SSH、分屏终端和 AI 命令行工具的桌面开发者。",
         "use_cases": [
-          "在分屏终端中并行运行 Claude Code 或 Codex 会话并跟踪输出",
-          "通过 SSH/SFTP 管理远程主机并在同一窗口内编辑和传输文件",
-          "利用基于 Git 仓库、npm 脚本、SSH 配置的智能补全加速命令输入"
+          "分屏管理本地与远程终端",
+          "浏览并传输 SSH 主机文件",
+          "集中查看 AI 命令行会话"
         ],
-        "alternatives": "unknown",
+        "alternatives": "相比普通终端，更强调 SSH 工作区、文件管理与 AI 命令行会话整合。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点；项目围绕 AI CLI 工作流这一当下热门方向，但创建时间短、issue 积压较多，尚难判断长期走向。",
-        "risk_notes": "许可证为 GPL-3.0，商用集成需注意传染性条款；open_issues 达 190 个，维护压力较大；README 含赞助商推广与社群引流内容，需自行甄别。",
+        "hype_or_trend": "短期热点，一周涨了 685 星，但仅一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0；未关闭 Issue 有 195 个；项目创建时间较新，稳定性仍需观察。",
         "evidence": [
           "AI-native, GPU-accelerated terminal emulator for Windows with SSH, persistent sessions, split panes, and first-class AI CLI workflows.",
-          "Built with Rust and GPUI for Windows, macOS, and Linux.",
-          "Pebrel (formerly Nebula) brings local shells, remote hosts, files, and AI command-line tools into a native desktop workspace."
+          "A GPU-accelerated terminal, SSH workspace, and home for your AI CLI sessions.",
+          "Built with Rust and GPUI for Windows, macOS, and Linux."
         ]
       }
     },
@@ -1443,23 +1443,23 @@
       "triage_quality": "ok",
       "triage_reason": "Codex编排工具",
       "intro": {
-        "one_liner": "Codex 多智能体编排配置模板",
-        "what_it_is": "一个面向 Codex CLI 的配置安装器与 profile 集合，把 Astra、Sol 或 Luna 模型设为编排根节点，把 Luna 模型设为 explorer、worker、tester、researcher 等执行子代理，并另设独立 reviewer。",
-        "problem_solved": "解决在 Codex 中手动搭建多角色编排拓扑、逐个编写 agent 配置与技能文件繁琐的问题，提供开箱即用的 profile 与一键安装脚本。",
-        "who_should_care": "使用 Codex CLI 并希望以多子代理分工方式完成复杂编码任务的开发者，尤其是需要固定模型与推理档位组合的团队。",
+        "one_liner": "Codex 编排配置集",
+        "what_it_is": "一个用 Python 维护的安装器与配置集合，为 Codex 项目安装编排者、执行子代理和独立审查者的配置文件与技能。",
+        "problem_solved": "把复杂编码任务拆给多个角色，并统一安装到目标仓库，减少手工配置 Codex 代理、技能和项目说明的麻烦。",
+        "who_should_care": "使用 Codex CLI、想尝试多代理分工的开发者。",
         "use_cases": [
-          "在已有仓库中安装编排配置，让 explorer 先梳理路径、worker 实现、tester 与 reviewer 验证",
-          "按任务复杂度在 pro、plus、Sol 等 6 个 profile 间切换并发子代理数量与模型档位",
-          "将 agents 与 skill 安装到 ~/.codex 做个人全局配置"
+          "为现有仓库安装编排配置",
+          "拆分探索、实现、测试与审查",
+          "按预设档位切换代理组合"
         ],
         "alternatives": "unknown",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：依赖特定 GPT-6 系列模型与 Codex 配置格式，热度与模型可用性强相关。",
-        "risk_notes": "README 中出现的 GPT-6 Astra/Sol/Luna 等模型名称无法从项目事实独立核实；安装器会写入目标仓库的 .codex/、.agents/ 与 AGENTS.md，需注意覆盖与合并风险；项目创建于 2026-09，维护历史很短。",
+        "hype_or_trend": "短期热点，一周涨了 430 星，且仅一天进入日榜。",
+        "risk_notes": "创建于 2026 年 9 月，时间较短；仍有 6 个未关闭问题；安装会写入目标仓库配置，需确认覆盖提示。",
         "evidence": [
           "Use Astra as orchestrator and Luna for subagents in Codex",
-          "The installer copies the selected configuration to `.codex/`, its skill to `.agents/`, and project instructions to `AGENTS.md`.",
-          "Licensed under the [Apache License 2.0](LICENSE)."
+          "Install a Codex profile with GPT-6 Astra, GPT-6.1 Sol, or GPT-6 Luna as the orchestrator, GPT-6 Luna execution subagents, and an independent reviewer.",
+          "The installer copies the selected configuration to `.codex/`, its skill to `.agents/`, and project instructions to `AGENTS.md`."
         ]
       }
     },

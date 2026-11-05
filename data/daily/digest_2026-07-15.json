@@ -1,1 +1,828 @@
-{"date":"2026-07-15","headline":"AI Agent 与科研助手领跑","points":["injaneity/pi-computer-use 单日新增 293，主打让 Pi 操控桌面应用。","microsoft/ResearchStudio 新增 239，面向科研全流程 AI 合著。","AI Agent 与学习资源各有 5 个项目，Python 以 7 个项目最常见。"],"items":{"injaneity/pi-computer-use":{"category":"ai-agent","one_liner":"让 Pi 操控桌面应用"},"microsoft/ResearchStudio":{"category":"ai-agent","one_liner":"科研全流程 AI 合著助手"},"AaronL725/grok-register":{"category":"automation","one_liner":"批量注册 Grok 账号工具"},"yynxxxxx/Codex-X":{"category":"dev-tools","one_liner":"Codex 切换与指令管理器"},"FutureUniant/WorkShadow":{"category":"desktop-system","one_liner":"本地优先智能工作日志"},"x4gKing/3x-ui-Upgrade":{"category":"other","one_liner":"3x-ui 升级相关项目"},"inference-labs-inc/dsperse":{"category":"ai-model","one_liner":"分布式零知识机器学习"},"raroque/boop-agent":{"category":"ai-agent","one_liner":"iMessage 个人智能代理"},"inference-labs-inc/JSTprove":{"category":"ai-model","one_liner":"快速可验证 AI 证明框架"},"denislupookov/altersend":{"category":"desktop-system","one_liner":"设备间直传文件工具"},"amElnagdy/guard-skills":{"category":"ai-agent","one_liner":"编码代理质量防护技能"},"ReSukiSU/ReSukiSU":{"category":"mobile","one_liner":"基于 KernelSU 的安卓 root"},"alchaincyf/loop-engineering-orange-book":{"category":"learning-resource","one_liner":"循环工程入门橙皮书"},"AllenDowney/ThinkStats":{"category":"learning-resource","one_liner":"Think Stats 第三版笔记"},"Augani/dory":{"category":"dev-tools","one_liner":"macOS 原生容器管理应用"},"amurcanov/proxy-turn-vk-android":{"category":"mobile","one_liner":"安卓媒体中继代理隧道"},"miscusi-peek/cheatengine-mcp-bridge":{"category":"security","one_liner":"AI 连接 Cheat Engine 桥"},"NVIDIA/DreamDojo":{"category":"ai-model","one_liner":"通用机器人世界模型代码"},"minirust/minirust":{"category":"learning-resource","one_liner":"精简 Rust 精确规范"},"RJNY/Obtainium-Emulation-Pack":{"category":"mobile","one_liner":"安卓模拟器应用导入包"},"KalyanKS-NLP/LLM-Interview-Questions-and-Answers-Hub":{"category":"learning-resource","one_liner":"大模型面试题答案集"},"Vinyzu/Botright":{"category":"automation","one_liner":"反检测浏览器自动化框架"},"asimovinc/asimov-1":{"category":"hardware-iot","one_liner":"开源人形机器人初版"},"NannyML/The-Little-Book-of-ML-Metrics":{"category":"learning-resource","one_liner":"机器学习指标小册"},"100thCoin/AccuracyCoin":{"category":"game","one_liner":"NES 精度测试合集卡带"},"VeejaLiu/ScienceFictionCollection":{"category":"content-media","one_liner":"科幻小说在线作品集"},"atenfyr/UAssetGUI":{"category":"game","one_liner":"虚幻游戏资产查看修改器"},"joshuacant/ProjectTitle":{"category":"content-media","one_liner":"KOReader 界面插件"},"colineckert/obsidian-things":{"category":"content-media","one_liner":"Things 风格 Obsidian 主题"},"justrach/turboAPI":{"category":"web-frontend","one_liner":"Zig 内核高速 Python 框架"},"truelockmc/streambert":{"category":"content-media","one_liner":"跨平台影视动漫播放器"},"Zaneham/Booth":{"category":"dev-tools","one_liner":"多架构 GPU 编译器"},"jqssun/android-titanium-browser":{"category":"mobile","one_liner":"支持扩展的安全安卓浏览器"},"openairymax/agentrt":{"category":"ai-agent","one_liner":"突破上下文限制的代理运行时"}}}
+{
+  "date": "2026-07-15",
+  "headline": "AI Agent 与科研助手领跑",
+  "points": [
+    "injaneity/pi-computer-use 单日新增 293，主打让 Pi 操控桌面应用。",
+    "microsoft/ResearchStudio 新增 239，面向科研全流程 AI 合著。",
+    "AI Agent 与学习资源各有 5 个项目，Python 以 7 个项目最常见。"
+  ],
+  "items": {
+    "injaneity/pi-computer-use": {
+      "category": "ai-agent",
+      "one_liner": "让 Pi 操控桌面应用",
+      "intro": {
+        "one_liner": "让 Pi 智能体操作桌面应用",
+        "what_it_is": "pi-computer-use 是 Pi 的一个扩展，安装后为 Pi 智能体提供查找窗口、观察界面、搜索控件、点击输入滚动、等待界面变化等工具，使其能操作 macOS、Windows、Linux 上的桌面应用。",
+        "problem_solved": "当某个应用只有屏幕界面、没有可靠 API 或 MCP 集成时，让智能体通过观察界面并执行点击、输入等操作来完成任务。",
+        "who_should_care": "需要在桌面应用上做自动化或智能体集成的开发者，尤其是 Pi 生态用户和 RPA/桌面自动化方向的技术人员。",
+        "use_cases": [
+          "让智能体操作没有 API 的传统桌面软件完成重复流程",
+          "在 GUI 应用内搜索并点击控件、填写表单",
+          "等待界面状态变化后再执行下一步的桌面自动化任务"
+        ],
+        "alternatives": "README 明确说明它不是应用 API 或 MCP server 的替代品，有可靠直接集成时应优先使用；未与其他 computer-use 项目做对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：computer use 是当前智能体领域的热门方向，但项目创建时间较短、仍在快速演进（README 提到旧工具已从公开接口移除）。",
+        "risk_notes": "macOS 需授予辅助功能与屏幕录制权限，Windows 需交互式桌面会话，Linux 依赖 AT-SPI2，Wayland 仅支持语义操作；项目较新，接口仍在变动。",
+        "evidence": [
+          "`pi-computer-use` lets AI agents use desktop apps on macOS, Windows, and Linux.",
+          "`pi-computer-use` is not a replacement for app APIs or MCP servers. If an app has a reliable direct integration, use that first.",
+          "Older direct tools such as `screenshot`, `click`, `set_text`, and `computer_actions` are no longer part of the public extension surface."
+        ]
+      }
+    },
+    "microsoft/ResearchStudio": {
+      "category": "ai-agent",
+      "one_liner": "科研全流程 AI 合著助手",
+      "intro": {
+        "one_liner": "科研全流程 AI 合著工具",
+        "what_it_is": "ResearchStudio 是一组运行在 Claude Code 和 Codex 上的技能，覆盖从研究方向到论文发表前后的产出。",
+        "problem_solved": "它把模糊研究方向整理成可辩护、可实现的想法，并把论文转成海报、视频、博客和交互展示。",
+        "who_should_care": "需要构思课题、准备论文与传播材料的科研开发者。",
+        "use_cases": [
+          "从模糊方向生成研究想法",
+          "把论文 PDF 转成海报",
+          "生成讲解视频与博客"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "依赖 Claude Code、Codex 和接口密钥；快速上手涉及安装脚本与环境变量。",
+        "evidence": [
+          "Our AI co-author, from research problem to final publication.",
+          "ResearchStudio is a collection of skills covering the **entire research lifecycle** — from an under-specified research direction to a published paper.",
+          "The skills run on [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) and [Codex](https://developers.openai.com/codex)."
+        ]
+      }
+    },
+    "AaronL725/grok-register": {
+      "category": "automation",
+      "one_liner": "批量注册 Grok 账号工具",
+      "intro": {
+        "one_liner": "Grok 账号批量注册自动化工具",
+        "what_it_is": "基于 Python 与 Chromium 的注册自动化工具，提供 GUI、CLI、WebUI 三种入口，支持多种邮箱来源、代理池与并发注册，并可导出 SSO token 供 grok2api 或 CPA 使用。",
+        "problem_solved": "把 Grok 账号注册流程（提交邮箱、轮询验证码、填写资料、获取 SSO cookie）自动化，并解决多账号批量注册、代理分配与账号持久化保存的问题。",
+        "who_should_care": "需要批量管理 Grok 账号的个人研究者、自动化流程测试者，以及使用 grok2api 或 CPA 的下游用户。",
+        "use_cases": [
+          "在测试环境中批量创建 Grok 账号并导出 SSO token",
+          "将注册成功的账号自动写入 grok2api 本地池或远端池",
+          "通过代理池与多线程并发完成多账号注册任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由是该工具围绕特定平台的账号批量注册，依赖目标平台的风控策略，生命周期受平台规则变化影响。",
+        "risk_notes": "项目用途为批量注册账号，可能违反目标平台服务条款；README 明确声明仅用于研究、测试与学习，禁止滥用或绕过平台限制；README 含赞助商代理广告与折扣码，需自行甄别；注册成功率与“无封号”等说法来自作者自述，未经独立验证。",
+        "evidence": [
+          "批量注册稳定 Grok 账号，可直接导入 grok2api 和 cpa 使用，并且可以与cloudflare无限域名邮箱联动",
+          "本项目仅用于自动化流程研究、测试环境验证和个人学习。使用者应自行遵守目标网站服务条款、当地法律法规和第三方服务限制",
+          "支持 **DuckMail / YYDS / Cloudflare 临时邮箱 / Cloud Mail / Outlook 邮箱池** 五种邮箱来源"
+        ]
+      }
+    },
+    "yynxxxxx/Codex-X": {
+      "category": "dev-tools",
+      "one_liner": "Codex 切换与指令管理器",
+      "intro": {
+        "one_liner": "Codex 桌面端配置可视化管理器",
+        "what_it_is": "Codex-X 是一款用 Rust 编写的跨平台桌面工具，面向 OpenAI Codex 桌面端与 Codex CLI，把提示词模板、第三方 API 供应商、会话、Skills / MCP 和 TOML 配置集中到可视化界面中管理。",
+        "problem_solved": "解决同时使用 Codex 桌面端、CLI、第三方 API、Skills / MCP 和多套提示词时配置散落在不同文件、需要反复手改的问题。",
+        "who_should_care": "同时使用 Codex 桌面端与 CLI、需要频繁切换第三方 API 供应商或维护多套提示词模板的开发者。",
+        "use_cases": [
+          "管理并一键启用/禁用多套提示词模板，支持追加或替换模式",
+          "保存多个官方登录与第三方 API 供应商配置并快速切换、检测连接",
+          "按项目路径搜索、同步与清理本地 Codex 会话",
+          "可视化查看与启停 Skills / MCP，查看 config.toml 与 auth.json"
+        ],
+        "alternatives": "README 提到可从 cc-switch 导入现有供应商配置，但未说明与其他同类工具的直接对比，unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 Codex 生态的配置管理工具，需求随 Codex 使用普及而出现，但功能面较窄、项目较新。",
+        "risk_notes": "README 内置模板包含“破甲/逆向”类提示词，可能涉及绕过模型限制的使用风险；会话删除为永久不可恢复操作；项目创建于 2026-07，历史较短，长期维护情况待观察。",
+        "evidence": [
+          "Codex 可视化提示词注入 · Provider · 会话 · Skills / MCP 管理工具",
+          "一款面向 OpenAI Codex 桌面端 / Codex CLI 的跨平台桌面工具",
+          "永久删除不可恢复。删除前请先关闭仍在使用这些会话的 Codex 窗口或 CLI"
+        ]
+      }
+    },
+    "FutureUniant/WorkShadow": {
+      "category": "desktop-system",
+      "one_liner": "本地优先智能工作日志",
+      "intro": {
+        "one_liner": "本地优先工作日志",
+        "what_it_is": "一款本地优先的桌面工作日志应用，支持富文本记录、语义检索，以及基于自配模型的总结与问答。",
+        "problem_solved": "帮助持续记录、查找和回顾工作内容，并生成日报、周报、汇报等草稿，同时让数据留在本机。",
+        "who_should_care": "重视隐私、需要写日志和汇报的开发者与知识工作者。",
+        "use_cases": [
+          "记录日常工作与决策线索",
+          "用自然语言找回历史细节",
+          "汇总多篇日志生成汇报草稿"
+        ],
+        "alternatives": "不追求替代通用文档编辑器，更聚焦持续记录、回顾、汇报，并强调本地数据与模型自配。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾破千星且上过日榜，但一周减少四十二星。",
+        "risk_notes": "采用 AGPL-3.0，网络服务场景有源码开放要求；部分增强功能仅安装版提供；语义检索、总结和问答需自行配置模型。",
+        "evidence": [
+          "WorkShadow 是一款**本地优先**的桌面工作日志应用。",
+          "数据保存在你自己的电脑上；若需要 AI 能力（搜索、总结、问答、图片说明等），由你在设置中接入自己的模型服务——**内容在你手里，能力由你配置**。",
+          "本仓库以 **[GNU Affero General Public License v3.0（AGPL-3.0）](https://www.gnu.org/licenses/agpl-3.0.html)** 发布。"
+        ]
+      }
+    },
+    "x4gKing/3x-ui-Upgrade": {
+      "category": "other",
+      "one_liner": "3x-ui 升级相关项目",
+      "intro": {
+        "one_liner": "用途不明的 HTML 仓库",
+        "what_it_is": "这是一个以 HTML 为主要语言的仓库，名称包含 3x-ui-Upgrade。资料不足，具体功能 unknown。",
+        "problem_solved": "资料不足，无法确认它解决的问题，unknown。",
+        "who_should_care": "资料不足，unknown。",
+        "use_cases": [
+          "unknown"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜 1 天，破千时 1028 星。",
+        "risk_notes": "无 README，功能和许可证均 unknown；Fork 数 2098 高于破千时星数，需谨慎判断热度来源。",
+        "evidence": [
+          "仓库：x4gKing/3x-ui-Upgrade",
+          "主要语言：HTML",
+          "README：无"
+        ]
+      }
+    },
+    "inference-labs-inc/dsperse": {
+      "category": "ai-model",
+      "one_liner": "分布式零知识机器学习",
+      "intro": {
+        "one_liner": "可验证 AI 切片工具",
+        "what_it_is": "DSperse 是面向可验证 AI 的智能切片工具，可拆分 ONNX 神经网络模型，并编排编译、推理、证明与验证流程。",
+        "problem_solved": "它解决大型神经网络难以适配零知识证明电路的问题，通过切片、卷积分解和可插拔后端来组织证明流程。",
+        "who_should_care": "关注零知识机器学习、ONNX 模型验证和可证明推理的开发者。",
+        "use_cases": [
+          "切分 ONNX 模型为电路片段",
+          "串联执行分片模型推理",
+          "生成并验证模型执行证明"
+        ],
+        "alternatives": "支持可插拔证明后端，并覆盖切片到验证的完整流程。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "社区版定位，许可证细节需查看文件；创建时间较新，成熟度不明。",
+        "evidence": [
+          "DSperse is a proving-system-agnostic intelligent slicer for verifiable AI.",
+          "It decomposes ONNX neural network models into circuit-compatible segments and orchestrates compilation, inference, proving, and verification across pluggable ZK backends.",
+          "DSperse: Community Edition"
+        ]
+      }
+    },
+    "raroque/boop-agent": {
+      "category": "ai-agent",
+      "one_liner": "iMessage 个人智能代理",
+      "intro": {
+        "one_liner": "短信个人智能体模板",
+        "what_it_is": "Boop 是一个基于 iMessage 的个人智能体模板，可选用 Claude Code 或 Codex/ChatGPT 订阅作为运行底座，并带记忆、子智能体、自动化和集成。",
+        "problem_solved": "它把个人助手接入短信对话，用分层记忆、任务分派、定时自动化和草稿确认，处理带上下文的任务与外部操作。",
+        "who_should_care": "想自建短信智能体、已有相关订阅并愿意配置多项服务的开发者。",
+        "use_cases": [
+          "通过短信查询和代办任务",
+          "定时推送日历或提醒摘要",
+          "连接邮箱、协作与代码工具"
+        ],
+        "alternatives": "差异是短信入口、双运行时可选、分层记忆与草稿确认；同类对比信息不足。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 95 星且曾上日榜，但作者明确称不是成品。",
+        "risk_notes": "作者称这是起点而非成品，未针对成本或安全优化；依赖多个外部服务与订阅，使用前需审查代码并设置预算。",
+        "evidence": [
+          "An iMessage-based personal agent you can run with either your Claude Code subscription or your Codex / ChatGPT subscription.",
+          "This is a starting point, not a finished product.",
+          "Not optimized for cost or security. Use at your own risk. Review the code, set your own budgets, and don't trust it with anything you wouldn't trust yourself with."
+        ]
+      }
+    },
+    "inference-labs-inc/JSTprove": {
+      "category": "ai-model",
+      "one_liner": "快速可验证 AI 证明框架",
+      "intro": {
+        "one_liner": "可验证推理证明工具",
+        "what_it_is": "JSTprove 是面向 ONNX 模型的零知识机器学习工具包和命令行工具，可生成推理过程的零知识证明并验证。",
+        "problem_solved": "它把量化、电路生成、见证创建、证明和验证串成流程，让模型推理结果具备可验证性。",
+        "who_should_care": "关注零知识机器学习、ONNX 推理验证和可验证人工智能的开发者。",
+        "use_cases": [
+          "为 ONNX 推理生成证明",
+          "验证模型推理结果",
+          "运行 LeNet 示例流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "社区版支持的算子有限；开发安装依赖固定 nightly 工具链；分叉数仅十四个，生态采用度未知。",
+        "evidence": [
+          "JSTprove - Fast, verifiable AI",
+          "Zero-knowledge proofs of ML inference on **ONNX** models — powered by [Polyhedra Network’s **Expander**](https://github.com/PolyhedraZK/Expander) (GKR/sum-check prover) and [**Expander Compiler Collection (ECC)**](https://github.com/inference-labs-inc/ecc).",
+          "You provide an **ONNX** model and inputs; JSTprove handles **quantization**, **circuit generation** (via ECC), **witness creation**, **proving** (via Expander), and **verification** — with explicit, user-controlled file paths."
+        ]
+      }
+    },
+    "denislupookov/altersend": {
+      "category": "desktop-system",
+      "one_liner": "设备间直传文件工具",
+      "intro": {
+        "one_liner": "端到端加密直传文件工具",
+        "what_it_is": "AlterSend 是开源跨平台文件传输应用，文件在设备间点对点直传，端到端加密，不经过云存储。",
+        "problem_solved": "它解决传统网盘或文件中转服务需要上传、账号和容量限制的问题，让大文件也能直接从发送方到接收方。",
+        "who_should_care": "需要跨设备、跨平台私密传大文件，或关注点对点传输实现的开发者。",
+        "use_cases": [
+          "给同事直传大型视频素材",
+          "自己的电脑与手机互传文件",
+          "接收方用浏览器免安装下载"
+        ],
+        "alternatives": "相比 WeTransfer、Dropbox、Google Drive，强调无上传、无账号、无云存储。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 81 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间较新，未关闭问题有 24 个；直连失败时依赖中继转发。",
+        "evidence": [
+          "Send files directly between devices over the internet - no cloud storage, no size limits.",
+          "AlterSend is a free, open-source app for sending files directly between your devices, with no cloud storage and no uploads. Files transfer P2P with no size limit and are end-to-end encrypted.",
+          "when a direct connection can't be established — usually because both peers are behind symmetric NAT (for example both on a VPN) — the transfer falls back to a relay"
+        ]
+      }
+    },
+    "amElnagdy/guard-skills": {
+      "category": "ai-agent",
+      "one_liner": "编码代理质量防护技能",
+      "intro": {
+        "one_liner": "AI 编码代理的二次质量门禁技能包",
+        "what_it_is": "guard-skills 是一组面向编码代理（coding agent）的 guard skills，作为第二遍质量门禁，在代码、测试、文档交付前捕获 AI 生成内容的系统性失败模式。每个技能以 SKILL.md 为入口，配合渐进式加载的参考文档。",
+        "problem_solved": "解决 AI 生成代码、测试、文档中反复出现的典型缺陷，如吞掉异常、硬编码成功返回、幻觉 API、滥用 mock、文档与代码漂移、WordPress/WooCommerce 安全与兼容性问题。",
+        "who_should_care": "使用 Claude Code、Codex、Cursor 等编码代理的开发者，尤其是做 WordPress/WooCommerce 插件开发的团队。",
+        "use_cases": [
+          "代理生成代码后，对 diff 运行 clean-code-guard 做提交前审查",
+          "对生成的测试文件运行 test-guard，识别 mock 滥用与无效测试",
+          "发布 README 或 API 文档前用 docs-guard 核对文档声明与代码一致",
+          "WordPress 插件或 WooCommerce 结账逻辑改动后用 wp-guard/woo-guard 检查转义、nonce、HPOS 兼容"
+        ],
+        "alternatives": "README 自述与 WordPress/agent-skills 不同：后者教代理如何在整个 WordPress 生态中构建，而 guard-skills 更窄，只提供代理产出工作后的审查门禁。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 agent skills 生态与 Skills CLI 分发，属于当前编码代理工作流的配套工具，但依赖第三方 CLI 与代理平台支持。",
+        "risk_notes": "技能以副本形式安装，需手动 npx skills update 才能获取更新；README 称无脚本、无网络调用，但内容为第三方不可信材料，使用前应自行审查。",
+        "evidence": [
+          "second-pass quality gates that catch the systematic failure modes of AI-generated code, tests, and docs before they ship",
+          "Best use: let your agent do the work, then invoke the relevant guard on the diff before you present, commit, or merge it",
+          "This is not a full process framework and not a broad platform catalog... guard-skills is narrower: it gives agents review gates to run after they have produced work"
+        ]
+      }
+    },
+    "ReSukiSU/ReSukiSU": {
+      "category": "mobile",
+      "one_liner": "基于 KernelSU 的安卓 root",
+      "intro": {
+        "one_liner": "安卓内核 root 方案",
+        "what_it_is": "这是一个基于 KernelSU 的安卓 root 方案，提供内核级权限管理、模块系统和应用配置能力。",
+        "problem_solved": "它解决安卓设备上 root 权限管理、无系统修改扩展，以及不同内核版本适配的问题。",
+        "who_should_care": "关注安卓 root、内核适配和模块管理的进阶用户与开发者。",
+        "use_cases": [
+          "管理应用 root 权限",
+          "安装无系统修改模块",
+          "适配非通用内核设备"
+        ],
+        "alternatives": "作为 KernelSU 下游，加入个人改动、主题调整、内置管理工具和多管理器支持。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 13 星，仅一天进入日榜。",
+        "risk_notes": "许可证分层，内核目录为 GPL-2.0-only，素材另有授权；旧内核需手动构建，部分功能受内核版本和架构限制。",
+        "evidence": [
+          "A KernelSU based root solution for Android",
+          "A [`tiann/KernelSU`](https://github.com/tiann/KernelSU)'s downstream, added some personal changes.",
+          "BakaSU officially supports Android GKI 2.0 devices (kernel 5.10+)."
+        ]
+      }
+    },
+    "alchaincyf/loop-engineering-orange-book": {
+      "category": "learning-resource",
+      "one_liner": "循环工程入门橙皮书",
+      "intro": {
+        "one_liner": "循环工程入门指南",
+        "what_it_is": "这是一本免费的中英文指南，介绍循环工程的概念、组成、案例、成本与上手方法，提供 PDF 下载。",
+        "problem_solved": "帮助仍逐条提示智能体的开发者，转向设计能定时运行、分派助手、验证结果并决定下一步的外层系统。",
+        "who_should_care": "使用 Claude Code、Codex、Cursor 的开发者，以及关注智能体工作流的 AI 重度用户。",
+        "use_cases": [
+          "学习循环工程基础概念",
+          "设计首个自动运行回路",
+          "了解验证与成本风险"
+        ],
+        "alternatives": "相比单轮智能体配置指南，它聚焦更外层的定时、派生、验证、记忆和下一步决策系统。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千后一周只涨了 19 星，且仅一天上日榜。",
+        "risk_notes": "中文版为十月修订，英文版仍是六月首版；资料依赖快速演进的产品文档，需核对最新官方文档。",
+        "evidence": [
+          "A plain-language field guide to **loop engineering**",
+          "Developers already using Claude Code / Codex / Cursor who still drive the agent prompt by prompt, and want to climb one level up",
+          "AI tools evolve fast — refer to each product's official documentation for the latest."
+        ]
+      }
+    },
+    "AllenDowney/ThinkStats": {
+      "category": "learning-resource",
+      "one_liner": "Think Stats 第三版笔记",
+      "intro": {
+        "one_liner": "统计学习配套笔记本",
+        "what_it_is": "这是《Think Stats》第三版配套的笔记本、数据和补充材料仓库，包含无答案与含答案的笔记本，以及构建书籍所需配置。",
+        "problem_solved": "为读者提供可直接运行、下载和练习的统计学习材料，并集中管理书中数据、图示、示例和开发环境配置。",
+        "who_should_care": "学习统计与数据分析的读者，以及需要配套练习和示例笔记本的教学使用者。",
+        "use_cases": [
+          "在线阅读并运行书中笔记本",
+          "下载无答案笔记本自行练习",
+          "查看含答案笔记本核对思路"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾破千星且上过一次日榜。",
+        "risk_notes": "仓库创建于 2024 年，材料面向第三版；旧版曾使用 Git LFS，数据存放方式已有变化。",
+        "evidence": [
+          "Notebooks for the third edition of Think Stats",
+          "This repository contains notebooks, data, and supplementary material for the third edition of *Think Stats*.",
+          "Older versions of this repository used Git LFS to store data files."
+        ]
+      }
+    },
+    "Augani/dory": {
+      "category": "dev-tools",
+      "one_liner": "macOS 原生容器管理应用",
+      "intro": {
+        "one_liner": "原生 macOS 容器与 Linux 虚拟机运行时",
+        "what_it_is": "Dory 是一个用 Swift 编写的开源原生 macOS 应用，为 Docker、Compose、Kubernetes 和 Linux 虚拟机提供本地运行时，定位为 OrbStack 和 Docker Desktop 的替代品。",
+        "problem_solved": "让 macOS 开发者无需 Docker Desktop、外部虚拟机管理器或云控制面，就能在本地运行容器、k3s 集群和图形化 Linux 桌面，并可从 Docker Desktop、OrbStack、Colima 等迁移数据。",
+        "who_should_care": "使用 Apple Silicon Mac、希望摆脱 Docker Desktop 商业授权或寻找 OrbStack 开源替代的开发者，以及需要本地 Kubernetes 与 Linux 桌面环境的团队。",
+        "use_cases": [
+          "在 Mac 本地运行 Docker 和 Compose 开发环境",
+          "一键启动本地 k3s 集群进行 Kubernetes 开发测试",
+          "创建 Ubuntu、Debian、Kali 图形化 Linux 虚拟机",
+          "从 Docker Desktop 或 OrbStack 迁移现有容器与卷"
+        ],
+        "alternatives": "README 明确对标 OrbStack 和 Docker Desktop，强调开源 GPL-3.0、无账号与遥测、无商业使用分层，并将 Kubernetes 与 Linux 桌面作为可选签名组件而非常驻体积。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，理由：本地容器运行时替代 Docker Desktop 是持续需求，但项目版本仍为 0.4.6 且 Intel 支持尚未完成。",
+        "risk_notes": "许可证为 GPL-3.0，商用集成需注意合规；README 说明当前仅支持 Apple Silicon，Intel 版本尚未提供；项目创建时间较新、版本号处于 0.x，成熟度有限。",
+        "evidence": [
+          "A free, open-source native macOS app for Docker & Linux containers, an alternative to OrbStack and Docker Desktop.",
+          "Dory is built and qualified for Apple Silicon. Intel Mac support will follow after dedicated hardware validation.",
+          "Dory is GPL-3.0 software and stores workload data on your Mac."
+        ]
+      }
+    },
+    "amurcanov/proxy-turn-vk-android": {
+      "category": "mobile",
+      "one_liner": "安卓媒体中继代理隧道",
+      "intro": {
+        "one_liner": "安卓中继隧道工具",
+        "what_it_is": "WDTT 是一个 Android 应用，用本地 VPN 接口承载 WireGuard，并把传输经 TURN/DTLS 中继到自有 VPS。",
+        "problem_solved": "它用于研究网络协议，把 WireGuard 传输封装成类似加密通话媒体的流量，并连接到自有服务器。",
+        "who_should_care": "关注安卓 VPN、WireGuard 与 TURN/DTLS 隧道研究的开发者。",
+        "use_cases": [
+          "研究 TURN/DTLS 中继传输",
+          "测试安卓本地 VPN 接口",
+          "了解 WireGuard 流量封装"
+        ],
+        "alternatives": "README 提到桌面移植、分支面板和 iOS 兼容客户端，但未说明差异。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 11 星，且本周上日榜 1 天。",
+        "risk_notes": "项目已归档，开发与支持停止，仅保留作认识和研究用途；许可证为 GPL-3.0。",
+        "evidence": [
+          "Проект архивирован. Новое продолжение - https://github.com/amurcanov/csqtt",
+          "Разработка и поддержка WDTT прекращены. Репозиторий сохранён исключительно в ознакомительных и исследовательских целях.",
+          "**WDTT** — это Android-приложение для создания защищённого **WireGuard-туннеля поверх TURN/DTLS**."
+        ]
+      }
+    },
+    "miscusi-peek/cheatengine-mcp-bridge": {
+      "category": "security",
+      "one_liner": "AI 连接 Cheat Engine 桥",
+      "intro": {
+        "one_liner": "AI 连接 Cheat Engine 的桥",
+        "what_it_is": "通过 MCP 把 Cursor、Copilot、Claude 等 AI 工具接到 Cheat Engine，用自然语言驱动内存读取、指针扫描和逆向分析。",
+        "problem_solved": "把在海量内存、地址和函数中手工找指针、结构和特征码的工作，变成向 AI 提问并调用工具完成。",
+        "who_should_care": "做游戏研究、逆向调试、CTF 或修改器开发的开发者。",
+        "use_cases": [
+          "用自然语言查找指针链",
+          "分析结构体与函数",
+          "生成稳定的特征码"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周涨了 18 星，曾有一天进入日榜。",
+        "risk_notes": "原生管道模式仅支持 Windows；远程中继需只绑定可信接口，因为可达者可控制桥。",
+        "evidence": [
+          "Connect Cursor, Copilot & Claude AI directly to Cheat Engine via MCP. Automate reverse engineering, pointer scanning, and memory analysis using natural language.",
+          "Native pipe mode is **Windows only** because it uses Named Pipes (`pywin32`). Use TCP relay transport when the MCP server runs outside the Windows environment that hosts Cheat Engine and cannot open the named pipe directly.",
+          "Keep the relay bound to trusted interfaces only, because anyone who can reach it can control the Cheat Engine bridge."
+        ]
+      }
+    },
+    "NVIDIA/DreamDojo": {
+      "category": "ai-model",
+      "one_liner": "通用机器人世界模型代码",
+      "intro": {
+        "one_liner": "机器人通用世界模型",
+        "what_it_is": "DreamDojo 是从大规模人类第一视角视频学习的交互式世界模型，提供预训练、后训练、蒸馏和评估代码。",
+        "problem_solved": "面向机器人世界模型训练，解决跨物体、跨环境泛化和长时自回归交互生成问题。",
+        "who_should_care": "机器人学习、世界模型与视频生成方向的研究者和开发者。",
+        "use_cases": [
+          "训练机器人世界模型",
+          "复现预训练与后训练",
+          "评估长时交互生成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，代码和权重已发布。",
+        "risk_notes": "创建时间较新，仅一天上日榜；模型规模较大，部署门槛可能较高。",
+        "evidence": [
+          "Official Codebase for \"DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos\" (ICML 2026)",
+          "*DreamDojo* is an interactive world model that learns from large-scale human videos.",
+          "We released all pretrained and post-trained checkpoints (2B and 14B)."
+        ]
+      }
+    },
+    "minirust/minirust": {
+      "category": "learning-resource",
+      "one_liner": "精简 Rust 精确规范",
+      "intro": {
+        "one_liner": "Rust 语义核心规范",
+        "what_it_is": "MiniRust 是一个理想化的类 MIR 核心语言，用解释器形式精确描述 Rust 程序执行时的可能行为。",
+        "problem_solved": "它试图把求值顺序、数据表示、未定义行为和内存模型等语义问题拆开并精确定义。",
+        "who_should_care": "关注 Rust 语义、编译器、形式化和内存模型的开发者。",
+        "use_cases": [
+          "研究 Rust 操作语义",
+          "讨论未定义行为边界",
+          "验证解释器与内存接口"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "内存模型目前只定义接口，未给出实现；规范仍以愿景和文档形式呈现。",
+        "evidence": [
+          "A precise specification for \"Rust lite / MIR plus\"",
+          "MiniRust is the cornerstone of my vision for a normative specification of Rust semantics.",
+          "For now, we only define the memory interface, but do not give an implementation."
+        ]
+      }
+    },
+    "RJNY/Obtainium-Emulation-Pack": {
+      "category": "mobile",
+      "one_liner": "安卓模拟器应用导入包",
+      "intro": {
+        "one_liner": "安卓模拟器应用合集",
+        "what_it_is": "这是给 Obtainium 使用的导入文件，收录安卓模拟器和游戏工具配置，导入后可跟踪并更新这些应用。",
+        "problem_solved": "它把多个模拟器与游戏工具的添加和更新配置打包，减少逐个查找、导入和维护的麻烦。",
+        "who_should_care": "使用 Obtainium 管理安卓模拟器或游戏工具的玩家。",
+        "use_cases": [
+          "新设备批量导入模拟器",
+          "统一跟踪模拟器更新",
+          "按需添加单个应用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜。",
+        "risk_notes": "内容依赖第三方应用配置与更新源；包含 Nightly 类条目，稳定性可能不一。",
+        "evidence": [
+          "An Obtainium import file containing an Android emulation pack",
+          "A curated collection of Android emulators and gaming utilities for Obtainium",
+          "Obtainium will now track and update all included apps."
+        ]
+      }
+    },
+    "KalyanKS-NLP/LLM-Interview-Questions-and-Answers-Hub": {
+      "category": "learning-resource",
+      "one_liner": "大模型面试题答案集",
+      "intro": {
+        "one_liner": "大模型面试题库",
+        "what_it_is": "收录一百多道大语言模型面试题及解答，覆盖 Transformer、推理、分词、注意力等主题，并关联一本面试指南。",
+        "problem_solved": "帮助准备大模型相关岗位面试的人系统复习常见问题，理解答案背后的概念与解释。",
+        "who_should_care": "准备机器学习、人工智能、数据科学和软件工程面试的开发者。",
+        "use_cases": [
+          "按题复习大模型基础",
+          "模拟面试问答",
+          "查漏补缺推理知识"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜。",
+        "risk_notes": "创建于 2025 年 12 月 17 日，资料较新；内容关联付费书籍和订阅通讯，需注意商业推广。",
+        "evidence": [
+          "100+ LLM interview questions with answers.",
+          "This repository includes 100+ LLM interview questions with answers.",
+          "Crack modern LLM and Generative AI interviews with this comprehensive, interview-focused guide designed specifically for ML Engineers, AI Engineers, Data Scientists and Software Engineers."
+        ]
+      }
+    },
+    "Vinyzu/Botright": {
+      "category": "automation",
+      "one_liner": "反检测浏览器自动化框架",
+      "intro": {
+        "one_liner": "浏览器自动化框架",
+        "what_it_is": "Botright 是基于 Playwright 的 Python 异步浏览器自动化框架，提供浏览器初始化、隐身指纹和验证码处理功能。",
+        "problem_solved": "它面向自动化脚本中的机器人识别与验证码阻碍，提供浏览器伪装、指纹构造和部分验证码求解能力。",
+        "who_should_care": "已有 Playwright 代码、需要处理浏览器检测或验证码的 Python 开发者。",
+        "use_cases": [
+          "改造现有 Playwright 初始化",
+          "测试浏览器指纹检测",
+          "调用验证码求解函数"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "当前仅支持异步模式；部分验证码方案标注过时或暂不可用；隐身与求解效果依赖第三方检测环境。",
+        "evidence": [
+          "Botright is currently only available in async mode.",
+          "It is fully plugable with your existing playwright code. You only have to change your browser initialization!",
+          "`geeTestv3` Currently Not Available!"
+        ]
+      }
+    },
+    "asimovinc/asimov-1": {
+      "category": "hardware-iot",
+      "one_liner": "开源人形机器人初版",
+      "intro": {
+        "one_liner": "开源人形机器人",
+        "what_it_is": "Asimov 1 是可自行搭建、训练和定制的开源双足人形机器人，仓库包含机械与电气设计、仿真模型和机载软件。",
+        "problem_solved": "它把人形机器人的结构设计、物料清单、装配文档、仿真和软件集中开放，降低自行搭建与定制的门槛。",
+        "who_should_care": "机器人爱好者、具身智能开发者、机械电气与仿真实践者。",
+        "use_cases": [
+          "按套件或自采零件组装机器人",
+          "用仿真模型做运动控制实验",
+          "基于图纸和软件定制硬件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅新增 8 星，且只上过一天日榜。",
+        "risk_notes": "采用 CERN-OHL-S-2.0 硬件许可，复用需留意合规要求；边缘计算和运动策略仍在路线图中，部分能力尚未完成。",
+        "evidence": [
+          "v1 of Asimov, an open-source humanoid robot",
+          "Asimov is an open-source humanoid robot that you can build, train and customize.",
+          "This repository contains the mechanical CAD, electrical CAD, simulation model, and onboard software to build, simulate, and customize Asimov 1."
+        ]
+      }
+    },
+    "NannyML/The-Little-Book-of-ML-Metrics": {
+      "category": "learning-resource",
+      "one_liner": "机器学习指标小册",
+      "intro": {
+        "one_liner": "机器学习指标速查手册",
+        "what_it_is": "一本开源的机器学习指标小册子，以 Jupyter Notebook 仓库维护，覆盖常见到冷门的评估指标。",
+        "problem_solved": "补足传统数据科学课程对机器学习指标讲解不足的问题，提供清晰、简洁、可操作的速查解释。",
+        "who_should_care": "数据科学家、机器学习学习者，以及需要评估模型的开发者。",
+        "use_cases": [
+          "查阅分类与回归指标",
+          "理解聚类、排序等评估方法",
+          "学习视觉、语言与生成式指标"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，星数破千且有一定分叉。",
+        "risk_notes": "提供的是最新预发布版本预览；数字版免费，但高质量印刷版需购买；贡献和评审与销售佣金关联。",
+        "evidence": [
+          "The idea of the book is to be this little handbook that sits on every data scientist's desk for quick reference, from the most well-known metric, ahem, accuracy, to the most obscure ones (looking at you, P4 metric).",
+          "Machine learning metrics are often overlooked in traditional data science courses and university degrees. This book aims to fill that gap by offering clear, concise, and actionable explanations of the metrics that matter most.",
+          "You can preview the latest pre-release version"
+        ]
+      }
+    },
+    "100thCoin/AccuracyCoin": {
+      "category": "game",
+      "one_liner": "NES 精度测试合集卡带",
+      "intro": {
+        "one_liner": "NES 精度测试合集",
+        "what_it_is": "这是一个把大量 NES 精度测试放进单个 NROM 卡带镜像的汇编项目，目前包含 147 个测试和 5 个信息绘制项。",
+        "problem_solved": "它用于检查模拟器或实机对 NES 处理器、图像处理器和总线行为的还原是否准确，失败时给出错误码。",
+        "who_should_care": "NES 模拟器开发者、硬件复刻与兼容性测试爱好者。",
+        "use_cases": [
+          "验证模拟器 CPU 行为",
+          "排查硬件兼容性差异",
+          "批量运行精度测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾登上日榜一天。",
+        "risk_notes": "目标硬件限定为 NTSC 主机及特定处理器、图像处理器版本；不同版本硬件可能自动跳过部分测试。",
+        "evidence": [
+          "A large collection of NES accuracy tests on a single NROM cartridge.",
+          "This ROM was designed for an NTSC console with an RP2A03G CPU and RP2C02G PPU. Some tests might be automatically skipped on hardware with a different revision.",
+          "This ROM currently has 147 tests. These tests print \"PASS\" or \"FAIL\" on screen, and in the event of a failure, this ROM also provides an error code."
+        ]
+      }
+    },
+    "VeejaLiu/ScienceFictionCollection": {
+      "category": "content-media",
+      "one_liner": "科幻小说在线作品集",
+      "intro": {
+        "one_liner": "科幻小说文本合集",
+        "what_it_is": "这是一个按作者、期刊和作品整理的科幻小说文本仓库，主要收录纯文本与部分电子书文件，并提供在线阅读地址。",
+        "problem_solved": "把多位科幻作家的作品按目录集中整理，方便读者查找、浏览和获取科幻小说文本。",
+        "who_should_care": "科幻读者、文本阅读器开发者、想整理书库的开发者。",
+        "use_cases": [
+          "查找经典科幻作品文本",
+          "制作本地电子书库",
+          "为阅读应用准备语料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "收录大量版权作品文本，授权状态不明；资料未说明许可证、维护状态与内容来源。",
+        "evidence": [
+          "# 科幻小说作品集",
+          "科幻小说作品集，在线地址：https://github-novel-read.vercel.app",
+          "## 作品"
+        ]
+      }
+    },
+    "atenfyr/UAssetGUI": {
+      "category": "game",
+      "one_liner": "虚幻游戏资产查看修改器",
+      "intro": {
+        "one_liner": "虚幻资产手工编辑工具",
+        "what_it_is": "UAssetGUI 是用 C# 编写的图形工具，用于低层查看和手工修改 Unreal Engine 游戏资产，也支持命令行导入导出 JSON。",
+        "problem_solved": "它让开发者能直接检查、修改虚幻引擎资产，并可在不打开图形界面时转换资产与 JSON，便于排查和制作模组。",
+        "who_should_care": "虚幻游戏模组作者、资产逆向与调试开发者。",
+        "use_cases": [
+          "手工检查并修改资产",
+          "资产与 JSON 互转",
+          "便携模式放在 U 盘使用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "Linux 需通过 Wine 运行并配置依赖；实验版随每次提交发布，稳定性可能不同；贡献不接受人工智能生成内容。",
+        "evidence": [
+          "A tool designed for low-level examination and modification of Unreal Engine game assets by hand.",
+          "You can run the program with command line arguments to perform various tasks, such as exporting and importing from UAssetAPI JSON without opening the GUI.",
+          "UAssetGUI is mature, stable software, so all changes must be thoroughly tested and reviewed by a human."
+        ]
+      }
+    },
+    "joshuacant/ProjectTitle": {
+      "category": "content-media",
+      "one_liner": "KOReader 界面插件",
+      "intro": {
+        "one_liner": "KOReader 图书浏览界面插件",
+        "what_it_is": "Project: Title 是 KOReader 的 Lua 界面插件，基于 Cover Browser 扩展，重做标题栏、书籍列表、文件夹、页脚和图书状态页。",
+        "problem_solved": "它让找下一本书的过程更美观、信息更丰富，提供收藏、历史、进度条、书籍长度、标签和自定义排序等浏览能力。",
+        "who_should_care": "整理好元数据、喜欢浏览封面和书籍信息的 KOReader 用户。",
+        "use_cases": [
+          "按封面浏览整齐的书库",
+          "查看进度、页数和标签",
+          "用收藏与历史快速找书"
+        ],
+        "alternatives": "相比极简列表和 Cover Browser，更重视视觉与信息展示；比 SimpleUI、ZenUI、Bookshelf 更不追求手机式首页和菜单定制。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周曾登上日榜一天，星数达到一千。",
+        "risk_notes": "代码采用 AGPL-3.0；依赖较完整的书籍元数据；在旧设备和开启较多视觉功能时可能比纯列表或 Cover Browser 慢。",
+        "evidence": [
+          "Project: Title is a plugin made by two people who love KOreader but wanted to expand upon the Cover Browser plugin.",
+          "KOReader users who prize speed above all else. Pretty has a price and while it depends on your device and features you pick, Project: Title may be slower than sticking to a plain list or Cover Browser.",
+          "The code is licensed under the same terms as KOReader itself, AGPL-3.0."
+        ]
+      }
+    },
+    "colineckert/obsidian-things": {
+      "category": "content-media",
+      "one_liner": "Things 风格 Obsidian 主题",
+      "intro": {
+        "one_liner": "Obsidian 仿 Things 主题",
+        "what_it_is": "这是一个用 CSS 编写的 Obsidian 主题，提供受 Things 启发的配色、明暗两套外观和多项界面样式。",
+        "problem_solved": "它想让 Obsidian 在 macOS 和 iOS 上更接近 Things 的视觉体验，并改善任务、代码块、标签等元素的呈现。",
+        "who_should_care": "喜欢 Things 设计、使用 Obsidian 并重视界面定制的开发者和普通用户。",
+        "use_cases": [
+          "为 Obsidian 切换明暗主题",
+          "美化任务复选框和标签",
+          "在移动端快速预览或编辑"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时为一千星。",
+        "risk_notes": "主题依赖 Obsidian 生态；部分功能需社区插件支持；V1 基于 Minimal 主题代码。",
+        "evidence": [
+          "An Obsidian theme inspired by the beautifully-designed app, Things.",
+          "I wanted to bring that same joy to Obsidian by creating a Things-inspired design that looked and felt native on MacOS and iOS.",
+          "Customizable colors for bold, italic, highlighters, and block-quotes via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) community plugin"
+        ]
+      }
+    },
+    "justrach/turboAPI": {
+      "category": "web-frontend",
+      "one_liner": "Zig 内核高速 Python 框架",
+      "intro": {
+        "one_liner": "Zig 核心的 Python 接口框架",
+        "what_it_is": "TurboAPI 是兼容 FastAPI 写法的 Python 框架，使用 Zig 实现 HTTP 核心，并提供自由线程 Python 支持。",
+        "problem_solved": "它面向希望沿用 FastAPI 路由写法、同时尝试更高 HTTP 处理速度和自由线程运行方式的开发者。",
+        "who_should_care": "关注 Python 接口性能、Zig 后端和自由线程运行时的开发者。",
+        "use_cases": [
+          "迁移现有 FastAPI 路由定义",
+          "构建无缓存 HTTP 接口",
+          "试用自由线程 Python 服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时获一千星。",
+        "risk_notes": "处于 Alpha，不建议直接用于生产；缺少原生加密传输和新版协议支持，请求体上限固定，部分能力仍依赖反向代理。",
+        "evidence": [
+          "FastAPI-compatible Python framework. Zig HTTP core. Faster on HTTP-only and uncached HTTP+DB workloads.",
+          "Alpha software — read before using in production",
+          "No native TLS / HTTP/2 / HTTP/3 / QUIC"
+        ]
+      }
+    },
+    "truelockmc/streambert": {
+      "category": "content-media",
+      "one_liner": "跨平台影视动漫播放器",
+      "intro": {
+        "one_liner": "跨平台影视聚合桌面端",
+        "what_it_is": "Streambert 是基于 Electron 的跨平台桌面应用，用于流式观看和下载电影、剧集与动画，并提供字幕、媒体库和界面定制。",
+        "problem_solved": "它把第三方视频源、元数据、字幕和下载能力整合到一个桌面应用里，并强调无广告、无追踪的使用体验。",
+        "who_should_care": "关注影视聚合、动画观看、离线下载和隐私体验的桌面用户。",
+        "use_cases": [
+          "在桌面端搜索并观看影视",
+          "下载剧集或电影离线观看",
+          "管理字幕、片单和观看记录"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 17 星，仅一天进入日榜。",
+        "risk_notes": "内容来自第三方来源，法律声明要求用户自行确保访问权；隐私声明称来源和更新服务仍可能收集数据；下载需额外程序和 ffmpeg。",
+        "evidence": [
+          "A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking",
+          "The Application gets video streams from different hosters/aggregators, see [PLAYER_SOURCES](src/utils/api.js).",
+          "Users are solely responsible for ensuring they have legal rights to access any content"
+        ]
+      }
+    },
+    "Zaneham/Booth": {
+      "category": "dev-tools",
+      "one_liner": "多架构 GPU 编译器",
+      "intro": {
+        "one_liner": "多架构 GPU 编译器",
+        "what_it_is": "Booth 是开源的 CUDA、HIP 和 Triton 编译器，用 C 编写，面向多种 GPU 与 CPU 架构，可生成不同后端代码。",
+        "problem_solved": "它让同一类 GPU 内核源码能编译到 AMD、NVIDIA、Tenstorrent、RV32IM 或普通 x86-64 环境，减少后端绑定。",
+        "who_should_care": "关注 GPU 内核、异构编译、Triton 与 CUDA 工具链的开发者。",
+        "use_cases": [
+          "编译 CUDA 内核到 AMD GPU",
+          "在无 GPU 机器运行 Triton 内核",
+          "生成 NVIDIA PTX 或原生 cubin"
+        ],
+        "alternatives": "资料提到作者未见过同类 Triton 直译到原生 x86-64 的做法，但缺少同类项目对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 4 星且仅一天进入日榜。",
+        "risk_notes": "资料列出功能状态文档，说明存在尚未支持的内容；未关闭问题 35 个；一周新增星数较少，热度持续性不明。",
+        "evidence": [
+          "Open-source CUDA, Triton and HIP compiler targeting multiple GPU and CPU architectures.",
+          "Takes CUDA C, HIP, or Triton source (the same files you'd hand to `nvcc`, `ROCm`, or Triton's JIT) and turns them into AMD RDNA 2/3/4 binaries, NVIDIA PTX, Tenstorrent Metalium C++ or native RV32IM, or just plain x86-64 you can run on a laptop with no GPU in it.",
+          "Feature status — what compiles today, and what doesn't yet"
+        ]
+      }
+    },
+    "jqssun/android-titanium-browser": {
+      "category": "mobile",
+      "one_liner": "支持扩展的安全安卓浏览器",
+      "intro": {
+        "one_liner": "安卓扩展浏览器",
+        "what_it_is": "这是一个基于 Chromium、以 Vanadium 为基础的开源安卓浏览器，支持扩展，并提供签名版本与构建脚本。",
+        "problem_solved": "它让安卓用户在注重安全与隐私的浏览器中使用扩展，也支持本地扩展文件和调试用途。",
+        "who_should_care": "关注安卓隐私浏览器、扩展支持和自行构建的用户。",
+        "use_cases": [
+          "在安卓上安装浏览器扩展",
+          "使用隐身模式运行扩展",
+          "自行构建并验证发布包"
+        ],
+        "alternatives": "相比 Vanadium，增加扩展支持与功能覆盖，但保护能力仍不及系统级加固方案。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 84 星且曾上日榜。",
+        "risk_notes": "未关闭议题较多；作者提醒其安全隐私改进有限，更强保护需配合系统级加固；采用 GPL-2.0 许可证。",
+        "evidence": [
+          "Secure open-source Android browser with support for extensions",
+          "A secure and fully open-source, Chromium-based web browser with support for extensions, based on [Vanadium](https://github.com/GrapheneOS/Vanadium) by [GrapheneOS](https://github.com/GrapheneOS).",
+          "Titanium Browser for Android only attempts to improve security and privacy where possible."
+        ]
+      }
+    },
+    "openairymax/agentrt": {
+      "category": "ai-agent",
+      "one_liner": "突破上下文限制的代理运行时",
+      "intro": {
+        "one_liner": "智能体运行时平台",
+        "what_it_is": "AgentRT 是面向多智能体的运行时平台工程，聚合多个源码仓库，提供认知循环、记忆分层、安全隔离、协议互操作与守护进程等机制。",
+        "problem_solved": "它把智能体团队的运行、记忆演进、隔离与协议协作收敛到统一运行时，并用自动化流水线保障跨平台构建、测试和发布。",
+        "who_should_care": "关注智能体运行时、跨平台发布工程和多仓库协作的开发者。",
+        "use_cases": [
+          "构建多智能体运行时",
+          "管理记忆与隔离机制",
+          "做跨平台发布核验"
+        ],
+        "alternatives": "定位类似 Kubernetes 之于容器编排，强调统一运行时与操作系统级机制。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过日榜一次。",
+        "risk_notes": "创建日期为 2026 年 3 月 9 日；采用双许可证，使用前需确认合规要求；资料主要描述自动化与发布工程。",
+        "evidence": [
+          "AgentRT（AirymaxAgentRT）是 AI Agent 运行时平台工程——定位类似于 Kubernetes\n之于容器编排。",
+          "这个仓库以 git 子模块聚合 7 个叶子源码仓库（atoms / commons / cupolas /\ndaemons / gateway / heapstore / protocols）",
+          "双许可证：**AGPL v3 或 Apache 2.0**（SPDX: `AGPL-3.0-or-later OR Apache-2.0`）。"
+        ]
+      }
+    }
+  }
+}

@@ -1,1 +1,829 @@
-{"date":"2026-10-10","headline":"Rust桌面应用与AI安全受关注","points":["桌面系统类有8个项目，Rust有9个项目；storytold/wordcraft、storytold/gridcraft主打纯Rust复刻办公软件。","mhtsec/ARTEX以AI自主渗透测试系统领跑，单日新增1350；安全与AI结合成为显眼方向。","LosaLosSantos/aurelio-finance把本地个人理财与AI顾问结合，新增855，个人工具继续升温。"],"items":{"mhtsec/ARTEX":{"category":"security","one_liner":"AI自主渗透测试系统"},"storytold/wordcraft":{"category":"desktop-system","one_liner":"纯Rust复刻文字处理器"},"LosaLosSantos/aurelio-finance":{"category":"data-finance","one_liner":"本地个人理财与AI顾问"},"noahdunnagan/fsearch":{"category":"desktop-system","one_liner":"macOS全盘极速文件搜索"},"storytold/gridcraft":{"category":"desktop-system","one_liner":"纯Rust复刻电子表格"},"storytold/cadcraft":{"category":"desktop-system","one_liner":"纯Rust开源CAD绘图应用"},"shadany7824/playgta5":{"category":"game","one_liner":"playgta5.com网站源码"},"Leviidev/Husk":{"category":"mobile","one_liner":"在iPhone运行Android"},"NotProtonNot/NotProton":{"category":"game","one_liner":"macOS版Steam Play工具"},"eolix/photosuite":{"category":"content-media","one_liner":"兼容PSD的桌面图像编辑器"},"glanderness/BeefTV":{"category":"content-media","one_liner":"AI原生视频创作工作台"},"shengshu-ai/Motus2":{"category":"ai-model","one_liner":"自进化通用世界模型"},"fabio-rovai/open-ontologies":{"category":"dev-tools","one_liner":"生产本体变更管理工具"},"apify/mcpc":{"category":"ai-agent","one_liner":"高兼容MCP命令行客户端"},"awdr74100/figwright":{"category":"ai-agent","one_liner":"Figma双向MCP代码服务"},"limingrui679-design/high-stakes-analytics-decision-lab":{"category":"data-finance","one_liner":"高风险决策分析技能"},"pengjunchi0/codex-visio-paper-figure-skill":{"category":"content-media","one_liner":"论文配图转可编辑格式"},"JustinGamer191/Holo":{"category":"other","one_liner":"用途不明的Swift项目"},"Pawandeep-prog/revpdf-release":{"category":"desktop-system","one_liner":"RevPDF编辑器发布包"},"suyu-ai/chatGPT-apiKey":{"category":"ai-model","one_liner":"OpenAI API中转服务"},"cngege/GitHubDesktop2Chinese":{"category":"dev-tools","one_liner":"GitHub Desktop汉化工具"},"linuxmint/webapp-manager":{"category":"desktop-system","one_liner":"Linux网页应用管理器"},"next-hat/nanocl":{"category":"dev-tools","one_liner":"容器与虚拟机编排系统"},"kikootwo/ReadMeABook":{"category":"automation","one_liner":"有声书请求下载引擎"},"geerlingguy/sbc-reviews":{"category":"hardware-iot","one_liner":"单板电脑评测数据集"},"team-codebug/babua-dsa-patterns-course":{"category":"learning-resource","one_liner":"数据结构算法模式课程"},"lumen-oss/lux":{"category":"dev-tools","one_liner":"Lua包管理器"},"Jaysce/Spaceman":{"category":"desktop-system","one_liner":"macOS虚拟桌面菜单栏工具"},"darkroomengineering/satus":{"category":"web-frontend","one_liner":"内容站Next.js启动模板"},"k2-fsa/sherpa":{"category":"ai-model","one_liner":"新一代Kaldi语音识别框架"},"QuipNetwork/quip-solver":{"category":"data-finance","one_liner":"Quip网络挖矿组件栈"},"shiyi-0x7f/OlibTauri":{"category":"desktop-system","one_liner":"免费开源PC应用"},"phishdestroy/destroylist":{"category":"security","one_liner":"实时钓鱼域名拦截清单"},"zhongerxin/iPhone-use":{"category":"ai-agent","one_liner":"Codex操控真实iPhone"}}}
+{
+  "date": "2026-10-10",
+  "headline": "Rust桌面应用与AI安全受关注",
+  "points": [
+    "桌面系统类有8个项目，Rust有9个项目；storytold/wordcraft、storytold/gridcraft主打纯Rust复刻办公软件。",
+    "mhtsec/ARTEX以AI自主渗透测试系统领跑，单日新增1350；安全与AI结合成为显眼方向。",
+    "LosaLosSantos/aurelio-finance把本地个人理财与AI顾问结合，新增855，个人工具继续升温。"
+  ],
+  "items": {
+    "mhtsec/ARTEX": {
+      "category": "security",
+      "one_liner": "AI自主渗透测试系统",
+      "intro": {
+        "one_liner": "AI 自主渗透测试系统",
+        "what_it_is": "一个以 Go 为主要语言的 AI 自主渗透测试系统，作者描述中称其为百度“agent+”攻防挑战赛冠军项目。",
+        "problem_solved": "面向渗透测试任务，尝试用 AI 自主能力辅助或完成攻防测试流程。具体能力边界 unknown。",
+        "who_should_care": "关注 AI 安全、渗透测试自动化和攻防竞赛项目的开发者。",
+        "use_cases": [
+          "研究 AI 渗透测试流程",
+          "了解攻防挑战赛项目",
+          "评估安全自动化工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜 1 天，破千时已有 2239 星。",
+        "risk_notes": "无 README，功能、许可证、安装方式和成熟度均 unknown；Fork 数 4522 高于破千时星数，需谨慎判断热度来源。",
+        "evidence": [
+          "AI 自主渗透测试系统 | 百度“agent+”攻防挑战赛冠军项目",
+          "破千时的 Star 数：2239",
+          "Fork 数：4522"
+        ]
+      }
+    },
+    "storytold/wordcraft": {
+      "category": "desktop-system",
+      "one_liner": "纯Rust复刻文字处理器",
+      "intro": {
+        "one_liner": "纯 Rust 开源文字处理器",
+        "what_it_is": "WordCraft 是用纯 Rust 构建的开源现代文字处理器，提供熟悉的文档编辑与排版工作流，并支持读写 .docx。",
+        "problem_solved": "它试图提供可离线、跨平台、开放实现的文档编辑体验，覆盖样式、表格、修订、参考文献和邮件合并等功能。",
+        "who_should_care": "关注文档格式兼容、Rust 桌面应用和开源办公工具开发者。",
+        "use_cases": [
+          "编辑和保存 .docx 文档",
+          "处理样式、表格与修订",
+          "跨平台或浏览器写作"
+        ],
+        "alternatives": "强调纯 Rust、洁净室重实现、原生界面与命令化控制，具体同类对比 unknown。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 11,754 星且上过一次日榜。",
+        "risk_notes": "创建时间较新，未关闭 Issue 有 2,628 个；许可证信息不一致，项目数据为 Apache-2.0，资料称 MIT OR Apache-2.0。",
+        "evidence": [
+          "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
+          "Writing and document design; an open-source, modern word processor, built in pure Rust.",
+          "It reads and writes .docx, runs natively on macOS, Windows, Linux and BSD, and in the browser via WebAssembly."
+        ]
+      }
+    },
+    "LosaLosSantos/aurelio-finance": {
+      "category": "data-finance",
+      "one_liner": "本地个人理财与AI顾问",
+      "intro": {
+        "one_liner": "本地部署的 AI 个人财富管理应用",
+        "what_it_is": "Aurelio 是一个运行在用户自己电脑上的个人财富管理与财务规划应用，用 Python 编写，数据保存在本地 SQLite 文件中，可选接入 OpenRouter 提供的 LLM 作为 AI 财务顾问。",
+        "problem_solved": "把银行、券商、ETF、现金和债务等分散的资产信息集中到本地管理，计算净值、持仓收益与分红、基金穿透持仓和现金流目标，并让 AI 基于用户自己的记录回答问题、提出可确认的修改建议。",
+        "who_should_care": "重视数据隐私、希望自行掌控财务数据，并且具备一定技术能力、能够本地部署的个人投资者；也适合关注 LLM 与 fintech 结合方式的开发者。",
+        "use_cases": [
+          "在本地汇总银行与券商账户，跟踪净值、持仓成本、收益和分红",
+          "对 ETF 和基金做穿透分析，查看国家、行业、公司和货币维度的真实敞口",
+          "通过对话式 AI 顾问查询自身财务记录、评估某笔买入是否值得，并以卡片形式确认变更"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建不足一个月，周增约 2389 星，并登上日榜；AI 财务顾问是当前受关注的方向，但项目本身仍处于早期。",
+        "risk_notes": "项目创建于 2026-10-06，非常新，长期维护情况未知；AI 功能依赖 OpenRouter 及用户自付 API key，README 给出的单次分析成本约 $0.64，持续使用会产生费用；财务建议类输出需自行判断，不应视为专业投资建议。",
+        "evidence": [
+          "Open-source personal finance app with an AI financial advisor: track your net worth, investments, ETFs, cash and debts on your own computer.",
+          "Your records live in `backend/data.db`. Before an update changes its format, the app saves a copy next to it.",
+          "The AI part is optional: it goes through OpenRouter with your own key."
+        ]
+      }
+    },
+    "noahdunnagan/fsearch": {
+      "category": "desktop-system",
+      "one_liner": "macOS全盘极速文件搜索",
+      "intro": {
+        "one_liner": "macOS 全盘文件搜索与内容索引工具",
+        "what_it_is": "FSearch 是一个用 Rust 编写的 macOS 全盘文件搜索工具，提供 CLI、常驻小守护进程、Rust crate 和面向编码 agent 的 MCP server 四种形态。它支持模糊文件名匹配、容错拼写，以及基于索引的文件内容 grep。",
+        "problem_solved": "解决 macOS 上按文件名快速定位文件、以及在文件内部做全文检索的问题；它通过一次性爬盘和 FSEvents 增量更新维护索引，避免每次搜索都重新遍历磁盘。",
+        "who_should_care": "macOS 上重度使用命令行的开发者、需要在大型代码树中快速找文件或搜内容的人，以及希望给编码 agent 提供本地检索能力的用户。",
+        "use_cases": [
+          "在大型代码仓库中按模糊文件名或容错拼写定位文件",
+          "用 ext:/regex:/sym: 等过滤条件在文件内容中检索",
+          "通过 MCP server 为编码 agent 提供 find_files、grep、multi_grep 能力",
+          "在 Rust 项目中以 crate 形式嵌入搜索能力"
+        ],
+        "alternatives": "README 中与自身旧版本做了性能对比，并提到内容搜索的覆盖范围参照 ripgrep 的文件集合；但未与其他同类工具做直接对比，因此无法给出差异结论。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建于 2026-10-08、一周内新增约 917 star，属于刚发布即获关注的阶段，长期价值尚待观察。",
+        "risk_notes": "项目创建仅数天，维护历史极短；仅支持 macOS，且完整索引需要授予 Full Disk Access 权限；README 中的性能数字均为作者自测，未经第三方验证。",
+        "evidence": [
+          "Whole-disk file search for macOS: fuzzy names, typo tolerance, indexed content grep. ~1 ms over 8M files.",
+          "A CLI with a small daemon, a Rust crate, or an MCP server for coding agents.",
+          "Crawls the disk once with `getattrlistbulk`, then follows FSEvents: changes show up in about 15 ms"
+        ]
+      }
+    },
+    "storytold/gridcraft": {
+      "category": "desktop-system",
+      "one_liner": "纯Rust复刻电子表格",
+      "intro": {
+        "one_liner": "纯 Rust 开源电子表格",
+        "what_it_is": "GridCraft 是用纯 Rust 编写的开源电子表格应用，支持桌面系统和浏览器，并以 XLSX 为原生格式。",
+        "problem_solved": "它提供熟悉的表格编辑、公式、图表、数据透视和文件兼容能力，也支持通过命令通道、MCP 服务和命令行控制操作。",
+        "who_should_care": "需要开源表格应用、XLSX 兼容或自动化表格操作的开发者。",
+        "use_cases": [
+          "本地编辑 XLSX 工作簿",
+          "构建表格自动化流程",
+          "在浏览器中处理表格"
+        ],
+        "alternatives": "强调纯 Rust、XLSX 原生兼容，以及面向智能体的命令控制能力。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千二百一十星，且本周上过一天日榜。",
+        "risk_notes": "创建日期为二〇二六年十月七日；部分格式导入仅使用保存值，旧版工作簿的格式和对象尚不支持；键位导航仍是初始支持。",
+        "evidence": [
+          "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft.",
+          "A fast, open-source, clean-room take on modern spreadsheet workflows. It runs natively on macOS, Windows, Linux and BSD, and in the browser via WebAssembly.",
+          "Every ribbon button, menu item, dialog, keystroke and mouse gesture is a command that agents can run over a JSON control channel, an MCP server, or the CLI."
+        ]
+      }
+    },
+    "storytold/cadcraft": {
+      "category": "desktop-system",
+      "one_liner": "纯Rust开源CAD绘图应用",
+      "intro": {
+        "one_liner": "开源 Rust CAD 工具",
+        "what_it_is": "一个用纯 Rust 编写的开源二维和三维 CAD 应用，提供命令行式绘图、图层、标注、DXF 与 DWG 文件支持，并可运行在桌面和浏览器中。",
+        "problem_solved": "让熟悉传统 CAD 操作的用户在开源、免订阅的工具里完成绘图、编辑、标注、文件读写和自动化控制。",
+        "who_should_care": "CAD 绘图用户、Rust 桌面应用开发者、需要自动化制图流程的人。",
+        "use_cases": [
+          "绘制和编辑二维工程图",
+          "读写 DXF 与 DWG 图纸",
+          "通过命令行或代理自动化制图"
+        ],
+        "alternatives": "强调纯 Rust、原生与浏览器双端、传统命令流，以及面向代理的自动化接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 1,389 星，且一周上过一次日榜。",
+        "risk_notes": "处于早期快速开发阶段；未建模的实体在保存时不会保留；需要较新的 Rust 版本。",
+        "evidence": [
+          "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+          "CADCraft is in early, fast development. Honest status (see [ROADMAP.md](ROADMAP.md) for parity numbers):",
+          "Entities CADCraft doesn't model yet are not kept on save: see [file-format parity](docs/file-format-parity.md)"
+        ]
+      }
+    },
+    "shadany7824/playgta5": {
+      "category": "game",
+      "one_liner": "playgta5.com网站源码",
+      "intro": {
+        "one_liner": "网页版游戏源码归档",
+        "what_it_is": "这是 playgta5.com 的源码归档，主要使用 JavaScript，包含本地运行脚本与启动说明。",
+        "problem_solved": "用于保存已下线网站的原始 V1 移植版本，并说明如何在本地补齐资源后启动。",
+        "who_should_care": "关注网页游戏归档、本地复现和源码保存的开发者。",
+        "use_cases": [
+          "归档已下线网页游戏源码",
+          "本地启动旧版网页客户端",
+          "研究网页游戏移植结构"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 637 星且曾进入日榜。",
+        "risk_notes": "资源目录未随仓库提供，且被说明含受版权保护内容；仓库创建时间较新，未关闭问题有 34 个。",
+        "evidence": [
+          "A source code for playgta5.com.",
+          "This github page serves as archival for the original V1 port of the game,",
+          "I don't host the `.\\mirror` folder since it has copyrighted content from Rockstar Games."
+        ]
+      }
+    },
+    "Leviidev/Husk": {
+      "category": "mobile",
+      "one_liner": "在iPhone运行Android",
+      "intro": {
+        "one_liner": "在 iPhone 上原生或模拟运行 Android 应用",
+        "what_it_is": "Husk 是一个用 C 编写的 iOS 应用，让用户在 iPhone 上运行 Android 应用和游戏；它提供翻译层（直接运行 64 位 Android 代码）和基于 QEMU 的 LineageOS 模拟两种方式。",
+        "problem_solved": "解决 iOS 设备无法直接运行 Android 应用的问题，通过翻译层让游戏在数秒内启动，并用完整模拟作为兼容性兜底。",
+        "who_should_care": "想在 iPhone 上玩 Android 游戏或使用 Android 应用的用户，以及关注 iOS 侧 Android 兼容层实现的技术爱好者。",
+        "use_cases": [
+          "在 iPhone 上运行 Android 游戏（如 README 截图中的 GTA: San Andreas、Minecraft Dungeons）",
+          "通过 QEMU 模拟 LineageOS 运行翻译层暂不支持的 Android 应用",
+          "通过 SideStore、AltStore 或 TrollStore 侧载安装使用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增约 1076 星，但项目创建时间很短、仍处于早期阶段",
+        "risk_notes": "采用 GPL-2.0-or-later 许可证，且因链接 QEMU（GPLv2）而构成组合作品，因此无法上架 App Store；游戏运行需要 JIT 或导入证书；项目创建时间短，长期维护情况尚不明确。",
+        "evidence": [
+          "Run Android on your iPhone. Natively or Emulated.",
+          "Translation layer — the game’s own 64-bit Android code runs on the iPhone.",
+          "GPL-2.0-or-later. Husk links QEMU (GPLv2), so the shipped binary is a combined GPLv2 work. It cannot go on the App Store."
+        ]
+      }
+    },
+    "NotProtonNot/NotProton": {
+      "category": "game",
+      "one_liner": "macOS版Steam Play工具",
+      "intro": {
+        "one_liner": "macOS 上的 Steam Play 兼容层",
+        "what_it_is": "NotProton 是一个用 Swift 编写的 macOS 工具，它强制启用 macOS Steam 客户端中原本存在但未启用的 Steam Play 功能，并把 Valve Proton 的部分组件移植到 macOS。",
+        "problem_solved": "让 macOS 用户也能像 Linux 用户一样，通过 Steam Play 运行 Windows 游戏，而不必依赖原生 macOS 版本。",
+        "who_should_care": "希望在 macOS 上通过 Steam 玩 Windows 游戏的玩家，以及关注 macOS 游戏兼容层方案的技术用户。",
+        "use_cases": [
+          "在 macOS Steam 中强制下载并运行游戏的 Windows 版本",
+          "配合 CrossOver 26.3 或 Preview 版本，为单个游戏选择 FEX 或 Rosetta 兼容工具",
+          "通过 brew cask 快速安装并体验 Steam Play"
+        ],
+        "alternatives": "README 提到 Nat Brown 的 Kaon、mont127 的 Neutron 以及 Gio 的早期尝试属于同类思路；NotProton 的差异在于明确以支持 CrossOver 为设计目标，并移植了 lsteamclient、steam-helper 等 Proton 组件，但不计划支持 CrossOver 之外的替代方案。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周内新增约 515 星，但项目依赖特定 Steam 与 CrossOver 版本，且不支持 VAC，长期稳定性仍待观察。",
+        "risk_notes": "许可证为 GPL-3.0，需阅读 NOTICE；不支持 Valve Anti-Cheat，VAC 游戏只能以 Insecure Mode 启动且无法匹配；不支持 Tuxera NTFS，存在导致数据损坏的 bug；仅适配特定 Steam 客户端与 CrossOver 版本；项目创建于 2026-09-23，历史很短，open issues 有 40 个。",
+        "evidence": [
+          "NotProton enables the Steam Play experience from Linux Steam in the macOS Steam client.",
+          "This tool is intended to be used with the stable Steam Client (version 1792618285) as well as the beta Steam Client (version 1792626604) paired with CrossOver 26.3 or CrossOver Preview",
+          "Valve Anti-Cheat is not supported."
+        ]
+      }
+    },
+    "eolix/photosuite": {
+      "category": "content-media",
+      "one_liner": "兼容PSD的桌面图像编辑器",
+      "intro": {
+        "one_liner": "桌面图像编辑器",
+        "what_it_is": "这是一个用 Rust 编写的桌面图像编辑器，定位接近经典 Adobe Photoshop，并强调原生兼容 PSD 与 PSB 文件。",
+        "problem_solved": "它面向需要在桌面端编辑图像、并读写 PSD 与 PSB 文件的用户，提供熟悉的传统图像编辑工作流。",
+        "who_should_care": "需要本地图像编辑和 PSD、PSB 兼容的普通开发者或设计工具使用者。",
+        "use_cases": [
+          "编辑常见图像文件",
+          "打开和保存 PSD 文件",
+          "处理 PSB 大文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，星数已破千。",
+        "risk_notes": "资料很少，缺少说明文档；创建时间很新，成熟度、许可证和实际兼容程度均无法确认。",
+        "evidence": [
+          "A desktop image editor, faithful to classic Adobe Photoshop, with native PSD/PSB compatibility",
+          "破千时的 Star 数：1015",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "glanderness/BeefTV": {
+      "category": "content-media",
+      "one_liner": "AI原生视频创作工作台",
+      "intro": {
+        "one_liner": "AI 原生视频创作画布工作台",
+        "what_it_is": "BeefTV 是一个面向 AI 时代的视频创作工作台，以自由画布把创意、模型与素材连接起来，桌面端基于 React、Go 与 Wails 构建，本地优先运行。",
+        "problem_solved": "把分镜、素材、模型生成与后期加工分散在多工具中的流程收拢到一个可编辑画布，让生成结果可继续迭代、复用与积累。",
+        "who_should_care": "需要频繁做 AI 视频/短剧/分镜产出的创作者、小型内容团队，以及希望自配模型渠道、本地保存数据的进阶用户。",
+        "use_cases": [
+          "用 Agent 从剧本到分镜、角色图、镜头视频与旁白搭建完整短片工程",
+          "把跑通的节点流程保存为工作流模板，换素材复用（如单人物替换）",
+          "通过 MCP 接入 Codex、Claude Code、Cursor 等外部 Agent 操作本地工作区"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：AI 视频生成与 Agent 编排是当前集中关注方向，项目周增约 471 星、登上日榜，但版本仍在 2.0.x 快速迭代。",
+        "risk_notes": "非标准开源：新内容适用 BeefTV Source Available License 1.0，商业转售、套壳销售、收费部署或对外提供托管需事先书面授权，仅历史 MIT 内容继续适用 MIT；模型生成按所用渠道计费；README 自述部分工作流步骤尚未全部封装进模板。",
+        "evidence": [
+          "High-performance · Lightweight · AI Native Video workspace. 面向 AI 时代的视频创作工作台。",
+          "仓库采用分范围许可：……适用 BeefTV Source Available License 1.0……这是一份源码可用许可，不能将整个仓库视为标准 MIT 或 OSI 定义的开源项目。",
+          "桌面端基于 React、Go 与 Wails，模型协议和工作台能力可继续自定义或者扩展。"
+        ]
+      }
+    },
+    "shengshu-ai/Motus2": {
+      "category": "ai-model",
+      "one_liner": "自进化通用世界模型",
+      "intro": {
+        "one_liner": "自进化灵巧操作世界模型",
+        "what_it_is": "Motus2 是面向灵巧操作的通用世界模型，把策略、模拟器和评估器放进共享权重模型，形成决策与学习闭环。",
+        "problem_solved": "它试图解决世界模型只外接动作输出、缺少闭环策略改进的问题，并用数据与模型扩展提升操作能力。",
+        "who_should_care": "关注具身智能、机器人灵巧操作和世界模型的研究者与开发者。",
+        "use_cases": [
+          "研究动作与视觉结果预测",
+          "探索闭环策略改进",
+          "了解触觉反馈控制"
+        ],
+        "alternatives": "unknown",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但代码和权重仍计划逐步发布。",
+        "risk_notes": "开源路线多项尚未勾选，代码和检查点计划逐步发布；当前更像研究发布，暂不适合直接落地。",
+        "evidence": [
+          "We plan to release the Motus2 code and checkpoints progressively throughout September 2026.",
+          "The policy proposes candidate action chunks, the simulator predicts their visual consequences, and the evaluator assesses the predicted outcomes.",
+          "破千时的 Star 数：1002"
+        ]
+      }
+    },
+    "fabio-rovai/open-ontologies": {
+      "category": "dev-tools",
+      "one_liner": "生产本体变更管理工具",
+      "intro": {
+        "one_liner": "本体变更验证工具",
+        "what_it_is": "Open Ontologies 是用 Rust 编写的单二进制工具，用于规划、应用和回滚生产本体变更，并生成影响范围报告与可复核证明。",
+        "problem_solved": "它解决本体变更只看文本差异难以发现语义后果的问题，让审阅者能检查推导证书，而不必信任变更者或引擎。",
+        "who_should_care": "维护生产知识图谱、本体和合规规则，并需要审计复核的开发者。",
+        "use_cases": [
+          "上线前评估本体变更影响",
+          "生成可复核的推导证书",
+          "检查伪造结论或错误规则"
+        ],
+        "alternatives": "类似基础设施即代码的变更规划，但重点检查语义后果与证明，而非文本差异。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 67 星，并有一天上日榜。",
+        "risk_notes": "创建于 2026 年，资料未说明生产可用状态；对不满足性答案明确不提供保证。",
+        "evidence": [
+          "Plan, apply and roll back changes to a production ontology, with a blast radius report and a proof an auditor can re-check.",
+          "Open Ontologies is written in Rust. It ships as one binary.",
+          "Guarantee on an unsatisfiability answer | asserted | **none, and the tool says so**"
+        ]
+      }
+    },
+    "apify/mcpc": {
+      "category": "ai-agent",
+      "one_liner": "高兼容MCP命令行客户端",
+      "intro": {
+        "one_liner": "通用 MCP 命令行客户端",
+        "what_it_is": "把 Model Context Protocol 的各类操作映射成 shell 命令的命令行客户端，支持持久会话、认证、脚本输出和代理连接。",
+        "problem_solved": "让开发者和智能体通过 shell 检查、调试、调用 MCP 服务，减少反复注入工具定义带来的上下文消耗。",
+        "who_should_care": "开发或调试 MCP 服务、编写智能体工作流、需要 shell 脚本化调用 MCP 的开发者。",
+        "use_cases": [
+          "手动检查与调试 MCP 服务",
+          "用 shell 脚本编排 MCP 工作流",
+          "让智能体通过 Bash 使用 MCP"
+        ],
+        "alternatives": "自称最符合 MCP 规范，覆盖工具、资源、提示、异步任务、技能及认证扩展。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 41 星并上榜 1 天。",
+        "risk_notes": "x402 支付支持为实验性；未关闭 Issue 有 34 个；创建于 2025 年 12 月，项目较新。",
+        "evidence": [
+          "`mcpc` is a command-line client for the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) that maps every MCP operation to an intuitive shell command.",
+          "Use it to manually inspect and debug MCP servers, to script repeatable MCP workflows in plain shell, or to give AI agents the full MCP protocol through a single `Bash()` tool call",
+          "💸 **Agentic payments** - Experimental support for the [x402](https://www.x402.org/) protocol on [Base](https://www.base.org/)."
+        ]
+      }
+    },
+    "awdr74100/figwright": {
+      "category": "ai-agent",
+      "one_liner": "Figma双向MCP代码服务",
+      "intro": {
+        "one_liner": "双向 Figma 设计代理",
+        "what_it_is": "一个免费的双向 Figma MCP 服务，通过本地插件连接编码代理，可把设计转成贴合技术栈的代码，也能把代码或描述写回画布。",
+        "problem_solved": "让编码代理不只读取 Figma，还能直接编辑设计；同时复用项目组件、令牌和图标，减少通用代码与重复改写。",
+        "who_should_care": "使用 Figma 与 Claude Code、Cursor、Codex 等代理协作的前端和设计工程师。",
+        "use_cases": [
+          "把选中设计生成 React 组件",
+          "按描述在 Figma 搭建页面",
+          "对比设计变更并更新代码"
+        ],
+        "alternatives": "相比只读或依赖付费开发模式座位的方案，强调免费层、双向编辑和贴合现有技术栈。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千后一周涨了 61 星，并曾有一天进入日榜。",
+        "risk_notes": "插件尚未上架社区市场，需要从发布包手动导入；服务端与插件需同步更新；仍有 5 个未关闭问题。",
+        "evidence": [
+          "Free, two-way Figma MCP server. Turn designs into framework-aware code, and push code back to the canvas. Works with Claude Code, Cursor, Codex, and any MCP client.",
+          "Everything runs on your machine: the server, the relay, and the plugin. Your designs are never sent anywhere.",
+          "The plugin isn't on the Figma Community marketplace yet, so install it from the latest release:"
+        ]
+      }
+    },
+    "limingrui679-design/high-stakes-analytics-decision-lab": {
+      "category": "data-finance",
+      "one_liner": "高风险决策分析技能",
+      "intro": {
+        "one_liner": "高风险决策分析技能",
+        "what_it_is": "这是一个平台中立的 Python 分析技能，面向高风险决策，先检查数据就绪度，再按证据选择分析方法，产出可追溯的可视化报告。",
+        "problem_solved": "它针对问题定义不清、清洗选择隐蔽、不确定性被简化、模板强推建议等失败，要求先声明证据边界，必要时停止或只给出有限行动。",
+        "who_should_care": "需要可复现证据链的数据分析师、决策科学研究者和审慎使用智能体的开发者。",
+        "use_cases": [
+          "检查数据质量与来源",
+          "生成证据报告与图表",
+          "评估预测或行动边界"
+        ],
+        "alternatives": "不是固定报告生成器，强调证据门槛、可停止流程和来源追溯。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时有一千零九星，本周上日榜一天。",
+        "risk_notes": "创建日期为 2026 年 7 月 29 日，材料未提供许可证内容；流程允许无建议或停止，可能不适合追求快速结论的场景。",
+        "evidence": [
+          "A platform-neutral analytical Skill that profiles messy data, selects case-adaptive methods, and produces source-backed visual reports for high-stakes decisions.",
+          "The result is not a fixed report generator. It is an evidence-gated orchestration system that can stop, ask for a named decision, or produce a bounded analytical product without upgrading weak evidence into a stronger claim.",
+          "Only safe normalization can run without approval. Deletion, imputation, outlier treatment, category merging, unit conversion, target correction, and grain changes require explicit action IDs. The processed copy never overwrites the source."
+        ]
+      }
+    },
+    "pengjunchi0/codex-visio-paper-figure-skill": {
+      "category": "content-media",
+      "one_liner": "论文配图转可编辑格式",
+      "intro": {
+        "one_liner": "论文配图转可编辑图",
+        "what_it_is": "这是一个面向科研论文配图的 Codex Skill，用 Visio 原生形状重建参考图，并导出多种交付格式。",
+        "problem_solved": "它解决生成图或截图难以继续编辑的问题，把模型图、流程图等还原成可单独修改的 Visio 文件。",
+        "who_should_care": "写论文、用 Visio 且需要反复调整配图的科研人员。",
+        "use_cases": [
+          "把截图重建为 Visio 图",
+          "把生成图转为可编辑文件",
+          "统一论文配图样式并导出"
+        ],
+        "alternatives": "相比普通图片编辑，强调 Visio 原生可编辑；目前依赖 Visio 接口，其他绘图软件需自行适配。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天且破千星，关注集中在论文绘图工作流。",
+        "risk_notes": "依赖 Windows、Microsoft Visio 和组件自动化；指标图等真实数据图不适合；其他绘图软件需改接口。",
+        "evidence": [
+          "当前版本：`v1.1.1`",
+          "它用于把参考图片、截图或生成图还原为 **Microsoft Visio `.vsdx` 原生可编辑图形**，并从同一个 Visio 源文件导出 PNG、SVG、PDF、PPTX 等交付格式。",
+          "完整 Visio 自动绘图依赖 Visio COM Automation，因此主要面向 Windows + Microsoft Visio。"
+        ]
+      }
+    },
+    "JustinGamer191/Holo": {
+      "category": "other",
+      "one_liner": "用途不明的Swift项目",
+      "intro": {
+        "one_liner": "桌面敲击触发操作工具",
+        "what_it_is": "Holo 是一个实验性的原生 macOS 工具，用 MacBook 麦克风识别桌面四个区域的敲击，并执行对应动作。",
+        "problem_solved": "它把电脑周围桌面变成可敲击的输入区域，让用户不碰键盘或触控板也能触发快捷操作。",
+        "who_should_care": "喜欢自动化和快捷操作的 MacBook 用户，以及愿意校准、评估识别效果的人。",
+        "use_cases": [
+          "敲击桌面运行快捷指令",
+          "敲击区域打开应用或文件",
+          "敲击后复制文本或截图"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但项目自述仍是研究原型。",
+        "risk_notes": "识别准确率依赖具体电脑、桌面和环境，需逐套校准并做六十次评估；要求内置麦克风，部分模式还要求内置扬声器；自动执行 shell 命令需谨慎配置。",
+        "evidence": [
+          "Holo is an experimental native macOS utility that turns the desk immediately around a MacBook into four assignable tap zones.",
+          "Holo is a research prototype. Automated DSP tests pass, but useful accuracy still has to be measured on each real MacBook, desk, room, and laptop position.",
+          "Shell commands run automatically once assigned, so commands should be safe to repeat and should not depend on an interactive terminal."
+        ]
+      }
+    },
+    "Pawandeep-prog/revpdf-release": {
+      "category": "desktop-system",
+      "one_liner": "RevPDF编辑器发布包",
+      "intro": {
+        "one_liner": "离线 PDF 编辑器发布仓",
+        "what_it_is": "这是 revpdf 的官方发布仓库，提供 Linux、macOS 和 Windows 的安装包，主打离线、原生、注重隐私的 PDF 编辑。",
+        "problem_solved": "让用户在不注册、不上传云端、不被跟踪的情况下完成 PDF 拆分、合并、压缩、图片转换等常见处理。",
+        "who_should_care": "重视本地处理与隐私的普通用户、需要轻量 PDF 工具的开发者。",
+        "use_cases": [
+          "按页码范围拆分 PDF",
+          "合并多个 PDF 文件",
+          "把图片合成 PDF"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但仓库创建较新。",
+        "risk_notes": "仓库很新；Windows 安装包标为测试版；README 中 Android 下载与发布仓平台说明不完全一致。",
+        "evidence": [
+          "Official release repository for **revpdf** — a fast, native, and privacy-focused offline PDF editor.",
+          "**Privacy First**: Offline processing. No sign-up, no cloud, no data tracking.",
+          "#### 🪟 Windows\n- [Latest Beta (exe)](https://github.com/Pawandeep-prog/revpdf-release/releases/latest)"
+        ]
+      }
+    },
+    "suyu-ai/chatGPT-apiKey": {
+      "category": "ai-model",
+      "one_liner": "OpenAI API中转服务",
+      "intro": {
+        "one_liner": "模型接口中转服务",
+        "what_it_is": "速语 API 是一个提供多种大模型接口中转、密钥购买与余额查询入口的服务说明仓库。",
+        "problem_solved": "为调用多种大模型接口的开发者提供统一密钥、文档和镜像服务入口，并强调无需代理。",
+        "who_should_care": "需要快速接入多种模型接口、关注国内直连和计费方式的开发者。",
+        "use_cases": [
+          "购买密钥后调用接口",
+          "查询余额与消费明细",
+          "使用免费镜像服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾上日榜且破千星，但复刻数较少。",
+        "risk_notes": "仓库偏服务推广，含外部站点引导；稳定性、可用性和价格优势均来自自述，缺少可核验依据。",
+        "evidence": [
+          "🌥️ 速语API | OpenAI官方中转服务 🌥️ https://suyu.io 🔥 官方价格1:1 🔥 1元=1$ Token 🔥 高性价比 稳定快速！🔥 | 全球直连 | 无需代理 | 企业级稳定 | gpt3.5 | gpt4 | gpt4o | gpt4o-mini | 207+模型支持",
+          "支持GPT4.1、GPT4.0、GTP4o、Claude、Gemini、text-embedding 等227+模型",
+          "3. 服务稳定性？ → 99.9%可用性"
+        ]
+      }
+    },
+    "cngege/GitHubDesktop2Chinese": {
+      "category": "dev-tools",
+      "one_liner": "GitHub Desktop汉化工具",
+      "intro": {
+        "one_liner": "GitHub Desktop 汉化工具",
+        "what_it_is": "这是一个用 C++ 编写的程序，通过替换 GitHub Desktop 中的英文文本，实现中文界面本地化。",
+        "problem_solved": "解决 GitHub Desktop 中文界面缺失问题，并通过映射文件降低频繁更新带来的维护成本。",
+        "who_should_care": "需要中文界面的 GitHub Desktop 用户，以及愿意补充翻译的开发者。",
+        "use_cases": [
+          "安装后自动联网完成汉化",
+          "使用本地映射文件离线汉化",
+          "补充翻译条目并提交改进"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时收藏数达到一千零二。",
+        "risk_notes": "每次 GitHub Desktop 更新都需重新运行；可能遇到运行库或动态链接库缺失；汉化依赖正则替换映射。",
+        "evidence": [
+          "这是一个自动替换GithubDesktop中文本为目标语言文本的程序",
+          "GitHubDesktop每次版本更新都需要运行一次此程序才能完成汉化",
+          "使用正则匹配的方式 将包含英文字符串的文本替换为包含中文字符串的文本。"
+        ]
+      }
+    },
+    "linuxmint/webapp-manager": {
+      "category": "desktop-system",
+      "one_liner": "Linux网页应用管理器",
+      "intro": {
+        "one_liner": "把网站当应用运行",
+        "what_it_is": "一个用 Python 编写的工具，可将网站以独立 WebApp 形式运行，并提供 Firefox、Chromium 和 Chrome 下的使用说明。",
+        "problem_solved": "让常用网站像桌面应用一样打开和管理，并说明导航、标签页、外链、扩展等常见操作如何处理。",
+        "who_should_care": "常把网页服务当桌面应用使用的 Linux 桌面用户。",
+        "use_cases": [
+          "为常用网站创建独立窗口",
+          "管理网页应用的标签页",
+          "为网页应用添加浏览器扩展"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "资料未说明安装方式、版本状态、许可证和兼容性边界；部分操作依赖具体浏览器设置。",
+        "evidence": [
+          "Run websites as if they were apps.",
+          "Chromium and Chrome WebApps open external links in the main browser.",
+          "How to add extensions in Firefox (AdBlock etc.)?"
+        ]
+      }
+    },
+    "next-hat/nanocl": {
+      "category": "dev-tools",
+      "one_liner": "容器与虚拟机编排系统",
+      "intro": {
+        "one_liner": "容器与虚拟机编排器",
+        "what_it_is": "Nanocl 是用 Rust 编写的开源编排器，通过命令行和声明式 Statefile 管理容器、虚拟机、任务、路由与密钥。",
+        "problem_solved": "它把工作负载、网络、代理、域名解析和密钥放进同一套配置，便于在自有基础设施上部署和管理应用。",
+        "who_should_care": "自建服务、家庭实验室和需要 Git 化部署配置的开发者。",
+        "use_cases": [
+          "部署自托管应用",
+          "管理家庭实验室服务",
+          "搭建开发测试环境"
+        ],
+        "alternatives": "除容器外还管理虚拟机、任务、路由和 DNS，并使用自有 Statefile 格式。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周仅一天上日榜，星数刚破千。",
+        "risk_notes": "作者描述仍为开发中；快速开始绑定 v0.18，nightly 分支已有 v0.19 工作；Windows 原生支持为实验性。",
+        "evidence": [
+          "Work in progress distributed system that simplifies the orchestration of containers and virtual machines.",
+          "Nanocl is an open-source container and virtual machine orchestrator written in Rust.",
+          "This example targets the **v0.18 API**"
+        ]
+      }
+    },
+    "kikootwo/ReadMeABook": {
+      "category": "automation",
+      "one_liner": "有声书请求下载引擎",
+      "intro": {
+        "one_liner": "有声书请求下载管理器",
+        "what_it_is": "这是一个自托管的有声书请求管理与下载工具，面向 Plex 和 Audiobookshelf，集成目录检索、下载、整理和入库。",
+        "problem_solved": "它把有声书的发现、请求、审批、下载、标签整理和媒体库同步串成自动化流程，减少人工找书与搬文件。",
+        "who_should_care": "自建媒体库、已用 Plex 或 Audiobookshelf 的爱好者与管理员。",
+        "use_cases": [
+          "用户搜索并一键请求有声书",
+          "自动下载并整理到媒体库",
+          "同步书单或关注系列新书"
+        ],
+        "alternatives": "定位类似 Radarr、Sonarr 与 Overseerr 的有声书一体化方案。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜一天。",
+        "risk_notes": "创建时间较新，成熟度不明；依赖 Docker、Prowlarr、下载客户端和媒体服务器；部分匹配效果受区域与语言影响。",
+        "evidence": [
+          "Fully Featured audiobook request and downloading engine to bring audiobooks up to speed with the modern automation standards",
+          "ReadMeABook (RMAB) is a self-hosted request manager and downloader for audiobooks.",
+          "*Radarr/Sonarr + Overseerr for audiobooks, all in one*"
+        ]
+      }
+    },
+    "geerlingguy/sbc-reviews": {
+      "category": "hardware-iot",
+      "one_liner": "单板电脑评测数据集",
+      "intro": {
+        "one_liner": "单板机评测数据仓库",
+        "what_it_is": "收录树莓派、Radxa、Orange Pi 等单板机的评测记录、测试数据和基准脚本，并生成配套网站。",
+        "problem_solved": "把分散在项目文件夹、文章和视频里的单板机测试数据集中公开，便于查阅结果和复现基准测试。",
+        "who_should_care": "关注单板机选型、硬件评测和基准测试的开发者与爱好者。",
+        "use_cases": [
+          "查阅单板机评测数据",
+          "复现基准测试脚本",
+          "对比不同板卡结果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，关注单板机实测数据。",
+        "risk_notes": "部分数据可能受保密协议限制；两套基准脚本并行，说明仍在调整；测试深度取决于投入时间。",
+        "evidence": [
+          "Jeff Geerling's SBC (Single-Board Computer) review and benchmarking data repo.",
+          "But I decided I'd rather have a public repository with all the test data and review notes for all the SBCs I use and test.",
+          "Unless under NDA, my plan is to compile all my data here, in real-time, as a point of reference for myself and for anyone else who runs into interesting results",
+          "Note: There is a parallel set of benchmarking scripts in the `benchmark-ansible` folder. Right now I'm setting up both side by side to do essentially the same thing"
+        ]
+      }
+    },
+    "team-codebug/babua-dsa-patterns-course": {
+      "category": "learning-resource",
+      "one_liner": "数据结构算法模式课程",
+      "intro": {
+        "one_liner": "九十天刷题课程仓库",
+        "what_it_is": "这是一个围绕数据结构与算法面试模式整理的九十天挑战课程仓库，包含进度表、题单、视频、笔记与题解链接。",
+        "problem_solved": "它把零散刷题改成按核心模式学习，帮助学习者用每日进度、题单和复习表准备编程面试。",
+        "who_should_care": "准备技术面试、想系统练习算法模式的开发者和学生。",
+        "use_cases": [
+          "按九十天计划跟踪学习进度",
+          "按模式练习面试题与笔记",
+          "复制复习表安排多轮复盘"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "课程进度表写到第十一天，内容仍在更新；主要语言与课程语言不一致；大量材料依赖外部链接。",
+        "evidence": [
+          "Welcome to the **DSA Patterns 2025** Course — a **90-day challenge** to master the **30 core coding patterns** used in FAANG and top product interviews.",
+          "Each pattern includes:\n- 🎥 **Theory Video** — Learn the logic and intuition behind the pattern  \n- 🧠 **Problem Set (15–20 LeetCode Questions)**  \n- 🗒️ **Notes & Solutions**",
+          "Fork 数：889"
+        ]
+      }
+    },
+    "lumen-oss/lux": {
+      "category": "dev-tools",
+      "one_liner": "Lua包管理器",
+      "intro": {
+        "one_liner": "Lua 包管理器",
+        "what_it_is": "Lux 是面向 Lua 和 Luau 的包管理器，用统一的项目文件管理依赖、构建、测试和发布。",
+        "problem_solved": "它简化 Lua 包的构建、管理、部署和版本处理，并提供锁文件、代码检查、格式化等工具。",
+        "who_should_care": "Lua、Luau 开发者，以及维护 Lua 项目依赖和构建流程的人。",
+        "use_cases": [
+          "统一管理 Lua 项目依赖",
+          "生成版本与 rockspec 文件",
+          "构建可复现的开发环境"
+        ],
+        "alternatives": "相比 Luarocks，提供锁文件、并行构建、格式化、类型检查和 Luau 支持，但部分功能未完整实现。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾有一天登上日榜。",
+        "risk_notes": "仍在进行中，尚未发布 1.0；部分 Luarocks 功能未完整实现。",
+        "evidence": [
+          "A luxurious package manager for Lua",
+          "Lux is a next-generation package manager with ease of use and security in mind.",
+          "Lux, while fully functional, is a work in progress and does not have a `1.0` release yet."
+        ]
+      }
+    },
+    "Jaysce/Spaceman": {
+      "category": "desktop-system",
+      "one_liner": "macOS虚拟桌面菜单栏工具",
+      "intro": {
+        "one_liner": "macOS 虚拟桌面菜单栏工具",
+        "what_it_is": "Spaceman 是一款 macOS 应用，可在菜单栏显示虚拟桌面状态，并支持给桌面命名。",
+        "problem_solved": "帮助多桌面、多显示器用户快速看清当前所在空间及与其他空间的相对位置。",
+        "who_should_care": "常用虚拟桌面或多显示器工作流的 macOS 用户。",
+        "use_cases": [
+          "查看当前虚拟桌面位置",
+          "区分多显示器上的空间",
+          "给不同工作桌面命名"
+        ],
+        "alternatives": "基于 WhichSpace，提供四种图标样式、命名和后台刷新选项。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜。",
+        "risk_notes": "要求 macOS 15 Sequoia 或更高版本；图标可能更新失败，需要手动或后台刷新。",
+        "evidence": [
+          "A macOS app to view Spaces / Virtual Desktops in the menu bar",
+          "Spaceman requires macOS 15 Sequoia or greater.",
+          "If the icon fails to update, you can choose to force a refresh of the icon using a custom keyboard shortcut or allow Spaceman to refresh them automatically every 5 seconds"
+        ]
+      }
+    },
+    "darkroomengineering/satus": {
+      "category": "web-frontend",
+      "one_liner": "内容站Next.js启动模板",
+      "intro": {
+        "one_liner": "内容站起始模板",
+        "what_it_is": "这是一个面向内容驱动网站的 Next.js App Router 起始模板，使用 TypeScript，集成 Tailwind、可选 WebGL 与多种内容或营销服务。",
+        "problem_solved": "它把路由、样式、环境变量、站点地图、内容集成和项目裁剪脚本整理成一套可复用骨架，减少从零搭建内容站的基础工作。",
+        "who_should_care": "用 Next.js 做内容站、营销站或需要可选集成的开发者。",
+        "use_cases": [
+          "快速启动内容站",
+          "搭建带内容管理的站点",
+          "裁剪不需要的集成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时为一千星。",
+        "risk_notes": "要求较新的 Node.js 与 Bun 版本；环境变量依赖加密文件和私钥，配置门槛较高；部分集成与 WebGL 为可选功能。",
+        "evidence": [
+          "Advanced Next.js App Router starter for content-driven sites",
+          "A modern Next.js 16 starter with React 19, Tailwind CSS v4, and optional WebGL.",
+          "Requires Node.js >= 24.20 and Bun >= 1.4.0."
+        ]
+      }
+    },
+    "k2-fsa/sherpa": {
+      "category": "ai-model",
+      "one_liner": "新一代Kaldi语音识别框架",
+      "intro": {
+        "one_liner": "端到端语音识别部署框架",
+        "what_it_is": "sherpa 是面向端到端语音识别的开源推理框架，基于 PyTorch，提供 C++ 和 Python 接口。",
+        "problem_solved": "它解决预训练语音识别模型的部署问题，让开发者用现成模型转写语音，不负责训练或微调。",
+        "who_should_care": "需要部署端到端语音识别服务的开发者。",
+        "use_cases": [
+          "搭建语音转写服务",
+          "用 C++ 接口集成识别",
+          "用 Python 接口做推理"
+        ],
+        "alternatives": "同类项目还有不依赖 PyTorch 的 sherpa-onnx 和 sherpa-ncnn，且支持移动端与嵌入式系统。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "只聚焦部署，训练或微调需转向其他项目；依赖 PyTorch；成熟度未明确。",
+        "evidence": [
+          "Speech-to-text server framework with next-gen Kaldi",
+          "This project focuses on deployment, i.e., using pre-trained models to transcribe speech.",
+          "We also have other **similar** projects that don't depend on PyTorch"
+        ]
+      }
+    },
+    "QuipNetwork/quip-solver": {
+      "category": "data-finance",
+      "one_liner": "Quip网络挖矿组件栈",
+      "intro": {
+        "one_liner": "Quip 网络挖矿栈",
+        "what_it_is": "这是 Quip 网络的 Rust 挖矿栈，包含协调器和矿工程序接入，负责跟随链头、分发 Ising 问题并提交证明。",
+        "problem_solved": "把链上挖矿任务编排、求解器进程管理、难度校验和证明提交串成一套可运行流程。",
+        "who_should_care": "关注加密货币挖矿、Ising 求解和 Rust 链上集成的开发者。",
+        "use_cases": [
+          "运行本地开发网集成测试",
+          "接入 CPU、CUDA、Metal 矿工",
+          "开发新的求解器子进程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾登上日榜一天，破千时星数达 11,593。",
+        "risk_notes": "明确标注为实验软件，自担风险且无生产保证；依赖来自 crates.io 的 v0.0.0 组件；许可证为 AGPL-3.0-or-later。",
+        "evidence": [
+          "Experimental software. Use at your own risk. No production warranties.",
+          "The v0.3 mining stack for the quip-validator Substrate chain.",
+          "AGPL-3.0-or-later. See LICENSE."
+        ]
+      }
+    },
+    "shiyi-0x7f/OlibTauri": {
+      "category": "desktop-system",
+      "one_liner": "免费开源PC应用",
+      "intro": {
+        "one_liner": "开源图书桌面客户端",
+        "what_it_is": "Olib 是面向电脑的免费开源图书桌面客户端，主要提供前端界面，书籍数据来自外部源。",
+        "problem_solved": "它把图书搜索、下载、书架收藏、多线路和局域网共享集中到桌面端，减少找书与管理藏书的步骤。",
+        "who_should_care": "想在桌面端统一管理图书搜索、下载和本地藏书的读者与开发者。",
+        "use_cases": [
+          "按书名或作者搜索图书",
+          "管理下载、书架与收藏",
+          "通过局域网共享本地藏书"
+        ],
+        "alternatives": "与官方应用无关，仅提供第三方前端界面，且外部数据接口实现未公开。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 3403 星，且本周上过一次日榜。",
+        "risk_notes": "公开仓库不含外部数据源接口实现，直接克隆无法开箱即用；作为第三方客户端，用户需自行确保使用符合当地法规。",
+        "evidence": [
+          "一个跨平台、永久免费、无广告的开源图书桌面客户端",
+          "公开仓库只包含应用框架与前端界面，不含对接外部数据源的接口实现（该部分为独立私有模块）",
+          "直接克隆本仓库无法开箱即用地构建运行"
+        ]
+      }
+    },
+    "phishdestroy/destroylist": {
+      "category": "security",
+      "one_liner": "实时钓鱼域名拦截清单",
+      "intro": {
+        "one_liner": "钓鱼诈骗域名拦截列表",
+        "what_it_is": "一个实时更新的钓鱼与诈骗域名黑名单，提供多种下载格式、免费接口和申诉流程。",
+        "problem_solved": "帮助网络管理员、域名解析工具和安全系统拦截钓鱼、诈骗及加密货币相关恶意域名。",
+        "who_should_care": "使用域名拦截工具、维护网络安全或处理诈骗域名的开发者与管理员。",
+        "use_cases": [
+          "加入域名解析拦截工具",
+          "接入防火墙或网关规则",
+          "查询威胁情报接口"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "仓库创建较新；主要语言为 HTML；未提供许可证信息，生产接入前需确认维护与合规情况。",
+        "evidence": [
+          "Real-time phishing & scam domain blocklist — 130k+ curated threats, 888K+ community, free API, multiple formats",
+          "**Add to Pi-hole or AdGuard Home in one click** — paste this URL into your blocklist settings:",
+          "**Production:** `list.json` or `active_domains.json` · **Max coverage:** `blocklist.json` · **Firewall/DNS:** root lists"
+        ]
+      }
+    },
+    "zhongerxin/iPhone-use": {
+      "category": "ai-agent",
+      "one_liner": "Codex操控真实iPhone",
+      "intro": {
+        "one_liner": "让助手操作真机",
+        "what_it_is": "这是一个用 Python 编写的插件，让 Codex、WorkBuddy 或豆包工作通过 USB 操作真实 iPhone，并提供实时屏幕与截图回退。",
+        "problem_solved": "它把自然语言任务转成真机上的打开应用、读取页面、点击、滚动、输入和列表整理，减少手动操作与重复配置。",
+        "who_should_care": "需要在 Mac 上用助手自动化真机流程的开发者和重度 iPhone 用户。",
+        "use_cases": [
+          "打开应用并整理列表",
+          "输入中文长文本草稿",
+          "查看实时屏幕并点击"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 2,151 星，但仅一天进入日榜。",
+        "risk_notes": "需自备 macOS、完整 Xcode、签名账号和 USB 真机；默认发送匿名统计，可关闭；资料称仓库目前为私有，且有 33 个未关闭问题。",
+        "evidence": [
+          "让 Codex、WorkBuddy 或豆包工作通过 USB 操作你的真实 iPhone。用自然语言描述任务，助手就能打开 App、读取页面、点击、滚动、输入文字、整理列表，并在侧边栏展示手机屏幕。",
+          "使用前，需要先在你自己的 iPhone 上安装、签名并启动 WDA Runner。",
+          "插件默认向独立的 PostHog 项目及 GA4 属性发送匿名使用统计"
+        ]
+      }
+    }
+  }
+}

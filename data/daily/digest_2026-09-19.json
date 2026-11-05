@@ -1,1 +1,831 @@
-{"date":"2026-09-19","headline":"AI Agent与开发工具领跑今日热点","points":["AI Agent相关项目有8个，开发工具6个，Python项目12个，仍是当天最集中的方向。","yi1108/printfilm以519新增领跑，主打AI视频获客与短剧创作，热度明显集中。","Sliverkiss/workbuddy2api、yashab-cyber/HackGpt分别聚焦OpenAI兼容代理与AI渗透测试。"],"items":{"yi1108/printfilm":{"category":"content-media","one_liner":"AI视频获客与短剧创作平台"},"Sliverkiss/workbuddy2api":{"category":"ai-model","one_liner":"兼容OpenAI的反向代理"},"yashab-cyber/HackGpt":{"category":"security","one_liner":"企业级AI渗透测试平台"},"sumimakito/Mac-Duo":{"category":"desktop-system","one_liner":"为Mac带来双屏折叠效果"},"Ryze-AI-Adgent/open-seo-mcp-skills":{"category":"ai-agent","one_liner":"基于真实数据的SEO技能集"},"jxlarrea/kiosk-satellite":{"category":"hardware-iot","one_liner":"安卓设备变家居中控屏"},"ChenlizheMe/Infernux":{"category":"game","one_liner":"Vulkan开源游戏引擎"},"v12-security/pocs":{"category":"security","one_liner":"漏洞验证代码集合"},"uvwt/agentdock":{"category":"ai-agent","one_liner":"AI代理安全运行底座"},"l0ng-ai/tty7":{"category":"dev-tools","one_liner":"Rust终端工作台"},"s010s/prehistoric-animal-museum":{"category":"learning-resource","one_liner":"双语史前动物3D博物馆"},"Human-Agent-Society/CORAL":{"category":"ai-agent","one_liner":"自主编码代理研究框架"},"missuo/kumone":{"category":"desktop-system","one_liner":"原生macOS云音乐客户端"},"editor-code-assistant/eca":{"category":"dev-tools","one_liner":"编辑器无关的AI结对编程"},"Rizzo-AI-Academy/rizzo-pii":{"category":"security","one_liner":"本地文档隐私脱敏工具"},"aw-junaid/Hacking-Tools":{"category":"security","one_liner":"道德黑客工具合集"},"graspnet/anygrasp_sdk":{"category":"hardware-iot","one_liner":"机器人抓取SDK"},"xing5/mcp-google-sheets":{"category":"automation","one_liner":"操作云端表格的MCP服务"},"Mofiqul/vscode.nvim":{"category":"dev-tools","one_liner":"仿VS Code的Neovim配色"},"Time-MoE/Time-MoE":{"category":"ai-model","one_liner":"十亿级时序基础模型"},"disler/always-on-ai-assistant":{"category":"ai-agent","one_liner":"常驻式工程AI助手范式"},"skiff-org/skiff-apps":{"category":"desktop-system","one_liner":"端到端加密办公套件"},"rappasoft/laravel-authentication-log":{"category":"dev-tools","one_liner":"Laravel登录日志与新设备提醒"},"google/adk-recipes":{"category":"ai-agent","one_liner":"ADK示例代理合集"},"Companion-Inc/feynman":{"category":"ai-agent","one_liner":"开源AI研究代理"},"tamaratran/fast-jev-compaction":{"category":"dev-tools","one_liner":"Claude Code上下文压缩插件"},"appeeky/aso-skills":{"category":"ai-agent","one_liner":"应用商店优化代理技能"},"smhmd/smhmd":{"category":"web-frontend","one_liner":"个人工程师作品网站"},"FjordWorkerShanty/massgravel":{"category":"other","one_liner":"微软产品激活工具集"},"ibigbug/clash-rs":{"category":"dev-tools","one_liner":"Rust自定义协议代理"},"TheoLeeCJ/SemIf":{"category":"ai-model","one_liner":"本地模型语义判断实验"},"puppyone-ai/puppyone-cloud":{"category":"ai-agent","one_liner":"AI代理上下文驱动服务"},"mugnavo/cove":{"category":"web-frontend","one_liner":"极简全栈Web模板"},"mcncarl/jianying-headless":{"category":"content-media","one_liner":"剪映草稿无头编辑导出"}}}
+{
+  "date": "2026-09-19",
+  "headline": "AI Agent与开发工具领跑今日热点",
+  "points": [
+    "AI Agent相关项目有8个，开发工具6个，Python项目12个，仍是当天最集中的方向。",
+    "yi1108/printfilm以519新增领跑，主打AI视频获客与短剧创作，热度明显集中。",
+    "Sliverkiss/workbuddy2api、yashab-cyber/HackGpt分别聚焦OpenAI兼容代理与AI渗透测试。"
+  ],
+  "items": {
+    "yi1108/printfilm": {
+      "category": "content-media",
+      "one_liner": "AI视频获客与短剧创作平台",
+      "intro": {
+        "one_liner": "AI 漫剧与短视频分步创作平台",
+        "what_it_is": "PRINTFILM 是一个开源的 AI 视频创作平台，包含 AI 漫剧与 AI 短视频两条产品线，覆盖从文案、分镜、参考图生图、图生视频到合成预览的完整流程，并提供管理后台与 Docker 部署方案。",
+        "problem_solved": "把「一句话或一段文案」到「可播放成片」的流程拆成可检查、可编辑的分步流水线，解决 AI 视频创作中角色与画风不一致、素材难以复用、流程不可控的问题。",
+        "who_should_care": "想自托管 AI 短视频或漫剧生产工具的内容团队、独立开发者，以及需要二次开发或私有化部署的运营方。",
+        "use_cases": [
+          "短视频、获客片：把卖点做成可投放的竖屏短片",
+          "漫剧、短剧：从大纲到分集，角色与场景保持一致",
+          "工具中心单点出图、出片",
+          "Docker 自托管搭建私有 AI 视频创作平台"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：AI 视频生成与短剧创作是当前热门方向，项目一周新增约 1553 star，但创建时间短、版本仅 0.2.0，热度能否持续尚待观察。",
+        "risk_notes": "项目创建于 2026-09-10，版本 0.2.0，成熟度有限；真实生图、生视频依赖第三方 TokenFree New API Key，无 Key 只能以 ARK_MOCK 模式查看界面；README 含微信联系方式与外部站点引导，需自行甄别。",
+        "evidence": [
+          "PRINTFILM：AI 视频获客与 AI短剧创作平台",
+          "分步短视频创作：创作设置 → 文案与分镜 → 参考图生图 → 图生视频 → 合成预览",
+          "开源版文字 / 图 / 视频统一走 TokenFree New API（OpenAI 兼容：https://www.tokenfree.com/v1）。没有 Key 时只能 ARK_MOCK=true 看界面，不能真实生图 / 生视频。"
+        ]
+      }
+    },
+    "Sliverkiss/workbuddy2api": {
+      "category": "ai-model",
+      "one_liner": "兼容OpenAI的反向代理",
+      "intro": {
+        "one_liner": "WorkBuddy 兼容代理",
+        "what_it_is": "一个用 Go 编写的 OpenAI 兼容反向代理，面向 WorkBuddy，支持 OAuth 登录、多账号轮转、工具调用与流式响应。",
+        "problem_solved": "让需要 OpenAI 兼容接口的应用接入 WorkBuddy，并集中处理登录、账号轮转、工具调用和流式响应。",
+        "who_should_care": "需要把 WorkBuddy 接入 OpenAI 兼容客户端的开发者。",
+        "use_cases": [
+          "为客户端提供兼容接口",
+          "多账号登录与轮转",
+          "转发工具调用和流式响应"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但缺少说明文档。",
+        "risk_notes": "没有说明文档，安装配置、稳定性、许可证和适用边界均无法确认；创建时间较新，成熟度未知。",
+        "evidence": [
+          "WorkBuddy的 OpenAI 兼容反向代理，支持 OAuth 登录、多账号轮转、工具调用与流式响应。",
+          "破千时的 Star 数：1078",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "yashab-cyber/HackGpt": {
+      "category": "security",
+      "one_liner": "企业级AI渗透测试平台",
+      "intro": {
+        "one_liner": "AI 渗透测试平台",
+        "what_it_is": "这是一个面向企业安全团队的云原生 AI 渗透测试平台，使用 Python，结合机器学习、微服务架构与安全框架进行网络安全评估。",
+        "problem_solved": "它试图把传统扫描器分散的漏洞结果，转成带利用上下文、攻击链、云与接口审计及修复建议的自动化评估。",
+        "who_should_care": "企业安全团队、渗透测试人员、DevSecOps 与关注大模型安全的研究者。",
+        "use_cases": [
+          "自动化渗透测试评估",
+          "云与 Kubernetes 安全审计",
+          "大模型红队与接口审计"
+        ],
+        "alternatives": "相比静态漏洞扫描器，强调多阶段攻击链、大模型红队、云安全态势与修复代码生成。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千星且曾有一天登上日榜。",
+        "risk_notes": "资料自称生产可用，但未提供足够验证依据；README 含代币地址、捐赠与社区链接，需警惕非技术引导；项目名称与描述不一致。",
+        "evidence": [
+          "HackGPT Enterprise is a production-ready, cloud-native AI-powered penetration testing platform designed for enterprise security teams.",
+          "traditional static vulnerability scanners deliver disconnected lists of low-priority noise without actionable context",
+          "HACKNOVA Enterprise is the next-generation autonomous cybersecurity operations and AI penetration testing ecosystem built for modern enterprises, DevSecOps teams, and frontier AI infrastructures."
+        ]
+      }
+    },
+    "sumimakito/Mac-Duo": {
+      "category": "desktop-system",
+      "one_liner": "为Mac带来双屏折叠效果",
+      "intro": {
+        "one_liner": "为 MacBook 合盖添加 iPhone Duo 式屏幕特效",
+        "what_it_is": "Mac Duo 是一个 macOS 菜单栏应用，用 Swift 编写，在合上 MacBook 上盖时，对屏幕内容施加透视、模糊与渐隐效果，模拟 iPhone Duo 的视觉观感。",
+        "problem_solved": "把 iPhone Duo 的合盖视觉特效带到 MacBook 上，让合盖过程有连贯的屏幕变形动画，而不是直接黑屏。",
+        "who_should_care": "喜欢桌面视觉小玩意、追求仪式感的 MacBook 用户，以及想研究 ScreenCaptureKit 与 Metal 实时渲染的 macOS 开发者。",
+        "use_cases": [
+          "合盖时展示屏幕内容倾斜、模糊、淡出的过渡动画",
+          "在菜单栏中调节透视参数以匹配观看角度",
+          "作为 ScreenCaptureKit + Metal 实时渲染的参考实现"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：属于视觉趣味型小工具，依赖特定硬件传感器，受众面有限。",
+        "risk_notes": "仅支持带兼容上盖角度传感器的 MacBook，且仅作用于内置屏幕；需要屏幕录制权限；合盖进入睡眠时效果会停止；README 自述项目在 AI 辅助下构建；当前为 dev 开发版构建。",
+        "evidence": [
+          "Close the lid and watch your screen content tilt, blur, and fade as it moves.",
+          "Uses ScreenCaptureKit to capture and render screen content in real time.",
+          "Only MacBooks with a compatible lid angle sensor can use the effect."
+        ]
+      }
+    },
+    "Ryze-AI-Adgent/open-seo-mcp-skills": {
+      "category": "ai-agent",
+      "one_liner": "基于真实数据的SEO技能集",
+      "intro": {
+        "one_liner": "Claude 的 SEO/GEO 技能包与 MCP 连接器",
+        "what_it_is": "一套面向 Claude 的开源 SEO 与 GEO 技能（skills），配合免费的 Ryze MCP 连接器，让 Claude 通过 MCP 读取用户自己的 Google Search Console、GA4、Google Ads 数据，并接入 DataForSEO 等数据源。",
+        "problem_solved": "让 SEO 分析直接基于用户真实的 GSC 排名与 GA4 流量数据，而不是抓取估算值；同时避免按次调用数据 API 的加价层，技能本身以 MIT 免费提供。",
+        "who_should_care": "使用 Claude 或 Claude Code 的 SEO 从业者、内容与增长团队，以及希望把自有 GSC/GA4 数据接入 AI 工作流的中小站点运营者。",
+        "use_cases": [
+          "对站点做 SEO 审计：索引、CTR 异常、衰减页面与快速见效项",
+          "关键词研究与聚类，输出关键词计划",
+          "对比任意两个周期的排名变化，无需第三方排名工具订阅",
+          "挖掘竞品有而自己没有的关键词与反向链接差距",
+          "统计来自 ChatGPT、Perplexity、Claude、Gemini 的 AI 引荐流量与被引用页面",
+          "找出已自然排名却仍在付费投放的查询，评估广告浪费"
+        ],
+        "alternatives": "README 自述与 OpenSEO 类封装工具相比，其排名与流量来自真实 GSC/GA4 而非 SERP 抓取估算；与 Semrush/Ahrefs 相比工具本身免费（MIT），但数据依赖用户自己的 Ryze 工作区与已连接账号。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：借 Claude Skills 与 MCP 生态热度，一周新增约 649 星，但核心数据能力依赖单一商业连接器服务。",
+        "risk_notes": "技能代码为 MIT，但实际数据访问需通过第三方托管服务 connector.get-ryze.ai 并登录授权 Google 账号，存在对单一商业服务的依赖与数据授权范围问题；README 含大量推广链接，宣传性表述（如“唯一”类说法）未经独立验证；仓库创建于 2026-08-29，历史很短。",
+        "evidence": [
+          "Open-source SEO + GEO skills for Claude on a free SEO MCP server (the Ryze connector)",
+          "Your rankings come from your actual Google Search Console — real positions, real clicks, not estimates",
+          "The skills are MIT — take them, change them, ship them."
+        ]
+      }
+    },
+    "jxlarrea/kiosk-satellite": {
+      "category": "hardware-iot",
+      "one_liner": "安卓设备变家居中控屏",
+      "intro": {
+        "one_liner": "把 Android 设备变成 Home Assistant 专用 kiosk",
+        "what_it_is": "Kiosk Satellite 是一个用 Dart 开发的 Android 应用，专为 Home Assistant 的专用 kiosk 场景设计，内置原生 Voice Satellite 语音控制、音乐同步播放和照片屏保。",
+        "problem_solved": "解决把闲置 Android 平板或设备改造成 Home Assistant 常驻控制面板时，缺少语音、屏保、远程管理和多设备统一配置的问题。",
+        "who_should_care": "使用 Home Assistant 的智能家居玩家、需要墙面控制面板或家庭信息屏的用户，以及需要管理多台 kiosk 设备的部署者。",
+        "use_cases": [
+          "把旧 Android 平板挂在墙上作为 Home Assistant 控制面板",
+          "用设备摄像头做人体或人脸检测，唤醒屏幕并联动自动化",
+          "多台 kiosk 之间互呼对讲或统一广播",
+          "通过浏览器远程配置、查看截图和备份多台 kiosk 设置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，因为项目较新且一周内获得约 257 星，功能围绕 Home Assistant kiosk 场景较完整，但长期维护情况尚不明确。",
+        "risk_notes": "项目未声明许可证（license 为 null），README 仅说明个人非商业使用免费；创建时间较新，长期维护与稳定性未知。",
+        "evidence": [
+          "Turn any Android device into a beautiful, dedicated Home Assistant kiosk.",
+          "Kiosk Satellite is fully local and free for personal, non-commercial use.",
+          "You need Android 7.0 or newer, a reachable Home Assistant instance and a long-lived access token"
+        ]
+      }
+    },
+    "ChenlizheMe/Infernux": {
+      "category": "game",
+      "one_liner": "Vulkan开源游戏引擎",
+      "intro": {
+        "one_liner": "Python 优先的开源游戏引擎",
+        "what_it_is": "Infernux 是开源游戏引擎，用 Python 编写玩法、编辑器工具和渲染管线，由 C++ 运行时、Vulkan 渲染与 Jolt 物理执行。",
+        "problem_solved": "它让开发者用 Python 组织游戏逻辑、工具与渲染流程，并把编辑器、物理、资源导入和多平台导出放在同一套工作流里。",
+        "who_should_care": "适合 Python 游戏开发者、工具开发者，以及关注神经网络原生引擎方向的实验者。",
+        "use_cases": [
+          "用 Python 编写组件和小游戏",
+          "扩展编辑器面板与插件",
+          "实验渲染管线和数值玩法"
+        ],
+        "alternatives": "强调 Python 作为主要工作层，并规划让模型读取世界数据、在仿真中行动。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 229 星，并曾有一天进入日榜。",
+        "risk_notes": "仍处于 alpha，接口会在版本间变化；神经网络相关能力仍是路线图内容，尚不适合正式生产排期。",
+        "evidence": [
+          "Infernux is a game engine where **Python is where you work** and **C++ is where it runs**.",
+          "Infernux is **alpha software** under active development. APIs still change between releases, and the neural-network features below are roadmap items rather than shipped features.",
+          "许可证：MIT；一周新增 Star：229；本周上日榜天数：1"
+        ]
+      }
+    },
+    "v12-security/pocs": {
+      "category": "security",
+      "one_liner": "漏洞验证代码集合",
+      "intro": {
+        "one_liner": "漏洞验证代码仓库",
+        "what_it_is": "这是一个以 C 为主的仓库，计划发布漏洞验证代码，并说明其中的问题均已负责任披露。",
+        "problem_solved": "为已负责任披露的安全问题提供集中发布验证代码的位置。",
+        "who_should_care": "关注漏洞复现与安全研究的开发者。",
+        "use_cases": [
+          "查阅已披露漏洞的验证代码",
+          "复现安全问题",
+          "学习漏洞验证写法"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，星数破千。",
+        "risk_notes": "仓库创建时间较新；内容计划陆续发布，当前可用范围不明；涉及漏洞验证代码，使用需谨慎。",
+        "evidence": [
+          "we will release pocs in this repo",
+          "all bugs in this repo are responsibly disclosed",
+          "破千时的 Star 数：1012"
+        ]
+      }
+    },
+    "uvwt/agentdock": {
+      "category": "ai-agent",
+      "one_liner": "AI代理安全运行底座",
+      "intro": {
+        "one_liner": "安全的智能体设备运行时",
+        "what_it_is": "AgentDock 通过 MCP 把 AI 助手连接到本地电脑、服务器和容器，统一提供文件、命令、Git、浏览器与任务执行能力。",
+        "problem_solved": "让智能体在真实环境中受控操作多台设备，减少反复切换远程会话，并支持跨设备工作流和长任务恢复。",
+        "who_should_care": "运维、开发者，以及需要让 AI 助手操作多机环境的人。",
+        "use_cases": [
+          "在对话中管理多台服务器",
+          "远程写代码、测试和操作 Git",
+          "部署容器、代理与网页自动化"
+        ],
+        "alternatives": "差异是强调多设备编排、MCP 连接、浏览器与桌面自动化，以及长任务状态恢复。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 81 星，仅一天进入日榜。",
+        "risk_notes": "公开访问必须保持认证开启，凭据不能出现在截图、问题或公开对话中；创建日期较新，未关闭问题 6 个。",
+        "evidence": [
+          "Secure MCP runtime for AI agents to operate local machines, servers, and containers with multi-device orchestration.",
+          "It provides unified, secure, and controlled file, command, Git, Skill, MCP, browser automation, and task execution across local computers, remote servers, and containers.",
+          "Public access must keep authentication enabled. Do not include credentials in screenshots, issues, or public conversations."
+        ]
+      }
+    },
+    "l0ng-ai/tty7": {
+      "category": "dev-tools",
+      "one_liner": "Rust终端工作台",
+      "intro": {
+        "one_liner": "纯 Rust 的终端工作台，支持持久会话与 AI agent",
+        "what_it_is": "tty7 是一个用纯 Rust 编写的终端工作台，基于 Zed 的 gpui 做 GPU 渲染，VT 核心来自 Alacritty；它由后台服务持有 shell 与窗格，因此关闭窗口后会话仍继续运行。",
+        "problem_solved": "它解决终端会话随窗口关闭而丢失、需要额外依赖 tmux 维持持久化的问题，同时为 Claude Code、Codex 等编码 agent 提供状态、通知与 git 上下文感知。",
+        "who_should_care": "重度使用终端、同时运行多个 AI 编码 agent、需要远程开发或跨机器续接会话的开发者。",
+        "use_cases": [
+          "关闭应用或重启后恢复 shell 布局、屏幕内容与 agent 会话",
+          "在远程机器上通过原生 SSH 栈进行文件、仓库、窗格与 git 操作",
+          "让一个 agent 为另一个 agent 开窗格、派发任务并读取结果"
+        ],
+        "alternatives": "与 Alacritty、Ghostty、Kitty 等终端相比，tty7 额外提供持久会话、agent 感知与远程工作区；README 自称吞吐约为上述三者的 2 倍，该数字来自作者自测基准。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：AI 编码 agent 生态正快速扩张，tty7 的 agent 感知与可脚本化定位贴合这一波需求，但项目仍处早期。",
+        "risk_notes": "项目创建于 2026-07-06，历史很短；open issues 69 个相对 1120 stars 偏高，成熟度与长期维护情况尚待观察；README 中的性能对比为作者自测，未独立验证。",
+        "evidence": [
+          "A background server owns your shells and panes — not the window.",
+          "~2× the throughput of Alacritty, Ghostty, or Kitty",
+          "None of them are wrapped or proxied — the agent you start is the agent you get, in a normal PTY"
+        ]
+      }
+    },
+    "s010s/prehistoric-animal-museum": {
+      "category": "learning-resource",
+      "one_liner": "双语史前动物3D博物馆",
+      "intro": {
+        "one_liner": "儿童史前动物双语博物馆",
+        "what_it_is": "一个免费开源的双语三维博物馆，让孩子和陪伴者观察陆地、海洋与天空中的史前动物，并收听简短讲解。",
+        "problem_solved": "它提供没有胜负、打斗和惊吓场景的安静参观方式，让儿童按自己的节奏旋转模型、听讲解，并由家长引导提问。",
+        "who_should_care": "二至六岁儿童的家长、幼儿教育者，以及关注双语科普和三维网页的人。",
+        "use_cases": [
+          "亲子共同观察史前动物模型",
+          "用中英文收听简短讲解",
+          "借助家长指南回答孩子提问"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 42 星，并有一天进入日榜。",
+        "risk_notes": "代码采用 AGPL-3.0，原创内容采用非商业许可；部分颜色、软组织和动作是依据证据的艺术复原，并非精确肖像。",
+        "evidence": [
+          "A free, open-source bilingual 3D museum where young children and their grown-ups explore prehistoric animals across land, sea, and sky.",
+          "I wanted to give her a place with no winning or losing and no frightening scene waiting around the corner.",
+          "Software code uses [GNU AGPL-3.0-only](LICENSE)."
+        ]
+      }
+    },
+    "Human-Agent-Society/CORAL": {
+      "category": "ai-agent",
+      "one_liner": "自主编码代理研究框架",
+      "intro": {
+        "one_liner": "多智能体自进化研究框架",
+        "what_it_is": "CORAL 是面向自动化研究的开源基础设施，让多个编码智能体在隔离工作区里运行实验、共享知识并持续改进方案。",
+        "problem_solved": "它把代码库、评分器和智能体协作串成评估闭环，减少搭建隔离环境、共享状态和自动打分流程的成本。",
+        "who_should_care": "做智能体编排、自动实验和代码优化评测的开发者与研究者。",
+        "use_cases": [
+          "让多个编码智能体并行优化代码",
+          "为数学或优化任务搭建评分实验",
+          "复用共享状态开展多轮自进化"
+        ],
+        "alternatives": "强调评分器、共享状态、心跳提示和多智能体自进化，而非单一智能体运行框架。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增十星且仅一天上日榜，关注度较集中。",
+        "risk_notes": "部分内置评分器依赖 Docker，且不支持在 Docker 内运行；各智能体运行时需单独安装和认证；仍有二十九个未关闭问题。",
+        "evidence": [
+          "Robust, lightweight infrastructure for multi-agent self-evolution, built for autoresearch.",
+          "Give it a codebase and a grader, and CORAL handles the rest: isolated workspaces, safe evaluation, persistent shared state, and multi-agent collaboration.",
+          "Each agent must be installed and authenticated separately."
+        ]
+      }
+    },
+    "missuo/kumone": {
+      "category": "desktop-system",
+      "one_liner": "原生macOS云音乐客户端",
+      "intro": {
+        "one_liner": "原生苹果音乐客户端",
+        "what_it_is": "Kumone 是用 SwiftUI 构建的网易云音乐非官方客户端，面向 macOS 与 iOS，提供播放、歌词、资料库和同步等功能。",
+        "problem_solved": "它让苹果设备用户在原生界面里登录、浏览和播放网易云音乐内容，并补充桌面歌词、队列恢复与跨设备同步。",
+        "who_should_care": "使用 Mac、iPhone 或 iPad，且依赖网易云音乐资料库的普通用户。",
+        "use_cases": [
+          "在 Mac 上播放个人歌单",
+          "查看逐行歌词与翻译",
+          "在 iPhone 上侧载使用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 37 星，仅一天进入日榜。",
+        "risk_notes": "项目声明与网易云音乐无关联；iOS 版本不会上架应用商店或测试平台，需自行侧载；CarPlay 默认关闭且需要苹果授权。",
+        "evidence": [
+          "This repository has no affiliation with NetEase Cloud Music, and contains none of its domains or API addresses.",
+          "Kumone is an unofficial client and will not be on the App Store or TestFlight, so install it with a sideloading tool that signs the IPA with your own Apple ID",
+          "CarPlay support is fully implemented in `Sources/Kumone/Core/CarPlay/`, but the **default build ships none of it**"
+        ]
+      }
+    },
+    "editor-code-assistant/eca": {
+      "category": "dev-tools",
+      "one_liner": "编辑器无关的AI结对编程",
+      "intro": {
+        "one_liner": "跨编辑器 AI 编程助手",
+        "what_it_is": "ECA 是用 Clojure 编写的编辑器无关服务端，通过协议把大模型能力接入不同编辑器，提供聊天、改写和补全。",
+        "problem_solved": "它用统一协议和配置连接编辑器与大模型，减少各编辑器重复适配，并让团队获得一致的 AI 编程体验。",
+        "who_should_care": "使用 Emacs、Vim、VS Code 等编辑器并想接入多种模型的开发者。",
+        "use_cases": [
+          "在编辑器内与模型对话",
+          "让模型改写或补全代码",
+          "为团队统一模型配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾上日榜一天，破千星时有一千零四星。",
+        "risk_notes": "创建于 2025 年 6 月，项目较新；需要自行配置模型或提供商；已有路线图，功能仍在推进。",
+        "evidence": [
+          "Editor-agnostic: protocol for any editor to integrate.",
+          "Multiple features: chat, rewrite, and completion — all powered by your LLM.",
+          "To use ECA, you need to configure at least one model / provider"
+        ]
+      }
+    },
+    "Rizzo-AI-Academy/rizzo-pii": {
+      "category": "security",
+      "one_liner": "本地文档隐私脱敏工具",
+      "intro": {
+        "one_liner": "本地可逆脱敏工具",
+        "what_it_is": "面向意大利法律文本的本地个人数据识别与可逆匿名化工具，主要用 Python 编写，可在把文档交给大模型前替换敏感信息。",
+        "problem_solved": "解决把合同、法律文件等敏感内容直接粘贴到云端大模型时，姓名、税号、地址等个人数据外泄和合规风险。",
+        "who_should_care": "处理意大利法律文本且受 GDPR 约束的律所、会计师、公证人等。",
+        "use_cases": [
+          "脱敏后让云端模型总结合同",
+          "起草含占位符的法律回复",
+          "本地还原模型答案中的真值"
+        ],
+        "alternatives": "相比通用检测工具，强调意大利法律标识符、可逆映射和本地字典。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 49 星且本周上日榜 1 天。",
+        "risk_notes": "未关闭 Issue 有 86 个；创建于 2026 年，项目较新；可逆字典留在本地磁盘，需自行保护。",
+        "evidence": [
+          "Local-first privacy guard: anonymize your documents before sharing with LLMs.",
+          "Local, reversible PII anonymization for Italian legal text",
+          "🔒 **anonymize locally** → 🏷️ **placeholder + reversible local dictionary** → ☁️ **frontier LLM** → 🔓 **restore locally**"
+        ]
+      }
+    },
+    "aw-junaid/Hacking-Tools": {
+      "category": "security",
+      "one_liner": "道德黑客工具合集",
+      "intro": {
+        "one_liner": "安全攻防资源合集",
+        "what_it_is": "这是面向授权安全研究、恶意软件分析和渗透测试的攻防工具与资料合集，涵盖多种语言编写的工具、样本和资源索引。",
+        "problem_solved": "把恶意软件样本、密码学资料、威胁情报、渗透测试工具等分散资源集中整理，便于在隔离实验环境中学习和研究。",
+        "who_should_care": "安全研究者、渗透测试学习者、恶意软件分析人员和网络安全教学者。",
+        "use_cases": [
+          "隔离环境中分析恶意软件样本",
+          "按目录查找渗透测试工具",
+          "学习密码学与威胁情报资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾上日榜一天，破千星且已有二百五十次分叉。",
+        "risk_notes": "内容涉及实时恶意软件样本、攻击代码和攻击工具，仅限授权隔离环境；未授权使用可能违法，作者声明不承担滥用责任。",
+        "evidence": [
+          "This Repository is a collection of different ethical hacking tools and malware's for penetration testing and research purpose written in python, ruby, rust, c++, go and c.",
+          "This repository is intended **ONLY** for authorized security research, malware analysis, and educational purposes.",
+          "Several sections of this repository reference or link to live malware samples, exploit code, and offensive tooling."
+        ]
+      }
+    },
+    "graspnet/anygrasp_sdk": {
+      "category": "hardware-iot",
+      "one_liner": "机器人抓取SDK",
+      "intro": {
+        "one_liner": "抓取检测与跟踪开发包",
+        "what_it_is": "AnyGrasp SDK 是面向抓取检测与跟踪的 Python 开发包，提供演示代码、安装说明和许可申请流程。",
+        "problem_solved": "帮助机器人从空间与时间数据中确定抓取位置，并支持按指定区域和接近向量引导抓取。",
+        "who_should_care": "做机器人抓取、机械臂操作或抓取感知研究的开发者。",
+        "use_cases": [
+          "杂乱碎片抓取演示",
+          "动态目标抓取跟踪",
+          "面向任务的区域抓取"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天。",
+        "risk_notes": "仅以许可方式发布库文件，需申请许可；依赖特定 Python、CUDA 与 MinkowskiEngine；aarch64 版本仍在测试。",
+        "evidence": [
+          "AnyGrasp SDK for grasp detection & tracking.",
+          "Due to the IP issue, currently we can only release the SDK library file of AnyGrasp in a licensed manner.",
+          "We are testing the aarch64 version SDK."
+        ]
+      }
+    },
+    "xing5/mcp-google-sheets": {
+      "category": "automation",
+      "one_liner": "操作云端表格的MCP服务",
+      "intro": {
+        "one_liner": "表格自动化 MCP 服务",
+        "what_it_is": "这是一个用 Python 编写的 MCP 服务，连接兼容客户端与 Google Drive、Google Sheets，让助手通过工具创建和修改表格。",
+        "problem_solved": "它让兼容 MCP 的客户端能用自然语言驱动表格读写、批量更新、格式化和共享，减少手工操作与配置成本。",
+        "who_should_care": "用兼容 MCP 的客户端处理 Google 表格的开发者和自动化用户。",
+        "use_cases": [
+          "让助手读取表格数据",
+          "创建并批量更新表格",
+          "查找、共享和整理表格"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，Fork 数达 249。",
+        "risk_notes": "需先配置 Google Cloud 凭据并启用接口；默认启用全部 19 个工具，会占用较多上下文；建议使用最新版本。",
+        "evidence": [
+          "This MCP server integrates with your Google Drive and Google Sheets, to enable creating and modifying spreadsheets.",
+          "`mcp-google-sheets` is a Python-based MCP server that acts as a bridge between any MCP-compatible client (like Claude Desktop) and the Google Sheets API.",
+          "You **must** configure Google Cloud Platform credentials and enable the necessary APIs first."
+        ]
+      }
+    },
+    "Mofiqul/vscode.nvim": {
+      "category": "dev-tools",
+      "one_liner": "仿VS Code的Neovim配色",
+      "intro": {
+        "one_liner": "VS Code 风格配色",
+        "what_it_is": "一个用 Lua 编写的 Neovim 配色方案，移植自 vim-code-dark，提供接近 Visual Studio Code 的明暗主题。",
+        "problem_solved": "让 Neovim 用户获得熟悉的 Visual Studio Code 明暗配色，并覆盖常用插件、状态栏和终端工具。",
+        "who_should_care": "喜欢 Visual Studio Code 外观的 Neovim 用户，尤其是重度插件使用者。",
+        "use_cases": [
+          "配置明暗主题切换",
+          "统一常用插件高亮",
+          "搭配状态栏主题"
+        ],
+        "alternatives": "相比一般配色，强调还原 Visual Studio Code 明暗主题，并列出大量插件支持。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "会调整语法树高亮查询，且说明该做法并不完美；许可证信息未提供。",
+        "evidence": [
+          "vscode.nvim (formerly `codedark.nvim`) is a Lua port of [vim-code-dark](https://github.com/tomasiser/vim-code-dark) colorscheme for [neovim](https://github.com/neovim/neovim) with VScode's light and dark theme",
+          "The theme is manipulating the treesitter highlight queries as follows:",
+          "this mimics the behavior of VSCode's default theme more closely. Be aware that\nthis is not a perfect solution but as far as we know, there is no better way to\nachieve this and most popular themes are doing the same thing."
+        ]
+      }
+    },
+    "Time-MoE/Time-MoE": {
+      "category": "ai-model",
+      "one_liner": "十亿级时序基础模型",
+      "intro": {
+        "one_liner": "时序预测基础模型",
+        "what_it_is": "Time-MoE 是面向时间序列预测的开源实现，采用 decoder-only 与 mixture-of-experts 架构，支持自回归通用预测。",
+        "problem_solved": "它解决不同预测时长和上下文长度的通用时序预测问题，并提供模型、训练数据、推理与微调流程。",
+        "who_should_care": "做时序预测、基础模型研究或需要微调预测模型的开发者。",
+        "use_cases": [
+          "通用时间序列预测",
+          "在自有数据上微调",
+          "复现评测与论文实验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周曾有一天登上日榜，且被 ICLR 2025 收录为 Spotlight。",
+        "risk_notes": "协变量支持、动态特征微调与时序分类仍在待办；最大序列长度为 4096；依赖指定版本 transformers。",
+        "evidence": [
+          "Time-MoE comprises a family of decoder-only time series foundation models with a mixture-of-experts architecture, designed to operate in an auto-regressive manner, enabling universal forecasting with arbitrary prediction horizons and context lengths of up to 4096.",
+          "## TODO List\n- [ ] Add covariate support\n- [ ] Enable fine-tuning of Time-MoE for forecasting with dynamic features and support time series classification",
+          "**Note: Time-MoE requires `transformers==4.40.1` .**"
+        ]
+      }
+    },
+    "disler/always-on-ai-assistant": {
+      "category": "ai-agent",
+      "one_liner": "常驻式工程AI助手范式",
+      "intro": {
+        "one_liner": "常驻语音工程助手范式",
+        "what_it_is": "这是一个用 Python 写的常驻人工智能助手范例，结合 Deepseek-V3、RealtimeSTT、Typer，提供语音唤醒、对话和命令生成。",
+        "problem_solved": "它把语音输入、模型推理、命令生成和临时记忆串起来，帮助工程场景用语音触发助手并查看生成的命令。",
+        "who_should_care": "想做语音助手、命令代理或工程自动化原型的 Python 开发者。",
+        "use_cases": [
+          "语音唤醒助手并生成命令",
+          "搭建对话式基础助手",
+          "试验语音转写与语音播报"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上过一天日榜，星数破千且复刻数较多。",
+        "risk_notes": "定位为模式示例，依赖多个外部密钥和服务；未见许可证、测试与生产部署说明。",
+        "evidence": [
+          "A pattern for an always on AI Assistant powered by Deepseek-V3, RealtimeSTT, and Typer for engineering",
+          "Update with your keys `DEEPSEEK_API_KEY` and `ELEVEN_API_KEY`",
+          "Open `scratchpad.md` to see the command that was generated."
+        ]
+      }
+    },
+    "skiff-org/skiff-apps": {
+      "category": "desktop-system",
+      "one_liner": "端到端加密办公套件",
+      "intro": {
+        "one_liner": "端到端加密私人工作区",
+        "what_it_is": "这是包含 Skiff 邮件、日历、文档与网盘等应用、组件库和搜索索引实现的代码仓库，主打端到端加密。",
+        "problem_solved": "为邮件、日程、文件、文本和标题等个人与协作内容提供端到端加密，减少明文数据暴露。",
+        "who_should_care": "重视隐私通信、加密协作与可复用界面组件的开发者。",
+        "use_cases": [
+          "搭建端到端加密邮件应用",
+          "开发加密日历与网盘功能",
+          "复用界面组件与搜索索引"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周仅一天登上日榜。",
+        "risk_notes": "日历本地开发仍在改进；移动端链接标注为即将推出；部分功能依赖账户升级。",
+        "evidence": [
+          "Privacy-first, end-to-end encrypted Mail, Pages, Drive, and Calendar.",
+          "Skiff is a privacy-first, end-to-end encrypted workspace with Mail, Calendar, Pages, and Drive product.",
+          "Local development of Skiff Calendar is currently being improved to support development of more views and calendar features."
+        ]
+      }
+    },
+    "rappasoft/laravel-authentication-log": {
+      "category": "dev-tools",
+      "one_liner": "Laravel登录日志与新设备提醒",
+      "intro": {
+        "one_liner": "Laravel 登录审计包",
+        "what_it_is": "这是面向 Laravel 的扩展包，记录用户登录登出、设备、地址和时间等信息，并支持新设备通知。",
+        "problem_solved": "帮助应用掌握账号登录情况，发现新设备、失败登录和可疑活动，并提供会话与可信设备管理。",
+        "who_should_care": "需要登录审计、账号安全提醒和会话管理的 Laravel 开发者。",
+        "use_cases": [
+          "记录登录登出与地址信息",
+          "新设备登录时发送通知",
+          "查看并撤销活跃会话"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时达到一千星。",
+        "risk_notes": "版本兼容要求较细，六点一以上需要较新的 Laravel 与 PHP；升级存在破坏性变更。",
+        "evidence": [
+          "Log user authentication details and send new device notifications.",
+          "Laravel Authentication Log is a comprehensive package which tracks your user's authentication information such as login/logout time, IP, Browser, Location, Device Fingerprint, etc.",
+          "Version 6.1+ requires Laravel 11.x, 12.x, or 13.x and PHP 8.2+."
+        ]
+      }
+    },
+    "google/adk-recipes": {
+      "category": "ai-agent",
+      "one_liner": "ADK示例代理合集",
+      "intro": {
+        "one_liner": "ADK 示例智能体合集",
+        "what_it_is": "这是用 Agent Development Kit 编写的可运行示例智能体集合，按核心模式、社区贡献和插件分类，并附带配置与运行说明。",
+        "problem_solved": "它让开发者不用从空白页开始，可直接复用客服、研究、检索等场景的基础实现，并学习常见智能体模式。",
+        "who_should_care": "正在学习或使用 ADK 的 Python 开发者，以及需要快速搭建智能体原型的团队。",
+        "use_cases": [
+          "学习 OAuth 与会话记忆",
+          "复用客服或研究智能体",
+          "参考垂直场景部署示例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有一万多星，且本周曾上日榜。",
+        "risk_notes": "内容明确用于演示和起点，不适合生产使用；并非官方支持的 Google 产品，也不参与漏洞奖励计划。",
+        "evidence": [
+          "A collection of sample agents built with Agent Development Kit (ADK)",
+          "small, runnable agents that show how to solve real problems with the Agent Development Kit",
+          "Recipes are for demonstration and as starting points, not production use."
+        ]
+      }
+    },
+    "Companion-Inc/feynman": {
+      "category": "ai-agent",
+      "one_liner": "开源AI研究代理",
+      "intro": {
+        "one_liner": "开源 AI 研究智能体",
+        "what_it_is": "一个用 TypeScript 编写、采用 MIT 许可证的开源 AI 研究智能体，提供命令行工作流，用于检索资料、核查引用、审阅论文和整理研究产出。",
+        "problem_solved": "把文献检索、来源比对、引用核查、论文审阅和实验规划串成可复用流程，并保存结果与来源记录。",
+        "who_should_care": "做文献调研、论文复现和机器学习实验的研究者与开发者。",
+        "use_cases": [
+          "围绕主题做深度调研",
+          "生成文献综述与来源矩阵",
+          "审阅论文或制定复现计划"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 112 星且曾上日榜。",
+        "risk_notes": "默认发送匿名使用数据，包含错误信息与堆栈；需登录模型提供方；部分流程依赖外部资料源和密钥。",
+        "evidence": [
+          "The open source AI research agent.",
+          "Planned investigation with parallel researchers and citation checks",
+          "Feynman sends anonymous usage data to PostHog: commands, workflows, tools, models, token counts, and errors with their messages and stack traces"
+        ]
+      }
+    },
+    "tamaratran/fast-jev-compaction": {
+      "category": "dev-tools",
+      "one_liner": "Claude Code上下文压缩插件",
+      "intro": {
+        "one_liner": "无损裁剪对话上下文",
+        "what_it_is": "一个 Claude Code 插件和 npm 库，用 Jev 判断哪些工具调用与结果可删、截断或保留，保留内容不改写。",
+        "problem_solved": "避免压缩摘要丢失文件路径、报错、约束和命令等关键原文；通过删除陈旧工具记录来缩短上下文。",
+        "who_should_care": "使用 Claude Code、关注长会话上下文保真与压缩策略的开发者。",
+        "use_cases": [
+          "替换 Claude Code 内置压缩摘要",
+          "裁剪长会话中的工具调用结果",
+          "作为 npm 库集成到自有流程"
+        ],
+        "alternatives": "相比摘要式压缩，不重写用户和助手文本，只删减或截断工具调用与结果。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 3,650 星，但只上过一天日榜。",
+        "risk_notes": "函数钩子属于早期功能；令牌数只是估算；Jev 失败、答案异常或压缩不足会回退到内置摘要。未关闭问题较多。",
+        "evidence": [
+          "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
+          "A summary is lossy: a file path, exact error, constraint, or command can disappear even when it matters later. This library never rewrites anything.",
+          "Function hooks are an early-access Claude Code feature (2.1.274+)"
+        ]
+      }
+    },
+    "appeeky/aso-skills": {
+      "category": "ai-agent",
+      "one_liner": "应用商店优化代理技能",
+      "intro": {
+        "one_liner": "应用增长智能体技能集",
+        "what_it_is": "这是一组面向应用商店优化和移动应用营销的智能体技能，供 Cursor、Claude Code 等兼容助手调用，覆盖关键词、元数据、竞品和增长分析。",
+        "problem_solved": "把分散在博客、课程和顾问服务中的应用商店优化经验整理成可复用框架，让智能体结合真实商店数据给出可执行建议。",
+        "who_should_care": "独立开发者、应用营销人员和增长团队。",
+        "use_cases": [
+          "审计应用商店页面",
+          "研究关键词与元数据",
+          "跟踪竞品和市场变化"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 77 星，曾有一天进入日榜。",
+        "risk_notes": "依赖 Appeeky API 获取真实商店数据；创建时间较新，成熟度未明确。",
+        "evidence": [
+          "AI agent skills for App Store Optimization (ASO) and mobile app marketing.",
+          "Powered by real App Store data via the [Appeeky API](https://docs.appeeky.com).",
+          "一周新增 Star：77"
+        ]
+      }
+    },
+    "smhmd/smhmd": {
+      "category": "web-frontend",
+      "one_liner": "个人工程师作品网站",
+      "intro": {
+        "one_liner": "个人网页作品集",
+        "what_it_is": "这是一个用 TypeScript 编写的个人作品集，集中展示多个可在网页中体验的小应用。",
+        "problem_solved": "把作者的网页实验、互动游戏和音频工具集中呈现，方便访问者逐个试用。",
+        "who_should_care": "关注网页互动、三维效果、音频应用和前端创意实现的开发者。",
+        "use_cases": [
+          "体验三维头像与几何谜题",
+          "试用网页乐器和节拍工具",
+          "把种子文件转成磁力链接"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千八百三十五星，且本周上过一天日榜。",
+        "risk_notes": "内容以个人作品展示为主，部分应用标注为测试版；未见许可证与生产可用性说明。",
+        "evidence": [
+          "This is my portfolio. Please try all the apps I've made!",
+          "Music Workstation <sup>beta</sup>",
+          "破千时的 Star 数：1835"
+        ]
+      }
+    },
+    "FjordWorkerShanty/massgravel": {
+      "category": "other",
+      "one_liner": "微软产品激活工具集",
+      "intro": {
+        "one_liner": "微软产品激活相关仓库",
+        "what_it_is": "一个围绕微软、Office 与激活话题的仓库，具体功能 unknown。",
+        "problem_solved": "可能面向微软产品激活相关问题，但缺少资料，具体解决的问题 unknown。",
+        "who_should_care": "关注微软产品激活话题的开发者。",
+        "use_cases": [
+          "了解相关话题标签",
+          "跟踪仓库热度变化"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时有一千七百五十九星。",
+        "risk_notes": "资料缺失，功能、许可证与维护状态 unknown；创建日期为 2026-08-29，且 Fork 数为 0，结论置信度低。",
+        "evidence": [
+          "话题标签：activator、massgrave、massgravel、microsoft、microsoft365、office、office365、ohook",
+          "README：无",
+          "破千时的 Star 数：1759；本周上日榜天数：1；Fork 数：0"
+        ]
+      }
+    },
+    "ibigbug/clash-rs": {
+      "category": "dev-tools",
+      "one_liner": "Rust自定义协议代理",
+      "intro": {
+        "one_liner": "Rust 网络代理内核",
+        "what_it_is": "ClashRS 是用 Rust 编写的自定义协议、基于规则的网络代理软件，支持多种入站、出站协议和平台。",
+        "problem_solved": "它用于按源地址、目标地址、域名等规则分流流量，并提供本地防污染域名解析与透明代理能力。",
+        "who_should_care": "需要自建代理内核、研究多协议代理或开发客户端的开发者。",
+        "use_cases": [
+          "按域名和地址分流流量",
+          "搭建本地防污染域名解析",
+          "为客户端集成代理内核"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千时星数一千七百二十七。",
+        "risk_notes": "资料提到测试版可能不稳定；部分能力依赖特性开关或增强构建；本地构建依赖较多。",
+        "evidence": [
+          "A custom protocol, rule based network proxy software.",
+          "Flexible traffic routing rules based off source/destination IP/Domain/GeoIP etc.",
+          "Beta builds (may be unstable)"
+        ]
+      }
+    },
+    "TheoLeeCJ/SemIf": {
+      "category": "ai-model",
+      "one_liner": "本地模型语义判断实验",
+      "intro": {
+        "one_liner": "开放模型语义判断工具",
+        "what_it_is": "SemIf 是用开放模型直接读取选项概率来做语义判断的 Python 项目，支持浏览器演示、多种本地后端和共享状态复用。",
+        "problem_solved": "它把代理流程里的小决策从生成文本再解析，改成一次前向读取类型化选项分数，减少输出解码和解析环节。",
+        "who_should_care": "做本地模型代理、运行时规则判断和决策评测的开发者。",
+        "use_cases": [
+          "代理流程中的路由与重试判断",
+          "证据是否支持某结论的判定",
+          "共享状态下批量评估多个条件"
+        ],
+        "alternatives": "相比生成数组或重排器，它直接读选项概率；与闭源服务只复现接口模式。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 2,261 星且曾上日榜。",
+        "risk_notes": "项目自称独立研究项目；快速复用路径为实验性，可能改变部分判断结果；浏览器构建使用量化模型。",
+        "evidence": [
+          "Independent research project. SemIf was formerly called OpenJev. It is not affiliated with or endorsed by TypeSafe.",
+          "This baseline reads typed option probabilities directly from a model. No answer sentence, JSON repair, or decoding loop.",
+          "The fast reuse paths are experimental: BF16 execution changed 5–6 of 777 argmaxes relative to fresh scoring."
+        ]
+      }
+    },
+    "puppyone-ai/puppyone-cloud": {
+      "category": "ai-agent",
+      "one_liner": "AI代理上下文驱动服务",
+      "intro": {
+        "one_liner": "智能体云端协作底座",
+        "what_it_is": "这是 puppyone 的可选云端基础设施，把项目托管为始终在线的 Git 仓库，并提供网页、命令行、接口等访问入口。",
+        "problem_solved": "让团队和智能体围绕同一份项目历史持续协作，统一记录网页编辑、推送和接口写入，并管理访问权限。",
+        "who_should_care": "需要自托管智能体项目、统一版本与权限的团队开发者。",
+        "use_cases": [
+          "团队与智能体共享在线项目",
+          "用标准 Git 克隆和回滚",
+          "自托管云端协作基础设施"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时有一千三百星。",
+        "risk_notes": "自托管栈仅供本地使用，带默认密钥且接口容器可访问宿主机守护进程；部分功能未包含在自托管栈中，托管工作区仍为早期访问。",
+        "evidence": [
+          "Hosts your projects as Git repositories, keeps them online, and controls which people and agents can reach them.",
+          "Every cloud project is a real Git repository, so each change is recorded and can be rolled back.",
+          "This stack is for local use. It ships with default secrets, and the API container can reach the host Docker daemon."
+        ]
+      }
+    },
+    "mugnavo/cove": {
+      "category": "web-frontend",
+      "one_liner": "极简全栈Web模板",
+      "intro": {
+        "one_liner": "TanStack Start 极简模板",
+        "what_it_is": "Cove Stack 是面向 TanStack Start 的最小起始模板，集成 React、路由、查询、界面组件、数据库、认证和构建工具。",
+        "problem_solved": "它把全栈应用常用的认证、数据库迁移、环境变量校验、日志、测试和部署配置预先接好，减少从零搭建的重复工作。",
+        "who_should_care": "想快速启动 React 全栈项目或软件即服务原型的开发者。",
+        "use_cases": [
+          "快速创建全栈应用骨架",
+          "搭建带认证的数据库应用",
+          "制作软件即服务原型"
+        ],
+        "alternatives": "提供单仓库与单仓库变体；相比更完整的模板，强调最小化和轻量测试基础。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星时达 1,299 星，且本周上过一次日榜。",
+        "risk_notes": "默认使用 Nitro v3 RC、Drizzle ORM v1 RC，TanStack Devtools 仍处 alpha；依赖版本固定，可能略旧。",
+        "evidence": [
+          "A minimal starter stack for 🏝️ TanStack Start.",
+          "TanStack Devtools is in alpha and may still have breaking changes.",
+          "The template is configured with Nitro v3 RC by default."
+        ]
+      }
+    },
+    "mcncarl/jianying-headless": {
+      "category": "content-media",
+      "one_liner": "剪映草稿无头编辑导出",
+      "intro": {
+        "one_liner": "剪映草稿自动化工具",
+        "what_it_is": "一个围绕剪映草稿的 Python 项目，描述提到原生草稿、隔离编辑与导出，以及独立的 Agent Skill。",
+        "problem_solved": "面向剪映草稿的编辑与导出流程，提供隔离处理和可独立使用的自动化能力。",
+        "who_should_care": "需要批量处理剪映草稿或探索视频编辑自动化的开发者。",
+        "use_cases": [
+          "隔离编辑剪映草稿",
+          "导出剪映草稿",
+          "接入 Agent Skill"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但资料不足。",
+        "risk_notes": "描述标注为私有源码预览；没有 README，功能细节、许可证和可用性均无法确认。",
+        "evidence": [
+          "Private source preview: native Jianying drafts, isolated editing/export, and standalone Agent Skill.",
+          "破千时的 Star 数：1022",
+          "本周上日榜天数：1"
+        ]
+      }
+    }
+  }
+}

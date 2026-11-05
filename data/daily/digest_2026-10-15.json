@@ -1,1 +1,925 @@
-{"date":"2026-10-15","headline":"AI Agent 与开发工具领跑","points":["AI Agent 有 7 个项目，开发工具 5 个，移动端 5 个，热度集中在智能体与效率工具。","T-Auto/dsh-ops 增加 711，yakuikai/tokentab 增加 436，分别主打底层操作省时与本地统计 AI 令牌成本。","Python 9 个项目、Rust 5 个项目；opengeos/RustGIS 增加 245，纯 Rust 地理系统受关注。"],"items":{"T-Auto/dsh-ops":{"category":"dev-tools","one_liner":"DSH 底层操作省时工具"},"yakuikai/tokentab":{"category":"dev-tools","one_liner":"本地统计 AI 令牌成本"},"Arekejoker/qwen21-nsfw-pose-skill":{"category":"ai-agent","one_liner":"Qwen-Image 姿势出图技能"},"opengeos/RustGIS":{"category":"other","one_liner":"纯 Rust 开源地理系统"},"Folkbench/folkbench":{"category":"dev-tools","one_liner":"AI API 中转评测切换器"},"MaxLiu22/Motion2MixamoRig":{"category":"content-media","one_liner":"视频动作迁移到三维角色"},"setube/stackprism":{"category":"dev-tools","one_liner":"识别网站技术栈的插件"},"storytold/artcraft-services":{"category":"other","one_liner":"前后端服务集合"},"anthropics/oss-scanner":{"category":"security","one_liner":"开源扫描器"},"rociiu/talorys":{"category":"ai-agent","one_liner":"自托管个人 AI 助手"},"kvmem/kvmem":{"category":"ai-model","one_liner":"虚拟化 KV 内存省显存"},"aozorae/Edgechat":{"category":"web-frontend","one_liner":"Cloudflare 自托管加密聊天"},"andreavolpato/spektrafilm":{"category":"content-media","one_liner":"模拟胶片摄影光谱"},"MengMengCode/VoCat":{"category":"hardware-iot","one_liner":"蜂窝模组网页控制台"},"scenario-labs/skills":{"category":"ai-agent","one_liner":"智能体多媒体生成技能"},"supermemoryai/company-brain":{"category":"ai-agent","one_liner":"记住团队对话的 Slack 助手"},"tonybanters/oxwm":{"category":"desktop-system","one_liner":"Zig 窗口管理器"},"UCYBERS/Awesome-Blackhat-Tools":{"category":"security","one_liner":"Black Hat 工具精选清单"},"cvg/NoPoSplat":{"category":"ai-model","one_liner":"无位姿稀疏图三维重建"},"betrusted-io/xous-core":{"category":"desktop-system","one_liner":"Xous 微内核"},"TreborNamor/TradingView-Machine-Learning-GUI":{"category":"data-finance","one_liner":"终端式策略回测实验室"},"ki9mu/ARL-plus-docker":{"category":"security","one_liner":"ARL 资产侦察修改版"},"iDoka/awesome-automotive-can-id":{"category":"hardware-iot","one_liner":"汽车 CAN ID 数据合集"},"pathwaycom/serviette":{"category":"ai-agent","one_liner":"实时数据 RAG 云模板"},"nelvko/clashctl":{"category":"automation","one_liner":"优雅管理 Clash 代理"},"LiveContainer/LiveContainer":{"category":"mobile","one_liner":"免安装运行 iOS 应用"},"Dr-TSNG/ZygiskNext":{"category":"mobile","one_liner":"独立 Zygisk 实现"},"Dr-TSNG/Hide-My-Applist":{"category":"mobile","one_liner":"拦截应用列表检测"},"aleo-labs-protocol/leo":{"category":"dev-tools","one_liner":"零知识应用编程语言"},"devangshekhawat/Fedora-45-Post-Install-Guide":{"category":"learning-resource","one_liner":"Fedora 45 安装后指南"},"istoreos/istore":{"category":"desktop-system","one_liner":"OpenWRT 软件中心"},"DosX-dev/obfus.h":{"category":"security","one_liner":"C 编译期混淆头文件"},"DAIR-AutoResearch/AutoSci":{"category":"ai-agent","one_liner":"维基驱动 AI 科研平台"},"nateherkai/herk-edit-kit":{"category":"content-media","one_liner":"智能体视频剪辑套件"},"Dr-TSNG/TwiFucker":{"category":"mobile","one_liner":"Twitter 去广告模块"},"Dr-TSNG/ApplistDetector":{"category":"mobile","one_liner":"检测可疑 Android 应用"},"Anil-matcha/awesome-agent-apis":{"category":"ai-agent","one_liner":"智能体 API 能力目录"},"nextjs/nextgram":{"category":"web-frontend","one_liner":"Next.js 模态路由示例"}}}
+{
+  "date": "2026-10-15",
+  "headline": "AI Agent 与开发工具领跑",
+  "points": [
+    "AI Agent 有 7 个项目，开发工具 5 个，移动端 5 个，热度集中在智能体与效率工具。",
+    "T-Auto/dsh-ops 增加 711，yakuikai/tokentab 增加 436，分别主打底层操作省时与本地统计 AI 令牌成本。",
+    "Python 9 个项目、Rust 5 个项目；opengeos/RustGIS 增加 245，纯 Rust 地理系统受关注。"
+  ],
+  "items": {
+    "T-Auto/dsh-ops": {
+      "category": "dev-tools",
+      "one_liner": "DSH 底层操作省时工具",
+      "intro": {
+        "one_liner": "DSH 底层操作插件，降低 Token 消耗",
+        "what_it_is": "dsh-ops 是 DSH（DeepSeek Harness）的插件工具包，提供 ops 系列底层操作工具，并隐藏部分官方工具，以降低 Token 消耗和任务执行时间。",
+        "problem_solved": "针对 DSH 中常见场景 Token 消耗高、系统提示词膨胀、报错循环导致调用轮次增多等问题，通过渐进式加载工具和紧凑返回格式来降低开销。",
+        "who_should_care": "使用 DSH（桌面端、Web 或 TUI）并关注 Token 成本与任务耗时的开发者与重度用户。",
+        "use_cases": [
+          "在 DSH 中批量修改大量文件、读取 PDF/Word 等高级场景按需加载工具",
+          "在 Native 模式下用带行号和紧凑错误反馈的工具减少报错循环",
+          "在 PTC 模式下用结构化 JSON 返回工具降低编写 TypeScript 的 Token 量"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 2000 star，但项目创建仅两周余，README 自述完整 benchmark 尚未发布。",
+        "risk_notes": "项目创建于 2026-10-08，距今仅两周余，成熟度有限；README 称完整 benchmark 将随后续更新发布，当前性能结论缺乏公开验证；Windows bash 载荷含 GPL-2.0 等上游许可组件，需注意许可合规；open issues 48 个。",
+        "evidence": [
+          "以提高token效率为目的，提供新增的ops系列工具并隐藏部分官方工具为方案的插件，低改动面，低侵入性，与其他插件广泛兼容。",
+          "启用 DSH 预留的 `tools_addition` 动态工具加载，并提供渐进式纰漏的工具……大大减少常见特定场景的token消耗量，且不会导致系统提示词膨胀",
+          "完整benchmark将随后续更新发布"
+        ]
+      }
+    },
+    "yakuikai/tokentab": {
+      "category": "dev-tools",
+      "one_liner": "本地统计 AI 令牌成本",
+      "intro": {
+        "one_liner": "本地 AI 用量看板",
+        "what_it_is": "这是一个本地优先的命令行工具和网页看板，用于读取 Claude Code、Codex 和 Gemini CLI 的会话日志，按模型、项目、日期和活动展示 token 用量与费用。",
+        "problem_solved": "它让开发者无需账号或 API key，就能在本机查看多种 AI 编程工具的 token 消耗和成本，且数据不会离开本机。",
+        "who_should_care": "关注 AI 编程成本、同时使用多种命令行助手的开发者。",
+        "use_cases": [
+          "按项目统计 AI 用量",
+          "查看每日 token 花费",
+          "比较不同模型成本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但创建时间很新。",
+        "risk_notes": "缺少 README，功能细节、安装方式、许可证和维护状态均无法确认；项目创建时间很新，成熟度未知。",
+        "evidence": [
+          "Local-first CLI and web dashboard that reads Claude Code, Codex and Gemini CLI session logs and shows token usage and cost by model, project, day and activity.",
+          "No account, no API key, nothing leaves your machine",
+          "破千时的 Star 数：1047"
+        ]
+      }
+    },
+    "Arekejoker/qwen21-nsfw-pose-skill": {
+      "category": "ai-agent",
+      "one_liner": "Qwen-Image 姿势出图技能",
+      "intro": {
+        "one_liner": "Qwen-Image 2.1 本地 NSFW 姿势出图配方",
+        "what_it_is": "一个面向 ComfyUI 的 Qwen-Image 2.1 出图技能包，包含作者级提示词配方、NSFW LoRA 配置、136 个 3D 姿势库与 VNCCS 人偶姿势控制脚本，可作为 Claude Code / Codex / Cursor / OpenClaw 的 agent 技能使用。",
+        "problem_solved": "把本地 NSFW 与姿势控制出图的提示词结构、LoRA 参数、工作流和姿势库打包成可跟跑的固定配方，降低复刻作者样图与精确控姿势的门槛。",
+        "who_should_care": "使用 ComfyUI 做本地图像生成、需要姿势控制与 NSFW 配方复刻的个人创作者，以及在 agent 工具中集成出图技能的用户。",
+        "use_cases": [
+          "按作者配方复刻 Civitai 样图（T2I + NSFW LoRA）",
+          "已有角色图换姿势并保持身份与服装（Edit 模式）",
+          "用 3D 人偶渲染图做脚本化姿势迁移",
+          "从 136 姿势库中指定精确姿势生成场景图"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 2332 stars，属于 NSFW 出图与 agent 技能叠加的话题性增长，但项目创建仅一周、维护历史短。",
+        "risk_notes": "内容为 NSFW，公开传播与使用需注意平台与地区合规；第三方素材（作者原图、社区姿势、模型与 LoRA）不在 Apache-2.0 覆盖范围内，权利归各自原作者；Mac 数据为社区报告、维护者未实测；项目创建于 2026-10-13，维护时间极短。",
+        "evidence": [
+          "Qwen-Image 2.1 本地 NSFW / 姿势出图完整配方 — 作者级提示词结构 + NSFW LoRA + 136 个 3D 姿势库 + VNCCS 人偶精确姿势控制",
+          "本仓库原创代码与文档（`scripts/`、`workflows/`、`prompts/`、`SKILL.md`、README 等）采用 Apache License 2.0",
+          "第三方素材不在 Apache-2.0 覆盖范围内，权利归各自原作者"
+        ]
+      }
+    },
+    "opengeos/RustGIS": {
+      "category": "other",
+      "one_liner": "纯 Rust 开源地理系统",
+      "intro": {
+        "one_liner": "纯 Rust 开源桌面 GIS",
+        "what_it_is": "RustGIS 是用 Rust 编写的免费开源地理信息系统，可在 Windows、macOS、Linux 和浏览器中运行，用于地图制作、空间分析与数据共享。",
+        "problem_solved": "它把地理数据读取、制图、编辑、分析、发布和脚本化操作放进一个本地优先的应用，减少安装运行时、启动服务器和上传数据的需求。",
+        "who_should_care": "地理空间开发者、遥感与地形分析人员，以及需要本地处理数据的 GIS 用户。",
+        "use_cases": [
+          "浏览并样式化矢量与栅格数据",
+          "运行地形、水文和遥感分析",
+          "用命令或笔记本编排制图流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 291 星，并曾有一天登上日榜。",
+        "risk_notes": "创建时间较新，未关闭 Issue 有 99 个；部分能力依赖外部组件或用户选择的网络服务。",
+        "evidence": [
+          "A fast, free and open-source GIS in pure Rust.",
+          "Native on Windows, macOS and Linux, and in your web browser. Your data stays on your machine",
+          "Every button in the ribbon is a command with an id. Script it from `rustgis-cli`, chain it in notebooks and models"
+        ]
+      }
+    },
+    "Folkbench/folkbench": {
+      "category": "dev-tools",
+      "one_liner": "AI API 中转评测切换器",
+      "intro": {
+        "one_liner": "中转站评测与切换工具",
+        "what_it_is": "提供 AI 接口中转站评测榜单，并开源桌面客户端，用于把选好的线路写入 Claude Code、Codex 等工具配置。",
+        "problem_solved": "帮助开发者比较中转站的可用率、响应耗时和价格，并减少在多个服务与官方线路之间手动改配置的麻烦。",
+        "who_should_care": "使用 Claude Code、Codex 等编程助手并需要切换接口服务的开发者。",
+        "use_cases": [
+          "查看中转站可用率与延迟",
+          "一键切换接口服务配置",
+          "估算本地会话调用成本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 204 星，曾有一天进入日榜。",
+        "risk_notes": "仅 Switch 代码以 Apache-2.0 开源，博客文章、图片与品牌素材不在范围内；榜单依赖持续测试与公开数据。",
+        "evidence": [
+          "持续测试各家 AI 中转站，公开可用率、响应耗时和价格。",
+          "本仓库是配套桌面客户端 Folkbench Switch 的代码，用来把选好的线路写入 Claude Code、Codex 等工具的配置。",
+          "apps/switch/ 下的 Switch 代码以 Apache-2.0 开源。博客文章、图片与品牌素材不在此范围内"
+        ]
+      }
+    },
+    "MaxLiu22/Motion2MixamoRig": {
+      "category": "content-media",
+      "one_liner": "视频动作迁移到三维角色",
+      "intro": {
+        "one_liner": "视频动作重定向到 Mixamo 角色",
+        "what_it_is": "一个 Python 命令行工具，可将单人在视频中的动作或静态照片中的姿态，重定向到 Adobe Mixamo 绑定的 3D 角色上，并输出预览视频和带蒙皮的 .glb 文件；同时提供 Blender 4.2+ 扩展。",
+        "problem_solved": "解决从真人视频或照片获取动作数据、并迁移到 Mixamo 骨骼角色上的流程问题，省去手工在 Blender 或 Unity 中做动作重定向的步骤。",
+        "who_should_care": "需要快速产出角色动画原型的游戏开发者、独立 3D 动画师，以及希望在 Blender 中不写代码完成动作迁移的用户。",
+        "use_cases": [
+          "用一段单人动作视频驱动 Mixamo 角色，导出 .glb 放入 Blender 或 Unity",
+          "复用已提取的骨架，为同一动作快速更换不同 Mixamo 角色",
+          "从单张全身照片恢复静态 3D 姿态并重定向到角色"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 项目自述为 experimental，0.1.7 仍为命令行管线，但动作捕捉与重定向是持续需求",
+        "risk_notes": "README 明确标注为 experimental；需自行注册下载 SMPL-X 模型（受其许可约束）与 Mixamo 角色；首次运行需下载约 5 GB 权重，CPU 上 30 秒视频提取约需 8–15 分钟；README 称仅在 macOS (Apple Silicon) 上测试过。",
+        "evidence": [
+          "Retarget human motion from video to an Adobe Mixamo-rigged 3D character.",
+          "Motion2MixamoRig is currently experimental. Version 0.1.7 is the command-line pipeline.",
+          "On CPU, a ~30 second clip takes about 8–15 minutes to extract"
+        ]
+      }
+    },
+    "setube/stackprism": {
+      "category": "dev-tools",
+      "one_liner": "识别网站技术栈的插件",
+      "intro": {
+        "one_liner": "网页技术栈识别扩展",
+        "what_it_is": "StackPrism 是一个基于 Manifest V3 的浏览器扩展，用 TypeScript 编写，可识别网页使用的技术栈。",
+        "problem_solved": "它把页面元素、响应头、动态资源和脚本注释等线索合并去重，帮助判断网站所用框架、服务与第三方组件。",
+        "who_should_care": "前端开发者、技术调研人员、网站运维与竞品分析人员。",
+        "use_cases": [
+          "查看网页使用的框架和库",
+          "识别分析、广告与营销工具",
+          "排查 CDN、服务器与安全线索"
+        ],
+        "alternatives": "相比只扫描页面资源地址的工具，它并行使用四种检测通道，并抑制部分误报。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 39 星，曾有一天进入日榜。",
+        "risk_notes": "命令行工具与开发包仍属实验性质，尚未发布到软件包仓库；后端识别不完备，伪造响应头、首次安装需刷新、部分浏览器内部页面无法注入都会影响结果。",
+        "evidence": [
+          "StackPrism is a browser extension for detecting website technology stacks.",
+          "An experimental Node.js CLI and SDK reuses the shared detector. Build with `bun run build:sdk`; the package is not yet published to npm.",
+          "Backend detection is not exhaustive — many sites hide `Server` / `X-Powered-By` headers; backend results are shown as \"clues + confidence\""
+        ]
+      }
+    },
+    "storytold/artcraft-services": {
+      "category": "other",
+      "one_liner": "前后端服务集合",
+      "intro": {
+        "one_liner": "生成服务后端仓库",
+        "what_it_is": "这是 ArtCraft 的服务端代码仓库，包含 Rust 与 TypeScript 的单体仓库，覆盖 HTTP 接口、后台任务、网页前端和共享工具。",
+        "problem_solved": "它把账号、媒体、生成任务、计费、供应商接入、任务状态和结果存储集中到一套服务中，便于构建和追踪生成类应用。",
+        "who_should_care": "关注生成服务架构、Rust 后端和网页前后端协作的开发者。",
+        "use_cases": [
+          "搭建图像视频生成接口",
+          "追踪任务状态与回调流程",
+          "开发网页端生成应用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，星数破千。",
+        "risk_notes": "创建日期为 2026 年 9 月 11 日，时间信息异常；分叉数高于星数，需留意数据可信度；本地运行依赖较多外部服务。",
+        "evidence": [
+          "This repository contains ArtCraft's backend, HTTP API, background workers, and web\nfrontends. It is a Rust and TypeScript monorepo with shared API definitions,\nprovider clients, database queries, and development tooling.",
+          "The API exposes two generation interfaces:",
+          "The server needs a migrated MySQL database, Redis, Elasticsearch configuration,\nobject storage, and credentials for the integrations being exercised."
+        ]
+      }
+    },
+    "anthropics/oss-scanner": {
+      "category": "security",
+      "one_liner": "开源扫描器",
+      "intro": {
+        "one_liner": "开源项目漏洞扫描服务",
+        "what_it_is": "这是一个用于登记开源项目并配置自动化安全扫描的仓库，通过项目配置和构建文件，让扫描器在隔离环境中分析漏洞并邮件发送结果。",
+        "problem_solved": "帮助关键开源项目获得自动化漏洞发现、复现步骤和建议补丁，并让维护者用配置和威胁模型说明扫描范围与报告方式。",
+        "who_should_care": "关键开源项目维护者、安全负责人，以及需要自动化漏洞报告的团队。",
+        "use_cases": [
+          "登记项目接受漏洞扫描",
+          "配置构建与报告联系人",
+          "用威胁模型说明扫描范围"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天且破千星，关注度上升较快。",
+        "risk_notes": "报告由模型生成且未经人工复核；使用受专门条款约束；本地检查工具运行项目构建文件，需注意网络安全风险。",
+        "evidence": [
+          "OSS Scanner is a service by Anthropic to scan critical open-source repositories for security vulnerabilities.",
+          "Reports are model-generated and are not reviewed by a human.",
+          "Note, use of this tool is subject to the terms and conditions outlined in the [OSS Scanner terms](https://red.anthropic.com/oss-scanner/terms)."
+        ]
+      }
+    },
+    "rociiu/talorys": {
+      "category": "ai-agent",
+      "one_liner": "自托管个人 AI 助手",
+      "intro": {
+        "one_liner": "部署在自己 Cloudflare 账号里的个人 AI 助手",
+        "what_it_is": "Talorys 是一个开源的单用户个人 AI 助手，完全运行在用户自己的 Cloudflare 账号内，提供聊天、记忆、任务、笔记、项目与定时提醒功能，通过 npx create-talorys@latest 一条命令部署。",
+        "problem_solved": "让个人在不自建服务器、不依赖第三方托管账号的前提下，拥有一个私有、无遥测的 AI 助手，并借助 Cloudflare 免费额度降低使用成本。",
+        "who_should_care": "有 Cloudflare 账号、重视数据私有性、希望低成本自托管的个人用户与开发者。",
+        "use_cases": [
+          "个人日常对话与信息记录",
+          "任务、笔记与项目管理",
+          "定时提醒、每日摘要与 AI 例行任务",
+          "跨设备推送通知的个人助理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 项目创建仅约两周即获千余星，属于新近发布的高关注度项目，长期价值待观察",
+        "risk_notes": "项目创建时间很短（2026-10-10），尚缺长期维护记录；免费额度受 Cloudflare 账户级配额限制，并非无限免费；聊天内容会经 Workers AI 推理处理。",
+        "evidence": [
+          "Your personal AI agent in your own Cloudflare account.",
+          "Talorys is a free, open-source personal AI assistant that runs entirely inside your own Cloudflare account.",
+          "Talorys has no telemetry, analytics, tracking or advertising code and sends nothing to its developers."
+        ]
+      }
+    },
+    "kvmem/kvmem": {
+      "category": "ai-model",
+      "one_liner": "虚拟化 KV 内存省显存",
+      "intro": {
+        "one_liner": "本地长上下文推理内存虚拟化",
+        "what_it_is": "KVMem 用 C++ 实现，把推理过程中的 KV 历史放到系统内存，并可选扩展到 SSD，再按请求把所需历史加载到显卡。它提供本地网页界面和兼容 OpenAI 的接口，接入多种推理后端。",
+        "problem_solved": "它面向显存有限时难以维持长对话、长工具历史和长推理输出的问题，通过管理 KV 历史与生成空间，让固定显存预算下也能处理更长上下文。",
+        "who_should_care": "在消费级显卡上本地运行长对话模型、智能体或长推理任务的开发者。",
+        "use_cases": [
+          "有限显存下运行长对话",
+          "复用会话前缀和检查点",
+          "接入兼容 OpenAI 的本地服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 49 星，仅一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 55 个；预览版仅供测试；模型、显卡、量化与功能组合并非全部验证，部分 AMD 集成仍为实验性。",
+        "evidence": [
+          "KVMem keeps complete native KV history in system RAM, with optional SSD tiering. The GPU holds the history needed for the current request and space for generation.",
+          "Architecture support does not mean every size, quantization or feature combination has been tested.",
+          "Releases marked **Pre-release** are for testing."
+        ]
+      }
+    },
+    "aozorae/Edgechat": {
+      "category": "web-frontend",
+      "one_liner": "Cloudflare 自托管加密聊天",
+      "intro": {
+        "one_liner": "自部署团队聊天系统",
+        "what_it_is": "EdgeChat 是运行在自有 Cloudflare 账号上的开源团队聊天系统，支持实时群聊、私信、语音、文件、Telegram 双向桥接与服务端加密。",
+        "problem_solved": "让团队、项目或小圈子搭建独立聊天空间，不必维护常驻服务器，也能连接已有 Telegram 群并管理消息与附件。",
+        "who_should_care": "想自托管聊天、已用 Cloudflare 或 Telegram 的团队与社区管理员。",
+        "use_cases": [
+          "搭建团队内部群聊与私信",
+          "把网页聊天与 Telegram 群互通",
+          "部署带文件语音的私密小圈子"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "在线演示的后端为浏览器内存模拟；加密是服务端加密而非端到端加密；Telegram 桥接会同步完整消息，部署方与运行环境仍需被信任。",
+        "evidence": [
+          "**EdgeChat 是一个运行在 Cloudflare 上的开源团队聊天系统。**",
+          "演示站复用正式项目的 Vue 页面、路由、状态管理和实时消息逻辑，但 API、WebSocket、文件上传与 Telegram 回流均在浏览器内存中模拟，不是连接真实后端的多人聊天室。",
+          "**这是服务端加密，不是端到端加密。**"
+        ]
+      }
+    },
+    "andreavolpato/spektrafilm": {
+      "category": "content-media",
+      "one_liner": "模拟胶片摄影光谱",
+      "intro": {
+        "one_liner": "光谱胶片模拟工具",
+        "what_it_is": "spektrafilm 是用 Python 编写的参考实现，基于厂商数据表做光谱计算，模拟胶片、相纸与扫描流程，并提供桌面图形界面。",
+        "problem_solved": "它试图把相机图像转成更可信的胶片、印相和扫描效果，避免只套用泛化的胶片滤镜，而是用测量数据建模 photographic materials 的行为。",
+        "who_should_care": "关注胶片模拟、色彩科学、RAW 处理和影像插件开发的开发者。",
+        "use_cases": [
+          "交互式探索胶片与相纸配置",
+          "研究负片、印相、扫描链路",
+          "为插件或工具提供模型参考"
+        ],
+        "alternatives": "相比通用胶片滤镜，它强调数据表驱动的光谱建模；另有 Vulkan、Rust、OFX 等衍生实现。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜，但项目仍在快速开发。",
+        "risk_notes": "全分辨率导出目前很慢；项目快速开发，部分区域仍在建设且会快速变化；许可证要求较严格，代码为 GPLv3，配置与查找表另有授权限制。",
+        "evidence": [
+          "In practice, this Python repository is **the reference implementation** for other developments, and the place where I am growing the underlying model.",
+          "The desktop GUI exposes the Python tech-demo functionality without writing code, letting you import RAW files or prepared linear images, explore different film and paper profiles, adjust the simulation interactively, and move quickly between fast(-ish) previews and more detailed final scans. Full resolution export is very slow at the moment.",
+          "The project is in rapid development, some ares are still being build and will change fast."
+        ]
+      }
+    },
+    "MengMengCode/VoCat": {
+      "category": "hardware-iot",
+      "one_liner": "蜂窝模组网页控制台",
+      "intro": {
+        "one_liner": "蜂窝模组控制面板",
+        "what_it_is": "VoCat 是面向 Quectel EC20/EC25 等蜂窝模组的开源网页控制面板和工程工具，后端用 Go，前端内嵌进单个可执行文件，并用 SQLite 保存状态。",
+        "problem_solved": "把模组发现、无线状态、AT 与 USSD 终端、短信、WiFi Calling、eSIM、网络选择、代理路由和通知集中到一个自包含服务里，减少分散操作。",
+        "who_should_care": "使用兼容蜂窝模组做开发、调试、短信或网络管理的开发者与运维人员。",
+        "use_cases": [
+          "查看信号与注册状态",
+          "调试 AT 与 USSD 命令",
+          "管理短信、eSIM 与选网"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 115 星，且两天进入日榜。",
+        "risk_notes": "可用功能依赖模组固件、USB 组合、卡能力、驱动、网络和运营商配置；VoWiFi IMS 需要 Linux XFRM/IPsec；硬件访问模式需要较高权限。",
+        "evidence": [
+          "Vocat is an open-source web control panel and engineering toolkit for Quectel EC20/EC25-class and China Mobile ML307 series cellular modems.",
+          "The backend is written in Go, the interface is built with React and TypeScript, and the production frontend is embedded into the Go binary. A single executable contains the web application and uses SQLite for persistent state.",
+          "Available features depend on the module firmware, USB composition, SIM/eSIM capabilities, host drivers, radio network, and carrier configuration."
+        ]
+      }
+    },
+    "scenario-labs/skills": {
+      "category": "ai-agent",
+      "one_liner": "智能体多媒体生成技能",
+      "intro": {
+        "one_liner": "AI 智能体创意技能库",
+        "what_it_is": "这是一组面向 AI 编程智能体的技能，按 Agent Skills 格式组织，用于通过 Scenario MCP 生成图像、视频、音频、纹理、天空盒和 3D 资产，也包含驱动本机创作软件与游戏引擎的专家工具。",
+        "problem_solved": "它把模型选择、生成前估价、角色与品牌一致性，以及专业软件操作流程整理成可安装技能，帮助智能体完成可用于生产的内容制作。",
+        "who_should_care": "使用 AI 编程智能体制作游戏、娱乐或创意素材的开发者与内容团队。",
+        "use_cases": [
+          "为游戏批量生成美术与 3D 资产",
+          "让智能体制作图像、视频和音频",
+          "驱动 Blender、Maya 等创作软件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 29 星且仅一天登上日榜。",
+        "risk_notes": "Scenario 技能依赖 MCP 服务连接和账户登录；专家工具需要本机安装对应应用，且各工具族的验证程度需查看其说明。未关闭问题有 40 个。",
+        "evidence": [
+          "Agent Skills that teach AI coding agents (Claude Code, Cursor, Codex, Copilot, and 70+ others) how to create production-ready content with [Scenario](https://scenario.com) through the [Scenario MCP server](https://mcp.scenario.com): images, video, audio, textures, skyboxes, 3D assets, and custom-trained models, for games, entertainment, and any creative vertical.",
+          "The expert tools at the bottom of the list work differently: teams of skills that drive DCC (digital content creation) software and game engines installed on your machine (ZBrush, Blender, Maya, Unreal Engine, Unity, Godot, Roblox Studio), distilled from expert tutorials, conference talks, and official documentation.",
+          "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity."
+        ]
+      }
+    },
+    "supermemoryai/company-brain": {
+      "category": "ai-agent",
+      "one_liner": "记住团队对话的 Slack 助手",
+      "intro": {
+        "one_liner": "Slack 团队记忆助手",
+        "what_it_is": "一个部署到自有 Cloudflare 账号的开源 Slack 助手，用 TypeScript 编写，可记住团队对话、回答问题，并调用工具执行工作。",
+        "problem_solved": "团队知识散落在 Slack、文档、工单和个人脑中。它按权限读取这些上下文，主动补充答案，并代为创建问题、查看代码等。",
+        "who_should_care": "重度使用 Slack、希望沉淀团队知识并自动化日常协作的开发者与团队。",
+        "use_cases": [
+          "在 Slack 中回答团队历史决策",
+          "根据对话创建问题或读取代码",
+          "生成定时摘要与主动提醒"
+        ],
+        "alternatives": "强调权限图、主动发言、工具操作和代码沙箱，可自托管在 Cloudflare。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且上过一次日榜，但一周仅新增 7 星。",
+        "risk_notes": "创建时间很短，仍有 15 个未关闭问题；部署需自备两个密钥，部分能力依赖付费计划或外部服务。",
+        "evidence": [
+          "A teammate in your Slack that truly knows and understands your company, and can do anything.",
+          "Your team's knowledge is scattered across Slack threads, docs, tickets and people's heads.",
+          "One click to deploy, two API keys, and a setup page that walks you through the Slack app."
+        ]
+      }
+    },
+    "tonybanters/oxwm": {
+      "category": "desktop-system",
+      "one_liner": "Zig 窗口管理器",
+      "intro": {
+        "one_liner": "可热重载的平铺窗口管理器",
+        "what_it_is": "OXWM 是用 Zig 编写的动态窗口管理器，受 dwm 启发，提供 Lua 配置接口、热重载、内置状态栏和多种布局。",
+        "problem_solved": "它想降低平铺窗口管理器的配置门槛，让用户无需修改源码并重新编译，就能调整快捷键、布局、状态栏和窗口规则。",
+        "who_should_care": "喜欢平铺窗口、使用 X 会话，并希望用 Lua 快速定制桌面的开发者。",
+        "use_cases": [
+          "用 Lua 定制快捷键和布局",
+          "不重启会话热重载配置",
+          "配置多显示器和状态栏"
+        ],
+        "alternatives": "相比强调修改源码再编译的 dwm 思路，它提供 Lua 配置、热重载、补全支持和合理默认值。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天登上日榜。",
+        "risk_notes": "资料提到 BSD 上存在已知链接器问题；手势功能依赖 Linux 库且默认关闭；成熟度未明确。",
+        "evidence": [
+          "A dynamic window manager written in Zig, inspired by dwm but designed to evolve beyond it.",
+          "OXWM features a clean, functional Lua API for configuration with hot-reloading support, ditching the suckless philosophy of *\"edit + recompile\"*.",
+          "Note, on many BSD systems, the zig compiler will aggressively attempt to remove debug symbols which is causing a known linker issue."
+        ]
+      }
+    },
+    "UCYBERS/Awesome-Blackhat-Tools": {
+      "category": "security",
+      "one_liner": "Black Hat 工具精选清单",
+      "intro": {
+        "one_liner": "Black Hat 工具清单",
+        "what_it_is": "按地区、年份和类别整理在 Black Hat 活动上正式展示过的网络安全工具，并以结构化文件收录。",
+        "problem_solved": "帮助安全从业者查找经过会议展示的实战工具，减少在攻防、取证和应用安全等方向筛选资料的成本。",
+        "who_should_care": "红蓝队、应用安全、取证、威胁情报和开源情报从业者。",
+        "use_cases": [
+          "按会议年份查找工具",
+          "按安全类别筛选工具",
+          "补充社区工具条目"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，创建不久已破千星，并曾一天进入日榜。",
+        "risk_notes": "内容依赖社区维护与提交准确性；清单本身不是可直接部署的工具；创建时间较短，成熟度待观察。",
+        "evidence": [
+          "A curated collection of real-world tools officially presented at Black Hat events",
+          "All tools in this repository were officially presented at **Black Hat events** (USA, Europe, Asia, MEA, Canada).",
+          "Content is shared under the [CC0 1.0 Universal](LICENSE) license — free to use, modify, and distribute."
+        ]
+      }
+    },
+    "cvg/NoPoSplat": {
+      "category": "ai-model",
+      "one_liner": "无位姿稀疏图三维重建",
+      "intro": {
+        "one_liner": "无位姿稀疏图像三维重建",
+        "what_it_is": "NoPoSplat 从无位姿的稀疏图像预测规范空间中的 3D Gaussians，用于新视角合成和位姿估计。",
+        "problem_solved": "它让稀疏图像在缺少相机位姿时也能生成三维表示，并支持高质量新视角合成与准确位姿估计。",
+        "who_should_care": "关注三维重建、新视角合成和位姿估计的研究者与开发者。",
+        "use_cases": [
+          "稀疏图像新视角合成",
+          "无位姿图像位姿估计",
+          "复现三维高斯实验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周一天登上日榜。",
+        "risk_notes": "训练默认配置要求八张高显存显卡；需下载预训练权重和额外模型；环境依赖特定 Python、PyTorch 与 CUDA 版本。",
+        "evidence": [
+          "NoPoSplat predicts 3D Gaussians in a canonical space from unposed sparse images, <br> enabling high-quality novel view synthesis and accurate pose estimation.",
+          "Our code relies on Python 3.10+, and is developed based on PyTorch 2.1.2 and CUDA 11.8, but it should work with higher Pytorch/CUDA versions as well.",
+          "This default training configuration requires 8x GPUs with a batch size of 16 on each GPU (>=80GB memory)."
+        ]
+      }
+    },
+    "betrusted-io/xous-core": {
+      "category": "desktop-system",
+      "one_liner": "Xous 微内核",
+      "intro": {
+        "one_liner": "Rust 微内核系统",
+        "what_it_is": "Xous 是用纯 Rust 编写的微内核操作系统，面向高保障嵌入式应用，仓库包含内核、库、应用和构建工具。",
+        "problem_solved": "它通过硬件内存保护、进程地址空间隔离、异步消息传递和精简内核，降低嵌入式系统组件间相互干扰的风险。",
+        "who_should_care": "关注 Rust、微内核、嵌入式安全与设备镜像构建的开发者。",
+        "use_cases": [
+          "构建高保障嵌入式设备镜像",
+          "开发隔离进程与系统服务",
+          "用模拟器运行和调试系统"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜。",
+        "risk_notes": "构建依赖较新的 Rust；浅克隆或派生仓库需补齐版本标签，否则镜像创建会失败；稳定 Rust 目标为第三层支持。",
+        "evidence": [
+          "Xous is a microkernel operating system written in pure Rust, built for high-assurance applications.",
+          "Hardware memory protection",
+          "Xous checks version tags as part of the build process. If building from a \"shallow clone\" or fork, fetch the tags, or else image creation will fail"
+        ]
+      }
+    },
+    "TreborNamor/TradingView-Machine-Learning-GUI": {
+      "category": "data-finance",
+      "one_liner": "终端式策略回测实验室",
+      "intro": {
+        "one_liner": "终端策略回测实验室",
+        "what_it_is": "HyperView 是面向命令行的 Python 工具集，用于下载 TradingView 行情、回测策略，并优化止损止盈参数。",
+        "problem_solved": "它把图表手工调参变成可复现的终端流程，减少 Pine 与本地脚本因成交假设不同造成的结果偏差。",
+        "who_should_care": "做量化策略验证、TradingView 策略迁移和参数优化的 Python 开发者。",
+        "use_cases": [
+          "下载历史行情并整理数据",
+          "批量回测多品种策略",
+          "优化止损止盈参数"
+        ],
+        "alternatives": "相比原分支，统一了命令入口，增加 Pine 参数注入、批量编排和标准化产物目录。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，且已破千星。",
+        "risk_notes": "不支持逐笔数据和高频验证；历史数据深度依赖会话；安装说明含未发布到 PyPI 的用法。",
+        "evidence": [
+          "HyperView is a CLI-first toolkit for downloading TradingView market data, backtesting Python strategies with Pine-like execution behavior, and optimizing parameters in a repeatable workflow.",
+          "No. HyperView is candle/timeframe based (`1m`, `5m`, `15m`, `1h`, etc.), not tick-by-tick data stream based.",
+          "破千时的 Star 数：1000；本周上日榜天数：1"
+        ]
+      }
+    },
+    "ki9mu/ARL-plus-docker": {
+      "category": "security",
+      "one_liner": "ARL 资产侦察修改版",
+      "intro": {
+        "one_liner": "资产侦察灯塔容器版",
+        "what_it_is": "这是基于 ARL-V2.6.2 修改的容器化版本，提供安装、更新和分布式部署方式，并加入中央数据库等改动。",
+        "problem_solved": "主要解决资产侦察系统的容器部署、任务稳定性调整、扫描顺序优化和部分扫描能力增强问题。",
+        "who_should_care": "做安全测试、漏洞赏金和资产侦察的开发者与运维人员。",
+        "use_cases": [
+          "用容器部署资产侦察环境",
+          "批量上传域名并扫描",
+          "按需调整任务并行数量"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，星数破千。",
+        "risk_notes": "免责声明要求使用者自行承担损失和非法使用后果；中央数据库涉及域名数据上传，默认关闭；镜像获取依赖网盘和公众号回复，部署链路不够直接。",
+        "evidence": [
+          "基于ARL-V2.6.2版本自研",
+          "新增功能\n1. 中央数据库（数据库逻辑大改，整个过程会非常丝滑）",
+          "由于近期dockerHub问题，现将相关镜像放到网盘，可解压为.tar文件后执行`docker load -i xxx.tar`即可部署，可在公众号回复`ARL-plus`获取地址"
+        ]
+      }
+    },
+    "iDoka/awesome-automotive-can-id": {
+      "category": "hardware-iot",
+      "one_liner": "汽车 CAN ID 数据合集",
+      "intro": {
+        "one_liner": "汽车 CAN ID 资料清单",
+        "what_it_is": "汇总多个汽车品牌和车型的 CAN ID、载荷说明及相关资源链接的清单。",
+        "problem_solved": "把分散的车辆 CAN 总线资料集中起来，便于查找、对照和逆向分析。",
+        "who_should_care": "汽车安全研究者、逆向工程师和汽车电子爱好者。",
+        "use_cases": [
+          "查找车型 CAN ID 资料",
+          "辅助总线报文逆向分析",
+          "整理车辆电子参考资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "资料以外部链接为主，覆盖度和准确性依赖来源；部分章节可能为空。",
+        "evidence": [
+          "Collect of CAN IDs and its payloads for various car brands/models in one place. Might be useful  for Cyber Security Researchers, Reverse Engineers, and Automotive Electronics Enthusiasts.",
+          "An attempt to collect info about CAN IDs and payloads for various car brands/models in one place.",
+          "DB by Brands/Models:"
+        ]
+      }
+    },
+    "pathwaycom/serviette": {
+      "category": "ai-agent",
+      "one_liner": "实时数据 RAG 云模板",
+      "intro": {
+        "one_liner": "实时数据问答模板",
+        "what_it_is": "提供可运行的云端模板，用于检索增强生成、人工智能流水线和企业搜索，并强调与多种数据源保持同步。",
+        "problem_solved": "让文档问答服务能跟随文件新增、修改和删除更新，减少重新上传或重新索引的步骤，并提供带来源引用的聊天和接口。",
+        "who_should_care": "需要搭建企业文档问答、实时检索增强生成服务的开发者。",
+        "use_cases": [
+          "组织文档问答助手",
+          "企业搜索接口",
+          "实时数据检索增强生成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，关注检索增强生成模板。",
+        "risk_notes": "运行需要免费许可密钥；会话记忆、用户账户和托管服务尚未内置；部分能力依赖可选模型接口。",
+        "evidence": [
+          "Ready-to-run cloud templates for RAG, AI pipelines, and enterprise search with live data.",
+          "A no-code, always up-to-date RAG server for any vector database",
+          "Conversation memory, user accounts and a hosted offering are not built in yet"
+        ]
+      }
+    },
+    "nelvko/clashctl": {
+      "category": "automation",
+      "one_liner": "优雅管理 Clash 代理",
+      "intro": {
+        "one_liner": "Linux 代理环境管理工具",
+        "what_it_is": "clashctl 是 Linux 上的 Mihomo / Clash 安装与管理工具，用 Shell 脚本提供部署、命令操作和面板入口。",
+        "problem_solved": "它把内核、面板、服务方式、订阅和常用代理操作整合起来，降低在 Linux 上配置与管理代理环境的步骤成本。",
+        "who_should_care": "在 Linux 上使用 Clash 或 Mihomo 的普通用户、终端用户和容器环境使用者。",
+        "use_cases": [
+          "一键部署内核与面板",
+          "添加、切换和更新订阅",
+          "查看状态、日志并升级内核"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时星数达 15003，且本周曾上日榜。",
+        "risk_notes": "声明要求不得用于违反适用法律法规的活动；安装使用远程脚本；卸载会删除安装目录及数据。",
+        "evidence": [
+          "Linux 上的 Mihomo / Clash 安装与管理工具",
+          "一键部署 `mihomo` 内核、Web 面板及运行依赖。",
+          "编写本项目主要是为了学习和研究 `Shell` 编程，不得将项目内容用于违反适用法律法规及相关规定的活动。"
+        ]
+      }
+    },
+    "LiveContainer/LiveContainer": {
+      "category": "mobile",
+      "one_liner": "免安装运行 iOS 应用",
+      "intro": {
+        "one_liner": "免安装运行 iOS 应用",
+        "what_it_is": "LiveContainer 是一个用 Swift 编写的 iOS 应用启动器，可在一个应用内加载并运行其他 iOS 应用，不是模拟器或虚拟机。",
+        "problem_solved": "它绕过免费开发者账号的应用数量限制，让用户在只安装一个应用和一个应用标识的情况下运行多个应用及多个版本。",
+        "who_should_care": "需要在 iOS 或 iPadOS 上侧载、多开或测试多个应用版本的开发者和进阶用户。",
+        "use_cases": [
+          "运行多个侧载应用",
+          "保留同一应用多个版本",
+          "在窗口内同时启动应用"
+        ],
+        "alternatives": "与模拟器或虚拟机不同，它是在自身内部加载 iOS 应用，并提供多容器、多任务等能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时星数达 12,582。",
+        "risk_notes": "并非所有应用兼容；第三方构建可访问容器内数据且不受支持；多任务和即时编译功能有额外条件。",
+        "evidence": [
+          "Run iOS apps without actually installing them!",
+          "LiveContainer is an app launcher (not emulator or hypervisor) that allows you to run iOS apps inside it.",
+          "Unfortunately, not all apps work in LiveContainer"
+        ]
+      }
+    },
+    "Dr-TSNG/ZygiskNext": {
+      "category": "mobile",
+      "one_liner": "独立 Zygisk 实现",
+      "intro": {
+        "one_liner": "独立 Zygisk 实现",
+        "what_it_is": "一个用 C 编写的 Android 独立 Zygisk 实现，为 KernelSU 提供 Zygisk API 支持，也可替代 Magisk 内置 Zygisk。",
+        "problem_solved": "让 KernelSU 环境获得 Zygisk API 支持，并为 Magisk 用户提供可替代内置 Zygisk 的方案。",
+        "who_should_care": "使用 KernelSU 或 Magisk、需要 Zygisk 模块能力的 Android 开发者和进阶用户。",
+        "use_cases": [
+          "在 KernelSU 中启用 Zygisk API",
+          "替代 Magisk 内置 Zygisk",
+          "开发注入初始化进程的模块"
+        ],
+        "alternatives": "相比 Magisk 内置 Zygisk，它强调独立实现，并提供面向初始化进程的接口。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时星数过万且本周上过一次日榜。",
+        "risk_notes": "新版本不再采用 GPL-3.0，且禁止修改、再分发和提取代码；要求不能同时安装多个 root 实现，并有明确版本门槛。",
+        "evidence": [
+          "Standalone implementation of Zygisk, providing Zygisk API support for KernelSU and a replacement of Magisk's built-in Zygisk.",
+          "No multiple root implementation installed",
+          "The software Zygisk Next, starting from version v4-0.9.2, is no longer under the GPL-3.0 License. Instead, all rights to the software are reserved by the owner."
+        ]
+      }
+    },
+    "Dr-TSNG/Hide-My-Applist": {
+      "category": "mobile",
+      "one_liner": "拦截应用列表检测",
+      "intro": {
+        "one_liner": "隐藏应用列表的模块",
+        "what_it_is": "这是一个面向 Android 的 Xposed 模块，用 Kotlin 开发，可隐藏应用或拒绝应用列表请求，并提供隐藏效果测试方法。",
+        "problem_solved": "它用于应对应用通过安装列表识别 root 相关工具、采集指纹数据或作其他用途的问题。",
+        "who_should_care": "使用 Xposed、关注 root 相关应用隐藏与隐私的 Android 用户。",
+        "use_cases": [
+          "隐藏 root 相关应用",
+          "拒绝应用列表请求",
+          "测试隐藏是否生效"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且星数已破千。",
+        "risk_notes": "从 3.4 版起不再采用 AGPL-3.0，限制修改、再分发、摘取组件及宣称继承关系。",
+        "evidence": [
+          "An Xposed module to intercept applist detections",
+          "This module can work as an Xposed module to hide apps or reject app list requests, and provides some methods to test whether you have hidden your app list properly.",
+          "The software Hide My Applist, starting from version v3.4, is no longer under the AGPL-3.0 License."
+        ]
+      }
+    },
+    "aleo-labs-protocol/leo": {
+      "category": "dev-tools",
+      "one_liner": "零知识应用编程语言",
+      "intro": {
+        "one_liner": "零知识应用编程语言",
+        "what_it_is": "Leo 是一门命令式、静态类型编程语言，用于编写私有应用，并编译为电路以生成零知识证明。",
+        "problem_solved": "它抽象底层密码学概念，降低编写私有应用和零知识证明电路的门槛，并提供测试与检查工具。",
+        "who_should_care": "关注零知识证明、隐私应用和 Aleo 生态的开发者。",
+        "use_cases": [
+          "编写私有应用",
+          "生成零知识证明电路",
+          "用命令行创建并运行 Leo 项目"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，但当前处于 alpha 阶段。",
+        "risk_notes": "语言处于 alpha 阶段，可能发生破坏性变更；许可证信息未提供。",
+        "evidence": [
+          "Leo is an imperative, statically-typed programming language built for writing private applications.",
+          "Leo provides a high-level language that abstracts low-level cryptographic concepts and makes it easy to integrate private applications into your stack. Leo compiles to circuits making zero-knowledge proofs practical.",
+          "The language is currently in an alpha stage and is subject to breaking changes."
+        ]
+      }
+    },
+    "devangshekhawat/Fedora-45-Post-Install-Guide": {
+      "category": "learning-resource",
+      "one_liner": "Fedora 45 安装后指南",
+      "intro": {
+        "one_liner": "Fedora 45 安装后配置指南",
+        "what_it_is": "整理 Fedora 45 安装后的常用配置步骤，包含软件源、更新、驱动、多媒体、硬件加速和个性化设置。",
+        "problem_solved": "帮助新装 Fedora 45 的用户补齐第三方软件源、编解码器、显卡驱动、固件更新等常见配置。",
+        "who_should_care": "刚安装 Fedora 45 的桌面用户，尤其是笔记本和 NVIDIA 显卡用户。",
+        "use_cases": [
+          "启用第三方软件源和 Flathub",
+          "安装 NVIDIA 驱动与 CUDA 支持",
+          "配置多媒体解码和硬件视频加速"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 2,750 星，且本周上过一次日榜。",
+        "risk_notes": "指南涉及第三方软件源、闭源驱动、固件更新和加密磁盘等系统级操作；电池优化章节已标记弃用。",
+        "evidence": [
+          "Things to do after installing Fedora 45",
+          "Fedora has disabled the repositories for a lot of free and non-free .rpm packages by default.",
+          "## ~~Battery Life (Deprecated)~~"
+        ]
+      }
+    },
+    "istoreos/istore": {
+      "category": "desktop-system",
+      "one_liner": "OpenWRT 软件中心",
+      "intro": {
+        "one_liner": "OpenWRT 软件中心",
+        "what_it_is": "iStore 是纯脚本实现的 OpenWRT 标准软件中心，只依赖 OpenWRT 标准组件，也支持固件开发者集成到自己的固件中。",
+        "problem_solved": "让入门用户更方便地搜索、安装插件，并通过插件教程学习使用；也便于固件按需扩展。",
+        "who_should_care": "OpenWRT 入门用户、固件开发者和插件维护者。",
+        "use_cases": [
+          "搜索并安装 OpenWRT 插件",
+          "查看插件教程入门使用",
+          "固件集成按需安装能力"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "插件依赖受 OpenWRT 版本和平台影响，能装软件中心不代表插件可装；官方固件安装仅支持 x86_64 和 arm64 设备；19.07 及以上版本需要 luci-compat。",
+        "evidence": [
+          "一个 Openwrt 标准的软件中心，纯脚本实现，只依赖Openwrt标准组件。支持其它固件开发者集成到自己的固件里面。更方便入门用户搜索安装插件。",
+          "因为 OpenWRT 版本特别多，导致不同平台的插件依赖不一样。所以即使你的系统能安装 iStore，iStore 里面的插件不一定能安装",
+          "只支持 x86_64 和 arm64 设备。"
+        ]
+      }
+    },
+    "DosX-dev/obfus.h": {
+      "category": "security",
+      "one_liner": "C 编译期混淆头文件",
+      "intro": {
+        "one_liner": "C 编译期混淆头文件",
+        "what_it_is": "一个面向 Windows x86/x64 与 TinyCC 的单头文件，用宏在编译期为 C 程序加入多态混淆。",
+        "problem_solved": "通过改写控制流、隐藏字符串、混淆调用和可选虚拟化，提高逆向分析原生代码逻辑的成本。",
+        "who_should_care": "做 C 原生组件保护、逆向练习或 CTF 题目的人。",
+        "use_cases": [
+          "保护授权检查逻辑",
+          "生成逆向练习样本",
+          "给 C 动态库加混淆"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时有一千八百七十二星且本周上日榜一天。",
+        "risk_notes": "依赖 TinyCC 与 Windows 平台；额外控制流会增加运行成本；假壳特征可能触发杀毒软件误报。",
+        "evidence": [
+          "Macro-header for compile-time C polymorphic obfuscation (tcc, win x86/x64)",
+          "brings compile-time polymorphic obfuscation to C applications and libraries on Windows x86 and x64, built specifically for TinyCC",
+          "Reserve OBFH_FAKE_SIGNATURES for crackme/CTF challenges; avoid it in production software."
+        ]
+      }
+    },
+    "DAIR-AutoResearch/AutoSci": {
+      "category": "ai-agent",
+      "one_liner": "维基驱动 AI 科研平台",
+      "intro": {
+        "one_liner": "记忆驱动的科研智能体",
+        "what_it_is": "AutoSci 是以 wiki 为中心、面向科研全生命周期的 AI 研究平台，主要用 Python 编写，围绕 Claude Code 提供阅读、思考、实验、写作与演进流程。",
+        "problem_solved": "它试图让研究过程形成可积累的记忆，把文献理解、实验设计、方法迭代、结果比较和报告写作串成连续流程。",
+        "who_should_care": "需要管理多轮实验、文献笔记和方法迭代的 AI 科研开发者。",
+        "use_cases": [
+          "围绕研究主题初始化 wiki",
+          "设计并迭代实验方法",
+          "比较候选方法与基线结果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 1,702 星，本周上过 1 次日榜。",
+        "risk_notes": "仍在积极测试和迭代；Codex 与 OpenCode 适配为预览版；部分自动化仅提供推荐，不写回仓库。",
+        "evidence": [
+          "Karpathy's LLM-Wiki vision, fully realized — wiki-centric full-lifecycle AI research platform powered by Claude Code",
+          "Read, think, experiment, write, evolve — the AI research agent with memory that compounds across every project.",
+          "We're actively testing and iterating on new features, and more capabilities are on the way."
+        ]
+      }
+    },
+    "nateherkai/herk-edit-kit": {
+      "category": "content-media",
+      "one_liner": "智能体视频剪辑套件",
+      "intro": {
+        "one_liner": "AI 辅助视频剪辑套件",
+        "what_it_is": "面向 Codex 和 Claude Code 的视频剪辑工具包，基于 HyperFrames，提供剪辑技能、字幕与静音处理、故事规划、动态图形卡片和模板。",
+        "problem_solved": "把原始录像整理成可复审的剪辑草稿，减少死空气、口误、字幕对齐、短片节奏和动态图形制作中的重复工作。",
+        "who_should_care": "用 AI 编程助手辅助制作短视频、演示片或动态图形视频的开发者和创作者。",
+        "use_cases": [
+          "把长录像剪成复审草稿",
+          "制作 9:16 短视频",
+          "生成动态图形展示片"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 189 星，并有一天进入日榜。",
+        "risk_notes": "部分能力依赖可选第三方服务和密钥；卡片是草稿资产，需用自己的文本与素材测试；发布前应复审实际动态和音频。",
+        "evidence": [
+          "Herk Edit Kit by Nate Herk: edit videos, reels, and YouTube Shorts with Codex or Claude Code. 15 skills, transcript-driven cuts, storytelling, 406 motion-graphics cards, and HyperFrames templates.",
+          "Bring your own footage. Cut dead air, review mistakes, plan the story, and build motion graphics with HyperFrames and GSAP.",
+          "The cards are reusable draft assets. Test the cards you choose with your text and footage."
+        ]
+      }
+    },
+    "Dr-TSNG/TwiFucker": {
+      "category": "mobile",
+      "one_liner": "Twitter 去广告模块",
+      "intro": {
+        "one_liner": "Twitter 去广告模块",
+        "what_it_is": "一个面向 Android 的 Xposed 模块，用 Kotlin 编写，用于移除 Twitter 推广内容并调整部分界面与功能。",
+        "problem_solved": "主要解决 Twitter 中推广内容、推荐用户、敏感媒体警告等干扰，并提供下载菜单、隐藏入口等增强操作。",
+        "who_should_care": "使用 Android、Xposed 或 LSPatch，并希望定制 Twitter 客户端体验的开发者和高级用户。",
+        "use_cases": [
+          "移除推广推文和趋势",
+          "隐藏抽屉与导航项",
+          "添加媒体下载菜单"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾破千星且本周上日榜一天，但项目已停止维护。",
+        "risk_notes": "项目已停止维护；未设置许可证且声明保留全部版权；仅支持接口 93 以上，部分功能因界面变化略有失效。",
+        "evidence": [
+          "Yet Another Adkiller for Twitter",
+          "⚠️ This is an Xposed module. Support only API 93+ ⚠️",
+          "🚫 This project is currently discontinued due to [shameless plagiarism](https://t.me/TwiFucker/475)"
+        ]
+      }
+    },
+    "Dr-TSNG/ApplistDetector": {
+      "category": "mobile",
+      "one_liner": "检测可疑 Android 应用",
+      "intro": {
+        "one_liner": "安卓可疑应用检测库",
+        "what_it_is": "这是一个用 Kotlin 编写的安卓库，用于检测 Magisk 等可疑应用。",
+        "problem_solved": "帮助安卓应用识别设备上可能存在的可疑应用，满足环境检查需求。",
+        "who_should_care": "需要检测安卓设备可疑应用的开发者。",
+        "use_cases": [
+          "检查设备是否装有 Magisk",
+          "为应用加入可疑应用检测",
+          "做安卓环境风险提示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜。",
+        "risk_notes": "资料很少，缺少版本、许可证和成熟度说明，难以判断维护状态。",
+        "evidence": [
+          "A library to detect suspicious apps like Magisk",
+          "主要语言：Kotlin",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "Anil-matcha/awesome-agent-apis": {
+      "category": "ai-agent",
+      "one_liner": "智能体 API 能力目录",
+      "intro": {
+        "one_liner": "智能体接口目录",
+        "what_it_is": "这是一个用 YAML 条目整理智能体可调用接口的参考目录，收录生成媒体模型和第三方工具，可按能力浏览。",
+        "problem_solved": "它把分散在各厂商文档中的认证方式、价格、调用说明和示例响应统一整理，方便调用前判断成本与返回内容。",
+        "who_should_care": "开发智能体工具选择、接口接入或能力路由的开发者。",
+        "use_cases": [
+          "按能力查找可用接口",
+          "接入前核对认证与价格",
+          "为智能体准备工具目录"
+        ],
+        "alternatives": "相比统一接口服务，它只做文档目录，不代为调用接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，星数破千。",
+        "risk_notes": "草稿条目未经维护者独立验证，依赖前需自行核验；模型条目不开放任意修改，且不含调用地址和认证细节。",
+        "evidence": [
+          "A catalog of API tools an agent can call — 660+ generative-media models available",
+          "This is a **reference catalog, not a live proxy**. Every entry is documentation",
+          "Treat `draft` entries as a starting point, not a guarantee — verify before relying on one yourself."
+        ]
+      }
+    },
+    "nextjs/nextgram": {
+      "category": "web-frontend",
+      "one_liner": "Next.js 模态路由示例",
+      "intro": {
+        "one_liner": "Next.js 路由弹窗示例",
+        "what_it_is": "这是一个用 TypeScript 编写的 Next.js 示例应用，展示动态路由，以及把弹窗作为路由来呈现。",
+        "problem_solved": "它演示同一图片路由在站内跳转时显示为弹窗，刷新页面时显示为独立页面，便于理解高级路由用法。",
+        "who_should_care": "学习 Next.js 动态路由、弹窗路由和页面刷新行为的开发者。",
+        "use_cases": [
+          "学习动态路由与弹窗路由",
+          "参考站内跳转与刷新差异",
+          "部署示例到 Vercel 体验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但定位是示例应用。",
+        "risk_notes": "定位为示例应用，不宜直接当作完整产品；资料未提供许可证信息。",
+        "evidence": [
+          "A sample Next.js app showing dynamic routing with modals as a route.",
+          "This is a sample Next.js application that takes advantage of the advanced routing capabilities.",
+          "When navigating within the application, it is rendered as a modal"
+        ]
+      }
+    }
+  }
+}

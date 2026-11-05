@@ -1,1 +1,829 @@
-{"date":"2026-09-08","headline":"AI Agent 与开发工具领跑","points":["当天 34 个破千项目中，AI Agent 8 个、开发工具 7 个，热度集中在代理与命令行工具。","Rion-Wu-tech/wechat-intelligence-hub 增加 804，Tencent/teamai-cli 增加 657，分别聚焦本地微信情报与团队 AI 原生化。","Python 11 个项目、Rust 5 个项目；安全类 5 个，google/mantis 关注 AI 代理安全审查。"],"items":{"Rion-Wu-tech/wechat-intelligence-hub":{"category":"ai-agent","one_liner":"本地微信情报助手"},"Tencent/teamai-cli":{"category":"ai-agent","one_liner":"团队 AI 原生化工具"},"totec448-spec/chat-on-steroids":{"category":"ai-agent","one_liner":"ChatGPT 本地增强工作台"},"hotdata-dev/hotdata-cli":{"category":"dev-tools","one_liner":"Hotdata 命令行工具"},"pierrenade/short-video-generator-AI":{"category":"content-media","one_liner":"长视频转爆款短视频"},"sebbbi/NoGraphicsAPI":{"category":"other","one_liner":"极简 Vulkan 图形接口"},"Katzca/AutoSocial":{"category":"automation","one_liner":"本地社媒自动化面板"},"tigerless-labs/cost-xray":{"category":"dev-tools","one_liner":"透视编码助手 API 成本"},"local-inference-lab/rtx6kpro":{"category":"learning-resource","one_liner":"大模型 PCIe 部署维基"},"google/mantis":{"category":"security","one_liner":"AI 代理安全审查工具箱"},"2akouwu/reverify":{"category":"ai-agent","one_liner":"用证据校验 AI 断言"},"alexgreensh/attention-span":{"category":"ai-agent","one_liner":"让代理输出更易读"},"daem0nc0re/PrivFu":{"category":"security","one_liner":"Windows 令牌特权调查工具"},"xyTom/coding-tools-mcp":{"category":"ai-agent","one_liner":"赋予代理编码能力"},"ongridio/ongrid":{"category":"ai-agent","one_liner":"聊天式运维排障代理"},"sftwrdotdev/Markpad":{"category":"desktop-system","one_liner":"Markdown 版记事本"},"perplexityai/numbat":{"category":"security","one_liner":"端点 AI 代理活动监控"},"TarteelAI/quranic-universal-library":{"category":"content-media","one_liner":"古兰经资源合集"},"paulgessinger/swift-paperless":{"category":"mobile","one_liner":"Paperless 文档管理 iOS 端"},"BottlecapDave/HomeAssistant-OctopusEnergy":{"category":"hardware-iot","one_liner":"家庭能源集成插件"},"Anil-matcha/awesome-dsh-plugin":{"category":"learning-resource","one_liner":"dsh 插件精选清单"},"talkie-lm/talkie":{"category":"ai-model","one_liner":"复古风格语言模型"},"projectdiscovery/alterx":{"category":"security","one_liner":"子域名字典生成器"},"rmqtt/rmqtt":{"category":"hardware-iot","one_liner":"分布式 MQTT 消息代理"},"oxidecomputer/progenitor":{"category":"dev-tools","one_liner":"OpenAPI 客户端生成器"},"chomosuke/typst-preview.nvim":{"category":"dev-tools","one_liner":"Neovim 低延迟 Typst 预览"},"Zephkek/Asus-ROG-Aml-Deep-Dive":{"category":"desktop-system","one_liner":"ROG 笔记本延迟问题剖析"},"AIPentest/CyberStrikeAI":{"category":"security","one_liner":"AI 原生网络安全行动系统"},"GCWing/OpenBitFun":{"category":"ai-agent","one_liner":"通用桌面智能体运行时"},"spec-kitty/spec-kitty":{"category":"dev-tools","one_liner":"规格驱动开发工作台"},"redhat-et/ripwire":{"category":"dev-tools","one_liner":"代码库上下文索引工具"},"microsoft/tgrep":{"category":"dev-tools","one_liner":"大型代码库极速正则搜索"},"SuperTurtleDev/gbl_root_canoe":{"category":"mobile","one_liner":"Canoe 设备绕检测方案"},"FuJacob/cotabby":{"category":"ai-model","one_liner":"Mac 全局本地 AI 补全"}}}
+{
+  "date": "2026-09-08",
+  "headline": "AI Agent 与开发工具领跑",
+  "points": [
+    "当天 34 个破千项目中，AI Agent 8 个、开发工具 7 个，热度集中在代理与命令行工具。",
+    "Rion-Wu-tech/wechat-intelligence-hub 增加 804，Tencent/teamai-cli 增加 657，分别聚焦本地微信情报与团队 AI 原生化。",
+    "Python 11 个项目、Rust 5 个项目；安全类 5 个，google/mantis 关注 AI 代理安全审查。"
+  ],
+  "items": {
+    "Rion-Wu-tech/wechat-intelligence-hub": {
+      "category": "ai-agent",
+      "one_liner": "本地微信情报助手",
+      "intro": {
+        "one_liner": "本地只读微信聊天情报库",
+        "what_it_is": "一个 local-first 的微信个人情报系统，由只读 CLI（wechat-cli）与情报工作流（wechat-intelligence-hub）两个 Skill 组成，把本地微信聊天记录转成可检索、可核查、可行动的报告。",
+        "problem_solved": "解决微信聊天记录难以检索和复盘的问题：把联系人历史、群聊主题、待回复、承诺、商机与复联线索整理成日报和定向调查报告。",
+        "who_should_care": "重度使用微信做客户、渠道、商单跟进的人，以及希望用 Codex 自然语言查询本地聊天记录的个人用户。",
+        "use_cases": [
+          "生成过去 24 小时或指定时间范围的微信情报日报（Markdown + 交互式 HTML）",
+          "按联系人、群、产品、标签或事件定向检索并总结上下文与未完成承诺",
+          "基于聊天上下文起草符合本人语气的回复草稿"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 Codex Skill 与本地微信数据挖掘的组合，但完整读取依赖本机授权材料，Windows 首次取钥尚未合入。",
+        "risk_notes": "许可证为 AGPL-3.0；完整数据库模式需本人授权的本地数据库与访问材料，macOS 新机器取钥路径未实测、Windows 首次获取未合入；README 自述只读设计不能保证零封控风险或任意微信版本长期兼容；仓库含付费社群推广信息；forks(2755) 高于 stars(2095)，数据异常需留意。",
+        "evidence": [
+          "Local-first WeChat intelligence system with a read-only CLI, Codex skills, searchable chat history, daily briefings, follow-ups and opportunity tracking.",
+          "微信相关能力只读，不发送消息，不操作微信 UI。",
+          "只读设计降低了对微信的操作面，但不能保证零封控风险或保证任意版本长期兼容"
+        ]
+      }
+    },
+    "Tencent/teamai-cli": {
+      "category": "ai-agent",
+      "one_liner": "团队 AI 原生化工具",
+      "intro": {
+        "one_liner": "团队 AI 资产同步工具",
+        "what_it_is": "TeamAI 用 Git 仓库管理团队的技能、规则、智能体、模型、MCP 等 AI 资产，并让成员初始化后自动同步最新内容。",
+        "problem_solved": "它解决团队内 AI 工具配置分散、共享困难的问题，让成员打开智能体即可获得团队统一资产。",
+        "who_should_care": "需要统一配置多种 AI 编程工具的团队管理员和开发者。",
+        "use_cases": [
+          "从零搭建团队 AI 资产库",
+          "加入团队并同步共享配置",
+          "分享技能、规则和 MCP 资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 2,711 星且曾上日榜。",
+        "risk_notes": "团队上下文与团队改进能力标注为 beta；部分智能体能力支持不完整；未关闭问题有 21 个。",
+        "evidence": [
+          "TeamAI manages a team's skills, rules, agents, learnings, models, MCP, and other AI assets in a git repo.",
+          "A teammate initializes once. After that, the latest team AI assets sync automatically.",
+          "Team Context (beta) — make every agent understand the team: learnings, codebase graph, teamwiki."
+        ]
+      }
+    },
+    "totec448-spec/chat-on-steroids": {
+      "category": "ai-agent",
+      "one_liner": "ChatGPT 本地增强工作台",
+      "intro": {
+        "one_liner": "让 ChatGPT 通过 MCP 操作本地文件与浏览器的跨平台工具",
+        "what_it_is": "Chat On Steroids（CoS）是一个基于 TypeScript 的跨平台桌面应用，通过 MCP 把本地文件、终端、桌面和浏览器能力接入 ChatGPT 对话，并附带 Chrome/Edge/Brave 扩展与多 worker 任务编排。",
+        "problem_solved": "让 ChatGPT 在真实项目中读写文件、运行测试、保持终端会话，并把独立任务分派给多个 worker 后回收结果，同时支持长任务中的纠偏与 Compact & Resume 会话续接。",
+        "who_should_care": "需要在本地项目中借助 ChatGPT 完成编码与自动化任务、且拥有可创建自定义 MCP 应用权限的 ChatGPT 账号用户。",
+        "use_cases": [
+          "让 ChatGPT 在授权目录内读写代码并运行测试",
+          "把独立子任务分派给多个 worker 并行处理并汇总结果",
+          "长任务运行中发送修正指令，或通过 Compact & Resume 在新会话延续历史"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 ChatGPT 本地 MCP 与浏览器自动化的工具近期关注度高，但项目自述为独立 beta，且依赖 ChatGPT 账号与工作区策略。",
+        "risk_notes": "README 明确为独立 beta、按现状提供；Windows 未签名、macOS 未签名未公证，需核对校验和；浏览器扩展会观察并自动化 ChatGPT 网页 UI 并在本地记录对话内容；作者声明不用于绕过用量限制或安全控制，且与 OpenAI 无关联；Shell 命令以普通用户权限执行。",
+        "evidence": [
+          "Cross-platform local MCP capabilities for ChatGPT with Chrome integration, Goal, Compact & Resume, and durable multi-agent workflows.",
+          "Independent beta. Use at your own risk and within your provider's rules.",
+          "Its browser extension also observes and automates the ChatGPT browser UI and records conversation content locally."
+        ]
+      }
+    },
+    "hotdata-dev/hotdata-cli": {
+      "category": "dev-tools",
+      "one_liner": "Hotdata 命令行工具",
+      "intro": {
+        "one_liner": "Hotdata 命令行工具",
+        "what_it_is": "一个用 Rust 编写的命令行工具，用于登录和管理 Hotdata 数据库，导入本地文件、网址或外部数据源，并用 SQL 查询、连接和搜索数据。",
+        "problem_solved": "把分散在文件、网址、数据库、对象存储、消息流和接口服务中的数据集中导入，再用普通 SQL 查询、跨库连接和建立搜索索引。",
+        "who_should_care": "需要命令行导入、查询和自动化数据任务的开发者，以及使用编码智能体的团队。",
+        "use_cases": [
+          "导入本地文件或网址数据",
+          "用 SQL 查询与跨库连接",
+          "在脚本和持续集成中调用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "创建时间较新；SQL 的更新和删除暂不支持，需改用加载命令；附加表只读。",
+        "evidence": [
+          "CLI for Hotdata",
+          "Load your data into a Hotdata database, then query, join, and search it with plain SQL.",
+          "`UPDATE` and `DELETE` aren't supported in SQL yet; use `databases load` with `--mode update`, `--mode delete`, or `--mode upsert` instead."
+        ]
+      }
+    },
+    "pierrenade/short-video-generator-AI": {
+      "category": "content-media",
+      "one_liner": "长视频转爆款短视频",
+      "intro": {
+        "one_liner": "短视频生成工具",
+        "what_it_is": "这是一个用 Python 编写的开源项目，用于把 YouTube 视频转成适合传播的短视频，并集成精彩片段检测、字幕、翻译和配音。",
+        "problem_solved": "它想减少从长视频中找亮点、加字幕、翻译和配音的重复工作，让内容再加工更集中。",
+        "who_should_care": "做视频剪辑、内容分发和多语言短视频的开发者。",
+        "use_cases": [
+          "从长视频提取精彩片段",
+          "为短视频生成字幕",
+          "翻译并配音视频内容"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，星数破千且有一百五十七次复刻。",
+        "risk_notes": "缺少 README，功能细节、安装方式、许可证和可用状态均无法确认；创建日期为未来日期，数据可信度需谨慎看待。",
+        "evidence": [
+          "Free open-source project designed for turning youtube-viedos into viral short videos. Highlight detection, subtitles, translation, voiceover, all in one for your content.",
+          "破千时的 Star 数：1169",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "sebbbi/NoGraphicsAPI": {
+      "category": "other",
+      "one_liner": "极简 Vulkan 图形接口",
+      "intro": {
+        "one_liner": "极简无绑定图形 API 库",
+        "what_it_is": "NoGraphicsAPI 是一个 C++20 图形库，面向支持 Metal 4 的设备，以及支持 VK_EXT_descriptor_heap 和 VK_EXT_mesh_shader 的 Vulkan 1.4 设备；它用 GPU 指针、descriptor heap 和共享 Slang shader 实现「No Graphics API」理念。",
+        "problem_solved": "它试图去掉传统渲染中 buffer 对象、顶点布局、descriptor set 与 pipeline layout 等绑定机制，让 GPU 编程更接近直接操作内存和数据结构。",
+        "who_should_care": "关注现代 bindless 渲染、Vulkan/Metal 底层图形架构的引擎与图形程序员。",
+        "use_cases": [
+          "研究或实验 bindless、GPU 指针式渲染架构",
+          "在 Metal 4 与 Vulkan 1.4 上构建共享 C++/Slang 的渲染原型",
+          "作为教学或对比传统图形 API 数据模型的参考实现"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：它围绕 descriptor heap、GPU 指针、mesh shader 等新一代图形硬件能力展开，但硬件与扩展门槛较高。",
+        "risk_notes": "硬件要求严格：Metal 需 Metal 4 与 Apple GPU family 7+，Vulkan 需 VK_EXT_descriptor_heap、VK_EXT_mesh_shader 等扩展；Linux 目前仅支持 headless；项目较新，成熟度有限。",
+        "evidence": [
+          "Minimal graphics API. Built on top of latest Vulkan extensions.",
+          "NoGraphicsAPI is a C++20 graphics library for Metal 4 devices and Vulkan 1.4 devices with VK_EXT_descriptor_heap and VK_EXT_mesh_shader.",
+          "This is a low-level library: the application still owns allocation policy, resource lifetime, and GPU synchronization."
+        ]
+      }
+    },
+    "Katzca/AutoSocial": {
+      "category": "automation",
+      "one_liner": "本地社媒自动化面板",
+      "intro": {
+        "one_liner": "本地社媒发布控制台",
+        "what_it_is": "一个本地运行的多账号短视频自动化控制台，面向 TikTok、Instagram 和 YouTube，提供队列、定时发布、下载与视频处理能力。",
+        "problem_solved": "把产品演示、更新和短视频实验整理成可重复的本地发布流程，并让账号会话留在本地，不交给托管服务。",
+        "who_should_care": "独立开发者、小团队，以及需要本地管理多账号短视频发布流程的创作者。",
+        "use_cases": [
+          "为多个品牌安排短视频发布队列",
+          "本地复用登录会话并定时发帖",
+          "下载参考视频并做本地处理"
+        ],
+        "alternatives": "相比托管服务，它强调本地运行、账号会话留在本地，并集成队列、下载和视频处理。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 67 星，曾有一天进入日榜。",
+        "risk_notes": "控制台默认无认证，只应本地使用；自动化需自行遵守平台条款、速率限制和内容权利；部分下载流程以 Windows 为主要目标。",
+        "evidence": [
+          "Local social media automation dashboard for TikTok, Instagram, and YouTube.",
+          "This project is built for a local workstation. It is not a hosted SaaS app and does not include user authentication.",
+          "Users are responsible for complying with platform terms, account policies, rate limits, local law, and content rights."
+        ]
+      }
+    },
+    "tigerless-labs/cost-xray": {
+      "category": "dev-tools",
+      "one_liner": "透视编码助手 API 成本",
+      "intro": {
+        "one_liner": "AI 编码代理 API 流量成本归因工具",
+        "what_it_is": "cost-xray 是一个本地代理抓包工具，捕获 Claude Code 和 Codex 实际发往 API 的请求流量，并把 token 与美元成本归因到请求内部的各个来源（系统提示、工具 schema、MCP 块、工具结果、缓存读写等）。",
+        "problem_solved": "日志类用量工具只能看到会话或请求级总花费，看不到请求时组装的系统提示、注入的工具 schema、MCP 块等不可见前缀；cost-xray 通过抓取原始 API 请求，回答“模型实际收到了哪些字节、这些 token 属于谁”。",
+        "who_should_care": "重度使用 Claude Code / Codex 的开发者、需要排查 MCP 冗余与上下文占用的团队，以及关注 AI 编码成本的个人用户。",
+        "use_cases": [
+          "按来源拆解单次会话的 token 与美元成本，定位昂贵环节",
+          "查看上下文窗口占用构成，识别从未被调用的 MCP 服务器与工具 schema 浪费",
+          "按工具调用级别（如单次 Read）核算成本与缓存读写分布"
+        ],
+        "alternatives": "与 ccusage、codeburn 等日志读取类工具相比，差异在数据源：日志工具读的是代理运行后的 transcript，看不到请求时组装的系统提示与注入 schema；cost-xray 读原始 API 请求，可做到工具调用级、按缓存边界归因。README 自称未发现其他工具能定价到工具调用以下粒度。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 Claude Code / Codex 成本可观测性的需求随这类代理工具流行而快速升温，但项目创建时间短、仍在快速迭代。",
+        "risk_notes": "安装方式为 curl 管道执行远程脚本，需自行评估；Codex 捕获依赖本地 CA 证书；Claude 分词器非官方，来源间拆分是估算值（总量精确、内部分配近似）；项目较新，长期维护情况未知。",
+        "evidence": [
+          "See what Claude Code and Codex actually send to the API — and what each part costs.",
+          "Most usage tools read local logs. That shows the total cost of a call or session, but it misses the request-time context assembled before the model is invoked",
+          "The total, and therefore the bill, is exact; only the split *between* sources in the same request is approximate."
+        ]
+      }
+    },
+    "local-inference-lab/rtx6kpro": {
+      "category": "learning-resource",
+      "one_liner": "大模型 PCIe 部署维基",
+      "intro": {
+        "one_liner": "大模型显卡部署实战维基",
+        "what_it_is": "围绕 NVIDIA RTX PRO 6000 Blackwell 的现场维基，整理大模型运行手册、Docker 构建、基准、量化与排障记录。",
+        "problem_solved": "帮助在没有 NVLink 的 PCIe 显卡系统上复现大模型部署，减少启动参数、拓扑、量化和运行时问题排查成本。",
+        "who_should_care": "用 RTX PRO 6000 部署大模型的推理工程师和运维开发者。",
+        "use_cases": [
+          "按模型页复现启动命令",
+          "对比推理后端吞吐表现",
+          "排查 PCIe 与运行时故障"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "内容聚焦特定显卡与模型版本；旧页面较多，需优先看各模型入口页；未见许可证信息。",
+        "evidence": [
+          "RTX 6000 Pro Wiki — Running Large LLMs (Qwen3.5-397B, Kimi-K2.5, GLM-5) on PCIe GPUs without NVLink",
+          "破千时的 Star 数：1011",
+          "This repository is a field wiki for running frontier LLMs on NVIDIA RTX PRO\n6000 Blackwell / SM120 PCIe systems."
+        ]
+      }
+    },
+    "google/mantis": {
+      "category": "security",
+      "one_liner": "AI 代理安全审查工具箱",
+      "intro": {
+        "one_liner": "AI 智能体安全审查工具箱",
+        "what_it_is": "Mantis 是一套模块化、与技术栈无关的安全审查技能，附带 ADK 参考运行框架，供 AI 编码智能体发现、复现并修补漏洞。",
+        "problem_solved": "它把威胁建模、代码审查、漏洞复现、结果分级和补丁验证串成流程，减少人工排查成本，并抑制误报与严重性夸大。",
+        "who_should_care": "应用安全工程师、DevSecOps 团队，以及构建 AI 编码智能体的开发者。",
+        "use_cases": [
+          "审查文件或仓库漏洞",
+          "按目标生成深度审查流程",
+          "验证补丁是否修复问题"
+        ],
+        "alternatives": "强调可移植技能、按需加载和自定义智能体流程，而非绑定单一框架。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "需隔离环境运行；发现必须人工核验；拉取请求扫描未端到端验证，不可用于合并门禁。",
+        "evidence": [
+          "A modular, stack-agnostic toolkit of security review skills for AI coding agents to autonomously find, reproduce, and patch vulnerabilities.",
+          "USE THIS ONLY IN ISOLATED, RESTRICTED ENVIRONMENTS.",
+          "The pull request scan is untested."
+        ]
+      }
+    },
+    "2akouwu/reverify": {
+      "category": "ai-agent",
+      "one_liner": "用证据校验 AI 断言",
+      "intro": {
+        "one_liner": "让确定性工具裁决 AI 断言的验证层",
+        "what_it_is": "Reverify 是一个 Python 实现的 MCP server 与 CLI 工具，把语言模型提出的关于二进制或代码的假设交给确定性工具（反汇编、模式匹配、CPU 模拟、等价性测试）核验，返回 VERIFIED / REFUTED / INCONCLUSIVE 及证据。",
+        "problem_solved": "解决 AI 在逆向工程和代码改写中自信编造偏移、结构体字段、函数行为等事实的问题，让模型只能提出假设，由工具对照真实字节裁决，只有通过核验的内容才被当作事实。",
+        "who_should_care": "使用 AI 做二进制逆向、恶意软件分析、CTF 的安全研究者，以及用 Claude Code、Cursor 等 agent 做代码重构、需要防止上下文漂移的开发者。",
+        "use_cases": [
+          "对 AI 给出的 PE/ELF/Mach-O 结构体、函数序言、偏移等假设做逐条核验",
+          "在 CTF 或恶意软件分析中让 agent 调用 MCP 工具验证反汇编与模拟执行结果",
+          "用 reverify equiv 对 AI 生成的 Python/C 重写实现与参考实现做输入输出等价性测试",
+          "用 reverify rollover 把长任务会话交接给文件并开启新会话，避免上下文腐化"
+        ],
+        "alternatives": "README 强调其确定性核心为纯 Python、开箱即用且无需 Ghidra，可选安装 capstone/unicorn/lief/Z3/angr 增强；与同类项目的具体对比未提供，unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，理由：AI agent 幻觉核验与上下文工程是持续需求，但项目创建于 2026-08-31、仅一天登上日榜，尚需时间检验",
+        "risk_notes": "README 中的 97% 错误率等基准数据来自作者自述，需自行复现；项目创建时间很短、维护历史有限；仅限授权范围内的逆向工程使用",
+        "evidence": [
+          "It proposes; deterministic tools check every claim against ground truth, and only what's verified counts.",
+          "On 71 real Windows system files the AI's textbook answer was wrong 97% of the time; reverify caught every one and never accepted a wrong claim",
+          "Reverify is for authorized reverse engineering — malware analysis, CTF, interoperability research, and software you own or are permitted to analyze."
+        ]
+      }
+    },
+    "alexgreensh/attention-span": {
+      "category": "ai-agent",
+      "one_liner": "让代理输出更易读",
+      "intro": {
+        "one_liner": "让智能体说人话",
+        "what_it_is": "一组用于 Claude Code 等工具的回答风格文件，通过单个 Markdown 文件切换，让输出先给结论、少用术语、便于扫读。",
+        "problem_solved": "解决智能体回答冗长、重复、难扫读的问题，让注意力有限的人更快抓住重点，同时不改变编码能力。",
+        "who_should_care": "使用 Claude Code、Codex 等智能体，且需要快速读回答的开发者。",
+        "use_cases": [
+          "让智能体先给结论再解释",
+          "把长回答改成易扫读格式",
+          "生成简洁的状态简报"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 43 星，仅一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0，使用与分发需留意义务；创建于 2026 年，项目较新；仍有 2 个未关闭问题。",
+        "evidence": [
+          "A small collection of [output styles](https://code.claude.com/docs/en/output-styles) for Claude Code that change how it *talks to you*, not how it codes. Answer-first, plain English, easy to skim. Each one is a single markdown file you drop in and switch on.",
+          "Three so far: **Attention-kind** (the flagship), **Spartan** (terse, zero warmth), and **Rundown** (TL;DR briefings). Each has its own section below.",
+          "Same engineering ability underneath. Only the delivery changes."
+        ]
+      }
+    },
+    "daem0nc0re/PrivFu": {
+      "category": "security",
+      "one_liner": "Windows 令牌特权调查工具",
+      "intro": {
+        "one_liner": "Windows 令牌权限研究工具集",
+        "what_it_is": "这是面向 Windows 内核调试的 WinDbg 扩展和验证代码集合，用于调查、编辑进程令牌权限，并演示相关权限滥用路径。",
+        "problem_solved": "它帮助研究者配置想调查的令牌权限，观察权限状态，并用验证代码理解权限与提权行为之间的关系。",
+        "who_should_care": "Windows 内核调试、安全研究和权限机制学习者。",
+        "use_cases": [
+          "在内核调试中查看进程权限",
+          "增删或启用指定令牌权限",
+          "研究内核写漏洞提权路径"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "内容涉及权限编辑与提权验证，适合隔离实验环境；调试版在部分环境不可用，建议使用发布版。",
+        "evidence": [
+          "Kernel mode WinDbg extension and PoCs for testing how token privileges work.",
+          "PrivEditor is kernel mode WinDbg extension to manipulate token privilege of specific process.",
+          "In some environment, Debug build does not work. Release build is preferred."
+        ]
+      }
+    },
+    "xyTom/coding-tools-mcp": {
+      "category": "ai-agent",
+      "one_liner": "赋予代理编码能力",
+      "intro": {
+        "one_liner": "给智能体代码操作能力",
+        "what_it_is": "一个基于模型上下文协议的 Python 编码运行时，为多种客户端提供文件读写、搜索、命令执行、交互会话和 Git 工具。",
+        "problem_solved": "让聊天应用或自建智能体能安全访问代码仓库，并把路径边界、权限模式、输出限制和危险命令检查集中到服务端。",
+        "who_should_care": "使用智能体编程工具、需要给模型接入本地仓库的开发者。",
+        "use_cases": [
+          "让聊天客户端读写并测试仓库",
+          "在容器里检查不可信代码",
+          "为自建智能体提供编码工具"
+        ],
+        "alternatives": "强调模型与厂商中立、单一工作区边界、权限模式和上下文窗口优化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周新增 40 星，并曾上榜一天。",
+        "risk_notes": "危险模式会关闭命令权限门；非 Linux 平台缺少内核级文件系统限制；默认发送匿名使用数据，可关闭。",
+        "evidence": [
+          "Give any AI chat or agent a safe pair of hands on your codebase.",
+          "One workspace root per server. Absolute paths, `..` traversal, and symlink escapes are rejected.",
+          "The server sends anonymous usage telemetry"
+        ]
+      }
+    },
+    "ongridio/ongrid": {
+      "category": "ai-agent",
+      "one_liner": "聊天式运维排障代理",
+      "intro": {
+        "one_liner": "聊天式运维智能体",
+        "what_it_is": "Ongrid 是自托管的运维智能体，可从聊天工具接收告警或提问，结合指标、日志、链路和拓扑做根因分析，并支持远程执行。",
+        "problem_solved": "它把告警调查、证据收集、根因定位和修复动作集中到聊天入口，减少运维排障时在多套系统间切换。",
+        "who_should_care": "运维、站点可靠性工程师、平台团队和事故响应人员。",
+        "use_cases": [
+          "告警触发自动根因调查",
+          "在聊天中排查主机故障",
+          "查看拓扑与影响范围"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 23 星，仅一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0，品牌资产另有商标限制；未关闭议题 102 个，且远程执行与写入操作需关注审批边界。",
+        "evidence": [
+          "An ops AI Agent that understands your infrastructure, finds the root cause, and fixes it — right from Slack, Telegram, Lark or DingTalk.",
+          "🚨 **Auto-investigate on alert** — investigator spawns an RCA worker, writes the cause back to chat",
+          "AGPLv3 — see [LICENSE](LICENSE)."
+        ]
+      }
+    },
+    "sftwrdotdev/Markpad": {
+      "category": "desktop-system",
+      "one_liner": "Markdown 版记事本",
+      "intro": {
+        "one_liner": "轻量 Markdown 编辑器",
+        "what_it_is": "Markpad 是跨平台、极简的 Markdown 阅读与文本编辑器，主打像记事本一样轻量，并提供分栏编辑、预览和文档管理。",
+        "problem_solved": "它让本地 Markdown 文件的阅读、编辑、渲染和导出更顺手，减少在普通文本编辑器与复杂写作工具之间切换。",
+        "who_should_care": "经常读写本地 Markdown 文档、需要公式图表渲染的开发者和写作者。",
+        "use_cases": [
+          "分栏编辑并预览 Markdown",
+          "阅读含公式图表的文档",
+          "导出网页或打印为 PDF"
+        ],
+        "alternatives": "相比普通记事本，提供 Markdown 渲染、分栏、目录、主题和多窗口会话。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注集中。",
+        "risk_notes": "部分 Linux 安装包为一次性安装，需手动下载新包升级；源码构建和测试包说明未涉及正式签名。",
+        "evidence": [
+          "The Notepad equivalent for Markdown",
+          "A lightweight, minimalist Markdown viewer and text editor built for productivity across Windows, macOS, and Linux.",
+          "`.deb` and `.rpm` are one-time installs."
+        ]
+      }
+    },
+    "perplexityai/numbat": {
+      "category": "security",
+      "one_liner": "端点 AI 代理活动监控",
+      "intro": {
+        "one_liner": "端点侧智能体安全监测工具",
+        "what_it_is": "numbat 用本地钩子、插件、日志和磁盘会话产物观察桌面、命令行、集成开发环境与网关智能体，统一事件模型并做本地检测、可选阻断和取证重建。",
+        "problem_solved": "它让智能体在端点上的活动可见，把实时与留存行为规范化，用规则发现风险，并支持只读扫描、时间线和案例包重建。",
+        "who_should_care": "关注智能体安全、端点审计和事件调查的开发者与安全团队。",
+        "use_cases": [
+          "监控智能体实时工具调用",
+          "扫描历史会话产物",
+          "重建会话时间线取证"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 36 星且曾上日榜。",
+        "risk_notes": "阻断默认关闭且仅限受支持的同步动作前钩子；内置规则均为仅监控；钩子信任与升级后重装需人工复核。",
+        "evidence": [
+          "Endpoint visibility into AI agent activity, with local detection, optional pre-action blocking, and forensic reconstruction.",
+          "Blocking is off by default and limited to supported synchronous pre-action hooks",
+          "All shipped rules are monitor-only."
+        ]
+      }
+    },
+    "TarteelAI/quranic-universal-library": {
+      "category": "content-media",
+      "one_liner": "古兰经资源合集",
+      "intro": {
+        "one_liner": "古兰经数据管理系统",
+        "what_it_is": "QUL 是用 Ruby on Rails 和 Active Admin 实现的内容管理系统，用于管理古兰经相关数据与资源。",
+        "problem_solved": "集中管理译本、经注、音频、阿拉伯文字、版面、语法等数据，并提供校对、版本记录、导入和导出能力。",
+        "who_should_care": "维护古兰经数据资源、开发相关应用或参与内容校对的开发者与团队。",
+        "use_cases": [
+          "校对并导出译本和经注",
+          "管理逐节与连续音频",
+          "预览并导出古兰经版面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内有一天登上日榜，且已突破一千星。",
+        "risk_notes": "资料未提供许可证、版本状态和稳定性说明；系统依赖两个 Postgres 数据库，部署与数据加载需额外准备。",
+        "evidence": [
+          "A comprehensive collection of Quran resources",
+          "Welcome to QUL! This project is a comprehensive Content Management System designed to manage Quranic data, including translations, tafsirs, Audio, Audio segments, Arabic scripts, Mushaf layouts, and much more.",
+          "QUL connects to two Postgres databases"
+        ]
+      }
+    },
+    "paulgessinger/swift-paperless": {
+      "category": "mobile",
+      "one_liner": "Paperless 文档管理 iOS 端",
+      "intro": {
+        "one_liner": "Paperless-ngx 的 iOS 客户端",
+        "what_it_is": "一个用 Swift 编写的原生 iOS 应用，用于连接自托管的 Paperless-ngx，管理数字化文档。",
+        "problem_solved": "让已部署 Paperless-ngx 的用户能在 iPhone 上访问和管理文档，不必只依赖网页端。",
+        "who_should_care": "自托管 Paperless-ngx 且使用 iPhone 的文档管理用户。",
+        "use_cases": [
+          "在手机上查看文档",
+          "管理数字化文档资料",
+          "体验最新测试版本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜。",
+        "risk_notes": "必须连接自托管实例才能使用；最新开发版通过 TestFlight 获取，属于测试渠道。",
+        "evidence": [
+          "Native iOS app for interacting with a Paperless-ngx installation to manage documents",
+          "**Swift Paperless** native iOS app for the\n[Paperless-ngx](https://github.com/paperless-ngx/paperless-ngx) software.",
+          "This application requires a self-hosted instance to function!",
+          "To get the latest development version of the app, grab it on\n[TestFlight](https://testflight.apple.com/join/bOpOdzwL)!"
+        ]
+      }
+    },
+    "BottlecapDave/HomeAssistant-OctopusEnergy": {
+      "category": "hardware-iot",
+      "one_liner": "家庭能源集成插件",
+      "intro": {
+        "one_liner": "家庭能源账单集成",
+        "what_it_is": "这是一个非官方的 Home Assistant 自定义组件，用 Python 把 Octopus Energy 的账户、用量和费率信息接入智能家居系统。",
+        "problem_solved": "它让用户在 Home Assistant 中查看用电用气消耗、费率、成本，并比较套餐，以便管理更节能或更省钱的家居。",
+        "who_should_care": "使用 Home Assistant 且是英国 Octopus Energy 用户的人。",
+        "use_cases": [
+          "查看用电用气用量与费率",
+          "跟踪其他设备的用电成本",
+          "比较不同资费方案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜。",
+        "risk_notes": "项目与 Octopus Energy 无关联；仅针对英国接口构建，未测试其他国家；开发分支可能变动，建议用已发布版本。",
+        "evidence": [
+          "Unofficial Home Assistant integration for interacting with Octopus Energy",
+          "This integration is built against the API provided by Octopus Energy UK and has not been tested for any other countries.",
+          "This integration is in no way affiliated with Octopus Energy."
+        ]
+      }
+    },
+    "Anil-matcha/awesome-dsh-plugin": {
+      "category": "learning-resource",
+      "one_liner": "dsh 插件精选清单",
+      "intro": {
+        "one_liner": "DSH 插件精选清单",
+        "what_it_is": "这是一个整理 DeepSeek Harness 社区插件的精选清单，按用途分类，并用一句话说明每个插件做什么。",
+        "problem_solved": "它解决插件生态庞大、变化快、难以快速查找的问题，让开发者能按类别浏览可用扩展。",
+        "who_should_care": "使用或开发 DeepSeek Harness 插件的开发者。",
+        "use_cases": [
+          "查找界面增强插件",
+          "按类别筛选工具能力",
+          "了解插件安装方式"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过日榜一天。",
+        "risk_notes": "第三方插件会以本机权限运行代码，收录不代表安全审查；DeepSeek Harness 目前处于开发者预览。",
+        "evidence": [
+          "A curated guide to [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) — DeepSeek's open-source, everything-is-a-plugin coding agent — and the best community plugins built on it.",
+          "This list exists to make that ecosystem easy to scan: what a plugin does, in one line, sorted into the category you'd actually go looking under.",
+          "Installing any third-party `dsh` plugin runs its code on your machine with your own permissions. Being listed here is not a security review — read the source before installing, especially for plugins that touch credentials, the network, or your filesystem."
+        ]
+      }
+    },
+    "talkie-lm/talkie": {
+      "category": "ai-model",
+      "one_liner": "复古风格语言模型",
+      "intro": {
+        "one_liner": "复古语言模型推理库",
+        "what_it_is": "这是一个用于下载并运行 talkie 13B 语言模型系列的 Python 推理库，提供简单接口和命令行工具。",
+        "problem_solved": "它让开发者能加载 1930 年前英文语料训练的模型及对照模型，进行文本生成、对话和流式输出。",
+        "who_should_care": "研究语言模型训练语料影响、需要本地推理接口的开发者。",
+        "use_cases": [
+          "生成复古语体文本",
+          "体验指令微调对话",
+          "比较不同语料模型"
+        ],
+        "alternatives": "提供 1930 年前语料模型与现代语料对照模型，便于受控比较。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜一天。",
+        "risk_notes": "需要至少 28 GB 显存的显卡，每个模型约需 26 至 50 GB 磁盘空间；对比结论需谨慎，因为语料主题分布也不同。",
+        "evidence": [
+          "talkie is a vintage language model from 1930",
+          "This package provides a simple Python API and CLI to download models from HuggingFace and run inference.",
+          "Note that we need to be careful about the claims we make contrasting the behavior and capabilities of the models, because temporal coverage is not the only difference in the pretraining corpora."
+        ]
+      }
+    },
+    "projectdiscovery/alterx": {
+      "category": "security",
+      "one_liner": "子域名字典生成器",
+      "intro": {
+        "one_liner": "子域字典生成器",
+        "what_it_is": "AlterX 是用 Go 编写的子域名字典生成工具，通过自定义模式和变量，从已有子域名生成排列组合词表。",
+        "problem_solved": "它解决主动子域枚举中词表过大、命中率低的问题，可依据被动枚举结果定制更贴近目标的候选子域名。",
+        "who_should_care": "安全测试人员、渗透测试人员和做子域枚举的开发者。",
+        "use_cases": [
+          "为安全评估生成子域词表",
+          "按目标命名规律定制排列",
+          "从已有子域挖掘模式"
+        ],
+        "alternatives": "相比硬编码排列模式的工具，它强调可写模式、变量和自动模式挖掘。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时为一千星。",
+        "risk_notes": "安装说明要求 Golang 1.26.10；生成词表仍需配合其他工具验证，配置不当可能产生大量结果。",
+        "evidence": [
+          "Fast and customizable subdomain wordlist generator using DSL.",
+          "what makes `alterx` different from any other subdomain permutation tools like `goaltdns` is its `scripting` feature",
+          "To install alterx, you need to have Golang 1.26.10 installed on your system."
+        ]
+      }
+    },
+    "rmqtt/rmqtt": {
+      "category": "hardware-iot",
+      "one_liner": "分布式 MQTT 消息代理",
+      "intro": {
+        "one_liner": "分布式 MQTT 消息 Broker",
+        "what_it_is": "RMQTT 是用 Rust 编写的开源 MQTT Broker，支持单机、集群和库模式，面向物联网、机器到机器和移动应用消息通信。",
+        "problem_solved": "为设备与服务端提供 MQTT 消息接入、订阅分发、认证鉴权、会话与消息存储，并支持集群和多种消息系统桥接。",
+        "who_should_care": "物联网平台、消息中间件和 Rust 后端开发者。",
+        "use_cases": [
+          "搭建物联网设备消息接入服务",
+          "部署多节点 MQTT 集群",
+          "桥接 Kafka、Pulsar、NATS"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "资料未提供许可证、生产案例和稳定性结论；功能面较广，落地前需自行验证。",
+        "evidence": [
+          "RMQTT broker is a fully open source, highly scalable, highly available distributed MQTT messaging broker for IoT, M2M and mobile applications",
+          "100% Rust safe code;",
+          "Distributed cluster"
+        ]
+      }
+    },
+    "oxidecomputer/progenitor": {
+      "category": "dev-tools",
+      "one_liner": "OpenAPI 客户端生成器",
+      "intro": {
+        "one_liner": "Rust 的 OpenAPI 客户端生成器",
+        "what_it_is": "一个用 Rust 编写的 OpenAPI 客户端生成工具，可根据 OpenAPI 3.0.x 描述生成带异步调用和分页流支持的客户端。",
+        "problem_solved": "把 OpenAPI 文档转成类型化的 Rust 客户端，减少手写接口调用、分页处理和测试模拟代码。",
+        "who_should_care": "使用 OpenAPI 服务、需要 Rust 客户端或命令行工具的开发者。",
+        "use_cases": [
+          "从接口文档生成 Rust 客户端",
+          "生成调用服务的命令行工具",
+          "生成强类型服务模拟助手"
+        ],
+        "alternatives": "主要面向 Dropshot 生成的接口文档，也支持许多其他文档，但部分文档可能生成失败。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千星时达到一千星。",
+        "risk_notes": "OpenAPI 覆盖范围广，部分文档可能生成失败；资料未说明许可证、稳定版状态和生产可用性。",
+        "evidence": [
+          "An OpenAPI client generator",
+          "Progenitor is a Rust crate for generating opinionated clients from API descriptions in the OpenAPI 3.0.x specification.",
+          "As OpenAPI covers a wide range of APIs, Progenitor may fail for some OpenAPI documents."
+        ]
+      }
+    },
+    "chomosuke/typst-preview.nvim": {
+      "category": "dev-tools",
+      "one_liner": "Neovim 低延迟 Typst 预览",
+      "intro": {
+        "one_liner": "Typst 实时预览插件",
+        "what_it_is": "这是一个面向 Neovim 的 Typst 预览插件，基于 tinymist，提供低延迟预览和源码与预览之间的跳转。",
+        "problem_solved": "它让 Typst 文档在输入时即时呈现，并支持点击预览定位源码、让预览跟随光标，减少反复编译查看的麻烦。",
+        "who_should_care": "使用 Neovim 编写 Typst 文档或幻灯片的开发者。",
+        "use_cases": [
+          "边写 Typst 边看预览",
+          "点击预览回到源码位置",
+          "制作文档或幻灯片时跟随光标"
+        ],
+        "alternatives": "相比使用 typst-lsp 的同类插件，延迟更低，并支持源码与预览互相跳转。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "需要 curl 并下载依赖二进制；首次使用前必须执行更新命令或调用初始化；自定义依赖路径可能导致版本过旧。",
+        "evidence": [
+          "Low latency preview: preview your document instantly on type. The incremental rendering technique makes the preview latency as low as possible.",
+          "Cross jump between code and preview. You can click on the preview to jump to the corresponding code location and have the preview follow your cursor in Neovim.",
+          "This must be run before any other commands can be run. It is implicitly ran when calling `setup {}`."
+        ]
+      }
+    },
+    "Zephkek/Asus-ROG-Aml-Deep-Dive": {
+      "category": "desktop-system",
+      "one_liner": "ROG 笔记本延迟问题剖析",
+      "intro": {
+        "one_liner": "ROG 固件卡顿调查",
+        "what_it_is": "这是一份围绕华硕 ROG 笔记本 ACPI 固件与 DPC 延迟问题的技术调查，包含测量、跟踪和固件改动对比。",
+        "problem_solved": "解释视频卡顿、音频爆音、鼠标短暂停滞等现象为何难以靠驱动或系统重装解决，并定位到固件中的 AML 处理逻辑。",
+        "who_should_care": "遇到实时音频或系统卡顿的华硕 ROG 用户，以及排查固件延迟的开发者。",
+        "use_cases": [
+          "排查 ROG 笔记本周期性卡顿",
+          "分析 ACPI 与 DPC 延迟",
+          "对比固件更新前后差异"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,000 星且曾上日榜。",
+        "risk_notes": "资料称原问题已由更新后的固件修复；内容偏调查记录，不是可直接部署的工具。",
+        "evidence": [
+          "A deep dive into the ACPI.sys DPC latency problems on Asus ROG laptops",
+          "The original periodic ACPI/DPC stall described in this write-up is **fixed** by an updated ASUS UEFI",
+          "If `ACPI.sys` is slow, it's because the firmware is feeding it inefficient or flawed AML code to execute."
+        ]
+      }
+    },
+    "AIPentest/CyberStrikeAI": {
+      "category": "security",
+      "one_liner": "AI 原生网络安全行动系统",
+      "intro": {
+        "one_liner": "AI 安全测试工作台",
+        "what_it_is": "这是一个用 Go 构建的授权安全操作平台，把智能体编排、工具调用、人工审批、证据留存和攻击链复盘放在同一工作台。",
+        "problem_solved": "它解决安全测试中流程分散、执行难审计、证据难复用的问题，让自然语言意图转成受治理、可回放的操作。",
+        "who_should_care": "做授权渗透测试、安全运营、靶场训练和工具编排的开发者。",
+        "use_cases": [
+          "编排授权渗透测试流程",
+          "管理资产、漏洞与攻击链",
+          "审计智能体工具调用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 122 星，并曾进入日榜一天。",
+        "risk_notes": "包含 WebShell、C2 等高风险能力，仅限自有或明确授权系统；共享或生产环境启用前需审阅安全模型与加固指南。",
+        "evidence": [
+          "CyberStrikeAI connects planning, execution, human oversight, evidence, and replay in one auditable workspace.",
+          "Use CyberStrikeAI only on systems you own or are explicitly authorized to test.",
+          "WebShell, C2, and other high-risk capabilities are for systems you own or are explicitly authorized to test."
+        ]
+      }
+    },
+    "GCWing/OpenBitFun": {
+      "category": "ai-agent",
+      "one_liner": "通用桌面智能体运行时",
+      "intro": {
+        "one_liner": "开源智能体工作台",
+        "what_it_is": "OpenBitFun 是可定制的开源智能体工作台，包含 Rust 智能体运行时和桌面应用，支持多设备远程控制、四种工作模式与 Mini Apps 扩展。",
+        "problem_solved": "它把任务规划、上下文管理、工具调用、多智能体协作和结果汇总放进统一工作台，并让任务在切换设备或断开控制器后继续运行。",
+        "who_should_care": "需要长时间智能体任务、跨设备协作、定制工具与界面的开发者。",
+        "use_cases": [
+          "跨电脑切换并远程查看任务",
+          "用手机审批和发送指令",
+          "构建专用智能体与 Mini Apps"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 26 星，曾有一天进入日榜。",
+        "risk_notes": "仍在持续演进，长期任务可靠性、运行时效率和桌面体验仍是待改进方向；未关闭议题有 98 个。",
+        "evidence": [
+          "OpenBitFun is a highly customizable, open-source agent workspace that keeps work moving your way.",
+          "The Rust Agent Runtime manages session state, context, and tool execution. Persistent sessions, interruption recovery, long-term memory, and support for extended tasks help keep work moving.",
+          "OpenBitFun is still evolving. Here are three directions we want to explore:"
+        ]
+      }
+    },
+    "spec-kitty/spec-kitty": {
+      "category": "dev-tools",
+      "one_liner": "规格驱动开发工作台",
+      "intro": {
+        "one_liner": "AI 编码规范工作流工具",
+        "what_it_is": "这是一个用 Python 编写的开源命令行工具，把规格、计划、任务、评审、验收和合并状态放进仓库，并配合隔离工作树管理 AI 编码代理。",
+        "problem_solved": "它解决 AI 编码会话丢失需求、决策和验收标准的问题，也让多个代理并行开发时有清晰边界、可追踪记录和评审关卡。",
+        "who_should_care": "使用 Git、并行调度多个 AI 编码代理，并重视评审与可追踪流程的团队。",
+        "use_cases": [
+          "把需求转成可执行工作包",
+          "并行协调多个 AI 编码代理",
+          "在仓库内保留评审与合并记录"
+        ],
+        "alternatives": "相比只靠提示词，它把治理信息留在仓库，并提供工作树隔离与评审关卡。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 16 星且仅一天进入日榜。",
+        "risk_notes": "主分支为 4.x 预发布线，稳定发布验收仍待完成；未关闭 Issue 数达 1110，日常使用可能遇到较多待处理问题。",
+        "evidence": [
+          "Spec Kitty is an open-source CLI for turning product intent into a repo-native AI coding workflow:",
+          "This prerelease is for qualification; stable launch acceptance remains pending.",
+          "未关闭 Issue 数：1110"
+        ]
+      }
+    },
+    "redhat-et/ripwire": {
+      "category": "dev-tools",
+      "one_liner": "代码库上下文索引工具",
+      "intro": {
+        "one_liner": "代码代理的仓库地图工具",
+        "what_it_is": "一个零依赖的 C++23 命令行工具与 MCP server，为编码代理生成排序且确定的仓库调用图、影响范围、待测测试和质量变化。",
+        "problem_solved": "让编码代理先获得仓库结构地图，再检查改动影响，减少盲目读取文件，并发现调用不兼容、遗漏协同修改和质量退化。",
+        "who_should_care": "使用编码代理的开发者，以及管理多代理代码任务的人。",
+        "use_cases": [
+          "会话开始时快速定位代码",
+          "改动前查看影响范围",
+          "提交前检查质量退化"
+        ],
+        "alternatives": "以排序、确定的调用图和改动检查替代直接搜索并阅读文件。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 541 星，且曾有一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 82 个；报告提到契约检查存在默认尾参数误报，需编译验证。",
+        "evidence": [
+          "The ripgrep of AI context: a zero-dependency C++23 CLI + MCP server giving coding agents a ranked, deterministic map of any repo, blast radius, tests-to-run and quality deltas.",
+          "Ranked, deterministic call graph: what to touch, what it breaks, which tests to run.",
+          "Known false-positive mode, handled by its own documentation: the contract checker's arity heuristic over-counts on defaulted trailing parameters"
+        ]
+      }
+    },
+    "microsoft/tgrep": {
+      "category": "dev-tools",
+      "one_liner": "大型代码库极速正则搜索",
+      "intro": {
+        "one_liner": "本地代码库快速正则搜索工具",
+        "what_it_is": "tgrep 是用 Rust 编写的三元组索引 grep 工具，采用客户端与服务端架构，面向本地大型代码库的快速正则搜索。",
+        "problem_solved": "它通过索引缩小候选文件范围，并用正则引擎并行校验，减少大型仓库中反复全量扫描的成本。",
+        "who_should_care": "经常在大型代码库里搜索正则的开发者，以及需要接入搜索能力的编码代理使用者。",
+        "use_cases": [
+          "大型仓库中快速查找正则匹配",
+          "启动服务并维护本地索引",
+          "为编码代理安装搜索工具"
+        ],
+        "alternatives": "README 提到与 ripgrep 的基准对比，并说明部分场景更快；具体差异取决于查询、仓库和存储。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,777 星，并有一天进入日榜。",
+        "risk_notes": "索引可能滞后于文件变化；索引目录需加入忽略规则且不应提交；无有效索引时会回退到文件系统扫描。",
+        "evidence": [
+          "Trigram-indexed grep with a client/server architecture for fast regex search in large codebases locally",
+          "**Indexes can lag filesystem changes.** The server updates asynchronously; without a server, rerun `tgrep index .` after changes.",
+          "Indexes are stored in `.tgrep/` by default; add this directory to `.gitignore`. It is generated build output and must not be committed or distributed with a repository."
+        ]
+      }
+    },
+    "SuperTurtleDev/gbl_root_canoe": {
+      "category": "mobile",
+      "one_liner": "Canoe 设备绕检测方案",
+      "intro": {
+        "one_liner": "骁龙引导修补工具",
+        "what_it_is": "这是一个基于 EDK2 的工作区，用 C 语言相关工具链修补高通 ABL 镜像中的 EFI 应用，并生成可写入分区的引导组件。",
+        "problem_solved": "它面向特定骁龙设备，利用 GBL 漏洞加载 superfastboot BDS，以绕过引导加载程序解锁检测并维持伪锁定状态。",
+        "who_should_care": "熟悉 Android 引导分区、已解锁设备与 root 环境的底层开发者。",
+        "use_cases": [
+          "修补 ABL 生成引导组件",
+          "构建 Linux 或 Windows 工具包",
+          "打包 KernelSU/Magisk 模块"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜，但创建时间很新。",
+        "risk_notes": "仅支持特定芯片与含漏洞的 ABL；需解锁、无基带保护并改动关键分区；安装涉及清除数据、降级 ABL 与 OTA 保留处理，操作失败可能导致数据不可访问或无法启动。",
+        "evidence": [
+          "`gbl_root_canoe` is an EDK2-based workspace for patching the EFI applications within Qualcomm ABL (Android Bootloader) images.",
+          "primarily to achieve a **Fake Locked Bootloader** state on Snapdragon 8 Gen 5 / 8 Elite (Gen 5) devices to bypass bootloader unlock detection.",
+          "Device must be Snapdragon 8 Gen 5 / 8 Elite (Gen 5)."
+        ]
+      }
+    },
+    "FuJacob/cotabby": {
+      "category": "ai-model",
+      "one_liner": "Mac 全局本地 AI 补全",
+      "intro": {
+        "one_liner": "Mac 本地 AI 补全",
+        "what_it_is": "Cotabby 是面向 macOS 的开源本地优先 AI 自动补全工具，可在多数输入框显示灰色建议，并支持按键接受。",
+        "problem_solved": "它让 Mac 上跨应用的文字输入获得本地生成补全，同时减少账号、遥测和输入内容上云的需求。",
+        "who_should_care": "重视隐私、常在多款 Mac 应用中写作或输入的开发者与用户。",
+        "use_cases": [
+          "在聊天、邮件和文档里续写文字",
+          "输入表情缩写并快速替换",
+          "用内联宏做换算和日期计算"
+        ],
+        "alternatives": "差异是覆盖几乎任意输入框，默认端侧生成，并可选自配置兼容接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 10 星且仅一天上日榜，热度回落明显。",
+        "risk_notes": "标题标注为 beta；需要辅助功能、输入监控等系统权限；AGPL-3.0 有较强开源义务；未关闭 Issue 达 115 个。",
+        "evidence": [
+          "Cotabby [beta]",
+          "Open-source, local-first AI autocomplete for macOS.",
+          "Cotabby adds AI autocomplete to almost any text field on your Mac."
+        ]
+      }
+    }
+  }
+}

@@ -1108,24 +1108,23 @@
       "triage_quality": "suspicious",
       "triage_reason": "描述主题不符",
       "intro": {
-        "one_liner": "Python 终端多功能工具箱",
-        "what_it_is": "Void-Tools 是一个用 Python 编写、带 Rich TUI 仪表盘的终端多功能工具集，把 OSINT 查询、网络诊断、Discord 辅助、生成器和日常 CLI 工具集中在一个界面里。当前仓库是 v1 归档版，README 指向 v2.0 新仓库。",
-        "problem_solved": "把分散的公开信息查询、IP 与端口检查、哈希与密码生成等小工具整合进单一终端面板，省去在多个网站或脚本间切换。",
-        "who_should_care": "需要在终端内做公开数据检索与网络基础排查的安全学习者、CTF 与教学场景使用者；Discord 服务器管理员也可关注其自有服务器管理功能。",
+        "one_liner": "终端多功能工具集",
+        "what_it_is": "这是一个用 Python 编写的终端多功能工具集，带 Rich 文本界面，汇集公开信息查询、网络诊断、Discord 辅助和常用命令行工具。",
+        "problem_solved": "它把多类研究、网络与管理小工具集中到一个终端面板，减少在多个脚本或网站之间切换。",
+        "who_should_care": "关注公开信息查询、授权网络测试与自有服务器管理的 Python 开发者。",
         "use_cases": [
-          "对自有目标做 IP 归属、WHOIS 式信息与开放端口检查",
-          "用户名、邮箱、域名等公开信息检索与简单报告整理",
-          "在自有 Discord 服务器上做频道与角色管理、备份",
-          "哈希计算、密码生成、临时邮箱等日常 CLI 小工具"
+          "查询公开信息与域名情报",
+          "检查网络连通与端口状态",
+          "管理自有 Discord 服务器"
         ],
         "alternatives": "unknown",
-        "maturity": "可试用",
-        "hype_or_trend": "短期热点 + 仓库 topics 集中在 discord-nuker、discord-raid 等敏感词，星数一周增长 240，热度更多来自话题标签而非工程成熟度",
-        "risk_notes": "仓库 topics 含 discord-nuker、discord-raid、discord-joiner 等滥用导向标签，与 README 声称的“仅限教育用途”存在张力；README 大量功能标注为 Premium modules，核心能力可能需付费；v1 已归档，维护转移至另一账号下的 v2 仓库；项目事实中 license 为 null，而 README 自称 AGPL v3.0，两者不一致。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 240 星且曾上日榜。",
+        "risk_notes": "仓库自述为旧版归档，当前功能与更新转向另一版本；仅限教育和授权研究使用；话题标签包含 Discord 攻击类词，需留意合规边界。",
         "evidence": [
           "Python terminal multitool — OSINT, network utilities, Rich TUI dashboard. Educational use only.",
-          "This repo is the v1 archive. Download v2.0 for the current version.",
-          "Distributed under the GNU AGPL v3.0"
+          "This repo is the **v1 archive**. Download **v2.0** for the current version.",
+          "This project is for **education and authorized research only**."
         ]
       }
     },
@@ -1364,24 +1363,23 @@
       "triage_quality": "ok",
       "triage_reason": "高性能对象存储",
       "intro": {
-        "one_liner": "面向 LLM 推理与 GPU 训练的高性能对象存储",
-        "what_it_is": "OpenLake 是一个用 Rust 编写、基于 io_uring 的分布式存储引擎，为 GPU 工作负载提供 KV Cache 卸载和 S3 兼容对象存储能力。",
-        "problem_solved": "解决 LLM 推理与训练中 GPU 因存储 I/O 而等待的问题，通过持久化 KV Cache 复用和快速小文件读写，减少 prefill 重复计算与 GPU 空闲时间。",
-        "who_should_care": "部署 vLLM 推理服务、进行大规模模型训练或 RL 训练，并受限于 KV Cache 内存与 checkpoint I/O 的 AI 基础设施团队。",
+        "one_liner": "面向 GPU 的高速存储",
+        "what_it_is": "OpenLake 是用 Rust 编写的分布式存储引擎，面向大模型推理和训练，提供 KV 缓存池与兼容 S3 的对象存储。",
+        "problem_solved": "它试图减少 GPU 等待数据的时间，支撑小文件读写、检查点存取、向量索引和大规模上下文缓存。",
+        "who_should_care": "做大模型训练、推理服务、GPU 集群存储优化的开发者。",
         "use_cases": [
-          "vLLM 推理服务的 KV Cache 卸载与跨节点共享复用",
-          "RL/ML 训练的快速 checkpoint 存储与读取",
-          "向量数据库索引构建与向量检索服务",
-          "Agent 场景下大规模对话上下文与记忆的持久化存储"
+          "为 vLLM 提供 KV 缓存卸载",
+          "保存和读取训练检查点",
+          "搭建兼容 S3 的对象存储"
         ],
-        "alternatives": "README 提供了与同类项目的对比页面链接，但未给出具体对比内容，无法据此判断差异。",
+        "alternatives": "unknown",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：KV Cache 卸载与 GPU 存储加速是当前 LLM 推理降本的热门方向，但项目创建时间短、issue 积压较多，尚需观察。",
-        "risk_notes": "项目创建于 2026-04-27，距今时间很短；open_issues 达 148 个，维护响应能力未知；README 中的性能数字（百万级 IOPS、66× 加速、MLPerf 排名等）均为项目自述，未经独立验证。",
+        "hype_or_trend": "短期热点，一周涨了 212 星，并曾上榜日榜一天。",
+        "risk_notes": "项目创建较新，未关闭议题有 146 个；部分能力需从源码构建，部署依赖较多。",
         "evidence": [
-          "Built on Rust on `io_uring`, OpenLake is a state of the art storage engine delivering million+ iops within 1ms.",
-          "KV Cache Offload. Reduced LLM Inference costs by having Petabyte scale KV cache store co-located on GPU hosts.",
-          "Drop OpenLake into your existing setup. No code changes:"
+          "High performance object store for fast LLM Inference and GPU Training. Feed your GPUs at blazing fast speeds",
+          "Fast, easy and efficient storage for LLM Inference and Training",
+          "OpenLake is a storage engine for AI infrastructure. With OpenLake you get high throughput for small I/O and cache like performance while being fully persistent and durable."
         ]
       }
     },
@@ -1429,23 +1427,23 @@
       "triage_quality": "ok",
       "triage_reason": "AI记忆系统",
       "intro": {
-        "one_liner": "零依赖的本地 AI 记忆层",
-        "what_it_is": "Mnemosyne 是一个基于 SQLite、纯 Python 实现的 AI 记忆层，可作为 MCP 服务或 Python SDK 接入各类 agent 框架，无需外部云服务。",
-        "problem_solved": "为 agent 提供持久化、可检索的长期记忆，避免依赖外部云服务，并让记忆数据保存在单个 SQLite 文件中。",
-        "who_should_care": "需要给 Claude Code、Cursor、Codex 等 agent 增加本地长期记忆的开发者，以及关注数据不出本地的团队。",
+        "one_liner": "本地智能体记忆层",
+        "what_it_is": "Mnemosyne 是用 Python 编写的智能体记忆层，基于 SQLite，支持命令行、Python 接口和多种智能体接入方式。",
+        "problem_solved": "它让智能体把偏好、事实和上下文保存在本地数据库中，不依赖云端服务，并提供记忆检索、导入导出和同步能力。",
+        "who_should_care": "开发智能体、需要本地记忆与多平台接入的开发者。",
         "use_cases": [
-          "为 Cursor、Claude Code 等 MCP 客户端挂载跨会话记忆",
-          "在自研 Python agent 中通过 remember/recall 存取用户偏好",
-          "多实例之间双向同步记忆库"
+          "为智能体保存用户偏好",
+          "通过命令行检索记忆",
+          "在多个实例间同步记忆"
         ],
-        "alternatives": "README 自述与 Honcho、Hindsight、LIGHT、RAG 在 BEAM 基准上对比；作者注明 Hindsight 在其公开结果上领先，且评测所用 judge 不同、不可直接比较。",
-        "maturity": "可试用",
-        "hype_or_trend": "短期热点：AI agent 记忆层是当前热门方向，但项目基准数据尚未在当前版本复跑。",
-        "risk_notes": "README 自述 BEAM 数据测于 v3.0.0 且未复跑；曾公布的 LongMemEval 98.9% 因无方法记录已撤回；open_issues 达 172 个，维护压力需关注。",
+        "alternatives": "强调零云端依赖、SQLite 存储和多种智能体框架接入。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 96 星且上过一次日榜。",
+        "risk_notes": "未关闭 Issue 有 179 个；基准结果来自旧版本，且部分成绩已撤回或提示不可直接比较。",
         "evidence": [
           "The Zero-Dependency, Sub-Millisecond AI Memory System for Hermes Agents and Everyone Else!",
-          "The BEAM numbers were measured on v3.0.0 (May 2026) ... They have not been re-run since.",
-          "A 98.9% Recall@All@5 figure ... has been withdrawn until LongMemEval is re-run"
+          "Zero-cloud AI memory that works everywhere. SQLite-backed. One pure-Python dependency.",
+          "These are point-in-time results, not a claim about the current build."
         ]
       }
     },
@@ -1560,24 +1558,22 @@
       "triage_quality": "ok",
       "triage_reason": "Postgres持久执行",
       "intro": {
-        "one_liner": "PostgreSQL 内建持久化执行扩展",
-        "what_it_is": "pg_durable 是微软开源的 PostgreSQL 扩展，用 Rust 编写，让用户用 SQL 定义带检查点的长时工作流，并在崩溃、重启或步骤失败后从最近的持久化检查点恢复执行。",
-        "problem_solved": "解决长时后台任务在数据库重启或单步失败后需要重跑、手工重建状态的问题，避免用 pg_cron、队列、worker 和状态表拼接可靠性。",
-        "who_should_care": "后端与数据工程师、需要自动化可审计 runbook 的 DBA/SRE，以及构建数据或 AI 流水线且状态已在 Postgres 中的团队。",
+        "one_liner": "数据库内持久执行扩展",
+        "what_it_is": "这是一个用 Rust 编写的 PostgreSQL 扩展，把长时间运行、可容错的工作流定义成 SQL 步骤，并在数据库中记录检查点。",
+        "problem_solved": "它让后台任务在崩溃、重启或步骤失败后从检查点恢复，减少自行拼接定时任务、队列、工作进程和状态表的需求。",
+        "who_should_care": "已把状态放在 PostgreSQL 的后端、数据工程师、数据库管理员和站点可靠性工程师。",
         "use_cases": [
-          "向量嵌入流水线：分块、调用 embedding API、写入 pgvector",
-          "大批量数据摄取：暂存、去重、转换、发布",
-          "定时维护：检测膨胀、通知、等待审批后执行下一步",
-          "并行 fan-out 查询后聚合结果",
-          "从 SQL 调用外部 HTTP API 做数据富化或分类"
+          "向量嵌入处理流水线",
+          "批量数据摄取与发布",
+          "可审计的定时维护流程"
         ],
-        "alternatives": "相比 pg_cron 加任务表、Airflow/Temporal/Step Functions/Argo 等外部编排器，它把工作流定义、重试状态和检查点都放进 Postgres，无需额外服务基础设施；但模型刻意限定为 SQL 形态，复杂应用逻辑仍需包装或改用通用编排器。",
+        "alternatives": "相比外部编排器或队列加工作进程，它把工作流、重试状态和进度都放进 PostgreSQL，无需额外服务。",
         "maturity": "可试用",
-        "hype_or_trend": "长期趋势：持久化执行已是行业标准模式，把计算下沉到数据侧符合数据库内计算方向，但项目仍处早期版本。",
-        "risk_notes": "项目事实中 license 为 null，使用前需确认许可证；README 明确警告官方 Docker 镜像仅供评估学习、不可用于生产，且默认启用超级用户持久化实例、HTTP 访问受限；尚未发布 arm64 镜像。",
+        "hype_or_trend": "短期热点，一周涨了 740 星且曾登上日榜。",
+        "risk_notes": "发布的容器镜像仅用于评估和学习，不建议用于生产；需要安装扩展并运行后台工作进程；模型受 SQL 形态限制。",
         "evidence": [
-          "PostgreSQL in-database durable execution",
-          "Define the workflow in SQL, let pg_durable checkpoint each step, and resume after crashes, restarts, or failed steps.",
+          "Long-running, fault-tolerant SQL functions for teams that already keep their state in Postgres and want to stop stitching together cron jobs, workers, queues, and status tables to make background work reliable.",
+          "If the database crashes, restarts, or a step fails, execution resumes from the last durable checkpoint instead of making you reconstruct state by hand.",
           "The published Docker image is intended for evaluating and learning pg_durable only — do not use it in production."
         ]
       }
@@ -1941,23 +1937,23 @@
       "triage_quality": "suspicious",
       "triage_reason": "fork星比异常",
       "intro": {
-        "one_liner": "在 git push 前插入 AI 校验的本地代理",
-        "what_it_is": "no-mistakes 是一个用 Go 编写的本地 git 代理工具：把分支推送到名为 no-mistakes 的 remote 后，它会在一个一次性 worktree 中运行由 AI 驱动的校验流水线（review、test、docs、lint），只有全部检查通过，才把分支转发到真实远端并自动创建 PR。",
-        "problem_solved": "解决低质量改动直接进入远端、PR 内容需要手工撰写、CI 失败后需要人工反复修复的问题，把校验和修复前移到 push 之前。",
-        "who_should_care": "经常提交 PR 的个人开发者，以及希望用 AI agent 自动完成“改完即校验、校验通过即开 PR”流程的团队。",
+        "one_liner": "推送前自动把关工具",
+        "what_it_is": "它在本地 Git 远端前加一道代理，推送时创建临时工作树，运行校验流水线，全部通过后才转发分支并自动开 PR。",
+        "problem_solved": "把审查、测试、文档、格式检查、持续集成修复和 PR 创建串成一道闸门，减少带问题的改动进入远端。",
+        "who_should_care": "重视 PR 质量、使用 AI 编码代理并希望保留人工审批的开发者。",
         "use_cases": [
-          "在推送前自动运行 review、test、lint、docs 检查，并拦截不合格的提交",
-          "让 Claude Code、Codex 等编码 agent 通过 /no-mistakes 完成任务后自动校验并开 PR",
-          "CI 失败后由流水线自动修复，并沿受保护的 force-push 路径发布修复"
+          "推送前自动跑完整校验",
+          "让编码代理完成任务并过闸",
+          "自动修复失败后重开干净 PR"
         ],
         "alternatives": "unknown",
-        "maturity": "可试用",
-        "hype_or_trend": "短期热点：依赖多个 AI CLI agent 的编排能力，属于当前 agent 工作流的热门方向，但项目创建时间短、open issues 数量偏高。",
-        "risk_notes": "open_issues 244 相对 1283 stars 偏高，维护压力可能较大；安装脚本通过 curl | sh 执行远程脚本，需自行审查；流水线依赖外部 AI agent CLI，会产生真实 API 消耗。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 248 星且曾上日榜。",
+        "risk_notes": "未关闭 Issue 有 251 个；流水线依赖可运行的配置代理；持续集成修复涉及受保护的强制推送路径。",
         "evidence": [
-          "Push to `no-mistakes` instead of `origin`, and it spins up a disposable worktree, runs an AI-driven validation pipeline, forwards the branch to the configured push target only after every check passes, and opens a clean PR automatically.",
-          "Agent-agnostic - `claude`, `codex`, `grok`, `rovodev`, `opencode`, `pi`, `copilot`, `antigravity`, or `cursor` / `devin` / `acp:<target>` via `acpx`, with ordered fallbacks",
-          "`make e2e-record` overwrites `internal/e2e/fixtures/` from the real `claude`, `codex`, `opencode`, and `antigravity` CLIs, spends real API quota"
+          "`no-mistakes` puts a local git proxy in front of your real remote.",
+          "forwards the branch to the configured push target only after every check passes, and opens a clean PR automatically.",
+          "every gate requires a runnable configured pipeline agent."
         ]
       }
     },

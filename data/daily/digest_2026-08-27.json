@@ -1,1 +1,1091 @@
-{"date":"2026-08-27","headline":"AI Agent 项目领跑今日热度","points":["ApodexAI/FrontierAgent 单日新增 453，命令行多智能体框架最受关注。","AI Agent、AI 模型各有 6 个项目，开发工具以 8 个项目居前。","Python 出现 15 次，TypeScript 8 次，仍是热门实现语言。"],"items":{"ApodexAI/FrontierAgent":{"category":"ai-agent","one_liner":"命令行多智能体框架"},"Gaoshu705/QzoneArchive":{"category":"desktop-system","one_liner":"QQ空间本地归档工具"},"AlmanacCode/codealmanac":{"category":"dev-tools","one_liner":"面向编码智能体的代码库维基"},"workweave/router":{"category":"ai-model","one_liner":"智能体模型路由器"},"nateherkai/scroll-craft":{"category":"web-frontend","one_liner":"滚动叙事网页设计技能"},"Nervercc/gpt_nerver":{"category":"automation","one_liner":"ChatGPT Plus 自动化工具包"},"MeteorNOX/DeepSeek-Balance-Whale-Widget":{"category":"dev-tools","one_liner":"DeepSeek 余额悬浮组件"},"Jose-Gael-Cruz-Lopez/underclassmen-opportunities":{"category":"learning-resource","one_liner":"低年级科技机会清单"},"boona13/mykonos-island-voxels":{"category":"game","one_liner":"浏览器等距岛屿建造器"},"huytieu/COG-second-brain":{"category":"ai-agent","one_liner":"自进化第二大脑系统"},"orbien-org/orbien":{"category":"dev-tools","one_liner":"轻量跨平台内网穿透工具"},"sunchaokun/PPT-Design-Skill":{"category":"content-media","one_liner":"可编辑 PPT 设计技能"},"MemTensor/memmy-agent":{"category":"ai-agent","one_liner":"本地共享记忆智能体"},"MiaAI-Lab/DeepSeek-v4-Flash-DSpark-2x-DGX-Spark":{"category":"ai-model","one_liner":"双 DGX Spark 训练配方"},"yqxie1991/WxCleaner":{"category":"desktop-system","one_liner":"微信重复文件清理器"},"0x6rss/matkap":{"category":"security","one_liner":"恶意 Telegram 机器人猎捕工具"},"AutoArk/open-audio-opd":{"category":"ai-model","one_liner":"工业音频模型蒸馏栈"},"INCY-DEV/incy-platforms":{"category":"other","one_liner":"INCY 下载与发布信息"},"sipyourdrink-ltd/bernstein":{"category":"dev-tools","one_liner":"确定性编码智能体编排器"},"Ponphil/LitePan":{"category":"automation","one_liner":"多网盘聚合挂载工具"},"agenmod/immortal-skill":{"category":"ai-agent","one_liner":"聊天记录数字分身框架"},"JIEKE66633/One-click-cleaning-of-C-drive":{"category":"desktop-system","one_liner":"一键清理 C 盘垃圾"},"lumina-layer-studio/Lumina-Layers":{"category":"hardware-iot","one_liner":"全彩 3D 打印配色系统"},"bishwaghimire/ai-learning-roadmaps":{"category":"learning-resource","one_liner":"人工智能学习路线库"},"elder-plinius/GLOSSOPETRAE":{"category":"ai-model","one_liner":"面向 AI 的语言引擎"},"luisbocanegra/kde-material-you-colors":{"category":"desktop-system","one_liner":"KDE 壁纸配色生成器"},"alumnium-hq/alumnium":{"category":"dev-tools","one_liner":"AI 驱动的端到端测试"},"datawhalechina/base-llm":{"category":"learning-resource","one_liner":"NLP 到 LLM 全栈教程"},"inngest/inngest-js":{"category":"dev-tools","one_liner":"零基建可靠工作流平台"},"alan2207/awesome-codebases":{"category":"learning-resource","one_liner":"优秀开源代码库清单"},"mProjectsCode/obsidian-meta-bind-plugin":{"category":"content-media","one_liner":"Obsidian 交互笔记插件"},"abdullahtarek/football_analysis":{"category":"ai-model","one_liner":"足球视觉分析项目"},"cen6667/408":{"category":"learning-resource","one_liner":"计算机 408 课程笔记"},"schlae/cm5-reveng":{"category":"hardware-iot","one_liner":"树莓派 CM5 逆向资料"},"LibraHp/GetQzonehistory":{"category":"automation","one_liner":"QQ空间历史说说抓取器"},"spring-attic/spring-authorization-server":{"category":"security","one_liner":"Spring 授权服务器"},"jeremylongshore/tons-of-skills-marketplace":{"category":"ai-agent","one_liner":"Claude Code 技能市场"},"HarleyCoops/Math-To-Manim":{"category":"content-media","one_liner":"数理动画与笔记生成器"},"shengjidaguai-china/goutoujunshi":{"category":"ai-agent","one_liner":"Codex 恋爱关系军师"},"microsoft/foundry-dev-tools":{"category":"dev-tools","one_liner":"Foundry 开发工具集"},"Webeoidentify/Honeypot-Detector":{"category":"security","one_liner":"蜜罐风险检测工具"},"punkpeye/mcp-remote":{"category":"dev-tools","one_liner":"连接本地客户端与远程 MCP"},"MudCosmetologist/Autocad-Software":{"category":"automation","one_liner":"AutoCAD 效率脚本合集"},"everfu/hexo-theme-solitude":{"category":"web-frontend","one_liner":"美观高效的 Hexo 主题"},"techjarves/Uncensored-Local-Studio":{"category":"ai-model","one_liner":"零配置本地多模态 AI 工作台"}}}
+{
+  "date": "2026-08-27",
+  "headline": "AI Agent 项目领跑今日热度",
+  "points": [
+    "ApodexAI/FrontierAgent 单日新增 453，命令行多智能体框架最受关注。",
+    "AI Agent、AI 模型各有 6 个项目，开发工具以 8 个项目居前。",
+    "Python 出现 15 次，TypeScript 8 次，仍是热门实现语言。"
+  ],
+  "items": {
+    "ApodexAI/FrontierAgent": {
+      "category": "ai-agent",
+      "one_liner": "命令行多智能体框架",
+      "intro": {
+        "one_liner": "开源终端 Agent 运行时与评测套件",
+        "what_it_is": "FrontierAgent 是一个开源的 agent 运行时、终端产品与评测套件，面向长周期研究与基于文件的工作；其 frontier-agent TUI 内置 ReAct 与 Agent Team 两种原生工作流。",
+        "problem_solved": "为长周期、多步骤的 agent 任务提供可用的终端运行环境：单 agent 状态化迭代，或由协调者拆分任务、并行派发给子 agent 并汇总结果；同时提供沙箱文件操作、审批、trace 与恢复机制。",
+        "who_should_care": "需要在终端中运行 AI agent 完成研究或文件类任务的开发者、agent 框架研究者，以及需要可复现评测流程的团队。",
+        "use_cases": [
+          "在本地项目目录中以 TUI 方式运行单 agent，读取文件、执行命令并产出交付物",
+          "用 Agent Team 模式把独立子任务并行分派给多个子 agent，再由协调者汇总",
+          "使用内置 benchmark runner 运行研究类与文件类基准测试，并重跑失败用例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：agent 框架与终端 agent 方向热度高，但项目创建时间较新，尚需观察长期维护。",
+        "risk_notes": "README 中包含限时免费 API 推广与外部平台引导，属于营销内容；项目创建于 2026-08-22，历史较短，长期维护情况未知；使用需自备 OpenAI 兼容模型端点。",
+        "evidence": [
+          "FrontierAgent is an open-source agent runtime, terminal product, and evaluation suite for long-horizon research and file-based work.",
+          "The `frontier-agent` TUI ships two native workflows: ReAct ... Agent Team",
+          "Requirements: Git, Python 3.12, uv, and an OpenAI-compatible model endpoint. Docker is optional."
+        ]
+      }
+    },
+    "Gaoshu705/QzoneArchive": {
+      "category": "desktop-system",
+      "one_liner": "QQ空间本地归档工具",
+      "intro": {
+        "one_liner": "QQ 空间归档工具",
+        "what_it_is": "这是一个将 QQ 空间历史动态、照片、视频与互动记录安全归档到本地的桌面和移动端工具，主要语言为 Rust。",
+        "problem_solved": "它用于把 QQ 空间中的历史内容和互动记录保存到本地，便于个人留存与备份。",
+        "who_should_care": "需要保存 QQ 空间历史资料的个人用户。",
+        "use_cases": [
+          "归档历史动态",
+          "备份照片和视频",
+          "保存互动记录"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,064 星且曾上日榜，但项目已关闭。",
+        "risk_notes": "项目已正式关闭并停止维护，不再修复问题、更新依赖或提供安装包与技术支持；历史版本不保证正常运行；需警惕第三方衍生版本。",
+        "evidence": [
+          "将 QQ 空间历史动态、照片、视频与互动记录安全归档到本地的桌面 / 移动端工具。",
+          "本项目已于 2026 年 9 月 4 日正式关闭并停止维护。",
+          "不再保证历史版本能够正常运行"
+        ]
+      }
+    },
+    "AlmanacCode/codealmanac": {
+      "category": "dev-tools",
+      "one_liner": "面向编码智能体的代码库维基",
+      "intro": {
+        "one_liner": "代码库活文档工具",
+        "what_it_is": "CodeAlmanac 是给 AI 编码代理使用的代码库维基，用仓库内的 Markdown 记录决策、流程、约束和踩坑，并在本地索引、通过 Git 审阅。",
+        "problem_solved": "它补足代码本身难以表达的上下文，让代理和人能查询系统为何这样设计、哪些约束重要、工作流如何跨文件与服务。",
+        "who_should_care": "使用 Codex 或 Claude Code 的 macOS 开发者，以及维护复杂代码库知识的团队。",
+        "use_cases": [
+          "查询代码库背景知识",
+          "整理代理会话中的经验",
+          "维护本地维基页面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但创建时间很新。",
+        "risk_notes": "目前仅支持 macOS 与 Codex 或 Claude Code，并要求 Python 3.12+；自动任务依赖本地后台作业，生命周期代理拥有较宽的文件系统权限，需审阅改动。",
+        "evidence": [
+          "A living wiki for your codebase, maintained by AI coding agents.",
+          "The wiki is plain markdown in your repo, indexed locally, and reviewed in Git like any other code change.",
+          "Supported today: macOS with Codex or Claude Code. Requires Python 3.12+."
+        ]
+      }
+    },
+    "workweave/router": {
+      "category": "ai-model",
+      "one_liner": "智能体模型路由器",
+      "intro": {
+        "one_liner": "智能体模型路由代理",
+        "what_it_is": "一个为每次接口请求选择合适模型的代理，兼容 Anthropic、OpenAI 和 Gemini 接口，可托管使用或自托管。",
+        "problem_solved": "让编码工具和自有应用按请求自动选模型，减少手工切换，并以更换接口地址的方式降低成本。",
+        "who_should_care": "使用多种模型接口、关注调用成本与工具接入的开发者。",
+        "use_cases": [
+          "为编码工具统一接入模型路由",
+          "自托管代理多家模型接口",
+          "查看路由决策与用量成本"
+        ],
+        "alternatives": "支持多接口兼容、流式、工具调用、视觉和自托管；同类差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,269 星，且曾登上日榜。",
+        "risk_notes": "未关闭议题有 214 个；自托管策略是冻结的简化版本，不含托管服务的训练、在线学习或注册表；早期版本许可证与当前不同。",
+        "evidence": [
+          "Weave Router is a proxy that selects a model for each API request. It works with Anthropic, OpenAI, and Gemini APIs, so you can use it with coding tools or your own application.",
+          "The optional self-hosted HMM is a barebones, frozen version of the policy. It doesn't include the managed service's training, online learning, or registry.",
+          "The Apache-2.0 release line begins with `router-v0.2.24`; earlier releases retain the licenses they shipped with."
+        ]
+      }
+    },
+    "nateherkai/scroll-craft": {
+      "category": "web-frontend",
+      "one_liner": "滚动叙事网页设计技能",
+      "intro": {
+        "one_liner": "面向编码 Agent 的滚动驱动网站设计技能",
+        "what_it_is": "scroll-craft 是一个供 Codex、Claude Code 等编码 Agent 使用的技能包，内含设计工作流、参考文档、引擎与验证工具，也以 Claude Code plugin 形式发布。",
+        "problem_solved": "针对 AI 生成网页常见的两类失败：一类是规整但平庸，另一类是炫技动画却牺牲可读性与移动端排版；它把交互与工艺当作同一件事处理。",
+        "who_should_care": "使用 Claude Code、Codex 等编码 Agent 制作营销页、作品集或品牌落地页的设计师与前端开发者。",
+        "use_cases": [
+          "用编码 Agent 生成滚动叙事型品牌落地页",
+          "为创作者作品集或产品页设计分层 hero 与滚动转场",
+          "在交付前用无头浏览器自动检查滚动死区、对比度与视频解码问题"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 依托 Claude Code 技能生态与 AI 建站话题获得关注，但设计方法论本身偏长期积累",
+        "risk_notes": "许可证为 MIT；README 含外部站点与视频链接，仅作示例参考；项目创建时间较新，长期维护情况未知；fork 数与 star 数比例偏高，需自行判断热度真实性",
+        "evidence": [
+          "Claude Code skill for premium scroll-driven websites. Scroll becomes the timeline, on a real design floor, verified by screenshotting its own scroll.",
+          "Use it with Codex, Claude Code, or another coding agent that can read instructions, edit files, run commands, and inspect a browser.",
+          "A headless browser walks the finished page at every scroll position, waits for the video playhead to settle, and reports: dead scroll ..."
+        ]
+      }
+    },
+    "Nervercc/gpt_nerver": {
+      "category": "automation",
+      "one_liner": "ChatGPT Plus 自动化工具包",
+      "intro": {
+        "one_liner": "桌面自动化工具集",
+        "what_it_is": "一个以 Python 编写的工具集，作者描述包含 PyQt6 桌面端、JSON-RPC 注册引擎，以及卡、CDK、PayPal、GCash 流程。",
+        "problem_solved": "从作者描述看，面向 ChatGPT Plus 相关注册与支付流程的自动化处理；具体能力缺少资料说明。",
+        "who_should_care": "关注桌面自动化、注册流程集成的 Python 开发者。",
+        "use_cases": [
+          "构建桌面端自动化界面",
+          "对接 JSON-RPC 注册引擎",
+          "整理多种支付相关流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾有一天进入日榜。",
+        "risk_notes": "缺少 README，功能细节、许可证、稳定性和维护状态均无法确认；创建日期为 2026-08-15，信息较新。",
+        "evidence": [
+          "ChatGPT Plus automation toolkit: PyQt6 desktop + JSON-RPC registration engine + card/CDK/PayPal/GCash flows",
+          "破千时的 Star 数：1009",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "MeteorNOX/DeepSeek-Balance-Whale-Widget": {
+      "category": "dev-tools",
+      "one_liner": "DeepSeek 余额悬浮组件",
+      "intro": {
+        "one_liner": "DSH 余额小鲸鱼挂件",
+        "what_it_is": "这是一个 JavaScript 编写的 DSH 标准插件，在界面右下角常驻显示小鲸鱼气泡、DeepSeek 余额、今日已用和每轮对话消耗，并支持拖拽吸附与自定义泡泡。",
+        "problem_solved": "它把账户余额、用量估算、峰谷定价和消耗提醒集中到界面角落，减少反复查询余额与核对每轮对话成本的麻烦。",
+        "who_should_care": "经常使用 DSH 和 DeepSeek、关心余额与用量明细的开发者。",
+        "use_cases": [
+          "查看余额与今日已用",
+          "接收余额和预算提醒",
+          "自定义点击泡泡内容"
+        ],
+        "alternatives": "支持多厂商余额模板、额度统计、音效与模块化泡泡，偏重界面陪伴和记账定制。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 163 星，曾有一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 152 个；安装方式混用会冲突；桌面端与网页端安装路径不同，Codex 版已迁出本仓库。",
+        "evidence": [
+          "作者填写的描述：DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的dsh安装",
+          "README 原文：DeepSeek Harness（DSH）Web 界面右下角的常驻挂件：小鲸鱼气泡图 + DeepSeek API 余额 + 今日已用 + 每轮对话消耗，并且**泡泡内容可以完全自定义**",
+          "README 原文：⚠️ **安装方式二选一、别混用**（npm 名 / `github:`）—— 它们是同一个包名，先后安装会并存冲突"
+        ]
+      }
+    },
+    "Jose-Gael-Cruz-Lopez/underclassmen-opportunities": {
+      "category": "learning-resource",
+      "one_liner": "低年级科技机会清单",
+      "intro": {
+        "one_liner": "低年级机会清单",
+        "what_it_is": "这是一个面向大学大一、大二学生的机会汇总清单，收录实习、项目、奖学金、研究、职业项目和校园领导机会等资源。",
+        "problem_solved": "它把分散在各处的低年级可申请机会集中整理，帮助学生更早发现不要求丰富经历的起点，并核对专业、国籍、课程和经验要求。",
+        "who_should_care": "大学低年级学生、准大一新生，以及帮助学生找机会的老师或社群维护者。",
+        "use_cases": [
+          "查找低年级实习",
+          "筛选奖学金与项目",
+          "按专业浏览研究机会"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜。",
+        "risk_notes": "清单依赖社区贡献和人工审核，条目可能过期；申请资格限制较多，需逐项核对。",
+        "evidence": [
+          "The Underclassmen Opportunities repository is a curated list of internships, programs and resources aimed at freshmen and sophomores in tech‐related majors.",
+          "A community resource for college freshmen and sophomores across all majors",
+          "Browse internships, fellowships, externships, research, scholarships, career programs, and campus leadership opportunities."
+        ]
+      }
+    },
+    "boona13/mykonos-island-voxels": {
+      "category": "game",
+      "one_liner": "浏览器等距岛屿建造器",
+      "intro": {
+        "one_liner": "浏览器岛屿搭建玩具",
+        "what_it_is": "一个用原生 JavaScript 模块和二维画布实现的等距视角岛屿搭建网页作品，可在桌面和手机浏览器中摆放地中海风格素材。",
+        "problem_solved": "让开发者和玩家无需构建工具，就能快速体验轻量、可保存、可触控的创意搭建，并研究无框架的画布渲染实现。",
+        "who_should_care": "前端游戏、画布渲染和移动端交互开发者，以及喜欢轻松造景的玩家。",
+        "use_cases": [
+          "在手机上拖拽布置小岛",
+          "学习无打包器的画布游戏结构",
+          "参考高像素密度缓存渲染"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅新增十一星，上日榜一天。",
+        "risk_notes": "创建与最近提交同为五月十四日，项目较新；未关闭问题三项；音频素材授权需查看文件元数据。",
+        "evidence": [
+          "A browser-based isometric island builder with the soft, sun-bleached look of Mykonos. Vanilla ES modules, no bundler, mobile-friendly.",
+          "It's a small, self-contained creative toy — drop blocks on a 14×14 grid and a tiny village builds itself in front of you.",
+          "Pure ES modules. No bundler, no transpiler, no `node_modules` — open `index.html` and it runs."
+        ]
+      }
+    },
+    "huytieu/COG-second-brain": {
+      "category": "ai-agent",
+      "one_liner": "自进化第二大脑系统",
+      "intro": {
+        "one_liner": "自演进智能体第二大脑",
+        "what_it_is": "COG 是用 Markdown、Git 和 AI 智能体搭建的第二大脑，提供技能、代理、人员关系管理与验证流程，可接入多种编码智能体。",
+        "problem_solved": "把零散笔记、团队信息、产品流程和发布材料沉淀到可版本管理的知识库，并用独立验证者减少智能体自评带来的偏差。",
+        "who_should_care": "重度使用 AI 编码助手的知识工作者、产品经理和工程负责人。",
+        "use_cases": [
+          "整理每日简报与零散笔记",
+          "汇总团队动态与会议结论",
+          "生成用户故事、文档和发布说明"
+        ],
+        "alternatives": "强调无数据库、无供应商锁定，以 Markdown 文件和 Git 为核心，并加入闭环验证与反粗糙设计技能。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 86 星且曾上日榜。",
+        "risk_notes": "创建日期与最近提交日期晚于常规当前时间；技能数量在描述和架构图中不一致；验证流程为可选启用。",
+        "evidence": [
+          "Self-evolving second brain with 33 AI skills, 10 agents, and people CRM.",
+          "No database, no vendor lock-in — just `.md` files that think.",
+          "Opt-in. Ask for one of these and work walks a **V**"
+        ]
+      }
+    },
+    "orbien-org/orbien": {
+      "category": "dev-tools",
+      "one_liner": "轻量跨平台内网穿透工具",
+      "intro": {
+        "one_liner": "Rust 编写的轻量内网穿透工具",
+        "what_it_is": "Orbien 是一个用 Rust 和 Tokio 实现的内网穿透与反向代理工具，二进制体积约 5MB，支持 TCP、QUIC、KCP、WebSocket 传输协议，以及 TCP、UDP、HTTP、HTTPS、SOCKS5 代理协议。",
+        "problem_solved": "它把位于防火墙之后、内网中的本地服务安全地暴露到公网，并提供 Token 认证、TLS/mTLS 加密与多传输协议选择。",
+        "who_should_care": "需要自建内网穿透或反向代理的运维人员、个人开发者，以及关注低内存占用、希望替代 frp 类方案的用户。",
+        "use_cases": [
+          "将内网 SSH、Web 服务通过公网端口暴露访问",
+          "在丢包或弱网环境下用 KCP/QUIC 传输建立稳定隧道",
+          "通过桌面客户端或服务端 Web 管理界面管理多条隧道与证书"
+        ],
+        "alternatives": "README 的基准测试中与 frp 对比，称其在高并发下内存占用更低且更平稳；其余同类差异未提供。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：内网穿透属于稳定刚需工具类目，Rust 实现带来的低资源占用是持续吸引力，但项目较新、生态尚待验证。",
+        "risk_notes": "项目创建于 2026-08，历史很短；README 中的性能结论基于作者自测的本地回环环境，需自行验证；未发现许可证或维护异常信号。",
+        "evidence": [
+          "A lightweight, high-performance, and secure reverse proxy with a binary size of around 5MB.",
+          "Transport protocols: TCP, KCP, WebSocket, QUIC, with TCP multiplexing support",
+          "Compared with `frp`, Orbien's clearest advantage is lower and steadier memory usage under high concurrency."
+        ]
+      }
+    },
+    "sunchaokun/PPT-Design-Skill": {
+      "category": "content-media",
+      "one_liner": "可编辑 PPT 设计技能",
+      "intro": {
+        "one_liner": "专业演示文稿设计技能",
+        "what_it_is": "这是面向编码助手的演示文稿设计技能，负责需求确认、视觉方案、生成编排和验收，生成原生可编辑文件。",
+        "problem_solved": "它解决自动生成演示文稿只验证运行成功、却难以保证视觉质量的问题，通过导出图片逐页检查并返工。",
+        "who_should_care": "需要交付客户、管理层、投资人或正式汇报材料的开发者与演示设计者。",
+        "use_cases": [
+          "制作客户提案或路演材料",
+          "按企业模板生成品牌演示",
+          "快速探索演示风格草稿"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 43 星，曾有一天进入日榜。",
+        "risk_notes": "创建日期与最近提交日期均在 2026 年，需留意时间信息；正式交付依赖渲染与图片检查流程，环境配置可能增加使用成本。",
+        "evidence": [
+          "一个以设计决策和交付质量为核心的 PowerPoint skill。",
+          "本 Skill 负责需求确认、结构设计、视觉方案、生成编排、PNG 视觉验收\n以及返工交付。",
+          "无论选择哪种模式，正式交付都必须经过 PNG 视觉检查。"
+        ]
+      }
+    },
+    "MemTensor/memmy-agent": {
+      "category": "ai-agent",
+      "one_liner": "本地共享记忆智能体",
+      "intro": {
+        "one_liner": "跨 AI Agent 的共享本地记忆中枢",
+        "what_it_is": "Memmy 是一个用 TypeScript 编写的个人 AI agent 与本地记忆服务，为多个 AI agent 提供共享、可控的持久记忆与上下文。",
+        "problem_solved": "解决不同 AI agent 之间上下文割裂、每次都要重新交代背景的问题，让 Claude Code、Codex、Cursor 等 agent 记住同一个用户。",
+        "who_should_care": "同时使用多个 AI 编程或对话 agent、希望跨工具保持任务连续性的开发者与重度用户。",
+        "use_cases": [
+          "在 Claude Code 与 Codex 之间延续同一项开发任务",
+          "为本地 agent 提供可检索的长期记忆库",
+          "通过 OpenAI 兼容 API 把记忆服务接入自建 agent"
+        ],
+        "alternatives": "README 未与其他记忆类项目做直接对比，仅致谢 OpenClaw、hermes-agent、nanobot 的设计启发，具体差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，多 agent 协作与持久记忆是当前 agent 生态的集中关注点，但项目创建时间短、仍在快速迭代。",
+        "risk_notes": "项目创建于 2026-07-16、距今时间很短，open issues 61 个，成熟度与长期维护情况待观察；安装脚本通过 curl 管道执行并注册 systemd 用户服务，需自行评估；试用额度用尽后需自备模型 API key。",
+        "evidence": [
+          "gives every AI one shared, fully controlled memory and persistent context — all AI remember the same you",
+          "Continue the same work across DeepSeek Harness, Claude Code, Codex, and etc.",
+          "The installer enables the local Memory Service immediately as `memmy-memory.service`"
+        ]
+      }
+    },
+    "MiaAI-Lab/DeepSeek-v4-Flash-DSpark-2x-DGX-Spark": {
+      "category": "ai-model",
+      "one_liner": "双 DGX Spark 训练配方",
+      "intro": {
+        "one_liner": "双节点大模型部署配方",
+        "what_it_is": "一个用 Python 维护的双 DGX Spark 部署配方，面向 DeepSeek V4 Flash Vision-Exp，包含启动脚本、环境配置和检查工具。",
+        "problem_solved": "把双节点镜像、权重准备、网络参数、服务启动和状态检查串成流程，降低在两台机器上部署长上下文多模态服务的配置成本。",
+        "who_should_care": "拥有两台 DGX Spark、需要本地部署视觉语言模型服务的开发者。",
+        "use_cases": [
+          "双节点启动模型接口服务",
+          "配置百万级上下文上限",
+          "运行图片输入冒烟测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 44 星且仅一天上日榜。",
+        "risk_notes": "依赖两台 DGX Spark、特定镜像和 RoCE/NCCL；图片支持是运行时热修复；官方权重无视频编码器，动态图只取静帧。",
+        "evidence": [
+          "Two-node DGX Spark recipe for **`deepseek-ai/DeepSeek-V4-Flash-Vision-Exp`**: vLLM TP=2, DSpark speculative decoding, **1M-token** ceiling, `nvfp4_ds_mla` KV.",
+          "Native **image** support is a startup hotfix on the Anemll 0.1.1 runtime (ViT + Aligner from the Vision-Exp checkpoint, OpenAI `image_url` / `<image>path</image>`).",
+          "There is **no video encoder** in the official weights; GIF is a still frame."
+        ]
+      }
+    },
+    "yqxie1991/WxCleaner": {
+      "category": "desktop-system",
+      "one_liner": "微信重复文件清理器",
+      "intro": {
+        "one_liner": "微信重复文件清理工具",
+        "what_it_is": "一个用 Python 编写的桌面工具，扫描指定目录中的微信重复文件，提供可视化预览、排序和移至回收站的清理方式。",
+        "problem_solved": "帮助识别微信接收文件里的冗余副本，减少重复文件占用，并通过二次确认和回收站机制降低误删风险。",
+        "who_should_care": "微信文件较多、想清理磁盘空间的桌面用户。",
+        "use_cases": [
+          "清理微信接收的重复文件",
+          "预览并排序重复文件组",
+          "将冗余副本移至回收站"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾上日榜，但一周只涨了 4 星。",
+        "risk_notes": "清理前仍需确认文件内容；有 7 个未关闭问题；创建时间较新。",
+        "evidence": [
+          "微信重复文件清理工具。采用智能哈希算法极速识别重复文件，支持可视化预览与安全删除（移至回收站）。",
+          "文件并非直接永久物理删除，而是通过 `send2trash` 安全移动至 **系统回收站/废纸篓**，防止误删。",
+          "建议在执行大规模清理前**务必确认文件内容与重要程度**。"
+        ]
+      }
+    },
+    "0x6rss/matkap": {
+      "category": "security",
+      "one_liner": "恶意 Telegram 机器人猎捕工具",
+      "intro": {
+        "one_liner": "Telegram 恶意机器人猎捕工具",
+        "what_it_is": "Matkap 是面向防御性威胁狩猎的网页工具，用于发现、验证和监控被恶意软件当作命令控制通道的 Telegram 机器人。",
+        "problem_solved": "它帮助调查者从泄露的机器人令牌、情报源和样本元数据中定位相关指标，并在授权范围内查看机器人消息与文件。",
+        "who_should_care": "威胁情报、事件响应和恶意软件调查人员。",
+        "use_cases": [
+          "验证授权范围内的机器人令牌",
+          "从情报源发现泄露令牌",
+          "监控机器人实时更新流"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜。",
+        "risk_notes": "需自备 Telegram 用户账号及接口凭据；仅应在授权项目与令牌上使用；部分连接器标注为即将支持。",
+        "evidence": [
+          "Hunt down malicious Telegram bots used as malware command-and-control (C2).",
+          "Use it only on projects and tokens you are authorized to investigate.",
+          "Ghidra and Binary Ninja support is coming soon."
+        ]
+      }
+    },
+    "AutoArk/open-audio-opd": {
+      "category": "ai-model",
+      "one_liner": "工业音频模型蒸馏栈",
+      "intro": {
+        "one_liner": "音频在线策略蒸馏栈",
+        "what_it_is": "这是面向语音识别与语音合成的在线策略蒸馏训练栈，当前发布聚焦语音识别，用更强教师模型蒸馏紧凑学生模型。",
+        "problem_solved": "它解决小模型训练依赖静态标注的问题，让学生按当前输出生成转写，再由教师在线打分并优化。",
+        "who_should_care": "做语音识别训练、模型蒸馏和分布式训练的开发者。",
+        "use_cases": [
+          "训练紧凑语音识别学生模型",
+          "复现或继续在线策略蒸馏",
+          "运行语音识别推理与评测"
+        ],
+        "alternatives": "基于两个已有项目，内置裁剪版运行时，并提供语音识别在线蒸馏脚本与权重。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 29 星，且曾有一天进入日榜。",
+        "risk_notes": "语音合成在线策略蒸馏仍在规划中；仓库不含音频、数据集和私有路径，模型权重需另行获取。",
+        "evidence": [
+          "Industrial audio OPD training stack for ASR and TTS, distilling compact audio models from stronger teacher models.",
+          "The current release focuses on ASR: a student autoregressive ASR model rolls out transcripts on-policy, a stronger teacher scores the same audio and transcript, and the student is updated with token-level KL on the union top-k support.",
+          "TTS OPD is on the roadmap."
+        ]
+      }
+    },
+    "INCY-DEV/incy-platforms": {
+      "category": "other",
+      "one_liner": "INCY 下载与发布信息",
+      "intro": {
+        "one_liner": "跨平台代理客户端发布页",
+        "what_it_is": "INCY 是基于 Xray-core 的跨平台代理客户端，这里汇总移动端、电视端和桌面端的下载与版本信息。",
+        "problem_solved": "把多平台安装包、更新规则和发布说明集中起来，方便用户获取客户端并配置订阅、路由与协议。",
+        "who_should_care": "需要在手机、电视和桌面端使用代理客户端的普通用户。",
+        "use_cases": [
+          "下载各平台客户端",
+          "用 Obtainium 更新安卓版",
+          "配置订阅与分流规则"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，并达到一千星。",
+        "risk_notes": "桌面客户端处于 pre-alpha，可能有粗糙体验和破坏性变更；移动版包含 Firebase Crashlytics；不提供 VPN 服务，用户需自行负责服务器与合规。",
+        "evidence": [
+          "Cross-platform proxy client built on [Xray-core](https://github.com/XTLS/Xray-core)",
+          "The desktop client is **pre-alpha**. It is usable day to day, but expect rough\nedges and breaking changes between releases.",
+          "INCY does not provide VPN services. Users are responsible for their own servers and must comply with local laws."
+        ]
+      }
+    },
+    "sipyourdrink-ltd/bernstein": {
+      "category": "dev-tools",
+      "one_liner": "确定性编码智能体编排器",
+      "intro": {
+        "one_liner": "AI 智能体治理编排器",
+        "what_it_is": "Bernstein 是面向 AI 智能体的开源治理层，用策略代码约束权限、审批与记录，并以确定性调度并行运行命令行编码智能体。",
+        "problem_solved": "它解决多智能体协作难复现、难隔离、难审计的问题，让运行过程可离线验证，并生成可核查的记录。",
+        "who_should_care": "需要并行调度编码智能体、审计交付物或在隔离环境部署的开发者与团队。",
+        "use_cases": [
+          "并行运行多个编码智能体",
+          "生成可离线核验的审计证据包",
+          "在隔离环境部署智能体流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 21 星且仅一天上日榜。",
+        "risk_notes": "状态为 beta，单人维护且开发中；小版本可能变更接口，依赖方需固定版本。未关闭议题 260 个，需关注维护压力。",
+        "evidence": [
+          "Status: beta. Solo-maintained, under active development. The version number counts releases, not maturity - minor versions may change interfaces. Pin the version for anything you depend on; regressions get fixed fast, [file them](https://github.com/sipyourdrink-ltd/bernstein/issues).",
+          "Bernstein is the open-source governance layer for AI agents. It runs on policy as code: you write the policy - who may do what, what needs approval, what must be recorded - and Bernstein enforces it and produces the verifiable record.",
+          "A deterministic scheduler - no model in the coordination loop - runs agents in parallel, gates what they produce, and records every step, so a run can be verified after the fact, offline, from the artifacts alone."
+        ]
+      }
+    },
+    "Ponphil/LitePan": {
+      "category": "automation",
+      "one_liner": "多网盘聚合挂载工具",
+      "intro": {
+        "one_liner": "多网盘聚合挂载工具",
+        "what_it_is": "LitePan 是用 Go 开发的多网盘聚合挂载工具，支持 WebDAV、FUSE 本地挂载、STRM、媒体整理和串联任务。",
+        "problem_solved": "它把多个网盘账号、跨盘转存、媒体库直连播放和目录整理集中到一个界面，减少手工搬运与重复配置。",
+        "who_should_care": "自建媒体库用户，以及需要统一管理多个网盘的人。",
+        "use_cases": [
+          "多账号网盘统一管理",
+          "生成 STRM 对接媒体库",
+          "识别影片并整理目录"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 26 星且曾上日榜。",
+        "risk_notes": "Go 版仍在开发中，首次发布可能问题较多；许可禁止商用；部署需谨慎测试，且不要使用 latest 镜像。",
+        "evidence": [
+          "LitePan - 多网盘聚合挂载，支持 WebDAV、STRM、媒体整理、本地挂载、串联任务",
+          "当前仓库是正在开发中的 **Go 版 LitePan**，首次发布可能问题较多，请谨慎测试。",
+          "[PolyForm Noncommercial 1.0.0](./LICENSE) — 个人学习与非商业使用，**禁止商用**。"
+        ]
+      }
+    },
+    "agenmod/immortal-skill": {
+      "category": "ai-agent",
+      "one_liner": "聊天记录数字分身框架",
+      "intro": {
+        "one_liner": "聊天记录数字分身框架",
+        "what_it_is": "这是一个用 Python 编写的开源数字永生框架，从聊天记录、文档和多平台数据中提取角色特征，生成可供 AI 加载的数字分身。",
+        "problem_solved": "它想把散落在聊天软件和文件里的个人表达、记忆、做事方式与互动风格结构化，解决经验、语气和认知框架难以留存复用的问题。",
+        "who_should_care": "关注 AI 智能体技能、个人知识沉淀和聊天数据整理工具的开发者。",
+        "use_cases": [
+          "整理自己的聊天与文档分身",
+          "沉淀团队沟通和工作流程",
+          "从公开资料提炼人物参谋"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 4 星且仅上榜 1 天，热度回落明显。",
+        "risk_notes": "涉及他人聊天记录与人格提炼，需重视授权、隐私和脱敏；创建于 2026 年 4 月，项目较新；仍有 7 个未关闭问题。",
+        "evidence": [
+          "开源数字永生框架 — 从聊天记录蒸馏任何人的七维数字分身。支持微信/飞书/iMessage/Telegram等12+平台，7种角色模板，对齐 OpenClaw Soul Spec 标准。",
+          "把**任何人**——你自己、同事、导师、亲人、朋友、公众人物——从聊天记录、文档、12+ 平台的数字碎片里，四维结构化蒸馏成 AI 可加载的数字分身。",
+          "每种角色都有独立的[蒸馏模板](personas/)——因为蒸同事和蒸前任，方法肯定不一样。"
+        ]
+      }
+    },
+    "JIEKE66633/One-click-cleaning-of-C-drive": {
+      "category": "desktop-system",
+      "one_liner": "一键清理 C 盘垃圾",
+      "intro": {
+        "one_liner": "Windows C盘清理工具",
+        "what_it_is": "这是一个用 Python 编写的开源 Windows C盘清理工具，提供一键清理、备份恢复、模拟模式和大文件扫描。",
+        "problem_solved": "它用于清理临时文件、缓存、日志、更新缓存等占用空间的内容，并强调通过安全检查和备份降低误删风险。",
+        "who_should_care": "C盘空间紧张、需要图形化清理工具的 Windows 用户。",
+        "use_cases": [
+          "一键清理临时文件和缓存",
+          "清理前用模拟模式预览",
+          "扫描超过百兆的大文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时星标一千零四。",
+        "risk_notes": "清理系统文件仍需谨慎；资料建议首次启用模拟模式并定期备份重要数据。项目创建于二零二五年四月，部分功能仍在计划中。",
+        "evidence": [
+          "一个安全、高效、开源的Windows C盘清理工具",
+          "模拟模式（预览而不实际删除）",
+          "本项目采用 [MIT 许可证](LICENSE)。"
+        ]
+      }
+    },
+    "lumina-layer-studio/Lumina-Layers": {
+      "category": "hardware-iot",
+      "one_liner": "全彩 3D 打印配色系统",
+      "intro": {
+        "one_liner": "彩色熔融沉积打印工具",
+        "what_it_is": "Lumina-Layers 是用 Python 编写的多材料彩色熔融沉积打印系统，可把图片转换为彩色平面打印件，并导出切片软件可用的 3MF。",
+        "problem_solved": "它通过材料校准和透光混色，解决普通熔融沉积打印难以还原图片色彩、明暗和局部细节的问题。",
+        "who_should_care": "有多色熔融沉积打印机、想制作彩色图片实物件的开发者和创客。",
+        "use_cases": [
+          "把照片做成彩色装饰画",
+          "制作钥匙扣或冰箱贴",
+          "给平面模型表面加图案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周只涨了 3 星，仅一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0；色彩依赖实物校准，拍照和计算都有误差；打印前仍需在切片软件中核对材料槽、温度、层高和平台限制。",
+        "evidence": [
+          "A physics-based multi-material FDM color system. Converts images to full-color 3D prints via calibrated light-transmission mixing. Supports 2-8 color systems with slicer-ready 3MF export (BambuStudio/OrcaSlicer).",
+          "It uses calibration data from your materials to match layer recipes to the image. Compare the preview with the original, change colours you do not like, and adjust gradients or recipes in individual regions. Then export a 3MF for your slicer.",
+          "Photography and calculation both have some error, so check the colour on a real print."
+        ]
+      }
+    },
+    "bishwaghimire/ai-learning-roadmaps": {
+      "category": "learning-resource",
+      "one_liner": "人工智能学习路线库",
+      "intro": {
+        "one_liner": "人工智能学习路线资源库",
+        "what_it_is": "一个结构化的人工智能学习资源库，汇集书籍、课程、论文、工具和学习路线，覆盖从基础到进阶的多个方向。",
+        "problem_solved": "把分散的人工智能学习资料按基础、专项、工程、研究和职业路径整理起来，帮助学习者按顺序或按目标选择内容。",
+        "who_should_care": "计算机学生、人工智能初学者、转岗开发者和想系统补基础的从业者。",
+        "use_cases": [
+          "按路线自学人工智能基础",
+          "按岗位选择学习顺序",
+          "查找数学、框架与论文资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "创建时间较新，成熟度不明；资料质量与维护频率未提供；许可证信息未给出。",
+        "evidence": [
+          "A complete, structured hub for learning Artificial Intelligence — covering AI, Machine Learning, Deep Learning, and Data Science with books, roadmaps, and curated resources from beginner to advanced.",
+          "A carefully curated, all-in-one repository designed to help **Computer Science students, AI enthusiasts, and professionals** who want to build strong foundations and progress confidently from **beginner to advanced levels**.",
+          "The resources are selected to balance **theory, intuition, and real-world application**, allowing learners to follow modules **sequentially or in parallel** based on their goals."
+        ]
+      }
+    },
+    "elder-plinius/GLOSSOPETRAE": {
+      "category": "ai-model",
+      "one_liner": "面向 AI 的语言引擎",
+      "intro": {
+        "one_liner": "程序化语言研究引擎",
+        "what_it_is": "一个用 JavaScript 编写的语言生成与研究项目，包含人造语言生成、模型习得实验、隐蔽通道研究和网页界面。",
+        "problem_solved": "它用于生成完整人造语言，并研究模型如何学习新语言，以及分词差异和语义改写可能形成的隐蔽通信。",
+        "who_should_care": "关注人造语言、模型评测、分词器差异和隐蔽通道研究的开发者。",
+        "use_cases": [
+          "从种子生成完整人造语言",
+          "复现少样本语言习得实验",
+          "研究分词器隐蔽通道"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千后一周只涨了 6 星，仅一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0；内容明确包含双重用途模块；进攻模块被标为研究级，且 README 自述初稿曾有虚构数据。",
+        "evidence": [
+          "LINGUISTIC ENGINE FOR AI",
+          "RESEARCH RELEASE — Full offense + defense capabilities. Contains dual-use modules (steganography, token exploitation, covert channels).",
+          "Offense Modules | SemanticStego, SteganographyEngine, TokenExploiter, LanguageAttributes (phantom/adversarial) | Research-grade"
+        ]
+      }
+    },
+    "luisbocanegra/kde-material-you-colors": {
+      "category": "desktop-system",
+      "one_liner": "KDE 壁纸配色生成器",
+      "intro": {
+        "one_liner": "KDE 壁纸配色生成器",
+        "what_it_is": "一个用 Python 编写的工具，可从当前壁纸生成 KDE 的明暗主题，并支持 Konsole 与 pywal。",
+        "problem_solved": "让桌面、终端和其他程序随壁纸自动换色，减少手工配置多套配色方案。",
+        "who_should_care": "使用 KDE Plasma、喜欢桌面主题自动跟随壁纸的 Linux 用户。",
+        "use_cases": [
+          "壁纸切换后自动更新桌面配色",
+          "为 Konsole 生成配套终端配色",
+          "配合 pywal 统一程序主题"
+        ],
+        "alternatives": "相比 Plasma 自带强调色，可选壁纸多色，并应用到 Konsole 和 pywal。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "Plasma 5 后端已停在 1.7.1，开发转向 Plasma 6；部分壁纸插件需截图助手；更新配色可能产生重复方案。",
+        "evidence": [
+          "Automatically generate light/dark color themes for KDE (and pywal if installed) from your current wallpaper, using [@T-Dynamos Python implementation](https://github.com/T-Dynamos/materialyoucolor-python) of Google's [Material Color Utilities](https://github.com/material-foundation/material-color-utilities)",
+          "For Plasma 5 this is the last version, development has switched to plasma 6",
+          "As a result you end up with duplicated color schemes and maybe some lag while updating schemes."
+        ]
+      }
+    },
+    "alumnium-hq/alumnium": {
+      "category": "dev-tools",
+      "one_liner": "AI 驱动的端到端测试",
+      "intro": {
+        "one_liner": "AI 端到端测试库",
+        "what_it_is": "Alumnium 是面向智能体和工程师的端到端测试库与 MCP，基于现有自动化生态，提供应用交互和断言校验能力。",
+        "problem_solved": "它让测试可以用自然语言描述操作与检查，简化跨 Appium、Maestro、Playwright、Selenium 的端到端测试编写。",
+        "who_should_care": "做 Web、移动端自动化测试的工程师，以及使用智能体执行测试的人。",
+        "use_cases": [
+          "用自然语言驱动浏览器测试",
+          "为智能体接入端到端测试能力",
+          "在现有自动化框架中校验断言"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，星数达到一千。",
+        "risk_notes": "示例依赖外部模型密钥；安装与配置涉及多个语言和平台组件。",
+        "evidence": [
+          "Alumnium is an AI-native library and MCP for end-to-end testing.",
+          "It works with Appium, Maestro, Playwright, or Selenium and gives you [state-of-the-art][7] capabilities.",
+          "End-to-End Testing with AI for Agents and Engineers"
+        ]
+      }
+    },
+    "datawhalechina/base-llm": {
+      "category": "learning-resource",
+      "one_liner": "NLP 到 LLM 全栈教程",
+      "intro": {
+        "one_liner": "大模型全栈教程",
+        "what_it_is": "一套从传统自然语言处理到大语言模型的中文教程，覆盖理论、代码实战、微调量化、部署、安全与多模态内容。",
+        "problem_solved": "补齐只会调用接口而缺少底层原理的断层，用理论与代码并重的方式帮助读者理解技术演进并积累工程经验。",
+        "who_should_care": "有 Python、PyTorch 和深度学习基础，想系统学习大模型原理与实战的开发者、学生和研究人员。",
+        "use_cases": [
+          "系统学习 NLP 到大模型原理",
+          "手写 Transformer 与 Llama2",
+          "练习微调、量化和模型部署"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜，但创建时间较新。",
+        "risk_notes": "采用署名、非商业性使用、相同方式共享许可；部分安全章节仍在建设中；主要接受扩展章节共建。",
+        "evidence": [
+          "本项目是一个**从传统自然语言处理（NLP）到大语言模型（LLM）的全栈式学习教程**",
+          "本项目致力于填补这一空白，通过**理论与代码并重**的方式，帮助开发者",
+          "本作品采用<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/\">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。"
+        ]
+      }
+    },
+    "inngest/inngest-js": {
+      "category": "dev-tools",
+      "one_liner": "零基建可靠工作流平台",
+      "intro": {
+        "one_liner": "可靠工作流开发平台",
+        "what_it_is": "这是面向 TypeScript 与 JavaScript 的开发平台，用事件、队列和持久执行帮助构建可靠工作流，主打无需额外基础设施。",
+        "problem_solved": "它解决在 serverless 应用中编写后台任务、定时任务、队列和事件驱动流程时，需要自行处理重试、状态与可观测性的问题。",
+        "who_should_care": "使用 TypeScript 或 JavaScript 的 serverless 应用开发者。",
+        "use_cases": [
+          "编写后台任务",
+          "创建定时与 cron 任务",
+          "可靠响应 webhook"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "资料未提供许可证、生产可用声明和版本稳定性信息，采用前需自行核验。",
+        "evidence": [
+          "The developer platform for easily building reliable workflows with zero infrastructure for TypeScript & JavaScript",
+          "It combines durable execution, events, and queues into a zero-infra platform with built-in observability.",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "alan2207/awesome-codebases": {
+      "category": "learning-resource",
+      "one_liner": "优秀开源代码库清单",
+      "intro": {
+        "one_liner": "开源代码库精选清单",
+        "what_it_is": "这是一个收集值得探索的开源代码库的清单，按条目列出项目及简短说明。",
+        "problem_solved": "帮助开发者从大量开源项目中发现可学习、可借鉴的完整代码库。",
+        "who_should_care": "想读源码、找架构范例或寻找项目灵感的开发者。",
+        "use_cases": [
+          "寻找前端架构参考项目",
+          "按主题浏览开源应用",
+          "为学习源码挑选样例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时为一千星。",
+        "risk_notes": "清单内容依赖人工维护，条目质量与时效可能不一；许可证为 MIT。",
+        "evidence": [
+          "A collection of awesome open source codebases worth exploring.",
+          "Contributions are welcome! Read the [contribution guidelines](CONTRIBUTING.md) first.",
+          "[MIT](LICENSE)"
+        ]
+      }
+    },
+    "mProjectsCode/obsidian-meta-bind-plugin": {
+      "category": "content-media",
+      "one_liner": "Obsidian 交互笔记插件",
+      "intro": {
+        "one_liner": "让笔记可交互的插件",
+        "what_it_is": "这是 Obsidian 插件，可在笔记中加入输入字段、元数据展示和按钮，并绑定到文档前置属性。",
+        "problem_solved": "它让前置属性可在笔记正文中直接查看和编辑，避免反复切换到属性面板或手写元数据。",
+        "who_should_care": "常用 Obsidian 前置属性、模板和任务管理的笔记用户。",
+        "use_cases": [
+          "用开关切换任务完成状态",
+          "在正文编辑前置属性",
+          "用按钮触发笔记内操作"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周仅一天登上日榜，破千星后仍有一定关注。",
+        "risk_notes": "采用 GPL-3.0 协议；测试版安装依赖 BRAT；未见生产可用承诺。",
+        "evidence": [
+          "A plugin for Obsidian to make your notes interactive with inline input fields, metadata displays, and buttons.",
+          "Those input and view fields can then be bound to frontmatter properties, which keeps them in sync with those frontmatter properties.",
+          "GPL-3.0"
+        ]
+      }
+    },
+    "abdullahtarek/football_analysis": {
+      "category": "ai-model",
+      "one_liner": "足球视觉分析项目",
+      "intro": {
+        "one_liner": "足球视频视觉分析项目",
+        "what_it_is": "这是一个用 Jupyter Notebook 编写的足球视频分析项目，结合目标检测、像素聚类、光流和透视变换，分析球员、裁判与足球。",
+        "problem_solved": "它用于从比赛视频中检测和跟踪目标，区分球队，估算控球率，并把球员运动从像素换算为距离、速度等指标。",
+        "who_should_care": "适合学习计算机视觉、机器学习和足球视频分析的开发者。",
+        "use_cases": [
+          "检测跟踪球员与足球",
+          "按球衣颜色区分球队",
+          "测算球员速度与跑动距离"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内有一天登上日榜，星数达到一千。",
+        "risk_notes": "依赖外部训练模型与示例视频；未见许可证、版本发布和生产部署说明。",
+        "evidence": [
+          "This repository contains a comprehensive computer vision/machine learning football project that uses YOLO for object detection, Kmeans for pixel segmentation, optical flow for motion tracking, and perspective transformation to analyze player movements in football videos",
+          "The goal of this project is to detect and track players, referees, and footballs in a video using YOLO, one of the best AI object detection models available.",
+          "Finally, we will calculate a player's speed and the distance covered."
+        ]
+      }
+    },
+    "cen6667/408": {
+      "category": "learning-resource",
+      "one_liner": "计算机 408 课程笔记",
+      "intro": {
+        "one_liner": "408课程学习笔记资料库",
+        "what_it_is": "收录计算机学科专业基础综合相关学习资料和课程笔记，包含课件、思维导图与个人笔记，面向非考研用途。",
+        "problem_solved": "把数据结构、操作系统、计算机网络、计算机组成原理等课程资料集中整理，方便复习和多次学习。",
+        "who_should_care": "学习计算机核心课程、需要整理复习资料的学生和自学者。",
+        "use_cases": [
+          "按课程查阅复习资料",
+          "用思维导图梳理知识",
+          "参考个人笔记学习方法"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，但资料型仓库热度持续性不明。",
+        "risk_notes": "资料包含第三方课件和思维导图，并提示如有侵权会删除；定位明确为非考研资料。",
+        "evidence": [
+          "408学习资料和课程笔记（非考研）数据结构、操作系统、计算机网络、计算机组成原理",
+          "+ 王道考研ppt\n+ 王道考研思维导图\n+ 个人笔记",
+          "# 如有侵权立马删除"
+        ]
+      }
+    },
+    "schlae/cm5-reveng": {
+      "category": "hardware-iot",
+      "one_liner": "树莓派 CM5 逆向资料",
+      "intro": {
+        "one_liner": "CM5 逆向原理图",
+        "what_it_is": "这是 Raspberry Pi Compute Module 5 的逆向原理图、板层布局和测试点资料，也包含无线模块原理图。",
+        "problem_solved": "在官方原理图不可得时，帮助排查基于 CM5 的设计问题，并支持教学和高级硬件改造。",
+        "who_should_care": "使用 CM5 做硬件设计、调试或高级改造的开发者。",
+        "use_cases": [
+          "排查 CM5 载板设计问题",
+          "学习板层与电源设计",
+          "研究测试点和芯片引脚"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且曾上日榜，但资料明确不适合直接制造。",
+        "risk_notes": "不适合直接制造；并非完全忠实于原板；封装、物料和多数芯片难以获得。",
+        "evidence": [
+          "Reverse engineered Raspberry Pi Compute Module 5",
+          "This is the reverse engineered schematic and layout for a Raspberry Pi Compute Module 5.",
+          "It's not meant to be fabricated--critical signal integrity parameters aren't correct, it's not 100% faithful to the original"
+        ]
+      }
+    },
+    "LibraHp/GetQzonehistory": {
+      "category": "automation",
+      "one_liner": "QQ空间历史说说抓取器",
+      "intro": {
+        "one_liner": "QQ空间说说导出工具",
+        "what_it_is": "这是一个用 Python 编写的工具，用于获取 QQ 空间发布的历史说说。当前仓库已停止维护并归档，仅作为历史记录保留。",
+        "problem_solved": "它面向需要整理自己 QQ 空间历史说说的用户，解决历史内容获取与导出的问题。归档后不再保证可正常运行。",
+        "who_should_care": "曾关注 QQ 空间历史说说整理、或已运行过该工具的普通开发者。",
+        "use_cases": [
+          "整理个人历史说说",
+          "清理本地导出数据",
+          "了解归档项目状态"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 7,548 星且曾上榜一天，但项目已归档。",
+        "risk_notes": "项目已停止维护并归档，不再提供更新、安全修复或兼容性适配；不再保证正常运行；不建议继续安装、运行、分发或二次开发；涉及登录信息、缓存和导出文件中的个人数据，需注意清理与隐私合规。",
+        "evidence": [
+          "获取QQ空间发布的历史说说",
+          "基于平台规则与合规考虑，本项目现已停止维护并正式归档。",
+          "不再保证项目可以正常运行；"
+        ]
+      }
+    },
+    "spring-attic/spring-authorization-server": {
+      "category": "security",
+      "one_liner": "Spring 授权服务器",
+      "intro": {
+        "one_liner": "Spring 授权服务器",
+        "what_it_is": "一个 Java 项目，为 Spring 社区提供 OAuth 2.1 Authorization Server 支持，并替代原有的 Spring Security OAuth 授权服务器支持。",
+        "problem_solved": "解决 Spring 生态中授权服务器能力缺失的问题，让开发者按 OAuth 2.1 及相关规范构建授权服务器。",
+        "who_should_care": "使用 Spring Security、需要自建授权服务器的 Java 开发者。",
+        "use_cases": [
+          "为 Spring 应用搭建授权服务器",
+          "迁移旧版授权服务器支持",
+          "学习 OAuth 2.1 实现"
+        ],
+        "alternatives": "替代 Spring Security OAuth 的授权服务器支持；后续新功能将加入 Spring Security 7.0。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时已有 5104 星。",
+        "risk_notes": "项目已迁至 Spring Security 7.0，1.5.x 分支为最后一代；后续新功能不再加入本仓库。",
+        "evidence": [
+          "Spring Authorization Server has https://spring.io/blog/2025/09/11/spring-authorization-server-moving-to-spring-security-7-0[moved to Spring Security 7.0].",
+          "The *1.5.x* branch is the last generation of Spring Authorization Server.",
+          "This project replaces the Authorization Server support provided by https://github.com/spring-attic/spring-security-oauth[Spring Security OAuth]."
+        ]
+      }
+    },
+    "jeremylongshore/tons-of-skills-marketplace": {
+      "category": "ai-agent",
+      "one_liner": "Claude Code 技能市场",
+      "intro": {
+        "one_liner": "Claude Code 技能市场",
+        "what_it_is": "这是一个面向 Claude Code 的开源插件、技能与智能体集合，提供网站目录和 ccpi 命令行安装方式。",
+        "problem_solved": "把大量插件、技能和智能体按类别、任务与认证层级整理，方便查找、安装和复用。",
+        "who_should_care": "使用 Claude Code、需要扩展自动化能力的开发者。",
+        "use_cases": [
+          "按类别浏览插件",
+          "用命令行安装技能包",
+          "下载任务导向的合集"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 7 星，仅一天进入日榜。",
+        "risk_notes": "README 中的数量与仓库描述不一致；部分运行环境仍称待验证；有 21 个未关闭问题。",
+        "evidence": [
+          "471 plugins, 3,069 skills, 347 agents for Claude Code. Open-source marketplace at tonsofskills.com with the ccpi CLI package manager.",
+          "A model-agnostic agent-skills platform. The canonical layer is harness-free by construction; Claude Code is currently the verified-native harness.",
+          "Other harnesses remain engineering candidates until their native-path integration is verified; source research alone is never presented as public support."
+        ]
+      }
+    },
+    "HarleyCoops/Math-To-Manim": {
+      "category": "content-media",
+      "one_liner": "数理动画与笔记生成器",
+      "intro": {
+        "one_liner": "数学动画生成工具",
+        "what_it_is": "这是一个用 Python 编写的项目，可从文本和图像生成数学、物理动画与学习笔记，并围绕 Manim 渲染组织内容。",
+        "problem_solved": "它想把抽象数学与物理内容转成可观看的动画说明，并提供从推理、校验到场景渲染的制作流程。",
+        "who_should_care": "数学教育者、科普视频作者、Manim 使用者和想做可视化学习笔记的开发者。",
+        "use_cases": [
+          "制作数学概念讲解动画",
+          "把论文主题转成可视化影片",
+          "生成带公式的学习笔记"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2,498 星，本周上过一天日榜。",
+        "risk_notes": "完整影片尚未渲染完成；本地启动曾因 Windows 权限失败；部分流程依赖模型服务与凭据。",
+        "evidence": [
+          "Create Epic Math and Physics Animations & Study Notes From Text and Images.",
+          "Status: the full Astra film is not yet rendered. Local Manim preview rendering works, but the latest local Codex startup failed with Windows access denied before its first model response.",
+          "破千时的 Star 数：2498"
+        ]
+      }
+    },
+    "shengjidaguai-china/goutoujunshi": {
+      "category": "ai-agent",
+      "one_liner": "Codex 恋爱关系军师",
+      "intro": {
+        "one_liner": "中文恋爱关系军师",
+        "what_it_is": "一个面向恋爱与多元关系的 Codex Skill，先承接情绪，再分析聊天与关系材料，给出可执行的下一步建议。",
+        "problem_solved": "把含糊的情感困扰拆成事实、推测和未知，帮助用户判断局势、准备回复、推进或退出关系，并说明策略代价。",
+        "who_should_care": "需要处理暧昧、冲突、分手、婚姻选择或聊天分析的中文用户。",
+        "use_cases": [
+          "把聊天截图整理成回复建议",
+          "制定邀约、复联或确认关系方案",
+          "评估投入失衡与体面退场"
+        ],
+        "alternatives": "相比只给话术的工具，它强调情绪承接、事实边界、长期记忆与跨学科知识库。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 129 星，且曾进入日榜一天。",
+        "risk_notes": "关系建议不替代心理治疗、医疗诊断、律师意见、警方或紧急服务；长期记忆和聊天分析依赖用户同意或提供资料。",
+        "evidence": [
+          "面向心动、暧昧、追求、冲突、分手与复合的 AI 恋爱军师，结合情绪支持、关系科学、聊天记录分析和长期记忆，把复杂关系变成可执行的下一步。",
+          "它是一套覆盖恋爱全周期、面向多元关系、能够解释建议理由的 Codex Skill。",
+          "本项目提供关系教育与决策支持，不替代心理治疗、医疗诊断、律师意见、警方或紧急服务。"
+        ]
+      }
+    },
+    "microsoft/foundry-dev-tools": {
+      "category": "dev-tools",
+      "one_liner": "Foundry 开发工具集",
+      "intro": {
+        "one_liner": "Foundry 开发工具入口",
+        "what_it_is": "这是 Microsoft Foundry 开发工具的起点，汇总文档、反馈入口，并托管 Foundry Canvas 源码。",
+        "problem_solved": "把终端、编码代理、VS Code 和可视化流程的工具入口集中起来，方便构建、测试、部署 AI 应用和代理。",
+        "who_should_care": "使用 Microsoft Foundry 构建 AI 应用或代理的开发者。",
+        "use_cases": [
+          "用终端脚手架部署代理",
+          "在 VS Code 测试模型",
+          "用可视化面板配置代理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2,047 星且本周上过日榜。",
+        "risk_notes": "Foundry Canvas 标注为预览版；部分工具源码不在本仓库，VS Code 工具实现未开源。",
+        "evidence": [
+          "This repository is your starting point for Foundry developer tools, documentation, and community feedback. It also hosts the source code for **Foundry Canvas**.",
+          "**Foundry Canvas (preview)** | Design, configure, test, and deploy hosted agents from a guided side panel in GitHub Copilot App, with Copilot making the code changes.",
+          "**Foundry Toolkit for VS Code** | **Not open source.** Its implementation is not in this repository, but we welcome Toolkit issues and feature requests here."
+        ]
+      }
+    },
+    "Webeoidentify/Honeypot-Detector": {
+      "category": "security",
+      "one_liner": "蜜罐风险检测工具",
+      "intro": {
+        "one_liner": "蜜罐检测工具",
+        "what_it_is": "一个使用 TypeScript 编写、围绕蜜罐检测相关话题的仓库。",
+        "problem_solved": "从名称和标签看，可能用于识别或检查蜜罐；具体能力 unknown。",
+        "who_should_care": "关注蜜罐识别的开发者与安全研究人员。",
+        "use_cases": [
+          "检查目标是否为蜜罐",
+          "辅助安全研究"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，星数破千。",
+        "risk_notes": "缺少说明文档，功能、用法、许可证与维护状态均 unknown；创建日期较新，需谨慎评估。",
+        "evidence": [
+          "仓库：Webeoidentify/Honeypot-Detector",
+          "话题标签：honeypot、honeypot-check、honeypot-checker、honeypot-detector",
+          "破千时的 Star 数：1644"
+        ]
+      }
+    },
+    "punkpeye/mcp-remote": {
+      "category": "dev-tools",
+      "one_liner": "连接本地客户端与远程 MCP",
+      "intro": {
+        "one_liner": "MCP 远程连接桥",
+        "what_it_is": "一个 TypeScript 工具，让只支持本地 stdio 的 MCP 客户端连接带授权能力的远程 MCP 服务。",
+        "problem_solved": "解决多数 MCP 客户端尚不支持远程授权服务的问题，用本地命令桥接远程连接与认证流程。",
+        "who_should_care": "使用 Claude Desktop、Cursor、Windsurf 等 MCP 客户端的开发者。",
+        "use_cases": [
+          "为本地客户端接入远程 MCP 服务",
+          "配置自定义请求头与令牌",
+          "隔离多个远程实例的授权会话"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾登上日榜，破千时星数达 1,562。",
+        "risk_notes": "定位为客户端补齐远程支持前的过渡方案；部分客户端存在参数空格转义问题；凭据需避免暴露在进程参数中。",
+        "evidence": [
+          "Connect an MCP Client that only supports local (stdio) servers to a Remote MCP Server, with auth support:",
+          "As soon as your chosen MCP client supports remote, authorized servers, you can remove it.",
+          "To keep a credential out of the process arguments — where any other user on the machine can read it from the process list — put the headers in a file instead and pass `--header-file`."
+        ]
+      }
+    },
+    "MudCosmetologist/Autocad-Software": {
+      "category": "automation",
+      "one_liner": "AutoCAD 效率脚本合集",
+      "intro": {
+        "one_liner": "AutoCAD 效率脚本集",
+        "what_it_is": "这是一个围绕 AutoCAD 效率提升的开源仓库，包含生产力脚本、AutoLISP 工具和配置技巧。",
+        "problem_solved": "面向 AutoCAD 使用中的重复操作和工作流低效问题，提供自动化脚本与配置优化思路。",
+        "who_should_care": "经常使用 AutoCAD、希望用脚本简化绘图流程的开发者和设计人员。",
+        "use_cases": [
+          "用 AutoLISP 工具简化重复操作",
+          "整理 AutoCAD 配置技巧",
+          "探索 CAD 自动化工作流"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天进入日榜，但缺少说明文档支撑判断。",
+        "risk_notes": "没有说明文档，功能范围、安装方式、许可证和可用程度均无法确认；创建日期为 2026 年，需谨慎看待数据。",
+        "evidence": [
+          "AutoCAD Hack & Workflow Optimization: Open-source productivity scripts, AutoLISP utilities, and configuration lifehacks to boost Autodesk AutoCAD efficiency",
+          "主要语言：HTML",
+          "破千时的 Star 数：1199"
+        ]
+      }
+    },
+    "everfu/hexo-theme-solitude": {
+      "category": "web-frontend",
+      "one_liner": "美观高效的 Hexo 主题",
+      "intro": {
+        "one_liner": "优雅的 Hexo 博客主题",
+        "what_it_is": "这是一个面向 Hexo 的博客主题，提供页面美化、懒加载、离线应用、评论、数学公式和多种特色页面。",
+        "problem_solved": "它帮助 Hexo 用户快速搭建功能丰富的个人博客，减少主题样式、交互和常用页面自行开发的成本。",
+        "who_should_care": "使用 Hexo 写博客、希望获得丰富页面与交互功能的开发者。",
+        "use_cases": [
+          "搭建个人技术博客",
+          "添加评论与昼夜切换",
+          "制作即刻短文、相册等页面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "二次创作需保留主题版权信息；旧版公开接口不再作为公开接口，自定义脚本需迁移。",
+        "evidence": [
+          "一款优雅的 Hexo 主题，支持懒加载、PWA、Latex 以及多种评论系统。",
+          "旧版的 `sco`、`utils`、`pjax`、`GLOBAL_CONFIG` 和 `PAGE_CONFIG` 不再作为公开 API；自定义脚本应迁移到 `window.Solitude`。",
+          "二次创作请保留主题版权信息"
+        ]
+      }
+    },
+    "techjarves/Uncensored-Local-Studio": {
+      "category": "ai-model",
+      "one_liner": "零配置本地多模态 AI 工作台",
+      "intro": {
+        "one_liner": "本地离线 AI 工作台",
+        "what_it_is": "一个面向 Windows、Linux 和 macOS 的零配置本地 AI 桌面工具，集成图像生成、GGUF 大模型聊天、语音转文字和文字转语音。",
+        "problem_solved": "把多种本地 AI 能力收拢到离线图形界面，减少云端依赖、登录、订阅和环境配置带来的门槛。",
+        "who_should_care": "想在个人电脑上离线试用图像、文本和语音模型的开发者。",
+        "use_cases": [
+          "离线生成 Stable Diffusion 图片",
+          "本地运行 GGUF 模型聊天",
+          "用 Whisper 转写录音",
+          "用 Kokoro 合成语音"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星后一周新增 12 星，仅一天进入日榜。",
+        "risk_notes": "创建于 2026 年，资料中称部分模型支持有限；Linux 二进制要求较新的系统库，旧系统可能需自行构建后端。",
+        "evidence": [
+          "Uncensored local AI studio for Windows, Linux, and macOS. Zero-setup GUI for Image Generation, GGUF LLMs, Text to Speech & Speech to Text",
+          "Portable AI Studio is a completely offline, zero-setup, self-contained AI studio for Windows, Linux, and macOS.",
+          "Linux release binaries are built for Ubuntu 24.04-era systems and require `glibc 2.38+` plus `GLIBCXX_3.4.32+`."
+        ]
+      }
+    }
+  }
+}

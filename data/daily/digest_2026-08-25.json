@@ -1,1 +1,977 @@
-{"date":"2026-08-25","headline":"AI Agent 与桌面工具同日走热","points":["AI Agent 有 7 个项目，anthropics/claude-plugins-community 与 duty1g/x64dbg-mcp-server 受关注。","桌面系统有 6 个项目，remorses/gpuix 带来 Zed GPUI 的 Node/React 绑定。","Python 有 12 个项目，Rust 有 7 个；安全类有 5 个，开发工具类有 4 个。"],"items":{"remorses/gpuix":{"category":"web-frontend","one_liner":"Zed GPUI 的 Node/React 绑定"},"anthropics/claude-plugins-community":{"category":"ai-agent","one_liner":"Claude 插件社区市场镜像"},"duty1g/x64dbg-mcp-server":{"category":"security","one_liner":"AI 控制 x64dbg 的调试插件"},"fayazara/Screendrop":{"category":"desktop-system","one_liner":"可自托管的截图录屏工具"},"nfzerox/VirtualMacOniPad":{"category":"mobile","one_liner":"在 iPad 运行 macOS 虚拟机"},"arcboxlabs/arcbox":{"category":"ai-agent","one_liner":"隔离微虚机运行 AI 智能体"},"dsh-tauri-desk/deepseek-harness-desktop":{"category":"desktop-system","one_liner":"DeepSeek Harness 桌面客户端"},"lexmount/moli":{"category":"ai-agent","one_liner":"面向 AI 智能体的无头浏览器"},"Tianyu199509/DeskBox":{"category":"desktop-system","one_liner":"WinUI 风格桌面整理工具"},"Tencent-Hunyuan/Hunyuan3D-WorldClaw":{"category":"ai-model","one_liner":"智能体式三维开放世界生成"},"bowenliang123/dsh-context":{"category":"dev-tools","one_liner":"DSH 上下文洞察管理插件"},"oxylabs/ai-scraper-py":{"category":"ai-agent","one_liner":"AI 驱动的网页数据抓取器"},"Spade-sec/First":{"category":"security","one_liner":"微信小程序多功能调试工具"},"0x676e67/wreq":{"category":"dev-tools","one_liner":"隐私友好的 Rust HTTP 客户端"},"jingcheng-chen/rhinomcp":{"category":"ai-agent","one_liner":"用 MCP 连接 Rhino 与 AI"},"Kappaemme-git/codex-first-customer-finder-skill":{"category":"ai-agent","one_liner":"Codex 寻找首批客户技能"},"asternic/wuzapi":{"category":"automation","one_liner":"WhatsApp 简易 REST API"},"Jingyi-Wu-Richael/rachel-digital-human-production":{"category":"other","one_liner":"数字人制作相关项目"},"syssi/esphome-jk-bms":{"category":"hardware-iot","one_liner":"ESPHome 监控 JK-BMS 组件"},"ail-project/ail-framework":{"category":"security","one_liner":"信息泄露分析框架"},"Fadi002/de4py":{"category":"security","one_liner":"AI 辅助 Python 逆向工具箱"},"saitamasahil/Pixel-Launcher-Extended":{"category":"mobile","one_liner":"Pixel 启动器增强 Magisk 模块"},"WerWolv/ImHex-Patterns":{"category":"dev-tools","one_liner":"ImHex 十六进制解析模式库"},"WangRongsheng/CareGPT":{"category":"ai-model","one_liner":"医疗大语言模型与数据集合集"},"vyfor/rattles":{"category":"dev-tools","one_liner":"Rust 终端加载动画库"},"tapparelj/gr-lora_sdr":{"category":"hardware-iot","one_liner":"GNU Radio 的 LoRa 收发实现"},"anywhere-labs/dsh-desktop":{"category":"desktop-system","one_liner":"DSH 插件化现代桌面端"},"EvoLinkAI/awesome-gpt-image-2-API-and-Prompts":{"category":"learning-resource","one_liner":"GPT-Image-2 接口与提示词合集"},"vorssaintapp/vorssaint-utils":{"category":"desktop-system","one_liner":"macOS 菜单栏实用工具箱"},"zenstory-ai/oh-story-claudecode":{"category":"content-media","one_liner":"网文小说全流程写作技能包"},"zhu1090093659/dsh-web":{"category":"web-frontend","one_liner":"DSH Web 插件聚合生态包"},"Awarexone/Agentic-Bug-Hunter":{"category":"security","one_liner":"AI 驱动的漏洞赏金工具箱"},"zcpua/midjourney-api":{"category":"ai-model","one_liner":"非官方 MidJourney Node 客户端"},"HybridRobotics/berkeley-humanoid-lite":{"category":"hardware-iot","one_liner":"伯克利轻量人形机器人代码库"},"b-nnett/grok-bot-0.18-reconstructed":{"category":"desktop-system","one_liner":"macOS 版 Grok Bot 重构扩展"},"JawadTechYT/KHAN-MD":{"category":"automation","one_liner":"管理群组的 WhatsApp 机器人"},"chaseai-yt/claudex-loop":{"category":"ai-agent","one_liner":"双模型强化编码计划技能"},"zenstory-ai/drama-skills":{"category":"content-media","one_liner":"AI 短剧漫剧创作技能合集"},"imwangfan/SnowAdmin":{"category":"web-frontend","one_liner":"Vue3 后台管理框架"},"tobi/walgit":{"category":"other","one_liner":"用途不明的 Rust 项目"}}}
+{
+  "date": "2026-08-25",
+  "headline": "AI Agent 与桌面工具同日走热",
+  "points": [
+    "AI Agent 有 7 个项目，anthropics/claude-plugins-community 与 duty1g/x64dbg-mcp-server 受关注。",
+    "桌面系统有 6 个项目，remorses/gpuix 带来 Zed GPUI 的 Node/React 绑定。",
+    "Python 有 12 个项目，Rust 有 7 个；安全类有 5 个，开发工具类有 4 个。"
+  ],
+  "items": {
+    "remorses/gpuix": {
+      "category": "web-frontend",
+      "one_liner": "Zed GPUI 的 Node/React 绑定",
+      "intro": {
+        "one_liner": "GPUI 的 React 绑定",
+        "what_it_is": "GPUIX 让开发者用 React 或 Solid 编写 TypeScript 界面，再由 Zed 的 GPUI 通过 Metal、DirectX 或 Vulkan 绘制。",
+        "problem_solved": "它提供不依赖 Electron 和网页视图的桌面界面方案，让状态、JSX、布局、文本和输入走原生渲染路径。",
+        "who_should_care": "想用 React 或 Solid 开发非网页视图桌面应用的开发者。",
+        "use_cases": [
+          "用 React 编写桌面窗口",
+          "用 Solid 编写桌面界面",
+          "打包带原生渲染器的应用"
+        ],
+        "alternatives": "相比 Electron 和网页视图方案，它不使用 DOM，而由 GPUI 绘制界面。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 280 星，并曾登上日榜。",
+        "risk_notes": "仍处在一之前版本，适配器与原生包需锁定同一精确版本并一起升级；未关闭 Issue 有 48 个。",
+        "evidence": [
+          "**React and Solid** for [GPUI](https://github.com/zed-industries/zed/tree/main/crates/gpui), Zed's GPU UI framework.",
+          "Write a React or Solid tree in TypeScript. GPUIX paints it with Metal, DirectX, or Vulkan. No Electron. No web view.",
+          "GPUIX is\nstill pre-1.0, so a new release can break either package."
+        ]
+      }
+    },
+    "anthropics/claude-plugins-community": {
+      "category": "ai-agent",
+      "one_liner": "Claude 插件社区市场镜像",
+      "intro": {
+        "one_liner": "Claude 社区插件目录",
+        "what_it_is": "这是 Claude Cowork 和 Claude Code 的社区插件市场只读镜像，用清单列出可安装插件。",
+        "problem_solved": "集中提供经过扫描和批准分发的社区插件清单，方便用户查找并安装插件。",
+        "who_should_care": "使用 Claude Cowork 或 Claude Code、需要扩展能力的开发者。",
+        "use_cases": [
+          "为 Claude Code 添加社区插件",
+          "浏览可安装的插件清单",
+          "按名称安装指定插件"
+        ],
+        "alternatives": "与官方维护插件仓库相比，这里侧重社区提交插件，且是只读镜像。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,276 星，且曾登上日榜。",
+        "risk_notes": "仓库为只读镜像，直接提交的合并请求会自动关闭；未关闭 Issue 有 750 个。",
+        "evidence": [
+          "Community-contributed plugins for [Claude Cowork](https://claude.com/product/cowork) and [Claude Code](https://claude.com/product/claude-code).",
+          "A **read-only mirror** of the community plugin marketplace. The `.claude-plugin/marketplace.json` file here is the list of community plugins available to install. It is synced nightly from Anthropic's internal review pipeline.",
+          "Pull requests opened directly against this repo are closed automatically — all changes flow from the internal review pipeline."
+        ]
+      }
+    },
+    "duty1g/x64dbg-mcp-server": {
+      "category": "security",
+      "one_liner": "AI 控制 x64dbg 的调试插件",
+      "intro": {
+        "one_liner": "x64dbg 的 MCP 调试控制插件",
+        "what_it_is": "x64dbg-MCP Server 是 x64dbg 的原生 MCP（Model Context Protocol）插件，通过 HTTP 暴露调试器功能，让任意兼容 MCP 的 AI 助手以编程方式控制 x64dbg。项目用 Zig 编写，零依赖、单二进制输出，可交叉编译出 x32 与 x64 版本。",
+        "problem_solved": "把调试器的断点、单步、内存读写、寄存器查看等操作封装成 MCP 工具，使 AI 助手能够直接驱动 x64dbg 完成逆向与调试流程，无需人工在 GUI 中逐项操作。",
+        "who_should_care": "从事逆向工程、恶意软件分析、二进制分析的安全研究人员，以及希望用 AI 助手自动化调试流程的开发者。",
+        "use_cases": [
+          "AI 辅助逆向分析：加载样本、下断点、单步并读取寄存器与内存",
+          "恶意软件分析中由 AI 批量执行模式扫描、字符串提取与 xref 查找",
+          "通过 MCP 客户端远程或从 WSL 连接调试器，进行脚本化调试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：项目围绕 MCP 与 AI 调试这一当下热门组合，周增约 466 星，但创建时间较短，仍处于早期阶段。",
+        "risk_notes": "README 中工具数量表述不一致（Features 写 84 MCP Tools，Tools 章节写 72 MCP tools）；项目创建时间短、维护历史有限；默认监听 0.0.0.0，需依赖 Bearer token 防止未授权访问。",
+        "evidence": [
+          "x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP.",
+          "Built with Zig — zero dependencies, single-binary output, cross-compiles to both x32 and x64 from any host.",
+          "84 MCP Tools: Full debugger control — disassembly, stepping, breakpoints, memory allocation, registers, modules, threads, call stack, pattern scanning, string extraction, xrefs, symbols, bookmarks, PE analysis, OEP detection, module dumping, PEB/SEH inspection, tracing, and more."
+        ]
+      }
+    },
+    "fayazara/Screendrop": {
+      "category": "desktop-system",
+      "one_liner": "可自托管的截图录屏工具",
+      "intro": {
+        "one_liner": "原生 macOS 截图录屏与 Loom 替代工具",
+        "what_it_is": "Screendrop 是一款用 Swift 编写的原生 macOS 应用，集截图、屏幕录制、标注编辑与自托管分享于一体，定位为 Loom 的免费替代品。",
+        "problem_solved": "把截图、录屏、OCR 取字、标注编辑和视频分享整合到一个原生工具里，并允许用户通过自己的 Cloudflare 账号自托管分享，避免依赖第三方 SaaS。",
+        "who_should_care": "需要频繁截图录屏并做演示分享的 macOS 用户、开发者、内容创作者，以及在意数据自托管、不愿付费订阅 Loom 的团队。",
+        "use_cases": [
+          "截取屏幕、窗口或选区并快速标注后分享",
+          "录制带摄像头、麦克风和系统音频的演示视频并剪辑字幕",
+          "用 OCR 从屏幕区域直接提取文字到剪贴板",
+          "通过自有 Cloudflare 账号上传并生成带转录、评论的分享链接"
+        ],
+        "alternatives": "README 自称是 Loom 的替代方案，强调原生、可自托管、免费；与其他同类项目的具体对比未提供。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 208 star，但 README 明确标注仍在活跃开发中、会有粗糙之处和破坏性变更。",
+        "risk_notes": "README 声明项目处于活跃开发阶段，可能存在粗糙之处和偶发破坏性变更；要求 macOS 26.4 或更新版本，系统门槛较高；自动上传功能依赖用户自行配置 Cloudflare。",
+        "evidence": [
+          "A beautiful screenshot + screen recording + Loom alternative - all native, self hostable and free.",
+          "Screendrop is under active development. Expect rough edges and occasional breaking changes",
+          "Share through your own Cloudflare account with a video player, scrub previews, searchable transcripts, comments, and rich link previews."
+        ]
+      }
+    },
+    "nfzerox/VirtualMacOniPad": {
+      "category": "mobile",
+      "one_liner": "在 iPad 运行 macOS 虚拟机",
+      "intro": {
+        "one_liner": "在越狱 iPad 上虚拟化运行 macOS",
+        "what_it_is": "Virtual Mac on iPad 是一个基于 Objective-C 的开源项目，通过越狱方式在搭载 M1/M2 芯片的 iPad 上以硬件虚拟化方式运行 macOS 虚拟机。",
+        "problem_solved": "让 iPad 摆脱 iPadOS 限制，在设备本地直接运行 Xcode、Terminal、Final Cut Pro、Logic Pro 等 macOS 专业应用。",
+        "who_should_care": "拥有 M1/M2 iPad Pro 或 M1 iPad Air、愿意越狱并希望移动办公或开发的技术用户",
+        "use_cases": [
+          "在 iPad 上运行 Xcode 进行移动开发",
+          "在 iPad 上使用 Final Cut Pro、Logic Pro 等专业创作软件",
+          "把 iPad 当作便携 macOS 终端或实验环境"
+        ],
+        "alternatives": "README 称其使用 Apple macOS 虚拟化栈的提取修改版，CPU 与 Metal 性能与 VirtualBuddy、UTM 在 M1/M2 Mac 上虚拟化 macOS 大致同级，并声称是首个在虚拟化环境中支持 Final Cut Pro 与 OpenGL/OpenCL 加速的方案；项目声明与 Dopamine、UTM、VirtualBuddy、Apple 无关联。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依赖特定越狱与旧版 iPadOS，受众窄但话题性强，周增约 286 stars",
+        "risk_notes": "必须越狱且仅支持 iPadOS 14 至 16.3.1；不支持 Dopamine-roothide 环境；iPadOS 16.4 起因 XNU 内核移除 Hypervisor 支持而无法扩展；不支持 iCloud/Apple 账号登录；可能与其它 tweak 冲突；项目创建于 2026-08，维护时间较短。",
+        "evidence": [
+          "Requires iPad Pro (M1, M2) or iPad Air (M1) running iPadOS 14 up to 16.3.1.",
+          "Because it uses an extracted and modified version of Apple's macOS virtualization stack, it provides roughly the same class of CPU and Metal performance as VirtualBuddy or UTM virtualizing macOS on an M1 or M2 Mac.",
+          "Supporting iPadOS 16.4 or later presents additional challenges because Hypervisor support was removed from the iPadOS XNU kernel"
+        ]
+      }
+    },
+    "arcboxlabs/arcbox": {
+      "category": "ai-agent",
+      "one_liner": "隔离微虚机运行 AI 智能体",
+      "intro": {
+        "one_liner": "本地容器与虚拟机运行时",
+        "what_it_is": "ArcBox 是用 Rust 编写的 macOS 本地运行时，提供 Docker 兼容容器、Kubernetes、Linux 与 macOS 虚拟机，以及面向智能体的隔离沙箱。",
+        "problem_solved": "它把容器、虚拟机和不可信代码隔离统一到本地守护进程与命令行中，减少对云端控制面板和闭源桌面运行时的依赖。",
+        "who_should_care": "在 Mac 上开发容器、测试智能体或运行隔离环境的开发者。",
+        "use_cases": [
+          "本地替代 Docker 桌面工作流",
+          "为智能体运行一次性隔离沙箱",
+          "启动本地 Kubernetes 集群",
+          "运行 Linux 或 macOS 虚拟机"
+        ],
+        "alternatives": "相比 Docker Desktop 和 OrbStack，强调开源、Rust 自研运行时，并统一容器、虚拟机与沙箱。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾破千星并上过日榜，但一周减少 370 星。",
+        "risk_notes": "处于公开测试阶段；沙箱要求 M3 或更新芯片、macOS 15 以上及默认虚拟化后端；星数一周回落明显。",
+        "evidence": [
+          "ArcBox is in public beta.",
+          "Sandboxes need nested virtualization: Apple Silicon **M3 or newer** with **macOS 15+**, on the default VZ backend.",
+          "Run AI agents on real and isolated machines — own kernel, filesystem, and network — with <100ms boot. Local first, OCI compatible, pure Rust."
+        ]
+      }
+    },
+    "dsh-tauri-desk/deepseek-harness-desktop": {
+      "category": "desktop-system",
+      "one_liner": "DeepSeek Harness 桌面客户端",
+      "intro": {
+        "one_liner": "DeepSeek Harness 的 Tauri 桌面封装",
+        "what_it_is": "这是 DeepSeek Harness（dsh）agent 平台的桌面客户端，基于 Tauri 2 + React 19 构建，内嵌本地 Harness 界面，并提供 Windows、macOS、Linux 安装包。",
+        "problem_solved": "它免去手动安装 Node.js、pnpm 或 Docker 的步骤，把运行时、内核与插件管理整合进桌面应用，降低 dsh 的上手门槛。",
+        "who_should_care": "想在本地桌面环境试用或日常使用 DeepSeek Harness 的用户，以及需要插件扩展、移动端远程访问的开发者。",
+        "use_cases": [
+          "在 Windows、macOS、Linux 桌面上开箱运行 dsh agent",
+          "通过扫码从 Android、iOS 手机远程连接电脑上的 Harness",
+          "用内置插件管理安装、升级社区插件与 Skills、MCP"
+        ],
+        "alternatives": "README 未与其他桌面封装方案做对比，仅列出上游 deepseek-harness 及桌宠类参考项目，因此填 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：README 自述为「开发预览」，上游 dsh 仍在快速迭代并可能有破坏性变更，当前热度更多来自 dsh 生态的短期关注。",
+        "risk_notes": "许可证为 MIT 但附加非商用条款，与标准 MIT 不一致，商用前需核对 LICENSE.details；README 明确 dsh 具备本地代码执行能力，仅建议在可信隔离环境使用；远程访问非只读，二维码或访问码泄露有风险；内核兼容范围窄（最低 0.2.1-rc.4）；项目创建于 2026-08-14，属新项目。",
+        "evidence": [
+          "Only 5mb installer, zero environment setup, preset plugins, Windows / macOS / Linux.",
+          "**开发预览** — 上游 `dsh` 仍在快速迭代，可能存在破坏性变更；升级前请确认兼容性。",
+          "`dsh` 具备本地代码执行能力。仅供学习 / 研究 / 测试，请在可信、隔离的环境中使用。"
+        ]
+      }
+    },
+    "lexmount/moli": {
+      "category": "ai-agent",
+      "one_liner": "面向 AI 智能体的无头浏览器",
+      "intro": {
+        "one_liner": "面向智能体的无头浏览器",
+        "what_it_is": "Moli 是用 Rust 构建的无头浏览器，面向智能体提供网页抓取、提取和自动化能力，支持命令行、CDP、WebDriver Classic 与 WebDriver BiDi。",
+        "problem_solved": "它让智能体按需获取页面结构、执行网页任务和输出内容，只在需要视觉结果时进行布局与绘制，减少持续渲染负担。",
+        "who_should_care": "做智能体、网页抓取、检索流水线和浏览器自动化的开发者。",
+        "use_cases": [
+          "抓取网页并导出 Markdown",
+          "让智能体执行网页交互",
+          "通过 CDP 接入 Playwright"
+        ],
+        "alternatives": "强调按需布局与渲染，并让多种自动化协议共用同一内核。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，一周涨了 304 星，并曾登上日榜。",
+        "risk_notes": "未关闭 Issue 有 528 个，维护压力值得关注；创建时间较新，长期稳定性仍待观察。",
+        "evidence": [
+          "Moli is a production-ready headless browser for AI agents.",
+          "Moli helps your AI agent fetch and extract web pages, search the web, and automate browser tasks.",
+          "Use it through the CLI, CDP, WebDriver Classic, or WebDriver BiDi."
+        ]
+      }
+    },
+    "Tianyu199509/DeskBox": {
+      "category": "desktop-system",
+      "one_liner": "WinUI 风格桌面整理工具",
+      "intro": {
+        "one_liner": "Windows 桌面整理与小组件工具",
+        "what_it_is": "DeskBox 是一款免费开源的 Windows 桌面整理工具，使用 C#、WinUI 3 和 .NET 10 Native AOT 构建，提供接近系统原生观感的桌面小组件。",
+        "problem_solved": "它帮助用户整理桌面文件、映射已有文件夹，并把待办、搜索、天气、音乐等常用工具放在桌面附近，同时不替换 Explorer，也不改变文件原有的使用方式。",
+        "who_should_care": "希望整理 Windows 桌面、又不想改变文件管理习惯的用户，以及关注 WinUI 3 桌面应用实现的 C# 开发者。",
+        "use_cases": [
+          "把桌面文件按类别整理到由真实文件夹支撑的小组件中",
+          "映射已有文件夹并在桌面小组件中直接浏览和拖放文件",
+          "在桌面小组件中集中使用待办、快速记录、搜索、天气和音乐控制"
+        ],
+        "alternatives": "README 自称是 Stardock Fences 这类工具的现代开源替代，核心差异在于小组件由真实文件夹支撑，并且不替换 Explorer。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 713 star，但项目仍处于 1.5.9 版本准备发布阶段，并且暂不接受外部 PR。",
+        "risk_notes": "许可证为 GPL-3.0-only；README 说明当前不合并外部 PR；安装包在正式证书签发前尚未签名，需要自行校验哈希；搜索功能依赖用户另行安装 Everything。",
+        "evidence": [
+          "A free, open-source, local-first Windows desktop organizer with native-feeling WinUI 3 widgets.",
+          "Its real-folder-backed widgets make it a modern open-source alternative to tools such as Stardock Fences",
+          "External pull requests are not being merged at this time"
+        ]
+      }
+    },
+    "Tencent-Hunyuan/Hunyuan3D-WorldClaw": {
+      "category": "ai-model",
+      "one_liner": "智能体式三维开放世界生成",
+      "intro": {
+        "one_liner": "开放式三维世界生成项目",
+        "what_it_is": "WorldClaw 面向大规模开放式三维世界生成，定位为智能体式生成方法，并发布了论文与项目页面。",
+        "problem_solved": "它关注如何以智能体式方法在大规模场景中生成开放式三维世界。",
+        "who_should_care": "关注三维内容生成、开放世界构建和相关研究的开发者。",
+        "use_cases": [
+          "研究开放式三维世界生成",
+          "了解智能体式生成方法",
+          "查阅论文与项目页面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周新增 102 星，并曾进入日榜一天。",
+        "risk_notes": "公开资料主要介绍方法与论文，未提供安装、模型权重、许可证和可用状态说明。",
+        "evidence": [
+          "WorldClaw: Agentic 3D Open-world Generation at Scale",
+          "2026.08.07: [Paper](https://arxiv.org/abs/2608.05248) and [project page](https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/) are released!",
+          "title={WorldClaw: Agentic 3D Open-World Generation at Scale}"
+        ]
+      }
+    },
+    "bowenliang123/dsh-context": {
+      "category": "dev-tools",
+      "one_liner": "DSH 上下文洞察管理插件",
+      "intro": {
+        "one_liner": "DeepSeek Harness 上下文可视化插件",
+        "what_it_is": "dsh-context 是一个 DeepSeek Harness 的插件，用 TypeScript 编写，提供 Context 面板、Context 浏览器和 /context 命令，用于查看上下文的统计、组成、演进与压缩、剪枝等事件。",
+        "problem_solved": "帮助用户看清 Agent 的上下文窗口里装了什么、这些内容如何组成、每次请求如何演进，以及 token 与成本花在哪里。",
+        "who_should_care": "使用 DeepSeek Harness 的开发者与重度 Agent 用户，尤其是需要排查上下文膨胀、token 成本或工具调用行为的人。",
+        "use_cases": [
+          "查看单个会话的上下文组成与每次请求的上下文趋势",
+          "跨会话统计 token 用量、成本与缓存命中率",
+          "追踪子 agent 网络与工具调用、命令执行记录"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依赖 DeepSeek Harness 生态，一周内新增约 146 星，热度与特定平台绑定。",
+        "risk_notes": "项目创建于 2026-08-14，历史较短；README 自称“The best”并引用第三方推荐，属于营销性表述，需自行验证；功能强依赖 DeepSeek Harness 平台。",
+        "evidence": [
+          "The best DeepSeek Harness plugin for Agent's context insights and management.",
+          "provides full context lifecycle management features",
+          "dsh plugin --profile web add dsh-context"
+        ]
+      }
+    },
+    "oxylabs/ai-scraper-py": {
+      "category": "ai-agent",
+      "one_liner": "AI 驱动的网页数据抓取器",
+      "intro": {
+        "one_liner": "自然语言网页抓取工具",
+        "what_it_is": "这是一个实验性的网页数据提取工具，通过自然语言提示从单个公开网页抽取信息，并输出结构化 JSON 或 Markdown。",
+        "problem_solved": "它减少了对 CSS、XPath 和自定义解析器的依赖，用提示词和自动生成的模式降低网页结构变化带来的维护成本。",
+        "who_should_care": "需要快速接入网页抽取流程的 Python 开发者和自动化应用开发者。",
+        "use_cases": [
+          "提取电商商品名称与价格",
+          "解析新闻标题、作者和正文",
+          "收集招聘信息与薪资字段"
+        ],
+        "alternatives": "相比普通抓取器，不依赖选择器或自定义解析逻辑，更强调提示词驱动和自动模式生成。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但项目创建较新、复刻数很少。",
+        "risk_notes": "工具被明确描述为实验性；需要 AI Studio 接口密钥，试用后有付费套餐；不支持私有或登录保护内容。",
+        "evidence": [
+          "The AI-Scraper is an experimental scraping tool by Oxylabs AI Studio that extracts data from a single webpage using AI.",
+          "This AI scraper removes the need for CSS/XPath selectors or custom parsers, so it integrates seamlessly with various automation pipelines.",
+          "Private or login-protected content isn’t supported out of the box."
+        ]
+      }
+    },
+    "Spade-sec/First": {
+      "category": "security",
+      "one_liner": "微信小程序多功能调试工具",
+      "intro": {
+        "one_liner": "微信小程序安全调试工具",
+        "what_it_is": "这是一个基于 WMPFDebugger 二开的微信小程序多功能集成工具，使用 Python，结合 Frida 与 CDP 提供调试、捕获、解包和辅助分析能力。",
+        "problem_solved": "它面向小程序安全研究，帮助捕获云函数与 wx.* 调用、枚举路由、检测跳转守卫，并解密解包 wxapkg 后扫描敏感信息。",
+        "who_should_care": "做授权范围内微信小程序安全研究、调试与逆向分析的开发者。",
+        "use_cases": [
+          "捕获并修改重放云函数参数",
+          "调试小程序页面与接口调用",
+          "解包 wxapkg 并扫描敏感信息"
+        ],
+        "alternatives": "相比参考的 WMPFDebugger，它集成云函数捕获、解包扫描、MCP Server 与在线更新。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 22 星，本周上日榜 1 天。",
+        "risk_notes": "自 v1.1.0 起闭源，后续仅上传编译版本；仅允许授权安全研究；macOS 注入可能要求关闭系统完整性保护或重签名微信。",
+        "evidence": [
+          "WMPFDebugger 二开微信小程序多功能集成工具",
+          "微信小程序安全调试工具 — Frida + CDP，支持 macOS / Windows",
+          "自v1.1.0版本后开始闭源，往后版本更新只上传编译好的版本，下载最新版请去release下载。"
+        ]
+      }
+    },
+    "0x676e67/wreq": {
+      "category": "dev-tools",
+      "one_liner": "隐私友好的 Rust HTTP 客户端",
+      "intro": {
+        "one_liner": "可拟态的 Rust HTTP 客户端",
+        "what_it_is": "wreq 是注重易用、隐私与协议拟态的 Rust HTTP 客户端，支持自定义 TLS、JA3/JA4 和 HTTP/2 签名能力。",
+        "problem_solved": "它解决普通客户端难以保持请求头大小写、精细控制 TLS 与 HTTP/2 行为，以及模拟浏览器协议特征的问题。",
+        "who_should_care": "需要浏览器协议拟态、代理轮换或精细 HTTP 控制的 Rust 开发者。",
+        "use_cases": [
+          "模拟浏览器协议特征",
+          "构建需代理轮换的请求客户端",
+          "处理 Cookie、重定向与 WebSocket"
+        ],
+        "alternatives": "是 reqwest 的硬分叉，强调请求头大小写、TLS 与 HTTP/2 精细控制。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜 1 天，星数破千。",
+        "risk_notes": "当前最低支持 Rust 1.98，采用滚动最低版本策略；与 openssl-sys 同编可能符号冲突；许可证表述为 Apache-2.0，但措辞含 either of。",
+        "evidence": [
+          "An ergonomic and modular Rust HTTP Client for high-fidelity protocol matching, featuring customizable TLS, JA3/JA4, and HTTP/2 signature capabilities.",
+          "The current MSRV is 1.98. The current edition is Rust 2024.",
+          "Compiling alongside openssl-sys can cause symbol conflicts with boringssl that lead to link failures"
+        ]
+      }
+    },
+    "jingcheng-chen/rhinomcp": {
+      "category": "ai-agent",
+      "one_liner": "用 MCP 连接 Rhino 与 AI",
+      "intro": {
+        "one_liner": "用对话控制 Rhino 建模",
+        "what_it_is": "RhinoMCP 通过 Model Context Protocol 把 Rhino 3D 和 Grasshopper 接到 AI 助手，让助手按自然语言创建、读取和修改模型。",
+        "problem_solved": "它让三维建模和 Grasshopper 连线不必全靠手工操作，可用对话完成几何创建、文档检查、参数调整和脚本执行。",
+        "who_should_care": "使用 Rhino 8 的建模师、参数化设计者和想用 AI 辅助建模的开发者。",
+        "use_cases": [
+          "用自然语言生成几何体",
+          "读取文档并截图检查模型",
+          "搭建和修改 Grasshopper 画布"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "仅面向 Windows 和 macOS 的 Rhino 8；需要安装插件并启动桥接；同一时间只能运行一个服务端。",
+        "evidence": [
+          "RhinoMCP connects Rhino 3D to AI Agent through the Model Context Protocol (MCP)",
+          "Control Rhino 3D and Grasshopper with AI, in plain language.",
+          "RhinoMCP targets **Rhino 8** on Windows and macOS."
+        ]
+      }
+    },
+    "Kappaemme-git/codex-first-customer-finder-skill": {
+      "category": "ai-agent",
+      "one_liner": "Codex 寻找首批客户技能",
+      "intro": {
+        "one_liner": "Codex 潜客发现技能",
+        "what_it_is": "这是一个给 Codex 使用的 Python 技能，依据公开信号寻找有证据支持的潜在首批客户，并生成报告。",
+        "problem_solved": "帮助早期产品从公开需求信号中筛选潜客，给出证据、公开联系路径和下一步建议，减少盲找。",
+        "who_should_care": "做客户发现、寻找早期采用者或设计伙伴的创业者和独立开发者。",
+        "use_cases": [
+          "按产品链接寻找潜在首批客户",
+          "筛选公开求助替代工具的开发者",
+          "用反馈刷新候选名单并排除重复"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 12 星，仅上过一天日榜。",
+        "risk_notes": "候选并非确认买家；公开联系路径不代表同意推广；依赖 Codex 的网页搜索或浏览器访问，受阻来源会形成覆盖缺口。",
+        "evidence": [
+          "A Codex skill that finds evidence-backed potential first customers from recent public signals.",
+          "These are potential customers based on public evidence, not confirmed buyers. The skill never sends outreach automatically.",
+          "a Codex environment with web search or browser access for live research"
+        ]
+      }
+    },
+    "asternic/wuzapi": {
+      "category": "automation",
+      "one_liner": "WhatsApp 简易 REST API",
+      "intro": {
+        "one_liner": "WhatsApp 多设备接口服务",
+        "what_it_is": "WUZAPI 是用 Go 编写的简单 RESTful 服务，基于 Whatsmeow 库连接 WhatsApp，支持多设备和并发会话。",
+        "problem_solved": "它把 WhatsApp 的会话、消息、用户、群组、聊天和 Webhook 能力封装成接口，便于程序集成。",
+        "who_should_care": "需要自建 WhatsApp 接口服务的 Go 开发者与后端工程师。",
+        "use_cases": [
+          "扫码登录并管理会话",
+          "发送多种类型消息",
+          "接收事件并配置 Webhook"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且已有四百七十四次分叉。",
+        "risk_notes": "违反 WhatsApp 服务条款可能导致号码被封；协议变化可能破坏连接，需要更新库；商业用途建议改用官方商业接口。",
+        "evidence": [
+          "Simple RESTful API for WhatsApp in Golang (using the Whatsmeow multi device library)",
+          "WuzAPI is an implementation \nof the [@tulir/whatsmeow](https://github.com/tulir/whatsmeow) library as a \nsimple RESTful API service with multiple device support and concurrent \nsessions.",
+          "**Using this software in violation of WhatsApp’s Terms of Service can get your number banned**"
+        ]
+      }
+    },
+    "Jingyi-Wu-Richael/rachel-digital-human-production": {
+      "category": "other",
+      "one_liner": "数字人制作相关项目",
+      "intro": {
+        "one_liner": "数字人视频制作技能",
+        "what_it_is": "这是一个面向 Codex 的数字人视频制作技能，把授权素材校验、语音克隆、旁白、图像驱动视频和审批流程整理成可复用手册。",
+        "problem_solved": "它解决付费接口调用前缺少素材检查、预览和授权确认的问题，并记录任务状态与产物，降低误触发和敏感信息混入包内的风险。",
+        "who_should_care": "需要批量制作授权数字人口播视频、并已使用相关付费服务的开发者。",
+        "use_cases": [
+          "先生成十五秒预览供确认",
+          "校验脚本、肖像和语音素材",
+          "跟踪任务状态与输出文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时有一千零一颗星。",
+        "risk_notes": "依赖用户自备账号、计费、权限和接口密钥；仅可用于授权的语音、肖像、脚本和发布流程；需显式调用以避免付费流程误触发。",
+        "evidence": [
+          "Codex Skill for producing authorized digital-human talking-head videos with MiniMax overseas voice cloning and HeyGen Image-to-Video.",
+          "Generate a 15-second preview before any full video.",
+          "Use this only for authorized voice, portrait, script, and publishing workflows."
+        ]
+      }
+    },
+    "syssi/esphome-jk-bms": {
+      "category": "hardware-iot",
+      "one_liner": "ESPHome 监控 JK-BMS 组件",
+      "intro": {
+        "one_liner": "电池管理接入组件",
+        "what_it_is": "这是一个 ESPHome 组件，可通过串口或蓝牙监控并控制 Jikong 电池管理系统，主要使用 C++。",
+        "problem_solved": "它把兼容的电池管理系统接入 ESPHome，便于读取状态并纳入家庭自动化监控。",
+        "who_should_care": "使用 Jikong 电池管理系统、ESPHome 和 ESP32 或 ESP8266 的开发者。",
+        "use_cases": [
+          "监控电池管理系统状态",
+          "通过蓝牙接入电池数据",
+          "通过串口接入电池数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千时有一千零一颗星。",
+        "risk_notes": "要求 ESPHome 2026.1.0 或更高版本；支持范围依赖软件版本不低于 6.0；蓝牙帧格式需按型号和硬件版本选择。",
+        "evidence": [
+          "ESPHome component to monitor and control a Jikong Battery Management System (JK-BMS) via UART-TTL or BLE",
+          "All JK-BMS models with software version `>=6.0` are using the implemented protocol and should be supported.",
+          "ESPHome 2026.1.0 or higher"
+        ]
+      }
+    },
+    "ail-project/ail-framework": {
+      "category": "security",
+      "one_liner": "信息泄露分析框架",
+      "intro": {
+        "one_liner": "信息泄露分析框架",
+        "what_it_is": "AIL Framework 是开源平台，用于采集、爬取、处理和分析来自网页、Tor、I2P、聊天、文件及外部数据流的非结构化信息。",
+        "problem_solved": "它把杂乱的原始内容转化为可检索、可关联、可调查的情报，支持提取、检测、标记、关联和导出。",
+        "who_should_care": "威胁情报分析师、泄露调查人员、安全团队和事件响应人员。",
+        "use_cases": [
+          "监控网页与暗网来源",
+          "追踪关键词和规则命中",
+          "关联调查泄露线索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "涉及暗网、聊天和凭证等敏感数据，部署时需重视合规、访问控制与数据处理边界。",
+        "evidence": [
+          "Open-source framework for the collection, crawling, processing, and analysis of unstructured information.",
+          "AIL framework is an open-source platform to **collect, crawl, process and analyse unstructured data** from the clear web, Tor, I2P, chats, files and external feeds.",
+          "AIL helps analysts transform raw, messy content into structured intelligence through extraction, tagging, detection, correlation and investigation workflows."
+        ]
+      }
+    },
+    "Fadi002/de4py": {
+      "category": "security",
+      "one_liner": "AI 辅助 Python 逆向工具箱",
+      "intro": {
+        "one_liner": "Python 反混淆工具箱",
+        "what_it_is": "de4py 是面向 Python 逆向分析的反混淆工具，提供图形界面、命令行、文件分析、插件和本地大模型辅助能力。",
+        "problem_solved": "它帮助分析者处理常见加壳与混淆代码，并提供静态清理、动态执行、行为监控和可疑信息提取等分析手段。",
+        "who_should_care": "恶意软件分析师、逆向工程师和需要分析混淆 Python 代码的开发者。",
+        "use_cases": [
+          "还原常见混淆器代码",
+          "分析打包文件与可疑字符串",
+          "在目标进程中动态调试"
+        ],
+        "alternatives": "差异在于结合本地大模型、传统反混淆、图形界面和插件扩展。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜。",
+        "risk_notes": "采用 CC BY-NC 4.0，禁止商业使用；声明仅用于教育目的；完整功能推荐 Windows。",
+        "evidence": [
+          "The ultimate AI-powered toolkit for python reverse engineering",
+          "De4py is an advanced Python deobfuscator with a beautiful UI (PySide6) and a robust set of features for malware analysts and reverse engineers.",
+          "Licensed under **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**."
+        ]
+      }
+    },
+    "saitamasahil/Pixel-Launcher-Extended": {
+      "category": "mobile",
+      "one_liner": "Pixel 启动器增强 Magisk 模块",
+      "intro": {
+        "one_liner": "Pixel 启动器增强模块",
+        "what_it_is": "这是一个面向 Android 13 设备的 Magisk 模块，为 Pixel Launcher 增加主题图标、网格选项、隐藏开关和可选插件等功能。",
+        "problem_solved": "它解决原生 Pixel Launcher 可定制项有限的问题，让用户通过刷入模块选择图标、布局和部分增强设置。",
+        "who_should_care": "已 root、使用 Android 13 类原生或 Pixel 系统并爱折腾桌面的用户。",
+        "use_cases": [
+          "为桌面增加大量主题图标",
+          "调整应用网格与图标形状",
+          "启用隐藏开关和附加功能"
+        ],
+        "alternatives": "相比原版 Pixel Launcher，提供更多图标、网格、隐藏开关和可选插件。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时为一千星。",
+        "risk_notes": "需要 root 和 Magisk；部分功能依赖 LSPosed 与完整谷歌服务；厂商系统、平板和折叠屏兼容性不确定，且作者提示需自担设备风险。",
+        "evidence": [
+          "Pixel Launcher Extended is a Magisk module by TeamFiles with many cool features.",
+          "Extra themed icons. Total of 1250+ icons.",
+          "It may or may not work on stock roms provided by different OEMs. Try at your own risk."
+        ]
+      }
+    },
+    "WerWolv/ImHex-Patterns": {
+      "category": "dev-tools",
+      "one_liner": "ImHex 十六进制解析模式库",
+      "intro": {
+        "one_liner": "ImHex 文件格式资源库",
+        "what_it_is": "这是配合 ImHex Hex Editor 使用的文件数据库，收录二进制格式定义、模式库、magic 文件、编码、主题、常量、脚本和 Yara 规则。",
+        "problem_solved": "把社区提交的格式解析与辅助资源集中起来，方便在 ImHex 中识别、解析和处理多种二进制文件。",
+        "who_should_care": "二进制分析、逆向工程、文件格式研究和 ImHex 用户。",
+        "use_cases": [
+          "解析常见二进制文件格式",
+          "复用模式库和常量定义",
+          "扩展 magic 识别与编码"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "内容多由社区提交，质量与维护状态可能不一致；提交后会进入内容商店并随下个版本打包，使用前宜自行核验。",
+        "evidence": [
+          "This repository serves as a database for files to use with the [ImHex Hex Editor](https://github.com/WerWolv/ImHex). It currently contains",
+          "Most files in this repository have been submitted by the community. Please feel free to open a PR on your own and add files to it!",
+          "Everything will immediately show up in ImHex's Content Store and gets bundled with the next release of ImHex."
+        ]
+      }
+    },
+    "WangRongsheng/CareGPT": {
+      "category": "ai-model",
+      "one_liner": "医疗大语言模型与数据集合集",
+      "intro": {
+        "one_liner": "医疗大模型开源资源库",
+        "what_it_is": "CareGPT 是面向医疗大语言模型的开源项目，汇集公开医疗微调数据集、开源模型，以及训练、测评和部署资料。",
+        "problem_solved": "它把分散的医疗模型、数据、训练流程和部署资料集中起来，降低查找与复现医疗大模型方案的门槛。",
+        "who_should_care": "医疗大模型研究者、微调实践者和需要部署医学问答的开发者。",
+        "use_cases": [
+          "查找医疗微调数据集",
+          "训练医学问答模型",
+          "部署模型与知识库问答"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "医疗场景需谨慎验证输出；资料涉及外部数据集和模型，合规与可用性需自行核查。",
+        "evidence": [
+          "🌞 CareGPT (关怀GPT)是一个医疗大语言模型，同时它集合了数十个公开可用的医疗微调数据集和开放可用的医疗大语言模型，包含LLM的训练、测评、部署等以促进医疗LLM快速发展。",
+          "聚合了丰富的开源医学LLM、LLM训练的医学数据、LLM部署资料、LLM测评以及相关LLM的资源整理；",
+          "支持模型与知识库结合问答；"
+        ]
+      }
+    },
+    "vyfor/rattles": {
+      "category": "dev-tools",
+      "one_liner": "Rust 终端加载动画库",
+      "intro": {
+        "one_liner": "Rust 终端动画库",
+        "what_it_is": "一个用于 Rust 的极简终端旋转指示器库，无依赖，提供预设动画、自定义关键帧和 no_std 用法。",
+        "problem_solved": "让命令行程序更容易显示加载动画，同时不绑定输出方式，并支持无标准库环境下的动画驱动。",
+        "who_should_care": "编写 Rust 命令行工具、终端界面或 no_std 应用的开发者。",
+        "use_cases": [
+          "命令行任务加载提示",
+          "ratatui 界面动画",
+          "自定义字符帧动画"
+        ],
+        "alternatives": "强调无依赖、不假设输出方式，并提供预设与 no_std 驱动方式。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅新增 1 星，上榜 1 天。",
+        "risk_notes": "创建于 2026 年 4 月，项目较新；许可证信息不一致，项目数据为 Apache-2.0，资料称 MIT 或 Apache-2.0 双许可。",
+        "evidence": [
+          "🪇 Minimal terminal spinners/throbbers for Rust",
+          "Rattles is a minimal, dependency-free terminal spinner/throbber library for Rust. It makes no assumptions about how the output will be used.",
+          "Dual licensed under MIT OR Apache-2.0 at your discretion."
+        ]
+      }
+    },
+    "tapparelj/gr-lora_sdr": {
+      "category": "hardware-iot",
+      "one_liner": "GNU Radio 的 LoRa 收发实现",
+      "intro": {
+        "one_liner": "LoRa 软件无线电收发模块",
+        "what_it_is": "这是面向 GNU Radio 3.10 的 LoRa 收发机模块，包含发射、接收链路和分层模块，主要用 C++ 实现。",
+        "problem_solved": "它让开发者可配置扩频因子、编码率、带宽等参数，搭建低信噪比下可运行的 LoRa 软件无线电实验链路。",
+        "who_should_care": "做 LoRa 物理层、GNU Radio 和软件无线电实验的开发者。",
+        "use_cases": [
+          "搭建端到端 LoRa 收发实验",
+          "测试低信噪比接收链路",
+          "与商用 LoRa 模块互通"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，星数达到一千。",
+        "risk_notes": "依赖 GNU Radio 3.10 及多项构建组件；扩频因子 5 和 6 与 SX126x 不兼容；安装常见问题涉及路径和旧版本清理。",
+        "evidence": [
+          "This is the fully-functional GNU Radio software-defined radio (SDR) implementation of a LoRa transceiver with all the necessary receiver components to operate correctly even at very low SNRs.",
+          "The transceiver is available as a module for GNU Radio 3.10.",
+          "Sending and receiving LoRa packets between USRP-USRP and USRP-commercial LoRa transceiver (tested with RFM95, SX1276, SX1262)."
+        ]
+      }
+    },
+    "anywhere-labs/dsh-desktop": {
+      "category": "desktop-system",
+      "one_liner": "DSH 插件化现代桌面端",
+      "intro": {
+        "one_liner": "DSH 插件化桌面端",
+        "what_it_is": "一个把 DeepSeek Harness 的本地界面、服务和插件系统封装成桌面应用的开源客户端，支持 Windows、macOS 和 Linux。",
+        "problem_solved": "让用户无需配置 Node.js 或执行命令，即可安装使用本地 Harness 服务，并通过桌面窗口、托盘、更新和插件市场管理体验。",
+        "who_should_care": "想以桌面方式使用 DSH、开发或组合插件的普通用户与开发者。",
+        "use_cases": [
+          "一键安装并使用 DSH 桌面客户端",
+          "通过插件市场发现和管理插件",
+          "开发集成桌面能力的 DSH 插件"
+        ],
+        "alternatives": "相比命令行使用上游，它提供桌面封装、托盘、安装包和插件市场；桌面壳本身也按插件机制接入。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,954 星，并有一天进入日榜。",
+        "risk_notes": "局域网访问不提供鉴权，开启后同网用户可直接操作电脑；Linux 版不能应用内更新；项目是独立社区项目，与深度求索无隶属、合作、授权或背书关系。",
+        "evidence": [
+          "基于 DeepSeek Harness 构建的 Windows、macOS 和 Linux 开源桌面客户端。",
+          "DSH Desktop 将 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的本地 Web UI、Host 服务和插件系统集成到原生桌面应用中。",
+          "向局域网开放不提供鉴权；所有与你处于同一局域网的人都能直接打开 DSH 并操作你的电脑。"
+        ]
+      }
+    },
+    "EvoLinkAI/awesome-gpt-image-2-API-and-Prompts": {
+      "category": "learning-resource",
+      "one_liner": "GPT-Image-2 接口与提示词合集",
+      "intro": {
+        "one_liner": "图像提示词精选库",
+        "what_it_is": "这是一个围绕 GPT Image 2 的提示词精选库，收录 462 个图像生成、编辑、设计和广告案例，可按分类复制完整提示词并调整。",
+        "problem_solved": "它把分散的图像生成案例按场景整理，帮助开发者和创作者快速找到可复用提示词，减少从零设计和反复试错。",
+        "who_should_care": "使用 GPT Image 2 做图像生成、广告设计或视觉实验的开发者与创作者。",
+        "use_cases": [
+          "查找电商主图提示词",
+          "复用广告创意案例",
+          "制作海报与界面样机"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有一万六千九百二十一星，且本周上过一次日榜。",
+        "risk_notes": "内容以提示词库为主，接口自动化、可调用技能和图生视频流程被列为独立仓库；案例保留来源与署名，但仅在可获取时提供。",
+        "evidence": [
+          "This is a prompt-first library of 462 curated GPT Image 2 examples for image generation, editing, design, advertising, and visual experimentation.",
+          "Browse by category, copy a complete prompt, and adapt its placeholders or constraints to your own image.",
+          "This repository owns the curated prompt library. API automation, callable skills, and image-to-video workflows are separate surfaces listed under [Related Repositories](#related-repositories)."
+        ]
+      }
+    },
+    "vorssaintapp/vorssaint-utils": {
+      "category": "desktop-system",
+      "one_liner": "macOS 菜单栏实用工具箱",
+      "intro": {
+        "one_liner": "macOS 菜单栏工具箱",
+        "what_it_is": "Vorssaint 是免费开源的 macOS 菜单栏工具箱，用 Swift 编写，按需安装音频、窗口、剪贴板、系统监控等小工具。",
+        "problem_solved": "把 Mac 用户常分别购买或安装的多类实用工具集中到一个菜单栏入口，并允许只启用自己需要的功能。",
+        "who_should_care": "希望集中管理音频、窗口、剪贴板和系统状态的 macOS 用户。",
+        "use_cases": [
+          "按应用调音量或切换输出设备",
+          "查看系统状态与硬件读数",
+          "管理窗口布局、切换与预览",
+          "搜索剪贴板历史并快速粘贴"
+        ],
+        "alternatives": "强调一个图标整合多类工具、按需安装、无账号、无遥测、无订阅。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 2,413 星，并曾登上日榜。",
+        "risk_notes": "采用 GPL-3.0；风扇控制标为 beta；麦克风静音不是隐私锁，Siri 和部分应用仍可能听到声音。未关闭 Issue 有一千四百二十三个。",
+        "evidence": [
+          "Free and open-source macOS menu bar toolkit.",
+          "One menu bar icon doing the job of a dozen paid Mac apps.",
+          "Install only what you use.",
+          "with no account, no telemetry and no subscription.",
+          "Fan Control (beta).",
+          "Mic Mute is not a privacy lock."
+        ]
+      }
+    },
+    "zenstory-ai/oh-story-claudecode": {
+      "category": "content-media",
+      "one_liner": "网文小说全流程写作技能包",
+      "intro": {
+        "one_liner": "网文写作技能包",
+        "what_it_is": "这是装进编程 Agent 的网文写作技能包，覆盖长短篇小说的扫榜、拆文、写作、去 AI 味和封面图流程。",
+        "problem_solved": "它把设定、大纲、正文和追踪拆成文件管理，并用检查与门禁减少长篇续写断档、伏笔遗漏和常见 AI 腔。",
+        "who_should_care": "网文作者、小说续写者，以及用编程 Agent 辅助中文创作的人。",
+        "use_cases": [
+          "扫榜选材并拆解爆款",
+          "搭建大纲并续写长篇",
+          "检查正文中的 AI 腔"
+        ],
+        "alternatives": "相比通用写作助手，它强调文件记忆、确定性检查和多款编程 Agent 适配。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 162 星，并曾有一天进入日榜。",
+        "risk_notes": "创建于 2026 年，时间较新；仍有 8 个未关闭问题；不同编程 Agent 存在部署差异与已知限制。",
+        "evidence": [
+          "网文写作 skill 包：扫榜、拆文、写作、去AI味、封面图一套流程，装进你正在用的编程 Agent。",
+          "用文件系统当记忆 — 设定、大纲、正文、追踪各自独立维护，压缩上下文或更换会话后，从文件恢复当前进度、伏笔和未完承诺。",
+          "各 Agent 的部署差异、已知限制与安装排查（Windows `ENOENT`、Antigravity `agy -p`、目录残留等）见 **[各编程 Agent 的部署与安装排查](docs/hosts.md)**。"
+        ]
+      }
+    },
+    "zhu1090093659/dsh-web": {
+      "category": "web-frontend",
+      "one_liner": "DSH Web 插件聚合生态包",
+      "intro": {
+        "one_liner": "DSH Web 插件全家桶",
+        "what_it_is": "这是面向 DeepSeek Harness Web、网页版与桌面客户端的模块化插件生态，提供任务看板、远程访问、运维、用量统计和主题资产。",
+        "problem_solved": "它补足原生 Web 在多任务调度、后台执行、移动端协同、会话归档和工程运维方面的扩展空间，并支持通过 profile 机制挂载。",
+        "who_should_care": "使用 DeepSeek Harness 的开发者、重度用户和需要智能体工作台的团队。",
+        "use_cases": [
+          "定时巡检与多智能体任务编排",
+          "手机远程访问与网页 SSH 运维",
+          "会话归档、用量统计与主题定制"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 483 星，并曾登上日榜 1 天。",
+        "risk_notes": "创建日期与最近提交日期均晚于当前常见时间线，项目数据存在异常；README 提到已知限制，但具体内容未完整提供。",
+        "evidence": [
+          "dsh-web 是面向 DeepSeek Harness（DSH）Web GUI、DeepSeek 网页版与官方桌面客户端（DeepSeek Desktop）的模块化插件生态与 AI 智能体开发工作台。",
+          "原生 DeepSeek Harness Web 提供了核心的对话交互与工具调用能力，但在多任务并发调度、长程后台执行、移动端协同以及工程化开发运维方面仍有扩展空间。",
+          "一周新增 Star：483"
+        ]
+      }
+    },
+    "Awarexone/Agentic-Bug-Hunter": {
+      "category": "security",
+      "one_liner": "AI 驱动的漏洞赏金工具箱",
+      "intro": {
+        "one_liner": "终端里的漏洞赏金工具",
+        "what_it_is": "这是一个用 Python 编写的 AI 漏洞赏金工具，可在终端完成侦察、发现、验证和报告，也能作为 Claude Code 插件使用。",
+        "problem_solved": "它把漏洞赏金流程串成一条命令，并强调筛选可报告的问题、验证发现、生成提交报告，减少手工整理。",
+        "who_should_care": "漏洞赏金猎人、安全测试人员，以及想用命令行辅助挖洞的开发者。",
+        "use_cases": [
+          "对目标做攻击面侦察",
+          "验证漏洞发现是否可报告",
+          "生成漏洞提交报告"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 154 星，并有一天进入日榜。",
+        "risk_notes": "完整侦察依赖外部工具；部分能力需要配置云端模型或密钥；未关闭问题有 10 个。",
+        "evidence": [
+          "AI-powered bug bounty hunting — recon to report, in your terminal.",
+          "Agentic Bug Hunter finds real, reportable bugs, not theoretical ones. Point it at a target and it runs recon, tests for vulnerabilities, validates findings against a strict gate, and writes a submission-ready report for HackerOne, Bugcrowd, Intigriti, or Immunefi.",
+          "The CLI and AI hunting work on their own. Full recon also uses external tools (subfinder · httpx · nuclei · katana · ffuf · nmap)"
+        ]
+      }
+    },
+    "zcpua/midjourney-api": {
+      "category": "ai-model",
+      "one_liner": "非官方 MidJourney Node 客户端",
+      "intro": {
+        "one_liner": "非官方 MidJourney 客户端",
+        "what_it_is": "一个用 TypeScript 编写的 Node.js 客户端，封装非官方 MidJourney 接口，支持生成、变体、放大等操作。",
+        "problem_solved": "让开发者能在 Node.js 代码中调用 MidJourney 的常用绘图命令，并处理进度、选项和后续操作。",
+        "who_should_care": "需要在 Node.js 服务或脚本里集成 MidJourney 的开发者。",
+        "use_cases": [
+          "在脚本中提交绘图提示词",
+          "对图片执行变体或放大",
+          "接入自定义绘图服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千八百七十一星，本周上日榜一天。",
+        "risk_notes": "依赖非官方接口和 Discord 令牌，配置步骤涉及浏览器开发者工具；接口变化可能影响可用性。",
+        "evidence": [
+          "Node.js client for the unofficial MidJourney api.",
+          "Use Imagine 、Variation and Upscale",
+          "作者填写的描述：MidJourney client. Unofficial Node.js client"
+        ]
+      }
+    },
+    "HybridRobotics/berkeley-humanoid-lite": {
+      "category": "hardware-iot",
+      "one_liner": "伯克利轻量人形机器人代码库",
+      "intro": {
+        "one_liner": "开源低成本人形机器人代码库",
+        "what_it_is": "这是 Berkeley Humanoid Lite 的工作区，包含策略训练、仿真验证、真机部署、动作捕捉和遥操作控制等功能。",
+        "problem_solved": "它面向低成本、可定制的人形机器人研究，提供从模型资源、仿真环境到真机控制代码的完整工作区。",
+        "who_should_care": "人形机器人研究者、具身智能开发者和想复现低成本机器人平台的团队。",
+        "use_cases": [
+          "训练机器人控制策略",
+          "做仿真到仿真验证",
+          "部署控制代码到真机"
+        ],
+        "alternatives": "强调开源、低成本、三维打印齿轮箱和常用部件，便于获取与定制。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星时达 1,676 星，本周曾有一天登上日榜。",
+        "risk_notes": "项目仍在持续演进；代码与其他资源采用不同许可证，使用资产需留意署名与相同方式共享要求。",
+        "evidence": [
+          "Berkeley Humanoid Lite is an open-source, sub-$5,000 humanoid robot featuring modular 3D-printed gearboxes and widely available components, designed to democratize and advance humanoid robotics research.",
+          "This repository is the workspace for the Berkeley Humanoid Lite project that contains everything we need, including policy training, sim2sim validation, real-world deployment, motion capture, and teleoperated manipulation controls.",
+          "The code in this repository is licensed under [MIT License](https://opensource.org/license/mit). See the [LICENSE](LICENSE) file for details. Other assets are under [Creative Commons Attribution-ShareAlike 4.0 International ](https://creativecommons.org/licenses/by-sa/4.0)."
+        ]
+      }
+    },
+    "b-nnett/grok-bot-0.18-reconstructed": {
+      "category": "desktop-system",
+      "one_liner": "macOS 版 Grok Bot 重构扩展",
+      "intro": {
+        "one_liner": "非官方 Grok Bot 重构",
+        "what_it_is": "这是对 macOS 版 Grok Bot 0.18.0 的非官方源码导向重构与扩展，用 TypeScript 重建桌面运行时，并保留校验固定的已发布界面。",
+        "problem_solved": "它帮助研究已编译桌面应用的组成方式，并提供可审计的构建流程、推理路由、本地用量记录和可选本地 Docker 沙箱。",
+        "who_should_care": "关注桌面应用逆向、Electron 架构和本地推理路由实验的开发者。",
+        "use_cases": [
+          "研究桌面应用模块边界",
+          "切换多种推理后端",
+          "试用本地 Docker 沙箱"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时有一千六百二十星，且一周上过一次日榜。",
+        "risk_notes": "这是 hacking and research project，不是官方版本；推断出的名称和模块边界可能与原始源码不同；需 macOS on Apple Silicon、Node.js 26.5.x 等环境。",
+        "evidence": [
+          "This is a hacking and research project, not Anysphere's original monorepo and not an official Grok Bot release.",
+          "Names and module boundaries inferred from a compiled application may differ from the original source.",
+          "破千时的 Star 数：1620；本周上日榜天数：1"
+        ]
+      }
+    },
+    "JawadTechYT/KHAN-MD": {
+      "category": "automation",
+      "one_liner": "管理群组的 WhatsApp 机器人",
+      "intro": {
+        "one_liner": "WhatsApp 群管理机器人",
+        "what_it_is": "这是一个基于 Baileys 的 WhatsApp 机器人，提供群组设置、贴纸、下载、游戏和网页配对等功能。",
+        "problem_solved": "它用于集中处理群组管理、消息辅助和机器人部署，让使用者通过托管平台或面板运行机器人。",
+        "who_should_care": "想自建 WhatsApp 群机器人、尝试部署面板或研究 Baileys 应用的开发者。",
+        "use_cases": [
+          "管理群组设置",
+          "制作自动贴纸",
+          "通过网页配对设备"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千三百五十八星且本周上过一次日榜。",
+        "risk_notes": "内容声明仅供教育和个人使用，要求保留署名，并提示与 WhatsApp 无关联、误用可能导致封禁。",
+        "evidence": [
+          "A simple WhatsApp bot to manage groups",
+          "Built on Baileys • Designed for Speed • Enhanced for Stability • Powered by Jawad TechX",
+          "This bot is <strong>not affiliated with WhatsApp Inc.</strong><br>\nUse at your own risk. We are <strong>not responsible</strong> for any misuse, abuse, or ban that results from improper use."
+        ]
+      }
+    },
+    "chaseai-yt/claudex-loop": {
+      "category": "ai-agent",
+      "one_liner": "双模型强化编码计划技能",
+      "intro": {
+        "one_liner": "双模型开发审校工作流",
+        "what_it_is": "这是面向 Claude Code 与 Codex 的技能集合，提供任务路由、一次性交接，以及计划评审、实现和最终检查的完整工作流。",
+        "problem_solved": "它让计划在写代码前由另一模型独立审查，并让最终代码由非构建方检查，减少同一模型自评自审的偏差。",
+        "who_should_care": "已同时使用 Claude Code 与 Codex、重视计划与代码复核的开发者。",
+        "use_cases": [
+          "开发前让另一模型审查计划",
+          "实现后由另一模型检查代码",
+          "为单个任务选择模型或交接"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 196 星，且曾有一天进入日榜。",
+        "risk_notes": "完整流程依赖两套命令行工具、登录状态和 Python 3.10 以上；仍有 10 个未关闭问题；模型名称与可用性取决于账户配置。",
+        "evidence": [
+          "Claudex Loop gives a plan an independent review before implementation, then gives the code an independent inspection.",
+          "Both CLIs must be installed and authenticated for the full cross-provider workflow. Python 3.10+ runs the shared adapter; no runtime pip packages or separate API keys are required.",
+          "一周新增 Star：196；未关闭 Issue 数：10"
+        ]
+      }
+    },
+    "zenstory-ai/drama-skills": {
+      "category": "content-media",
+      "one_liner": "AI 短剧漫剧创作技能合集",
+      "intro": {
+        "one_liner": "AI 短剧创作技能集",
+        "what_it_is": "一套装进 Claude Code 与 Codex 的十二个技能，用文件管理短剧从原著、剧本、分镜到提示词、生产、剪辑和审查的流程。",
+        "problem_solved": "把短剧创作拆成可核对的阶段文档，用连续性锁和检查脚本约束跨镜一致性，并要求生成前预览确认。",
+        "who_should_care": "短剧编剧、漫剧工作室、编导，以及用编程 Agent 做生成内容工作流的开发者。",
+        "use_cases": [
+          "把原著拆成分集剧本",
+          "生成分镜与图片视频提示词",
+          "审查剧本和提示词一致性"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星时有一千零七十三星，本周上日榜一天。",
+        "risk_notes": "需要 Claude Code、Codex 或兼容技能规范的环境；剪辑另需 ffmpeg 与 ffprobe；生产依赖外部接口，凭据和供应商适配需自行处理。",
+        "evidence": [
+          "AI 短剧/漫剧创作 skill 合集，覆盖剧本、资产、分镜、图片/视频提示词到独立审查全链路，适配 Claude Code 与 Codex。",
+          "Drama Skills 覆盖 AI 短剧 / 漫剧从点子或原著到成片的全流程：**原著分析 → 分集剧本 → 视觉设定 →\n  图片提示词与分镜 → 视频提示词 → 确认后生产 → 剪辑成片 → 审查**。",
+          "**先预览、确认，再生产** — 任何图片、视频、配音或音乐任务，都先在文件里看到这一批准确的内容和参数，\n  明确确认后才调用外部接口花钱。"
+        ]
+      }
+    },
+    "imwangfan/SnowAdmin": {
+      "category": "web-frontend",
+      "one_liner": "Vue3 后台管理框架",
+      "intro": {
+        "one_liner": "Vue3 后台管理模板",
+        "what_it_is": "SnowAdmin 是基于 Vue3、TypeScript、Vite7、Pinia 和 Arco.Design 的开源后台管理框架，内置主题、权限、路由和常用页面组件。",
+        "problem_solved": "它提供开箱即用的后台管理解决方案，减少从零搭建布局、权限、国际化、代码规范和页面组件的工作。",
+        "who_should_care": "需要快速搭建中后台前端，或学习前沿前端技术实践的开发者。",
+        "use_cases": [
+          "快速启动后台管理系统",
+          "实现角色与按钮权限控制",
+          "学习前端工程化实践"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "资料未提供许可证类型；预览和文档以地址形式给出，稳定性未知；未说明生产环境验证情况。",
+        "evidence": [
+          "SnowAdmin 是一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite7, TypeScript, Pinia。",
+          "内置RBAC角色权限模型，实现路由、角色、按钮权限访问控制",
+          "破千时的 Star 数：1055；本周上日榜天数：1"
+        ]
+      }
+    },
+    "tobi/walgit": {
+      "category": "other",
+      "one_liner": "用途不明的 Rust 项目",
+      "intro": {
+        "one_liner": "对象存储版 Git 服务",
+        "what_it_is": "walgit 是用 Rust 编写的单二进制 Git 服务，把对象存储中的预写日志作为仓库真源，提供智能 HTTP、Git LFS、网页界面和接口。",
+        "problem_solved": "它试图降低自建 Git 托管对数据库、主节点和本地磁盘的依赖，让多台无状态实例共享同一批仓库，并支持超过本机容量的仓库。",
+        "who_should_care": "自建代码托管、超大仓库维护者和对象存储运维开发者。",
+        "use_cases": [
+          "用对象存储托管 Git 仓库",
+          "多台无状态实例共同服务",
+          "为超大仓库提供浏览与拉取"
+        ],
+        "alternatives": "以对象存储预写日志和清单比较并交换替代数据库、主节点与固定副本集协调。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,270 星且仅一天上日榜。",
+        "risk_notes": "创建时间很短，未关闭 Issue 有 69 个；包文件迁移移除了运行时，部分客户端与大仓库性能仍是发布门槛。",
+        "evidence": [
+          "walgit hosts git repositories with **no database, no leader and no local state that matters**.",
+          "A push is stored as an immutable object in the bucket and becomes visible only when a tiny manifest is rewritten with a compare-and-swap.",
+          "**Packfile migration:** bundle runtime has been removed."
+        ]
+      }
+    }
+  }
+}

@@ -1,1 +1,758 @@
-{"date":"2026-06-26","headline":"AI Agent项目领跑今日热度","points":["AI Agent有9个、AI模型有5个，cobusgreyling/loop-engineering获893新增星标。","aws/agent-toolkit-for-aws把官方工具包带向AI代理构建，获127新增星标。","Python与TypeScript各8个；thanglequoc/vietnamese-provinces-database获362新增星标。"],"items":{"cobusgreyling/loop-engineering":{"category":"ai-agent","one_liner":"AI编码代理循环工程工具集"},"thanglequoc/vietnamese-provinces-database":{"category":"data-finance","one_liner":"越南行政区划SQL数据集"},"aws/agent-toolkit-for-aws":{"category":"ai-agent","one_liner":"AWS官方AI代理构建工具包"},"vorssaint/vorssaint-utils":{"category":"desktop-system","one_liner":"macOS菜单栏系统工具箱"},"tiantianGPU/reg-factory":{"category":"automation","one_liner":"谷歌邮箱注册自动化工具"},"TestSprite/testsprite-cli":{"category":"dev-tools","one_liner":"终端里的AI自动化测试CLI"},"12britz/awesome-free-models":{"category":"ai-model","one_liner":"免费AI模型与API清单"},"voocel/ainovel-cli":{"category":"ai-agent","one_liner":"多代理全自动小说生成器"},"laishiwen/sven-family":{"category":"ai-agent","one_liner":"AI原生创作运营套件"},"vinvcn/mattpocock-skills-zh-CN":{"category":"learning-resource","one_liner":"skills项目简体中文本地化"},"lyra81604/zhengxi-views":{"category":"data-finance","one_liner":"可溯源基金投研代理技能"},"Wangnov/codex-app-mirror":{"category":"dev-tools","one_liner":"Codex桌面应用校验镜像"},"tsingyuai/scientify":{"category":"ai-agent","one_liner":"端到端自动科研工作流"},"tophant-ai/promptbeat":{"category":"security","one_liner":"AI安全红队测试工具"},"Ch1rpy2613/Mirrai":{"category":"other","one_liner":"用途未明的TypeScript项目"},"lee-to/ai-factory":{"category":"ai-agent","one_liner":"AI开发上下文工作流生成器"},"Michaelliv/pi-dynamic-workflows":{"category":"other","one_liner":"用途未明的动态工作流项目"},"hanruihua/NeuPAN":{"category":"ai-model","one_liner":"端到端机器人导航模型"},"aegra/aegra":{"category":"ai-agent","one_liner":"自托管AI代理后端平台"},"yeates/PromptFix":{"category":"ai-model","one_liner":"提示词驱动照片修复模型"},"mikepenz/multiplatform-markdown-renderer":{"category":"mobile","one_liner":"Kotlin多平台Markdown渲染器"},"HumeAI/tada":{"category":"ai-model","one_liner":"开源语音语言模型"},"sidequestjs/sidequest":{"category":"dev-tools","one_liner":"免Redis的Node后台任务库"},"Aliothmoon/MAA-Meow":{"category":"game","one_liner":"明日方舟安卓日常助手"},"sematic-ai/sematic":{"category":"ai-model","one_liner":"开源机器学习流水线平台"},"Casvt/Kapowarr":{"category":"content-media","one_liner":"漫画库构建管理工具"},"numman-ali/n-skills":{"category":"ai-agent","one_liner":"AI代理插件精选市场"},"xberg-io/xberg":{"category":"dev-tools","one_liner":"多语言文档智能提取框架"},"nolabs-ai/nono":{"category":"security","one_liner":"秒级AI代理沙箱工具"},"sumelabs/clawra":{"category":"ai-agent","one_liner":"Openclaw陪伴式代理"},"yuiamoroll/EldenRingSeamlessCoopRelease":{"category":"game","one_liner":"艾尔登法环无缝联机发布"}}}
+{
+  "date": "2026-06-26",
+  "headline": "AI Agent项目领跑今日热度",
+  "points": [
+    "AI Agent有9个、AI模型有5个，cobusgreyling/loop-engineering获893新增星标。",
+    "aws/agent-toolkit-for-aws把官方工具包带向AI代理构建，获127新增星标。",
+    "Python与TypeScript各8个；thanglequoc/vietnamese-provinces-database获362新增星标。"
+  ],
+  "items": {
+    "cobusgreyling/loop-engineering": {
+      "category": "ai-agent",
+      "one_liner": "AI编码代理循环工程工具集",
+      "intro": {
+        "one_liner": "AI 编码代理的循环工程模式库与 CLI",
+        "what_it_is": "一个面向 AI 编码代理的「循环工程」模式库、起始模板与 CLI 工具集，提供 daily-triage、PR Babysitter、CI Sweeper 等可复用循环模式，以及 loop init、loop doctor、loop cost 等命令。",
+        "problem_solved": "把「手动逐条写 prompt 驱动代理」转变为「设计一个能发现任务、分派给代理、验证结果并持久化状态的循环系统」，并给出分级上线（L1 报告 → L2 辅助 → L3 无人值守）与成本评估方法。",
+        "who_should_care": "使用 Claude Code、Codex、Grok、Opencode 等编码代理维护代码仓库的开发者与团队，尤其是希望把 issue 分诊、PR 跟进、CI 修复、依赖升级等重复工作自动化的工程团队。",
+        "use_cases": [
+          "仓库日常健康维护：issue、CI、依赖的每日分诊",
+          "PR 落地与持续跟进（PR Babysitter）",
+          "在 GitHub Actions 中以极少文件运行轻量循环（thin loop）",
+          "CI 失败清扫与依赖补丁升级",
+          "Changelog 草拟与合并后清理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 AI 编码代理的编排方法论正快速升温，但项目创建于 2026-06 且 README 自述 token 成本可能爆炸、无人值守循环会犯无人值守的错误，方法论本身仍在成型。",
+        "risk_notes": "README 明确提示 token 成本可能急剧上升、无人值守循环会带来无人值守的错误；项目较新（2026-06 创建），fork 数（1574）与 star 数（2562）比例偏高，需自行判断社区热度真实性；companion 仓库被作者建议在循环真正跑起来前不要引入。",
+        "evidence": [
+          "Stop prompting. Design the loop. Get a score.",
+          "Loop engineering amplifies judgment. Token costs can explode. Unattended loops make unattended mistakes.",
+          "Roll out L1 report → L2 assisted → L3 unattended only after the verifier has been right for a week."
+        ]
+      }
+    },
+    "thanglequoc/vietnamese-provinces-database": {
+      "category": "data-finance",
+      "one_liner": "越南行政区划SQL数据集",
+      "intro": {
+        "one_liner": "越南行政区划数据集",
+        "what_it_is": "提供越南省份、区县、坊社等行政单位数据，含多种数据库格式，以及地理信息和邮政编码附加数据。",
+        "problem_solved": "把分散且会随政令调整的行政区划整理成可直接导入的数据集，便于应用统一查询和维护。",
+        "who_should_care": "开发越南地址、物流、表单、地图或本地化业务的开发者。",
+        "use_cases": [
+          "地址级联选择",
+          "导入行政区划基础表",
+          "结合地理信息做检索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 64 星，并曾进入日榜一天。",
+        "risk_notes": "数据依据政府统计网站接口整理，作者声明与越南政府无关；行政区划会随政令调整，需关注版本更新。",
+        "evidence": [
+          "A complete SQL (and also non-SQL) databases of Vietnamese administrative units, includes all **34 Vietnamese provinces** and associated districts, wards sub-divisions.",
+          "The author(s) of this repository is not associated with the **General Statistics Office of Vietnam**, nor the Vietnamese government.",
+          "一周新增 Star：64"
+        ]
+      }
+    },
+    "aws/agent-toolkit-for-aws": {
+      "category": "ai-agent",
+      "one_liner": "AWS官方AI代理构建工具包",
+      "intro": {
+        "one_liner": "AWS 官方 AI 编码代理工具包",
+        "what_it_is": "AWS 官方维护的 MCP servers、skills 与 plugins 集合，为 AI 编码代理提供在 AWS 上构建、部署和管理应用所需的工具、知识与护栏。",
+        "problem_solved": "让 Claude Code、Codex、Cursor、Devin、Kiro、fx 等编码代理能够正确使用 AWS 服务，避免代理缺少 AWS 领域知识与安全约束。",
+        "who_should_care": "使用 AI 编码代理开发并部署 AWS 应用的开发者、DevOps 与平台团队。",
+        "use_cases": [
+          "让编码代理完成 AWS 服务选型、CDK/CloudFormation 与无服务器部署",
+          "基于 Amazon Bedrock 与 AgentCore 构建 AI agent",
+          "用 S3 Tables、Glue、Athena 搭建数据湖与 ETL 流程",
+          "借助 DevOps Agent 与 Security Agent 做事故排查、代码审查与漏洞扫描"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：MCP 与 agent skills 正成为编码代理接入云平台的标准方式，且由 AWS 官方支持维护。",
+        "risk_notes": "需本地配置 AWS 凭证与 uv 才能调用 API 和脚本执行；部分插件需从本仓库 marketplace 安装，官方 marketplace 未覆盖全部插件。",
+        "evidence": [
+          "Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS",
+          "The Agent Toolkit for AWS gives AI coding agents the tools, knowledge, and guardrails they need to work with AWS services.",
+          "An AWS account with credentials configured locally is required for API calls and script execution, but not for documentation search or skill discovery."
+        ]
+      }
+    },
+    "vorssaint/vorssaint-utils": {
+      "category": "desktop-system",
+      "one_liner": "macOS菜单栏系统工具箱",
+      "intro": {
+        "one_liner": "macOS 菜单栏工具箱",
+        "what_it_is": "这是一个用 Swift 编写的免费开源 macOS 菜单栏工具集，按功能选择安装，把音量、监控、窗口、剪贴板等工具集中到一个图标里。",
+        "problem_solved": "它把 Mac 用户通常分别购买或安装的多类小工具整合起来，减少订阅、账号和多个常驻应用，并允许只启用自己需要的功能。",
+        "who_should_care": "想集中管理音量、窗口、系统状态和效率工具的 macOS 用户。",
+        "use_cases": [
+          "按应用调音量或切换输出设备",
+          "查看系统状态与菜单栏读数",
+          "管理窗口切换、吸附和程序坞预览"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 42 星，且本周上过一天日榜。",
+        "risk_notes": "采用 GPL-3.0；风扇控制标为测试版；麦克风静音明确不是隐私锁，部分应用仍可能听到声音。",
+        "evidence": [
+          "Free open-source macOS menu bar toolkit. Per-app volume mixer, system monitor, dock-preview, keep awake, window switcher (Alt Tab), shelf, app uninstaller, and much more.",
+          "One menu bar icon doing the job of a dozen paid Mac apps.<br>\nInstall only what you use.",
+          "Fan Control (beta).",
+          "Siri and some apps may still hear you; Mic Mute is not a privacy lock."
+        ]
+      }
+    },
+    "tiantianGPU/reg-factory": {
+      "category": "automation",
+      "one_liner": "谷歌邮箱注册自动化工具",
+      "intro": {
+        "one_liner": "账号注册控制台",
+        "what_it_is": "这是一个用 Python 编写的本地控制台，整合邮箱注册、平台授权、凭据导出、下游导入和命令行入口。",
+        "problem_solved": "它把多个平台的注册、授权、资产领取、号池扫描和网络出口配置集中到一处，减少分散操作。",
+        "who_should_care": "做授权测试、浏览器自动化和本地账号资产管理的开发者。",
+        "use_cases": [
+          "批量注册并导出账号",
+          "管理本地邮箱与凭据池",
+          "配置代理和浏览器环境"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 19 星且仅一天进入日榜。",
+        "risk_notes": "涉及账号、Cookie、Token 等敏感凭据；资料要求仅用于学习、开发和经授权测试；接口状态受网络、出口和目标服务风控影响。",
+        "evidence": [
+          "邮箱注册、平台授权、凭据导出与下游导入的一体化本地控制台",
+          "项目将 Outlook 邮箱、ChatGPT、Grok、Claude、Kiro 注册，Codex OAuth、账号导出和下游导入整合到同一个 Web 控制台，同时保留可组合的命令行入口。",
+          "仅用于学习、开发和经授权的测试。密钥、账号、Cookie、Token 和运行日志均应保留在本机，不要提交到仓库。"
+        ]
+      }
+    },
+    "TestSprite/testsprite-cli": {
+      "category": "dev-tools",
+      "one_liner": "终端里的AI自动化测试CLI",
+      "intro": {
+        "one_liner": "AI 驱动的终端自动化测试 CLI",
+        "what_it_is": "TestSprite 官方 CLI，基于 TypeScript 编写，把 TestSprite 的 AI 测试平台接入终端和编码 agent，让 agent 像真实用户一样操作应用并验证行为。",
+        "problem_solved": "解决 AI 快速产出代码但缺乏验证的问题：agent 写完代码后自行运行测试，拿到一份自洽的失败信息包，据此修复代码，避免 bug 交付到用户手中。",
+        "who_should_care": "使用 Claude Code、Cursor、Codex、Cline 等编码 agent 的开发者，以及需要在前端、后端做端到端测试的 QA 和 CI 团队。",
+        "use_cases": [
+          "编码 agent 交付功能后自动创建并运行 E2E 测试，失败后读取失败信息包并修复",
+          "在 CI 中以非交互方式（--from-env --yes）接入测试验证流程",
+          "让 TestSprite 探索已部署应用并自动生成测试计划，人工审核后转为正式测试"
+        ],
+        "alternatives": "README 未与其他测试工具做直接对比，仅强调以真实运行的产品（而非 mock）为测试对象，并面向编码 agent 输出单一自洽的失败信息包；具体差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：定位为 agentic coding 的验证层，契合 AI 编码 agent 热潮，但项目创建时间短、open issues 较多（196），长期价值待观察。",
+        "risk_notes": "依赖 TestSprite 云端平台与 API key，测试生成按 workspace credits 计费；README 明确请求 Star，存在引导刷星倾向；open issues 196 相对偏高。",
+        "evidence": [
+          "AI ships code in minutes — verifying it hasn't. `testsprite` opens your live app, uses it like a real user",
+          "the agent verifies every behavior it ships, and what broke comes back as **one self-consistent bundle** it can act on",
+          "Generation spends workspace credits per stage that actually runs"
+        ]
+      }
+    },
+    "12britz/awesome-free-models": {
+      "category": "ai-model",
+      "one_liner": "免费AI模型与API清单",
+      "intro": {
+        "one_liner": "免费 AI 资源清单",
+        "what_it_is": "这是一个精选清单，汇总可免费使用的 AI 模型、接口和工具，覆盖开放权重模型、免费接口、本地推理工具等分类。",
+        "problem_solved": "它帮助开发者查找无需付费即可使用的模型、接口和工具，并标注链接核验与免费额度变化，减少筛选成本。",
+        "who_should_care": "想低成本试用模型、搭建本地推理或寻找免费接口的开发者。",
+        "use_cases": [
+          "查找可自托管的开放权重模型",
+          "挑选提供免费额度的模型接口",
+          "寻找本地推理与聊天界面工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,070 星且曾上日榜。",
+        "risk_notes": "部分免费额度已改为试用或终止；部分链接自动检查不可达或需认证；清单内容依赖持续核验。",
+        "evidence": [
+          "A curated list of free AI models, APIs, and tools you can use without paying a cent.",
+          "Running AI shouldn't require a credit card. This list curates genuinely free models — open-weight models you can self-host, free API tiers from major providers, and tools to run everything locally.",
+          "Corrections this run: ZeroLimitAI free tier is a 3-day trial only ($99 lifetime); AI21 trial is $10/7 days; Cerebras free tier replaced with $5/30-day trial requiring payment method; Chutes.ai free tier ended"
+        ]
+      }
+    },
+    "voocel/ainovel-cli": {
+      "category": "ai-agent",
+      "one_liner": "多代理全自动小说生成器",
+      "intro": {
+        "one_liner": "全自动长篇小说生成引擎",
+        "what_it_is": "一个用 Go 编写的命令行工具，通过确定性引擎调度多个智能体，从一句话需求生成完整长篇小说。",
+        "problem_solved": "它试图解决长篇生成中规划空洞、上下文断裂和流程难恢复的问题，提供滚动规划、分层摘要与断点恢复。",
+        "who_should_care": "想批量生成长篇小说、研究多智能体编排或自动化写作流程的开发者。",
+        "use_cases": [
+          "一句话生成长篇小说",
+          "服务器后台持续写作",
+          "长篇上下文与评审实验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 45 星且曾上日榜。",
+        "risk_notes": "创建于 2026 年，未关闭问题 23 个；功能依赖多家模型服务，长篇质量与成本需自行验证。",
+        "evidence": [
+          "✨多agent实现全自动AI小说生成",
+          "全自动 AI 长篇小说创作引擎。确定性引擎跑完整本书，模型在每个需要判断的位置被精确使用：Engine 按事实路由驱动 Architect / Writer / Editor 三个自主创作代理，语义裁定按需唤醒 Arbiter。从一句话需求到完整小说，全程无需人工干预。",
+          "Step 级断点恢复 — 每个工具执行成功后写入 checkpoint，崩溃后精确到 plan/draft/check/commit 步骤级恢复"
+        ]
+      }
+    },
+    "laishiwen/sven-family": {
+      "category": "ai-agent",
+      "one_liner": "AI原生创作运营套件",
+      "intro": {
+        "one_liner": "AI 原生产品套件",
+        "what_it_is": "这是一套把创作、协作、发布和运营连成一体的人工智能原生产品套件，包含可视化工作流、社区、站点、管理后台、采集与统计服务。",
+        "problem_solved": "它试图把内容生成、分发、治理和数据分析放到同一平台，减少多个应用与服务分散搭建和切换的成本。",
+        "who_should_care": "关注多应用全栈架构、人工智能工作流和内容平台开发的开发者。",
+        "use_cases": [
+          "搭建可视化人工智能工作流",
+          "运营社区与内容发布站点",
+          "统一管理用户、内容和数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾上日榜一天，但一周新增为零。",
+        "risk_notes": "创建时间较新，未关闭问题仍有两项；一周新增为零，热度持续性不明；涉及多服务部署，本地运行依赖较多。",
+        "evidence": [
+          "Sven Family is an AI-native product suite that connects creation, collaboration, publishing, and operations into one integrated platform.",
+          "Sven Family combines four product experiences with shared backend services:",
+          "创建日期：2026-05-08；最近一次提交：2026-06-26；一周新增 Star：0；本周上日榜天数：1；未关闭 Issue 数：2"
+        ]
+      }
+    },
+    "vinvcn/mattpocock-skills-zh-CN": {
+      "category": "learning-resource",
+      "one_liner": "skills项目简体中文本地化",
+      "intro": {
+        "one_liner": "中文版工程技能集",
+        "what_it_is": "这是 mattpocock/skills 的第三方简体中文本地化仓库，提供可安装到多种编码智能体的小型、可改、可组合技能。",
+        "problem_solved": "帮助中文用户降低阅读和提示词理解成本，并改善智能体需求对齐、术语统一、测试反馈和调试流程。",
+        "who_should_care": "使用编码智能体、希望用中文技能说明的开发者。",
+        "use_cases": [
+          "安装中文技能到编码智能体",
+          "变更前与智能体对齐需求",
+          "用测试循环辅助改代码"
+        ],
+        "alternatives": "相比上游英文原版，增加中文说明、定期同步和 DeepSeek Harness 插件安装。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 43 星且曾上日榜。",
+        "risk_notes": "第三方非官方本地化；安装方式二选一，重复安装会导致技能重复；内容按刷新同步，不同步上游历史。",
+        "evidence": [
+          "这是 mattpocock/skills 的简体中文本地化版本。",
+          "第三方简体中文本地化，非官方仓库。这些 agent skills 是他每天用于真实工程工作的，不是 vibe coding：小、易改、可组合，适用于任何模型。",
+          "skills.sh 与 plugin 方式每个 agent 只选其一：两种都装会让每个 skill 被安装两次。"
+        ]
+      }
+    },
+    "lyra81604/zhengxi-views": {
+      "category": "data-finance",
+      "one_liner": "可溯源基金投研代理技能",
+      "intro": {
+        "one_liner": "郑希观点溯源技能",
+        "what_it_is": "一个 Python 编写的 Agent Skill，汇总郑希公开观点原文、方法框架和基金数据，用于溯源问答、观点对照与基金评分。",
+        "problem_solved": "减少 AI 凭印象编造基金经理观点的问题，让回答能回到原话出处；也支持按方法框架推演，并标明非本人观点。",
+        "who_should_care": "研究基金经理观点、做基金比较，或需要可溯源投研问答的开发者。",
+        "use_cases": [
+          "查郑希对某方向的原话",
+          "对照观点与真实持仓业绩",
+          "按其框架给基金打分"
+        ],
+        "alternatives": "相比方法论类技能，更强调原话语料、出处引用和不杜撰约束。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 25 星，曾有一天进入日榜。",
+        "risk_notes": "仅供研究与学习辅助，不构成投资建议；实时抓取和评分依赖 Python 与联网，部分工具环境可能受限。",
+        "evidence": [
+          "可溯源的郑希(易方达基金经理)投研 Agent Skill——基于他全部公开观点原文 + 有原话佐证的投资方法 + 全市场基金真实数据，能溯源问答、按他框架给基金打分，绝不杜撰。⚠️仅研究学习辅助，不构成投资建议‼️website是郑希主页！",
+          "很多关于\"某基金经理怎么看 X\"的回答，听起来头头是道，其实是模型凭印象编的——查无此言。这个 skill 解决的就是这个问题：它的根基是**郑希（易方达权益投资管理部副总经理、基金经理）本人留下的原始文本**，任何结论都能追溯到\"哪一年、哪一篇、原话是什么\"。",
+          "**⚠️ 仅供研究与学习辅助，不构成投资建议。**"
+        ]
+      }
+    },
+    "Wangnov/codex-app-mirror": {
+      "category": "dev-tools",
+      "one_liner": "Codex桌面应用校验镜像",
+      "intro": {
+        "one_liner": "官方 Codex 桌面应用的可校验镜像",
+        "what_it_is": "这是一个面向 OpenAI Codex 桌面应用的安装包镜像与分发项目：它把官方 Windows MSIX 与 macOS DMG 原样发布到 GitHub Release，并额外提供 macOS Sparkle 增量更新源。",
+        "problem_solved": "解决在 Microsoft Store 或官方渠道下载不便时，用户难以稳定获取安装包的问题；它提供国内可达、带 SHA256 校验的下载渠道，并支持 macOS 增量更新。",
+        "who_should_care": "中国大陆等官方下载受限地区的 Codex 桌面应用用户，以及需要稳定分发与更新后端的下游客户端开发者。",
+        "use_cases": [
+          "手动下载 Windows MSIX 或 macOS DMG 安装包",
+          "通过 CDN 短链按地域自动选路下载最新版",
+          "下游客户端订阅 Sparkle appcast 实现 macOS 增量自动更新"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：官方应用分发受限地区的镜像与增量更新基础设施有持续需求，但项目本身依赖上游官方包，属于配套工具。",
+        "risk_notes": "项目仅做原样镜像，不构建、不修改、不重打包；Windows 从 Codex 26.915 起安装需管理员权限，且受组织策略限制的设备无法绕过；README 含赞助商与外部链接，需自行甄别。",
+        "evidence": [
+          "项目仅做镜像，不构建、不修改、不重打包",
+          "每个 Release 附 `SHA256SUMS.txt` 与 `release-manifest.json` 上游指纹",
+          "Cloudflare Cron 主调度 + GitHub Actions 6 小时兜底，上游一变就发版"
+        ]
+      }
+    },
+    "tsingyuai/scientify": {
+      "category": "ai-agent",
+      "one_liner": "端到端自动科研工作流",
+      "intro": {
+        "one_liner": "端到端 AI 科研系统",
+        "what_it_is": "Scientify 是一个端到端自主演进的 AI 科研系统，围绕研究目标组织文献调研、假设生成、代码实现、审查和实验验证。",
+        "problem_solved": "它试图把科研流程自动化并持续迭代，让实验结果沉淀为下一轮经验，减少人工串联文献、代码、实验和修正方向的负担。",
+        "who_should_care": "关注 AI 辅助科研、多智能体研究流程和自动化实验的开发者与研究者。",
+        "use_cases": [
+          "设定目标后自动开展研究",
+          "多轮实验后修正研究方向",
+          "集中保存文献代码与结果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且曾上日榜，但一周新增仅 10 星。",
+        "risk_notes": "创建于 2026 年，资料宣称达到 SOTA 水平、论文被 ICML 2026 录用及大幅降本，需谨慎核验；有 6 个未关闭 Issue。",
+        "evidence": [
+          "给 Scientify 一个研究目标，它会自主完成文献调研、假设生成、代码实现、审查和实验验证，并根据结果持续修正研究方向。",
+          "Scientify 在隔离云电脑中持续执行研究任务，文献、代码、数据和实验结果保存在同一工作区。",
+          "一周新增 Star：10；本周上日榜天数：1"
+        ]
+      }
+    },
+    "tophant-ai/promptbeat": {
+      "category": "security",
+      "one_liner": "AI安全红队测试工具",
+      "intro": {
+        "one_liner": "生成式 AI 安全评测工具",
+        "what_it_is": "AI Beat 把场景设计、对抗用例、目标执行、判定和证据整理成可复现的评测流程，包含 PromptBeat 与 AgentBeat。",
+        "problem_solved": "它用于检验大模型、检索增强应用、接口和智能体在对抗场景下是否安全，并保留回答之外的执行证据。",
+        "who_should_care": "做大模型应用、智能体和安全测试的开发者。",
+        "use_cases": [
+          "评测聊天模型安全表现",
+          "比较多个模型的安全结果",
+          "检查智能体执行轨迹"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨了 6 星，且只上过一天日榜。",
+        "risk_notes": "创建日期与最近提交日期晚于当前时间；未关闭问题 5 个，分叉 10 个；本地探针结果被说明为合成分数，只证明接线可用。",
+        "evidence": [
+          "Security evaluation for generative AI, with evidence from answer to action.",
+          "AI Beat brings scenario design, adversarial cases, target execution, judgment, and evidence into one reproducible evaluation workflow.",
+          "Both stubs are fixed responses, so the score is synthetic and proves only the wiring."
+        ]
+      }
+    },
+    "Ch1rpy2613/Mirrai": {
+      "category": "other",
+      "one_liner": "用途未明的TypeScript项目",
+      "intro": {
+        "one_liner": "聊天记录数字分身",
+        "what_it_is": "上传聊天记录，用 AI 重建对方语气、记忆与情感状态的数字分身，支持本地存储和多家模型服务。",
+        "problem_solved": "帮助人处理不在身边、失去联系或告别后的情感表达，并提供可休眠的毕业机制。",
+        "who_should_care": "想整理聊天记忆、体验 AI 陪伴或完成告别的人。",
+        "use_cases": [
+          "用旧聊天记录重建对话",
+          "记录心情与关系变化",
+          "通过告别信完成告别"
+        ],
+        "alternatives": "强调毕业机制、双方建模、记忆来源可见，以及微信和飞书通道。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,093 星且上过一次日榜。",
+        "risk_notes": "涉及私人聊天记录与情感依赖；微信通道需特定版本且正在灰度放量；第四阶段清单明确多项尚未实现。",
+        "evidence": [
+          "上传聊天记录，AI 重建 TA 的数字分身 — 用 TA 的语气回你消息，用 TA 的方式撒娇，知道 TA 什么时候会突然变冷漠。",
+          "所有数据本地存储，12 家 LLM 提供商即插即用，还有一个同类产品没有的东西：**毕业机制** — 它不是让你留下，是帮你好好告别。",
+          "这一份是**缺口分析**，不是施工计划。清单上的每一项都还没有实现。"
+        ]
+      }
+    },
+    "lee-to/ai-factory": {
+      "category": "ai-agent",
+      "one_liner": "AI开发上下文工作流生成器",
+      "intro": {
+        "one_liner": "AI 开发环境初始化工具",
+        "what_it_is": "AI Factory 用一条命令为项目安装技能、配置集成，并提供计划、实现、修复、文档等开发工作流。",
+        "problem_solved": "它想减少搭建 AI 编程上下文、提示词和工作流的时间，让智能体按计划完成可审查的开发任务。",
+        "who_should_care": "使用多种 AI 编程智能体、希望统一项目工作流的开发者。",
+        "use_cases": [
+          "初始化 AI 开发环境",
+          "按计划实现功能",
+          "生成文档与持续集成配置"
+        ],
+        "alternatives": "强调零配置、规范驱动、多智能体支持和技能生态，差异信息有限。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周新增 7 星且仅一天进入日榜。",
+        "risk_notes": "创建于 2026 年，资料未提供稳定版本或生产案例；仅安装技能时不含命令行工具、自动配置和交互向导。",
+        "evidence": [
+          "One command. Full AI-powered development environment.",
+          "Spec-driven development — AI follows plans, not random exploration. Predictable, resumable, reviewable",
+          "This installs only the skill files. CLI commands (`ai-factory init/update/upgrade`), MCP auto-configuration, agent transformers, and the interactive wizard are **not** available."
+        ]
+      }
+    },
+    "Michaelliv/pi-dynamic-workflows": {
+      "category": "other",
+      "one_liner": "用途未明的动态工作流项目",
+      "intro": {
+        "one_liner": "Pi 动态工作流扩展",
+        "what_it_is": "这是给 Pi 增加 workflow 工具的扩展，让模型编写 JavaScript 脚本，把任务分发给多个隔离子代理并汇总结果。",
+        "problem_solved": "它解决单个助手顺序处理复杂任务效率低的问题，适合需要并行审查、重构和研究的场景。",
+        "who_should_care": "使用 Pi 做代码库分析、批量重构或多视角评审的开发者。",
+        "use_cases": [
+          "代码库审计与模块梳理",
+          "多视角代码评审",
+          "大规模重构与并行研究"
+        ],
+        "alternatives": "unknown",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，一周涨了 1,002 星且曾上日榜，但仍是原型。",
+        "risk_notes": "状态为原型；尚不支持持久化、可恢复运行和工作流管理器；沙箱限制较多，部分 JavaScript 能力不可用。",
+        "evidence": [
+          "This is a prototype. It implements the core workflow primitive (script, subagents, parallel/pipeline, phases, abort, structured output) but does not yet implement persisted or resumable runs, or a `/workflows` manager.",
+          "A Pi extension that adds a `workflow` tool. Instead of one assistant doing everything sequentially, the model writes a small JavaScript script that fans out the work across many isolated subagents, then synthesizes the results.",
+          "Great for codebase audits, multi-perspective review, large refactors, and fan-out research."
+        ]
+      }
+    },
+    "hanruihua/NeuPAN": {
+      "category": "ai-model",
+      "one_liner": "端到端机器人导航模型",
+      "intro": {
+        "one_liner": "端到端点机器人导航规划器",
+        "what_it_is": "NeuPAN 是基于模型学习和 MPC 的点机器人运动规划器，可直接把障碍物点数据映射为控制动作，主要用 Python 实现。",
+        "problem_solved": "它面向杂乱、未知环境中的避障导航，减少中间模块带来的误差传播，并通过带避碰约束的数学优化生成动作。",
+        "who_should_care": "做机器人导航、运动规划和避障的开发者与研究者。",
+        "use_cases": [
+          "仿真中验证差速、阿克曼和全向机器人导航",
+          "处理非凸、动态障碍物的避障规划",
+          "结合全局规划器做路径跟随与部署"
+        ],
+        "alternatives": "相比传统模块化规划器和端到端学习策略，强调直接处理障碍点、少量训练数据和避碰约束。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天登上日榜。",
+        "risk_notes": "改变机器人尺寸需重新训练 DUNE 模型；求解器不支持 GPU，运行建议使用 CPU；存在当前限制章节。",
+        "evidence": [
+          "[TRO 2025] NeuPAN: Direct Point Robot Navigation with End-to-End Model-based Learning.",
+          "**NeuPAN** (Neural Proximal Alternating-minimization Network) is an **end-to-end**, **real-time**, **map-free**, and **easy-to-deploy** MPC based robot motion planner.",
+          "Since the optimization solver cvxpy is not supported on GPU, we recommend using the CPU device to run the NeuPAN algorithm."
+        ]
+      }
+    },
+    "aegra/aegra": {
+      "category": "ai-agent",
+      "one_liner": "自托管AI代理后端平台",
+      "intro": {
+        "one_liner": "自托管智能体后端",
+        "what_it_is": "Aegra 是开源的 LangSmith Deployments 替代方案，用 FastAPI、PostgreSQL 和 Redis 提供自托管的 LangGraph 智能体后端。",
+        "problem_solved": "让已有 LangGraph 代码可在自有基础设施运行，并提供持久化、流式输出、认证、定时任务和可观测性。",
+        "who_should_care": "想自托管 LangGraph 智能体、保留数据控制权的开发者和团队。",
+        "use_cases": [
+          "迁移现有 LangGraph 部署",
+          "搭建私有智能体服务",
+          "运行定时智能体任务"
+        ],
+        "alternatives": "相比托管部署，强调自有数据库、自托管、Apache-2.0 和同一套 LangGraph SDK。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星后一周只涨了 5 星，且仅一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 162 个；创建于 2025 年，项目较新；生产成熟度无法确认。",
+        "evidence": [
+          "Open source alternative to LangGraph Platform (now LangSmith Deployments) - Self-hosted AI agent backend with FastAPI and PostgreSQL. Zero vendor lock-in, full control over your agent infrastructure.",
+          "Aegra is a drop-in replacement for LangSmith Deployments. Use the same LangGraph SDK, same APIs, but run it on your own infrastructure with PostgreSQL persistence.",
+          "Self-hosted | Enterprise only (license key required) | Always (Apache 2.0)"
+        ]
+      }
+    },
+    "yeates/PromptFix": {
+      "category": "ai-model",
+      "one_liner": "提示词驱动照片修复模型",
+      "intro": {
+        "one_liner": "指令驱动图像修复",
+        "what_it_is": "PromptFix 是基于扩散模型的图像修复研究实现，提供预训练权重、训练与推理代码，以及配套训练数据集。",
+        "problem_solved": "让用户用文字指令处理退化图像，去除不需要的元素，并尽量保留原图结构。",
+        "who_should_care": "关注图像修复、扩散模型和低层视觉研究的开发者与研究者。",
+        "use_cases": [
+          "按指令去除水印或物体",
+          "修复模糊、雾霾、雪景",
+          "图像上色与暗光增强"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾有一天进入日榜。",
+        "risk_notes": "明确仅供学术和研究用途；数据集及训练模型不得用于商业目的；使用需自行承担风险。",
+        "evidence": [
+          "This repository provides the official PyTorch implementation of **PromptFix**, including pre-trained weights, training and inference code, and our curated dataset used for training.",
+          "📢 **PromptFix** is designed to follow human instructions to process degraded images and remove unwanted elements.",
+          "Furthermore, you acknowledge and agree that neither the dataset nor any models trained using it may be utilized for any commercial purposes."
+        ]
+      }
+    },
+    "mikepenz/multiplatform-markdown-renderer": {
+      "category": "mobile",
+      "one_liner": "Kotlin多平台Markdown渲染器",
+      "intro": {
+        "one_liner": "跨平台 Markdown 渲染库",
+        "what_it_is": "一个用 Kotlin 和 Compose 渲染 Markdown 的库，面向 Android、iOS、桌面、Web 与 macOS，提供统一接口。",
+        "problem_solved": "让多平台应用用同一套方式把 Markdown 渲染成原生界面，并支持主题、组件覆盖、GFM 与流式内容。",
+        "who_should_care": "使用 Kotlin Multiplatform 或 Compose 的应用开发者。",
+        "use_cases": [
+          "在应用中展示帮助文档",
+          "渲染聊天或模型流式输出",
+          "展示带表格和代码的富文本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "版本仍以零点开头；核心库不含默认样式，需另选 Material 2 或 Material 3 模块。",
+        "evidence": [
+          "Markdown renderer for Kotlin Multiplatform Projects (Android, iOS, Desktop), using Compose.",
+          "Render Markdown as native Compose UI — one API, every platform.",
+          "Since version 0.13.0, the core library does not depend on a Material theme. You must include either the `-m2` or `-m3` module to get access to the default styling."
+        ]
+      }
+    },
+    "HumeAI/tada": {
+      "category": "ai-model",
+      "one_liner": "开源语音语言模型",
+      "intro": {
+        "one_liner": "开源语音语言模型",
+        "what_it_is": "TADA 是统一文本与语音的生成式语音语言模型，通过一比一对齐把两者合成单一序列，并提供推理代码与模型。",
+        "problem_solved": "它试图解决传统语音生成依赖固定帧率、文本转写幻觉和计算开销较高的问题，用动态时长与韵律生成语音。",
+        "who_should_care": "关注语音合成、多语言生成和语音语言模型研究的开发者。",
+        "use_cases": [
+          "按提示语音做文本转语音",
+          "生成多语言语音",
+          "续写文本与语音"
+        ],
+        "alternatives": "相比固定帧率语音模型，它按文本词元自回归生成，并同步输出文本与前一词的语音。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但创建时间很短。",
+        "risk_notes": "模型权重受 Llama 3.2 社区许可约束，使用前需申请模型访问；非英语提示需提供转写，否则对齐质量会下降。",
+        "evidence": [
+          "Open Source Speech Language Model",
+          "A unified speech-language model that synchronizes speech and text into a single, cohesive stream via 1:1 alignment.",
+          "You must request access to the Llama models before using TADA"
+        ]
+      }
+    },
+    "sidequestjs/sidequest": {
+      "category": "dev-tools",
+      "one_liner": "免Redis的Node后台任务库",
+      "intro": {
+        "one_liner": "无 Redis 的 Node.js 任务队列",
+        "what_it_is": "Sidequest 是面向 Node.js 的后台任务处理器，把任务持久化到已有数据库，并提供网页管理面板。",
+        "problem_solved": "它让后台任务无需额外部署 Redis，也能获得持久化、分布式处理、重试和定时调度。",
+        "who_should_care": "已用 Postgres、MySQL、SQLite 或 MongoDB 的 Node.js 开发者。",
+        "use_cases": [
+          "异步发送邮件",
+          "定时执行批处理",
+          "多节点消费任务队列"
+        ],
+        "alternatives": "相比 BullMQ 和 pg-boss，强调无需 Redis，并内置网页管理面板。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但一周新增为零。",
+        "risk_notes": "采用 LGPL-3.0；要求 Node.js 22.6.0 以上；尚不支持 Bun；SQLite 不建议用于生产。",
+        "evidence": [
+          "Redis-free background jobs for Node.js. Persist jobs in your existing Postgres, MySQL, SQLite, or MongoDB. A distributed, durable BullMQ alternative with a built-in dashboard.",
+          "**Sidequest** is a Redis-free background job processor for **Node.js**. It persists jobs in the database you already run (PostgreSQL, MySQL, SQLite, or MongoDB), so you get durable, distributed background processing without standing up Redis. It is a production-grade [BullMQ](https://docs.sidequestjs.com/getting-started/migrating-from-bullmq) and pg-boss alternative, with a built-in web dashboard.",
+          "**Runtime:** Node.js (>= 22.6.0). _Does not run on Bun yet._"
+        ]
+      }
+    },
+    "Aliothmoon/MAA-Meow": {
+      "category": "game",
+      "one_liner": "明日方舟安卓日常助手",
+      "intro": {
+        "one_liner": "安卓端明日方舟助手",
+        "what_it_is": "这是一个用 Kotlin 编写的安卓应用，可在设备上原生运行 MAA Core，通过图像识别完成《明日方舟》日常任务。",
+        "problem_solved": "它让玩家无需电脑或模拟器，也无需 Root 权限，就能在安卓设备上前台或后台一键处理日常任务。",
+        "who_should_care": "《明日方舟》玩家、安卓自动化用户，以及愿意尝鲜的移动端工具开发者。",
+        "use_cases": [
+          "一键完成理智作战等日常",
+          "定时启动公招与基建任务",
+          "后台虚拟显示器挂机运行"
+        ],
+        "alternatives": "相比电脑端方案，强调安卓原生运行、无需电脑或模拟器，并支持前台悬浮窗与后台虚拟显示器。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 1 星且仅 1 天上日榜，热度集中但增量有限。",
+        "risk_notes": "正在开发中且功能不稳定；需 Shizuku 授权或 Root；AGPL-3.0 有较强开源义务；未关闭问题 38 个。",
+        "evidence": [
+          "无需 Root 权限，明日方舟可后台！正在开发中，功能不稳定，欢迎尝鲜体验～",
+          "直接在 Android 上运行自动化逻辑，无需 PC 或模拟器",
+          "本项目以 [AGPL-3.0](LICENSE) 许可证发布。"
+        ]
+      }
+    },
+    "sematic-ai/sematic": {
+      "category": "ai-model",
+      "one_liner": "开源机器学习流水线平台",
+      "intro": {
+        "one_liner": "开源机器学习流水线平台",
+        "what_it_is": "Sematic 是开源机器学习开发平台，可用 Python 定义端到端流水线，并在本机、云虚拟机或 Kubernetes 集群运行。",
+        "problem_solved": "把数据处理、模型训练和任意业务逻辑串成类型安全、可追踪、可复现的流水线，并提供网页面板监控与可视化。",
+        "who_should_care": "机器学习工程师、数据科学家，以及需要本地到云端一致运行流水线的团队。",
+        "use_cases": [
+          "本地快速搭建机器学习流水线",
+          "在 Kubernetes 上调度训练任务",
+          "追踪输入输出并复现实验"
+        ],
+        "alternatives": "强调纯 Python 定义、本地与云端一致、端到端追踪和网页可视化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且星数达到一千。",
+        "risk_notes": "项目数据未提供许可证信息；云端部署依赖 Kubernetes 与相关组件，使用门槛可能更高。",
+        "evidence": [
+          "An open-source ML pipeline development platform",
+          "Build ML pipelines with only Python, run on your laptop, or in the cloud.",
+          "type-safe, traceable, reproducible end-to-end pipelines that can be monitored and visualized in a modern web dashboard."
+        ]
+      }
+    },
+    "Casvt/Kapowarr": {
+      "category": "content-media",
+      "one_liner": "漫画库构建管理工具",
+      "intro": {
+        "one_liner": "漫画库管理工具",
+        "what_it_is": "Kapowarr 是用于构建和管理数字漫画库的软件，风格融入 *arr 套件，可添加卷、映射文件夹并管理内容。",
+        "problem_solved": "它把漫画的下载、重命名、移动、转换和已有库导入集中到自动化流程，减少手工整理。",
+        "who_should_care": "拥有数字漫画收藏、熟悉或偏好 *arr 套件的普通用户。",
+        "use_cases": [
+          "一键下载整卷漫画",
+          "手动挑选下载内容",
+          "整理并导入已有漫画库"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "资料未提供许可证内容、版本状态和稳定性说明；下载来源涉及多种第三方服务，使用时需自行留意合规与可用性。",
+        "evidence": [
+          "Kapowarr is a software to build and manage a comic book library, fitting in the *arr suite of software.",
+          "Download, rename, move and convert issues of the volume (including TPBs, One Shots, Hard Covers, and more). The whole process is automated and can be customised in the settings.",
+          "Import your existing library right into Kapowarr"
+        ]
+      }
+    },
+    "numman-ali/n-skills": {
+      "category": "ai-agent",
+      "one_liner": "AI代理插件精选市场",
+      "intro": {
+        "one_liner": "智能体技能精选市场",
+        "what_it_is": "一个用 TypeScript 维护的精选技能市场，提供可安装到多种 AI 编程智能体的技能集合，并支持通过 openskills 或原生安装器使用。",
+        "problem_solved": "它试图统一不同智能体各自为政的技能格式、发现文件和安装方式，让技能一次编写后可在多个工具间复用。",
+        "who_should_care": "使用多种 AI 编程智能体、需要复用或分发技能的开发者。",
+        "use_cases": [
+          "为 Claude Code 安装工作流技能",
+          "用 openskills 同步多智能体技能",
+          "提交并维护精选技能"
+        ],
+        "alternatives": "相比单一智能体插件目录，它强调通用格式、跨工具兼容和人工精选。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注度快速上升。",
+        "risk_notes": "创建于 2026 年 1 月 2 日，项目较新；技能数量仍少，文档称更多技能即将到来；外部技能依赖每日同步。",
+        "evidence": [
+          "Curated plugin marketplace for AI agents - works with Claude Code, Codex, and openskills",
+          "SKILL.md          →  The universal skill format",
+          "More skills coming soon. Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md)"
+        ]
+      }
+    },
+    "xberg-io/xberg": {
+      "category": "dev-tools",
+      "one_liner": "多语言文档智能提取框架",
+      "intro": {
+        "one_liner": "多语言文档智能框架",
+        "what_it_is": "Xberg 是以 Rust 为核心的文档智能框架，可从 PDF、Office、图片等格式提取文本、元数据、图像和结构化信息，并提供多种语言绑定、命令行、接口和服务。",
+        "problem_solved": "它把格式识别、读取、文字识别和抽取整合到一个引擎，减少开发者自行拼接多套文档处理库的工作。",
+        "who_should_care": "需要处理多格式文档抽取、检索预处理或结构化数据的开发者。",
+        "use_cases": [
+          "批量提取文档文本与元数据",
+          "将 PDF 转为结构化内容",
+          "为检索流程准备文档数据"
+        ],
+        "alternatives": "与同类项目相比，强调 Rust 核心、多语言绑定和统一抽取流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 8 星且仅一天上日榜。",
+        "risk_notes": "部分能力需要启用特性；未关闭问题 52 个；项目创建于 2025 年，需关注稳定性。",
+        "evidence": [
+          "A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats.",
+          "One engine handles format detection, reading, OCR, and extraction, so you never stitch a pipeline together from a dozen libraries.",
+          "Capabilities marked *requires a feature* are Cargo feature flags on the core crate (`url-ingestion`, `transcription`, `reranker`, layout/ORT)."
+        ]
+      }
+    },
+    "nolabs-ai/nono": {
+      "category": "security",
+      "one_liner": "秒级AI代理沙箱工具",
+      "intro": {
+        "one_liner": "智能体运行安全沙箱",
+        "what_it_is": "nono 是面向智能体的运行时安全工具，用内核级沙箱隔离工具、凭据、网络与文件访问，并提供验证、审计和恢复。",
+        "problem_solved": "它解决智能体执行工具时权限过大、凭据暴露、网络失控、指令被篡改和误改文件难恢复的问题。",
+        "who_should_care": "开发、部署或运维智能体的开发者与安全团队。",
+        "use_cases": [
+          "限制智能体工具的文件与网络权限",
+          "隔离注入接口密钥等敏感凭据",
+          "审计会话并回滚误改文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 15 星且曾上日榜。",
+        "risk_notes": "正式版前接口仍在稳定，可能发生必要变更；未关闭议题有 295 个。",
+        "evidence": [
+          "In the lead-up to a 1.0 release, APIs are stabilizing. API changes may still occur where necessary, but will be kept to a minimum.",
+          "nono is a complete agent runtime security tool.",
+          "Kernel-enforced sandboxing is the foundation for a complete workflow of protection, verification, audit, and recovery."
+        ]
+      }
+    },
+    "sumelabs/clawra": {
+      "category": "ai-agent",
+      "one_liner": "Openclaw陪伴式代理",
+      "intro": {
+        "one_liner": "OpenClaw 自拍伴侣",
+        "what_it_is": "Clawra 是一个为 OpenClaw 智能体安装自拍能力的技能包，提供命令行安装、配置模板和图片生成脚本。",
+        "problem_solved": "让 OpenClaw 智能体基于固定参考形象生成自拍，并在聊天平台中回应索要照片或询问近况的请求。",
+        "who_should_care": "已使用 OpenClaw、想给智能体增加视觉人格的开发者。",
+        "use_cases": [
+          "回应发送自拍请求",
+          "生成穿搭或场景照片",
+          "在聊天平台发送图片"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2,334 星且本周上过一次日榜。",
+        "risk_notes": "依赖 OpenClaw 与 fal.ai 账号和接口密钥；创建日期较新；固定参考图由外部内容分发网络托管。",
+        "evidence": [
+          "Clawra - Openclaw as your companion",
+          "Clawra Selfie enables your OpenClaw agent to: - **Generate selfies** using a consistent reference image - **Send photos** across all messaging platforms (Discord, Telegram, WhatsApp, etc.) - **Respond visually** to \"what are you doing?\" and \"send a pic\" requests",
+          "Prerequisites - [OpenClaw](https://github.com/openclaw/openclaw) installed and configured - [fal.ai](https://fal.ai) account (free tier available)"
+        ]
+      }
+    },
+    "yuiamoroll/EldenRingSeamlessCoopRelease": {
+      "category": "game",
+      "one_liner": "艾尔登法环无缝联机发布",
+      "intro": {
+        "one_liner": "游戏联机模组镜像",
+        "what_it_is": "这是《艾尔登法环》无缝联机模组的发布镜像，指向 Nexus Mods 页面。",
+        "problem_solved": "为玩家提供该模组的发布入口，便于查找无缝联机相关内容。",
+        "who_should_care": "关注《艾尔登法环》联机模组的玩家与模组使用者。",
+        "use_cases": [
+          "查找无缝联机模组发布页",
+          "获取模组相关发布信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时星数一千五百五十一。",
+        "risk_notes": "仓库定位为镜像，主要发布信息在外部页面；可用状态与维护细节未说明。",
+        "evidence": [
+          "# Elden Ring Seamless Co-op mod",
+          "Mirror for NexusMods (https://www.nexusmods.com/eldenring/mods/510)",
+          "本周上日榜天数：1"
+        ]
+      }
+    }
+  }
+}

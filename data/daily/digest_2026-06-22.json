@@ -1,1 +1,566 @@
-{"date":"2026-06-22","headline":"AI Agent 与隐私工具领跑","points":["23 个破千项目中，AI Agent 有 8 个，开发工具与 AI 模型各 3 个。","lvy010/X-Plore 增长 506，大学两年笔记与博客库最受关注。","mysk-research/loupe 增长 420，聚焦原生应用可见数据的隐私揭示。"],"items":{"lvy010/X-Plore":{"category":"learning-resource","one_liner":"大学两年笔记与博客库"},"mysk-research/loupe":{"category":"mobile","one_liner":"揭示原生应用可见数据的隐私应用"},"jakubkrehel/make-interfaces-feel-better":{"category":"ai-agent","one_liner":"改善界面质感的智能体技能"},"nubjs/nub":{"category":"dev-tools","one_liner":"一体化 Node.js 工具箱"},"FB208/OpenBidKit_Yibiao":{"category":"automation","one_liner":"开源 AI 标书编写工具箱"},"mohitagw15856/pm-claude-skills":{"category":"ai-agent","one_liner":"多平台通用智能体技能集"},"Klotzkette/claude-fuer-deutsches-recht":{"category":"ai-agent","one_liner":"德国法律实验性技能集"},"Vizards/deepseek-v4-for-copilot":{"category":"ai-model","one_liner":"为 Copilot 接入 DeepSeek V4"},"Winds-Studio/Leaf":{"category":"game","one_liner":"兼顾性能与稳定的 Minecraft 服务端"},"Mibayy/token-savior":{"category":"ai-agent","one_liner":"省 token 的代码导航 MCP 服务"},"2aronS/Duel-Agents":{"category":"ai-agent","one_liner":"Duel Agents 命令行与插件集"},"jinenge/tvbox":{"category":"content-media","one_liner":"TVBox 影视配置源集合"},"laravel/ai":{"category":"ai-model","one_liner":"Laravel 统一 AI 服务开发包"},"ChristopherKahler/paul":{"category":"ai-agent","one_liner":"结构化 AI 辅助开发流程"},"hahwul/jwt-hack":{"category":"security","one_liner":"JWT 安全测试工具包"},"zai-org/SCAIL":{"category":"ai-model","one_liner":"三维一致角色动画生成模型"},"romkatv/zsh-bench":{"category":"dev-tools","one_liner":"交互式 Zsh 性能基准工具"},"G-Ray/pikatorrent":{"category":"content-media","one_liner":"跨设备种子播放下载器"},"justrach/turboAPI":{"category":"dev-tools","one_liner":"兼容 FastAPI 的高速框架"},"danielmiessler/LifeOS":{"category":"ai-agent","one_liner":"增强人类能力的智能体基础设施"},"rivet-dev/agentos":{"category":"ai-agent","one_liner":"可移植智能体运行操作系统"},"zhongerxin/Cowart":{"category":"other","one_liner":"用途未明的 JavaScript 项目"},"WhiteDNS/WhiteDNS-Android":{"category":"mobile","one_liner":"安卓 DNS 隧道代理客户端"}}}
+{
+  "date": "2026-06-22",
+  "headline": "AI Agent 与隐私工具领跑",
+  "points": [
+    "23 个破千项目中，AI Agent 有 8 个，开发工具与 AI 模型各 3 个。",
+    "lvy010/X-Plore 增长 506，大学两年笔记与博客库最受关注。",
+    "mysk-research/loupe 增长 420，聚焦原生应用可见数据的隐私揭示。"
+  ],
+  "items": {
+    "lvy010/X-Plore": {
+      "category": "learning-resource",
+      "one_liner": "大学两年笔记与博客库",
+      "intro": {
+        "one_liner": "个人技术笔记索引库",
+        "what_it_is": "这是一个按“专栏 → 文章”组织的个人学习笔记仓库，覆盖算法、系统、语言、人工智能等主题，并链接到博客文章与项目。",
+        "problem_solved": "把分散的技术笔记、学习记录和项目链接整理成可跳转的索引，方便按主题查找、阅读和复用。",
+        "who_should_care": "想按主题查阅计算机学习笔记、寻找练习项目或整理个人知识库的开发者。",
+        "use_cases": [
+          "按专栏查找技术文章",
+          "克隆到本地做批注",
+          "参考项目与学习路线"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 210 星，且曾有一天进入日榜。",
+        "risk_notes": "内容仍在整理中，部分笔记待加入；主要是个人笔记索引，使用效果依赖外部链接可用性。",
+        "evidence": [
+          "My 2-Year College Notes Hub — Personal Web · 2000+ Blogs · 262 Repos",
+          "按照“专栏 → 文章”结构组织，点击可以直接跳转到对应文章",
+          "第一次搭建仓库做分享，正在不断整理&构建中"
+        ]
+      }
+    },
+    "mysk-research/loupe": {
+      "category": "mobile",
+      "one_liner": "揭示原生应用可见数据的隐私应用",
+      "intro": {
+        "one_liner": "iOS 指纹隐私演示应用",
+        "what_it_is": "Loupe 是面向 iOS、iPadOS 的应用，读取公开系统接口能取得的设备信息，并按获取成本分层展示原始值。",
+        "problem_solved": "它让普通用户直观看到第三方应用可读取哪些信号，以及这些信号如何组合成跨应用、跨网站识别设备的指纹。",
+        "who_should_care": "关注隐私、设备指纹和 iOS 权限边界的开发者与用户。",
+        "use_cases": [
+          "查看无需弹窗即可读取的信息",
+          "了解权限弹窗对应的数据",
+          "演示侧信道与重装后持久化"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 212 星并曾上日榜。",
+        "risk_notes": "名称、图标、图片和设计源文件保留全部权利，不在 MIT 许可证范围内；Mac 版本尚未打磨完成；构建要求 Xcode 26 或更新版本。",
+        "evidence": [
+          "Loupe is an iOS and iPadOS app that gives you a hands-on tour of the device fingerprinting surface.",
+          "Nothing Loupe reads leaves your device unless you explicitly export it.",
+          "The Loupe name and logo, the app icon, all other images and icons, and the design source files are © Mysk, all rights reserved, and are not covered by the MIT license."
+        ]
+      }
+    },
+    "jakubkrehel/make-interfaces-feel-better": {
+      "category": "ai-agent",
+      "one_liner": "改善界面质感的智能体技能",
+      "intro": {
+        "one_liner": "让界面细节更精致的 agent skill",
+        "what_it_is": "这是一个面向 AI agent 的 skill，内容基于《Details that make interfaces feel better》一文，通过 npx skills add 安装。",
+        "problem_solved": "帮助 agent 在生成或修改界面时，处理动画、排版、图标、悬停态、视觉对齐、同心圆角、阴影、点击热区等容易被忽略的细节。",
+        "who_should_care": "使用 AI agent 生成前端界面的开发者，以及关注 UI 细节还原度的前端工程师与设计师。",
+        "use_cases": [
+          "让 AI 编码助手在生成组件时遵循统一的界面细节规范",
+          "为现有 UI 做细节层面的审查与打磨",
+          "团队沉淀可复用的界面打磨知识，供 agent 调用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：它属于 agent skill 生态中的轻量知识包，周增 784 星，热度集中在 agent 工具链话题上。",
+        "risk_notes": "项目创建于 2026-03-13，历史较短；内容为单一 skill 文档，深度与长期维护情况尚待观察。",
+        "evidence": [
+          "An agent skill focused on the small details that make interfaces feel better.",
+          "The skill covers animations, typography, icons, hover states, optical alignment, concentric border radius, shadows, hit areas and more.",
+          "npx skills add jakubkrehel/make-interfaces-feel-better"
+        ]
+      }
+    },
+    "nubjs/nub": {
+      "category": "dev-tools",
+      "one_liner": "一体化 Node.js 工具箱",
+      "intro": {
+        "one_liner": "Rust 编写的 Node.js 一体化工具链",
+        "what_it_is": "Nub 是一个用 Rust 编写的 Node.js 一体化工具链，在原生 node 之上提供类似 Bun 的开发体验，涵盖文件运行、脚本执行、依赖安装、watch 模式和 Node 版本管理。",
+        "problem_solved": "把 node、tsx、nodemon、npx、pnpm、nvm、corepack 等分散工具合并为一个入口，减少工具链切换与启动开销，同时不引入新的运行时或厂商锁定。",
+        "who_should_care": "日常使用 Node.js 与 TypeScript 的前后端开发者、需要统一团队工具链的工程团队，以及关注脚本执行与安装速度的 monorepo 维护者。",
+        "use_cases": [
+          "直接运行 .ts/.tsx 文件，无需构建步骤",
+          "替代 npm run / pnpm run 执行 package.json 脚本",
+          "用 nub watch 做开发期自动重启",
+          "统一管理 Node 版本与 Corepack 式包管理器 shim"
+        ],
+        "alternatives": "README 将其定位为在原生 node 之上叠加 Bun 式 DX，而非新运行时；对照对象包括 node/tsx/ts-node、npm/pnpm、nodemon、nvm/fnm/volta、corepack，强调无新运行时与无锁定。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 项目创建时间较新、周增星约 1073，热度集中但生态与稳定性尚待验证",
+        "risk_notes": "README 中的性能倍数（如 24×、19×、18×、2.9×）为作者自测数据，未独立验证；项目创建时间较新、open issues 71 个，长期维护与兼容性需观察；安装脚本采用 curl | bash 方式，需自行评估。",
+        "evidence": [
+          "A Bun-like DX on top of stock `node`, written in Rust.",
+          "One tool to run your files and scripts, install dependencies, and manage Node itself. No new runtime, no vendor-specific API surface, no lock-in.",
+          "The runner is a Rust binary with no JavaScript startup of its own, so it dispatches a warm script roughly 24× faster than `pnpm run`"
+        ]
+      }
+    },
+    "FB208/OpenBidKit_Yibiao": {
+      "category": "automation",
+      "one_liner": "开源 AI 标书编写工具箱",
+      "intro": {
+        "one_liner": "开源 AI 标书工具箱",
+        "what_it_is": "易标投标工具箱是面向招投标场景的开源桌面工具，提供标书生成、知识库、查重和废标项检查等功能。",
+        "problem_solved": "它试图降低标书编写工具的使用成本，并把招标文件解析、方案扩写、图文生成和检查流程集中到本地工作区。",
+        "who_should_care": "投标从业者、中小企业标书团队，以及想自建标书工具的开发者。",
+        "use_cases": [
+          "解析招标文件并生成标书初稿",
+          "复用企业知识库和历史方案",
+          "检查查重、错字和废标项"
+        ],
+        "alternatives": "强调开源免费、本地工作区、可配置模型和人工可编辑流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 112 星，并曾进入日榜一天。",
+        "risk_notes": "采用 AGPL-3.0，商业集成需留意义务；部分功能仍在开发；未关闭问题 49 个。",
+        "evidence": [
+          "开箱即用的AI标书编写工具，标书AI生成工具，投标工具箱、知识库、标书查重、废标项检查，完全开源免费，欢迎使用",
+          "易标投标工具箱是一款面向招投标场景的智能标书制作工具，完全开源，包括AI生成技术方案、图文生成、商务标、企业知识库管理、标书查重、废标项检查、标讯等，更多功能还在开发中。",
+          "支持OpenAI like模式的所有AI api，也支持ollama、lm studio等接入本地模型。"
+        ]
+      }
+    },
+    "mohitagw15856/pm-claude-skills": {
+      "category": "ai-agent",
+      "one_liner": "多平台通用智能体技能集",
+      "intro": {
+        "one_liner": "多工具职业技能库",
+        "what_it_is": "它是一组以 Markdown 文件承载的 Agent Skills，配有子代理和斜杠命令，供多种 AI 工具调用。",
+        "problem_solved": "把专业任务拆成带框架、模板、质量检查和反模式的技能文件，让助手直接产出文档或交付物。",
+        "who_should_care": "产品经理、工程师、求职者、学生、创业者及中文用户。",
+        "use_cases": [
+          "把访谈笔记整理成一页需求文档",
+          "生成带负责人的风险登记表",
+          "撰写可发送给管理层的干系人更新"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 22 星，且本周上过一天日榜。",
+        "risk_notes": "描述称 180 个技能，正文称 1314 个技能，数量口径不一致；另有 7 个未关闭问题。",
+        "evidence": [
+          "180 professional Agent Skills (SKILL.md) + subagents + slash commands for Claude, ChatGPT, Gemini, Cursor, Codex & Hermes — one source, every AI tool",
+          "PM Skills is an open-source library of 1314 Agent Skills — plain-markdown SKILL.md files that teach an AI assistant to do one professional task to a senior professional's standard, from writing a PRD to decoding a lease or running a blameless postmortem.",
+          "Each skill bundles the framework, an output template, quality checks, and anti-patterns. It is MIT-licensed and works with Claude, ChatGPT, Gemini, Cursor, and Codex."
+        ]
+      }
+    },
+    "Klotzkette/claude-fuer-deutsches-recht": {
+      "category": "ai-agent",
+      "one_liner": "德国法律实验性技能集",
+      "intro": {
+        "one_liner": "德国法律实务 Claude 技能合集",
+        "what_it_is": "面向德国法律实务的 Claude 插件、Skills 与 Prompt 合集，覆盖劳动法、公司法、破产法、数据保护法、诉讼法等领域，并附带参考材料与独立测试案卷。",
+        "problem_solved": "为律所、法务部门和顾问提供可直接套用的法律工作流模板，用于审查材料、梳理案件、起草合同、诉状或备忘录。",
+        "who_should_care": "德国律所律师、企业法务、法律顾问，以及希望用 Claude 辅助德国法务工作的从业者。",
+        "use_cases": [
+          "合同审查与诉状、备忘录起草",
+          "案卷时间线与案件材料梳理",
+          "以测试案卷试跑数据保护法、破产法等专项工作流"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 Claude Skills 与法律 AI 的插件化尝试，作者自述仍属实验性质。",
+        "risk_notes": "作者明确声明这是实验项目、不构成法律咨询，结果可能错误、不完整或过时，使用前必须人工核查；涉及律师保密义务（§§ 203/204 StGB、§ 43e BRAO）、DSGVO、美国数据传输与 KI-VO 等合规问题；README 中出现的链接与导入指引均为第三方内容，不应直接照做。",
+        "evidence": [
+          "⚠️ Experimentelle Skill-Sammlung für deutsches Recht ... aber weiterhin Experiment.",
+          "Die Sammlung ist ein Experiment und keine Rechtsberatung. Ergebnisse können falsch, unvollständig oder veraltet sein und müssen vor ihrer Verwendung geprüft werden.",
+          "Mandatsgeheimnis (§§ 203/204 StGB, § 43e BRAO), DSGVO, US-Transfer, KI-VO & Co"
+        ]
+      }
+    },
+    "Vizards/deepseek-v4-for-copilot": {
+      "category": "ai-model",
+      "one_liner": "为 Copilot 接入 DeepSeek V4",
+      "intro": {
+        "one_liner": "在 Copilot Chat 中接入 DeepSeek 模型",
+        "what_it_is": "一个 VS Code 扩展，把 DeepSeek V4 系列模型加入 GitHub Copilot Chat 的模型选择器，同时保留 Copilot 原有的 agent mode、工具调用和界面。",
+        "problem_solved": "让想用 DeepSeek 性价比、但不愿放弃 Copilot 完整功能栈的用户，无需切换侧边栏或聊天界面即可直接选用 DeepSeek 模型。",
+        "who_should_care": "已订阅 GitHub Copilot、持有 DeepSeek API key 的 VS Code 用户，尤其是关注成本与推理能力的开发者。",
+        "use_cases": [
+          "在 Copilot Chat 的 agent mode 中用 DeepSeek 执行多步编码任务",
+          "通过自带 API key（BYOK）直连 DeepSeek 控制调用成本",
+          "利用 Vision Proxy 让纯文本 DeepSeek 模型处理图片附件"
+        ],
+        "alternatives": "README 对比表提到本地代理（如 LiteLLM）与独立 DeepSeek 扩展；本项目的差异在于直接接入 Copilot 原生 provider API，无需额外代理服务，且零运行时依赖。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依赖非公开的 Copilot Chat API，README 自述可能随 VS Code 版本失效，稳定性受限。",
+        "risk_notes": "依赖非公开 Copilot Chat API，升级 VS Code 可能失效；需自备 DeepSeek API key 并自行承担费用；open issues 达 80 个，维护压力可见；verbose 调试模式可能落盘敏感 prompt 内容。",
+        "evidence": [
+          "This extension relies on non-public Copilot Chat APIs that may break on newer VS Code versions",
+          "Because this plugs into Copilot's native provider API, you get the full stack for free",
+          "API key lives in VS Code's `SecretStorage` (OS keychain on macOS / Windows / Linux)"
+        ]
+      }
+    },
+    "Winds-Studio/Leaf": {
+      "category": "game",
+      "one_liner": "兼顾性能与稳定的 Minecraft 服务端",
+      "intro": {
+        "one_liner": "高性能 Minecraft 服务端",
+        "what_it_is": "Leaf 是基于 Paper 的 Java 服务端分支，强调可定制、高性能，并兼容 Spigot 与 Paper 插件。",
+        "problem_solved": "面向 Minecraft 服务器在性能、原版机制与稳定性之间的取舍，提供异步寻路、刷怪、实体追踪等优化。",
+        "who_should_care": "自建 Minecraft 服务器、依赖 Paper 插件且关注性能与可定制性的运维和开发者。",
+        "use_cases": [
+          "搭建兼容 Paper 插件的服务器",
+          "优化实体、寻路与刷怪负载",
+          "使用线性区域格式节省磁盘"
+        ],
+        "alternatives": "相较同类分支，强调整合多个分支补丁、异步优化、Purpur 定制能力与错误追踪集成。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "切换前需备份；许可证来自多个上游项目，需查看完整说明；性能导向分支可能影响原版机制。",
+        "evidence": [
+          "A Paper fork focused on finding the balance between performance, vanilla mechanics, and stability",
+          "Leaf is a performance-oriented fork. Make sure to take backups **before** switching to it.",
+          "Leaf is licensed under various open source licenses from its upstream projects. See [LICENSE.md](LICENSE.md) for full details."
+        ]
+      }
+    },
+    "Mibayy/token-savior": {
+      "category": "ai-agent",
+      "one_liner": "省 token 的代码导航 MCP 服务",
+      "intro": {
+        "one_liner": "省令牌的编码代理服务器",
+        "what_it_is": "Token Savior 是一个面向 AI 编码代理的 MCP 服务器，提供结构化代码导航、持久记忆和命令输出压缩。",
+        "problem_solved": "它试图减少编码代理读取代码和命令输出时的令牌消耗，并让工具调用结果更持久、更省上下文。",
+        "who_should_care": "使用 MCP 客户端做代码导航、重构或长会话开发的开发者。",
+        "use_cases": [
+          "在大型仓库中检索代码结构",
+          "压缩测试和构建命令输出",
+          "跨会话保留代码上下文"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 15 星且仅一天上日榜。",
+        "risk_notes": "核心成绩被说明为未独立验证；曾有复测因工具几乎未被调用而撤回；部分功能需手动开启。",
+        "evidence": [
+          "The harness that produced these numbers is described below; its repository is not public at the moment, so take the figures as reported rather than as independently verifiable.",
+          "A re-measurement was published here on 2026-08-09 and has been withdrawn on 2026-08-10.",
+          "Bash compaction and the PreToolUse rewriter are opt-in.",
+          "一周新增 Star：15"
+        ]
+      }
+    },
+    "2aronS/Duel-Agents": {
+      "category": "ai-agent",
+      "one_liner": "Duel Agents 命令行与插件集",
+      "intro": {
+        "one_liner": "多模型路由集成包",
+        "what_it_is": "这是 Duel Agents 的官方集成包，提供命令行工具、软件开发工具包和编辑器插件，把提示词路由到多个模型并选择成本更低且仍胜出的答案。",
+        "problem_solved": "它让 Claude Code、Cursor、Codex CLI 等工具统一接入 Duel 代理，避免直接使用原始模型密钥，并提供兼容接口供应用和框架调用。",
+        "who_should_care": "使用多种编程助手、想接入统一模型代理或开发智能体应用的开发者。",
+        "use_cases": [
+          "为编辑器配置 Duel 代理",
+          "在应用中调用兼容接口",
+          "让框架使用自动路由模型"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周减少 83 星，仅一天进入日榜。",
+        "risk_notes": "必须订阅并获取 Duel 密钥，不能使用原始 Anthropic 或 OpenAI 密钥；服务依赖代理地址可用；创建时间较新，未关闭问题 2 个。",
+        "evidence": [
+          "Use, extend, and ship with Duel Agents: the IDE-native routing layer that runs prompts against multiple models and picks the cheapest answer that still wins.",
+          "Every tool in this repo routes LLM traffic through https://duelagents.com/v1 with a Duel API key",
+          "You cannot use raw Anthropic or OpenAI keys with these integrations."
+        ]
+      }
+    },
+    "jinenge/tvbox": {
+      "category": "content-media",
+      "one_liner": "TVBox 影视配置源集合",
+      "intro": {
+        "one_liner": "影视软件配置源仓库",
+        "what_it_is": "这是面向 TVBox、影视仓等软件的配置文件仓库，提供配置地址、教程，以及直播目录和自定义加载文件说明。",
+        "problem_solved": "它解决用户手动寻找和维护配置地址、站点规则与直播目录的麻烦，让软件通过配置地址读取并更新内容。",
+        "who_should_care": "使用 TVBox、Catbox 或影视仓并需要配置地址的用户。",
+        "use_cases": [
+          "给影视软件粘贴配置地址",
+          "按教程完成软件配置",
+          "维护本地站点与直播源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "直播源和站点可能失效；配置依赖外部地址与自定义加载文件；内容合规性需自行判断。",
+        "evidence": [
+          "TVBox或者影视仓内置源，随时更新内置源，不必担心不能用，打开下面的链接复制你想用谁的配置，粘贴到您的软件中的设置里面的配置地址粘贴保存即可。",
+          "json文件为一个配置的文件，而软件读取到您的json文件之后再分析里面的站点配置",
+          "当然里面的直播源也是不定时的实效的"
+        ]
+      }
+    },
+    "laravel/ai": {
+      "category": "ai-model",
+      "one_liner": "Laravel 统一 AI 服务开发包",
+      "intro": {
+        "one_liner": "Laravel 的 AI 开发套件",
+        "what_it_is": "这是一个用 PHP 编写的 Laravel AI 开发套件，提供统一接口对接 OpenAI、Anthropic、Gemini 等服务商。",
+        "problem_solved": "它把不同 AI 服务商的调用方式统一起来，方便在 Laravel 中构建智能体、生成图片、处理音频和创建向量嵌入。",
+        "who_should_care": "使用 Laravel 开发 AI 功能的 PHP 开发者。",
+        "use_cases": [
+          "构建带工具的智能体",
+          "生成图片与结构化输出",
+          "语音转写、合成与嵌入"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周新增 7 星且仅一天上日榜。",
+        "risk_notes": "创建日期较新，未关闭问题 38 个；成熟度缺少明确依据。",
+        "evidence": [
+          "The Laravel AI SDK provides a unified, expressive API for interacting with AI providers such as OpenAI, Anthropic, Gemini, and more.",
+          "With the AI SDK, you can build intelligent agents with tools and structured output, generate images, synthesize and transcribe audio, create vector embeddings, and much more — all using a consistent, Laravel-friendly interface.",
+          "The Laravel AI SDK is open-sourced software licensed under the [MIT license](LICENSE.md)."
+        ]
+      }
+    },
+    "ChristopherKahler/paul": {
+      "category": "ai-agent",
+      "one_liner": "结构化 AI 辅助开发流程",
+      "intro": {
+        "one_liner": "Claude Code 开发框架",
+        "what_it_is": "PAUL 是面向 Claude Code 的结构化辅助开发框架，以计划、执行、统一闭环管理任务、验收标准与项目状态。",
+        "problem_solved": "它试图解决会话上下文退化、计划未收尾、状态漂移和辅助生成结果需要反复清理的问题。",
+        "who_should_care": "用 Claude Code 交付软件、自动化流程或营销项目的开发者。",
+        "use_cases": [
+          "按验收标准规划并执行开发任务",
+          "跨会话恢复上下文和项目状态",
+          "管理活动、邮件序列等工作流"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 35 星，曾有一天进入日榜。",
+        "risk_notes": "主要面向 Claude Code；有 11 个未关闭问题；存在已弃用命令，流程要求每份计划必须收尾。",
+        "evidence": [
+          "Plan-Apply-Unify Loop — Structured AI-assisted development for Claude Code. Quality over speed-for-speed's-sake.",
+          "The problem? **Context rot.** As your session fills up, quality degrades. Subagents spawn with fresh context but return ~70% quality work that needs cleanup. Plans get created but never closed. State drifts. You end up debugging AI output instead of shipping features.",
+          "**Never skip UNIFY.** Every plan needs closure. This is what separates structured development from chaos."
+        ]
+      }
+    },
+    "hahwul/jwt-hack": {
+      "category": "security",
+      "one_liner": "JWT 安全测试工具包",
+      "intro": {
+        "one_liner": "JWT 安全测试工具集",
+        "what_it_is": "一个用 Rust 编写的 JSON Web Token 测试工具集，支持编码、解码、验证、破解、攻击载荷生成、漏洞扫描，以及接口和 MCP 服务模式。",
+        "problem_solved": "帮助开发者和安全测试人员集中检查 JWT 的签名、声明、弱密钥、算法混淆等常见安全问题，并生成测试载荷。",
+        "who_should_care": "安全测试人员、漏洞赏金参与者、需要排查 JWT 实现的开发者。",
+        "use_cases": [
+          "解码并检查 JWT 或 JWE",
+          "扫描常见 JWT 漏洞",
+          "生成攻击测试载荷",
+          "以接口或 MCP 集成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千星数为 1001。",
+        "risk_notes": "工具包含破解、攻击载荷和漏洞扫描能力，应仅用于授权测试；许可证信息未提供。",
+        "evidence": [
+          "A high-performance toolkit for testing, analyzing and attacking JSON Web Tokens.",
+          "Automated security checks for common JWT vulnerabilities",
+          "JSON Web Token Hack Toolkit"
+        ]
+      }
+    },
+    "zai-org/SCAIL": {
+      "category": "ai-model",
+      "one_liner": "三维一致角色动画生成模型",
+      "intro": {
+        "one_liner": "角色动画生成框架",
+        "what_it_is": "SCAIL 是面向角色动画的推理代码，围绕三维一致姿态表示与上下文学习，提供 SCAIL-Preview 模型的使用实现。",
+        "problem_solved": "它试图改善角色动画在复杂动作中的泛化不足、动作不连贯，以及翻转、转身等基础动作容易失败的问题。",
+        "who_should_care": "做视频生成、角色动画和视频到视频转换的开发者与研究者。",
+        "use_cases": [
+          "驱动二维角色动画",
+          "生成复杂转身动作",
+          "尝试手绘或动漫角色动画"
+        ],
+        "alternatives": "相比常见姿态条件注入方式，强调展示完整上下文并使用三维一致姿态表示。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增 8 星，仅 1 天进入日榜，关注度较集中。",
+        "risk_notes": "当前为预览模型，训练代码仍待更新；模型权重较大，且部分社区适配能力尚不完整。",
+        "evidence": [
+          "The code is for the inference of SCAIL-Preview Model, a 14B DiT that enables challenging character animation by In-Context Learning of 3D-Consistent Pose Representation.",
+          "SCAIL identifies the key bottlenecks that hinder character animation towards production level: limited generalization towards characters and incoherent motion under complex scenarios",
+          "We will update the training code of SCAIL on SAT for reproducibility."
+        ]
+      }
+    },
+    "romkatv/zsh-bench": {
+      "category": "dev-tools",
+      "one_liner": "交互式 Zsh 性能基准工具",
+      "intro": {
+        "one_liner": "交互式 Zsh 延迟基准工具",
+        "what_it_is": "这是一个用 Shell 编写的基准工具，用来测量交互式 Zsh 中用户可感知的延迟，并提供模拟延迟体验的辅助工具。",
+        "problem_solved": "它帮助判断 Zsh 启动、输入、命令执行和提示符显示是否拖慢操作，也用于比较不同配置、插件和框架带来的体感差异。",
+        "who_should_care": "关注 Zsh 配置速度、插件开销和终端交互体验的开发者。",
+        "use_cases": [
+          "测量本机 Zsh 配置延迟",
+          "比较预置配置与插件方案",
+          "模拟延迟并评估体感阈值"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度信息。",
+        "risk_notes": "本机测量要求 Zsh 不低于 5.8 且为登录 Shell；启动文件启用 tmux 或历史记录时可能出现挂起或写入历史命令。",
+        "evidence": [
+          "Benchmark for interactive zsh.",
+          "`zsh-bench` measures user-visible latency of interactive zsh: *input lag*, *command lag*, etc. You\n  can [use it to benchmark your own shell](#usage).",
+          "This requires zsh >= 5.8 and it must be your login shell."
+        ]
+      }
+    },
+    "G-Ray/pikatorrent": {
+      "category": "content-media",
+      "one_liner": "跨设备种子播放下载器",
+      "intro": {
+        "one_liner": "跨平台种子下载播放器",
+        "what_it_is": "PikaTorrent 是一个用 Dart 编写的跨平台 torrent 客户端，支持在多种设备上下载和流式播放媒体。",
+        "problem_solved": "它试图降低 torrent 客户端的使用门槛，让普通用户也能在桌面和移动设备上安装、下载并播放种子内容。",
+        "who_should_care": "想在多设备上轻量下载、播放种子媒体的普通用户。",
+        "use_cases": [
+          "在手机或桌面下载种子",
+          "边下载边播放媒体",
+          "跨设备使用同一客户端"
+        ],
+        "alternatives": "相比 WebTorrent desktop，强调覆盖 Android 与 iOS，并提供美观轻量的跨平台应用。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜。",
+        "risk_notes": "当前发布版本仍被视为 beta，功能可能变化或出错；v0.10.0 重写后旧版种子可能不显示，升级需手动迁移；Linux 压缩包需要安装 mpv，可能还有其他依赖。",
+        "evidence": [
+          "Just pick a Torrent. Stream and download on all your devices.",
+          "The releases are currently considered beta. Features might changes and things could break. Please use issues to report bugs or features requests.",
+          "PikaTorrent has been rewritten from scratch for v0.10.0. If you already use a previous release, upgrading to v0.10.0 will most likely not display your previous torrents."
+        ]
+      }
+    },
+    "justrach/turboAPI": {
+      "category": "dev-tools",
+      "one_liner": "兼容 FastAPI 的高速框架",
+      "intro": {
+        "one_liner": "Zig 核心的 Python 接口框架",
+        "what_it_is": "TurboAPI 是兼容 FastAPI 写法的 Python 框架，使用 Zig 实现 HTTP 核心，并提供自由线程 Python 支持。",
+        "problem_solved": "它面向希望沿用 FastAPI 路由写法、同时尝试更高 HTTP 处理速度和自由线程运行方式的开发者。",
+        "who_should_care": "关注 Python 接口性能、Zig 后端和自由线程运行时的开发者。",
+        "use_cases": [
+          "迁移现有 FastAPI 路由定义",
+          "构建无缓存 HTTP 接口",
+          "试用自由线程 Python 服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时获一千星。",
+        "risk_notes": "处于 Alpha，不建议直接用于生产；缺少原生加密传输和新版协议支持，请求体上限固定，部分能力仍依赖反向代理。",
+        "evidence": [
+          "FastAPI-compatible Python framework. Zig HTTP core. Faster on HTTP-only and uncached HTTP+DB workloads.",
+          "Alpha software — read before using in production",
+          "No native TLS / HTTP/2 / HTTP/3 / QUIC"
+        ]
+      }
+    },
+    "danielmiessler/LifeOS": {
+      "category": "ai-agent",
+      "one_liner": "增强人类能力的智能体基础设施",
+      "intro": {
+        "one_liner": "个人 AI 生活操作系统",
+        "what_it_is": "LifeOS 是一套通用 AI 基础设施，记录个人目标、偏好和上下文，并通过技能、记忆与路由协助生活和工作任务。",
+        "problem_solved": "它试图解决 AI 助手缺少长期个人上下文、每次都要重复解释、任务流程难以沉淀的问题。",
+        "who_should_care": "重度使用 AI 编程助手、希望定制个人工作流和长期记忆的开发者。",
+        "use_cases": [
+          "沉淀个人目标与偏好",
+          "定制常用 AI 技能",
+          "自动路由研究等任务"
+        ],
+        "alternatives": "相比只提供提示词集合的 Fabric，它更侧重记忆、技能、上下文、路由和自我改进等运行层。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 90 星，且本周上过一次日榜。",
+        "risk_notes": "安装依赖具备能力的 AI 编程环境和 bun；本地模型、远程访问、通知等能力仍在路线图中；未关闭 Issue 有 174 个。",
+        "evidence": [
+          "LifeOS is a General Purpose AI Harness for doing anything you want to do in life and work with AI.",
+          "Persistent memory — Your DA remembers past sessions, decisions, and learnings",
+          "Local Model Support | Run LifeOS with local models (Ollama, llama.cpp) for privacy and cost control"
+        ]
+      }
+    },
+    "rivet-dev/agentos": {
+      "category": "ai-agent",
+      "one_liner": "可移植智能体运行操作系统",
+      "intro": {
+        "one_liner": "智能体轻量沙箱系统",
+        "what_it_is": "一个面向智能体的可移植开源操作系统，基于 WebAssembly 与 V8 isolates，提供文件、进程、shell 和网络等隔离运行环境。",
+        "problem_solved": "为智能体提供轻量、可嵌入后端的隔离运行环境，避免为每个智能体启动完整虚拟机或额外基础设施。",
+        "who_should_care": "开发智能体、代码执行或工具调用平台的 JavaScript 与 TypeScript 开发者。",
+        "use_cases": [
+          "在后端进程内运行智能体沙箱",
+          "执行 shell、文件与脚本任务",
+          "为浏览器或后端提供隔离环境"
+        ],
+        "alternatives": "相比微虚拟机方案，强调库形态、直接函数调用、共享运行时和无需嵌套虚拟化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 237 星，并曾进入日榜一天。",
+        "risk_notes": "未关闭议题有 138 个；托管模式涉及令牌与权限配置，需谨慎处理访问范围。",
+        "evidence": [
+          "agentOS is a portable open-source operating system for agents. ~6 ms coldstarts, 32x cheaper than sandboxes. Powered by WebAssembly and V8 isolates.",
+          "Library, not extra infrastructure. Install agentOS from npm and run it inside the backend process you already operate.",
+          "Each agent gets files, processes, shell, and networking in one lightweight OS."
+        ]
+      }
+    },
+    "zhongerxin/Cowart": {
+      "category": "other",
+      "one_liner": "用途未明的 JavaScript 项目",
+      "intro": {
+        "one_liner": "Codex 原生画布插件",
+        "what_it_is": "Cowart 是面向 Codex 的无限画布插件，基于 tldraw，可在画布中标注、生成图片、HTML、影片和演示页。",
+        "problem_solved": "把创意素材、标注、生成结果和迭代过程集中到 Codex 原生画布，减少在浏览器、本地页面和项目文件间切换。",
+        "who_should_care": "使用 Codex 做视觉构思、图片迭代、网页原型和演示内容创作的开发者。",
+        "use_cases": [
+          "按画布框比例生成图片",
+          "用标注截图修订图片",
+          "生成并演示幻灯片"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,938 星，并有一天上日榜。",
+        "risk_notes": "创建时间较新，仍有 21 个未关闭问题；安装或更新后需完全退出并重启 Codex，部分能力依赖宿主版本。",
+        "evidence": [
+          "Cowart 是一个面向 Codex 的原生无限画布 widget 插件。它基于 tldraw 提供可视化画布，用于构思、标注、生成图片和根据标注图迭代图片。",
+          "安装完成后，请务必完全退出并重新启动一次 Codex，再开始使用 Cowart。重启后，Cowart 的新技能和 MCP 工具才能完整加载。",
+          "一周新增 Star：1938"
+        ]
+      }
+    },
+    "WhiteDNS/WhiteDNS-Android": {
+      "category": "mobile",
+      "one_liner": "安卓 DNS 隧道代理客户端",
+      "intro": {
+        "one_liner": "安卓 DNS 隧道客户端",
+        "what_it_is": "WhiteDNS 是一款安卓应用，可在本地运行 DNS 隧道客户端，提供代理和 VPN 两种模式，并支持多种连接引擎与配置管理。",
+        "problem_solved": "它把 DNS 隧道连接、服务器配置、订阅导入、分流和运行状态集中到安卓端，方便用户建立并管理代理或 VPN 会话。",
+        "who_should_care": "需要在安卓上配置 DNS 隧道、代理或 VPN 模式的开发者与进阶用户。",
+        "use_cases": [
+          "用本地 SOCKS5 代理连接",
+          "通过 VPN 模式分流流量",
+          "导入订阅并管理连接配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 13 星，仅一天进入日榜。",
+        "risk_notes": "源码可见但为专有软件，禁止发布修改版、重打包或再分发二进制；CottenMax 仍是测试分支，尚无稳定版；非官方应用市场安装包被提示可能不安全。",
+        "evidence": [
+          "WhiteDNS is an Android application for running a local DNS tunneling client with proxy and VPN modes.",
+          "WhiteDNS is source-available proprietary software. The code is published for transparency, review, and contribution to this official project only.",
+          "these are beta builds, with no stable app release published by this update."
+        ]
+      }
+    }
+  }
+}

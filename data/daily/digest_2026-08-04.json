@@ -1,1 +1,708 @@
-{"date":"2026-08-04","headline":"AI Agent 与安全工具同日升温","points":["microsoft/skill-recorder 以录屏生成可复用自动化技能领跑，单日新增 602。","Kritt-ai/open-kritt 用智能体编排挖掘代码漏洞，新增 348，安全方向受关注。","AI Agent、AI 模型、安全、内容媒体各有 4 个项目，Python 项目达 10 个。"],"items":{"microsoft/skill-recorder":{"category":"automation","one_liner":"录屏生成可复用自动化技能"},"Kritt-ai/open-kritt":{"category":"security","one_liner":"编排智能体挖掘代码漏洞"},"XYZ-AI-Lab/axrl":{"category":"ai-model","one_liner":"智能体强化学习后训练框架"},"EgalitarianMonkey/hometube":{"category":"content-media","one_liner":"视频下载整理成家庭媒体库"},"FunnyWolf/agentic-soc-platform":{"category":"security","one_liner":"智能体驱动的自动化安全运营平台"},"octanejs/octane":{"category":"web-frontend","one_liner":"编译式 React 风格前端框架"},"aietheia/ChatHTML":{"category":"other","one_liner":"聊天式 HTML 相关工具"},"Alisa0808/vox-director":{"category":"content-media","one_liner":"一键生成拼贴解说视频"},"Willxup/cpa-usage-keeper":{"category":"dev-tools","one_liner":"代理接口用量追踪看板"},"MoonshotAI/MoonEP":{"category":"ai-model","one_liner":"动态冗余专家并行库"},"shiyi-0x7f/olib-mobile":{"category":"mobile","one_liner":"开源电子书阅读器前端"},"open-gsd/gsd-pi":{"category":"ai-agent","one_liner":"长时自主开发提示工程系统"},"ctxrs/ctx":{"category":"dev-tools","one_liner":"搜索本机编码智能体历史"},"NVlabs/DiffusionNFT":{"category":"ai-model","one_liner":"在线扩散强化学习研究项目"},"addyosmani/bg-remove":{"category":"content-media","one_liner":"本地私密图片去背景工具"},"actions/attest-build-provenance":{"category":"dev-tools","one_liner":"生成构建来源证明的 Action"},"Algebra-FUN/WeReadScan":{"category":"content-media","one_liner":"微信读书已购书转 PDF 爬虫"},"ddz/whatsapp-media-decrypt":{"category":"security","one_liner":"解密 WhatsApp 加密媒体文件"},"felix-pb/kfd":{"category":"security","one_liner":"读写苹果设备内核内存"},"modenaxe/awesome-biomechanics":{"category":"learning-resource","one_liner":"生物力学与人体运动资源清单"},"FlowElement-xinliuyuansu/m_flow":{"category":"ai-agent","one_liner":"仿生认知记忆引擎"},"Weikezi-AI/GoGuide":{"category":"learning-resource","one_liner":"Go 语言系统学习指南"},"Weikezi-AI/CNote":{"category":"learning-resource","one_liner":"易懂的 C 语言入门教程"},"dingyi214/slash-admin":{"category":"web-frontend","one_liner":"现代 React 后台管理模板"},"supersonic-app/supersonic":{"category":"desktop-system","one_liner":"自托管音乐服务桌面客户端"},"StikDebug/StikDebug":{"category":"mobile","one_liner":"iOS 设备端调试与 JIT 工具"},"vinhhien112/img2obj":{"category":"ai-agent","one_liner":"图片转 Three.js 程序模型插件"},"FareedKhan-dev/kimi-k3-in-c":{"category":"ai-model","one_liner":"纯 C 单 CPU 大模型推理"},"huangruiteng/loopx":{"category":"ai-agent","one_liner":"长跑智能体团队状态内核"}}}
+{
+  "date": "2026-08-04",
+  "headline": "AI Agent 与安全工具同日升温",
+  "points": [
+    "microsoft/skill-recorder 以录屏生成可复用自动化技能领跑，单日新增 602。",
+    "Kritt-ai/open-kritt 用智能体编排挖掘代码漏洞，新增 348，安全方向受关注。",
+    "AI Agent、AI 模型、安全、内容媒体各有 4 个项目，Python 项目达 10 个。"
+  ],
+  "items": {
+    "microsoft/skill-recorder": {
+      "category": "automation",
+      "one_liner": "录屏生成可复用自动化技能",
+      "intro": {
+        "one_liner": "录制屏幕操作，自动生成 AI 可复用技能",
+        "what_it_is": "微软开源的 Electron 桌面应用，录制用户在屏幕上的实际操作过程，再通过 GitHub Copilot CLI 将其还原为「意图 + 有序步骤」，并生成可复用的 Skill 或 Automation。",
+        "problem_solved": "把一次性的手工操作演示转化为 AI agent 可重复执行的技能或定时自动化，免去手写流程文档和脚本。",
+        "who_should_care": "需要为 Copilot Studio、Microsoft Scout 或 Copilot Cowork 构建 agent 技能的开发者与自动化实践者，以及希望把重复性办公流程沉淀为自动化的团队。",
+        "use_cases": [
+          "录制一次表单提交流程，生成可批量复用的 Skill",
+          "把周期性重复操作录制后转为定时 Automation",
+          "为 Copilot Studio 等 agent 平台快速产出 SKILL.md 流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Copilot agent 生态与「录制即技能」概念，一周新增约 947 star，但项目创建时间较短，仍需观察。",
+        "risk_notes": "录制内容在点击 Analyze 后会发送至 GitHub 云端，README 明确警告不要录制密码、token、API key 等机密信息；安装方式为源码构建，需 GitHub Copilot 访问权限；macOS 为主要目标平台。",
+        "evidence": [
+          "Desktop app that records your on-screen work session and uses the GitHub Copilot CLI to reconstruct it as an intent + ordered steps",
+          "a Skill: a SKILL.md procedure an agent runs on demand, or an Automation: the same procedure on a schedule or trigger",
+          "Keep secrets out of your recordings. Don't record, type, paste, or narrate passwords, tokens, API keys, or other confidential info"
+        ]
+      }
+    },
+    "Kritt-ai/open-kritt": {
+      "category": "security",
+      "one_liner": "编排智能体挖掘代码漏洞",
+      "intro": {
+        "one_liner": "编排 AI agent 挖掘代码漏洞的自托管平台",
+        "what_it_is": "open·kritt 是一个开源、自托管的 AI 安全与漏洞研究平台，将安全研究拆分为多个聚焦的小任务，交由多个 AI agent 并行执行，再汇总为去重、排序后的可验证发现。",
+        "problem_solved": "直接让模型分析整个代码仓库来寻找漏洞，效果通常很差；open·kritt 通过拆分任务、并行编排、后处理验证与去重排序，把 AI 分析转化为可验证、可排序的漏洞发现。",
+        "who_should_care": "希望自行掌控提示词、工作流、模型供应商与基础设施的安全研究人员，以及有安全意识的开发者。",
+        "use_cases": [
+          "对远程或本地代码仓库及其依赖执行 AI 漏洞扫描",
+          "将聚焦提示词串联为可复用的安全研究 playbook",
+          "用 post-script 验证问题、构建 PoC 并生成报告",
+          "导出包含发现、结构化数据、报告与 PoC 的 ZIP 结果包"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：AI agent 与漏洞赏金结合的话题热度高，周增约 344 stars，但项目仍处早期，后端无应用层认证，需专用隔离环境。",
+        "risk_notes": "许可证为 AGPL-3.0，商用或分发需注意其传染性条款；后端不含应用认证，默认仅绑定 127.0.0.1，必须私有部署；工具型 agent 以 root 在一次性容器内运行且可直连互联网，扫描不可信代码前需阅读威胁模型并置于专用 Docker 主机或 VM。",
+        "evidence": [
+          "Orchestrate AI agents to find real vulnerabilities in code.",
+          "break the research into small, well-defined tasks, run them across AI agents in parallel, and combine their output into findings you can validate and prioritize",
+          "The default ports bind to 127.0.0.1, and the backend does not include application authentication. Keep the stack private."
+        ]
+      }
+    },
+    "XYZ-AI-Lab/axrl": {
+      "category": "ai-model",
+      "one_liner": "智能体强化学习后训练框架",
+      "intro": {
+        "one_liner": "智能体强化学习后训练框架",
+        "what_it_is": "AxisRL 是基于 SGLang 采样、Megatron 训练和真实智能体工作流的强化学习后训练框架，主要用 Python 编写。",
+        "problem_solved": "它把多轮采样、工具与环境交互、奖励收集、训练样本构建、权重同步和可复现调试整合到一套框架中。",
+        "who_should_care": "做大模型强化学习后训练、智能体训练和分布式训练系统的开发者。",
+        "use_cases": [
+          "数学题的 PPO 或 GRPO 训练",
+          "带检索的多轮工具训练",
+          "黑盒智能体轨迹采集训练"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 9 星，仅一天进入日榜。",
+        "risk_notes": "黑盒强化学习配方仍在进行中，配置和代理接口可能变化；默认配方需要充足算力与较大模型数据下载。",
+        "evidence": [
+          "AxisRL is an agentic RL post-training framework built on SGLang rollout, Megatron training, and real-world agent workflows.",
+          "AxisRL connects high-throughput rollout, large-scale training, weight synchronization, data movement, resource scheduling, and reproducible debugging inside one coherent framework.",
+          "This recipe is still a work in progress. It demonstrates the black-box harness integration path with OpenHands/E2B, but the config, launch scripts, and proxy interfaces may change."
+        ]
+      }
+    },
+    "EgalitarianMonkey/hometube": {
+      "category": "content-media",
+      "one_liner": "视频下载整理成家庭媒体库",
+      "intro": {
+        "one_liner": "面向家庭媒体服务器的视频下载整理工具",
+        "what_it_is": "HomeTube 是一个带 Web UI 的视频下载器，基于 yt-dlp 将单个视频或播放列表下载为高画质文件，并按媒体服务器可识别的命名与目录结构自动归档。",
+        "problem_solved": "解决手动下载网络视频后需自行重命名、分类、放入 Plex/Jellyfin 媒体库的繁琐流程，同时通过 SponsorBlock 去除广告与赞助片段。",
+        "who_should_care": "自建媒体服务器的 Homelab 用户、Plex/Jellyfin/Emby 使用者，以及希望在内网统一管理视频下载的人。",
+        "use_cases": [
+          "将 YouTube 视频下载并自动归档到 Jellyfin/Plex 媒体库",
+          "同步播放列表并保持本地库与源一致",
+          "下载后裁剪片段、嵌入字幕或转换格式"
+        ],
+        "alternatives": "README 未与其他同类项目做直接对比，仅说明自身集成 SponsorBlock、媒体服务器目录结构与 yt-dlp 自定义参数；具体差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：自托管媒体库与 Homelab 需求稳定存在，但项目创建于 2025-09，仍需观察维护持续性。",
+        "risk_notes": "许可证为 AGPL-3.0，商用或二次分发需注意开源义务；README 提到后续平台 Content 及在线托管服务，需留意项目重心迁移；下载受版权与平台条款约束。",
+        "evidence": [
+          "HomeTube is a friendly video downloader managing single video URL into organized content structure for automatic home media server experience.",
+          "Download, process, and organize ads-free best-quality videos at Home.",
+          "HomeTube keeps being developed and maintained — Content is where the idea goes next."
+        ]
+      }
+    },
+    "FunnyWolf/agentic-soc-platform": {
+      "category": "security",
+      "one_liner": "智能体驱动的自动化安全运营平台",
+      "intro": {
+        "one_liner": "智能体安全运营平台",
+        "what_it_is": "一个开源安全运营平台，用智能体参与告警分诊、调查、情报补全和知识沉淀，并提供私有部署与扩展能力。",
+        "problem_solved": "把大量告警汇聚成可执行案件，辅助安全团队完成调查、富化、报告生成和经验复用。",
+        "who_should_care": "蓝队、安全运营人员，以及需要定制安全自动化流程的团队。",
+        "use_cases": [
+          "汇聚多来源告警并生成案件",
+          "围绕案件开展智能调查",
+          "用剧本编排分析与响应"
+        ],
+        "alternatives": "强调智能体参与调查、知识沉淀和统一剧本编排，并支持本地部署。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 67 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间较新；仍有 10 个未关闭问题；资料未提供生产案例与稳定性说明。",
+        "evidence": [
+          "Agentic SOC Platform is an open-source security operations platform built on Agentic AI, enabling agents to proactively participate in triage, investigation, enrichment, and knowledge accumulation so security teams can move from alert fatigue to AI-assisted decision-making.",
+          "MIT licensed, fully local deployment supported. Security data stays inside your network, while the backend, frontend, and extension scripts remain clear and controllable.",
+          "一周新增 Star：67"
+        ]
+      }
+    },
+    "octanejs/octane": {
+      "category": "web-frontend",
+      "one_liner": "编译式 React 风格前端框架",
+      "intro": {
+        "one_liner": "编译型 React 编程模型 UI 框架",
+        "what_it_is": "Octane 是一个用 TypeScript 编写的 JavaScript UI 框架，是 Inferno 的继任者。它沿用 React 的组件 API，并通过编译器把组件编译成直接操作 DOM 的代码，运行时不再使用虚拟 DOM。",
+        "problem_solved": "它试图解决 React 生态中虚拟 DOM 带来的运行时开销，以及 hooks 依赖数组需要手工维护、hooks 调用顺序受限等问题；同时让开发者已有的 React 知识可以直接迁移过来。",
+        "who_should_care": "关注前端框架性能、希望复用 React 心智模型又想要更少运行时开销的开发者，以及正在评估 Inferno 后续替代方案的团队。",
+        "use_cases": [
+          "用 React 熟悉的 useState/useEffect 等 API 编写高性能 Web 应用",
+          "需要流式 SSR、字节稳定 hydration 与延迟 hydration 的全栈渲染场景",
+          "在既有 React 应用中逐步引入 Octane 组件（OctaneCompat），或在 Octane 中嵌入 React 组件（ReactCompat）"
+        ],
+        "alternatives": "与 React 相比，它不使用虚拟 DOM，没有 class 组件、Server Components 和合成事件系统，并取消了 rules of hooks 对调用顺序的限制；与 Inferno 相比，它是后者的继任者，改用编译期生成直接 DOM 代码。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：编译期消除运行时开销、保留 React 心智模型是持续演进的方向，但项目仍处早期，生态与生产验证有限。",
+        "risk_notes": "项目创建于 2026-06-22，距今时间很短；README 明确说明它刻意不支持 class 组件、Server Components 和合成事件系统，迁移存在功能边界；要求 Node.js 22.22.2 及以上版本。",
+        "evidence": [
+          "React’s programming model, compiled. The successor to Inferno",
+          "No virtual DOM, no rules-of-hooks bookkeeping, and no dependency arrays to maintain by hand.",
+          "Octane's native renderer is deliberately narrow where React has grown wide: no class components, no Server Components, no synthetic event system."
+        ]
+      }
+    },
+    "aietheia/ChatHTML": {
+      "category": "other",
+      "one_liner": "聊天式 HTML 相关工具",
+      "intro": {
+        "one_liner": "流式生成交互式网页回答",
+        "what_it_is": "ChatHTML 把普通提示词转成边生成边渲染的 HTML 回答，可包含排版、可视化、表单、按钮和小型脚本。",
+        "problem_solved": "它让模型回答不再局限于纯 Markdown，而是成为可解释、可观看、可操作且受沙箱约束的界面产物。",
+        "who_should_care": "做 AI 回答展示、交互原型和教学可视化的前端开发者。",
+        "use_cases": [
+          "生成可交互教学演示",
+          "制作计时器或小游戏",
+          "把说明变成可视化工具"
+        ],
+        "alternatives": "重点在回答媒介，而非复刻聊天产品或应用搭建流程。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "创建时间很新，成熟度不明；生成内容依赖沙箱约束，实际边界需自行核验。",
+        "evidence": [
+          "ChatHTML turns a normal message into a live, streaming HTML response.",
+          "It is focused on the response medium rather than reproducing a ChatGPT-style product or an app-builder workflow.",
+          "generated artifacts run in a guarded sandbox."
+        ]
+      }
+    },
+    "Alisa0808/vox-director": {
+      "category": "content-media",
+      "one_liner": "一键生成拼贴解说视频",
+      "intro": {
+        "one_liner": "一句话生成 Vox 风格拼贴解说视频",
+        "what_it_is": "一个 agent skill（代理技能），基于 Atlas Cloud API 与本地 ffmpeg，把单个主题自动串成脚本、拼贴关键帧、动态、配音、音乐与字幕，最终输出 mp4。",
+        "problem_solved": "把 Vox 式纸片拼贴解说或广告视频的制作流程自动化，省去人工写脚本、做图、动画、配音与剪辑的环节。",
+        "who_should_care": "需要批量产出解说或广告短视频的内容创作者、营销团队，以及使用 Claude Code、Codex 等编码 agent 的开发者。",
+        "use_cases": [
+          "输入一句话主题，生成 15–60 秒的拼贴风格解说短片",
+          "把已有的口播视频（A-roll）重新风格化为拼贴画面",
+          "用单张照片（C-roll）或数字主持人（Host）生成带配音的拼贴视频"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依赖 Claude Code skill 与多家生成式视频 API 的组合，属于当前 agent 工作流的热门玩法，但强依赖第三方云服务与模型可用性。",
+        "risk_notes": "强依赖 Atlas Cloud API key 及多家第三方模型（模型 ID 会漂移，需运行时拉取列表）；需本地安装 ffmpeg 与 Python Pillow；项目创建于 2026-07，属较新项目，长期维护情况未知。",
+        "evidence": [
+          "Turn one topic into a finished Vox-style paper-collage explainer / ad video — script, collage keyframes, motion, voice-over, music and captions, all automated.",
+          "An agent skill that runs end to end on the Atlas Cloud API + local ffmpeg, usable by any coding agent (Claude Code, Codex, etc.).",
+          "Model IDs drift — the skill fetches the live list from GET https://api.atlascloud.ai/api/v1/models before running."
+        ]
+      }
+    },
+    "Willxup/cpa-usage-keeper": {
+      "category": "dev-tools",
+      "one_liner": "代理接口用量追踪看板",
+      "intro": {
+        "one_liner": "CPA 用量看板",
+        "what_it_is": "一个独立部署的 CLIProxyAPI 用量追踪工具，使用 Go 编写，带 SQLite 持久化和内置仪表盘。",
+        "problem_solved": "保存 CPA 用量历史，集中查看成本、请求表现、凭证额度和实时诊断信息。",
+        "who_should_care": "已部署 CLIProxyAPI、需要审计用量和额度的开发者或运维。",
+        "use_cases": [
+          "按模型分析用量与估算成本",
+          "排查请求延迟和成功率",
+          "监控凭证健康与额度历史"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 102 星，曾有一天进入日榜。",
+        "risk_notes": "依赖 CPA 8.0.12 及以上版本并需开启用量统计；多采集器共用实例时要求订阅模式，否则可能漏采。",
+        "evidence": [
+          "Standalone CliProxyAPI usage tracker with SQLite persistence and built-in dashboard.",
+          "Keep usage history for [CLIProxyAPI (CPA)](https://github.com/router-for-me/CLIProxyAPI), understand model costs, and track request performance and credential quotas.",
+          "Keeper supports CPA v8.0.12+. Enable usage statistics by setting `observability.usage.usage-statistics-enabled` to `true`."
+        ]
+      }
+    },
+    "MoonshotAI/MoonEP": {
+      "category": "ai-model",
+      "one_liner": "动态冗余专家并行库",
+      "intro": {
+        "one_liner": "均衡专家并行通信库",
+        "what_it_is": "MoonEP 是面向混合专家训练的专家并行通信库，用动态冗余专家让各计算单元接收等量令牌，并提供零拷贝、静态形状的通信接口。",
+        "problem_solved": "它解决路由不均衡导致部分计算单元过载、通信变慢、显存碎片化甚至内存不足的问题，让每层令牌量和张量形状保持稳定。",
+        "who_should_care": "做大规模混合专家训练、关注专家并行通信和训练框架集成的开发者。",
+        "use_cases": [
+          "混合专家训练中的令牌分发与回收",
+          "缓解专家路由倾斜造成的负载不均",
+          "集成静态形状通信到训练框架"
+        ],
+        "alternatives": "相比 DeepEP v2，强调零拷贝、在线规划和固定令牌量，路由倾斜时通信时间更平稳。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 35 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间较晚，未关闭问题 19 个；真武加速器支持仍在评审中，集成需要改造权重、梯度和计算视图。",
+        "evidence": [
+          "MoonEP is an Expert Parallelism communication library that keeps token loads perfectly balanced across ranks via dynamic redundant experts.",
+          "Zero copy and static shapes: fused permute/unpermute — tokens are sent directly to their expert-grouped positions on remote ranks and buffer views are returned to the computation.",
+          "Zhenwu PPU (under review, coming soon)"
+        ]
+      }
+    },
+    "shiyi-0x7f/olib-mobile": {
+      "category": "mobile",
+      "one_liner": "开源电子书阅读器前端",
+      "intro": {
+        "one_liner": "AI 辅助电子书阅读器",
+        "what_it_is": "一个用 Dart 和 Flutter 编写的开源电子书阅读器第三方客户端，只提供前端界面，书籍数据来自外部来源。",
+        "problem_solved": "为电子书阅读提供搜索、离线阅读、深色模式、多语言、多账号和多线路选择等统一前端体验。",
+        "who_should_care": "想试用第三方电子书客户端，或关注 Flutter 与 AI 辅助开发实践的开发者。",
+        "use_cases": [
+          "按书名、作者或关键词找书",
+          "下载书籍后离线阅读",
+          "在多账号和多线路间切换"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 21 星，本周上日榜 1 天。",
+        "risk_notes": "仅提供前端，数据依赖外部来源；非官方客户端，合规责任由使用者承担；截图仍标注待补充。",
+        "evidence": [
+          "Third-party client • Frontend interface only • All data from external sources",
+          "This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.",
+          "Users are responsible for ensuring compliance with applicable laws"
+        ]
+      }
+    },
+    "open-gsd/gsd-pi": {
+      "category": "ai-agent",
+      "one_liner": "长时自主开发提示工程系统",
+      "intro": {
+        "one_liner": "本地优先的命令行编码智能体",
+        "what_it_is": "GSD Pi 是本地优先的命令行编码智能体，用终端工作流规划、实现、验证并跟踪项目工作，也提供可选的网页界面。",
+        "problem_solved": "它把需求、决策、计划、验证证据和项目状态集中管理，减少长时间编码任务中上下文丢失和人工协调。",
+        "who_should_care": "需要命令行智能体、规范驱动开发和 Git 工作树隔离的开发者。",
+        "use_cases": [
+          "把想法拆成里程碑并自动推进",
+          "在隔离工作树中实现和验证",
+          "用终端或网页跟踪项目状态"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 29 星，仅一天进入日榜。",
+        "risk_notes": "公开开发从干净基线重启，旧版本迁移需先卸载旧包；未关闭问题 74 个。",
+        "evidence": [
+          "GSD Pi is a local-first coding agent for planning, implementing, verifying, and tracking project work from the command line.",
+          "Autonomous project workflow — Break work into milestones, slices, and tasks, then let auto mode plan, implement, verify, and advance.",
+          "The `open-gsd/gsd-pi` project restarted public development from a clean baseline at version `1.0.0`."
+        ]
+      }
+    },
+    "ctxrs/ctx": {
+      "category": "dev-tools",
+      "one_liner": "搜索本机编码智能体历史",
+      "intro": {
+        "one_liner": "本地智能体历史检索工具",
+        "what_it_is": "ctx 是一套用 Rust 编写的本地命令行工具链，用于检索机器上的编码智能体会话记录，并支持代码归因和代码库关系图谱。",
+        "problem_solved": "它把分散在日志、JSONL 文件和 SQLite 数据库中的智能体会话整理成可搜索记录，帮助新会话找回决策、约束、失败尝试和代码来源。",
+        "who_should_care": "频繁使用编码智能体、需要复用历史上下文或审计智能体改动的开发者。",
+        "use_cases": [
+          "搜索过往智能体会话",
+          "追溯代码由哪次会话产生",
+          "过滤冗长工具输出"
+        ],
+        "alternatives": "相比压缩成摘要的智能体记忆，它保留并检索完整原始记录。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 9 星，仅一天进入日榜。",
+        "risk_notes": "备份和共享历史功能标注为测试版；语义检索可配置外部执行器，可能把历史和查询文本发往端点；转录文本不会自动脱敏。",
+        "evidence": [
+          "ctx lets you search it and blame code to the sessions that wrote it.",
+          "Together it is an open, local, fast CLI toolchain for context engineering.",
+          "Back up and share history (beta)"
+        ]
+      }
+    },
+    "NVlabs/DiffusionNFT": {
+      "category": "ai-model",
+      "one_liner": "在线扩散强化学习研究项目",
+      "intro": {
+        "one_liner": "扩散模型在线强化方法",
+        "what_it_is": "DiffusionNFT 是面向扩散模型的在线强化学习实现，直接在前向扩散过程上做策略优化，并提供训练与评估脚本。",
+        "problem_solved": "它试图降低扩散模型强化训练对完整采样轨迹的依赖，只需干净图像训练，并兼容黑盒采样器与现有训练代码。",
+        "who_should_care": "研究扩散模型强化学习、奖励微调和多奖励图像生成的开发者。",
+        "use_cases": [
+          "用奖励模型微调扩散模型",
+          "多奖励图像生成训练",
+          "评估 LoRA 检查点效果"
+        ],
+        "alternatives": "相比 GRPO，强调兼容任意黑盒采样器，并基于标准流匹配目标，便于接入现有代码。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜，但创建时间较新。",
+        "risk_notes": "环境依赖较多，默认训练配置面向八卡；部分奖励服务需单独部署，许可证信息未提供。",
+        "evidence": [
+          "DiffusionNFT is a new online reinforcement learning paradigm for diffusion models that performs policy optimization directly on the forward diffusion process.",
+          "Unlike GRPO, DiffusionNFT is compatible with any black-box sampler (e.g., high-order ODE solvers) throughout data collection.",
+          "The default configuration file `config/nft.py` is set for 8 GPUs, and you can customize it as needed."
+        ]
+      }
+    },
+    "addyosmani/bg-remove": {
+      "category": "content-media",
+      "one_liner": "本地私密图片去背景工具",
+      "intro": {
+        "one_liner": "浏览器本地抠图工具",
+        "what_it_is": "这是一个基于 React、Vite 和 Transformers.js 的浏览器应用，可在本地移除图片背景，并支持自定义背景与导出。",
+        "problem_solved": "它解决图片去背景需要上传文件到服务器的问题，让处理过程留在设备内，兼顾隐私与本地使用。",
+        "who_should_care": "需要快速抠图、重视图片隐私的前端开发者和普通用户。",
+        "use_cases": [
+          "制作透明背景图片",
+          "替换图片背景颜色",
+          "本地处理敏感图片"
+        ],
+        "alternatives": "相比服务端抠图服务，强调浏览器内本地处理；支持可选 WebGPU 加速。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "可选 WebGPU 加速依赖浏览器支持；README 提到基于示例项目，二次开发需关注模型与兼容性。",
+        "evidence": [
+          "Free image background removal - private, client-side and powered by Transformers.js",
+          "A powerful React + Vite application that removes backgrounds from images directly in your browser.",
+          "Privacy-focused - all processing happens in your browser"
+        ]
+      }
+    },
+    "actions/attest-build-provenance": {
+      "category": "dev-tools",
+      "one_liner": "生成构建来源证明的 Action",
+      "intro": {
+        "one_liner": "构建产物来源证明动作",
+        "what_it_is": "这是为工作流产物生成签名构建来源证明的 GitHub Actions 动作，第四版起是 actions/attest 的封装。",
+        "problem_solved": "把产物名称与摘要绑定到构建来源声明，生成可验证签名并上传关联到发起工作流的仓库。",
+        "who_should_care": "使用 GitHub Actions 发布产物、关注供应链来源验证的开发者。",
+        "use_cases": [
+          "为构建产物生成来源证明",
+          "在发布流程中上传证明",
+          "用命令行验证产物签名"
+        ],
+        "alternatives": "新实现建议改用 actions/attest；本项目可继续供既有应用使用。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千星时为一千零一颗。",
+        "risk_notes": "第四版只是封装，新实现应改用 actions/attest；旧版计划不支持产物证明，部分方案仅限公开仓库。",
+        "evidence": [
+          "Action for generating build provenance attestations for workflow artifacts",
+          "Generate signed build provenance attestations for workflow artifacts. Internally powered by the [@actions/attest][1] package.",
+          "As of version 4, `actions/attest-build-provenance` is simply a wrapper on top of [`actions/attest`][7]."
+        ]
+      }
+    },
+    "Algebra-FUN/WeReadScan": {
+      "category": "content-media",
+      "one_liner": "微信读书已购书转 PDF 爬虫",
+      "intro": {
+        "one_liner": "微信读书本地导出工具",
+        "what_it_is": "这是一个用 Python 编写的爬虫库，借助 selenium 扫描微信读书网页内容，并将图书转换保存为本地 PDF 或 HTML。",
+        "problem_solved": "它解决已购图书只能在微信读书应用内阅读、不便用其他笔记工具做手写批注和本地保存的问题。",
+        "who_should_care": "已购微信读书、需要本地阅读或手写笔记的开发者。",
+        "use_cases": [
+          "导出已购图书为本地 PDF",
+          "批量获取图书 HTML",
+          "配合笔记应用做手写批注"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "仅限已购图书、私人学习用途，禁止商业和扩散；依赖 selenium 与无头浏览器；需登录才能扫描完整图书。",
+        "evidence": [
+          "一个用于的将`微信读书`上的图书扫描转换本地PDF/HTML的爬虫库.",
+          "本脚本仅限用于**已购**图书的爬取，用于私人学习目的，禁止用于商业目的和网上资源扩散，尊重微信读书方面的利益",
+          "只有登陆后，才能扫描完整的图书资源；若不登陆，也可以扫描部分无需解锁的部分"
+        ]
+      }
+    },
+    "ddz/whatsapp-media-decrypt": {
+      "category": "security",
+      "one_liner": "解密 WhatsApp 加密媒体文件",
+      "intro": {
+        "one_liner": "解密 WhatsApp 媒体文件",
+        "what_it_is": "一个用 Go 编写的命令行工具，用端点保存的媒体密钥解密从 WhatsApp 下载的加密媒体文件。",
+        "problem_solved": "帮助已有合法端点数据的人还原加密附件内容，便于取证检查图片、视频、音频和文档。",
+        "who_should_care": "数字取证人员、安全研究者，以及需要检查本机聊天附件的开发者。",
+        "use_cases": [
+          "取证分析加密视频附件",
+          "从本机数据库提取媒体密钥",
+          "还原图片、音频或文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天进入日榜，破千星时为一千星。",
+        "risk_notes": "需要端点上的媒体密钥；作者明确不协助解密他人 WhatsApp；资料未提供许可证与版本状态。",
+        "evidence": [
+          "Decrypt WhatsApp encrypted media files",
+          "This project demonstrates how to decrypt encrypted media files\ndownloaded from WhatsApp.",
+          "This uses a cryptographic key\nstored on one of the endpoints to decrypt a media attachment in the\nsame way that the WhatsApp app does to display it on the screen."
+        ]
+      }
+    },
+    "felix-pb/kfd": {
+      "category": "security",
+      "one_liner": "读写苹果设备内核内存",
+      "intro": {
+        "one_liner": "Apple 内核读写研究库",
+        "what_it_is": "kfd 是一个用 C 编写的项目，提供 libkfd 库及 iOS、macOS 示例程序，用于在 Apple 设备上读写内核内存。",
+        "problem_solved": "它把利用漏洞获得内核读写能力的过程封装成较小接口，便于研究相关漏洞与内核内存访问。",
+        "who_should_care": "熟悉 XNU 虚拟内存、研究 Apple 内核漏洞的开发者与安全研究员。",
+        "use_cases": [
+          "研究 PUAF 漏洞利用",
+          "调试内核内存读写",
+          "学习 XNU 漏洞分析"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千星且已有 184 次分叉。",
+        "risk_notes": "依赖已修复漏洞，适用范围受设备和系统版本限制；作者明确不打算为其他设备和 iOS 版本添加偏移量；失败时可能等待三十秒，部分方法退出时可能引发内核崩溃。",
+        "evidence": [
+          "kfd, short for kernel file descriptor, is a project to read and write kernel memory on Apple devices.",
+          "Quick disclaimer: I have no intention of adding offsets for other devices and iOS versions.",
+          "It sleeps for 30 seconds because the kernel might panic on exit for certain PUAF methods that require some cleanup post-KRKW (e.g. `puaf_smith`)."
+        ]
+      }
+    },
+    "modenaxe/awesome-biomechanics": {
+      "category": "learning-resource",
+      "one_liner": "生物力学与人体运动资源清单",
+      "intro": {
+        "one_liner": "生物力学资源精选清单",
+        "what_it_is": "这是一个公开维护的精选资源列表，汇总生物力学与人体运动分析相关的数据集、处理工具、仿真软件、课程、视频和教学资料。",
+        "problem_solved": "它把分散的学习资料、数据、动作捕捉处理、建模仿真和统计分析资源集中整理，降低查找与入门成本。",
+        "who_should_care": "生物力学、运动分析、建模仿真方向的研究者和开发者。",
+        "use_cases": [
+          "查找步态与运动数据集",
+          "入门课程和教学资料检索",
+          "挑选建模仿真与处理工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且已破千星。",
+        "risk_notes": "内容仍在完善，可能包含不完整的描述；作为资源清单，条目质量需自行核验。",
+        "evidence": [
+          "A curated, public list of resources for biomechanics and human motion analysis: datasets, processing tools,  software for simulation, educational videos, lectures, etc.",
+          "A curated repository of biomechanical resources",
+          "Still a work in progress (might include incomplete descriptions), but contributions are welcome at any stage!"
+        ]
+      }
+    },
+    "FlowElement-xinliuyuansu/m_flow": {
+      "category": "ai-agent",
+      "one_liner": "仿生认知记忆引擎",
+      "intro": {
+        "one_liner": "图路由认知记忆引擎",
+        "what_it_is": "M-flow 是一个用 Python 编写的认知记忆引擎，把知识组织成四层锥图，并在检索时沿带权边传播证据、为情景包打分。",
+        "problem_solved": "它试图解决传统检索增强生成偏重相似度、容易找到词面相近但缺少因果上下文的问题，让答案沿连贯证据路径被召回。",
+        "who_should_care": "关注智能体长期记忆、知识图谱与图检索增强生成的开发者。",
+        "use_cases": [
+          "为智能体构建长期情景记忆",
+          "从细粒度线索追到完整事件上下文",
+          "按证据路径检索知识图谱内容"
+        ],
+        "alternatives": "相比把图用于组织或扩展上下文的方案，它让图直接参与检索打分。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星后一周仅新增 25 星，且只上过一天日榜。",
+        "risk_notes": "创建于 2026 年 3 月 31 日，时间较新；仍有 13 个未关闭问题；成熟度缺少明确依据。",
+        "evidence": [
+          "A bio-inspired cognitive memory engine — a new paradigm for Graph RAG.",
+          "M-flow takes a different approach: the graph is the scoring engine.",
+          "M-flow organizes knowledge into a four-level Cone Graph — a layered hierarchy from abstract summaries to atomic facts:"
+        ]
+      }
+    },
+    "Weikezi-AI/GoGuide": {
+      "category": "learning-resource",
+      "one_liner": "Go 语言系统学习指南",
+      "intro": {
+        "one_liner": "Go 语言中文学习指南",
+        "what_it_is": "面向 Go 语言学习者的中文教程与开源书籍，涵盖核心知识、入门教程和学习路线。",
+        "problem_solved": "为零基础到进阶学习者整理 Go 语言知识体系，降低查找资料和规划学习路径的成本。",
+        "who_should_care": "准备入门或系统补齐 Go 语言基础的中文开发者。",
+        "use_cases": [
+          "按学习路线自学 Go",
+          "查阅基础语法知识",
+          "下载 PDF 离线学习"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，但缺少持续增长数据。",
+        "risk_notes": "内容提示可能存在勘误，学习路线仅供参考；视频教程待开源；转载需联系作者。",
+        "evidence": [
+          "作者填写的描述：「Go语言学习指南」一份涵盖大部分 Golang 程序员所需要掌握的核心知识，拥有 Go语言教程、Go开源书籍、Go语言入门教程、Go语言学习路线。零基础学习 Go语言、Go编程，首选 GoGuide。",
+          "**GoGuide** 致力于打造最易懂的 Go语言教程，`让天下没有难学的 Go 语言`",
+          "设计该项目的过程中可能存在勘误，请认真斟酌识别，学习路线仅供参考，记住，适合自己的才是最好的。"
+        ]
+      }
+    },
+    "Weikezi-AI/CNote": {
+      "category": "learning-resource",
+      "one_liner": "易懂的 C 语言入门教程",
+      "intro": {
+        "one_liner": "易懂的 C 语言入门教程",
+        "what_it_is": "CNote 是一套中文 C 语言学习资料，包含基础、入门、进阶笔记，以及配套视频教程和常见问题文章。",
+        "problem_solved": "它把 C 语言核心知识按章节整理，帮助初学者系统学习语法、指针、内存、链表和文件操作等内容。",
+        "who_should_care": "C 语言初学者、准备补基础的开发者，以及需要中文讲义的授课者。",
+        "use_cases": [
+          "按章节自学 C 语言基础",
+          "配合视频练习示例代码",
+          "查阅指针、链表等知识点"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，但资料创建于二〇二一年。",
+        "risk_notes": "转载需联系作者；部分资料通过网盘、公众号和外部视频平台提供，获取与长期可用性可能受平台影响。",
+        "evidence": [
+          "「CNote」一份涵盖大部分学习 C 语言所需要掌握的核心知识，致力于打造最易懂的 C语言入门教程，让天下没有难学的 C语言。（包含C语言教程、C语言精华文章）",
+          "**CNote** 致力于打造最易懂的 C 语言入门教程，`让天下没有难学的 C 语言`",
+          "以下所有文章与视频教程皆为我的原创，转载请联系我们"
+        ]
+      }
+    },
+    "dingyi214/slash-admin": {
+      "category": "web-frontend",
+      "one_liner": "现代 React 后台管理模板",
+      "intro": {
+        "one_liner": "现代后台管理模板",
+        "what_it_is": "Slash Admin 是基于 React 19、Vite、TypeScript 和 shadcn/ui 的后台管理模板，用于快速搭建管理系统。",
+        "problem_solved": "它把登录页、路由、权限、国际化、主题、用户与角色管理等常见后台能力整合起来，减少从零搭建工作。",
+        "who_should_care": "需要快速搭建 React 后台、仪表盘或权限管理系统的前端开发者。",
+        "use_cases": [
+          "搭建企业内部管理后台",
+          "制作数据仪表盘页面",
+          "实现角色权限管理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 3,004 星，且本周上过一次日榜。",
+        "risk_notes": "资料未提供许可证信息；快速开始中的仓库地址与当前仓库名不一致，使用前需核对。",
+        "evidence": [
+          "Slash Admin is a modern admin dashboard template built with React 19, Vite, shadcn/ui, and TypeScript. It is designed to help developers quickly create powerful admin management systems.",
+          "Includes common admin features like user management, role management, and permission management.",
+          "git clone https://github.com/d3george/slash-admin.git"
+        ]
+      }
+    },
+    "supersonic-app/supersonic": {
+      "category": "desktop-system",
+      "one_liner": "自托管音乐服务桌面客户端",
+      "intro": {
+        "one_liner": "自建音乐服务桌面客户端",
+        "what_it_is": "Supersonic 是轻量、全功能的跨平台桌面客户端，面向自建音乐服务器，支持 Subsonic、OpenSubsonic 和 Jellyfin。",
+        "problem_solved": "让用户在桌面系统统一连接多个音乐服务器，浏览、播放、下载音乐，并获得主题、均衡器和媒体键等体验。",
+        "who_should_care": "使用 Navidrome、Jellyfin、Gonic 等自建音乐服务的桌面听歌用户。",
+        "use_cases": [
+          "在桌面播放自建曲库",
+          "切换内外网服务器地址",
+          "下载歌曲、专辑或歌单"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2,281 星，且本周上过一次日榜。",
+        "risk_notes": "部分功能仍计划中；Flatpak 包目前不支持中日韩字体；Mac 分发未公证，需手动移除隔离属性。",
+        "evidence": [
+          "A lightweight cross-platform desktop client for Subsonic and Jellyfin music servers.",
+          "Supersonic supports any music server with a Subsonic (or OpenSubsonic) API, or Jellyfin.",
+          "Offline mode (eventually planned)"
+        ]
+      }
+    },
+    "StikDebug/StikDebug": {
+      "category": "mobile",
+      "one_liner": "iOS 设备端调试与 JIT 工具",
+      "intro": {
+        "one_liner": "iOS 设备端调试工具",
+        "what_it_is": "StikDebug 是面向 iOS 17.4+ 的设备端调试与即时编译启用工具，使用 Swift 编写，基于 idevice。",
+        "problem_solved": "它让侧载应用在初始配对后无需电脑即可启用即时编译，并提供日志、进程、脚本和设备管理能力。",
+        "who_should_care": "侧载应用开发者、iOS 调试用户和需要即时编译的玩家。",
+        "use_cases": [
+          "为侧载应用启用即时编译",
+          "查看实时应用与系统日志",
+          "管理应用、进程和模拟定位"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 24 星，仅一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0；不再上架应用商店；iOS 26+ 支持受应用适配限制。",
+        "evidence": [
+          "An on-device debugger/JIT enabler for iOS versions 17.4+ powered by idevice.",
+          "StikDebug enables **JIT** for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
+          "StikDebug is no longer available on the App Store."
+        ]
+      }
+    },
+    "vinhhien112/img2obj": {
+      "category": "ai-agent",
+      "one_liner": "图片转 Three.js 程序模型插件",
+      "intro": {
+        "one_liner": "图片转程序化三维模型插件",
+        "what_it_is": "这是一个 Codex 插件，把物体图片规划成结构化规格，并生成纯代码、可动画化的 Three.js 程序化模型。",
+        "problem_solved": "它解决单张参考图难以转成可编辑三维资产的问题，通过分阶段建模、视觉比对和审批来控制重建质量。",
+        "who_should_care": "使用 Codex 和 Three.js 做交互模型、场景资产或程序化建模的开发者。",
+        "use_cases": [
+          "把道具图转成可交互模型",
+          "生成植物或机械装配体",
+          "为网页三维场景制作资产"
+        ],
+        "alternatives": "不直接把像素转成网格，也不做摄影测量或精确网格提取，强调规格、分阶段生成与质量复核。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 13 星，仅一天进入日榜。",
+        "risk_notes": "结果是程序化近似，不是扫描或精确网格；单图无法还原隐藏面和尺寸；视觉验收依赖 AI vision review；有预览由未发布版本生成。",
+        "evidence": [
+          "Codex plugin that turns attached object images into code-only, animation-ready procedural Three.js models.",
+          "Not for | Photogrammetry, exact mesh extraction, or guaranteed production-ready geometry from one image",
+          "AI vision review is required for visual acceptance; local scripts organize evidence but do not judge similarity by themselves."
+        ]
+      }
+    },
+    "FareedKhan-dev/kimi-k3-in-c": {
+      "category": "ai-model",
+      "one_liner": "纯 C 单 CPU 大模型推理",
+      "intro": {
+        "one_liner": "纯 C 的超大模型推理器",
+        "what_it_is": "这是一个用可移植 C99 编写的 Kimi K3 推理引擎，不依赖 BLAS、框架或显卡，主打在单台机器的处理器上运行超大模型。",
+        "problem_solved": "它尝试解决超大模型权重无法装入普通内存的问题，通过从磁盘流式读取、按需驻留和量化数据直接计算，把内存占用变成可调预算。",
+        "who_should_care": "关注纯 C 推理、低内存运行、模型权重流式读取和底层内核实现的开发者。",
+        "use_cases": [
+          "在普通笔记本上试验推理",
+          "研究低内存流式加载",
+          "学习从零实现推理内核"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 2,060 星，但只上过一天日榜。",
+        "risk_notes": "生成速度很慢，示例达到每词元数十秒；仓库有 26 个未关闭问题；README 中的性能数据需自行核验。",
+        "evidence": [
+          "A 2.78-trillion-parameter Kimi K3 running inference on a single CPU in 8.24 GB of RAM. Portable C99: no BLAS, no framework, no GPU.",
+          "The dense trunk stays in memory to whatever depth you choose and streams the rest; the 1.45 TB of routed experts are never resident, and are multiplied straight out of their packed 4-bit form.",
+          "8 tokens in 261.5 s, 32.69 s/token average"
+        ]
+      }
+    },
+    "huangruiteng/loopx": {
+      "category": "ai-agent",
+      "one_liner": "长跑智能体团队状态内核",
+      "intro": {
+        "one_liner": "长周期智能体状态内核",
+        "what_it_is": "LoopX 是面向长周期智能体团队的本地优先语义控制层，用持久目标、决策、归属、证据和可验证交接，让工作跨会话、跨运行时延续。",
+        "problem_solved": "它解决长任务中目标变化、证据过期、责任不清和交接丢失的问题，让智能体不只循环运行，还能依据已改变的结果继续推进。",
+        "who_should_care": "需要跨天运行编码、研究、实验或运维智能体的开发者与团队。",
+        "use_cases": [
+          "跨会话推进编码或研究任务",
+          "管理多智能体交接与责任",
+          "保留问题与评审证据链"
+        ],
+        "alternatives": "它强调不是智能体框架或特定供应商编排运行时，而是保存控制状态的紧凑层。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 2,265 星，且本周上过一天日榜。",
+        "risk_notes": "未关闭问题有 159 个；资料称其不是自主生产控制器，发布、生产写入和最终归属仍由人掌控。",
+        "evidence": [
+          "Lightweight loop engineering state kernel for long-running AI agent teams.",
+          "A local-first semantic control plane and research workbench for long-running agent teams, across sessions and runtimes.",
+          "LoopX is not an autonomous production controller. Dangerous permissions, publishing, production writes, and final ownership stay with the human."
+        ]
+      }
+    }
+  }
+}

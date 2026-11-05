@@ -1,1 +1,802 @@
-{"date":"2026-07-22","headline":"智能体工程指南领跑","points":["lopopolo/harness-engineering 单日新增 788，智能体工程实践指南最受关注。","AI Agent 有 6 个项目，学习资源 5 个，开发工具 4 个，方向较集中。","hoainho/img2threejs 新增 459，图片转 Three.js 三维模型也走热。"],"items":{"lopopolo/harness-engineering":{"category":"ai-agent","one_liner":"智能体工程实践指南集"},"hoainho/img2threejs":{"category":"ai-agent","one_liner":"图片转 Three.js 三维模型"},"AdventDevInc/kudu":{"category":"desktop-system","one_liner":"跨平台系统清理扫描器"},"OpenMOSS/MOSS-Transcribe-Diarize":{"category":"ai-model","one_liner":"长音频转写与说话人分离模型"},"Alpha-Dojo/DojoAgents":{"category":"data-finance","one_liner":"个人投资全市场 AI 助手"},"mcncarl/yichen-skills":{"category":"other","one_liner":"用途不明的技能仓库"},"Intuition-Lab/personal-model":{"category":"ai-agent","one_liner":"构建个人 HUMAN.md 模型"},"chojs23/concord":{"category":"desktop-system","one_liner":"终端版 Discord 客户端"},"x4gKing/Marzban-Panel":{"category":"other","one_liner":"用途不明的面板项目"},"SmileLikeYe/agent-chief":{"category":"ai-agent","one_liner":"本地智能体打扰过滤器"},"AI-Builder-Club/skills":{"category":"dev-tools","one_liner":"代码库循环工程技能集"},"liyue-aigc/female-portrait-director":{"category":"content-media","one_liner":"女性肖像提示词生成技能"},"cachix/secretspec":{"category":"dev-tools","one_liner":"统一声明密钥管理工具"},"PHPantom-dev/phpantom_lsp":{"category":"dev-tools","one_liner":"高性能 PHP 语言服务器"},"XiaoLuoLYG/GOD":{"category":"ai-agent","one_liner":"智能体社会实时控制台"},"pashov/skills":{"category":"security","one_liner":"审计团队技能集合"},"VladSez/easy-invoice-pdf":{"category":"web-frontend","one_liner":"浏览器内发票 PDF 生成器"},"PortSwigger/mcp-server":{"category":"security","one_liner":"Burp 的 MCP 服务"},"huangjia2019/claude-code-engineering":{"category":"learning-resource","one_liner":"Claude Code 工程化示例库"},"daronyondem/claude-architect-exam-guide":{"category":"learning-resource","one_liner":"Claude 架构师认证备考指南"},"adithya-s-k/manim_skill":{"category":"content-media","one_liner":"生成数学动画的智能体技能"},"sgl-project/SpecForge":{"category":"ai-model","one_liner":"投机解码模型训练工具"},"HFQR/xitca-web":{"category":"web-frontend","one_liner":"安全 Rust Web 框架"},"warpdotdev/themes":{"category":"desktop-system","one_liner":"Warp 终端主题仓库"},"aws-samples/bedrock-access-gateway":{"category":"ai-model","one_liner":"Bedrock 兼容 OpenAI 接口"},"DavidHDev/haiku":{"category":"web-frontend","one_liner":"轻量 React Hooks 工具集"},"google/adk-web":{"category":"ai-agent","one_liner":"智能体开发调试界面"},"NVIDIA/cuda-tile":{"category":"dev-tools","one_liner":"CUDA 内核优化编译框架"},"ClaytonFarr/ralph-playbook":{"category":"learning-resource","one_liner":"自主 AI 编码循环指南"},"tonyantony300/dashbeam":{"category":"desktop-system","one_liner":"免云端直传文件工具"},"carlvellotti/free-ai-courses":{"category":"learning-resource","one_liner":"产品经理 Claude Code 课程"},"Anil-matcha/ai-creator-academy":{"category":"learning-resource","one_liner":"生成式 AI 变现课程"},"block/buzz":{"category":"other","one_liner":"群体协作通信平台"}}}
+{
+  "date": "2026-07-22",
+  "headline": "智能体工程指南领跑",
+  "points": [
+    "lopopolo/harness-engineering 单日新增 788，智能体工程实践指南最受关注。",
+    "AI Agent 有 6 个项目，学习资源 5 个，开发工具 4 个，方向较集中。",
+    "hoainho/img2threejs 新增 459，图片转 Three.js 三维模型也走热。"
+  ],
+  "items": {
+    "lopopolo/harness-engineering": {
+      "category": "ai-agent",
+      "one_liner": "智能体工程实践指南集",
+      "intro": {
+        "one_liner": "面向 AI agent 的工程方法论文集",
+        "what_it_is": "这是一个围绕「harness engineering」的文集、实践指南与 agent 上下文包，主张把模型和编码 agent 当作黑盒保持不变，通过塑造其周边的上下文与工具来提升输出质量。",
+        "problem_solved": "解决组织内部的非功能性需求、流程数据与本地决策难以传达给 agent 的问题，把这些私有且不断变化的过程知识转化为 agent 可检索的上下文、示例、工具和可执行约束。",
+        "who_should_care": "使用编码 agent 的工程团队、需要把组织规范与质量要求注入 agent 工作流的平台或基础设施负责人，以及关注 agent 工程方法论的开发者。",
+        "use_cases": [
+          "把仓库作为 agent 的上下文来源，让 agent 按组织规范完成任务",
+          "为 agent 编写 AGENTS.md 路由与 playbooks 实践手册",
+          "将非功能性需求（可靠性、安全、可维护性等）编码为可执行约束"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点：项目创建与最近推送同日，一周新增约 805 stars，属于方法论类文档仓库的快速传播。",
+        "risk_notes": "以文档和方法论为主，非可直接运行的软件；采用 CC-BY-4.0 许可，引用源材料另有版权说明（见 COPYING.md）；仓库创建时间极短，长期维护情况未知。",
+        "evidence": [
+          "Harness engineering, the practice of improving agent output by shaping the environment around it, holds a chosen model and coding agent constant as a black box.",
+          "A central purpose of that environment is to carry an organization's nonfunctional requirements",
+          "Point a coding agent at this repository alongside the system it should improve."
+        ]
+      }
+    },
+    "hoainho/img2threejs": {
+      "category": "ai-agent",
+      "one_liner": "图片转 Three.js 三维模型",
+      "intro": {
+        "one_liner": "图像转 Three.js 程序化模型",
+        "what_it_is": "一个 Python 工具，输入一张参考图，输出用 TypeScript 编写的 THREE.Group 工厂代码，通过基础几何体、程序化着色器和生成几何重建图中的物体或角色，并带有可动画的运行时层级。",
+        "problem_solved": "避免摄影测量、网格提取或下载美术资源包，用纯代码方式从单张图重建可动画的 3D 模型，并强调 token 效率与质量门控。",
+        "who_should_care": "需要为 Three.js 场景快速产出程序化模型的前端/图形开发者，以及使用 Claude Code、Codex 等编码 agent 做 3D 资产生成的工作流用户。",
+        "use_cases": [
+          "根据产品图生成可交互的 Three.js 展示模型",
+          "为网页小游戏或角色演示生成程序化角色与 VFX 代码",
+          "在编码 agent 中批量重建参考图对象并保留可编辑源码"
+        ],
+        "alternatives": "README 明确区别于摄影测量、网格提取和下载美术资源包的做法，走“以代码重建”路线；其他同类工具未在材料中提及。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 2566 stars、登上 daily board，且绑定 claude-code / ai-agents 等热门话题，但项目创建时间与版本迭代信息有限。",
+        "risk_notes": "README 含大量外链与推广内容（如 trendshift 徽章、live demo 站点），需自行甄别；单图重建无法保证 100% 相似度，README 自述需多视角补充；open issues 118 个，维护压力需观察。",
+        "evidence": [
+          "Rebuild the object in a reference image as a code-only, procedural, quality-gated, animation-ready Three.js model.",
+          "It produces a `THREE.Group` factory written in TypeScript that recreates that object from primitives, procedural shaders, and generated geometry",
+          "A single image cannot guarantee 100 percent likeness, so the pipeline reports per-region confidence and asks for more views when it matters."
+        ]
+      }
+    },
+    "AdventDevInc/kudu": {
+      "category": "desktop-system",
+      "one_liner": "跨平台系统清理扫描器",
+      "intro": {
+        "one_liner": "跨平台开源系统清理与安全扫描工具",
+        "what_it_is": "Kudu 是一个面向 Windows、macOS 和 Linux 的免费开源系统清理与安全扫描工具，使用 TypeScript 开发，提供图形界面和可脚本化的 CLI。",
+        "problem_solved": "用于回收磁盘空间、清除恶意软件并保护隐私，同时避免广告、捆绑软件和付费诱导，所有处理均在本地完成。",
+        "who_should_care": "希望替代 CCleaner 等商业清理软件、重视本地运行与代码可审计性的普通用户和 IT 运维人员。",
+        "use_cases": [
+          "清理系统、浏览器、应用与游戏缓存以释放磁盘空间",
+          "扫描并移除恶意软件，管理隐私设置",
+          "通过 CLI 或定时扫描实现批量或自动化维护"
+        ],
+        "alternatives": "README 自述为 CCleaner 替代品，强调无广告、无捆绑、无付费诱导、完全本地运行且开源可审计；未提供与其他同类项目的具体对比数据。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 450 stars，但项目创建时间较新，长期维护与稳定性尚待观察。",
+        "risk_notes": "项目按设计会删除系统文件，README 明确提示删除前需自行确认，且不承担数据丢失或系统不稳定责任；项目创建时间较短，长期维护情况未知。",
+        "evidence": [
+          "Free, open-source system cleaner and security scanner for Windows, macOS, and Linux.",
+          "Kudu reclaims disk space, removes malware, and protects your privacy — without ads, bundled software, or upsells. Everything runs locally, and every line of code is open for you to audit.",
+          "Kudu removes files from your system by design. Review items before removal; the software is provided \"as is\" without warranty, and we accept no liability for data loss or system instability."
+        ]
+      }
+    },
+    "OpenMOSS/MOSS-Transcribe-Diarize": {
+      "category": "ai-model",
+      "one_liner": "长音频转写与说话人分离模型",
+      "intro": {
+        "one_liner": "端到端长音频转写与说话人分离模型",
+        "what_it_is": "MOSS-Transcribe-Diarize 0.9B 是一个开源端到端音频理解模型，可一次性完成长音频的多说话人转写、说话人分离、时间戳标注与声学事件感知，支持 50+ 语言。",
+        "problem_solved": "解决传统方案需拼接独立 ASR 与说话人分离系统的问题，直接对长时、嘈杂、多人录音输出带时间戳和一致说话人标签的结构化转写。",
+        "who_should_care": "需要处理会议、通话、播客、访谈、讲座与视频内容转写的开发者、语音算法团队及字幕/会议记录产品方。",
+        "use_cases": [
+          "会议与电话录音的说话人区分转写",
+          "播客、访谈、讲座的带时间戳字幕生成",
+          "视频内容的结构化转写与声学事件标注"
+        ],
+        "alternatives": "README 将其与 Doubao、ElevenLabs、GPT-4o、Gemini 2.5/3 Pro、VIBEVOICE ASR 在 CER/cpCER/Δcp 指标上对比，并强调单次联合完成转写与说话人分离而非拼接两套系统；其余差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：0.9B 小参数端到端方案叠加榜单成绩与周增约 140 星，关注度集中但生态仍在早期。",
+        "risk_notes": "README 提及更强的 Pro 版本需通过在线 playground 获取，开源版为 0.9B；评测数字为作者自述，未独立验证；项目创建于 2026-05，维护历史较短。",
+        "evidence": [
+          "MOSS-Transcribe-Diarize 0.9B is an open-source SOTA end-to-end audio understanding model for long-form multi-speaker transcription, diarization, timestamps, and acoustic event awareness.",
+          "Instead of stitching together separate ASR and diarization systems, these models jointly perform speech transcription and speaker diarization",
+          "MOSS-Transcribe-Diarize Pro is a stronger model with higher overall performance and is available through the online playground."
+        ]
+      }
+    },
+    "Alpha-Dojo/DojoAgents": {
+      "category": "data-finance",
+      "one_liner": "个人投资全市场 AI 助手",
+      "intro": {
+        "one_liner": "面向个人投资的全市场 AI Copilot 框架",
+        "what_it_is": "DojoAgents 是一个用 Python 编写的全市场 AI agent 框架，面向个人投资场景，核心是 Agent Loop 推理引擎，并配有 React 仪表盘和 FastAPI 后端。",
+        "problem_solved": "它试图弥合个人投资者与机构级工具之间的差距，把持仓与跨市场数据结合起来，进行组合诊断、新闻影响分析和跨市场策略推演。",
+        "who_should_care": "关注 AI Agent 与金融数据结合的开发者，以及希望自建个人投资分析工具的个人投资者。",
+        "use_cases": [
+          "每日全球市场概览与板块轮动观察",
+          "突发新闻对美股和 A 股相关标的的影响分析",
+          "上传持仓截图，自动识别并做组合风险诊断",
+          "根据诊断建议生成模拟组合并在仪表盘持续跟踪"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由是金融 Agent 概念热度高，且项目周增约 558 星，但项目创建时间较新，功能仍在规划中。",
+        "risk_notes": "README 中提到的多渠道推送仍属计划功能；项目创建于 2026-05-21，历史较短；涉及 LLM API Key 与本地配置文件，需注意密钥管理；投资相关输出不构成投资建议。",
+        "evidence": [
+          "DojoAgents is a full-market AI agent framework designed specifically for personal investment.",
+          "its true powerhouse is a state-of-the-art Agent Loop engine",
+          "DojoAgents supports multimodal models — upload a holdings screenshot and get a full portfolio diagnosis."
+        ]
+      }
+    },
+    "mcncarl/yichen-skills": {
+      "category": "other",
+      "one_liner": "用途不明的技能仓库",
+      "intro": {
+        "one_liner": "创作者本地工作流技能集",
+        "what_it_is": "这是一组面向 Claude Code 和 Codex 的 Python 技能集合，覆盖写作、内容切片、文章草稿、微信资料归档与本地工作流。",
+        "problem_solved": "把内容创作、资料采集、转写、检索和本地数据归档等重复流程整理成可调用技能，减少手工切换与搬运。",
+        "who_should_care": "使用 Claude Code 或 Codex 的内容创作者、资料整理者和本地自动化开发者。",
+        "use_cases": [
+          "把长文导入 X Articles 草稿",
+          "归档微信本地聊天与收藏",
+          "将 X 帖子切成图文视频"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但只有一天上榜。",
+        "risk_notes": "授权仅允许个人学习和非商业个人使用，商业用途需事先取得明确书面授权；部分功能涉及本地数据、登录状态和平台内容，需留意隐私与平台规则。",
+        "evidence": [
+          "A skill collection for creators who want to streamline writing, X content slicing, X Articles draft publishing, WeChat digital-asset capture, and local workflows with Claude Code and Codex.",
+          "This repository is available only for personal learning and non-commercial personal use. Commercial use—including client delivery, paid products or services, internal company deployment, marketplace packaging, and course bundling—requires the author's prior explicit written authorization.",
+          "破千时的 Star 数：1012；本周上日榜天数：1"
+        ]
+      }
+    },
+    "Intuition-Lab/personal-model": {
+      "category": "ai-agent",
+      "one_liner": "构建个人 HUMAN.md 模型",
+      "intro": {
+        "one_liner": "本地优先的 AI 长期记忆运行时",
+        "what_it_is": "Personal Model 是一个开源、local-first 的长期记忆 Runtime，在用户授权后从 Mac 上的活动采集信息，构建可检查、可修正、可导出、可删除的 Personal Model（即 HUMAN.md），并通过 MCP 提供给 Claude Code、Codex、Cursor Agent 等客户端。",
+        "problem_solved": "解决不同 AI 编码代理之间缺乏统一、可追溯的个人上下文的问题：让同一份记忆跨代理复用，并让重要结论保留来源证据，而不是依赖托管式记忆服务或隐藏摘要。",
+        "who_should_care": "在 macOS 上使用 Claude Code、Codex、Cursor Agent 等 MCP 客户端的开发者，以及重视隐私、希望自己掌控 AI 记忆数据的个人用户。",
+        "use_cases": [
+          "让多个编码代理共享同一份个人上下文，使同一提示词能按个人偏好给出不同结果",
+          "代理检索未完成的工作，并按个人优先级排序下一步建议",
+          "从已有的 Markdown 历史（本地文件夹、Obsidian、Notion）导入并构建初始模型"
+        ],
+        "alternatives": "README 未与其他记忆类项目做直接对比，仅强调差异点：证据可追溯、用户自持数据、跨 MCP 客户端统一记忆；具体同类对比填 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：agent-memory 与 local-first 隐私方向持续升温，且项目已发布 v0.3.2 版本、有安装与 onboarding 流程，但仍处于早期版本阶段。",
+        "risk_notes": "仅支持 macOS 13 及以上，需授予辅助功能与屏幕录制权限；语义建模需要配置 LLM，未配置时仅能做采集与 BM25 召回；版本号仍为 0.x，接口与行为可能变化。",
+        "evidence": [
+          "Personal Model is an open-source, local-first long-term memory Runtime.",
+          "One memory across agents. Connect the same Personal Model to Claude Code, Codex, Cursor Agent, and other MCP-compatible clients.",
+          "Evidence, not hidden summaries. Important claims retain source receipts; new evidence can strengthen, revise, or overturn an earlier inference."
+        ]
+      }
+    },
+    "chojs23/concord": {
+      "category": "desktop-system",
+      "one_liner": "终端版 Discord 客户端",
+      "intro": {
+        "one_liner": "终端里的 Discord 客户端",
+        "what_it_is": "Concord 是用 Rust 和 ratatui 编写的功能丰富的 Discord 终端界面客户端，支持多种安装方式和消息、语音、媒体等功能。",
+        "problem_solved": "让开发者能在终端中使用 Discord，覆盖登录、频道切换、消息搜索、语音通话、屏幕共享和富文本展示等需求。",
+        "who_should_care": "偏好终端工作流、使用 Rust 或需要在命令行中聊天的开发者。",
+        "use_cases": [
+          "在终端查看和搜索消息",
+          "加入语音并共享屏幕",
+          "浏览频道、帖子和富媒体"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 104 星，且曾进入日榜一天。",
+        "risk_notes": "未关闭议题有 68 个；登录可能触发验证码且无法自动处理；部分功能依赖系统组件、桌面门户或外部播放器。",
+        "evidence": [
+          "A feature-rich TUI client for Discord",
+          "Concord is a feature-rich TUI client for Discord, written in Rust with ratatui.",
+          "Email and QR code logins may trigger a CAPTCHA challenge on Discord's side. We cannot solve that, so I strongly recommend using token authentication."
+        ]
+      }
+    },
+    "x4gKing/Marzban-Panel": {
+      "category": "other",
+      "one_liner": "用途不明的面板项目",
+      "intro": {
+        "one_liner": "Dockerfile 仓库",
+        "what_it_is": "仓库名为 Marzban-Panel，主要语言是 Dockerfile。缺少说明资料，具体功能 unknown。",
+        "problem_solved": "解决的问题 unknown。现有资料只提供仓库、语言、日期和热度信息。",
+        "who_should_care": "关注该仓库动态的开发者；具体适用人群 unknown。",
+        "use_cases": [
+          "用途 unknown"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜 1 天，破千时星数为 1033。",
+        "risk_notes": "缺少说明资料，功能、许可证和成熟度均无法确认；Fork 数 1967 高于星数，需谨慎判断热度来源。",
+        "evidence": [
+          "仓库：x4gKing/Marzban-Panel",
+          "主要语言：Dockerfile",
+          "README：无"
+        ]
+      }
+    },
+    "SmileLikeYe/agent-chief": {
+      "category": "ai-agent",
+      "one_liner": "本地智能体打扰过滤器",
+      "intro": {
+        "one_liner": "本地优先的注意力守门层",
+        "what_it_is": "Chief 汇聚代理、告警、订阅源等事件，用规则、相似度和模型判断是否打断、派发任务或归档记忆。",
+        "problem_solved": "它减少无价值通知和重复汇报，把真正需要处理的事项在合适时机带计划地呈现给用户。",
+        "who_should_care": "被代理、巡检、持续集成和订阅源通知打扰的开发者。",
+        "use_cases": [
+          "过滤心跳代理的空报告",
+          "按场景控制告警打断",
+          "派发并验证代理任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 11 星且仅一天上日榜。",
+        "risk_notes": "创建时间较新，复刻数仅 1 个；资料提到影子模式与评估命令，但真实场景可靠性仍需观察。",
+        "evidence": [
+          "Attention is your scarcest resource. Chief is the local-first layer that guards it — turning every agent, alert, and feed into one honest call: interrupt, or not.",
+          "Chief sits between you and everything that wants your attention — agents, heartbeats, CI, RSS, watchers.",
+          "For its first 7 days Chief never actually interrupts — it shows you what it *would* have done, and earns the right to ring."
+        ]
+      }
+    },
+    "AI-Builder-Club/skills": {
+      "category": "dev-tools",
+      "one_liner": "代码库循环工程技能集",
+      "intro": {
+        "one_liner": "智能体循环技能集",
+        "what_it_is": "这是一个 Claude Code 插件市场，提供代码库改造、循环智能体、上下文审计等技能。",
+        "problem_solved": "它把仓库改造成智能体可运行、测试、验证的环境，并用文件知识库让任务循环持续积累。",
+        "who_should_care": "使用 Claude Code 做自动化开发、智能体编排和团队内知识沉淀的开发者。",
+        "use_cases": [
+          "为仓库补齐本地与端到端验证",
+          "搭建定时触发的智能体循环",
+          "审计并修订智能体上下文"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 40 星且曾上日榜一天。",
+        "risk_notes": "创建于 2026 年，资料称仍在增加技能；未见许可证信息，生产采用前需确认。",
+        "evidence": [
+          "A Claude Code **plugin marketplace** of the skills we share at",
+          "**Codebase harness** — make any repo agent-ready (run, test, verify, ship — including an isolated cloud box per agent so loops ship code in *parallel*).",
+          "**Loops** — spin up compounding agent loops on a shared, file-based knowledge base."
+        ]
+      }
+    },
+    "liyue-aigc/female-portrait-director": {
+      "category": "content-media",
+      "one_liner": "女性肖像提示词生成技能",
+      "intro": {
+        "one_liner": "面向 AI 女性人像的 Codex 提示词导演 Skill",
+        "what_it_is": "一个模块化的 Codex Skill，用于把简短的人像参数扩展、编排成结构化的摄影级提示词，并在具备图像生成能力时直接出图。",
+        "problem_solved": "解决人像提示词零散、风格关键词互相冲突、短参数难以生成连贯画面等问题，通过锁定参数、单一路由选型和模块化扩展来稳定输出。",
+        "who_should_care": "使用 Codex、Claude Code、Cursor 等 Agent 工具做 AI 人像或电商服装图生成的内容创作者、提示词工程师与设计团队。",
+        "use_cases": [
+          "将简短人像需求扩展为可直接复用的五段式提示词",
+          "电商服装模特图与商品视觉保持一致的生成",
+          "按 20 种风格（国风仙侠、港风、法式、CCD 等）定向出图"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Codex Skill 生态与 AI 人像提示词需求，但 README 自述仅 Codex 经过运行时验证，其余宿主仅为打包兼容。",
+        "risk_notes": "README 明确除 Codex 外的 Agent 兼容性仅为打包与规范层面声明，实际出图依赖宿主是否接入图像模型；涉及人像与参考图身份保持，需遵守其安全边界条款；项目创建于 2026-05-30，维护历史较短。",
+        "evidence": [
+          "A modular Codex Skill for directing and expanding detailed AI female portrait prompts.",
+          "Only Codex was runtime-executed in this release environment; the other rows are packaging and specification compatibility claims, not claims that every host provides an image model.",
+          "The Skill returns locked parameters, a directed prompt, and negative constraints."
+        ]
+      }
+    },
+    "cachix/secretspec": {
+      "category": "dev-tools",
+      "one_liner": "统一声明密钥管理工具",
+      "intro": {
+        "one_liner": "声明式密钥管理工具",
+        "what_it_is": "SecretSpec 用 secretspec.toml 声明应用所需密钥，实际值交给系统钥匙串、密码管理器或云端后端存储。",
+        "problem_solved": "它避免密钥被写进代码仓库或 .env 文件，也减少团队共享、复制和新人入职时反复索要密钥的混乱。",
+        "who_should_care": "需要统一管理本地与团队密钥的开发者，尤其是 Rust 项目和多环境应用维护者。",
+        "use_cases": [
+          "从现有 .env 发现并声明密钥",
+          "按开发、生产配置不同密钥要求",
+          "运行命令前检查并注入密钥"
+        ],
+        "alternatives": "差异在于把密钥声明与存储分离，并支持多种后端和类型安全的 Rust SDK。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，创建于 2025 年 7 月，破千星且本周上过一次日榜。",
+        "risk_notes": "项目较新，部分后端标注为只读或仅写入；未提供许可证信息，生产采用前需自行核验。",
+        "evidence": [
+          "Declare secrets once. Store them anywhere.",
+          "Stop committing secrets to git and putting them to .env files.",
+          "You commit a `secretspec.toml` that declares what secrets your application needs, while the actual values live in a secure provider like your system keyring, 1Password, or any other backend."
+        ]
+      }
+    },
+    "PHPantom-dev/phpantom_lsp": {
+      "category": "dev-tools",
+      "one_liner": "高性能 PHP 语言服务器",
+      "intro": {
+        "one_liner": "PHP 语言服务器",
+        "what_it_is": "一个用 Rust 编写的 PHP 语言服务器，提供类型推断、框架感知、诊断、导航和重构等编辑器能力。",
+        "problem_solved": "让 PHP 项目在编辑器里更快获得补全、跳转、类型检查和框架相关提示，尤其覆盖泛型、注解与 Laravel 等场景。",
+        "who_should_care": "使用编辑器开发 PHP、Laravel、Symfony 等项目的开发者。",
+        "use_cases": [
+          "补全 PHPDoc 与复杂类型",
+          "在 Laravel 中跳转与诊断",
+          "接入外部分析器并快速修复"
+        ],
+        "alternatives": "强调泛型、PHPStan 注解、框架支持和外部分析器集成，并提供对比表。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 20 星，曾有一天进入日榜。",
+        "risk_notes": "创建于 2026 年，资料未说明稳定版状态；仍有 17 个未关闭问题；部分框架支持标为建设中。",
+        "evidence": [
+          "A fast, lightweight PHP language server written in Rust.",
+          "PHPantom focuses on deep type intelligence.",
+          "Laravel & Blade | ✅"
+        ]
+      }
+    },
+    "XiaoLuoLYG/GOD": {
+      "category": "ai-agent",
+      "one_liner": "智能体社会实时控制台",
+      "intro": {
+        "one_liner": "智能体社会控制台",
+        "what_it_is": "GOD 是一个面向语言智能体社会的实时控制台，可回放运行、询问居民、干预下一步，并导入导出实验包。",
+        "problem_solved": "它让多智能体模拟不再只能旁观，而是能暂停、追问、注入指令、重置状态，便于检查智能体行为。",
+        "who_should_care": "研究多智能体模拟、需要调试语言智能体行为的开发者和演示者。",
+        "use_cases": [
+          "回放并检查智能体社会运行",
+          "向单个或群体智能体提问",
+          "注入指令观察后续反应"
+        ],
+        "alternatives": "相比只观看模拟的演示，它强调实时控制、询问、干预和可复跑实验包。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 24 星，仅一天进入日榜。",
+        "risk_notes": "项目创建于 2026 年，仍有 17 个未关闭问题；定位是检查智能体社会，不宣称社会真实性。",
+        "evidence": [
+          "Govern, Observe, Direct - a real-time control room for agent societies",
+          "Most agent-society demos let you watch a simulation play out. GOD gives you the controls.",
+          "It is built for inspecting language-agent societies, not for claiming they are socially realistic."
+        ]
+      }
+    },
+    "pashov/skills": {
+      "category": "security",
+      "one_liner": "审计团队技能集合",
+      "intro": {
+        "one_liner": "Solidity 安全审计技能集",
+        "what_it_is": "这是一组面向人工智能平台的 Solidity 安全技能，包含审计、预扫描和模糊测试套件生成。",
+        "problem_solved": "用于辅助发现智能合约漏洞、梳理威胁模型与入口点，并为项目生成模糊测试套件。",
+        "who_should_care": "Solidity 开发者、合约审计人员和安全测试人员。",
+        "use_cases": [
+          "对合约做安全审计",
+          "审计前扫描代码库",
+          "生成模糊测试套件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周新增 7 星且仅一天进入日榜。",
+        "risk_notes": "未关闭问题有 20 个；资料未说明支持的人工智能平台；成熟度无法判断。",
+        "evidence": [
+          "AI-powered Solidity security skills",
+          "Generate a full Echidna/Medusa fuzz suite for any Foundry or Hardhat project",
+          "Pre-audit scan with threat model, invariants, entry points, and git analysis"
+        ]
+      }
+    },
+    "VladSez/easy-invoice-pdf": {
+      "category": "web-frontend",
+      "one_liner": "浏览器内发票 PDF 生成器",
+      "intro": {
+        "one_liner": "浏览器内发票生成器",
+        "what_it_is": "一个用 TypeScript 编写的开源发票编辑器，提供实时 PDF 预览、模板、税务与多语言支持。",
+        "problem_solved": "让用户在浏览器里填写发票并导出 PDF，无需注册、广告或把客户资料交给服务器。",
+        "who_should_care": "自由职业者、小团队，以及需要快速开具可定制发票的开发者。",
+        "use_cases": [
+          "填写信息后一键导出 PDF",
+          "复用买卖双方资料开票",
+          "生成带二维码的分享链接"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "资料未提供许可证信息；发票数据保存在浏览器本地存储，清理浏览器数据可能丢失。",
+        "evidence": [
+          "Free & Open-Source Invoice Generator - No Sign-Up, No Ads, Instant PDF Export, 100% In-Browser, and Fully Customizable Templates. ⭐ Star the repo if you like it",
+          "Everything happens in your browser. Invoices are saved to your browser's local storage, and PDFs are generated on your device, so there is no server holding your clients' details.",
+          "Live PDF preview: see every change as you type, then download in one click"
+        ]
+      }
+    },
+    "PortSwigger/mcp-server": {
+      "category": "security",
+      "one_liner": "Burp 的 MCP 服务",
+      "intro": {
+        "one_liner": "Burp 的 MCP 扩展",
+        "what_it_is": "这是 Burp Suite 的扩展，用 Kotlin 编写，通过模型上下文协议把 Burp Suite 与人工智能客户端连接起来。",
+        "problem_solved": "让支持模型上下文协议的客户端访问 Burp，并提供自动安装、服务器配置和标准输入输出代理。",
+        "who_should_care": "使用 Burp Suite 并希望接入人工智能客户端的安全测试人员与开发者。",
+        "use_cases": [
+          "在客户端中操作 Burp",
+          "配置 Burp 的 MCP 服务",
+          "扩展自定义工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时达到一千星。",
+        "risk_notes": "需自行构建并安装扩展；配置可编辑工具会允许修改 Burp 配置文件；默认服务仅监听本机地址。",
+        "evidence": [
+          "Integrate Burp Suite with AI Clients using the Model Context Protocol (MCP).",
+          "Connect Burp Suite to AI clients through MCP",
+          "The `Enable tools that can edit your config` checkbox allows the MCP server to expose tools which can edit Burp configuration files."
+        ]
+      }
+    },
+    "huangjia2019/claude-code-engineering": {
+      "category": "learning-resource",
+      "one_liner": "Claude Code 工程化示例库",
+      "intro": {
+        "one_liner": "Claude Code 工程化示例库",
+        "what_it_is": "这是《Claude Code 工程化实战》的官方配套示例仓库，围绕记忆、子代理、技能、钩子、外部工具连接、插件等机制组织课程项目与代码片段。",
+        "problem_solved": "它把 Claude Code 从对话式编码工具，整理成可设计、可复用、可治理的工程系统，帮助开发者按项目学习高阶用法。",
+        "who_should_care": "已在使用 Claude Code，想做团队规范、自动化和智能体工程化的开发者。",
+        "use_cases": [
+          "学习子代理与团队协作",
+          "固化团队命令和技能",
+          "把智能体接入流水线"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周一天上日榜，关注集中。",
+        "risk_notes": "仓库创建于 2026 年，内容包含课程与书籍推广；成熟度、许可证和生产可用性未提供。",
+        "evidence": [
+          "本项目是极客时间专栏 《Claude Code 工程化实战》 的官方配套示例仓库",
+          "把 Claude Code 从“对话式编码工具”，变成 可设计、可复用、可治理的工程系统。",
+          "本仓库各章 `projects/` 子目录是课程配套的可运行项目"
+        ]
+      }
+    },
+    "daronyondem/claude-architect-exam-guide": {
+      "category": "learning-resource",
+      "one_liner": "Claude 架构师认证备考指南",
+      "intro": {
+        "one_liner": "Claude 架构认证备考指南",
+        "what_it_is": "一个面向 Claude Certified Architect – Foundations 认证的社区学习指南，以 Markdown 为主源，并可生成 PDF 和 EPUB 小册子。",
+        "problem_solved": "帮助开发者和方案架构师系统复习接口设计、上下文管理、提示词、MCP、智能体模式、评测等考试知识领域。",
+        "who_should_care": "准备该认证、刚接触大语言模型应用或需要集中复习的开发者与方案架构师。",
+        "use_cases": [
+          "按知识领域备考复习",
+          "查阅速记表和常见误区",
+          "生成本地 PDF 或 EPUB"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "这是独立社区资料，未获 Anthropic 关联、认可或赞助；不包含、转述或暗示考试题目；内容由 Claude 协助编写。",
+        "evidence": [
+          "Community study guide for the Claude Certified Architect – Foundations certification exam",
+          "This is an **independent, community-created** study guide. It is not affiliated with, endorsed by, or sponsored by Anthropic. No exam questions are included, paraphrased, or hinted at - this guide teaches the underlying knowledge domains only.",
+          "The guide was authored with assistance from Claude."
+        ]
+      }
+    },
+    "adithya-s-k/manim_skill": {
+      "category": "content-media",
+      "one_liner": "生成数学动画的智能体技能",
+      "intro": {
+        "one_liner": "Manim 动画智能体技能库",
+        "what_it_is": "这是面向 Manim Community Edition 和 ManimGL 的智能体技能集合，提供最佳实践、代码示例和规则文件，用于制作数学动画。",
+        "problem_solved": "它帮助智能体区分两个不兼容的 Manim 版本，并按场景、动画、三维、相机等主题加载对应规范，减少写错接口和模式。",
+        "who_should_care": "用智能体编写 Manim 数学动画、教学视频或可视化内容的开发者。",
+        "use_cases": [
+          "为智能体补充 Manim 最佳实践",
+          "生成数学讲解动画代码",
+          "区分两个 Manim 版本的写法"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "两个 Manim 版本不兼容，代码需按版本调整；并行测试过多可能内存不足；依赖 Python、FFmpeg 和 LaTeX。",
+        "evidence": [
+          "Agent skills for Manim to create 3Blue1Brown style animations.",
+          "A comprehensive collection of best practices, patterns, and examples for both **Manim Community Edition** and **ManimGL** (3Blue1Brown's version).",
+          "These are **separate, incompatible** frameworks. Code written for one will not work with the other without modifications."
+        ]
+      }
+    },
+    "sgl-project/SpecForge": {
+      "category": "ai-model",
+      "one_liner": "投机解码模型训练工具",
+      "intro": {
+        "one_liner": "推测解码训练框架",
+        "what_it_is": "SpecForge 是训练推测解码模型的 Python 框架，支持将模型平滑接入 SGLang 服务框架。",
+        "problem_solved": "它解决推测解码项目维护不足、与 SGLang 不直接兼容的问题，并提供在线与离线训练流程。",
+        "who_should_care": "使用 SGLang 部署大模型、需要训练草稿模型的开发者。",
+        "use_cases": [
+          "训练 EAGLE3 草稿模型",
+          "在线分离式推测解码训练",
+          "将草稿模型接入 SGLang"
+        ],
+        "alternatives": "强调持续维护、开箱即用、直接兼容 SGLang，并统一支持多种训练拓扑。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "创建于 2025 年 6 月，项目较新；训练方法组合较多，配置不受支持时会被拒绝。",
+        "evidence": [
+          "Train speculative decoding models effortlessly and port them smoothly to SGLang serving.",
+          "SpecForge is an ecosystem project developed by the SGLang team. It is a framework for training speculative decoding models so that you can smoothly port them over to the SGLang serving framework to speed up your inference.",
+          "most of them are not well-maintained or not directly compatible with SGLang"
+        ]
+      }
+    },
+    "HFQR/xitca-web": {
+      "category": "web-frontend",
+      "one_liner": "安全 Rust Web 框架",
+      "intro": {
+        "one_liner": "安全 Rust 网页框架",
+        "what_it_is": "xitca-web 是用 Rust 编写的 HTTP 库和网页框架，强调全安全 Rust，并支持零拷贝序列化与反序列化。",
+        "problem_solved": "它试图提供更省内存、依赖更少、可少用宏的网页开发方案，并集成 HTTP、异步输入输出、加密传输等能力。",
+        "who_should_care": "关注安全 Rust、Tokio 兼容和 HTTP 协议支持的 Rust 开发者。",
+        "use_cases": [
+          "构建 HTTP 服务与接口",
+          "开发 WebSocket 客户端或服务端",
+          "提供静态资源与压缩内容"
+        ],
+        "alternatives": "强调全安全 Rust、零拷贝、可选宏，并自带 HTTP 库与多种集成能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：本周曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "项目明确提示尚不稳定，可能随时出现破坏性变更；路线图尚未给出；仍在招募更多贡献者。",
+        "evidence": [
+          "A HTTP library and web framework written in 100% safe Rust with zero-copy serialization/deserialization support",
+          "The project is still not stable. So expect breaking changes to appear at any time.",
+          "Roadmap: Coming soon!."
+        ]
+      }
+    },
+    "warpdotdev/themes": {
+      "category": "desktop-system",
+      "one_liner": "Warp 终端主题仓库",
+      "intro": {
+        "one_liner": "Warp 终端主题仓库",
+        "what_it_is": "这是 Warp 终端的开源自定义主题仓库，收录标准、节日、随 Warp 内置等主题，并提供主题预览生成脚本。",
+        "problem_solved": "集中提供 Warp 可用的主题文件与贡献流程，方便用户配置终端外观、背景图片，也方便社区提交新主题。",
+        "who_should_care": "使用 Warp 终端、想更换配色或贡献主题的开发者。",
+        "use_cases": [
+          "为 Warp 终端更换配色",
+          "配置主题背景图片",
+          "提交并生成主题预览"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，主题仓库受众较明确。",
+        "risk_notes": "主题依赖 Warp 终端生态；贡献时需运行 Python 脚本并安装 PyYAML。",
+        "evidence": [
+          "This is an open-source repository with themes for [Warp](https://www.warp.dev/). We welcome and appreciate any contributions!",
+          "Warp supports setting background images, set the path to your background image in your themes `.yaml` file:",
+          "TLDR; After adding your theme run the python script for generating theme previews `./scripts/gen_theme_previews.py` like so:"
+        ]
+      }
+    },
+    "aws-samples/bedrock-access-gateway": {
+      "category": "ai-model",
+      "one_liner": "Bedrock 兼容 OpenAI 接口",
+      "intro": {
+        "one_liner": "Bedrock 兼容网关",
+        "what_it_is": "一个用 Python 编写的代理网关，把 Amazon Bedrock 模型包装成兼容 OpenAI 的接口和开发工具包调用方式。",
+        "problem_solved": "让原本使用 OpenAI 接口或开发工具包的应用，无需改动代码即可试用 Amazon Bedrock 的多种基础模型。",
+        "who_should_care": "想低成本评估 Bedrock 模型、或迁移现有 OpenAI 风格应用的开发者。",
+        "use_cases": [
+          "不改动代码试用 Bedrock",
+          "在生成式工具中评估模型",
+          "为应用接入流式响应"
+        ],
+        "alternatives": "官方原生接口已提供兼容能力，并建议直接调用 Amazon Bedrock，不再部署此网关。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，但已被标记为弃用。",
+        "risk_notes": "项目已弃用，官方建议改用原生接口；部署需自行管理密钥、容器镜像和云资源。",
+        "evidence": [
+          "OpenAI-compatible RESTful APIs for Amazon Bedrock",
+          "This project is deprecated.",
+          "Sometimes, you might have applications developed using OpenAI APIs or SDKs, and you want to experiment with Amazon Bedrock without modifying your codebase."
+        ]
+      }
+    },
+    "DavidHDev/haiku": {
+      "category": "web-frontend",
+      "one_liner": "轻量 React Hooks 工具集",
+      "intro": {
+        "one_liner": "轻量 React 工具库",
+        "what_it_is": "Haiku 是一个用 TypeScript 编写的轻量 React 库，提供大量钩子与实用工具，帮助更快完成开发。",
+        "problem_solved": "它想减少重复编写常见 React 逻辑的工作，通过现成钩子和工具节省开发时间。",
+        "who_should_care": "使用 React、Next.js 的前端开发者，尤其是需要常用钩子集合的人。",
+        "use_cases": [
+          "在 React 项目中复用常用钩子",
+          "用现成工具加快前端开发",
+          "为 Next.js 页面补充交互逻辑"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，但缺少持续热度信息。",
+        "risk_notes": "需要 React 16.8.0 或更高版本；成熟度、维护活跃度和生产采用情况未提供。",
+        "evidence": [
+          "A clean, lightweight collection of React Hooks & Utilities",
+          "Haiku is a lightweight React library with the goal of saving\nyou time by offering a large collection of hooks & utilities that will\nhelp you get things done faster",
+          "_Requires React >=16.8.0_"
+        ]
+      }
+    },
+    "google/adk-web": {
+      "category": "ai-agent",
+      "one_liner": "智能体开发调试界面",
+      "intro": {
+        "one_liner": "智能体开发调试界面",
+        "what_it_is": "这是与 Agent Development Kit 集成的内置开发者界面，用 TypeScript 编写，用于更方便地开发和调试智能体。",
+        "problem_solved": "它把智能体开发中的事件、追踪、产物、评估和构建辅助集中到网页界面，降低本地开发与排错的操作成本。",
+        "who_should_care": "使用 Agent Development Kit 构建、调试智能体的开发者。",
+        "use_cases": [
+          "本地查看智能体事件",
+          "调试追踪与产物",
+          "辅助构建智能体"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "功能属于预览阶段，按原样提供且支持可能有限；运行还需安装多个前置依赖。",
+        "evidence": [
+          "Agent Development Kit Web is the built-in developer UI that integrated with Google Agent Development Kit for easier agent development and debug.",
+          "ADK web is the built-in dev UI that comes along with adk for easier development and debug.",
+          "Pre-GA features are available \"as is\" and might have limited support."
+        ]
+      }
+    },
+    "NVIDIA/cuda-tile": {
+      "category": "dev-tools",
+      "one_liner": "CUDA 内核优化编译框架",
+      "intro": {
+        "one_liner": "CUDA 分块编译基础设施",
+        "what_it_is": "基于 MLIR 的中间表示与编译器基础设施，面向 CUDA 内核优化，提供方言、Python 绑定、字节码和一致性测试。",
+        "problem_solved": "用分块计算抽象、内存层级管理和面向张量核心的优化，降低高性能 CUDA 内核开发复杂度。",
+        "who_should_care": "编写或优化 NVIDIA GPU 内核、研究编译器与 MLIR 的开发者。",
+        "use_cases": [
+          "构建分块计算中间表示",
+          "用 Python 生成和变换中间表示",
+          "序列化方言并做一致性测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "构建依赖特定兼容版本的 MLIR/LLVM；示例要求 CUDA Toolkit 13.1 以上、受支持设备和兼容驱动。",
+        "evidence": [
+          "CUDA Tile IR is an MLIR-based intermediate representation and compiler infrastructure for CUDA kernel optimization, focusing on tile-based computation patterns and optimizations targeting NVIDIA tensor core units.",
+          "This open-source release is aligned with the **CUDA Toolkit 13.1** release.",
+          "CUDA Tile requires MLIR/LLVM at a specific compatible commit."
+        ]
+      }
+    },
+    "ClaytonFarr/ralph-playbook": {
+      "category": "learning-resource",
+      "one_liner": "自主 AI 编码循环指南",
+      "intro": {
+        "one_liner": "自主编码循环指南",
+        "what_it_is": "这是一份围绕 Ralph 方法整理自主 AI 编码循环实践指南，包含工作流、原则、循环机制、文件与增强建议。",
+        "problem_solved": "它把需求拆分、规格、实施计划、规划与构建循环串成可复用流程，帮助开发者更稳定地组织 AI 编码任务。",
+        "who_should_care": "正在尝试自主 AI 编码循环、需要规范提示词与任务拆解的开发者。",
+        "use_cases": [
+          "把想法拆成规格文件",
+          "生成或更新实施计划",
+          "按计划循环实现并验证"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜一天。",
+        "risk_notes": "创建日期为 2026 年 1 月 9 日，资料较新；内容主要是指南，不是可直接运行的软件；README 提到部分原文需订阅查看。",
+        "evidence": [
+          "A comprehensive guide to running autonomous AI coding loops using Geoff Huntley's Ralph methodology. View as formatted guide below 👇",
+          "Below is the result - a (likely OCD-fueled) Ralph Playbook that organizes the miscellaneous details for putting this all into practice w/o hopefully neutering it in the process.",
+          "This diagram clarified for me that Ralph isn't just \"a loop that codes.\" It's a funnel with 3 Phases, 2 Prompts, and 1 Loop."
+        ]
+      }
+    },
+    "tonyantony300/dashbeam": {
+      "category": "desktop-system",
+      "one_liner": "免云端直传文件工具",
+      "intro": {
+        "one_liner": "点对点加密传文件",
+        "what_it_is": "一个开源跨平台文件传输工具，支持桌面、Android、命令行和浏览器，通过点对点网络直接发送文件和文件夹。",
+        "problem_solved": "避免把文件先上传到云端，也免去账号和容量限制；提供端到端加密、校验、断点续传和跨网络传输。",
+        "who_should_care": "需要传大文件、重视隐私，或要在多设备间直连传输的开发者与普通用户。",
+        "use_cases": [
+          "局域网设备配对后互传",
+          "远程发送大文件或文件夹",
+          "用链接或二维码临时收文件"
+        ],
+        "alternatives": "相比部分同类工具，强调跨互联网直连、局域网发现、设备配对和自建中继。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 87 星，并曾进入日榜一天。",
+        "risk_notes": "采用 AGPL-3.0，商用集成需注意许可义务；网页端吞吐受限；未关闭问题 53 个。",
+        "evidence": [
+          "A free and open-source file transfer tool that harnesses the power of cutting-edge peer-to-peer networking, letting you transfer files directly without storing them on cloud servers.",
+          "Cross-platform - Desktop, Android, CLI, and browser - no install on the web",
+          "Send files and folders anywhere in the world without storing in cloud - any size, any format, no accounts, no restrictions."
+        ]
+      }
+    },
+    "carlvellotti/free-ai-courses": {
+      "category": "learning-resource",
+      "one_liner": "产品经理 Claude Code 课程",
+      "intro": {
+        "one_liner": "免费交互式人工智能课程",
+        "what_it_is": "这是面向产品经理和初学者的免费人工智能工具课程源码，课程在 Claude、Cursor 或 Codex 等应用内通过互动方式完成。",
+        "problem_solved": "它用应用内实操代替视频和幻灯片，帮助学习者直接掌握人工智能工具与产品经理工作流。",
+        "who_should_care": "产品经理、无技术背景的人工智能工具学习者，以及需要课程素材的人。",
+        "use_cases": [
+          "在 Claude Code 中学习实操",
+          "学习 Cursor 产品经理流程",
+          "用短课练习人工智能工作流"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2,143 星，且本周上过一天日榜。",
+        "risk_notes": "内容采用 CC BY-NC-ND 4.0，禁止商业使用和改编；部分课程需从站点开始；仓库创建于 2025 年，较新。",
+        "evidence": [
+          "Interactive course teaching Product Managers how to use Claude Code effectively",
+          "Hands-on, interactive courses that teach you AI tools by actually using them. Every lesson runs inside your AI app — Claude, Cursor, or Codex — with the AI as your guide. No videos to sit through, no slides to skim.",
+          "This work is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)."
+        ]
+      }
+    },
+    "Anil-matcha/ai-creator-academy": {
+      "category": "learning-resource",
+      "one_liner": "生成式 AI 变现课程",
+      "intro": {
+        "one_liner": "生成式 AI 变现课程",
+        "what_it_is": "一个免费开源课程，教创作者和机构把生成式图像、视频、音频做成可定价、可销售的服务或产品。",
+        "problem_solved": "补足多数 AI 教学只讲工具或开发、不讲定价、定位和找客户的缺口，提供面向变现的流程与模板。",
+        "who_should_care": "想用生成式媒体接单、做内容服务或小型产品的创作者、自由职业者和机构。",
+        "use_cases": [
+          "制作并销售 AI 视频广告",
+          "搭建无露脸内容频道",
+          "设计 AI 产品摄影服务"
+        ],
+        "alternatives": "相比付费社区和工具教程，强调免费、真实数字、定价定位和首批客户获取。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时有一千八百四十三星且本周上日榜一天。",
+        "risk_notes": "十五个轨道中只有第一个轨道被说明为今天已完整写好，其余内容完整度需查看路线图；许可证信息 unknown。",
+        "evidence": [
+          "Free, open-source curriculum for making money with generative AI image, video, and audio — for creators and agencies.",
+          "Every module ends with pricing, positioning, and where to find your first client — not just \"how it works.\"",
+          "Track 1: AI Video Ads & UGC is the only fully-written track today — it's the proof-of-format pilot every other track will follow."
+        ]
+      }
+    },
+    "block/buzz": {
+      "category": "other",
+      "one_liner": "群体协作通信平台",
+      "intro": {
+        "one_liner": "人机协作工作空间",
+        "what_it_is": "Buzz 是可自托管的团队工作空间，让人类和智能体在同一房间协作；底层基于 Nostr relay，把消息、流程、评审和代码事件写入同一签名事件日志。",
+        "problem_solved": "它把聊天、代码协作、工作流、搜索和审计记录整合到一处，并让智能体以独立身份参与，减少工具割裂和权限边界不清。",
+        "who_should_care": "关注自托管协作、智能体参与研发流程和代码审计的开发者与团队。",
+        "use_cases": [
+          "让智能体检索历史并回答项目问题",
+          "把功能分支变成协作房间",
+          "用签名事件串联评审与发布"
+        ],
+        "alternatives": "差异在于人类、智能体、工作流和代码事件共用同一身份模型、协议与事件日志。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 8,224 星，但仅一天进入日榜。",
+        "risk_notes": "部分功能仍在接线或只是设想；Windows 构建未签名；未关闭 Issue 有 3,774 个。",
+        "evidence": [
+          "A hive mind communication platform",
+          "A Buzz **community** is the workspace a user reaches by URL.",
+          "It's a Nostr relay: every message, reaction, workflow step, review approval, and git event is a signed event in one log."
+        ]
+      }
+    }
+  }
+}

@@ -1,1 +1,613 @@
-{"date":"2026-07-19","headline":"AI Agent 项目集中升温","points":["25 个破千项目中，AI Agent 占 8 个，KnockOutEZ/wigolo 以 353 新增领跑。","tandpfun/wardrobe 把图像模型用于衣橱整理，deer-flow/llm-space 面向桌面端智能体调试。","TypeScript 出现 9 次，开发工具、Web 前端与学习资源也保持存在感。"],"items":{"KnockOutEZ/wigolo":{"category":"ai-agent","one_liner":"本地优先的智能体联网检索工具"},"tandpfun/wardrobe":{"category":"ai-model","one_liner":"用图像模型整理衣橱"},"deer-flow/llm-space":{"category":"ai-agent","one_liner":"桌面端智能体原型调试台"},"martin-olivier/airgorah":{"category":"security","one_liner":"图形化 WiFi 安全审计工具"},"internet-court/internet-court-skill":{"category":"ai-agent","one_liner":"智能体交易信任与仲裁层"},"puppyone-ai/puppyone":{"category":"ai-agent","one_liner":"智能体上下文驱动工具"},"im4codes/imcodes":{"category":"ai-agent","one_liner":"智能体共享记忆与监管通信"},"sashiko-dev/sashiko":{"category":"ai-agent","one_liner":"Linux 内核变更智能审查"},"inssekt/CocoonFE":{"category":"other","one_liner":"用途不明的 Python 项目"},"zjunlp/LightMem":{"category":"ai-model","one_liner":"轻量高效记忆增强生成"},"mlc-ai/modern-gpu-programming-for-mlsys":{"category":"learning-resource","one_liner":"机器学习系统 GPU 编程教程"},"chinasoul/BT":{"category":"content-media","one_liner":"B站电视客户端"},"0xSojalSec/LLMs-local":{"category":"learning-resource","one_liner":"本地大模型工具资源清单"},"tejaswigowda/ffmpeg-webCLI":{"category":"content-media","one_liner":"浏览器本地视频编辑器"},"Tongyun1/from-minimind-to-more":{"category":"learning-resource","one_liner":"从零训练大模型详解"},"catppuccin/vscode-icons":{"category":"dev-tools","one_liner":"VSCode 柔和粉彩图标"},"R3dy/capsulecorp-pentest":{"category":"security","one_liner":"内网渗透测试虚拟环境"},"hasan-py/Hayroo":{"category":"web-frontend","one_liner":"全功能 MERN 电商平台"},"liketrek/TREK":{"category":"web-frontend","one_liner":"自托管协作旅行规划器"},"builderz-labs/mission-control":{"category":"ai-agent","one_liner":"自托管智能体运行控制台"},"0xNyk/council-of-high-intelligence":{"category":"ai-agent","one_liner":"多模型视角决策审议工具"},"tsukinaha/tsukimi":{"category":"desktop-system","one_liner":"简洁的 Linux Jellyfin 客户端"},"KEV0143/Adaptive-forecasting-of-electricity-consumption-24-168-720-h-with-load-regime-conditioning":{"category":"data-finance","one_liner":"多时段用电消耗预测项目"},"stremio-community/stremio-addons-list":{"category":"content-media","one_liner":"社区维护的 Stremio 插件清单"},"oblien/openship":{"category":"dev-tools","one_liner":"自托管部署平台"}}}
+{
+  "date": "2026-07-19",
+  "headline": "AI Agent 项目集中升温",
+  "points": [
+    "25 个破千项目中，AI Agent 占 8 个，KnockOutEZ/wigolo 以 353 新增领跑。",
+    "tandpfun/wardrobe 把图像模型用于衣橱整理，deer-flow/llm-space 面向桌面端智能体调试。",
+    "TypeScript 出现 9 次，开发工具、Web 前端与学习资源也保持存在感。"
+  ],
+  "items": {
+    "KnockOutEZ/wigolo": {
+      "category": "ai-agent",
+      "one_liner": "本地优先的智能体联网检索工具",
+      "intro": {
+        "one_liner": "本地优先的智能体网页工具",
+        "what_it_is": "wigolo 是面向 AI 编码智能体的本地优先网页工具层，通过 MCP、REST、命令行或 SDK 提供搜索、抓取、爬取、提取、缓存和研究能力。",
+        "problem_solved": "它让智能体无需云端服务和密钥即可获取网页信息，并返回带引用、摘录和评分的证据，便于后续推理与整理。",
+        "who_should_care": "使用 MCP 客户端、编码智能体或自托管智能体的开发者。",
+        "use_cases": [
+          "为编码智能体接入网页搜索",
+          "抓取网页并提取结构化数据",
+          "生成带引用的研究报告"
+        ],
+        "alternatives": "强调本地运行、无需密钥、无按次计费，并提供统一的智能体网页工具接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 2,362 星且曾上日榜。",
+        "risk_notes": "处于公开测试阶段；研究、智能体和答案式搜索若要生成完整答案需配置模型服务；仍有 26 个未关闭问题。",
+        "evidence": [
+          "The go-to web for your AI coding agent — local-first search, fetch, crawl & research over MCP. No API keys, no cloud, $0/query. Public beta.",
+          "wigolo gives an AI agent one surface for everything web-related: **search, fetch, crawl, extract, cache, find-similar, research,** and autonomous gather loops.",
+          "**Search, fetch, crawl, extract, cache, and find-similar work with no API key.**"
+        ]
+      }
+    },
+    "tandpfun/wardrobe": {
+      "category": "ai-model",
+      "one_liner": "用图像模型整理衣橱",
+      "intro": {
+        "one_liner": "用 gpt-image 提取并整理衣橱衣物",
+        "what_it_is": "Wardrobe 是一个基于 JavaScript 的本地 Web 应用，调用 OpenAI Responses API 与 Images API，从照片中识别每件衣物、生成干净的商品抠图，并可选生成模特试穿预览图。",
+        "problem_solved": "把散落在照片里的衣物自动识别、抠图、归档成结构化衣橱库，省去手动整理和修图的工作。",
+        "who_should_care": "希望数字化管理个人衣橱、且愿意自备 OpenAI API Key 的个人用户，以及想参考 Codex skill 做图像流水线的开发者。",
+        "use_cases": [
+          "把相册或相机胶卷里的穿搭照片批量导入，自动拆分成单件衣物",
+          "为已有衣物生成模特上身效果图和整套 lookbook",
+          "作为本地优先的衣橱数据库，支持拖拽、粘贴、编辑与重新生成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，依赖 gpt-image 生成能力的新奇玩法，一周内快速涨星但功能面较窄",
+        "risk_notes": "必须自备 OPENAI_API_KEY 并放置本人参考图才能启用导入；生成质量与成本取决于 OpenAI 模型；项目创建与最近推送为同一天，维护历史尚不明确",
+        "evidence": [
+          "Your clothes, extracted and organized with gpt-image.",
+          "The importer stays disabled until you add `OPENAI_API_KEY` to `.env` and place a PNG reference photo of yourself at `data/model-reference.png`.",
+          "Keeps originals, jobs, generated images, and the JSON database local in `data/`"
+        ]
+      }
+    },
+    "deer-flow/llm-space": {
+      "category": "ai-agent",
+      "one_liner": "桌面端智能体原型调试台",
+      "intro": {
+        "one_liner": "Agent 开发调试桌面工作台",
+        "what_it_is": "LLM Space 是一个面向 Agent 构建者的桌面应用，基于 TypeScript、Bun、Electrobun 与 React 构建，可在本地完成 prompt 与工具的编写、执行轨迹追踪、失败回放与性能评估。",
+        "problem_solved": "把 Agent 开发中分散的提示词管理、调用链观察、故障复现和效果评估集中到一个本地工具里，减少在多个工具之间切换的成本。",
+        "who_should_care": "正在构建或调试 LLM Agent 的开发者，尤其是使用 LangGraph 等框架、需要逐步检查 harness 执行细节的团队。",
+        "use_cases": [
+          "编写并版本化 prompt、system message、工具与模型配置",
+          "实时查看 agent loop 中每次模型调用与工具执行",
+          "从历史记录回放失败运行并逐步定位问题",
+          "对 agent 跨多次运行的表现做评估",
+          "将某个 thread 转成可运行的 LangGraph agent"
+        ],
+        "alternatives": "README 未与其他同类工具做直接对比，仅说明其为 DeerFlow 的姊妹项目，并内置 Pi Agent Core 框架；具体差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：Agent 可观测性与调试工具是随 Agent 工程化持续增长的需求，而非一次性话题。",
+        "risk_notes": "目前仅合并 DeerFlow 核心团队成员的 PR，外部贡献受限；应用会收集少量匿名使用数据（可退出）；仅提供 macOS 安装包。",
+        "evidence": [
+          "A desktop app to prototype agent ideas, inspect every harness step, replay failures, and evaluate performance, all in one place.",
+          "LLM Space is a sister project of DeerFlow, and we dogfood it heavily: every version of DeerFlow is built and debugged with LLM Space.",
+          "For now, we only merge pull requests from the DeerFlow core team members."
+        ]
+      }
+    },
+    "martin-olivier/airgorah": {
+      "category": "security",
+      "one_liner": "图形化 WiFi 安全审计工具",
+      "intro": {
+        "one_liner": "图形化无线安全审计工具",
+        "what_it_is": "Airgorah 是基于 aircrack-ng 工具套件的无线网络安全审计软件，用 Rust 编写，并提供 GTK4 图形界面。",
+        "problem_solved": "它把附近无线流量捕获、客户端发现、解除认证攻击、握手与 PMKID 捕获、密码破解等操作集中到图形界面中。",
+        "who_should_care": "需要审计自有无线网络的 Linux 安全从业者与运维人员。",
+        "use_cases": [
+          "审计自有无线网络安全",
+          "发现接入点和已连接客户端",
+          "捕获握手包并测试口令强度"
+        ],
+        "alternatives": "相比命令行工具套件，它提供 GTK4 图形界面，并通过特权代理处理高权限操作。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天登上日榜。",
+        "risk_notes": "仅支持 Linux，且需要支持监听模式与数据包注入的无线网卡；攻击非自有网络在多数国家违法。",
+        "evidence": [
+          "A WiFi security auditing software mainly based on aircrack-ng tools suite",
+          "`Airgorah` is a WiFi security auditing software that can capture nearby WiFi traffic, discover clients connected to access points, perform deauthentication attacks, capture handshakes and PMKIDs, and crack the password of access points.",
+          "This software only works on `linux`."
+        ]
+      }
+    },
+    "internet-court/internet-court-skill": {
+      "category": "ai-agent",
+      "one_liner": "智能体交易信任与仲裁层",
+      "intro": {
+        "one_liner": "智能体交易信任层",
+        "what_it_is": "这是一个面向智能体间商业交易的开放技能包，整合自然语言授权、委托权限、支付、托管与争议解决，并提供路由和连接器。",
+        "problem_solved": "它把分散的交易标准串成一套流程，并在交易前约定争议裁决方式，减少出错时各层互相推诿。",
+        "who_should_care": "开发智能体支付、协作交易和链上合约集成的开发者。",
+        "use_cases": [
+          "为智能体交易生成自然语言合约",
+          "接入支付、托管和委托权限",
+          "预设争议验证与裁决路径"
+        ],
+        "alternatives": "差异在于把发现、协商、合约、支付、执行和争议裁决整合为单一开放技能。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 304 星，并曾进入日榜一天。",
+        "risk_notes": "创建日期与最近提交日期均在未来；未关闭议题 32 个；部分标准尚无公开技能。",
+        "evidence": [
+          "The trust layer for agent-to-agent commerce — natural-language mandates, ERC-7710 delegated permissions, x402 payments, escrow, and dispute resolution as one open, catch-all Agent Skill / Claude Code plugin.",
+          "It connects that fragmented ecosystem into a single open skill, and it builds in **adjudication**",
+          "一周新增 Star：304；本周上日榜天数：1；未关闭 Issue 数：32"
+        ]
+      }
+    },
+    "puppyone-ai/puppyone": {
+      "category": "ai-agent",
+      "one_liner": "智能体上下文驱动工具",
+      "intro": {
+        "one_liner": "给智能体用的文件夹",
+        "what_it_is": "puppyone 是面向智能体的本地与云端文件夹，可让不同应用里的智能体读写同一批文件，并基于 Git 回退版本。",
+        "problem_solved": "它解决本地文件难以被手机、队友或云端智能体共同编辑的问题，让文件成为智能体可访问的共享上下文。",
+        "who_should_care": "需要让多个智能体协作处理文件的开发者与团队。",
+        "use_cases": [
+          "让云端智能体编辑本地文件",
+          "团队成员共享智能体文件夹",
+          "误改文件后回退版本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 157 星，曾有一天进入日榜。",
+        "risk_notes": "名称、图标和品牌资产不属于 Apache-2.0 授权范围；会发送基础产品分析数据，但可在设置中关闭。",
+        "evidence": [
+          "The (local & cloud) folder built for your agents.",
+          "Put your files in the cloud folder, and you and every agent in your organization can read and write them.",
+          "puppyone folders run on Git, so you can revert to any earlier version."
+        ]
+      }
+    },
+    "im4codes/imcodes": {
+      "category": "ai-agent",
+      "one_liner": "智能体共享记忆与监管通信",
+      "intro": {
+        "one_liner": "面向智能体的协作控制台",
+        "what_it_is": "IM.codes 是连接编码智能体、共享记忆与受控电脑操作的协作层，支持多供应商智能体的监督执行和审计。",
+        "problem_solved": "它解决离开电脑后难以继续管理编码智能体，以及切换模型时上下文丢失、单一模型判断不稳的问题。",
+        "who_should_care": "常用命令行编码智能体、需要远程接管和多智能体协作的开发者。",
+        "use_cases": [
+          "手机查看并接管编码会话",
+          "多个智能体共享上下文记忆",
+          "跨模型评审与交付审计"
+        ],
+        "alternatives": "定位为终端编码智能体外围的消息、记忆与评审层，而非另一款集成开发环境或通用远程终端。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 97 星且曾进入日榜，但项目创建较新。",
+        "risk_notes": "明确声明为积极开发中的个人开源项目，无担保、无服务等级协议，也不保证稳定性、安全性或向后兼容。",
+        "evidence": [
+          "The IM for agents. Shared Agent Context & Memory, supervised execution, and cross-agent audit across AI providers.",
+          "It is not another AI IDE or a generic remote terminal. It is the messaging, memory, and review layer around terminal-based coding agents.",
+          "Disclaimer: This is an actively developed personal open-source project. There are no warranties, no SLA, and no guarantees of stability, security, or backward compatibility. Use at your own risk."
+        ]
+      }
+    },
+    "sashiko-dev/sashiko": {
+      "category": "ai-agent",
+      "one_liner": "Linux 内核变更智能审查",
+      "intro": {
+        "one_liner": "内核补丁智能审查工具",
+        "what_it_is": "Sashiko 是自包含的 Linux 内核代码审查系统，可从本地 Git 仓库、邮件列表或代码托管平台审查拟议改动。",
+        "problem_solved": "用内核专用提示词和多阶段验证流程，辅助发现补丁中的架构、逻辑、资源、并发与安全等问题。",
+        "who_should_care": "Linux 内核维护者、补丁作者，以及需要审查内核改动的开发者。",
+        "use_cases": [
+          "本地审查最近提交或提交区间",
+          "跟踪邮件列表补丁并生成审查报告",
+          "验证并发、资源和安全问题"
+        ],
+        "alternatives": "相比通用审查提示词项目，强调内核专用提示、维护者说明和多阶段验证。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 52 星，并曾有一天进入日榜。",
+        "risk_notes": "输出具有概率性且可能波动；会把补丁及相关文件发送给模型服务方，需关注授权、数据外发和接口费用；部分代码托管平台接入仍标注为实验性。",
+        "evidence": [
+          "Sashiko is a self-contained, agentic Linux kernel code review system.",
+          "As with any LLM-based tool, Sashiko's output is probabilistic and may vary across runs on the same input.",
+          "Sashiko sends patch data and relevant surrounding files/history from your repository to your configured LLM provider."
+        ]
+      }
+    },
+    "inssekt/CocoonFE": {
+      "category": "other",
+      "one_liner": "用途不明的 Python 项目",
+      "intro": {
+        "one_liner": "掌机游戏前端",
+        "what_it_is": "Cocoon 是面向复古游戏掌机的可定制 Android 前端，用于整理游戏库并通过模拟器启动游戏。",
+        "problem_solved": "它把游戏库整理、媒体信息、主题布局、游玩统计和启动入口集中到一个界面，减少掌机上管理游戏的麻烦。",
+        "who_should_care": "使用 Android 复古游戏掌机、需要整理模拟游戏库的玩家。",
+        "use_cases": [
+          "整理掌机游戏库并启动游戏",
+          "自定义网格、主题和小组件",
+          "查看成就、时长和游玩统计"
+        ],
+        "alternatives": "资料提到类似 EmulationStation 与 Pegasus，并强调双屏、主题和小组件。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜。",
+        "risk_notes": "目前仅提供 Android 版本，Linux 和 Windows 版本仍在开发；安装需手动下载安装包并允许未知来源。",
+        "evidence": [
+          "A customisable Android frontend for retro gaming handhelds.",
+          "Cocoon is an emulation frontend (similar to EmulationStation & Pegasus) which acts as an application to organise your library and launch games through Emulators.",
+          "While we currently only have an Android release, we are actively working on cross-platform releases such as Linux and Windows."
+        ]
+      }
+    },
+    "zjunlp/LightMem": {
+      "category": "ai-model",
+      "one_liner": "轻量高效记忆增强生成",
+      "intro": {
+        "one_liner": "轻量大模型记忆框架",
+        "what_it_is": "LightMem 是面向大模型和智能体的记忆管理框架，提供记忆存储、检索与更新机制，并支持云端接口和本地模型。",
+        "problem_solved": "它帮助智能应用具备长期记忆能力，用较少代码接入记忆层，并支持自定义存储引擎和检索策略。",
+        "who_should_care": "开发聊天机器人、智能体或需要长期记忆应用的开发者。",
+        "use_cases": [
+          "构建带记忆的旅行规划智能体",
+          "构建带记忆的代码助手",
+          "评测长期记忆基准表现"
+        ],
+        "alternatives": "提供统一基线评测，可对比 Mem0、A-MEM、LangMem 等记忆层。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周一天登上日榜。",
+        "risk_notes": "仓库创建于 2025 年 6 月，仍较新；部分内容涉及论文接收、未来日期消息和评测结果，需自行核验。",
+        "evidence": [
+          "**LightMem** is a lightweight and efficient memory management framework designed for Large Language Models and AI Agents.",
+          "It provides a simple yet powerful memory storage, retrieval, and update mechanism to help you quickly build intelligent applications with long-term memory capabilities.",
+          "We provide a comprehensive [baseline evaluation framework](https://github.com/zjunlp/LightMem/blob/main/src/lightmem/memory_toolkits/readme.md), supporting the benchmarking of memory layers such as Mem0, A-MEM, and LangMem on multiple datasets like LoCoMo and LongMemEval."
+        ]
+      }
+    },
+    "mlc-ai/modern-gpu-programming-for-mlsys": {
+      "category": "learning-resource",
+      "one_liner": "机器学习系统 GPU 编程教程",
+      "intro": {
+        "one_liner": "现代 GPU 编程教程",
+        "what_it_is": "这是一本面向机器学习系统的在线教程，讲解现代 GPU 内核编程，并以 TIRx 作为编写内核的 Python 领域专用语言。",
+        "problem_solved": "它帮助读者从理解 GPU 硬件、内存与计算机制，逐步进阶到编写先进矩阵乘法和注意力内核。",
+        "who_should_care": "关注机器学习系统、GPU 内核开发和高性能算子的开发者。",
+        "use_cases": [
+          "系统学习现代 GPU 编程",
+          "练习 TIRx 内核编写",
+          "复现矩阵乘法与注意力示例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 59 星且曾上日榜。",
+        "risk_notes": "运行内核需要 Blackwell GPU、TIRx 编译器和 CUDA 版 PyTorch；仍有 7 个未关闭问题。",
+        "evidence": [
+          "A tutorial on modern GPU programming for machine learning systems",
+          "This book teaches modern GPU kernel programming as a progression: **understand the\n  GPU hardware → learn to program it → write state-of-the-art kernels.**",
+          "The kernels in this book target Blackwell (`sm_100a`), so running them needs a Blackwell GPU\n(such as a B200), the TIRx compiler, and a CUDA build of PyTorch."
+        ]
+      }
+    },
+    "chinasoul/BT": {
+      "category": "content-media",
+      "one_liner": "B站电视客户端",
+      "intro": {
+        "one_liner": "Android TV 端 B 站客户端",
+        "what_it_is": "BT 是面向 Android TV 场景的个人学习与自用工具项目，用于探索 Kotlin、Android TV 交互和媒体播放等功能实现。",
+        "problem_solved": "它主要解决在电视设备上学习和测试 B 站相关交互、播放体验的需求，并提供不同安卓版本的安装包说明。",
+        "who_should_care": "关注 Android TV 开发、Kotlin 学习和电视端媒体交互的开发者。",
+        "use_cases": [
+          "学习 Android TV 交互实现",
+          "在个人电视设备测试播放",
+          "研究 Kotlin 媒体应用开发"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 191 星，并曾进入日榜一天。",
+        "risk_notes": "定位为个人学习与自用工具；要求遵守平台条款、法律法规和内容版权要求；未关闭 Issue 数有 108 个。",
+        "evidence": [
+          "BT 是一个面向 Android TV 场景的个人学习与自用工具项目，主要用于探索 Kotlin、Android TV 交互、媒体播放等功能实现。",
+          "请在遵守相关平台服务条款、法律法规和内容版权要求的前提下，用于学习研究与个人设备测试。",
+          "作者填写的描述：bilibili TV client"
+        ]
+      }
+    },
+    "0xSojalSec/LLMs-local": {
+      "category": "learning-resource",
+      "one_liner": "本地大模型工具资源清单",
+      "intro": {
+        "one_liner": "本地大模型资源清单",
+        "what_it_is": "一个汇总本地运行大模型相关平台、工具、模型、硬件、教程和社区的资源列表。",
+        "problem_solved": "把本地大模型生态中的推理引擎、界面、模型与学习资料集中整理，降低查找和选型成本。",
+        "who_should_care": "想在本机或私有环境部署、试用大模型的开发者。",
+        "use_cases": [
+          "挑选本地推理平台",
+          "查找模型与界面工具",
+          "按主题学习本地部署"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注集中。",
+        "risk_notes": "创建于 2025-12-17，资料较新；清单内容依赖外部链接，时效与准确性需自行核验。",
+        "evidence": [
+          "list of awesome platforms, tools, and resources   run for LLMs locally",
+          "- [Inference platforms](#inference-platforms)\n- [Inference engines](#inference-engines)\n- [User Interfaces](#user-interfaces)",
+          "- [Hardware](#hardware)\n- [Tutorials](#tutorials)"
+        ]
+      }
+    },
+    "tejaswigowda/ffmpeg-webCLI": {
+      "category": "content-media",
+      "one_liner": "浏览器本地视频编辑器",
+      "intro": {
+        "one_liner": "浏览器本地视频编辑器",
+        "what_it_is": "基于 ffmpeg.wasm 的浏览器视频编辑器，所有处理都在本地通过 WebAssembly 完成，不上传文件，也不依赖服务器。",
+        "problem_solved": "让私有视频的转码、剪辑、压缩、字幕和音频处理无需上传到云端，降低文件外泄与依赖在线服务的顾虑。",
+        "who_should_care": "处理敏感素材、不便安装软件或希望离线编辑视频的开发者与普通用户。",
+        "use_cases": [
+          "本地转换视频格式",
+          "压缩、裁剪或制作 GIF",
+          "提取音频并嵌入字幕"
+        ],
+        "alternatives": "相比 CloudConvert、Kapwing、Ezgif、Otter 等云端工具，它强调文件不上传、可离线使用。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周新增九星且仅一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0；部分功能受浏览器内存限制，倒放不支持批量模式；创建日期与最近提交日期异常，需留意数据可靠性。",
+        "evidence": [
+          "A browser-based video editor powered by ffmpeg.wasm. No uploads, no servers -- all processing happens locally in your browser using WebAssembly.",
+          "✓ **Offline-First PWA** : Works completely offline after first use; install as a native app",
+          "The reverse filter buffers the entire video into memory for processing, which combined with re-encoding makes it memory-intensive. Works in single mode; **not supported in batch mode**"
+        ]
+      }
+    },
+    "Tongyun1/from-minimind-to-more": {
+      "category": "learning-resource",
+      "one_liner": "从零训练大模型详解",
+      "intro": {
+        "one_liner": "大模型训练解析笔记",
+        "what_it_is": "这是围绕 Minimind 的学习笔记与源码注释，系统梳理大模型架构、训练算法和面试资料。",
+        "problem_solved": "帮助读者理解 Minimind 的实现细节，减少查找大模型架构、算法和求职资料的成本。",
+        "who_should_care": "学习大模型训练、阅读 Minimind 源码或准备相关面试的开发者。",
+        "use_cases": [
+          "按章节学习大模型基础",
+          "对照源码理解训练算法",
+          "查阅大模型面试题目"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾进入日榜，但项目仍在持续更新。",
+        "risk_notes": "内容持续更新，优化篇尚未完成；部分面试内容放在外部平台；网页解析公式或图片可能有误。",
+        "evidence": [
+          "🎓从0开始训练一个大模型Minimind项目的超详细解析，包括但不限于用到的架构，算法，以及大模型面试经验",
+          "本项目是我个人基于https://github.com/jingyaogong/minimind 的学习笔记与思考。",
+          "🚧 **当前状态**：项目持续更新中，目前主要覆盖架构与基础部分，[优化篇]正在撰写中，[面试篇]已经在小红书更新..."
+        ]
+      }
+    },
+    "catppuccin/vscode-icons": {
+      "category": "dev-tools",
+      "one_liner": "VSCode 柔和粉彩图标",
+      "intro": {
+        "one_liner": "柔和配色编辑器图标",
+        "what_it_is": "这是给 VSCode 和 VSCodium 使用的图标扩展，提供 Catppuccin 配色和多套预览风格。",
+        "problem_solved": "让编辑器中的文件、文件夹和语言图标更统一，并支持单色、自定义关联等外观调整。",
+        "who_should_care": "喜欢统一编辑器外观、使用 VSCode 或 VSCodium 的开发者。",
+        "use_cases": [
+          "统一项目文件树图标风格",
+          "为语言和文件类型配图标",
+          "调整单色或文件夹图标"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "修改设置会重写主题文件，低配机器可能较慢；不支持自定义或外部 SVG。",
+        "evidence": [
+          "Soothing colors from the Catppuccin palette.",
+          "Custom associations, monochrome icons, and more!",
+          "Custom/external SVGs are not supported"
+        ]
+      }
+    },
+    "R3dy/capsulecorp-pentest": {
+      "category": "security",
+      "one_liner": "内网渗透测试虚拟环境",
+      "intro": {
+        "one_liner": "内网渗透测试虚拟靶场",
+        "what_it_is": "这是一个由 Vagrant 和 Ansible 管理的小型虚拟网络，包含一台 Linux 攻击机和四台带脆弱服务的 Windows 2019 服务器。",
+        "problem_solved": "它把搭建内网渗透测试环境的过程自动化，减少准备虚拟机、域环境和脆弱服务的时间与配置负担。",
+        "who_should_care": "学习网络渗透测试、Active Directory 攻防和漏洞练习的开发者或安全学习者。",
+        "use_cases": [
+          "练习内网渗透测试流程",
+          "学习 Active Directory 攻防",
+          "复现常见服务漏洞环境"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "Windows 服务器使用评估许可，安装后有效期为一百八十天；完整运行全部虚拟机建议十六吉字节内存，八吉字节或更少时只能同时运行两到三台。",
+        "evidence": [
+          "Vagrant VirtualBox environment for conducting an internal network penetration test",
+          "The Capsulecorp Pentest is a small virtual network managed by Vagrant and Ansible. It contains five virtual machines, including one Linux attacking system running Xubuntu and 4 Windows 2019 servers configured with various vulnerable services.",
+          "All windows server have evaluation licenses, which are activated on installation (for 180 days)"
+        ]
+      }
+    },
+    "hasan-py/Hayroo": {
+      "category": "web-frontend",
+      "one_liner": "全功能 MERN 电商平台",
+      "intro": {
+        "one_liner": "全栈电商示例项目",
+        "what_it_is": "这是一个基于 React、Node.js、Express、MongoDB 等技术构建的电商网站项目，包含登录认证、样式和支付网关配置。",
+        "problem_solved": "它提供一套可本地运行的电商网站示例，帮助开发者理解前后端分离、支付配置和基础部署流程。",
+        "who_should_care": "想学习全栈电商开发、支付接入和本地部署的普通开发者。",
+        "use_cases": [
+          "学习电商前后端结构",
+          "练习支付网关配置",
+          "参考本地运行与部署"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "标题写为项目演示；支付功能需自行配置密钥；部署说明涉及外部服务与分支配置。",
+        "evidence": [
+          "Full-featured MERN Stack E-commerce platform with payment gateway using React, Node.js, Express, MongoDB, JWT, and Tailwind CSS",
+          "# Hayroo Project Demo",
+          "To enable payment functionality, you need to configure your own Braintree API credentials."
+        ]
+      }
+    },
+    "liketrek/TREK": {
+      "category": "web-frontend",
+      "one_liner": "自托管协作旅行规划器",
+      "intro": {
+        "one_liner": "自托管协同旅行规划器",
+        "what_it_is": "TREK 是自托管旅行规划应用，支持实时协作、交互地图、预算、打包清单、预订、路线和离线使用。",
+        "problem_solved": "把多人行程、地图路线、预订、费用分摊和旅途记录集中到一处，并让使用者自行托管数据。",
+        "who_should_care": "重视自托管、多人协作和完整行程管理的旅行者与团队。",
+        "use_cases": [
+          "多人共同规划地图行程",
+          "管理预订、预算和分摊",
+          "规划徒步、骑行和公路旅行"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 211 星，并曾登上日榜。",
+        "risk_notes": "采用 AGPL-3.0，自托管和二次开发需留意开源义务；部分功能默认关闭，且有 24 个未关闭问题。",
+        "evidence": [
+          "A self-hosted travel/trip planner with real-time collaboration, interactive maps, PWA support, SSO, budgets, packing lists, and more.",
+          "Every part of your trip. One app you own.",
+          "Most of what follows is an addon an admin switches on or off. Lists, Costs, Documents, Collab, Tours, Vacay and Atlas ship on; Journey, Collections, MCP, the AI assistant, AI Parsing, Road trip, Dawarich and AirTrail ship off and are marked below."
+        ]
+      }
+    },
+    "builderz-labs/mission-control": {
+      "category": "ai-agent",
+      "one_liner": "自托管智能体运行控制台",
+      "intro": {
+        "one_liner": "自托管智能体控制台",
+        "what_it_is": "Mission Control 是自托管的智能体控制平面，用本地面板和 SQLite 管理任务、运行记录、成本与多种运行时。",
+        "problem_solved": "当多个智能体或运行时并行工作时，它集中回答任务归属、执行过程、复核结果、失败与花费在哪里。",
+        "who_should_care": "需要统一运维多个智能体、审查任务与成本的开发者和团队。",
+        "use_cases": [
+          "集中分派并复核智能体任务",
+          "查看运行日志与成本视图",
+          "管理代理、密钥、审批与审计"
+        ],
+        "alternatives": "它不替代智能体框架，也不提供托管多租户服务，而是自托管治理层。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 63 星，并曾进入日榜一天。",
+        "risk_notes": "软件处于 alpha，接口、模式和配置可能变化；联网暴露前需阅读安全指导；不同运行时适配深度不一。",
+        "evidence": [
+          "Self-hosted control plane for operating AI agents.",
+          "Mission Control is alpha software. APIs, schemas, and configuration may change between releases. Read the [security guidance](#security-boundary) before exposing it to a network.",
+          "Adapter depth varies by runtime; see [agent setup](docs/agent-setup.md) and [CLI integration](docs/cli-integration.md) before assuming feature parity."
+        ]
+      }
+    },
+    "0xNyk/council-of-high-intelligence": {
+      "category": "ai-agent",
+      "one_liner": "多模型视角决策审议工具",
+      "intro": {
+        "one_liner": "18 个 AI 人格多模型结构化审议决策",
+        "what_it_is": "一个以 Shell 脚本实现的决策辅助工具，通过 Claude Code、Codex、Gemini CLI、OpenCode 等客户端调用多个 LLM，让 18 个分析型「人格」（如 Aristotle、Feynman、Kahneman、Torvalds）分轮独立分析、交叉质询并给出结论。",
+        "problem_solved": "针对高风险、价值冲突、证据不足或不可逆的决策，避免单一推理路径和过早达成共识，输出保留分歧、未解问题、终止条件与下一步行动的裁决。",
+        "who_should_care": "需要在架构选型、产品定价、开源策略等重大决策上获得多视角对抗性分析，并且已经在使用 Claude Code、Codex、Gemini CLI 或 OpenCode 的开发者与团队。",
+        "use_cases": [
+          "评估是否开源内部 agent 框架等不可逆战略决策",
+          "在架构选型（微服务 vs 单体）上做对抗性权衡",
+          "用 --quick 或 --duo 模式快速获得多视角的发布决策意见"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：项目创建于 2026-03，周增约 2052 星、累计 3181 星，属于快速走红的 AI agent 工作流工具，但尚无长期维护数据。",
+        "risk_notes": "README 为不可信第三方内容；项目以 Shell 脚本和提示词协议为主，实际效果依赖所接入模型与客户端；open issues 22 个，长期维护情况未知。",
+        "evidence": [
+          "18 AI personas deliberate your hardest decisions across multiple LLM providers",
+          "The council assigns a hard question to deliberately different analytical personas, keeps their first positions independent, forces direct disagreement",
+          "Verdicts lead with what remains unresolved. A recommendation is paired with acceptable compromises, kill criteria, and one concrete next step."
+        ]
+      }
+    },
+    "tsukinaha/tsukimi": {
+      "category": "desktop-system",
+      "one_liner": "简洁的 Linux Jellyfin 客户端",
+      "intro": {
+        "one_liner": "Linux 第三方 Jellyfin 客户端",
+        "what_it_is": "tsukimi 是用 Rust 编写的 Linux 第三方 Jellyfin 客户端，标签涉及 GTK4、mpv、音乐和视频播放。",
+        "problem_solved": "为 Linux 用户提供连接 Jellyfin 的桌面播放入口，并支持通过多种原生包和 Flathub 安装。",
+        "who_should_care": "在 Linux 上使用 Jellyfin、偏好原生桌面客户端的开发者和用户。",
+        "use_cases": [
+          "在 Linux 桌面浏览 Jellyfin 媒体",
+          "使用 mpv 播放视频或音乐",
+          "通过发行版包管理器安装"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2,971 星且本周上过一次日榜。",
+        "risk_notes": "采用 GPLv3；声明与内容提供方无关联；依赖 wl-proxy 嵌入 mpv。",
+        "evidence": [
+          "A simple third-party Jellyfin client for Linux.",
+          "We use wl-proxy for mpv gpu-next vo embedding",
+          "tsukimi is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) license."
+        ]
+      }
+    },
+    "KEV0143/Adaptive-forecasting-of-electricity-consumption-24-168-720-h-with-load-regime-conditioning": {
+      "category": "data-finance",
+      "one_liner": "多时段用电消耗预测项目",
+      "intro": {
+        "one_liner": "用电量自适应预测项目",
+        "what_it_is": "这是一个面向小时级用电量预测的项目，覆盖 24、168 和 720 小时区间，并考虑负荷状态条件。",
+        "problem_solved": "用于解决不同时间跨度下的用电量预测问题，并把负荷状态纳入预测条件。",
+        "who_should_care": "关注电力负荷预测、时序预测和能源数据分析的开发者。",
+        "use_cases": [
+          "预测未来一天用电量",
+          "预测未来一周用电量",
+          "预测未来三十天用电量"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天进入日榜，但缺少实现与使用说明。",
+        "risk_notes": "公开资料很少，缺少代码说明、依赖、许可证和成熟度信息；暂无分叉，实际可复用性不明。",
+        "evidence": [
+          "Адаптивное прогнозирование почасового электропотребления для интервалов 24, 168 и 720 часов с учётом режима нагрузки",
+          "创建日期：2025-09-26",
+          "Fork 数：0"
+        ]
+      }
+    },
+    "stremio-community/stremio-addons-list": {
+      "category": "content-media",
+      "one_liner": "社区维护的 Stremio 插件清单",
+      "intro": {
+        "one_liner": "Stremio 插件社区清单",
+        "what_it_is": "这是一个社区维护的 Stremio 插件列表，通过 GitHub 议题收集、投票和评论插件，并生成可浏览的网站。",
+        "problem_solved": "它把插件提交、审核、排序、评论和在线状态检查集中起来，方便用户发现和评价可用插件。",
+        "who_should_care": "Stremio 用户、插件发布者和想自建插件目录的开发者。",
+        "use_cases": [
+          "查找影视与直播插件",
+          "提交并维护插件条目",
+          "按社区投票筛选插件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时有一千一百二十四星。",
+        "risk_notes": "仓库已声明不再维护，并引导前往新的社区插件列表；曾因恶意插件和垃圾内容启用审核。",
+        "evidence": [
+          "A community curated list of Stremio Addons",
+          "This repository is no longer maintained. Visit the new Stremio Community Addon List here: [stremio-addons.net](https://stremio-addons.net/).",
+          "Due to recent abuse of this repository (malicious addons, spam) by a user called [vancengvn](https://github.com/Vance-ng-vn) we were forced to implement a moderation system."
+        ]
+      }
+    },
+    "oblien/openship": {
+      "category": "dev-tools",
+      "one_liner": "自托管部署平台",
+      "intro": {
+        "one_liner": "自托管部署平台",
+        "what_it_is": "Openship 是开源、可自托管的部署平台，内置持续集成与持续交付，可从桌面应用、网页面板或命令行操作。",
+        "problem_solved": "它把代码仓库到构建、发布、路由和证书终止串成一套流程，降低个人和团队自建应用部署的门槛。",
+        "who_should_care": "想自托管应用、需要推送即部署或统一管理服务器的开发者与小团队。",
+        "use_cases": [
+          "个人用桌面应用部署到服务器",
+          "团队自建常驻控制面板",
+          "推送代码后自动构建发布"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 7,160 星且曾上日榜。",
+        "risk_notes": "未关闭问题有 159 个；源码构建版本被明确称为未验证开发版本，不适合生产路径；容器方案需挂载宿主机 Docker 套接字，只应在可信主机运行。",
+        "evidence": [
+          "Self-hosted deployment platform",
+          "Open-source, self-hostable deployment platform with built-in CI/CD.",
+          "It installs as a **separate `openship-dev`** command with its own isolated home (`~/.openship-dev`) and boot service, so your production `openship` and its data are never touched. Needs Bun + git; it's an unverified dev build (the dashboard compile wants real RAM/CPU) — not a production path."
+        ]
+      }
+    }
+  }
+}

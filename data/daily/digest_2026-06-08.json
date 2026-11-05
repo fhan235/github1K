@@ -1,1 +1,637 @@
-{"date":"2026-06-08","headline":"AI Agent 与工具项目领跑","points":["26 个破千项目中，AI Agent 有 9 个，Python 有 12 个，智能体与脚本生态最活跃。","V0id-v2/Void-Tools-v2.0 增加 292，终端式网络情报多工具领跑当日热度。","Makisuo/maple 增加 203，ningzimu/codex-ppt-skill 增加 153，可观测平台与 PPT 生成受关注。"],"items":{"V0id-v2/Void-Tools-v2.0":{"category":"security","one_liner":"终端式网络情报多工具"},"Makisuo/maple":{"category":"dev-tools","one_liner":"OpenTelemetry 可观测平台"},"ningzimu/codex-ppt-skill":{"category":"ai-agent","one_liner":"生成图片式 PPT 的技能"},"14790897/handwriting-web":{"category":"web-frontend","one_liner":"文本转模拟手写网页"},"ClaudioDrews/memory-os":{"category":"ai-agent","one_liner":"本地智能体七层记忆系统"},"OpenNSWM-Lab/FAROS":{"category":"other","one_liner":"Python 实验项目"},"ai-infra-curriculum/ai-infra-engineer-learning":{"category":"learning-resource","one_liner":"AI 基础设施工程师课程"},"evo-hq/evo":{"category":"ai-agent","one_liner":"代码库自动研究优化循环"},"zarazhangrui/lark-coding-agent-bridge":{"category":"ai-agent","one_liner":"飞书桥接本地编码智能体"},"LearnPrompt/ai-news-radar":{"category":"automation","one_liner":"24 小时 AI 资讯雷达"},"AxDSan/mnemosyne":{"category":"ai-agent","one_liner":"零依赖极速 AI 记忆系统"},"xiaoY233/Chat2API":{"category":"ai-model","one_liner":"网页版模型转 API 工具"},"sartoopjj/thefeed":{"category":"content-media","one_liner":"基于 DNS 的订阅阅读器"},"Weizhena/Deep-Research-skills":{"category":"ai-agent","one_liner":"可控深度研究技能"},"iFurySt/open-codex-computer-use":{"category":"ai-agent","one_liner":"开源电脑操作智能体"},"AgriciDaniel/claude-blog":{"category":"ai-agent","one_liner":"SEO 博客写作技能套件"},"lukaspieper/Gcam-Services-Provider":{"category":"mobile","one_liner":"免 Play 服务用 Gcam"},"cline/kanban":{"category":"ai-agent","one_liner":"并行运行命令行智能体"},"lico-n/ZygiskFrida":{"category":"security","one_liner":"Zygisk 注入 Frida 模块"},"DJDoubleD/refreezer":{"category":"content-media","one_liner":"Deezer 音乐播放下载器"},"translate-tools/linguist":{"category":"web-frontend","one_liner":"网页字幕翻译与生词本"},"Aizistral-Studios/No-Chat-Reports":{"category":"game","one_liner":"禁用玩家聊天举报追踪"},"gausian-AI/Gausian_native_editor":{"category":"content-media","one_liner":"本地 AI 视频剪辑器"},"mani-skill/ManiSkill":{"category":"ai-model","one_liner":"机器人操作仿真基准框架"},"ArchiveTuneApp/ArchiveTune":{"category":"mobile","one_liner":"安卓可爱风音乐播放器"},"61418/aws-sso-util":{"category":"dev-tools","one_liner":"简化 AWS SSO 命令行"}}}
+{
+  "date": "2026-06-08",
+  "headline": "AI Agent 与工具项目领跑",
+  "points": [
+    "26 个破千项目中，AI Agent 有 9 个，Python 有 12 个，智能体与脚本生态最活跃。",
+    "V0id-v2/Void-Tools-v2.0 增加 292，终端式网络情报多工具领跑当日热度。",
+    "Makisuo/maple 增加 203，ningzimu/codex-ppt-skill 增加 153，可观测平台与 PPT 生成受关注。"
+  ],
+  "items": {
+    "V0id-v2/Void-Tools-v2.0": {
+      "category": "security",
+      "one_liner": "终端式网络情报多工具",
+      "intro": {
+        "one_liner": "Python 终端多用途工具集",
+        "what_it_is": "这是一个用 Python 编写的终端多用途工具集，描述中提到 OSINT、Discord、网页与网络工具，以及富文本终端界面、主题和远程更新。",
+        "problem_solved": "它把多类终端实用工具集中到一处，方便在命令行里调用相关功能；具体解决的问题因资料不足无法确认。",
+        "who_should_care": "关注命令行工具、OSINT 与网络工具，并接受教育用途限定的开发者。",
+        "use_cases": [
+          "在终端集中调用多类工具",
+          "体验富文本终端界面与主题",
+          "用于教育用途相关演示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天且破千时有一千一百五十三星。",
+        "risk_notes": "资料缺少 README，功能与成熟度难以核实；标签包含 Discord raid、nuke 等高风险词；描述明确限定教育用途。",
+        "evidence": [
+          "Python terminal multitool — OSINT, Discord, web & network utilities. Rich TUI, 13 themes, remote updates. Educational use only.",
+          "话题标签：discord-joiner、discord-multi-tool、discord-multitool、discord-multitools、discord-nuke-bot、discord-nuker、discord-nukers、discord-raid",
+          "破千时的 Star 数：1153；本周上日榜天数：1"
+        ]
+      }
+    },
+    "Makisuo/maple": {
+      "category": "dev-tools",
+      "one_liner": "OpenTelemetry 可观测平台",
+      "intro": {
+        "one_liner": "开源可观测性平台",
+        "what_it_is": "Maple 是基于 OpenTelemetry 和 ClickHouse 的开源可观测性平台，集中查看 traces、logs 和 metrics，并提供告警、错误归类与会话回放。",
+        "problem_solved": "它把分散的链路、日志和指标放到同一处排查，支持标准 OTLP 接入，避免专有采集器和供应商 SDK 绑定。",
+        "who_should_care": "需要自建或统一排查服务遥测数据的后端、平台与运维开发者。",
+        "use_cases": [
+          "排查服务报错与链路",
+          "统一搜索日志和指标",
+          "本地试用遥测平台"
+        ],
+        "alternatives": "强调 OpenTelemetry 原生接入、三类遥测统一视图，以及面向编码代理的查询能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 164 星且曾上日榜。",
+        "risk_notes": "创建时间较新，未关闭 Issue 有 49 个；部署说明涉及多服务、云端配置与预览环境限制。",
+        "evidence": [
+          "Open-source observability for traces, logs & metrics, built on OpenTelemetry and ClickHouse.",
+          "OpenTelemetry native. Point any OTLP exporter at Maple. No proprietary agent, no vendor SDK lock-in.",
+          "Use maple.dev, self-host the stack, or run everything as one local binary."
+        ]
+      }
+    },
+    "ningzimu/codex-ppt-skill": {
+      "category": "ai-agent",
+      "one_liner": "生成图片式 PPT 的技能",
+      "intro": {
+        "one_liner": "用 AI 生图把内容做成图片式 PPT 的 Codex skill",
+        "what_it_is": "一个面向 Codex 的 PPT 生成 skill，也可在 Claude Code、OpenClaw、Hermes Agent 等支持 SKILL.md 的 agent 中使用；它把文章、报告、论文、课程笔记等材料转成整页图片式演示文稿，再用本地脚本组装为 .pptx。",
+        "problem_solved": "解决从长文本材料到视觉统一演示文稿的制作流程问题：先规划大纲与视觉风格，再逐页生成幻灯片图片并组装成 PPTX，同时生成演讲稿写入备注。",
+        "who_should_care": "经常需要把技术文章、论文、课程笔记或汇报材料做成 PPT 的开发者、研究者、教师与需要快速交付演示稿的团队。",
+        "use_cases": [
+          "技术文章转分享 PPT",
+          "论文或报告转答辩/汇报演示稿",
+          "课程笔记转教学课件",
+          "商业汇报与产品介绍"
+        ],
+        "alternatives": "README 未与其他同类项目做直接对比；其差异点在于采用整页图片式生成而非可编辑版式，并提示可配合 image-to-editable-ppt-skill 转为可编辑 PPT。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Codex/Claude Code 等 agent skill 生态与 gpt-image-2 生图能力，属于当前 agent 工具链的阶段性热门方向。",
+        "risk_notes": "生成的页面元素本身不可直接编辑，需要可编辑 PPT 时须额外转换；非 Codex 环境通常需配置第三方生图 API 或兼容接口；README 自述流程为通用性设计得较复杂，可能带来不稳定性或冗余。",
+        "evidence": [
+          "description: Codex skill for generating image-based PowerPoint decks with gpt-image-2",
+          "它把文章、报告、论文、课程笔记等内容转换成“整页图片式”的演示文稿：先规划大纲和视觉风格，再生成每页幻灯片图片，最后用本地脚本组装为 `.pptx`。",
+          "本 skill 负责从文章、报告、大纲或想法生成图片式 PPT，适合强视觉表达，但页面元素本身不可直接编辑。"
+        ]
+      }
+    },
+    "14790897/handwriting-web": {
+      "category": "web-frontend",
+      "one_liner": "文本转模拟手写网页",
+      "intro": {
+        "one_liner": "文本转手写图片网页工具",
+        "what_it_is": "这是一个用现有字体把文本生成模拟手写文字图片的网页项目，支持自定义字体、背景、排版参数和预览。",
+        "problem_solved": "它解决批量制作个性化手写文字图片的问题，可调整字迹扰动、边距、背景，并导出图片压缩包或文档。",
+        "who_should_care": "需要生成手写风格材料、批量排版文本或自部署网页工具的开发者。",
+        "use_cases": [
+          "制作手写风格作业材料",
+          "批量生成带背景的文字图片",
+          "自部署并定制字体样式"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 139 星，并有一天进入日榜。",
+        "risk_notes": "自部署涉及前后端、容器和测试环境配置；文档记录过超时、缓存、上传和磁盘占用问题。",
+        "evidence": [
+          "这个平台允许你使用现有的字体来创建模拟手写文字的图片。",
+          "一旦你对预览满意，你可以生成一整套图片。这些图片将被方便地打包成一个 zip 文件，以便于下载。",
+          "一周新增 Star：139"
+        ]
+      }
+    },
+    "ClaudioDrews/memory-os": {
+      "category": "ai-agent",
+      "one_liner": "本地智能体七层记忆系统",
+      "intro": {
+        "one_liner": "智能体长期记忆系统",
+        "what_it_is": "为 Hermes Agent 提供七层本地记忆基础设施，结合结构化事实、会话检索、向量库、自动整理的知识库与上下文注入。",
+        "problem_solved": "解决智能体跨会话遗忘、重复交代背景、决策线索丢失，以及记忆方案依赖云端或过于浅层的问题。",
+        "who_should_care": "长期使用 Hermes Agent、需要本地持久记忆的开发者。",
+        "use_cases": [
+          "保存项目决策与偏好",
+          "检索历史会话内容",
+          "按需注入相关上下文"
+        ],
+        "alternatives": "相比原生 Hermes，增加事实库、跨会话召回、向量检索、知识库和权威上下文规则。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但创建时间很新。",
+        "risk_notes": "版本为 v0.2.0，依赖 Hermes Agent、Docker、Python 3.11+ 及多个本地服务；安装与运行栈较复杂。",
+        "evidence": [
+          "A 7-layer memory operating system for Hermes Agent — persistent memory with Qdrant, structured facts, fabric recall, auto-curated wiki, and surgical context injection. Runs locally, any LLM provider.",
+          "Requirements: Hermes Agent + Docker (Qdrant + Redis + ARQ Worker) + Python 3.11+.",
+          "What's New in v0.2.0"
+        ]
+      }
+    },
+    "OpenNSWM-Lab/FAROS": {
+      "category": "other",
+      "one_liner": "Python 实验项目",
+      "intro": {
+        "one_liner": "多智能体科研系统",
+        "what_it_is": "FAROS 是连接选题、文献、实验、代码、分析、论文与证据审计的多智能体科研系统，支持多模型接入和人工决策。",
+        "problem_solved": "它把研究问题、可执行实验和可检验结论串成闭环，让来源、运行记录、修改依据与审阅结果可追溯。",
+        "who_should_care": "需要复现实验、管理证据链或协作写论文的研究者与开发者。",
+        "use_cases": [
+          "文献调研与候选选题整理",
+          "算法研发和论文复现",
+          "科学主张与证据一致性核验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "创建时间较新；需自行配置模型服务、Docker 沙箱和 LaTeX 环境；多用户部署需处理凭据与认证。",
+        "evidence": [
+          "FAROS 是一个将**研究选题、文献检索、实验规划、代码实现、结果分析、论文写作与证据审计**连接起来的多智能体科研系统。",
+          "系统以三项机制贯穿科研流程：**科研合同统一执行条件，ReviewX 核验主张与证据，反馈编译将审查发现转化为可执行修订**。",
+          "破千时的 Star 数：1008；本周上日榜天数：1"
+        ]
+      }
+    },
+    "ai-infra-curriculum/ai-infra-engineer-learning": {
+      "category": "learning-resource",
+      "one_liner": "AI 基础设施工程师课程",
+      "intro": {
+        "one_liner": "AI 基础设施学习路线",
+        "what_it_is": "这是一套面向有两到四年经验者的 AI 基础设施工程师课程，包含十个模块、实验、测验和三个项目。",
+        "problem_solved": "它把构建、部署、监控和扩展机器学习系统所需知识整理成渐进式实践路径，降低自学规划成本。",
+        "who_should_care": "想转向 AI 基础设施、平台工程或机器学习运维的开发者。",
+        "use_cases": [
+          "系统学习 Kubernetes 与 GPU 运维",
+          "练习模型服务和机器学习运维流水线",
+          "准备大模型部署相关岗位技能"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 210 星并有一天进入日榜。",
+        "risk_notes": "课程自称完整，但更新说明又提到练习仍在补齐，完成度表述存在不一致；创建日期晚于最近提交日期，时间信息需谨慎核对。",
+        "evidence": [
+          "AI Infrastructure Engineer Learning Track - Production ML infrastructure curriculum (2-4 years experience)",
+          "This repository contains a **complete, production-ready learning path** for becoming an **AI Infrastructure Engineer**.",
+          "Lectures and projects are excellent; exercises are 32 of 119 promised and being filled in over subsequent content drops."
+        ]
+      }
+    },
+    "evo-hq/evo": {
+      "category": "ai-agent",
+      "one_liner": "代码库自动研究优化循环",
+      "intro": {
+        "one_liner": "把代码库变成自动研究循环的 LLM Agent 插件",
+        "what_it_is": "evo 是一个面向 agentic 框架的插件，它接收一个代码库，自动发现可优化的指标、搭建评测基准，然后用树搜索配合并行子 agent 反复做实验，保留有提升的改动、丢弃无效改动。",
+        "problem_solved": "解决 LLM 自主优化代码时容易陷入单一路径贪心爬坡、缺乏结构、容易为刷分而牺牲正确性的问题；它通过树搜索、并行子 agent、共享状态和 gate 校验来约束搜索过程。",
+        "who_should_care": "使用 Claude Code、Codex、Cursor 等 agent 框架，并希望让 agent 自主做代码性能或指标优化的开发者与研究者。",
+        "use_cases": [
+          "让 agent 自动为某个模块（如 JSON parser）做性能优化实验",
+          "在已有 benchmark 的仓库上自动跑指标提升循环",
+          "在远程沙箱（Modal、E2B、AWS 等）上并行跑多分支实验"
+        ],
+        "alternatives": "README 称其受 Karpathy 的 autoresearch 启发，区别在于用树搜索替代纯贪心爬坡，并加入并行子 agent、共享状态、gate 与 dashboard 可观测性。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：LLM 自主 agent 与 autoresearch 方向近期关注度高，但项目创建时间较新、仍在快速迭代。",
+        "risk_notes": "项目创建于 2026-04-05，较为年轻；README 引导申请商业平台 beta 并提供邮箱，需注意其开源部分与商业服务的关系；默认无人值守运行并自动推送改动，需自行配置 gate 防止为刷分牺牲正确性。",
+        "evidence": [
+          "turns your codebase into an autoresearch loop — discovers what to measure, instruments the benchmark, then runs tree search with parallel subagents.",
+          "Inspired by Karpathy's autoresearch -- where an LLM runs training experiments autonomously to beat its own best score.",
+          "Without gates, the search will find ways to return a constant, skip work, or trade correctness for speed."
+        ]
+      }
+    },
+    "zarazhangrui/lark-coding-agent-bridge": {
+      "category": "ai-agent",
+      "one_liner": "飞书桥接本地编码智能体",
+      "intro": {
+        "one_liner": "飞书本地编码代理桥",
+        "what_it_is": "一个用 TypeScript 编写的机器人，把 Feishu / Lark 消息转发到本地 Claude Code 或 Codex CLI，并用卡片实时展示回复和工具调用。",
+        "problem_solved": "让开发者在聊天窗口里远程指挥本地编码代理，保留会话连续性，并管理多个项目目录、队列消息和后台服务。",
+        "who_should_care": "常用飞书或 Lark，且本机已装 Claude Code 或 Codex CLI 的开发者。",
+        "use_cases": [
+          "在私聊里让本地代理改代码",
+          "群聊提及机器人查看进度",
+          "切换工作区并延续会话"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 145 星，曾有一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 276 个；需要 Node.js 20.12.0 以上、本地代理登录和 PersonalAgent 应用；后台服务依赖系统服务配置。",
+        "evidence": [
+          "A lightweight bot that bridges Feishu / Lark messenger with your local Claude Code or Codex CLI.",
+          "Streaming card: text replies and tool calls update on one Lark card in real time.",
+          "Node.js >= 20.12.0"
+        ]
+      }
+    },
+    "LearnPrompt/ai-news-radar": {
+      "category": "automation",
+      "one_liner": "24 小时 AI 资讯雷达",
+      "intro": {
+        "one_liner": "AI 新闻筛选雷达",
+        "what_it_is": "一个自动更新的 24 小时 AI 新闻雷达，聚合信源、合并事件、生成精选点评，并提供网页与 Agent 读报能力。",
+        "problem_solved": "把分散、重复、质量不一的 AI 消息整理成故事线，帮助判断哪些值得看、哪些是噪音。",
+        "who_should_care": "关注 AI 动态的开发者、内容创作者，以及想自建新闻雷达的人。",
+        "use_cases": [
+          "每天快速浏览 AI 更新",
+          "让 Agent 生成新闻简报",
+          "复刻并定制自己的信源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 95 星，并曾登上日榜。",
+        "risk_notes": "版本仍为 v0.9；部分标题增强、推荐理由和点评需要配置模型密钥；网页展示的三口味点评已暂时下线归档。",
+        "evidence": [
+          "24h AI/tech news radar with GitHub Actions, live web UI, and Scout Skill for AI sources.",
+          "先帮你从一堆信源里选出千里马，再把分散消息合并成故事线，最后用三种口味替你锐评每日头条。",
+          "三口味的网页展示已暂时下线归档（样式待重设计，见 docs/ROADMAP.md）；数据管线照常每日生成 persona 打分与点评，Skill 端日报不受影响。"
+        ]
+      }
+    },
+    "AxDSan/mnemosyne": {
+      "category": "ai-agent",
+      "one_liner": "零依赖极速 AI 记忆系统",
+      "intro": {
+        "one_liner": "本地智能体记忆层",
+        "what_it_is": "Mnemosyne 是用 Python 编写的智能体记忆层，基于 SQLite，支持命令行、Python 接口和多种智能体接入方式。",
+        "problem_solved": "它让智能体把偏好、事实和上下文保存在本地数据库中，不依赖云端服务，并提供记忆检索、导入导出和同步能力。",
+        "who_should_care": "开发智能体、需要本地记忆与多平台接入的开发者。",
+        "use_cases": [
+          "为智能体保存用户偏好",
+          "通过命令行检索记忆",
+          "在多个实例间同步记忆"
+        ],
+        "alternatives": "强调零云端依赖、SQLite 存储和多种智能体框架接入。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 96 星且上过一次日榜。",
+        "risk_notes": "未关闭 Issue 有 179 个；基准结果来自旧版本，且部分成绩已撤回或提示不可直接比较。",
+        "evidence": [
+          "The Zero-Dependency, Sub-Millisecond AI Memory System for Hermes Agents and Everyone Else!",
+          "Zero-cloud AI memory that works everywhere. SQLite-backed. One pure-Python dependency.",
+          "These are point-in-time results, not a claim about the current build."
+        ]
+      }
+    },
+    "xiaoY233/Chat2API": {
+      "category": "ai-model",
+      "one_liner": "网页版模型转 API 工具",
+      "intro": {
+        "one_liner": "多平台模型统一代理工具",
+        "what_it_is": "这是一个把多家模型网页服务封装成兼容 OpenAI 接口的本地代理与管理工具，提供仪表盘、密钥、模型、日志和路由配置。",
+        "problem_solved": "它解决多个模型服务接入方式不统一、客户端适配成本高的问题，让兼容 OpenAI 的客户端通过本地代理调用不同提供方。",
+        "who_should_care": "需要统一管理多个模型服务、并在本地客户端中切换调用的开发者。",
+        "use_cases": [
+          "为兼容客户端提供本地接口",
+          "集中管理多个模型提供方",
+          "查看请求日志与调用状态"
+        ],
+        "alternatives": "相比单一模型接口封装，它强调多提供方适配、上下文管理、模型映射和桌面端管理界面。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 57 星且仅一天进入日榜。",
+        "risk_notes": "依赖官方网页界面与用户凭证，存在服务变更、风控和凭证管理风险；未关闭 Issue 有 81 个，部分提供方标注暂不可用。",
+        "evidence": [
+          "Chat2API enables zero-cost access to leading AI models by leveraging official web UIs. It supports providers such as DeepSeek, GLM, Kimi, MiniMax, Qwen, and Z.ai, and seamlessly integrates with tools like openlcaw, Cline, and Roo-Code — making any OpenAI-compatible client work out of the box.",
+          "OpenAI Compatible API: Provides standard OpenAI-compatible API endpoints for seamless integration",
+          "Z.ai             | JWT Token     | Yes   | Temporarily unavailable due to frontend captcha risk control"
+        ]
+      }
+    },
+    "sartoopjj/thefeed": {
+      "category": "content-media",
+      "one_liner": "基于 DNS 的订阅阅读器",
+      "intro": {
+        "one_liner": "基于 DNS 的 Telegram/X 订阅阅读器",
+        "what_it_is": "thefeed 是一个用 Go 编写的 DNS 隧道客户端与服务端，让用户仅通过普通 DNS 查询即可阅读 Telegram 频道和公开 X 账号内容，并附带端到端加密的轻量聊天功能。",
+        "problem_solved": "解决在只允许 DNS 通过的受限网络环境中无法访问 Telegram、X 等信息源的问题，把内容封装进 DNS 查询传输。",
+        "who_should_care": "网络受限地区的普通读者、需要为他人搭建订阅服务的运维者，以及对 DNS 隧道通信感兴趣的技术人员。",
+        "use_cases": [
+          "在仅 DNS 可用的网络下阅读 Telegram 频道",
+          "在受限网络中查看公开 X 账号动态",
+          "通过 DNS 进行端到端加密的轻量消息通信",
+          "自建服务端为他人提供订阅转发"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目围绕特定网络封锁事件产生，星数增长较快但仓库创建时间短、issue 积压较多。",
+        "risk_notes": "Windows/macOS 客户端未签名，可能触发 SmartScreen 或 Defender 误报；服务端需自行配置 DNS 记录与 53 端口重定向，部署门槛不低；open issues 数量较多（73），维护状况需自行评估。",
+        "evidence": [
+          "DNS-based feed reader for Telegram channels and public X accounts. Designed for environments where only DNS queries work.",
+          "Read Telegram channels and public X accounts, and exchange end-to-end-encrypted messages with other users — all over plain DNS.",
+          "The `.exe` is **unsigned**, so SmartScreen shows *\"Windows protected your PC\"* and Defender may quarantine it"
+        ]
+      }
+    },
+    "Weizhena/Deep-Research-skills": {
+      "category": "ai-agent",
+      "one_liner": "可控深度研究技能",
+      "intro": {
+        "one_liner": "结构化深度研究技能",
+        "what_it_is": "这是面向 Claude Code、OpenCode 和 Codex 的结构化研究工作流技能，包含大纲生成、深度调查和报告生成。",
+        "problem_solved": "它把深度研究拆成可扩展大纲、逐项调查和报告整理，并让人在每一步保持控制。",
+        "who_should_care": "需要借助智能体做资料梳理、技术调研或报告生成的开发者。",
+        "use_cases": [
+          "论文综述与文献分析",
+          "技术对比与工具选型",
+          "竞品与行业趋势调研"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 77 星，曾有一天进入日榜。",
+        "risk_notes": "安装依赖多个智能体、模块和配置；OpenCode 需启用网页搜索，否则深度研究能力会受限。",
+        "evidence": [
+          "Structured deep research skill for Claude Code/Open Code/Codex with human-in-the-loop control",
+          "A structured research workflow skill for Claude Code, OpenCode, and Codex, supporting two-phase research: outline generation (extensible) and deep investigation.",
+          "Human-in-the-loop design ensures precise control at every stage."
+        ]
+      }
+    },
+    "iFurySt/open-codex-computer-use": {
+      "category": "ai-agent",
+      "one_liner": "开源电脑操作智能体",
+      "intro": {
+        "one_liner": "开源 Computer Use 的 MCP 服务",
+        "what_it_is": "open-computer-use 是一个以 MCP 服务形式封装的开源 Computer Use 实现，任何 AI agent 或 MCP 客户端都可以通过它在 macOS、Linux、Windows 上执行 Computer Use 操作。",
+        "problem_solved": "让 AI agent 通过 MCP 协议以非侵入式方式操控桌面应用，避免依赖官方闭源方案；在 macOS 上还支持 Locked Use，即锁屏后临时解锁继续工作。",
+        "who_should_care": "使用 Codex、Claude Code、Gemini CLI 等 MCP 客户端的 AI agent 开发者，以及需要在桌面环境中自动化操作应用的用户。",
+        "use_cases": [
+          "在 Codex App 或 Codex CLI 中接入 Computer Use 能力",
+          "通过 MCP 让 Gemini CLI、Claude Code 等客户端执行桌面操作",
+          "在 macOS 锁屏状态下让 agent 继续执行任务（Locked Use）"
+        ],
+        "alternatives": "README 称其灵感来自 OpenAI 的 Codex Computer Use，定位为开源替代方案；未与其他同类项目做具体对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：Computer Use 与 MCP 是当前 AI agent 领域的热门方向，项目周增 59 星、登上日榜 1 天。",
+        "risk_notes": "macOS 运行时要求 macOS 14.0 及以上，并需授予 Accessibility 与 Screen Recording 权限；项目创建于 2026-04-17，历史较短；README 含第三方链接与推广内容，需自行甄别。",
+        "evidence": [
+          "open-source `Computer Use` service wrapped as `MCP`",
+          "This project was inspired by OpenAI's Codex Computer Use",
+          "The macOS runtime requires macOS 14.0 or later."
+        ]
+      }
+    },
+    "AgriciDaniel/claude-blog": {
+      "category": "ai-agent",
+      "one_liner": "SEO 博客写作技能套件",
+      "intro": {
+        "one_liner": "Claude Code 博客写作套件",
+        "what_it_is": "这是面向 Claude Code 的开源博客写作技能套件，提供多项子技能、智能体和交付检查，生成带来源、搜索优化与多格式输出的文章。",
+        "problem_solved": "它把选题、资料核查、写作、评审、搜索优化和多语言发布串成流程，减少人工核对来源与反复检查文章质量的负担。",
+        "who_should_care": "用 Claude Code 写博客、做内容营销或维护站点内容的开发者。",
+        "use_cases": [
+          "从主题生成完整文章",
+          "核查引用与事实来源",
+          "批量规划选题和翻译"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 46 星且曾上日榜。",
+        "risk_notes": "安装说明要求固定并审阅提交版本；旧版卸载脚本会删除用户文件；缺少渲染器时交付会被阻断。",
+        "evidence": [
+          "Claude Blog is a free blog writing skill for Claude Code.",
+          "Give it a topic and it researches current sources, writes the post, checks the SEO, has an independent reviewer score it and runs five delivery gates.",
+          "Do not install or uninstall from the `v2.2.0` tag: its `uninstall.sh` deletes whole `blog` and `blog-*` skill folders, including files you added."
+        ]
+      }
+    },
+    "lukaspieper/Gcam-Services-Provider": {
+      "category": "mobile",
+      "one_liner": "免 Play 服务用 Gcam",
+      "intro": {
+        "one_liner": "无谷歌服务运行 Gcam",
+        "what_it_is": "一个用 Kotlin 编写的 Android 应用，模拟 Google Camera 所需的少量 Google Play Services 组件，让 Gcam 可在无 Play Services 的设备上使用。",
+        "problem_solved": "解决无 Google Play Services 的设备无法正常使用 Google Camera 的问题，并可选支持打开最近拍摄照片的按钮。",
+        "who_should_care": "使用无谷歌服务 Android 系统、又想运行 Gcam 的普通用户和刷机爱好者。",
+        "use_cases": [
+          "在无 Play Services 设备上运行 Gcam",
+          "让最近照片按钮改用相册应用",
+          "配合 GrapheneOS 使用 photosonly 版本"
+        ],
+        "alternatives": "相比 microG，它只面向 Gcam，不需要签名伪装、联网、存储或 root 权限；GrapheneOS 自 2023 年 4 月起已有通用兼容处理。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 9 星，曾有一天进入日榜。",
+        "risk_notes": "Gcam 10 及以上版本目前不受支持；basic 和 photos 版本与 GSF、microG 不兼容，photosonly 与 Google Photos 不兼容；需要兼容的 Android 系统或改装版 Gcam。",
+        "evidence": [
+          "App faking only the absolute necessary Apis to use Gcam without Play Services",
+          "This app 'simulates' certain components of Google Play Services required by the Google Camera (Gcam) app, enabling it to be used on devices without Google Play Services.",
+          "Gcam version >=10.x is currently unsupported"
+        ]
+      }
+    },
+    "cline/kanban": {
+      "category": "ai-agent",
+      "one_liner": "并行运行命令行智能体",
+      "intro": {
+        "one_liner": "并行运行命令行智能体的看板",
+        "what_it_is": "一个本地网页看板，用任务卡并行运行命令行智能体，每张卡配有独立终端和工作树，并支持查看改动。",
+        "problem_solved": "把大任务拆成多张卡，让多个智能体并行处理，减少代码冲突，并集中查看差异、评论和提交。",
+        "who_should_care": "需要同时调度多个命令行智能体、审阅大量改动的开发者。",
+        "use_cases": [
+          "把大任务拆成并行子任务",
+          "集中审阅智能体改动差异",
+          "串联任务并自动提交"
+        ],
+        "alternatives": "相比集成开发环境，更侧重多智能体并行、任务依赖和差异审阅。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨 18 星，上日榜 1 天。",
+        "risk_notes": "研究预览版，使用绕过权限和运行时钩子等实验特性；未关闭议题 321 个。",
+        "evidence": [
+          "Launch a local web app that runs CLI agents in parallel",
+          "Kanban is a research preview and uses experimental features of CLI agents like bypassing permissions and runtime hooks for more autonomy.",
+          "Kanban creates an ephemeral worktree just for that task so agents work in parallel without merge conflicts."
+        ]
+      }
+    },
+    "lico-n/ZygiskFrida": {
+      "category": "security",
+      "one_liner": "Zygisk 注入 Frida 模块",
+      "intro": {
+        "one_liner": "Android 隐蔽注入工具",
+        "what_it_is": "这是一个 Zygisk 模块，用更隐蔽的方式把 Frida Gadget 注入 Android 应用进程，也提供 Riru 版本。",
+        "problem_solved": "它避免把 Gadget 嵌入安装包，也不依赖 frida-server 的 ptrace，从而降低完整性校验和 ptrace 检测带来的阻碍。",
+        "who_should_care": "做 Android 逆向、安全研究或动态插桩，且拥有已 root 设备的开发者。",
+        "use_cases": [
+          "给目标应用注入 Frida Gadget",
+          "绕过启动阶段的检测",
+          "向应用进程加载任意库"
+        ],
+        "alternatives": "相比把 Gadget 嵌入安装包或运行 frida-server，它不改安装包、不使用 ptrace，并可控制注入时机。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时达到 1001 星。",
+        "risk_notes": "需要已 root 设备并启用 Zygisk；模拟器下只能 hook Java，不能 hook native 函数；与 frida-server 并存需配置不同端口。",
+        "evidence": [
+          "Injects frida gadget using zygisk to bypass anti-tamper checks.",
+          "The gadget is not embedded into the APK itself. So APK Integrity/Signature checks will still pass.",
+          "For emulators this will start the gadget in native realm. This means that you will be able to hook Java but not native functions."
+        ]
+      }
+    },
+    "DJDoubleD/refreezer": {
+      "category": "content-media",
+      "one_liner": "Deezer 音乐播放下载器",
+      "intro": {
+        "one_liner": "Deezer 替代客户端",
+        "what_it_is": "ReFreezer 是基于 Freezer 的 Deezer 音乐流媒体与下载客户端，用 Dart 编写，并已重写以适配新版 Flutter、Dart SDK 和 Android。",
+        "problem_solved": "它恢复旧版 Freezer 的登录、高音质播放与下载、队列、歌词等功能，并修复退出登录、外部存储下载和横屏平板适配等问题。",
+        "who_should_care": "想自行编译并使用 Deezer 替代客户端的 Android 用户和 Flutter 开发者。",
+        "use_cases": [
+          "在 Android 上播放 Deezer 音乐",
+          "下载音乐到外部存储",
+          "使用队列、歌词和智能播放列表"
+        ],
+        "alternatives": "相比旧版 Freezer，主要差异是代码库重写并适配新版 Flutter、Dart SDK 和 Android。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天登上日榜。",
+        "risk_notes": "声明仅供教育和私人使用，可能在某些地区违法；使用 Deezer 公共及内部接口，未获 Deezer 认可；高音质功能需要高级账户，自行编译还需自备接口凭据与签名密钥。",
+        "evidence": [
+          "An alternative Deezer music streaming & downloading client, based on Freezer.",
+          "The entire codebase has been updated/rewritten to be compatible with the latest version of flutter, the dart SDK & android (current build target is API level 34).",
+          "It may be illegal to use this in your country!"
+        ]
+      }
+    },
+    "translate-tools/linguist": {
+      "category": "web-frontend",
+      "one_liner": "网页字幕翻译与生词本",
+      "intro": {
+        "one_liner": "隐私优先的浏览器翻译扩展",
+        "what_it_is": "这是一个浏览器扩展，可翻译网页、选中文本、字幕和私信，并支持朗读、翻译历史与个人词典。",
+        "problem_solved": "它让用户在不依赖单一商业翻译组件的情况下翻译内容，并可选择本地离线翻译或自定义翻译后端。",
+        "who_should_care": "重视隐私、需要多场景翻译和自定义翻译服务的浏览器用户。",
+        "use_cases": [
+          "翻译整页网页内容",
+          "翻译选中文本和输入框",
+          "保存生词到个人词典"
+        ],
+        "alternatives": "强调独立翻译系统、模块化后端、离线翻译和不收集个人数据。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，隐私与离线翻译需求持续存在，但一周仅涨了 8 星。",
+        "risk_notes": "未关闭 Issue 有 269 个；部分浏览器需手动安装或借助开发模式；Android 安装步骤较复杂。",
+        "evidence": [
+          "Linguist is a standalone translation system — not a thin wrapper around a commercial widget.",
+          "Offline translation. With embedded Bergamot translator, you can translate texts right on your device. Keep your privacy",
+          "未关闭 Issue 数：269"
+        ]
+      }
+    },
+    "Aizistral-Studios/No-Chat-Reports": {
+      "category": "game",
+      "one_liner": "禁用玩家聊天举报追踪",
+      "intro": {
+        "one_liner": "Minecraft 聊天举报禁用模组",
+        "what_it_is": "这是一个 Java 编写的 Minecraft 模组，支持 Fabric 和 Forge，可安装在客户端、服务器或两端，用于移除聊天消息签名并禁用玩家聊天举报。",
+        "problem_solved": "它解决 1.19 及以后聊天消息带加密签名、可被追踪并关联到客户端和账号的问题，也用于关闭聊天举报。",
+        "who_should_care": "关注聊天隐私的 Minecraft 玩家、服主和模组开发者。",
+        "use_cases": [
+          "客户端移除聊天签名",
+          "服务器转发时剥离签名",
+          "双端禁用聊天举报"
+        ],
+        "alternatives": "不集成绕过服务器举报系统的客户端对抗手段，仅在服务器允许时于客户端生效。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "强制签名服务器可能拒绝加入或限制聊天命令；存在同名插件但并非作者制作；服务器无法关闭客户端未签名消息警告。",
+        "evidence": [
+          "Disable Player Chat Reporting and make user messages untrackable.",
+          "This mod strips cryptographic signatures which are attached to every chat message sent from 1.19 and onwards.",
+          "No Chat Reports will only remain effective on the client side if the server allows it to be."
+        ]
+      }
+    },
+    "gausian-AI/Gausian_native_editor": {
+      "category": "content-media",
+      "one_liner": "本地 AI 视频剪辑器",
+      "intro": {
+        "one_liner": "本地原生视频编辑器",
+        "what_it_is": "Gausian 是用 Rust 编写的本地桌面视频编辑器，提供时间线、素材管理、GPU 预览、命令行工具，并可接入本地 ComfyUI。",
+        "problem_solved": "它面向 AI 视频制作中的本地剪辑与预览，解决素材导入、快速预览、代理生成、工程保存和多种剪辑格式导出问题。",
+        "who_should_care": "做 AI 视频生产、需要本地剪辑与 ComfyUI 联动的开发者和视频创作者。",
+        "use_cases": [
+          "本地剪辑与 GPU 预览",
+          "自动导入 ComfyUI 输出",
+          "导出剪辑交换格式"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾两天进入日榜，但一周新增为负一星。",
+        "risk_notes": "核心采用 MPL-2.0，专业功能另有商业许可；路线图仍有时间线体验、色彩管理、效果与协作等未完成项；部分能力依赖 FFmpeg、GStreamer 和本地 ComfyUI。",
+        "evidence": [
+          "Fast, native video editor and preview tool built in Rust with GPU rendering, timeline editing, and local ComfyUI integration.",
+          "Gausian - Rust-based local video editor for AI video production",
+          "Roadmap (Upcoming) - Timeline polish and UX improvements - Automatic LORA creator - Advanced color management and LUTs - Rich effects and transitions - Multi‑window workspace - Collaborative editing - Plugin marketplace"
+        ]
+      }
+    },
+    "mani-skill/ManiSkill": {
+      "category": "ai-model",
+      "one_liner": "机器人操作仿真基准框架",
+      "intro": {
+        "one_liner": "机器人操作仿真基准",
+        "what_it_is": "ManiSkill 是基于 SAPIEN 的开源机器人仿真与训练框架，侧重操作技能，支持 GPU 并行仿真、视觉数据采集和任务构建。",
+        "problem_solved": "它解决机器人学习里仿真吞吐、视觉数据生成、任务搭建和策略评测成本高的问题，并提供多种基线示例。",
+        "who_should_care": "做机器人操作、具身智能、强化学习和仿真到真实迁移的开发者与研究者。",
+        "use_cases": [
+          "并行采集机器人视觉数据",
+          "训练并评测操作策略",
+          "搭建自定义机器人任务"
+        ],
+        "alternatives": "强调 GPU 并行异构仿真、真实到仿真评测，以及多种机器人形态和任务示例。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，具身智能与机器人学习持续需要高吞吐仿真和评测工具。",
+        "risk_notes": "资产采用 CC BY-NC 4.0，存在非商业限制；Windows、WSL 和 MacOS 的 GPU 仿真支持有限；未关闭 Issue 较多。",
+        "evidence": [
+          "SAPIEN Manipulation Skill Framework, an open source GPU parallelized robotics simulator and benchmark",
+          "ManiSkill is an open-source framework for robot simulation and training powered by [SAPIEN](https://sapien.ucsd.edu/), with a strong focus on manipulation skills.",
+          "The assets are licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/legalcode)."
+        ]
+      }
+    },
+    "ArchiveTuneApp/ArchiveTune": {
+      "category": "mobile",
+      "one_liner": "安卓可爱风音乐播放器",
+      "intro": {
+        "one_liner": "安卓音乐播放器",
+        "what_it_is": "ArchiveTune 是用 Kotlin 和 Jetpack Compose 构建的安卓音乐播放器，支持本地文件与 YouTube Music，并采用 Material 3 界面。",
+        "problem_solved": "它面向希望集中播放本地歌曲和 YouTube Music 内容的用户，提供无广告后台播放、歌词、音频调节和界面定制。",
+        "who_should_care": "重视隐私、界面定制和 YouTube Music 体验的安卓用户。",
+        "use_cases": [
+          "播放本地歌曲文件",
+          "登录后管理 YouTube Music 歌单",
+          "查看同步歌词与收听统计"
+        ],
+        "alternatives": "相比普通封装播放器，强调自定义构建、隐私保护、本地播放和丰富界面设置。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 115 星，并曾进入日榜一天。",
+        "risk_notes": "采用 GPL-3.0；未关闭 Issue 有 168 个；官方称 Google Play 无上架，且不支持任何分叉版本。",
+        "evidence": [
+          "The Cutest Material 3 Expressive Music Player With Support Local File and Youtube Music for Android.",
+          "ArchiveTune isn’t just another generic YouTube Music wrapper. It’s a fully custom-built player made with kotlin and jetpack compose, because we think your music should stay private, look clean, and work exactly the way you expect.",
+          "ArchiveTune has no official Google Play Store listing."
+        ]
+      }
+    },
+    "61418/aws-sso-util": {
+      "category": "dev-tools",
+      "one_liner": "简化 AWS SSO 命令行",
+      "intro": {
+        "one_liner": "AWS 单点登录命令行工具",
+        "what_it_is": "这是一个用 Python 编写的命令行工具集，围绕 AWS IAM Identity Center 提供配置、登录登出、标识符查询和 CloudFormation 等辅助能力。",
+        "problem_solved": "它用于缓解 AWS 单点登录使用中的不便，例如批量生成配置、只登录一次、按账号和角色运行命令，以及排查配置与访问问题。",
+        "who_should_care": "使用 AWS IAM Identity Center 管理多账号、多角色的开发者和运维人员。",
+        "use_cases": [
+          "批量生成账号角色配置",
+          "只登录身份中心一次",
+          "临时以指定角色运行命令"
+        ],
+        "alternatives": "它取代 aws-sso-credential-process，并提供配置、登录、查询和检查等更完整的命令行工具。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星数为 1,046。",
+        "risk_notes": "控制台打开功能处于 beta，且可能在不提升兼容版本的情况下变化；工具定位是等待官方改进前的临时方案。",
+        "evidence": [
+          "Smooth out the rough edges of AWS SSO (temporarily, until AWS makes it better).",
+          "`aws-sso-util` contains utilities for the following:\n* Configuring `.aws/config`\n* Logging in/out\n* AWS SDK support\n* Looking up identifiers\n* CloudFormation",
+          "> :warning: This feature is in beta and is subject to change without a compatibility version bump."
+        ]
+      }
+    }
+  }
+}

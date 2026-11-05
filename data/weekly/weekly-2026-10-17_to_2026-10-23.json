@@ -386,21 +386,21 @@
       "triage_quality": "ok",
       "triage_reason": "正常前端库",
       "intro": {
-        "one_liner": "同步渲染 Mermaid 图表的轻量 TypeScript 库",
-        "what_it_is": "Pele 是一个把 Mermaid 图表渲染为 SVG 的 TypeScript 库，体积小、同步执行、无运行时依赖，并用 CSS 变量控制颜色和字体。",
-        "problem_solved": "它解决 Mermaid 官方渲染器体积大、依赖多、渲染慢的问题，提供同步、可裁剪的替代渲染路径。",
-        "who_should_care": "需要在网页或文档工具中嵌入 Mermaid 图表、又在意包体积和渲染速度的前端开发者。",
+        "one_liner": "Mermaid 图表渲染库",
+        "what_it_is": "Pele 用 TypeScript 把 Mermaid 文本渲染成 SVG，支持浏览器挂载、按需加载和 CSS 变量主题。",
+        "problem_solved": "为网页图表提供同步、无运行时依赖的渲染方式，并支持主题适配、容器宽度布局和按需减小初始包体。",
+        "who_should_care": "需要在网页或文档工具中嵌入 Mermaid 图表的开发者。",
         "use_cases": [
-          "在 Markdown 或文档站点中把 Mermaid 代码块渲染为 SVG",
-          "在浏览器中按容器宽度自适应挂载图表并跟随主题切换",
-          "按需注册单个图表类型以减小初始 bundle"
+          "把 Mermaid 文本渲染成 SVG",
+          "在页面中挂载自适应图表",
+          "用 CSS 变量定制图表主题"
         ],
-        "alternatives": "与 Mermaid.js 相比，Pele 采用自有布局和视觉风格，支持同步渲染、无运行时依赖，并可按图表类型拆分加载；README 称其解析器对照 Mermaid 的 parser specs 测试并做过差分模糊测试。",
+        "alternatives": "兼容 Mermaid 12.1.0 语法，但采用自有布局和视觉风格，并强调同步、无运行时依赖。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：项目创建不足一个月即获得较高周增星，但尚无长期维护记录可判断。",
-        "risk_notes": "项目事实中 license 字段为空，README 声称 MIT，需以仓库实际 LICENSE 文件为准；创建时间极短、open issues 31 个，长期维护情况未知。",
+        "hype_or_trend": "短期热点，一周涨了 1,070 星，但只上过一天日榜。",
+        "risk_notes": "创建时间较新，仍有 19 个未关闭问题；兼容范围限定在 Mermaid 12.1.0 语法。",
         "evidence": [
-          "Pele renders Mermaid diagrams to SVG. It is small, synchronous, has no runtime dependencies, and uses CSS variables for colors and fonts.",
+          "Pele renders [Mermaid](https://mermaid.js.org) diagrams to SVG. It is small, synchronous, has no runtime dependencies, and uses CSS variables for colors and fonts.",
           "Pele supports every diagram type built into Mermaid 12.1.0.",
           "Pele targets Mermaid 12.1.0 syntax, with its own layout and visual style."
         ]
@@ -888,22 +888,22 @@
       "triage_quality": "suspicious",
       "triage_reason": "涨星异常",
       "intro": {
-        "one_liner": "开源职位搜索引擎，直连公司招聘页",
-        "what_it_is": "freehire 是一个用 Go 编写的开源职位搜索引擎，直接从公司自有 ATS（如 Workday、Greenhouse、Lever、Ashby、iCIMS）抓取职位并归一化去重，提供分面全文搜索与公开 API。",
-        "problem_solved": "解决招聘信息经中间商转载后出现的重复、失效链接和来源不可信问题，让求职者直接看到公司原始发布的职位。",
-        "who_should_care": "需要聚合或检索职位数据的开发者、自建招聘板或求职工具的团队，以及关注 ATS 数据管道的 Go 工程师。",
+        "one_liner": "开源职位搜索引擎",
+        "what_it_is": "freehire 是用 Go 编写的开源职位搜索引擎，直接抓取公司招聘系统职位页，并提供搜索、接口、命令行和自托管能力。",
+        "problem_solved": "它把分散在招聘系统和渠道里的职位统一整理、去重和规范化，减少重复转载、失效链接和多平台反复查找。",
+        "who_should_care": "求职者、招聘数据开发者，以及想自建职位搜索服务的人。",
         "use_cases": [
-          "自建垂直领域职位搜索站或招聘板",
-          "通过公开 API 或 CLI 为求职工具、MCP 客户端提供职位数据",
-          "按地区、工作模式、职级、技能、薪资做分面检索与市场分析"
+          "按地区、技能和级别找职位",
+          "自建职位搜索站点或接口",
+          "订阅职位更新并跟踪投递"
         ],
-        "alternatives": "README 强调其差异在于直连公司 ATS 原始发布、单一 schema 去重、MIT 许可且可自托管；未提及其他同类项目的具体对比。",
+        "alternatives": "强调直接来自公司招聘系统、统一结构去重，并以 MIT 协议开放数据和流程。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：单周新增约 1100 star、登上日榜，热度集中但项目创建时间较新。",
-        "risk_notes": "README 宣称的 330 万职位、47 万家公司、124 个 ATS 等数据规模未在项目事实中独立验证；项目创建于 2026-06，历史较短，长期维护情况待观察。",
+        "hype_or_trend": "短期热点，一周涨了 1,118 星，并曾登上日榜。",
+        "risk_notes": "仓库创建时间较新；部分智能功能需要额外配置；托管服务包含每月 5 美元的付费方案。",
         "evidence": [
-          "3.3M+ live postings pulled directly from company career pages — no recruiters, no reposts, no dead links. Fully open source.",
-          "Every listing is crawled directly from a company's own ATS — Workday, Greenhouse, Lever, Ashby, iCIMS and a long tail of others — and links to the original posting.",
+          "freehire — the open-source search engine for job seekers",
+          "Every listing is crawled directly from a company's own ATS — Workday, Greenhouse, Lever, Ashby, iCIMS and a long tail of others — and links to the original posting. No recruiter reposts, no aggregator middlemen, no dead links.",
           "MIT-licensed and self-hostable, pipeline and data both in the open."
         ]
       }
@@ -1400,24 +1400,23 @@
       "triage_quality": "ok",
       "triage_reason": "代理测试工具",
       "intro": {
-        "one_liner": "面向 AI agent 的 trace 原生 CI/CD 工具",
-        "what_it_is": "Tracely 是一个面向 AI agent 的 trace 原生 CI/CD 平台：它对生产环境中的 agent trace 进行评分，将失败聚类成 issue，把失败的运行固化为可离线重放的回归用例，并在 PR 中阻断回归。项目用 Python 编写，支持自托管。",
-        "problem_solved": "传统 agent 可观测性工具只停留在仪表盘层面，看到失败后无法继续处理；而 eval 工具又要求人工编写数据集，这些数据集只是对可能出问题的猜测。Tracely 直接把真实失败 trace 转成回归测试，并在 CI 中阻断会重现该失败的 PR。",
-        "who_should_care": "正在生产环境运行 AI agent、需要为 agent 行为建立回归防护的工程团队，尤其是已使用 OTLP 上报 trace、并在 CI 中做质量门禁的团队。",
+        "one_liner": "智能体回归测试门禁",
+        "what_it_is": "Tracely 是面向 AI 智能体的持续集成与交付工具，可评估生产轨迹、聚类失败，并把失败运行固化为可重放回归测试。",
+        "problem_solved": "它把线上真实失败轨迹转成测试用例，在合并请求中重放并阻止回归，减少手工编写评测数据集的负担。",
+        "who_should_care": "开发智能体应用、做评测与持续集成的团队，以及需要自托管观测与回归门禁的开发者。",
         "use_cases": [
-          "把线上失败的 agent 运行一键固化为回归用例，在每次 PR 中离线重放",
-          "在 CI 中用 tracely gate 阻断会导致 agent 行为回归的合并请求",
-          "对多轮对话 agent 运行脚本化或对抗性场景测试",
-          "对 LLM-as-judge 评估器做人工校准，避免误报过多的 judge 参与发布门禁"
+          "把线上失败轨迹固化为回归用例",
+          "在合并请求中重放并阻断回归",
+          "聚类失败并配置告警流程"
         ],
-        "alternatives": "README 将其与 dataset-first 类 eval 工具对比：测试来自真实失败 trace 而非人工编写，重放使用录制 fixture 因而零模型调用成本，回归时直接阻断 PR 而非仅移动仪表盘数字。",
-        "maturity": "可试用",
-        "hype_or_trend": "长期趋势：agent 可观测性与 CI 回归门禁是 AI 工程化的持续需求，但项目本身较新，仍需观察。",
-        "risk_notes": "项目创建于 2026-10-11，pushed_at 为 2026-10-19，历史极短；stars 在短期内从 1023 增至 1168，需留意热度是否可持续；open_issues 22 个，生态与稳定性尚待验证。",
+        "alternatives": "相比手工数据集优先的评测工具，它从真实失败轨迹生成用例，并用录制夹具在持续集成中离线重放。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 145 星，且曾有一天进入日榜。",
+        "risk_notes": "创建时间较新，最近一次提交距周末复查较近；未关闭问题 21 个，成熟度仍需观察。",
         "evidence": [
           "Trace-native CI/CD for AI agents: grade production traces, cluster failures, freeze them into replayable regression tests, and block PRs that regress. Self-hostable.",
-          "The recorded run _is_ the test. Tracely freezes that trace into a hermetic regression case and replays it on every PR.",
-          "The suite replays in CI against recorded fixtures: deterministic, offline, **no API keys and no model spend**."
+          "Production failures become regression tests.",
+          "The recorded run _is_ the test. Tracely freezes that trace into a hermetic regression case and replays it on every PR."
         ]
       }
     },
@@ -3015,23 +3014,23 @@
       "triage_quality": "ok",
       "triage_reason": "半导体教程",
       "intro": {
-        "one_liner": "半导体制造入门开源教程",
-        "what_it_is": "一本开源、面向初学者的半导体制造书籍，以一片硅片从沙子到晶圆厂、测试、封装直至成为芯片的全流程为主线，分五部分共 20 余章，并提供英、繁中、简中、日、韩五种语言版本。",
-        "problem_solved": "降低半导体制造的学习门槛：跳过繁重物理，聚焦工艺流程、术语与晶圆厂实务 know-how，每章配有术语框与 know-how 框，无需半导体物理背景即可阅读。",
-        "who_should_care": "半导体行业新人、转行者、硬件与芯片相关从业者，以及想系统了解芯片制造流程的学生和科普读者。",
+        "one_liner": "半导体制造入门书",
+        "what_it_is": "一本开放、面向初学者的半导体制造入门书，按晶圆从沙子到芯片的流程讲解工艺、术语和产线经验。",
+        "problem_solved": "帮助没有半导体物理背景的读者理解晶圆厂运作、工艺模块、良率、测试与封装等完整流程。",
+        "who_should_care": "想入门半导体制造流程的开发者、学生和跨领域工程师。",
         "use_cases": [
-          "作为半导体制造入门自学教材按章阅读",
-          "企业内部新员工培训或高校课程参考资料",
-          "跨语言团队（中英日韩）共享同一套术语与流程说明"
+          "自学晶圆制造全流程",
+          "查阅工艺模块术语",
+          "了解测试封装与良率"
         ],
         "alternatives": "unknown",
-        "maturity": "可试用",
-        "hype_or_trend": "长期趋势：半导体制造知识科普属持续需求，但项目为文档型教程，热度更多来自内容价值而非技术迭代。",
-        "risk_notes": "项目事实中 license 为 null，未见明确开源许可证，商用或再分发前需确认授权；创建与最近推送时间均为 2026 年，维护历史较短。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 190 星，且本周上过一次日榜。",
+        "risk_notes": "创建于 2026 年 10 月 11 日，内容较新；未关闭问题数为 1；成熟度信息不足。",
         "evidence": [
           "An open, beginner-friendly book that follows one silicon wafer from sand, through the fab, test and packaging, until it becomes a chip.",
-          "It skips heavy physics and focuses on process flow, terminology and know-how from the fab floor, with term boxes and know-how boxes in every chapter.",
-          "No background in semiconductor physics is needed."
+          "It skips heavy physics and focuses on process flow, terminology and know-how from the fab floor, with term boxes and know-how boxes in every chapter. No background in semiconductor physics is needed.",
+          "一周新增 Star：190；本周上日榜天数：1"
         ]
       }
     },

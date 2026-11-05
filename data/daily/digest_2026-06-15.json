@@ -1,1 +1,587 @@
-{"date":"2026-06-15","headline":"AI Agent 与开发工具集中升温","points":["AI Agent 相关项目有 5 个，microsoft/intelligent-terminal 把智能体带进命令行终端。","GoogleCloudPlatform/knowledge-catalog 单日新增 566，云知识目录工具与示例最受关注。","Python 项目有 9 个，开发工具、自动化与学习资源也持续出现新项目。"],"items":{"GoogleCloudPlatform/knowledge-catalog":{"category":"dev-tools","one_liner":"云知识目录工具与示例"},"SkyBlue997/enableMacosAI":{"category":"desktop-system","one_liner":"一键开启国行 Mac AI"},"JimLiu/baoyu-design":{"category":"ai-agent","one_liner":"本地生成界面设计稿技能"},"AgibotTech/genie_sim":{"category":"ai-model","one_liner":"智元机器人仿真平台"},"microsoft/intelligent-terminal":{"category":"ai-agent","one_liner":"集成智能体的命令行终端"},"Portabase/portabase":{"category":"dev-tools","one_liner":"多数据库备份恢复工具"},"LoseNine/ruyipage":{"category":"automation","one_liner":"抗检测网页自动化框架"},"floatboatai/selfware.md":{"category":"other","one_liner":"自演化软件说明项目"},"OpenDCAI/DataFlex":{"category":"ai-model","one_liner":"以数据为中心的训练框架"},"microsoft/waza":{"category":"ai-agent","one_liner":"智能体技能质量框架"},"MultiboxLabs/flow-browser":{"category":"desktop-system","one_liner":"极简隐私优先浏览器"},"RoboSats/robosats":{"category":"data-finance","one_liner":"简洁私密比特币交易所"},"aigc3d/LAM":{"category":"ai-model","one_liner":"单图生成可动头像模型"},"pingooio/pingoo":{"category":"security","one_liner":"安全网关与反向代理"},"miickel/flutter_particle_clock":{"category":"mobile","one_liner":"粒子效果 Flutter 时钟"},"newmanls/rofi-themes-collection":{"category":"desktop-system","one_liner":"Rofi 启动器主题合集"},"rohitg00/awesome-devops-mcp-servers":{"category":"learning-resource","one_liner":"运维 MCP 服务精选清单"},"mediago-dev/mediago":{"category":"content-media","one_liner":"跨平台视频流下载器"},"EKKOLearnAI/hermes-studio":{"category":"ai-agent","one_liner":"Hermes 智能体网页控制台"},"nicholas-fedor/watchtower":{"category":"automation","one_liner":"自动更新 Docker 镜像"},"Kunaldargan/dsai-gate":{"category":"learning-resource","one_liner":"数据AI考试备考资源"},"GML-MMGroup/GMTalker":{"category":"ai-model","one_liner":"可部署的3D数字人系统"},"omnigent-ai/omnigent":{"category":"ai-agent","one_liner":"统一调度各类 AI 智能体"},"ALwrity/ALwrity":{"category":"content-media","one_liner":"AI 驱动数字营销平台"}}}
+{
+  "date": "2026-06-15",
+  "headline": "AI Agent 与开发工具集中升温",
+  "points": [
+    "AI Agent 相关项目有 5 个，microsoft/intelligent-terminal 把智能体带进命令行终端。",
+    "GoogleCloudPlatform/knowledge-catalog 单日新增 566，云知识目录工具与示例最受关注。",
+    "Python 项目有 9 个，开发工具、自动化与学习资源也持续出现新项目。"
+  ],
+  "items": {
+    "GoogleCloudPlatform/knowledge-catalog": {
+      "category": "dev-tools",
+      "one_liner": "云知识目录工具与示例",
+      "intro": {
+        "one_liner": "知识目录示例工具集",
+        "what_it_is": "这是围绕 Knowledge Catalog 的 Python 工具、智能体和示例集合，用于演示数据目录能力，以及上下文管理、增强和检索方案。",
+        "problem_solved": "帮助开发者为结构化和非结构化数据补充语义与业务上下文，让智能体更容易理解、检索和使用数据。",
+        "who_should_care": "使用云端数据目录、元数据管理或智能体上下文方案的开发者。",
+        "use_cases": [
+          "体验知识目录功能示例",
+          "构建数据上下文管理方案",
+          "演示元数据增强与检索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周新增 2,983 星且仅一天进入日榜。",
+        "risk_notes": "内容明确声明不是官方产品；未关闭议题 225 个，仓库创建时间较新。",
+        "evidence": [
+          "This repository features tools, agents, and samples that demonstrate Knowledge Catalog features, and building context management, enrichment and retrieval solutions.",
+          "It provides a dynamic knowledge graph of all your data, structured and unstructured, to provide semantics and business context to AI agents",
+          "This repository and its contents are not an official Google product."
+        ]
+      }
+    },
+    "SkyBlue997/enableMacosAI": {
+      "category": "desktop-system",
+      "one_liner": "一键开启国行 Mac AI",
+      "intro": {
+        "one_liner": "国行 Mac 一键开启 Apple 智能",
+        "what_it_is": "一个 Shell 脚本项目，通过自研内核扩展 RegionSpoof（kext）在 IORegistry 源头把设备区域码从 CH/A 改为 LL/A，使国行 Apple Silicon Mac 通过 Apple 智能的设备区域资格门。",
+        "problem_solved": "国行 Mac 因设备区域码为 CH/A 而不具备 Apple 智能资格；项目在资格层绕过该限制，但明确不解决 Apple 服务端或 Private Cloud Compute 的网络层问题。",
+        "who_should_care": "使用国行 Apple Silicon Mac、运行 macOS 27 并希望启用 Apple 智能（端侧与 PCC 云端）的技术用户。",
+        "use_cases": [
+          "在国行 Mac 上启用端侧 Apple 智能模型",
+          "配合代理排查 PCC 云端功能（写作工具、图乐园、Siri 联网）可用性",
+          "通过 perapp-zh 脚本在保持英文全局语言的前提下逐 App 汉化界面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依赖 macOS 27 特定版本与 kext 加载机制，且 README 自述 Apple 服务端围栏会变化、时好时坏，稳定性受外部条件制约。",
+        "risk_notes": "需降低启动安全性并执行 csrutil enable --without kext（或 csrutil disable），代价包括为 iPhone/iPad 设计的 App 无法打开；需修改账户媒体与购买地区及系统/Siri 语言；PCC 依赖代理与 Apple 服务端策略，可能触发限流；README 提示 macOS 更新后可能失效。",
+        "evidence": [
+          "本项目用一个极简内核扩展 RegionSpoof（kext），在 IORegistry 源头把设备区域码从 CH/A 改成 LL/A（美版）",
+          "它解决的是资格层，不是 Apple 服务端或 Private Cloud Compute（PCC）的网络层",
+          "代价是为 iPhone / iPad 设计的 App 在这台 Mac 上无法打开"
+        ]
+      }
+    },
+    "JimLiu/baoyu-design": {
+      "category": "ai-agent",
+      "one_liner": "本地生成界面设计稿技能",
+      "intro": {
+        "one_liner": "本地运行的 Claude Design 智能体技能集",
+        "what_it_is": "一套面向本地编码智能体（Cursor、Claude Code 等）的 Agent Skill 集合，包含幻灯片、设计画布、设计系统、数据仪表盘和图表指南五个技能，产物为可编辑的本地 HTML 文件。",
+        "problem_solved": "让用户不必依赖 claude.ai/design 或额外订阅，就能在本地智能体中生成并编辑 UI 稿、原型、演示文稿和仪表盘，所有产物都保存在自己的仓库里。",
+        "who_should_care": "使用 Cursor、Claude Code 等本地编码智能体的设计师、前端开发者，以及希望把设计产物纳入版本管理的团队。",
+        "use_cases": [
+          "用智能体生成可编辑的幻灯片并导出 PDF、HTML 或 PowerPoint",
+          "在画布上并排制作多个 artboard 原型并导出 HTML、PDF 或 PNG",
+          "为数据仪表盘生成图表，并让每个数字都能追溯到源数据行"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 Claude Design 与 Agent Skill 生态的本地化封装，周增 567 星，但项目创建时间较新，长期价值待观察。",
+        "risk_notes": "仓库未声明许可证（license 为 null），商用或二次分发前需确认授权；README 提到局域网共享为明文 http，同一网络内拿到链接即可访问。",
+        "evidence": [
+          "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more.",
+          "No website, no separate subscription, no upload step. The agent already on your machine does the work, and every artifact stays in your repo.",
+          "it is plain http, so anyone there with a link gets in."
+        ]
+      }
+    },
+    "AgibotTech/genie_sim": {
+      "category": "ai-model",
+      "one_liner": "智元机器人仿真平台",
+      "intro": {
+        "one_liner": "具身智能仿真平台",
+        "what_it_is": "Genie Sim 是 AgiBot 的仿真平台，提供环境重建、场景泛化、数据采集和自动评测工具链，核心是 Genie Sim Benchmark。",
+        "problem_solved": "它用高保真仿真、合成数据和标准化评测，减少具身智能模型开发对实体硬件的依赖，并支持能力画像评估。",
+        "who_should_care": "做机器人仿真、合成数据、具身智能评测的开发者和研究者。",
+        "use_cases": [
+          "生成多样化仿真场景",
+          "采集机器人合成数据",
+          "运行标准化模型评测"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过日榜一天。",
+        "risk_notes": "资料提到 3.5.0 与 4.0 两条版本线、不同容器镜像和可选组件，部署选择可能较复杂。",
+        "evidence": [
+          "Simulation Platform from AgiBot",
+          "Genie Sim is the simulation platform from AgiBot.",
+          "It provides developers with a complete toolchain for *environment reconstruction*, *scene generalization*, *data collection*, and *automated evaluation*."
+        ]
+      }
+    },
+    "microsoft/intelligent-terminal": {
+      "category": "ai-agent",
+      "one_liner": "集成智能体的命令行终端",
+      "intro": {
+        "one_liner": "Windows Terminal 的 AI Agent 集成实验分支",
+        "what_it_is": "Intelligent Terminal 是 Windows Terminal 的一个实验性 fork，在命令行中原生集成 Agent Client Protocol（ACP）兼容的 AI agent。",
+        "problem_solved": "让 AI agent 直接获得 shell 输出上下文，无需复制粘贴；同时保留 Windows Terminal 原有的标签页、配置、主题等体验。",
+        "who_should_care": "Windows 上经常使用命令行、希望把 AI agent 融入终端工作流的开发者与运维人员。",
+        "use_cases": [
+          "在终端内让 agent 基于当前 shell 输出排错并给出修复建议",
+          "通过 agent pane 生成或解释命令，并在用户批准后执行",
+          "为不同 profile（如 PowerShell、WSL Ubuntu）绑定不同 agent"
+        ],
+        "alternatives": "与原生 Windows Terminal 相比，差异在于原生集成 ACP 兼容 agent；README 未提及其他终端类竞品的对比，具体差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：README 自述为 experimental fork，且依赖外部 agent CLI 与订阅，尚处早期。",
+        "risk_notes": "README 明确标注为实验性 fork；需要 Windows 10 2004 及以上、受支持的 agent CLI 及订阅；部分功能依赖 PowerShell 执行策略设置。",
+        "evidence": [
+          "Intelligent Terminal is an experimental fork of Windows Terminal with native agent integration.",
+          "Intelligent Terminal works with any Agent Client Protocol (ACP)-compatible agent CLI.",
+          "Intelligent Terminal requires Windows 10 2004 (19041) or later. You also need a supported agent CLI and subscription."
+        ]
+      }
+    },
+    "Portabase/portabase": {
+      "category": "dev-tools",
+      "one_liner": "多数据库备份恢复工具",
+      "intro": {
+        "one_liner": "多数据库备份恢复工具",
+        "what_it_is": "Portabase 是面向多种数据库的备份与恢复工具，通过配套代理管理操作，并提供多种安装方式。",
+        "problem_solved": "它把多种数据库、Docker Volume 和文件的备份恢复集中管理，降低运维配置与操作复杂度。",
+        "who_should_care": "需要统一管理数据库备份的运维、开发者和自托管团队。",
+        "use_cases": [
+          "定时备份多种数据库实例",
+          "恢复误删或故障数据库",
+          "在容器环境部署备份面板"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 30 星，曾有一天进入日榜。",
+        "risk_notes": "Redis 和 Valkey 不支持恢复；文件仅归档与快照可恢复；未关闭问题有 43 个。",
+        "evidence": [
+          "Portabase is a tool designed to simplify the backup and restoration of your database instances. It integrates seamlessly with Portabase agents for managing operations securely and efficiently.",
+          "You have 5 ways to install Portabase:",
+          "| **Redis**          | ✅ Stable  | 2.8+                          | No      |"
+        ]
+      }
+    },
+    "LoseNine/ruyipage": {
+      "category": "automation",
+      "one_liner": "抗检测网页自动化框架",
+      "intro": {
+        "one_liner": "Firefox 自动化框架",
+        "what_it_is": "这是一个基于 Python 的 Firefox 自动化框架，构建在下一代 WebDriver BiDi 协议之上。",
+        "problem_solved": "描述称其面向网页自动化中的检测问题，目标是让 Firefox 内核浏览器通过网站检测。",
+        "who_should_care": "做网页自动化、浏览器测试或反检测相关开发的 Python 开发者。",
+        "use_cases": [
+          "Python 驱动 Firefox 自动化",
+          "基于 BiDi 的浏览器控制",
+          "网站检测相关测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但资料不足。",
+        "risk_notes": "没有可用说明文档，成熟度、许可证和稳定性均无法确认；创建时间较新，需谨慎评估。",
+        "evidence": [
+          "下一代Python的web自动化过检测框架，通过一切网站检测的Firefox内核浏览器。",
+          "RuyiPage is a Python-based Firefox automation framework built on the next-generation WebDriver BiDi protocol.",
+          "破千时的 Star 数：1014"
+        ]
+      }
+    },
+    "floatboatai/selfware.md": {
+      "category": "other",
+      "one_liner": "自演化软件说明项目",
+      "intro": {
+        "one_liner": "Agent 文件协议演示",
+        "what_it_is": "这是 Selfware Protocol 的演示仓库，提供协议草案、实例清单、内容目录、本地运行时和入口脚本模板。",
+        "problem_solved": "尝试统一 Agent 时代的文件协议，把数据、逻辑和视图打包为可分发单元，并约束数据权威与写入范围。",
+        "who_should_care": "关注 Agent 文件协议、本地运行时和协议草案的开发者。",
+        "use_cases": [
+          "阅读中英文协议草案",
+          "运行本地模板示例",
+          "搭建自定义实例协议"
+        ],
+        "alternatives": "unknown",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但仍是草案演示。",
+        "risk_notes": "当前协议版本为 v0.1.0 (Draft)，仓库处于密集开发；运行时被说明为刻意保持简单且本地优先；许可证为可选 MIT，需查看协议文件细节。",
+        "evidence": [
+          "This repository is the demo version of the **Selfware Protocol**, providing draft protocol templates and a runnable `template.self` workspace scaffold.",
+          "Current protocol version: `v0.1.0 (Draft)`",
+          "This repo is under intensive development."
+        ]
+      }
+    },
+    "OpenDCAI/DataFlex": {
+      "category": "ai-model",
+      "one_liner": "以数据为中心的训练框架",
+      "intro": {
+        "one_liner": "以数据为中心的训练框架",
+        "what_it_is": "DataFlex 是基于 LLaMA-Factory 的动态训练框架，统一实现训练数据选择、混合比例调整和样本权重调整。",
+        "problem_solved": "它把难以复现的数据选择、数据混合和数据重加权方法整合起来，帮助提升训练实验可复现性和模型表现。",
+        "who_should_care": "做大模型训练、数据配比和训练数据评估的研究者与开发者。",
+        "use_cases": [
+          "筛选更有影响力的训练样本",
+          "动态调整不同领域数据比例",
+          "按策略调整样本训练权重"
+        ],
+        "alternatives": "相比分散实现，它强调统一框架、可复现实现，并兼容 LLaMA-Factory。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 64 星，曾有一天进入日榜。",
+        "risk_notes": "依赖 Python 3.11+、LlamaFactory 0.9.5+；DeepSpeed 和 LESS 需额外安装；部分配置有版本限制。",
+        "evidence": [
+          "DataFlex is a data-centric training framework that enhances model performance by either selecting the most influential samples, optimizing their weights, or adjusting their mixing ratios.",
+          "DataFlex is an advanced dynamic training framework built on top of LLaMA-Factory.",
+          "The system provides reproducible implementations of Data Selection, Data Mixture, and Data Reweighting, thereby improving both experimental reproducibility and final model performance."
+        ]
+      }
+    },
+    "microsoft/waza": {
+      "category": "ai-agent",
+      "one_liner": "智能体技能质量框架",
+      "intro": {
+        "one_liner": "智能体技能评测框架",
+        "what_it_is": "Waza 是用 Go 编写的命令行工具与框架，用于创建、测试、衡量并改进智能体技能，也支持评测工作流、自定义智能体和相关场景。",
+        "problem_solved": "它解决智能体技能和工作流质量难以验证的问题，可编写场景、运行分级试验、查看证据，并把回归检查接入持续集成。",
+        "who_should_care": "开发智能体技能、工作流或自定义智能体，并需要评测与回归门禁的开发者。",
+        "use_cases": [
+          "离线验证评测框架",
+          "运行分级试验并查看证据",
+          "在持续集成中设置回归门禁"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,001 星且仅一天登上日榜。",
+        "risk_notes": "公开文档问答服务尚未配置，开发样例明确为模拟；部分修复只存在于源码，未进入已发布版本；安装与扩展存在版本边界和同步限制。",
+        "evidence": [
+          "CLI / Framework for Agent Skills - create, test, measure and improve skill quality and effectiveness",
+          "A Go CLI for evaluating agent workflows, skills, and custom agents — author repository, CLI, and MCP scenarios, run graded trials, and inspect the evidence.",
+          "The panel currently explains that public chat is unavailable until the public service is configured. Development fixtures are explicitly simulated."
+        ]
+      }
+    },
+    "MultiboxLabs/flow-browser": {
+      "category": "desktop-system",
+      "one_liner": "极简隐私优先浏览器",
+      "intro": {
+        "one_liner": "极简隐私浏览器",
+        "what_it_is": "Flow Browser 是基于 Electron 的标签式网页浏览器，支持 Chrome 扩展，主打轻量、现代界面和较丰富的内置功能。",
+        "problem_solved": "它想提供比主流浏览器更简洁、可定制的浏览体验，并把多配置、标签分组、命令面板、广告拦截等能力整合在一起。",
+        "who_should_care": "喜欢极简浏览器、需要多配置和扩展支持的普通用户与前端开发者。",
+        "use_cases": [
+          "按配置隔离扩展与设置",
+          "用空间整理大量标签页",
+          "安装 Chrome 扩展浏览网页"
+        ],
+        "alternatives": "相比主流浏览器，强调简洁界面、空间分组、命令面板和原生广告拦截。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾登上日榜一天，破千时星标数为一千零一。",
+        "risk_notes": "下载、收藏、固定标签等功能仍列为即将推出；采用 GPL-3.0，二次分发需留意协议义务。",
+        "evidence": [
+          "A modern, tabbed web browser with Chrome extension support—built on Electron.",
+          "This project is licensed under the GNU General Public License v3.0 (GPL-3.0) - see the [LICENSE](./LICENSE) file for details.",
+          "## Upcoming Features"
+        ]
+      }
+    },
+    "RoboSats/robosats": {
+      "category": "data-finance",
+      "one_liner": "简洁私密比特币交易所",
+      "intro": {
+        "one_liner": "私密比特币点对点交易工具",
+        "what_it_is": "RoboSats 是一个用 Python 开发的简单、私密的比特币兑换项目，支持通过闪电网络进行点对点交易。",
+        "problem_solved": "它试图降低比特币与法币交易中的托管和信任需求，并用随机生成头像帮助用户保持隐私习惯。",
+        "who_should_care": "重视隐私、想进行比特币与法币点对点兑换的开发者和用户。",
+        "use_cases": [
+          "通过 Tor 私密买卖聪",
+          "用闪电网络完成点对点兑换",
+          "在测试网体验交易流程"
+        ],
+        "alternatives": "相比一般交易所，强调隐私、减少托管和信任，并使用闪电网络暂挂发票。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "明文网址被标注为不推荐且仅用于查看；交易需使用 Tor 浏览器和洋葱地址；许可证为 AGPL3.0。",
+        "evidence": [
+          "A simple and private bitcoin exchange",
+          "Robosats simplifies the peer-to-peer user experience and uses lightning hold invoices to minimize custody and trust requirements.",
+          "The Robotic Satoshis Open Source Project is released under the terms of the AGPL3.0 license."
+        ]
+      }
+    },
+    "aigc3d/LAM": {
+      "category": "ai-model",
+      "one_liner": "单图生成可动头像模型",
+      "intro": {
+        "one_liner": "单图生成可动画头像",
+        "what_it_is": "LAM 是一个用单张图片生成可动画三维高斯头像的 PyTorch 实现，提供模型权重、推理脚本和网页演示。",
+        "problem_solved": "它降低三维数字人制作门槛，让开发者从一张图快速得到可驱动、可渲染、可接入实时对话的头像。",
+        "who_should_care": "关注三维头像、数字人、实时交互和跨平台渲染的开发者。",
+        "use_cases": [
+          "单张照片生成三维头像",
+          "音频驱动头像表情",
+          "接入实时对话数字人"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，星标破千。",
+        "risk_notes": "大体量模型仍列为待发布；部分模型权重标注为待定；安装依赖特定图形环境。",
+        "evidence": [
+          "[SIGGRAPH 2025] LAM: Large Avatar Model for One-shot Animatable Gaussian Head",
+          "**\"Build 3D Interactive Chatting Avatar with One Image in Seconds!\"**",
+          "[ ] Release LAM-large trained on a self-constructed large dataset."
+        ]
+      }
+    },
+    "pingooio/pingoo": {
+      "category": "security",
+      "one_liner": "安全网关与反向代理",
+      "intro": {
+        "one_liner": "自托管安全网关",
+        "what_it_is": "Pingoo 是用 Rust 编写的负载均衡器、接口网关和反向代理，内置服务发现、地理信息、应用防火墙与机器人防护等能力。",
+        "problem_solved": "它让开发者在自有服务器上获得接近托管服务的网关能力，减少把用户流量交给第三方云服务带来的合规、安全与可靠性顾虑。",
+        "who_should_care": "需要自托管网关、边缘防护和流量代理的开发者与运维人员。",
+        "use_cases": [
+          "为静态站点提供反向代理",
+          "自建接口网关与负载均衡",
+          "按国家或自治域做访问控制"
+        ],
+        "alternatives": "强调永久开源、无企业版或开放核心，并把多项防护能力集成在自托管网关中。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 4 星且仅一天进入日榜。",
+        "risk_notes": "部分功能表述为即将提供；未关闭议题有 22 个；创建时间较新，生产稳定性信息不足。",
+        "evidence": [
+          "The fast and secure Load Balancer / API Gateway / Reverse Proxy with built-in service discovery, GeoIP, WAF, bot protection and much more",
+          "Pingoo is a modern Load Balancer / API Gateway / Reverse Proxy that run on your own servers and already have (or will have soon) all the features you expect from managed services and even more.",
+          "Forever Open Source, no Open Core or \"Enterprise Edition\"."
+        ]
+      }
+    },
+    "miickel/flutter_particle_clock": {
+      "category": "mobile",
+      "one_liner": "粒子效果 Flutter 时钟",
+      "intro": {
+        "one_liner": "Flutter 粒子时钟示例",
+        "what_it_is": "一个用 Dart 和 Flutter 编写的模拟表盘，结合简单粒子系统、随机配色与实时亮度计算，让画面随时间持续变化。",
+        "problem_solved": "让时钟界面兼具动态、趣味和可读性，并探索 Flutter 自定义绘制能力。",
+        "who_should_care": "Flutter 开发者、学习自定义绘制和动画的人。",
+        "use_cases": [
+          "学习 Flutter 自定义绘制",
+          "参考动态表盘实现",
+          "制作彩色时钟演示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜。",
+        "risk_notes": "作者称代码在优雅性和性能方面仍有改进空间；项目创建于 2020 年，偏演示性质。",
+        "evidence": [
+          "The Grand Prize-winning entry of the #FlutterClock challenge.",
+          "I ended up with an analog watch face featuring a simple particle system. It randomizes the color palettes while also maintaining legibility by calculating the luminance in real-time.",
+          "I guess the code could be improved in several ways, both in terms of elegance and performance."
+        ]
+      }
+    },
+    "newmanls/rofi-themes-collection": {
+      "category": "desktop-system",
+      "one_liner": "Rofi 启动器主题合集",
+      "intro": {
+        "one_liner": "Rofi 主题合集",
+        "what_it_is": "这是面向 Rofi 启动器的主题集合，提供多种可直接预览和选用的界面样式。",
+        "problem_solved": "让 Rofi 用户不必从零编写配置，就能快速更换启动器、窗口切换器和菜单的外观。",
+        "who_should_care": "使用 Rofi 并希望美化桌面启动器的 Linux 用户。",
+        "use_cases": [
+          "更换 Rofi 启动器外观",
+          "预览不同主题样式",
+          "搭配桌面配色方案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度信息。",
+        "risk_notes": "安装说明中的克隆地址与当前仓库不一致；未提供许可证、版本和维护状态信息。",
+        "evidence": [
+          "Themes Collection for Rofi Launcher",
+          "Copy your desired theme to `~/.local/share/rofi/themes` folder:",
+          "Search for your desired theme, press `enter` to preview, then `Alt+a` to accept the new theme."
+        ]
+      }
+    },
+    "rohitg00/awesome-devops-mcp-servers": {
+      "category": "learning-resource",
+      "one_liner": "运维 MCP 服务精选清单",
+      "intro": {
+        "one_liner": "运维 MCP 服务器精选清单",
+        "what_it_is": "这是一个聚焦 DevOps 工具与能力的 Model Context Protocol 服务器精选清单，按云基础设施、容器编排、云厂商等类别整理相关项目。",
+        "problem_solved": "它把分散的运维相关 MCP 服务器集中归类，方便开发者查找能让 AI 助手连接云资源、命令行、版本控制和安全扫描等服务的实现。",
+        "who_should_care": "关注 AI 助手接入运维工具链的开发者、平台工程师和云原生实践者。",
+        "use_cases": [
+          "查找 Kubernetes 相关 MCP 服务器",
+          "筛选基础设施即代码工具",
+          "了解云厂商相关实现"
+        ],
+        "alternatives": "相比综合 MCP 清单，它只聚焦 DevOps 场景并按运维能力细分。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "清单类项目依赖第三方条目质量；README 中同一 Kubernetes 项目重复出现；未见许可证与维护状态说明。",
+        "evidence": [
+          "A curated list of awesome Model Context Protocol (MCP) servers focused on DevOps tools and capabilities.",
+          "This list focuses on DevOps-related MCP servers that extend AI capabilities through cloud infrastructure management, CLI operations, version control, security scanning, and other DevOps-related services.",
+          "破千时的 Star 数：1000；本周上日榜天数：1"
+        ]
+      }
+    },
+    "mediago-dev/mediago": {
+      "category": "content-media",
+      "one_liner": "跨平台视频流下载器",
+      "intro": {
+        "one_liner": "跨平台视频下载器",
+        "what_it_is": "MediaGo 是跨平台视频下载器，支持桌面端和 Docker，可嗅探并保存 m3u8、HLS、Bilibili、YouTube 等视频。",
+        "problem_solved": "它让用户在网页中选择视频并保存，免去抓包、配置浏览器扩展或摆弄命令行工具。",
+        "who_should_care": "需要保存网页视频、批量接入下载任务或自建下载服务的开发者。",
+        "use_cases": [
+          "从网页嗅探并下载视频",
+          "用接口创建下载任务",
+          "在服务器部署网页界面"
+        ],
+        "alternatives": "内置嗅探、浏览器扩展、接口、格式转换和 Docker 部署，减少额外工具配置。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，一周涨了 16 星，仅一天进入日榜。",
+        "risk_notes": "下载视频可能涉及站点规则与版权合规；容器初始化需读取配置目录中的初始化码。",
+        "evidence": [
+          "Cross-platform video downloader — sniff and grab m3u8/HLS streams, Bilibili, YouTube and more. Desktop + Docker + 🦞.",
+          "A cross-platform video downloader with built-in sniffing — point it at a page, pick what you want, and save. No packet capture, no browser extensions to configure, no fiddling with command-line tools.",
+          "### v3.5.0 (stable)"
+        ]
+      }
+    },
+    "EKKOLearnAI/hermes-studio": {
+      "category": "ai-agent",
+      "one_liner": "Hermes 智能体网页控制台",
+      "intro": {
+        "one_liner": "多智能体工作台",
+        "what_it_is": "这是一个本地优先的 AI 工作台，提供桌面应用和自托管 Web 控制台，用于多智能体聊天、编码和可视化工作流。",
+        "problem_solved": "把多个 Agent、会话、文件、语音、设备和平台渠道集中管理，减少在不同工具间切换和配置的成本。",
+        "who_should_care": "需要统一管理多个编码 Agent、会话和自动化工作流的开发者。",
+        "use_cases": [
+          "集中管理多智能体聊天",
+          "搭建带审批的可视化工作流",
+          "查看会话与用量统计"
+        ],
+        "alternatives": "支持 Hermes Agent、Ekko Agent 和多种编码 Agent，并提供统一工作台。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 210 星，且本周上过一次日榜。",
+        "risk_notes": "未关闭 Issue 有 541 个；README 提到旧包名仍受支持，名称与仓库信息可能带来混淆。",
+        "evidence": [
+          "A local-first AI workspace for multi-agent chat, coding, and visual workflows.",
+          "Available as a desktop app and self-hosted web console",
+          "Web dashboard for Hermes Agent — multi-platform AI chat, session management, scheduled jobs, usage analytics"
+        ]
+      }
+    },
+    "nicholas-fedor/watchtower": {
+      "category": "automation",
+      "one_liner": "自动更新 Docker 镜像",
+      "intro": {
+        "one_liner": "自动更新容器镜像",
+        "what_it_is": "Watchtower 是一个用 Go 编写的工具，用于自动更新正在运行的 Docker 容器镜像，并按原有启动选项重启容器。",
+        "problem_solved": "它解决容器应用发布新镜像后需要手动拉取、停止和重启的问题，让本地环境保持较新的镜像版本。",
+        "who_should_care": "家庭实验室、媒体中心、本地开发环境的 Docker 使用者。",
+        "use_cases": [
+          "推送新镜像后自动更新容器",
+          "家庭实验室服务保持更新",
+          "本地开发环境快速换镜像"
+        ],
+        "alternatives": "面向轻量本地场景；商业或生产环境建议改用 Kubernetes 与持续交付方案。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 69 星且上过一次日榜。",
+        "risk_notes": "明确不建议用于商业或生产环境；建议使用最新版 Docker，旧版本使用新特性可能出现异常行为。",
+        "evidence": [
+          "Automate Docker container image updates",
+          "Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
+          "We do **not** recommend using Watchtower in a commercial or production environment."
+        ]
+      }
+    },
+    "Kunaldargan/dsai-gate": {
+      "category": "learning-resource",
+      "one_liner": "数据AI考试备考资源",
+      "intro": {
+        "one_liner": "GATE 数据科学备考资料库",
+        "what_it_is": "面向 GATE Data Science and Artificial Intelligence 考试的社区维护资料库，按大纲整理学习材料、课程、代码示例和练习。",
+        "problem_solved": "把分散的备考资料、理论说明、编程示例和练习题按考试大纲集中起来，方便系统复习。",
+        "who_should_care": "准备 GATE 数据科学与人工智能科目的考生，以及愿意贡献资料的社区成员。",
+        "use_cases": [
+          "按大纲查找专题资料",
+          "用代码示例练习知识点",
+          "通过习题和选择题自测"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 1,954 星，本周上过一天日榜。",
+        "risk_notes": "内容仍处于建设中；资料以整理和链接为主，完整性与准确性需自行核对。",
+        "evidence": [
+          "A community-maintained collection of syllabus-aligned resources and practice material for the GATE Data Science and Artificial Intelligence paper.",
+          "We are still in work in progress phase, Stay tuned !!",
+          "破千时的 Star 数：1954"
+        ]
+      }
+    },
+    "GML-MMGroup/GMTalker": {
+      "category": "ai-model",
+      "one_liner": "可部署的3D数字人系统",
+      "intro": {
+        "one_liner": "3D 数字人对话系统",
+        "what_it_is": "GMTalker 是集成语音识别、语音合成、自然语言理解和嘴型动画驱动的 3D 数字人系统，支持 Windows、Linux、安卓部署。",
+        "problem_solved": "它把离线实时语音对话、数字人渲染、嘴型同步和模型接入整合起来，降低搭建交互式 3D 数字人的门槛。",
+        "who_should_care": "想做数字人演示、语音交互原型或本地部署集成的开发者。",
+        "use_cases": [
+          "3D 卡通数字人展示",
+          "离线实时语音对话",
+          "接入自定义模型与知识库"
+        ],
+        "alternatives": "对比表称其同时具备 3D 形象、UE5 渲染、语音打断、嘴型同步、肢体动作和 Windows 本地部署。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，创建后破千星且本周上日榜一天。",
+        "risk_notes": "资料称展示的是演示效果，并包含可执行包和外部模型包下载；许可证信息未提供。",
+        "evidence": [
+          "系统集成了语音识别、语音合成、自然语言理解、嘴型动画驱动。支持windows、Linux、安卓快速部署。",
+          "This project demonstrates ​​the demo effects of **3D cartoon digital human avatars**​​, suitable for presentations, expansions, and commercial integration.",
+          "破千时的 Star 数：1202；本周上日榜天数：1"
+        ]
+      }
+    },
+    "omnigent-ai/omnigent": {
+      "category": "ai-agent",
+      "one_liner": "统一调度各类 AI 智能体",
+      "intro": {
+        "one_liner": "多智能体统一编排层",
+        "what_it_is": "Omnigent 是开源的智能体统一编排层，可接入多种编码智能体和自写智能体，支持策略、沙箱与实时协作。",
+        "problem_solved": "它解决切换或组合不同智能体时要重写接入逻辑的问题，并提供统一治理、隔离和跨设备会话协作。",
+        "who_should_care": "需要同时管理多个编码智能体、共享会话或做权限与沙箱治理的开发者和团队。",
+        "use_cases": [
+          "跨终端、浏览器和手机续接会话",
+          "让多个智能体协作或互审",
+          "用策略限制工具、审批和花费"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 2,873 星，但只上过一天日榜。",
+        "risk_notes": "未关闭问题有 2,398 个；Windows 原生模式功能受限；安装依赖较多，部分沙箱能力依赖系统组件。",
+        "evidence": [
+          "A meta-harness for all your AI agents.  Omnigent provides a common layer over Claude Code, Codex, Pi, and the agents you write yourself: swap or combine harnesses without rewriting, keep them in check with policies and sandboxing, and collaborate in real time on the same live session, from any device.",
+          "Omnigent is an open-source **meta-harness** that gives you a common orchestration layer over Claude Code, Codex, Cursor, OpenCode, Goose, Antigravity, GitHub Copilot, Devin, Kiro, Qwen Code, Kimi Code, Grok Build, Jcode, Hermes, Pi, OpenAI Agents / Open Responses, and the agents you write yourself: swap or combine harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device — terminal, browser, phone, or the native desktop app.",
+          "Omnigent runs natively on Windows in a degraded mode."
+        ]
+      }
+    },
+    "ALwrity/ALwrity": {
+      "category": "content-media",
+      "one_liner": "AI 驱动数字营销平台",
+      "intro": {
+        "one_liner": "AI 数字营销内容系统",
+        "what_it_is": "ALwrity 是用 Python 为主的 AI 数字营销平台，覆盖内容策略、规划、多模态生成、发布、分析、搜索优化和社交账号管理。",
+        "problem_solved": "它试图解决内容工具缺少品牌上下文、每次从空白页开始、数据分散的问题，用品牌记忆和流程化代理贯穿多平台内容生产。",
+        "who_should_care": "内容营销、搜索优化、社媒运营和需要多平台内容协作的开发者。",
+        "use_cases": [
+          "生成并发布博客文章",
+          "制作视频与播客脚本",
+          "分析搜索表现并优化内容"
+        ],
+        "alternatives": "强调品牌记忆、 grounding、引用追踪和多内容形态共用同一理解，而非一次性提示词生成。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时有一千零六十二星。",
+        "risk_notes": "作者描述标注为进行中；功能依赖多家模型与第三方服务密钥；本地运行需配置前后端环境。",
+        "evidence": [
+          "Marketing OS - WIP",
+          "**Production-ready**: JWT/OAuth2 auth, usage tracking, limits, monitoring, and cost awareness built-in.",
+          "ALwrity exists for people who care more about **context** than prompts."
+        ]
+      }
+    }
+  }
+}

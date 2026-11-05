@@ -1,1 +1,732 @@
-{"date":"2026-06-09","headline":"AI Agent 与开发工具同热","points":["muxuuu/serenity-skill 单日新增 326，供应链瓶颈选股研究技能领跑。","kunchenguid/no-mistakes 新增 282，防误操作的 Git 推送工具受关注。","学习资源 6 个、AI Agent 5 个、开发工具 5 个，Python 项目 8 个。"],"items":{"muxuuu/serenity-skill":{"category":"ai-agent","one_liner":"供应链瓶颈选股研究技能"},"kunchenguid/no-mistakes":{"category":"dev-tools","one_liner":"防误操作的 Git 推送工具"},"jd-opensource/JoyAI-Echo":{"category":"ai-model","one_liner":"长音视频生成前沿模型"},"interviewstreet/hiring-agent":{"category":"ai-agent","one_liner":"简历评估打分智能体"},"shenminglinyi/PlotPilot":{"category":"content-media","one_liner":"墨枢作者的剧情领航员"},"nianzhibai/91":{"category":"other","one_liner":"名为 nine one 的项目"},"Octoday-Hub/Embodied-AI":{"category":"learning-resource","one_liner":"具身智能知识与产业索引"},"xu-xiang/everything-claude-code-zh":{"category":"dev-tools","one_liner":"Claude Code 配置中文合集"},"helloianneo/ian-handdrawn-ppt":{"category":"ai-agent","one_liner":"中文手绘技术 PPT 生成技能"},"7h30th3r0n3/Raspyjack":{"category":"security","one_liner":"树莓派红队网络工具包"},"black-ant/Ant-Browser":{"category":"security","one_liner":"指纹隔离浏览器"},"BaiShuanghao/Awesome-Robotics-Manipulation":{"category":"learning-resource","one_liner":"机器人操作论文资源清单"},"foxhui/WebAI2API":{"category":"ai-model","one_liner":"网页 AI 转 OpenAI API"},"chrisryugj/kordoc":{"category":"dev-tools","one_liner":"韩文文档转 Markdown 工具"},"JuliusBrussee/cavekit":{"category":"ai-agent","one_liner":"自然语言生成软件构建插件"},"kil0bit-kb/scrcpy-gui":{"category":"desktop-system","one_liner":"scrcpy 现代图形界面"},"SamurAIGPT/muapi-cli":{"category":"ai-model","one_liner":"终端生成多模态内容 CLI"},"ZTE-AICloud/Co-Sight":{"category":"ai-agent","one_liner":"中兴云智能体项目"},"olcf/cuda-training-series":{"category":"learning-resource","one_liner":"CUDA 培训系列教材"},"spider-ios/autox-release":{"category":"automation","one_liner":"视频下载与多平台发布工具"},"awesome-selfhosted/awesome-selfhosted-data":{"category":"learning-resource","one_liner":"自托管清单机器可读数据"},"ccsb-scripps/AutoDock-Vina":{"category":"ai-model","one_liner":"分子对接工具 AutoDock Vina"},"Egonex-AI/Understand-Anything":{"category":"dev-tools","one_liner":"代码转交互知识图谱工具"},"noctalia-dev/noctalia":{"category":"desktop-system","one_liner":"Wayland 极简桌面外壳"},"flutter-team-archive/gallery":{"category":"learning-resource","one_liner":"Flutter 示例与评估资源"},"flutter-team-archive/pinball":{"category":"game","one_liner":"Flutter 弹球游戏示例"},"libkrun/libkrun":{"category":"desktop-system","one_liner":"虚拟化进程隔离库"},"oxylabs/how-to-handle-amazon-captcha":{"category":"security","one_liner":"Amazon 验证码处理示例"},"jdx/aube":{"category":"dev-tools","one_liner":"快速 Node.js 包管理器"},"devenjarvis/lathe":{"category":"learning-resource","one_liner":"按需生成实操技术教程"}}}
+{
+  "date": "2026-06-09",
+  "headline": "AI Agent 与开发工具同热",
+  "points": [
+    "muxuuu/serenity-skill 单日新增 326，供应链瓶颈选股研究技能领跑。",
+    "kunchenguid/no-mistakes 新增 282，防误操作的 Git 推送工具受关注。",
+    "学习资源 6 个、AI Agent 5 个、开发工具 5 个，Python 项目 8 个。"
+  ],
+  "items": {
+    "muxuuu/serenity-skill": {
+      "category": "ai-agent",
+      "one_liner": "供应链瓶颈选股研究技能",
+      "intro": {
+        "one_liner": "供应链瓶颈选股的 Agent Skill",
+        "what_it_is": "Serenity.skill 是一个面向 AI Agent 客户端的 Skill 包，把公开内容中可观察到的 Serenity 式投研路径固化为结构化研究流程，包含 SKILL.md、references、prompt 模板与示例。",
+        "problem_solved": "解决投资者面对 AI 半导体、机器人、CPO 等热点时不知从哪条产业链、哪个环节、哪只股票或基金入手的问题，把模糊热度转化为有证据和风险边界的研究清单。",
+        "who_should_care": "使用 Codex、Claude Code 等支持 Skill 的 Agent 客户端、希望建立系统化产业链筛选流程的个人投资者与投研学习者。",
+        "use_cases": [
+          "从热点主题出发拆解产业链并排序优先研究方向",
+          "挑战某公司是否为某环节核心供应商，逐项核对原始披露",
+          "比较候选公司或主题基金，按证据强度排出研究优先级"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Agent Skill 生态与 AI 投研话题快速涨星，但本质是提示词与方法论封装，非数据或模型能力突破。",
+        "risk_notes": "仅提供研究方法，不附带实时行情或数据账号，结论依赖 Agent 自身联网工具；README 明确为研究辅助，不构成投资建议；作者仅实测 Codex CLI 加载，Claude Code 未实测端到端；创建于 2026-05-04 而 star 短期激增，需留意热度与实际验证程度不匹配。",
+        "evidence": [
+          "Serenity.skill 把 Serenity / @aleabitoreddit 公开内容中可观察到的投研路径做成 Agent Skill",
+          "Serenity.skill 提供研究方法，不附带实时行情服务或数据账号",
+          "验证范围（2026-09-14）：Codex CLI 0.147.0 已实际加载新版……Claude Code 的目录与包结构已核对，模型调用尚未实测"
+        ]
+      }
+    },
+    "kunchenguid/no-mistakes": {
+      "category": "dev-tools",
+      "one_liner": "防误操作的 Git 推送工具",
+      "intro": {
+        "one_liner": "推送前自动把关工具",
+        "what_it_is": "它在本地 Git 远端前加一道代理，推送时创建临时工作树，运行校验流水线，全部通过后才转发分支并自动开 PR。",
+        "problem_solved": "把审查、测试、文档、格式检查、持续集成修复和 PR 创建串成一道闸门，减少带问题的改动进入远端。",
+        "who_should_care": "重视 PR 质量、使用 AI 编码代理并希望保留人工审批的开发者。",
+        "use_cases": [
+          "推送前自动跑完整校验",
+          "让编码代理完成任务并过闸",
+          "自动修复失败后重开干净 PR"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 248 星且曾上日榜。",
+        "risk_notes": "未关闭 Issue 有 251 个；流水线依赖可运行的配置代理；持续集成修复涉及受保护的强制推送路径。",
+        "evidence": [
+          "`no-mistakes` puts a local git proxy in front of your real remote.",
+          "forwards the branch to the configured push target only after every check passes, and opens a clean PR automatically.",
+          "every gate requires a runnable configured pipeline agent."
+        ]
+      }
+    },
+    "jd-opensource/JoyAI-Echo": {
+      "category": "ai-model",
+      "one_liner": "长音视频生成前沿模型",
+      "intro": {
+        "one_liner": "长时音视频生成与世界模型开源套件",
+        "what_it_is": "JoyAI-Echo 是包含两个独立子项目的代码仓库：Echo-LongVideo 负责长时、多镜头的音视频联合生成，Echo-WM 是面向交互式音视频生成的 omnimodal 世界模型。",
+        "problem_solved": "针对长时音视频生成中跨镜头连续性难以保持的问题，通过成对的音视频记忆库维持跨镜头连贯性；同时提供可交互的世界模型，让视频、环境音、音乐与语音随导航同步演化。",
+        "who_should_care": "从事音视频生成、世界模型研究的学术团队，以及需要长视频生成或交互式生成媒体原型的研究型开发者。",
+        "use_cases": [
+          "生成 10 分钟以上的多镜头长音视频内容",
+          "构建可导航、音画同步演化的交互式世界模型 demo",
+          "基于 UE 仿真管线生成世界模型训练数据"
+        ],
+        "alternatives": "README 未与其他同类项目做对比，仅说明其基于 LTX-2（Lightricks）构建，并捆绑了 ltx-core 与 ltx-pipelines；具体差异填 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：长时音视频生成与可交互世界模型是生成媒体研究的主线方向，且项目仍在持续迭代（1.0→1.5→Echo-WM→UE 管线），但当前仅限学术研究用途。",
+        "risk_notes": "许可证为 LTX-2 Community License Agreement，明确仅限学术研究与非商业用途，商用需联系 Lightricks；两个子项目环境与 checkpoint 互不共享，部署成本较高；仓库无 license 字段标注。",
+        "evidence": [
+          "Supports 10+ minutes of long-horizon generation, with a paired audio-video memory bank carrying continuity across shots.",
+          "Omnimodal world model for generative media that responds to continuous navigation while video, environmental sound, music, and speech evolve together.",
+          "This project is not intended for commercial use. For commercial use of LTX-2 or its derivatives, please contact Lightricks Ltd."
+        ]
+      }
+    },
+    "interviewstreet/hiring-agent": {
+      "category": "ai-agent",
+      "one_liner": "简历评估打分智能体",
+      "intro": {
+        "one_liner": "简历评分智能体",
+        "what_it_is": "这是一个用 Python 编写的简历评估工具，可从 PDF 提取结构化信息，结合 GitHub 信号，输出带证据和分项分数的评价。",
+        "problem_solved": "它用于给大量简历排序，帮助决定先阅读哪些简历；低于很低 cutoff 的简历会被过滤，多数仍交由人工复核。",
+        "who_should_care": "招聘团队、简历筛选工具开发者，以及研究自动化评估的人。",
+        "use_cases": [
+          "批量整理并初筛实习简历",
+          "本地运行简历评分实验",
+          "研究评分可解释性与偏差"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但创建时间很新。",
+        "risk_notes": "默认配置是演示配置，不是生产配置；评分存在波动争议；PDF 隐藏文字可能影响分数；自动化筛选有合规与伦理风险。",
+        "evidence": [
+          "AI agent to evaluate and score resumes.",
+          "Resume-to-Score pipeline that extracts structured data from PDFs, enriches with GitHub signals, and outputs a fair, explainable evaluation.",
+          "The repo ships with a demo config, not the production one."
+        ]
+      }
+    },
+    "shenminglinyi/PlotPilot": {
+      "category": "content-media",
+      "one_liner": "墨枢作者的剧情领航员",
+      "intro": {
+        "one_liner": "长篇剧情引擎内核",
+        "what_it_is": "PlotPilot 是面向长篇 AI 创作的开源剧情引擎内核，提供叙事状态管理、检索、生成流水线、提示词策略和质量监控，并通过接口暴露能力。",
+        "problem_solved": "它试图解决长篇叙事中人物一致性、因果链、伏笔闭合和无人值守持续推进的问题，把创作从单轮生成变成可追踪的系统工程。",
+        "who_should_care": "做长篇小说、剧本、游戏剧情工具或研究叙事状态管理的开发者。",
+        "use_cases": [
+          "构建长篇连续写作应用",
+          "管理人物、伏笔和故事线",
+          "为创作工具接入剧情内核"
+        ],
+        "alternatives": "相比聊天式写作助手和提示词模板，它强调结构化状态、自动推进流水线和质量治理闭环。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星后一周涨了 59 星，但仅一天进入日榜。",
+        "risk_notes": "剧情引擎内核准备重启；未关闭问题 39 个；创建于 2026 年，成熟度难以判断。",
+        "evidence": [
+          "PlotPilot 是一个**剧情引擎内核（Narrative Engine Kernel）**，不是聊天式写作助手，也不是一组提示词模板。",
+          "面向长篇 AI 创作的基础设施：持久记忆 · 知识图谱 · 自动推进流水线 · 质量治理闭环",
+          "剧情引擎内核准备重启，欢迎贡献者踊跃加入~"
+        ]
+      }
+    },
+    "nianzhibai/91": {
+      "category": "other",
+      "one_liner": "名为 nine one 的项目",
+      "intro": {
+        "one_liner": "个人私有视频站",
+        "what_it_is": "这是一个用 Go 编写的个人私有视频站，可接入多种网盘，提供播放、分享、短视频模式和管理命令。",
+        "problem_solved": "它把分散在多个网盘中的视频集中管理，并提供低带宽播放、一次性分享和私有部署能力。",
+        "who_should_care": "想自建私有视频站、已使用多种网盘的开发者。",
+        "use_cases": [
+          "聚合多个网盘视频",
+          "自建私有播放站",
+          "生成一次性分享链接"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 55 星，曾有一天进入日榜。",
+        "risk_notes": "仅面向个人私有部署；需遵守法律法规；短视频模式不建议在 iOS 设备使用。",
+        "evidence": [
+          "😄 个人私有视频站 😄",
+          "多网盘接入 — 支持115、PikPak、123网盘、联通网盘、光鸭网盘、OneDrive、Google Drive、WebDAV等",
+          "本项目仅面向个人私有部署"
+        ]
+      }
+    },
+    "Octoday-Hub/Embodied-AI": {
+      "category": "learning-resource",
+      "one_liner": "具身智能知识与产业索引",
+      "intro": {
+        "one_liner": "具身智能知识索引与产业地图",
+        "what_it_is": "这是一个由 Octoday Hub（星期八）社区维护的具身智能领域资源索引仓库，按开源项目、开源工具、数据集、论文、课程、企业与招聘等分类整理官方链接。",
+        "problem_solved": "帮助具身智能开发者与研究者在一个入口内定位机器人整机、感知操作算法、VLA 模型、仿真工具、数据集与产业信息，减少分散检索成本。",
+        "who_should_care": "具身智能与机器人方向的研究者、开发者、学生，以及需要了解产业生态与招聘信息的从业者。",
+        "use_cases": [
+          "查找人形、四足、机械臂等开源整机项目与硬件方案",
+          "检索 VLA 模型、强化学习与模仿学习框架及仿真平台",
+          "按真实操作、遥操作、仿真合成、评测基准分类寻找数据集",
+          "了解具身智能企业目录与求职岗位信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，具身智能与 VLA 是持续升温的研究与产业方向，但该仓库本身是人工整理的索引，价值取决于维护持续性",
+        "risk_notes": "内容采用 CC BY-NC-SA 4.0 许可，禁止商业使用；README 自述部分历史页面可能不再持续维护，知识性内容将迁移至飞书知识库；仓库创建于 2026-05-10，历史较短",
+        "evidence": [
+          "连接前沿研究、开源工程与产业实践，打造面向具身智能开发者与探索者的开放资源入口",
+          "本项目内容采用 CC BY-NC-SA 4.0 许可",
+          "上述部分页面属于历史资料，暂时保留原有入口……部分旧页面可能不再持续维护"
+        ]
+      }
+    },
+    "xu-xiang/everything-claude-code-zh": {
+      "category": "dev-tools",
+      "one_liner": "Claude Code 配置中文合集",
+      "intro": {
+        "one_liner": "Claude Code 中文配置集",
+        "what_it_is": "这是 everything-claude-code 的中文翻译项目，整理 Claude Code 的智能体、技能、钩子、命令、规则和 MCP 配置。",
+        "problem_solved": "帮助中文工程师理解并使用一套完整的 Claude Code 实战配置，降低阅读和上手门槛。",
+        "who_should_care": "使用 Claude Code 的中文开发者，以及想复用智能体配置的团队。",
+        "use_cases": [
+          "查阅中文版配置说明",
+          "安装规则与命令模板",
+          "学习智能体工作流配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 124 星，并曾有一天进入日榜。",
+        "risk_notes": "这是翻译项目，配置效果依赖上游内容；创建时间较新，未关闭问题仅 1 个但维护稳定性仍待观察。",
+        "evidence": [
+          "everything-claude-code 中文翻译项目：完整的 Claude Code 配置集合（agents, skills, hooks, commands, rules, MCPs）。源自 Anthropic 黑客松获胜者的实战配置，助力中文工程师高效理解与使用 Claude Code。",
+          "本仓库仅包含原始代码。指南部分解释了所有细节。",
+          "Claude Code 插件无法自动分发 `rules`（规则）。请手动安装："
+        ]
+      }
+    },
+    "helloianneo/ian-handdrawn-ppt": {
+      "category": "ai-agent",
+      "one_liner": "中文手绘技术 PPT 生成技能",
+      "intro": {
+        "one_liner": "中文手绘技术配图生成技能",
+        "what_it_is": "这是一个供 Codex 使用的技能，把文章、课程笔记、提纲等材料整理成中文手绘技术解释风格的整页 PNG 图，包含超宽封面、正文配图和多页检查图。",
+        "problem_solved": "它解决技术内容视觉化时叙事松散、模板味重、风格不统一的问题，让智能体先规划页面结构，再生成统一风格的中文解释图。",
+        "who_should_care": "写中文技术文章、做课程课件、用 Codex 生产内容配图的开发者和讲师。",
+        "use_cases": [
+          "为技术文章生成封面和正文配图",
+          "把课程大纲整理成手绘课件页",
+          "先规划页面叙事，再生成图像"
+        ],
+        "alternatives": "不同于传统模板或可编辑演示文稿生成器，它只输出整页 PNG 图，强调内容语义、页面叙事和统一手绘风格。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 23 星，曾有一天进入日榜。",
+        "risk_notes": "不输出可编辑演示文稿、PDF 或矢量版本；图像模型可能出现中文错字、幻觉标签、物体关系错误和风格漂移，需要多次生成检查。",
+        "evidence": [
+          "中文手绘技术 PPT 整页图像生成 Skill | 21:9 封面 + 16:9 正文配图 | PNG 输出",
+          "它不是传统 PPT 模板，也不是可编辑 PPTX 生成器。它的目标是产出可以直接用于文章、课程、分享稿里的**整页 PNG 视觉图**",
+          "AI 图像模型可能出现错字、幻觉标签、物体关系错误、风格漂移，不要默认第一张就是最终稿。"
+        ]
+      }
+    },
+    "7h30th3r0n3/Raspyjack": {
+      "category": "security",
+      "one_liner": "树莓派红队网络工具包",
+      "intro": {
+        "one_liner": "树莓派便携安全工具箱",
+        "what_it_is": "这是一个面向树莓派和 Cardputer Zero 的 Python 攻击性网络工具箱，带屏幕界面、网页控制台、载荷启动器和载荷编辑器。",
+        "problem_solved": "把授权安全测试、研究和教学所需的网络载荷、结果收集与远程控制集中到便携设备上，便于现场操作。",
+        "who_should_care": "做授权红队测试、安全教学和树莓派安全实验的开发者。",
+        "use_cases": [
+          "授权网络测试与教学演示",
+          "通过网页控制台管理载荷",
+          "编写并运行自定义载荷"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 15 星，仅一天进入日榜。",
+        "risk_notes": "仅可用于授权测试、研究和教育；部分无线功能需兼容外置网卡；未关闭问题有 27 个。",
+        "evidence": [
+          "Small offensive network toolkit for Raspberry Pi (+ Waveshare 1.44″ LCD HAT) and Cardputer Zero inspired by pager and sharkjack fonctionnalities.  For redteam and educational purposes only.",
+          "RaspyJack is for **authorized security testing, research, and education only**.",
+          "The onboard Raspberry Pi WiFi (Broadcom 43430) cannot be used for WiFi attacks."
+        ]
+      }
+    },
+    "black-ant/Ant-Browser": {
+      "category": "security",
+      "one_liner": "指纹隔离浏览器",
+      "intro": {
+        "one_liner": "多账号隔离指纹浏览器",
+        "what_it_is": "Ant Browser 是面向多账号隔离、代理绑定和本地环境管理的桌面浏览器工具，支持 Windows、Linux 和 macOS unsigned。",
+        "problem_solved": "它用于在一台桌面设备上管理多个彼此隔离的浏览器实例，并统一维护代理、内核、插件、备份和快捷启动配置。",
+        "who_should_care": "需要多账号运营、独立代理出口测试或统一管理浏览器实例配置的开发者与团队。",
+        "use_cases": [
+          "多账号环境隔离",
+          "跨境电商与社媒账号运营",
+          "独立代理出口本地测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "macOS 为 unsigned 内测包；代理运行时随仓库提供，部署时需关注校验与平台兼容；项目创建较新。",
+        "evidence": [
+          "面向多账号隔离、代理绑定和本地环境管理的桌面浏览器工具（Windows / Linux / macOS unsigned）。",
+          "当前版本：`1.9.0` · 2026-10-14",
+          "破千时的 Star 数：1005；本周上日榜天数：1"
+        ]
+      }
+    },
+    "BaiShuanghao/Awesome-Robotics-Manipulation": {
+      "category": "learning-resource",
+      "one_liner": "机器人操作论文资源清单",
+      "intro": {
+        "one_liner": "机器人操作论文清单",
+        "what_it_is": "这是一个整理机器人操作研究的论文清单，收录论文、代码和相关网站，并按任务、规划与动作建模等主题分类。",
+        "problem_solved": "它把分散的机器人操作文献、代码和资源集中归类，帮助读者按任务、方法和应用方向查找资料。",
+        "who_should_care": "机器人操作研究者、学生，以及需要调研论文与开源代码的开发者。",
+        "use_cases": [
+          "按任务查找抓取等论文",
+          "调研规划与动作建模方法",
+          "寻找代码、数据集和基准"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点：破千星且本周上日榜一天，关注度快速上升。",
+        "risk_notes": "内容以文献整理为主，持续更新中；部分条目可能缺少公开代码，需自行核验可用性。",
+        "evidence": [
+          "A comprehensive list of papers about Robot Manipulation, including papers, codes, and related websites.",
+          "This repository curates research papers on robot manipulation, featuring a smaller collection of non-learning control methods and a larger body of learning-based approaches.",
+          "This repository will be continuously updated, and we warmly welcome contributions from the community."
+        ]
+      }
+    },
+    "foxhui/WebAI2API": {
+      "category": "ai-model",
+      "one_liner": "网页 AI 转 OpenAI API",
+      "intro": {
+        "one_liner": "网页 AI 转接口工具",
+        "what_it_is": "基于 Camoufox 的网页版 AI 服务转通用接口工具，提供兼容 OpenAI 格式的接口，并支持多窗口并发与账号隔离。",
+        "problem_solved": "把需要浏览器登录和交互的 AI 网站封装成统一接口，减少手动切换账号、处理并发和维持会话的操作。",
+        "who_should_care": "想自建统一接口调用多个网页 AI 服务的开发者。",
+        "use_cases": [
+          "用统一接口调用文本模型",
+          "批量管理多个网页账号",
+          "通过网页界面查看日志"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 14 星且仅一天上日榜。",
+        "risk_notes": "仅供学习交流，需遵守网站条款，账号可能被禁用；网页管理界面传输未加密；首次使用需手动登录并完成验证。",
+        "evidence": [
+          "WebAI2API 是一个基于 Camoufox (Playwright) 的网页版 AI 服务转通用 API 的工具。通过模拟人类操作与 LMArena、Gemini 等网站交互, 提供兼容 OpenAI 格式 的接口服务, 同时支持 多窗口并发 与 多账号管理(浏览器实例数据隔离)。",
+          "本项目仅供学习交流使用。如果因使用该项目造成的任何后果 (包括但不限于账号被禁用),作者和项目均不承担任何责任。请遵守相关网站和服务的使用条款 (ToS),并做好相关数据的备份工作。",
+          "WebUI 传输过程未加密, 公网环境请使用 SSH 隧道或 HTTPS"
+        ]
+      }
+    },
+    "chrisryugj/kordoc": {
+      "category": "dev-tools",
+      "one_liner": "韩文文档转 Markdown 工具",
+      "intro": {
+        "one_liner": "韩文文档转 Markdown 的解析工具",
+        "what_it_is": "kordoc 是一个用 TypeScript 编写的文档解析工具，可将 HWP3/5、HWPX、HWPML、PDF、XLS/XLSX、DOCX、PPTX 及图片转换为 Markdown 或结构化数据，提供库、CLI 与 MCP Server 三种使用形态。",
+        "problem_solved": "解决韩国公文体系中 HWP 系列格式难以被程序读取、难以进入 AI/RAG 流程的问题，同时处理表格结构、扫描件 OCR 与格式转换。",
+        "who_should_care": "需要批量处理韩国 HWP/HWPX 公文的开发者、构建韩文文档 RAG 的团队，以及希望让 AI 客户端直接读取韩文文档的使用者。",
+        "use_cases": [
+          "将 HWP/HWPX/PDF 公文批量转换为 Markdown 供检索或归档",
+          "通过 MCP 让 Claude、Cursor 等 AI 客户端读取并比对韩文文档",
+          "用模板与预设从 Markdown 生成 HWPX 公文，或批量填充表单字段"
+        ],
+        "alternatives": "README 称其在 opendataloader-bench 的 PDF 200 文档评测中综合得分 0.964，高于公开榜单上的 12 个解析器；但该数据来自项目自述，未经独立核实。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：韩国公文数字化与 AI 文档处理需求稳定存在，但受众集中于韩语生态，短期热度有限。",
+        "risk_notes": "README 中的基准分数、100% 表格结构一致率等均为项目自述，需自行复现验证；项目创建于 2026-03-28，历史较短；fork 数（517）相对 star 数（1095）偏高，需留意 star 质量。",
+        "evidence": [
+          "HWP 3.x·5.x, HWPX, HWPML, PDF, XLS·XLSX, DOCX, PPTX, PNG·JPG·WebP를 Markdown과 구조화 데이터로 변환합니다. 라이브러리·CLI·MCP 서버로 사용할 수 있습니다.",
+          "PDF 공개 벤치 종합 0.964: opendataloader-bench 200문서, 공개 리더보드 12개 파서보다 높은 점수",
+          "한국 공문서 표 구조 100%: 원본 HWPX 2,424문서의 보이는 표 10,342개 전부 구조 일치"
+        ]
+      }
+    },
+    "JuliusBrussee/cavekit": {
+      "category": "ai-agent",
+      "one_liner": "自然语言生成软件构建插件",
+      "intro": {
+        "one_liner": "Claude Code 规格开发插件",
+        "what_it_is": "一个 Claude Code 插件，用单个规格文件串起追问、规格、研究、评审和构建，并提供检查与失败回写。",
+        "problem_solved": "让代理在上下文重置后仍能依据规格继续开发，减少猜测、偏离和重复说明，并把测试失败沉淀为约束。",
+        "who_should_care": "使用 Claude Code、希望用轻量规格驱动开发管理改动的人。",
+        "use_cases": [
+          "把模糊需求整理成规格",
+          "按规格构建并验证改动",
+          "检查实现与规格的偏离"
+        ],
+        "alternatives": "强调单文件、无子代理、无仪表盘，按改动规模选择流程；旧版本提供更复杂的自主循环。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨 13 星，且只上过一天日榜。",
+        "risk_notes": "已冻结，不再开发，也不会有新功能或修复；仍有 18 个未关闭问题。",
+        "evidence": [
+          "Status: frozen (August 2026). cavekit is no longer in active development.",
+          "Everything below still installs and works, but expect no new features or fixes.",
+          "Cavekit is the simplest full loop: **grill → spec → research → review → build**, over one `SPEC.md` file, no sub-agents."
+        ]
+      }
+    },
+    "kil0bit-kb/scrcpy-gui": {
+      "category": "desktop-system",
+      "one_liner": "scrcpy 现代图形界面",
+      "intro": {
+        "one_liner": "scrcpy 图形界面",
+        "what_it_is": "ScrcpyGUI v4 是基于 Tauri v2、React 19 和 Rust 重建的 scrcpy 图形界面，用于连接和控制 Android 设备。",
+        "problem_solved": "它把 scrcpy 的命令行操作包装成桌面界面，集中处理无线配对、输入、渲染、摄像头、虚拟显示和文件推送。",
+        "who_should_care": "需要频繁投屏、调试或控制 Android 设备的开发者、测试者和内容创作者。",
+        "use_cases": [
+          "无线连接并控制安卓设备",
+          "安装应用或推送文件",
+          "调试虚拟显示与摄像头"
+        ],
+        "alternatives": "相比直接使用 scrcpy，提供主题、自动更新、无线配对和图形化设置。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 11 星且仅一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 59 个；项目创建于 2026 年，仍较新；依赖本地 scrcpy 二进制和安卓调试配置。",
+        "evidence": [
+          "A modern, high-performance GUI for the scrcpy",
+          "ScrcpyGUI v4 is a modern, feature-rich GUI for [scrcpy](https://github.com/Genymobile/scrcpy), completely rebuilt from the ground up using **Tauri v2**, **React 19**, and **Rust**.",
+          "This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details."
+        ]
+      }
+    },
+    "SamurAIGPT/muapi-cli": {
+      "category": "ai-model",
+      "one_liner": "终端生成多模态内容 CLI",
+      "intro": {
+        "one_liner": "终端生成式 AI 命令行工具",
+        "what_it_is": "这是 muapi.ai 的官方命令行工具，可从终端生成图像、视频和音频，支持人类命令输出、智能体调用和 MCP server 模式。",
+        "problem_solved": "把多类生成模型的调用、认证、余额查询和任务等待集中到命令行，减少直接对接接口的繁琐。",
+        "who_should_care": "需要在脚本或智能体工作流中调用生成模型的开发者。",
+        "use_cases": [
+          "命令行生成图像、视频或音频",
+          "通过 JSON 输出接入智能体",
+          "查询余额并等待生成任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天登上日榜。",
+        "risk_notes": "依赖 muapi.ai 账号、密钥和额度；README 含大量相关项目与链接，需自行辨别。",
+        "evidence": [
+          "Official command-line interface for [muapi.ai](https://muapi.ai?utm_source=github&utm_medium=readme&utm_campaign=muapi-cli) — generate images, videos, and audio directly from your terminal.",
+          "**Agent-first design** — every command works for both humans (colored output, tables) and AI agents (`--output-json`, `--jq` filtering, semantic exit codes, MCP server mode).",
+          "破千时的 Star 数：1001；本周上日榜天数：1"
+        ]
+      }
+    },
+    "ZTE-AICloud/Co-Sight": {
+      "category": "ai-agent",
+      "one_liner": "中兴云智能体项目",
+      "intro": {
+        "one_liner": "私有化智能研究系统",
+        "what_it_is": "Co-Sight 是一个用 Python 编写的智能研究引擎，支持配置大模型、搜索和 MCP 工具，可本地或容器部署。",
+        "problem_solved": "它面向闭源平台成本高、访问受限、难私有化，以及开源框架功能与稳定性不足的问题，提供自建类 Manus 系统方案。",
+        "who_should_care": "需要私有部署报告生成与研究助手的企业、个人开发者。",
+        "use_cases": [
+          "生成行业研究报告",
+          "制作个人旅行攻略",
+          "分析热点新闻影响"
+        ],
+        "alternatives": "强调低成本模型、报告质量、稳定性、易用性与私有部署之间的平衡。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且已有部署示例。",
+        "risk_notes": "需自行配置模型、搜索服务及密钥；文档提供离线镜像版本为 v0.0.1；未给出许可证信息。",
+        "evidence": [
+          "Co-Sight Committed to striking the best balance between cost, quality, stability and ease of use.",
+          "It supports low-cost large models to generate high-quality and beautiful reports comparable to Claude models, and can be flexibly deployed in private environments",
+          "python version >= 3.11"
+        ]
+      }
+    },
+    "olcf/cuda-training-series": {
+      "category": "learning-resource",
+      "one_liner": "CUDA 培训系列教材",
+      "intro": {
+        "one_liner": "CUDA 培训资料库",
+        "what_it_is": "这是配合 CUDA Training Series 的资料仓库，包含相关培训材料，主要语言为 Cuda。",
+        "problem_solved": "为学习 CUDA 的开发者集中提供培训材料入口，并指向幻灯片和演示录像。",
+        "who_should_care": "想系统学习 CUDA 的开发者、培训讲师和高性能计算初学者。",
+        "use_cases": [
+          "查找 CUDA 培训课件",
+          "配合演示录像自学",
+          "准备 CUDA 入门课程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但资料仓库属性更偏长期学习资源。",
+        "risk_notes": "仓库主要指向外部幻灯片和录像，离线可用性未知；成熟度与维护状态未知。",
+        "evidence": [
+          "Training materials associated with NVIDIA's CUDA Training Series (www.olcf.ornl.gov/cuda-training-series/)",
+          "The materials in this repository accompany the CUDA Training Series presented at ORNL and NERSC.",
+          "You can find the slides and presentation recordings at https://www.olcf.ornl.gov/cuda-training-series/"
+        ]
+      }
+    },
+    "spider-ios/autox-release": {
+      "category": "automation",
+      "one_liner": "视频下载与多平台发布工具",
+      "intro": {
+        "one_liner": "自媒体多平台发布助手",
+        "what_it_is": "这是一个桌面端自媒体运营工具，支持多平台视频发布、素材下载、视频搬家、监控、处理、翻译和任务管理。",
+        "problem_solved": "它把视频获取、差异化处理、多语言合成、定时批量发布和状态复查串成流程，减少跨平台运营的重复操作。",
+        "who_should_care": "需要批量分发视频、搬运公开素材或管理多平台账号的内容运营者。",
+        "use_cases": [
+          "一键发布视频到多平台",
+          "下载公开视频并搬家发布",
+          "监控频道新作品自动发布"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，创建于 2025 年 5 月，破千星且本周上过一次日榜。",
+        "risk_notes": "需邮箱登录和授权，试用与设备绑定，部分菜单受后台权限控制；Cookie 易失效，强风控平台发布可能失败。",
+        "evidence": [
+          "一个功能强大的自媒体运营工具，一键发布视频到多平台（快手、YouTube、小红书、美拍、哔哩哔哩等）",
+          "使用邮箱完成 **注册** 或 **登录**（首次注册可能获得试用授权）。",
+          "部分菜单（抖音资源、视频搬家、YouTube / 抖音监控）由后台「菜单权限」控制，未开通时侧栏不显示。"
+        ]
+      }
+    },
+    "awesome-selfhosted/awesome-selfhosted-data": {
+      "category": "learning-resource",
+      "one_liner": "自托管清单机器可读数据",
+      "intro": {
+        "one_liner": "自托管清单数据源",
+        "what_it_is": "这是用于生成自托管资源网站和清单仓库的机器可读数据，主要语言为 Makefile。",
+        "problem_solved": "把自托管软件清单整理成可供程序读取的数据，便于统一生成网站与列表内容。",
+        "who_should_care": "维护自托管清单、搭建资源目录或研究自托管生态的开发者。",
+        "use_cases": [
+          "生成自托管资源网站",
+          "同步维护软件清单",
+          "批量处理条目数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，但缺少更多趋势信息。",
+        "risk_notes": "内容采用知识共享署名相同方式共享 3.0 协议，复用时需留意署名与相同方式共享要求。",
+        "evidence": [
+          "machine-readable data for https://awesome-selfhosted.net",
+          "This repository holds data used to generate https://awesome-selfhosted.net and https://github.com/awesome-selfhosted/awesome-selfhosted",
+          "This list is under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](LICENSE)."
+        ]
+      }
+    },
+    "ccsb-scripps/AutoDock-Vina": {
+      "category": "ai-model",
+      "one_liner": "分子对接工具 AutoDock Vina",
+      "intro": {
+        "one_liner": "分子对接与虚拟筛选工具",
+        "what_it_is": "AutoDock Vina 是开源的分子对接与虚拟筛选程序，采用评分函数和构象搜索，提供命令行与 Python 3 绑定。",
+        "problem_solved": "用于计算配体与受体的结合姿态，并支持批量虚拟筛选、多配体同时对接、环状分子和水合对接等需求。",
+        "who_should_care": "计算化学、药物发现、结构生物学开发者和研究人员。",
+        "use_cases": [
+          "小分子与靶点对接计算",
+          "批量化合物虚拟筛选",
+          "用 Python 编写对接流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "生产可用",
+        "hype_or_trend": "长期趋势，分子对接和虚拟筛选是药物发现中的持续需求。",
+        "risk_notes": "",
+        "evidence": [
+          "AutoDock Vina: Docking and virtual screening program",
+          "Support of simultaneous docking of multiple ligands and batch mode for virtual screening",
+          "AutoDock Vina is distributed under the Apache License, Version 2.0."
+        ]
+      }
+    },
+    "Egonex-AI/Understand-Anything": {
+      "category": "dev-tools",
+      "one_liner": "代码转交互知识图谱工具",
+      "intro": {
+        "one_liner": "代码知识图谱工具",
+        "what_it_is": "它把代码库、知识库或文档转成可探索、搜索和问答的交互式知识图谱，并提供可视化面板。",
+        "problem_solved": "帮助开发者快速理解陌生代码的结构、依赖、业务逻辑和改动影响，减少盲目读代码。",
+        "who_should_care": "新加入团队的开发者、维护大型代码库的人、需要梳理业务知识的技术负责人。",
+        "use_cases": [
+          "新人按依赖顺序熟悉架构",
+          "搜索认证等语义相关代码",
+          "提交前查看改动影响范围"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有五万五千一百九十五星，且本周上过一次日榜。",
+        "risk_notes": "首次全量分析可能消耗大量模型额度；创建日期为 2026 年 3 月 15 日，项目较新。",
+        "evidence": [
+          "Turn any codebase, knowledge base, or docs into an interactive knowledge graph you can explore, search, and ask questions about.",
+          "The initial `/understand` analyzes your whole codebase and can consume a significant number of tokens on large projects.",
+          "创建日期：2026-03-15"
+        ]
+      }
+    },
+    "noctalia-dev/noctalia": {
+      "category": "desktop-system",
+      "one_liner": "Wayland 极简桌面外壳",
+      "intro": {
+        "one_liner": "Wayland 一体化桌面外壳",
+        "what_it_is": "Noctalia 是原生 Wayland 桌面外壳，用 C++ 编写，整合状态栏、启动器、通知、锁屏、壁纸、托盘和设置界面。",
+        "problem_solved": "它把常见桌面组件收拢到统一可配置的外壳层，减少多个小工具、脚本和配置格式拼接带来的脆弱与风格不一致。",
+        "who_should_care": "使用 Niri、Hyprland、Sway 等 Wayland 合成器，并喜欢定制 Linux 桌面的开发者。",
+        "use_cases": [
+          "搭建统一风格的自定义桌面",
+          "替换状态栏、通知和锁屏等组件",
+          "用配置与运行时控制调整外壳"
+        ],
+        "alternatives": "相比零散工具组合，它把界面、渲染、配置和运行时控制设计为统一外壳，且不依赖 Qt 或 GTK。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 234 星，并有一天进入日榜。",
+        "risk_notes": "未关闭议题有 471 个；部分合成器可能只有受限的工作区、窗口、输出或会话操作集成；它是桌面外壳，不是完整桌面环境。",
+        "evidence": [
+          "Noctalia is a native Wayland desktop shell for people who want a polished, configurable Linux desktop without stitching together a separate bar, launcher, notification daemon, lock screen, wallpaper tool, and settings UI.",
+          "The project is built directly on Wayland and OpenGL ES with no Qt or GTK dependency, so the UI, rendering, configuration, and IPC model are designed as one cohesive shell instead of a collection of unrelated panels and scripts.",
+          "Noctalia is a desktop shell, not a full desktop environment."
+        ]
+      }
+    },
+    "flutter-team-archive/gallery": {
+      "category": "learning-resource",
+      "one_liner": "Flutter 示例与评估资源",
+      "intro": {
+        "one_liner": "已弃用的 Flutter 示例库",
+        "what_it_is": "这是一个用 Dart 编写的 Flutter Gallery 仓库，曾用于帮助开发者评估和上手 Flutter，如今主要用于测试。",
+        "problem_solved": "它曾集中展示 Flutter 的能力与用法，降低开发者了解和试用 Flutter 的门槛。",
+        "who_should_care": "维护 Flutter 测试、研究旧示例的开发者。",
+        "use_cases": [
+          "查阅旧版 Flutter 示例",
+          "作为 Flutter 测试资源",
+          "对比官方推荐资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾一天登上日榜，但已弃用且不再活跃维护。",
+        "risk_notes": "项目已弃用且不再活跃维护；当前主要用于测试，不建议作为新项目学习入口。",
+        "evidence": [
+          "The Flutter Gallery is now deprecated, and no longer being active maintained.",
+          "Flutter Gallery was a resource to help developers evaluate and use Flutter.",
+          "It is now being used primarily for testing."
+        ]
+      }
+    },
+    "flutter-team-archive/pinball": {
+      "category": "game",
+      "one_liner": "Flutter 弹球游戏示例",
+      "intro": {
+        "one_liner": "Flutter 弹球游戏",
+        "what_it_is": "这是一个为 Google I/O 2022 打造的网页弹球游戏，使用 Flutter 和 Firebase 构建，主要语言是 Dart。",
+        "problem_solved": "它提供可在桌面和移动网页运行的弹球游戏示例，也展示本地运行、测试、国际化等工程实践。",
+        "who_should_care": "Flutter 开发者、Firebase 使用者，以及想研究网页游戏实现的人。",
+        "use_cases": [
+          "体验网页弹球游戏",
+          "学习 Flutter 项目结构",
+          "参考测试与国际化配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2314 星，且本周上过一次日榜。",
+        "risk_notes": "本地运行需自行创建 Firebase 项目并启用匿名认证与 Firestore；资料只说明支持网页端桌面和移动。",
+        "evidence": [
+          "A Pinball game built with [Flutter][flutter_link] and [Firebase][firebase_link] for [Google I/O 2022][google_io_link].",
+          "_\\*I/O Pinball works on Web for desktop and mobile._",
+          "First, please create a Firebase project for development."
+        ]
+      }
+    },
+    "libkrun/libkrun": {
+      "category": "desktop-system",
+      "one_liner": "虚拟化进程隔离库",
+      "intro": {
+        "one_liner": "进程虚拟化隔离库",
+        "what_it_is": "这是一个用 Rust 编写的动态库，提供 Rust 和 C 接口，让程序借助虚拟化能力在部分隔离环境中运行进程。",
+        "problem_solved": "它把虚拟机管理、少量模拟设备和跨平台虚拟化接口封装起来，降低为进程或容器加入虚拟化隔离的复杂度。",
+        "who_should_care": "关注容器隔离、轻量虚拟机、机密计算或跨平台虚拟化嵌入的开发者。",
+        "use_cases": [
+          "为容器加入虚拟化隔离",
+          "运行带图形加速的轻量虚拟机",
+          "构建机密计算工作负载"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上过一次日榜，破千时已有 2,297 星。",
+        "risk_notes": "主分支为 2.0，接口仍可能变化且不兼容 1.x；生产构建建议使用稳定分支。虚拟机边界不限制设备暴露的宿主资源，需限制权限和路径。",
+        "evidence": [
+          "A dynamic library providing Virtualization-based process isolation capabilities",
+          "The `main` branch is now **libkrun 2.0**, which will not be backwards\ncompatible with the 1.x API/ABI. The 2.0 API is also still under active\ndevelopment and may change further before the first stable release.",
+          "The VM boundary does not restrict host resources exposed through devices. Limit the VMM's host permissions and exposed paths."
+        ]
+      }
+    },
+    "oxylabs/how-to-handle-amazon-captcha": {
+      "category": "security",
+      "one_liner": "Amazon 验证码处理示例",
+      "intro": {
+        "one_liner": "Amazon 验证码处理示例",
+        "what_it_is": "这是一个 Python 示例项目，展示采集 Amazon 公开数据时遇到验证码，以及如何改用 Amazon Scraper API 获取解析结果。",
+        "problem_solved": "它解决简单抓取 Amazon 页面容易遇到验证码的问题，并给出通过接口请求商品数据的代码示例。",
+        "who_should_care": "需要采集 Amazon 公开商品数据的 Python 开发者。",
+        "use_cases": [
+          "对比普通请求与接口请求",
+          "获取商品页解析结果",
+          "学习验证码规避流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，破千时有一千四百零八星且本周上日榜一天。",
+        "risk_notes": "内容围绕特定商业接口与一周试用展开；仓库只有三个复刻，示例性质明显。",
+        "evidence": [
+          "The process of handling CAPTCHA when extracting public data from Amazon with Oxylabs Amazon Scraper API.",
+          "This scraper will likely encounter a CAPTCHA.",
+          "The API is designed to avoid CAPTCHAs."
+        ]
+      }
+    },
+    "jdx/aube": {
+      "category": "dev-tools",
+      "one_liner": "快速 Node.js 包管理器",
+      "intro": {
+        "one_liner": "Rust 编写的 Node.js 包管理器",
+        "what_it_is": "aube 是用 Rust 编写的 Node.js 包管理器，可在运行脚本前自动安装依赖，并原地更新现有锁文件。",
+        "problem_solved": "它减少手动安装依赖和迁移锁文件的麻烦，同时通过共享包文件、依赖构建审批等机制管理安装过程。",
+        "who_should_care": "维护 Node.js 项目、使用多种锁文件格式或关注依赖安装流程的开发者。",
+        "use_cases": [
+          "运行脚本前自动补齐依赖",
+          "在现有项目中保留锁文件试用",
+          "管理工作区与 Node 版本"
+        ],
+        "alternatives": "支持原地读写多种现有锁文件，并把依赖检查并入脚本运行；差异依据来自自述材料。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 41 星且曾上日榜，但新增热度不算持续走高。",
+        "risk_notes": "依赖构建脚本默认需允许规则或内置信任；构建隔离的文件系统读取目前不受限，且保留锁文件格式不保证行为完全一致。",
+        "evidence": [
+          "A Node.js package manager written in Rust. Installs automatically before running scripts, shares packages across projects, and updates your existing lockfile in place.",
+          "Dependency scripts run only when allowed by project policy or aube's built-in trusted-dependencies list.",
+          "Keeping the lockfile format does not guarantee identical behavior: aube uses isolated dependencies, its own stores, and its own security defaults."
+        ]
+      }
+    },
+    "devenjarvis/lathe": {
+      "category": "learning-resource",
+      "one_liner": "按需生成实操技术教程",
+      "intro": {
+        "one_liner": "生成动手技术教程",
+        "what_it_is": "Lathe 是一组大模型技能与 Go 命令行工具，按需生成单篇或系列技术教程，并在本地界面中阅读、管理和扩展。",
+        "problem_solved": "它让大模型负责准备教程、答疑、校验和续写，学习者仍需亲手完成练习，避免模型直接替人完成学习过程。",
+        "who_should_care": "喜欢动手教程、使用编程智能体学习新技术的开发者。",
+        "use_cases": [
+          "按提示生成系列教程",
+          "本地阅读与管理教程",
+          "让智能体答疑或续写"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 340 星，并曾登上日榜。",
+        "risk_notes": "自称实验项目；交互细节以 Claude Code 为准，其他智能体可能有差异；Homebrew 安装方式仅支持 macOS。",
+        "evidence": [
+          "An experiment in using LLMs to teach you, rather than think for you.",
+          "Lathe generates hands-on, multi-part technical tutorials on demand, with skills tuned to make content approachable. Then you work through them yourself, by hand, in a local UI built from the ground up for pleasant learning.",
+          "The interactive handoff model is documented against Claude Code, so a few runtime details differ on the other agents."
+        ]
+      }
+    }
+  }
+}

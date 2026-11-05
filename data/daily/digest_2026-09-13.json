@@ -1,1 +1,657 @@
-{"date":"2026-09-13","headline":"Acrobat 资源项目单日暴涨","points":["covetradesmanrivet/Acrobat-Reader-Pro 单日新增 1002，远超其余上榜项目。","内容媒体类有 5 个，安全类 4 个，AI Agent 类 3 个，题材较分散。","Python 占 12 个；Human-Agent-Society/reef 聚焦自改进智能体持续学习。"],"items":{"covetradesmanrivet/Acrobat-Reader-Pro":{"category":"other","one_liner":"Acrobat 相关资源项目"},"FireRedTeam/FireRedAudio":{"category":"ai-model","one_liner":"音频智能处理项目"},"Human-Agent-Society/reef":{"category":"ai-agent","one_liner":"自改进智能体持续学习框架"},"cp9no1/PrinterService":{"category":"automation","one_liner":"局域网打印服务修改版"},"Vincentwei1021/anything2explainer":{"category":"content-media","one_liner":"主题转讲解视频生成技能"},"kinghacker0/WhatsApp-OSINT":{"category":"security","one_liner":"WhatsApp 信息收集工具"},"donvito/codex-astra-luna-orchestrator":{"category":"ai-agent","one_liner":"Codex 子智能体编排器"},"realchendahuang/feedsieve":{"category":"web-frontend","one_liner":"X 垃圾账号拦截插件"},"jonnyoo/glance":{"category":"other","one_liner":"Swift 项目速览工具"},"kajisho5/ffmpeg-skill":{"category":"content-media","one_liner":"FFmpeg 视频处理技能"},"soirihiroka/shrimply":{"category":"content-media","one_liner":"趣味视频生成项目"},"kaomei/stickman-video-director":{"category":"content-media","one_liner":"文案转火柴人视频提示包"},"Spark-To-Paper-Skills/spark-to-paper-skills":{"category":"ai-agent","one_liner":"一句话生成论文初稿"},"hashgraph-online/awesome-codex-plugins":{"category":"learning-resource","one_liner":"Codex 插件资源精选"},"sunblaze-ucb/exploitgym":{"category":"security","one_liner":"AI 漏洞利用评测基准"},"ClusterM/wg-obfuscator":{"category":"security","one_liner":"WireGuard 流量混淆器"},"intel/xess":{"category":"game","one_liner":"Intel XeSS 超分 SDK"},"microsoft/work-iq":{"category":"dev-tools","one_liner":"Work IQ 服务与命令行"},"wflixu/RClick":{"category":"desktop-system","one_liner":"macOS 访达右键扩展"},"obitouka/InstagramPrivSniffer":{"category":"security","one_liner":"Instagram 隐私内容查看工具"},"sophiamyang/finger-frame-effect-ai":{"category":"content-media","one_liner":"手指框选 AI 特效"},"ProtonMail/android-mail":{"category":"mobile","one_liner":"Proton Mail 安卓客户端"},"yurijmikhalevich/rclip":{"category":"dev-tools","one_liner":"终端离线图片搜索工具"},"swc-17/SparseDrive":{"category":"ai-model","one_liner":"稀疏场景端到端自动驾驶"},"reactive-resume/reactive-resume":{"category":"web-frontend","one_liner":"隐私优先简历生成器"},"tradecatlabs/vibe-coding-cn":{"category":"learning-resource","one_liner":"AI 结对编程中文教程"},"DSH-EAC/DSH-Desktop-EAC":{"category":"desktop-system","one_liner":"DeepSeek 桌面运行环境"}}}
+{
+  "date": "2026-09-13",
+  "headline": "Acrobat 资源项目单日暴涨",
+  "points": [
+    "covetradesmanrivet/Acrobat-Reader-Pro 单日新增 1002，远超其余上榜项目。",
+    "内容媒体类有 5 个，安全类 4 个，AI Agent 类 3 个，题材较分散。",
+    "Python 占 12 个；Human-Agent-Society/reef 聚焦自改进智能体持续学习。"
+  ],
+  "items": {
+    "covetradesmanrivet/Acrobat-Reader-Pro": {
+      "category": "other",
+      "one_liner": "Acrobat 相关资源项目",
+      "intro": {
+        "one_liner": "Acrobat 相关仓库",
+        "what_it_is": "这是一个与 Acrobat 相关的仓库，具体功能、实现内容和交付物均 unknown。",
+        "problem_solved": "解决的问题 unknown。",
+        "who_should_care": "关注 Acrobat 相关话题的开发者。",
+        "use_cases": [
+          "用途 unknown"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时有一千九百六十四星。",
+        "risk_notes": "缺少说明资料，项目用途、成熟度、许可证与可安装性均无法确认；创建于二〇二六年六月十四日，信息不足。",
+        "evidence": [
+          "话题标签：acrobat、acrobat-2026、acrobat-breaker、acrobat-full、acrobat-live、acrobat-pro、acrobat-pro-dc、acrobat-reader-pro",
+          "创建日期：2026-06-14",
+          "破千时的 Star 数：1964；本周上日榜天数：1；Fork 数：103"
+        ]
+      }
+    },
+    "FireRedTeam/FireRedAudio": {
+      "category": "ai-model",
+      "one_liner": "音频智能处理项目",
+      "intro": {
+        "one_liner": "通用音频语言模型",
+        "what_it_is": "一个基于共享 9B 参数语言模型的通用音频模型，用解耦连续表示连接理解与生成，提供 Python 推理接口和网页演示。",
+        "problem_solved": "把语音识别、音频理解、语音合成、语音编辑和长录音时间定位整合到单一模型，减少多套工具拼接。",
+        "who_should_care": "做语音应用、音频分析和长录音处理的开发者。",
+        "use_cases": [
+          "转写并问答长录音内容",
+          "按参考音频克隆声音合成",
+          "用自然语言编辑语音内容"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天。",
+        "risk_notes": "依赖 Python 3.10、CUDA 工具包和 ffmpeg；声学编辑需严格使用指定模板；README 提到限制与免责声明，但具体内容未给出。",
+        "evidence": [
+          "Official PyTorch code for",
+          "One model to listen, understand, reason, speak, and edit.",
+          "We release a Gradio web demo for zero-shot TTS, instruct TTS, speech editing, ASR, and audio understanding."
+        ]
+      }
+    },
+    "Human-Agent-Society/reef": {
+      "category": "ai-agent",
+      "one_liner": "自改进智能体持续学习框架",
+      "intro": {
+        "one_liner": "面向自进化 Agent 的持续学习基础设施",
+        "what_it_is": "Reef 是一个开源基础设施，把 Agent 的推理服务、反馈采集、学习训练与版本化发布串联成一个持续学习闭环，支持训练模型权重，也支持优化 Agent 的 harness（prompt、规则、技能）。",
+        "problem_solved": "解决 Agent 上线后无法持续自我改进的问题：把线上交互与反馈转化为可评估、可发布的更新，并让服务在更新过程中保持在线。",
+        "who_should_care": "需要让 Agent 从真实交互中持续迭代的 Agent 平台团队、LLM 训练与推理工程师，以及做 test-time training 的研究者。",
+        "use_cases": [
+          "用线上反馈对模型权重做持续训练，并在评估通过后热切换新版本",
+          "无需本地 GPU，通过模型 API 迭代 coding agent 的 prompt、规则与技能",
+          "面向科学发现等任务，在推理阶段结合正确性校验做 test-time training"
+        ],
+        "alternatives": "README 对比表称推理引擎（vLLM、SGLang）只做服务、RL 训练框架（Slime、veRL、AReaL）只做权重训练，而 Reef 额外提供版本管理、更新期间保持在线、以及权重之外的 harness 演化能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：持续学习与自进化 Agent 是 Agent 基础设施的长期方向，但项目创建时间很短、仍在快速迭代。",
+        "risk_notes": "项目创建于 2026-08-31，距今仅约两个月，open issues 达 133 个，成熟度与稳定性待验证；artifact 与 checkpoint 功能依赖 git-lfs 系统包；README 中出现的链接与社区入口仅为原文信息，未做验证。",
+        "evidence": [
+          "Reef is the first open-source infrastructure for continual self-improving agents.",
+          "It connects agent inference, feedback, learning, and versioned delivery.",
+          "Reef's artifact and checkpoint functionality requires the `git-lfs` system package."
+        ]
+      }
+    },
+    "cp9no1/PrinterService": {
+      "category": "automation",
+      "one_liner": "局域网打印服务修改版",
+      "intro": {
+        "one_liner": "内网网页打印服务",
+        "what_it_is": "这是一个基于已有内网打印项目修改的 Python 服务，通过浏览器上传文件，并在连接打印机的电脑上完成打印。",
+        "problem_solved": "主要解决部分电脑无法连接打印机的问题，让内网设备通过网页上传文件，由服务端转换并打印。",
+        "who_should_care": "适合办公室、机房等需要共享内网打印机的普通用户。",
+        "use_cases": [
+          "内网电脑通过浏览器提交打印",
+          "将文档表格统一转为 PDF",
+          "预览和管理待打印文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，破千时星数达 1070。",
+        "risk_notes": "服务端要求安装 Office；资料未提供许可证信息；项目创建于 2025 年 9 月 18 日，成熟度不明。",
+        "evidence": [
+          "一个简单易用的内网打印解决方案，让您可以通过浏览器打印文档，解决一些电脑实在连不上打印机的问题",
+          "安装了Office的电脑",
+          "基于@a937750307 项目lan-printing的修改"
+        ]
+      }
+    },
+    "Vincentwei1021/anything2explainer": {
+      "category": "content-media",
+      "one_liner": "主题转讲解视频生成技能",
+      "intro": {
+        "one_liner": "把任意主题转成带旁白的代码动画讲解视频",
+        "what_it_is": "anything2explainer 是一个 Claude Code / Codex skill，它把任意主题或文档转成黑底动态图形讲解视频，包含 TTS 旁白、字幕和章节进度条，支持中文和英文；每一帧都用 Remotion（React + TypeScript）以代码绘制。",
+        "problem_solved": "它把「选题研究→旁白脚本→配音时间轴→分镜→逐镜代码实现→质检渲染」这套讲解视频制作流程交给 AI 编码 agent 自动完成，省去素材搜集、剪辑和动画制作。",
+        "who_should_care": "需要批量产出科普或教学短视频的内容创作者、教育团队，以及希望用 Claude Code / Codex 做视频自动化的开发者。",
+        "use_cases": [
+          "把一篇技术文章或文档转成 2–8 分钟的中英文讲解视频",
+          "为向量数据库等概念快速生成带字幕和章节结构的科普短片",
+          "在 Claude Code / Codex 中以 skill 形式搭建可复用的视频生产流水线"
+        ],
+        "alternatives": "README 明确说明不使用素材库、不使用生成式视频模型，也不使用他人画面，全部画面由 Remotion 代码绘制；与常规 AI 视频生成工具属于不同路线，未给出具体同类项目对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：它依托 Claude Code / Codex skill 生态与 AI agent 工作流，一周新增约 586 star，但项目创建仅约 10 天，长期价值待观察。",
+        "risk_notes": "仓库未声明 license（license 为 null），商用或二次分发前需确认授权；项目创建于 2026-09-08，非常新，维护稳定性未知；依赖 edge-tts 云端接口，README 提示其随升级易失效；脚本在 macOS 验证，Windows 未测试。",
+        "evidence": [
+          "Topic in, narrated explainer video out. A Claude Code / Codex skill that turns any topic into a black-canvas motion-graphics explainer video with TTS voiceover, subtitles and a chapter progress bar.",
+          "Every frame is drawn in code with Remotion (React + TypeScript). No stock footage, no generative video model, no frames lifted from anyone else's work.",
+          "pin edge-tts: it tracks a Microsoft endpoint and breaks across upgrades"
+        ]
+      }
+    },
+    "kinghacker0/WhatsApp-OSINT": {
+      "category": "security",
+      "one_liner": "WhatsApp 信息收集工具",
+      "intro": {
+        "one_liner": "WhatsApp 信息查询工具",
+        "what_it_is": "这是一个用 Python 编写的终端工具，通过 RapidAPI 的 WhatsApp OSINT 接口查询头像、账号、状态、设备和隐私设置等信息，支持 6 个接口。",
+        "problem_solved": "它把分散的 WhatsApp 公开信息查询能力集中到交互式菜单中，并自动校验国际号码格式、保存头像图片。",
+        "who_should_care": "做授权安全审计、合法调查或 OSINT 教学的开发者。",
+        "use_cases": [
+          "授权审计中核验商业账号",
+          "教学演示号码格式校验",
+          "合规调查中查看状态信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,056 星且仅一天上日榜。",
+        "risk_notes": "依赖 RapidAPI 密钥和付费套餐；用途被限定为授权、合法和经同意场景；创建时间较新，成熟度信息有限。",
+        "evidence": [
+          "OSINT tool for WhatsApp that allows you to obtain profile pictures, verify Business accounts, check status and user information, analyze linked devices, review privacy settings, and access complete data using the RapidAPI WhatsApp OSINT API. Supports 6 endpoints.",
+          "Supports 6 endpoints: about, base64, business, devices, doublecheck, privacy.",
+          "This tool is created only for: Legitimate cybersecurity investigations, Authorized security audits, Educational OSINT projects, Analysis with explicit consent"
+        ]
+      }
+    },
+    "donvito/codex-astra-luna-orchestrator": {
+      "category": "ai-agent",
+      "one_liner": "Codex 子智能体编排器",
+      "intro": {
+        "one_liner": "Codex 编排配置集",
+        "what_it_is": "一个用 Python 维护的安装器与配置集合，为 Codex 项目安装编排者、执行子代理和独立审查者的配置文件与技能。",
+        "problem_solved": "把复杂编码任务拆给多个角色，并统一安装到目标仓库，减少手工配置 Codex 代理、技能和项目说明的麻烦。",
+        "who_should_care": "使用 Codex CLI、想尝试多代理分工的开发者。",
+        "use_cases": [
+          "为现有仓库安装编排配置",
+          "拆分探索、实现、测试与审查",
+          "按预设档位切换代理组合"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 430 星，且仅一天进入日榜。",
+        "risk_notes": "创建于 2026 年 9 月，时间较短；仍有 6 个未关闭问题；安装会写入目标仓库配置，需确认覆盖提示。",
+        "evidence": [
+          "Use Astra as orchestrator and Luna for subagents in Codex",
+          "Install a Codex profile with GPT-6 Astra, GPT-6.1 Sol, or GPT-6 Luna as the orchestrator, GPT-6 Luna execution subagents, and an independent reviewer.",
+          "The installer copies the selected configuration to `.codex/`, its skill to `.agents/`, and project instructions to `AGENTS.md`."
+        ]
+      }
+    },
+    "realchendahuang/feedsieve": {
+      "category": "web-frontend",
+      "one_liner": "X 垃圾账号拦截插件",
+      "intro": {
+        "one_liner": "中文 X 清理助手",
+        "what_it_is": "一个开源的 Chrome 扩展，面向中文 X 用户，提供垃圾账号标注、原生拉黑、热帖观察、博主分析、发帖辅助和 AI 味检测。",
+        "problem_solved": "它主要处理评论区垃圾账号、引流号和水军，也帮助发现热帖、研究博主表现，并辅助排期发帖。",
+        "who_should_care": "经常刷中文 X、被垃圾评论打扰，或需要分析热帖与发帖节奏的开发者和内容创作者。",
+        "use_cases": [
+          "标注并拉黑垃圾账号",
+          "查看刷到的热帖流速",
+          "分析博主爆款帖子"
+        ],
+        "alternatives": "相比本地隐藏和黑盒拉黑脚本，它强调黄框标注、理由公开、用户确认后走原生拉黑，并提供误伤恢复。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过日榜，但 Fork 数较少。",
+        "risk_notes": "创建日期与最近提交日期晚于常见当前时间，需留意数据异常；AI 味检测会把截断回复交给第三方模型；部分功能依赖上传数据，虽可关闭。",
+        "evidence": [
+          "作者填写的描述：X 赛博清洁工：高置信垃圾账号黄框标注，一键原生拉黑，全端同步消失。官网 feedsieve.win · Open-source X (Twitter) spam blocker for Chrome.",
+          "README 原文：只框不藏：命中的账号打黄框，写明理由（`命中黑名单: 3人标记`、`全角变形: 那一夜你没有拒绝我`），推文原样保留，要不要送走由你决定。",
+          "README 原文：这一步会把截断后的回复（每条 200 字、去掉短链）交给第三方语言模型判定一次，服务器不保存回复正文；「仅本地运行」时不可用，每个安装每天最多 20 次。"
+        ]
+      }
+    },
+    "jonnyoo/glance": {
+      "category": "other",
+      "one_liner": "Swift 项目速览工具",
+      "intro": {
+        "one_liner": "Mac 人脸解锁工具",
+        "what_it_is": "Glance 是用 Swift 编写的 Mac 应用，用人脸识别和本地活体检测，在锁屏时自动输入已加密保存的密码。",
+        "problem_solved": "让用户唤醒或锁定 Mac 后无需打字、也无需伸手按指纹键，用类似手机人脸解锁的体验进入系统。",
+        "who_should_care": "使用 macOS 15 及以上、愿意为便利接受安全折衷的 Mac 用户。",
+        "use_cases": [
+          "唤醒 Mac 后快速解锁",
+          "锁屏时按空格触发识别",
+          "为多人或不同外貌建档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 270 星，且曾有一天进入日榜。",
+        "risk_notes": "安全性不如 FaceID 或 TouchID；不能可靠抵御视频欺骗；需保存密码并授予辅助功能权限；暂不接受贡献。",
+        "evidence": [
+          "Glance is not as secure as Apple's FaceID or TouchID",
+          "Glance does not reliably defeat a video of you",
+          "Glance unlocks by typing your stored password on the lock screen"
+        ]
+      }
+    },
+    "kajisho5/ffmpeg-skill": {
+      "category": "content-media",
+      "one_liner": "FFmpeg 视频处理技能",
+      "intro": {
+        "one_liner": "给编码代理的本地剪辑工具",
+        "what_it_is": "这是一个面向编码代理的本地视频编辑技能，提供四十二个基于 FFmpeg 与 ffprobe 的工具，并可通过 MCP 调用。",
+        "problem_solved": "它让代理先探测素材、按结构化参数编辑、再验证输出，减少凭猜测拼接命令和误报完成的情况。",
+        "who_should_care": "用编码代理或 MCP 客户端处理本地素材的开发者、视频自动化使用者。",
+        "use_cases": [
+          "让代理裁剪、拼接并验证视频",
+          "批量处理静音、响度和画幅",
+          "为本地素材生成字幕与动效"
+        ],
+        "alternatives": "强调固定工作流、机器可读契约、执行后验证，以及离线无密钥运行。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星时为一千零二星，本周上日榜一天。",
+        "risk_notes": "创建日期为二〇二六年九月三日，资料未说明稳定版状态；运行依赖本机 FFmpeg 与 Python 环境。",
+        "evidence": [
+          "Give your coding agent a video editor.",
+          "Claude Code, Cursor, Codex or any MCP client edits your footage with local FFmpeg, then checks its own output.",
+          "No cloud · No API keys · Python standard library"
+        ]
+      }
+    },
+    "soirihiroka/shrimply": {
+      "category": "content-media",
+      "one_liner": "趣味视频生成项目",
+      "intro": {
+        "one_liner": "跨平台视频编辑器",
+        "what_it_is": "Shrimply 是一个用 Rust 编写的跨平台视频编辑器，目前处于预阿尔法阶段。",
+        "problem_solved": "它面向跨平台视频剪辑需求，支持多类显卡和系统环境，但当前仍可能遇到崩溃、资源泄漏和工程文件损坏。",
+        "who_should_care": "愿意试用早期视频编辑工具、能接受不稳定性的开发者。",
+        "use_cases": [
+          "试用跨平台视频剪辑流程",
+          "测试工程导入与编辑工作流",
+          "参与问题排查和界面翻译"
+        ],
+        "alternatives": "unknown",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，一周涨了 87 星，并曾有一天进入日榜。",
+        "risk_notes": "预阿尔法软件，可能出现随机崩溃、资源泄漏、性能回退和不可逆工程文件损坏；部分功能依赖非自由组件，另有独立许可的模型权重。",
+        "evidence": [
+          "Shrimply is a simple yet powerful cross-platform video editor.",
+          "Shrimply is currently pre-alpha software, which means you should expect:",
+          "Shrimply is licensed under the GNU General Public License, version 3 or later."
+        ]
+      }
+    },
+    "kaomei/stickman-video-director": {
+      "category": "content-media",
+      "one_liner": "文案转火柴人视频提示包",
+      "intro": {
+        "one_liner": "火柴人视频提示词工具",
+        "what_it_is": "把主题、文章或脚本整理成火柴人视频制作方案，提供分镜、旁白、字幕、音效与视觉风格提示词，也支持自动生成完整视频。",
+        "problem_solved": "降低无露脸视频的制作门槛，让创作者不必从零编排画面、旁白、字幕、音效和剪辑流程。",
+        "who_should_care": "无露脸频道创作者、短视频制作者，以及用智能体辅助生成视频的开发者。",
+        "use_cases": [
+          "把文章改成解说视频",
+          "生成分镜与视频提示词",
+          "自动产出带旁白字幕视频"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 159 星，且曾有一天进入日榜。",
+        "risk_notes": "自动模式依赖具备文件读写、工具调用和命令执行能力的智能体；不同模型与配置可能导致结果不同；仍有 1 个未关闭问题。",
+        "evidence": [
+          "Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Fully open-source.",
+          "Automatically orchestrate visuals, voiceovers, captions, and sound effects into a production-ready stickman video.",
+          "Autopilot Mode runs inside AI coding agents with file/terminal access (like Claude Code, OpenAI Codex, or Cursor) to automatically handle end-to-end rendering and file delivery."
+        ]
+      }
+    },
+    "Spark-To-Paper-Skills/spark-to-paper-skills": {
+      "category": "ai-agent",
+      "one_liner": "一句话生成论文初稿",
+      "intro": {
+        "one_liner": "一句话生成论文草稿",
+        "what_it_is": "这是一个 Python 项目，用 Claude Code 技能把一句话想法编排成研究草稿，包含文献、实验、图表和编译后的 PDF。",
+        "problem_solved": "它把论文从选题、查证、实验到写作和排版的流程串起来，并用确定性检查减少引用、数字和图表来源不清的问题。",
+        "who_should_care": "需要快速起草研究论文、整理实验与图表的开发者和研究人员。",
+        "use_cases": [
+          "把研究想法转成论文草稿",
+          "自动运行实验并填结果表",
+          "生成可编辑矢量图和 PDF"
+        ],
+        "alternatives": "相比独立 Python 产品，它作为 Claude Code 插件运行；相比轻量技能，覆盖实验和图表流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 58 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间较新，未关闭问题 3 个；论文生成质量依赖输入、数据和外部接口，需人工复核。",
+        "evidence": [
+          "One sentence in, one draft paper out: spark-to-paper-skills automatically reviews papers, plans and runs experiments, and writes a research draft—typically using about $10 in API costs per paper.",
+          "One orchestrator and 13 composable Claude Code skills turn a one-line idea into a compiled PDF — real references, editable vector figures, and machine-checked integrity included.",
+          "Deterministic gates check citation records, claim-citation links, source-traced prose numbers, vector structure, and LaTeX; detected violations fail the build."
+        ]
+      }
+    },
+    "hashgraph-online/awesome-codex-plugins": {
+      "category": "learning-resource",
+      "one_liner": "Codex 插件资源精选",
+      "intro": {
+        "one_liner": "Codex 插件精选清单",
+        "what_it_is": "这是面向 OpenAI Codex 与 ChatGPT 的插件、技能和资源精选清单，也提供可作为 Codex 插件市场使用的仓库目录。",
+        "problem_solved": "把分散的插件、技能、开发指南和社区资源集中整理，并提供扫描门槛与可安装镜像，降低查找和接入成本。",
+        "who_should_care": "使用 Codex 或 ChatGPT 插件的开发者，以及插件作者和维护者。",
+        "use_cases": [
+          "查找官方与社区插件",
+          "把仓库添加为插件市场",
+          "按扫描要求提交插件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "创建日期为 2026 年 3 月 28 日；提交插件必须通过集中扫描且分数不低于 75；安装需按指定仓库地址添加市场。",
+        "evidence": [
+          "A curated list of awesome plugins, skills, and resources for OpenAI Codex and ChatGPT.",
+          "This repo publishes a Codex repo marketplace at `.agents/plugins/marketplace.json`.",
+          "All plugins submitted to **Awesome Codex Plugins** must pass the HOL AI Plugin Scanner"
+        ]
+      }
+    },
+    "sunblaze-ucb/exploitgym": {
+      "category": "security",
+      "one_liner": "AI 漏洞利用评测基准",
+      "intro": {
+        "one_liner": "漏洞利用智能体评测基准",
+        "what_it_is": "ExploitGym 是基于真实漏洞构建的大规模评测基准，覆盖用户态程序、V8 引擎和 Linux 内核，用于评估智能体开发漏洞利用的能力。",
+        "problem_solved": "它提供贴近真实环境的任务、隔离网络和评测流程，帮助衡量智能体把安全漏洞转化为攻击利用的能力。",
+        "who_should_care": "研究智能体安全能力、漏洞利用评测和基准测试的安全研究者与开发者。",
+        "use_cases": [
+          "评测智能体漏洞利用能力",
+          "复现真实漏洞任务环境",
+          "准备榜单提交结果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 54 星，并曾登上日榜一天。",
+        "risk_notes": "任务数据来自外部上游并保留各自许可证；部署涉及多个镜像、代理和密钥配置，使用门槛较高。",
+        "evidence": [
+          "ExploitGym is a large-scale, realistic benchmark built from real-world vulnerabilities across userspace programs, Google's V8 engine, and the Linux kernel, designed to evaluate AI agents' ability to develop exploits.",
+          "The current release is **v1.0** with\n869 instances.",
+          "The bundled task data\nunder `data/tasks/` derives from external upstreams and retains their\nrespective licenses"
+        ]
+      }
+    },
+    "ClusterM/wg-obfuscator": {
+      "category": "security",
+      "one_liner": "WireGuard 流量混淆器",
+      "intro": {
+        "one_liner": "WireGuard 流量混淆器",
+        "what_it_is": "一个用 C 编写的独立工具，用于混淆 WireGuard 的 UDP 流量，可伪装成随机数据或 STUN，并需在连接两端部署。",
+        "problem_solved": "帮助降低 WireGuard 流量被深度包检测识别和阻断的概率，适用于运营商或网络管理方限制 WireGuard 的场景。",
+        "who_should_care": "自建 WireGuard 服务、遇到协议封锁或限速的开发者和网络管理员。",
+        "use_cases": [
+          "自建服务器绕过 WireGuard 封锁",
+          "在路由器等轻量设备部署",
+          "用 STUN 伪装应对白名单检测"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注点集中在绕过深度包检测。",
+        "risk_notes": "不是 VPN，也不是独立方案；两端都要部署，不能搭配第三方 VPN 服务器。密钥混淆不提供强密码学保证。",
+        "evidence": [
+          "WireGuard Obfuscator - simple obfuscator for WireGuard. Useful if your ISP/government blocks WireGuard traffic.",
+          "Not a standalone solution: You need to run this tool on both ends of the WireGuard connection.",
+          "providing strong cryptographic guarantees is not the goal here"
+        ]
+      }
+    },
+    "intel/xess": {
+      "category": "game",
+      "one_liner": "Intel XeSS 超分 SDK",
+      "intro": {
+        "one_liner": "游戏画质增强开发套件",
+        "what_it_is": "这是用于把 XeSS 3 集成到游戏或应用中的开发套件，包含超分辨率、帧生成和低延迟技术，并提供示例、开发指南及引擎插件信息。",
+        "problem_solved": "它面向实时图形应用，帮助在保持较高视觉质量和响应速度的同时提升帧率，并降低输入延迟。",
+        "who_should_care": "游戏客户端开发者、图形工程师，以及使用 Unreal Engine 或 Unity 的团队。",
+        "use_cases": [
+          "为游戏接入超分辨率",
+          "为游戏加入帧生成",
+          "调试并验证集成效果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星标数为一千零一。",
+        "risk_notes": "部分能力依赖特定图形硬件或功能支持；帧生成要求同时集成低延迟能力。",
+        "evidence": [
+          "The XeSS 3 SDK is a set of real-time AI-based technologies that drastically boost your frame rate at the highest visual quality while keeping your game responsive.",
+          "This repository contains the SDK for integrating XeSS 3 into your game or application.",
+          "While XeSS-FG requires XeLL integration, both XeSS-SR and XeLL can be enabled independently, giving you flexibility."
+        ]
+      }
+    },
+    "microsoft/work-iq": {
+      "category": "dev-tools",
+      "one_liner": "Work IQ 服务与命令行",
+      "intro": {
+        "one_liner": "微软 365 数据插件集",
+        "what_it_is": "这是面向 GitHub Copilot 的 Work IQ 插件集合，包含 MCP 服务、命令行工具、技能和工具，用于连接微软 365 数据。",
+        "problem_solved": "让 AI 助手通过自然语言查询邮件、会议、文档、Teams 消息和人员信息，并提供独立 MCP 服务接入方式。",
+        "who_should_care": "使用 GitHub Copilot、微软 365 数据或开发智能体插件的开发者与租户管理员。",
+        "use_cases": [
+          "查询本周会议安排",
+          "汇总指定邮件内容",
+          "查找近期编辑文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "处于公开预览，功能和接口可能变化；访问租户数据需管理员授权；使用包即表示接受许可协议。",
+        "evidence": [
+          "MCP Server and CLI for accessing Work IQ",
+          "The official Microsoft Work IQ plugin collection for GitHub Copilot ✨",
+          "⚠️ **Public Preview:** Features and APIs may change."
+        ]
+      }
+    },
+    "wflixu/RClick": {
+      "category": "desktop-system",
+      "one_liner": "macOS 访达右键扩展",
+      "intro": {
+        "one_liner": "macOS 访达右键增强工具",
+        "what_it_is": "RClick 是用 Swift 和 SwiftUI 构建的 macOS 应用，通过访达扩展为右键菜单加入自定义操作。",
+        "problem_solved": "它补足访达右键菜单能力，让用户直接在文件与文件夹上打开应用、复制路径、删除、隐藏和新建文件。",
+        "who_should_care": "经常在访达中管理文件、切换编辑器或终端的 macOS 用户。",
+        "use_cases": [
+          "用指定编辑器或终端打开目录",
+          "复制选中文件或文件夹路径",
+          "从模板快速创建常见文档"
+        ],
+        "alternatives": "同类项目包括 SzContext、MenuHelper、SwiftyMenu 和 OpenInTerminal；差异是功能集合更广。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "需要 macOS 15.6+、Xcode 26+，并手动启用访达扩展；部分操作还要求文件夹授权和辅助功能权限。",
+        "evidence": [
+          "Enhance your macOS Finder context menu with custom actions. Built with Swift 6.2 and SwiftUI for macOS 15.6+.",
+          "RClick uses a dual-process architecture:",
+          "Requires **Xcode 26+** and **macOS 15.6+**"
+        ]
+      }
+    },
+    "obitouka/InstagramPrivSniffer": {
+      "category": "security",
+      "one_liner": "Instagram 隐私内容查看工具",
+      "intro": {
+        "one_liner": "匿名查看私密帖子工具",
+        "what_it_is": "一个 Python 命令行工具，用于获取并下载因与公开账号协作而可见的 Instagram 私密账号帖子。",
+        "problem_solved": "帮助数字调查人员访问、查看和下载特定协作场景下暴露的私密账号帖子链接与媒体。",
+        "who_should_care": "数字调查人员、开源情报研究者及关注隐私边界的开发者。",
+        "use_cases": [
+          "调查协作帖可见范围",
+          "获取私密账号帖子链接",
+          "下载并查看相关媒体"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但争议性强。",
+        "risk_notes": "涉及隐私与合规风险；作者声明仅限教育、研究和数字调查用途；常见问题提到可能查不到帖子。",
+        "evidence": [
+          "First ever tool to view \"Instagram private posts\" anonymously",
+          "Can assist digital investigators (cyber units) to `access private account posts` which is revealed via collaborating with public account.",
+          "Created strictly for educational, research and digital investigation purposes. The developer is not responsible for any misuse."
+        ]
+      }
+    },
+    "sophiamyang/finger-frame-effect-ai": {
+      "category": "content-media",
+      "one_liner": "手指框选 AI 特效",
+      "intro": {
+        "one_liner": "手指取景框视频特效工具",
+        "what_it_is": "这是一个用 JavaScript 编写的网页应用，可把双手手指取景框视频交给视频模型重绘，再把生成画面合成到取景框内并导出。",
+        "problem_solved": "它解决普通视频风格化后与手部动作难对齐的问题，通过手部追踪和严格对齐提示，让动画世界跟随手指框移动。",
+        "who_should_care": "适合做短视频特效、创意演示和视频合成实验的开发者。",
+        "use_cases": [
+          "制作手指框内动画短片",
+          "试验视频重绘与手部追踪",
+          "批量生成合成视频"
+        ],
+        "alternatives": "同系列还有实时摄像头本地特效和实时人工智能版本；本项目面向录制视频，离线重绘需数分钟。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,001 星，且仅一天登上日榜。",
+        "risk_notes": "需自带 Gemini API 密钥并按视频计费；生成耗时数分钟；上传片段建议小于约 15MB，浏览器不支持 MP4 录制时导出为 webm。",
+        "evidence": [
+          "Upload a video of the two-hand finger-frame gesture — get it back with an **AI-generated world inside the frame**.",
+          "The AI step uses your own [Gemini API key](https://aistudio.google.com/apikey), entered in the app.",
+          "Generation is billed per video and takes a few minutes. Keep clips under ~15MB"
+        ]
+      }
+    },
+    "ProtonMail/android-mail": {
+      "category": "mobile",
+      "one_liner": "Proton Mail 安卓客户端",
+      "intro": {
+        "one_liner": "安卓邮件客户端源码",
+        "what_it_is": "这是 Proton Mail 的 Android 应用代码仓库，主要使用 Kotlin，包含构建、持续集成、部署和代码风格说明。",
+        "problem_solved": "为开发者提供安卓邮件客户端源码，便于自行构建、分叉实验，并了解应用的构建与发布流程。",
+        "who_should_care": "关注安卓邮件客户端实现、Kotlin 工程和客户端构建流程的开发者。",
+        "use_cases": [
+          "本地构建安卓邮件客户端",
+          "分叉仓库做个人实验",
+          "研究客户端工程配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上过一次日榜，破千时有一千零一颗星。",
+        "risk_notes": "目前不接收新议题和合并请求；构建需要配置 Java 17、Git LFS 和 google-services.json；代码采用 GPLv3。",
+        "evidence": [
+          "Proton Mail Android app",
+          "We’ve recently rebuilt the app and are focused on our current roadmap of features and fixes. Therefore, we are not accepting new issues or PRs at the moment: feel free to fork the repo for your own experiments.",
+          "The code and data files in this distribution are licensed under the terms of the GPLv3 as published by the Free Software Foundation."
+        ]
+      }
+    },
+    "yurijmikhalevich/rclip": {
+      "category": "dev-tools",
+      "one_liner": "终端离线图片搜索工具",
+      "intro": {
+        "one_liner": "终端本地图片搜索",
+        "what_it_is": "rclip 是本地离线图片搜索命令行工具，可用自然语言、示例图片或组合条件查找当前目录及子目录中的图片。",
+        "problem_solved": "它让用户无需打标签、上传或导入照片库，就能按图片内容检索本地磁盘、外接盘或网络存储中的图片。",
+        "who_should_care": "管理大量照片、偏好终端工作流或需远程检索图片的人。",
+        "use_cases": [
+          "用描述查找本地照片",
+          "按示例图找相似图片",
+          "脚本中输出检索结果"
+        ],
+        "alternatives": "相比云相册或需导入的照片应用，它强调本地运行、终端原生和配合 Unix 工具。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千星时为一千星。",
+        "risk_notes": "交互界面需要特定终端图形支持；macOS 安装说明仅支持 Apple Silicon；首次索引耗时取决于图片数量与处理器。",
+        "evidence": [
+          "grep for images – local, offline image search for the terminal",
+          "Search any folder by what its images contain. Use natural language, an example image, or both – without tagging, uploading, or importing your files into a photo library.",
+          "The first run in a directory indexes its images. How long it takes depends on their number and your CPU"
+        ]
+      }
+    },
+    "swc-17/SparseDrive": {
+      "category": "ai-model",
+      "one_liner": "稀疏场景端到端自动驾驶",
+      "intro": {
+        "one_liner": "稀疏端到端自动驾驶方案",
+        "what_it_is": "SparseDrive 是用 Python 实现的端到端自动驾驶方案，以稀疏场景表示统一检测、跟踪、建图、运动预测和规划。",
+        "problem_solved": "它试图解决多任务自动驾驶系统结构复杂、效率不足的问题，并通过并行规划与碰撞感知重评分提升规划安全性。",
+        "who_should_care": "自动驾驶研究者、算法工程师，以及关注端到端规划的学生。",
+        "use_cases": [
+          "复现端到端自动驾驶实验",
+          "研究稀疏场景表示",
+          "对比运动预测与规划方法"
+        ],
+        "alternatives": "相比 UniAD、VAD，强调稀疏实例表示、对称感知和并行运动规划。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上过一次日榜，且已破千星。",
+        "risk_notes": "代码和模型发布较晚；碰撞率评估曾重新实现；未见许可证信息。",
+        "evidence": [
+          "SparseDrive is a Sparse-Centric paradigm for end-to-end autonomous driving.",
+          "We explore the sparse scene representation for end-to-end autonomous driving and propose a Sparse-Centric paradigm named SparseDrive, which unifies multiple tasks with sparse instance representation.",
+          "We found that some collision cases were not taken into consideration in our previous code, so we re-implement the evaluation metric for collision rate in released code and provide updated results."
+        ]
+      }
+    },
+    "reactive-resume/reactive-resume": {
+      "category": "web-frontend",
+      "one_liner": "隐私优先简历生成器",
+      "intro": {
+        "one_liner": "隐私优先简历生成器",
+        "what_it_is": "Reactive Resume 是免费开源的简历与求职信制作工具，支持实时预览、模板定制、检查、导出和求职申请跟踪，也可自行部署。",
+        "problem_solved": "它让用户在掌控数据的前提下编写、排版、检查并导出简历，还能集中管理求职信、版本和投递进度。",
+        "who_should_care": "求职者、重视隐私与自托管的人，以及需要定制简历模板的开发者。",
+        "use_cases": [
+          "制作并导出多格式简历",
+          "检查简历可读性与关键词",
+          "跟踪求职申请和面试"
+        ],
+        "alternatives": "强调数据自有、无追踪无广告、无付费层，并提供自托管、公开链接和接口能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且已有四万二千五百四十二星。",
+        "risk_notes": "可选智能功能需自行连接服务提供方；自托管和服务使用可能产生费用；社区反馈需先移除私人信息。",
+        "evidence": [
+          "Reactive Resume is a free and open-source resume builder for writing resumes and cover letters, checking your work, and tracking job applications.",
+          "You own your data. The codebase is open source under the MIT license, with no tracking, no ads, and no paid tier.",
+          "Optional AI features use a provider you connect; hosting and provider usage may have their own costs."
+        ]
+      }
+    },
+    "tradecatlabs/vibe-coding-cn": {
+      "category": "learning-resource",
+      "one_liner": "AI 结对编程中文教程",
+      "intro": {
+        "one_liner": "中文 AI 编程教程",
+        "what_it_is": "这是一个围绕 Vibe Coding 的中文教程仓库，内容涉及 AI 结对编程工作流、提示词、技能、流程、上下文管理和 codex 实战指南。",
+        "problem_solved": "帮助中文开发者系统学习 AI 辅助编程的工作方法，减少从零散技巧到实际工作流之间的理解成本。",
+        "who_should_care": "想学习 AI 结对编程与 codex 实战的中文开发者。",
+        "use_cases": [
+          "学习 AI 编程工作流",
+          "查阅提示词与上下文管理",
+          "参考 codex 实战指南"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天且星数破千时已很高。",
+        "risk_notes": "缺少 README，教程结构、维护状态、许可证和可用性均无法确认；创建日期较新，结论置信度较低。",
+        "evidence": [
+          "Vibe Coding 从入门到精通教程｜AI 结对编程工作流｜Prompt、Skill、Workflow、上下文管理、codex实战指南",
+          "破千时的 Star 数：16181",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "DSH-EAC/DSH-Desktop-EAC": {
+      "category": "desktop-system",
+      "one_liner": "DeepSeek 桌面运行环境",
+      "intro": {
+        "one_liner": "DeepSeek 桌面工作台",
+        "what_it_is": "这是基于 DeepSeek Harness 的开源桌面工作台，连接对话、项目文件、工具执行与插件生态，并随包提供运行环境。",
+        "problem_solved": "它把 Agent 内核、桌面窗口、运行编排和插件管理整合起来，让用户从安装后直接进入工作，并集中查看文件变更与配置。",
+        "who_should_care": "想在桌面端使用 DeepSeek Harness、管理插件与项目会话的开发者。",
+        "use_cases": [
+          "在工作目录发起 Agent 任务",
+          "查看并还原会话文件变更",
+          "安装管理插件与界面皮肤"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 69 星且曾上日榜。",
+        "risk_notes": "创建日期与最近提交日期均晚于当前常见时间线，需核对；不同平台版本不一致；环境管理不提供文件系统沙箱隔离。",
+        "evidence": [
+          "Deepseek Harness EAC 是基于 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的开源桌面工作台。它将对话、项目文件、工具执行与插件生态连接起来，配合原生窗口、独立运行环境和随包运行时，让你从安装直接进入工作。",
+          "Windows 最新稳定版：**v6.0.0**。其余平台按包格式列出最近发布的下载文件，版本分别标注。",
+          "DPX 收容默认路径与环境变量，**不提供文件系统沙箱隔离**；进程对显式绝对路径的访问仍由操作系统权限控制。"
+        ]
+      }
+    }
+  }
+}

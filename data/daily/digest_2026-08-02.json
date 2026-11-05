@@ -1,1 +1,659 @@
-{"date":"2026-08-02","headline":"语音智能体领跑今日热度","points":["QwenAudio/qwen-audio-agent 单日新增 615，实时语音运行时最受关注。","AI Agent、开发工具、学习资源各有 4 个项目，方向分布较均衡。","Python 占 9 个项目，终端与安全工具也有 mesamirh/MovieBox-Tui、cisco-ai-defense/mcp-scanner 等新面孔。"],"items":{"QwenAudio/qwen-audio-agent":{"category":"ai-agent","one_liner":"智能体实时语音运行时"},"mesamirh/MovieBox-Tui":{"category":"content-media","one_liner":"MovieBox 终端影视界面"},"tracelabs/tlosint-vm":{"category":"security","one_liner":"开源情报调查虚拟机"},"shadcn-labs/termcn":{"category":"dev-tools","one_liner":"零配置终端界面组件"},"maka-agent/maka-agent":{"category":"ai-agent","one_liner":"本地优先桌面 AI 助手"},"osama-fawad/Pekingman":{"category":"other","one_liner":"信息不足的网页项目"},"D2I-CUHKSZ/MicroWorld":{"category":"other","one_liner":"信息不足的 Python 项目"},"jofizcd/Soul-of-Waifu":{"category":"ai-agent","one_liner":"桌面 AI 角色陪伴应用"},"deusyu/translate-book":{"category":"ai-agent","one_liner":"并行智能体整书翻译技能"},"Nystik-gh/ignis":{"category":"web-frontend","one_liner":"自托管 Obsidian 网页应用"},"1771-Technologies/lytenyte":{"category":"web-frontend","one_liner":"轻量 React 数据表格"},"alvinunreal/openpets":{"category":"desktop-system","one_liner":"本地优先桌宠伴侣平台"},"HalFrgrd/flyline":{"category":"dev-tools","one_liner":"现代化 Bash 行编辑插件"},"mikiarlo3/ai-copywriter":{"category":"content-media","one_liner":"拟人语气 AI 文案工具"},"cv-cat/XianYuApis":{"category":"automation","one_liner":"闲鱼接口与自动运营基座"},"cisco-ai-defense/mcp-scanner":{"category":"security","one_liner":"MCP 服务安全扫描器"},"TinyLLaVA/TinyLLaVA_Factory":{"category":"ai-model","one_liner":"小型多模态模型框架"},"abizovnuralem/go2_ros2_sdk":{"category":"hardware-iot","one_liner":"Unitree GO2 的 ROS2 SDK"},"doccker/cc-use-exp":{"category":"dev-tools","one_liner":"AI 编程工具配置模板"},"gdsfactory/gdsfactory":{"category":"hardware-iot","one_liner":"芯片与硬件设计库"},"chiphuyen/just-pandas-things":{"category":"learning-resource","one_liner":"pandas 怪癖清单"},"jianzongwu/Awesome-Open-Vocabulary":{"category":"learning-resource","one_liner":"开放词汇学习综述"},"d2lang/d2":{"category":"dev-tools","one_liner":"文本转图表的脚本语言"},"google/gemma.cpp":{"category":"ai-model","one_liner":"Gemma 轻量 C++ 推理引擎"},"qianguyihao/blog-list":{"category":"learning-resource","one_liner":"精品中文独立博客榜"},"MIgHTy-alIeN/Ethereum-Trading-Bot":{"category":"data-finance","one_liner":"以太坊套利交易机器人"},"gs00s/awesome-vue-3":{"category":"learning-resource","one_liner":"Vue 3 精选资源清单"}}}
+{
+  "date": "2026-08-02",
+  "headline": "语音智能体领跑今日热度",
+  "points": [
+    "QwenAudio/qwen-audio-agent 单日新增 615，实时语音运行时最受关注。",
+    "AI Agent、开发工具、学习资源各有 4 个项目，方向分布较均衡。",
+    "Python 占 9 个项目，终端与安全工具也有 mesamirh/MovieBox-Tui、cisco-ai-defense/mcp-scanner 等新面孔。"
+  ],
+  "items": {
+    "QwenAudio/qwen-audio-agent": {
+      "category": "ai-agent",
+      "one_liner": "智能体实时语音运行时",
+      "intro": {
+        "one_liner": "让 AI Agent 持续在线的实时语音运行时",
+        "what_it_is": "qwen-audio-agent 是一个面向 AI Agent 的实时语音运行时，用 JavaScript 编写，把实时语音前端与后端 Agent 解耦组合，让 Agent 在对话中持续保持在线。",
+        "problem_solved": "解决传统语音助手在 Agent 查资料、调用工具或执行任务时对话中断、用户干等的问题，使对话与后台任务并行，任务完成后结果自然回到当前对话。",
+        "who_should_care": "需要为 Agent 增加实时语音交互能力的开发者，以及做语音助手、客服、智能座舱、数字人等场景的团队。",
+        "use_cases": [
+          "桌面或终端语音助手，边聊边让后端 Agent 异步执行任务",
+          "智能座舱与客服场景的全双工语音交互",
+          "接入本地 speech-to-speech 或云端 Realtime 服务的多前端语音应用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：实时语音与 Agent 结合是当前关注方向，项目一周新增约 760 star，但发布历史集中在数月内，仍需观察长期维护。",
+        "risk_notes": "项目创建于 2026-07-27，历史较短；README 中部分模型与论文链接无法独立核实；接入多家云端语音服务需自备 API Key。",
+        "evidence": [
+          "A realtime voice runtime that keeps Agents talking, working, and present.",
+          "Frontend conversation and background tasks run in parallel; ask about progress or cancel at any time",
+          "Replaceable realtime voice frontends, with cloud services and local deployment options"
+        ]
+      }
+    },
+    "mesamirh/MovieBox-Tui": {
+      "category": "content-media",
+      "one_liner": "MovieBox 终端影视界面",
+      "intro": {
+        "one_liner": "Rust 编写的 MovieBox 终端影视播放器",
+        "what_it_is": "MovieBox-Tui 是一个用 Rust 编写的终端用户界面（TUI）应用，用于搜索、下载和播放电影、剧集、动漫及直播电视，并调用本地播放器（mpv、VLC、IINA）进行播放。",
+        "problem_solved": "它把影视检索、画质选择、字幕选择、批量下载和本地播放整合进一个键盘优先的终端界面，省去了在浏览器和播放器之间来回切换的麻烦。",
+        "who_should_care": "习惯在终端中工作、偏好键盘操作、希望用本地播放器观看影视内容的 macOS、Linux 和 Windows 用户，以及 Termux 上的 Android 用户。",
+        "use_cases": [
+          "在终端中搜索电影或剧集，选择 4K 或 1080p 画质后直接调用 mpv 播放",
+          "导入 M3U 直播源，按分类和 EPG 观看直播电视",
+          "对整季剧集进行多段并发下载，并支持断点续传"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：终端 TUI 影视客户端属于小众方向，一周新增 38 星、曾登上日榜 1 天，热度更多来自话题性而非长期生态积累。",
+        "risk_notes": "README 声明不托管媒体、仅播放公开可用的流，用户需自行遵守当地法律，内容来源的合规性存在风险；项目创建于 2026-07-16，历史较短；README 中提供加密货币打赏地址；安装方式包含 curl | bash 与 irm | iex 这类直接执行远程脚本的形式，需自行核验。",
+        "evidence": [
+          "A modern Rust based terminal user interface for MovieBox. Fast, lightweight, keyboard first, and cross-platform.",
+          "MovieBox-TUI does not host or store media. It plays publicly available streams. Users must comply with local laws.",
+          "Dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE)."
+        ]
+      }
+    },
+    "tracelabs/tlosint-vm": {
+      "category": "security",
+      "one_liner": "开源情报调查虚拟机",
+      "intro": {
+        "one_liner": "开源情报虚拟机",
+        "what_it_is": "这是一个用于构建 Linux 开源情报发行版的仓库，提供预构建虚拟机镜像、构建配方和按需安装工具的脚本。",
+        "problem_solved": "它把开源情报调查所需的系统、工具安装、浏览器加固和笔记环境集中起来，减少自行配置环境的工作量。",
+        "who_should_care": "开源情报调查者、参赛者，以及需要定制调查虚拟机的开发者。",
+        "use_cases": [
+          "导入预构建虚拟机开展调查",
+          "在 Debian 系系统按需装工具",
+          "自行构建或修改虚拟机镜像"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上日榜一天，关注度集中。",
+        "risk_notes": "多数工具不再预装，需手动运行脚本；部分可选工具默认关闭，其中一个仍待服务条款审查；默认登录凭据固定。",
+        "evidence": [
+          "The repository includes a [recipe file](./tlosint.yaml) to build a Linux OSINT Distribution for Trace Labs based on the Kali Linux kali-vm script",
+          "The majority of OSINT tools no longer come pre-packaged with the VM. There is an option to download them via a helper script.",
+          "This repository is actively maintained by Trace Labs staff."
+        ]
+      }
+    },
+    "shadcn-labs/termcn": {
+      "category": "dev-tools",
+      "one_liner": "零配置终端界面组件",
+      "intro": {
+        "one_liner": "终端界面组件库",
+        "what_it_is": "termcn 是面向 React 的终端界面组件库，基于 Ink 和 OpenTUI，强调零配置、一条命令安装，并兼容 shadcn/ui 的注册表格式与命令行工具。",
+        "problem_solved": "它让开发者用声明式组件搭建终端界面，减少主题适配、导航、图表和人工智能交互界面等常见界面的重复实现。",
+        "who_should_care": "用 React 开发命令行工具、终端仪表盘或人工智能终端界面的开发者。",
+        "use_cases": [
+          "构建命令行工具的交互界面",
+          "制作终端图表和数据面板",
+          "搭建人工智能聊天与审批界面"
+        ],
+        "alternatives": "与同类项目相比，强调兼容 shadcn/ui 的注册表格式与命令行工具，并提供人工智能组件。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 33 星，且本周上过一次日榜。",
+        "risk_notes": "创建时间较新，仍有 16 个未关闭问题；生产可用性和长期维护情况尚不明确。",
+        "evidence": [
+          "Free & open-source, ready-to-use, customizable terminal UI components for React.",
+          "Zero config. One command setup. Built on Ink and OpenTUI, works seamlessly with shadcn/ui.",
+          "📦 shadcn/ui compatible — Uses the same registry format and CLI"
+        ]
+      }
+    },
+    "maka-agent/maka-agent": {
+      "category": "ai-agent",
+      "one_liner": "本地优先桌面 AI 助手",
+      "intro": {
+        "one_liner": "本地优先智能体工作台",
+        "what_it_is": "Maka 是本地优先的 AI 桌面助手，也是记录完整执行过程的智能体工作台，提供桌面端、终端界面、命令行和评估入口。",
+        "problem_solved": "它把模型消息、工具调用、权限决定和终止记录为只追加日志，用于任务执行、界面展示、崩溃恢复和可核验评估。",
+        "who_should_care": "关注本地数据、执行可追溯和智能体评估的开发者。",
+        "use_cases": [
+          "在本机运行智能体任务",
+          "复盘工具调用与权限决定",
+          "用统一运行时做评估"
+        ],
+        "alternatives": "强调完整运行日志、本地留存和统一执行权威，并公开逐任务评估记录。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 236 星，曾有一天进入日榜。",
+        "risk_notes": "处于孵化状态，最新发布版为 0.2.2；未关闭 Issue 有 456 个；开发构建不是正式发布版。",
+        "evidence": [
+          "Apache Maka (Incubating) is a high-performance agent workspace that keeps a complete record of everything it did.",
+          "The log is the runtime. Every model message, tool call, permission decision and termination is an append-only RuntimeEvent.",
+          "The latest Apache release is 0.2.2 (incubating)."
+        ]
+      }
+    },
+    "osama-fawad/Pekingman": {
+      "category": "other",
+      "one_liner": "信息不足的网页项目",
+      "intro": {
+        "one_liner": "多模态虚拟角色智能体",
+        "what_it_is": "Pekingman 是面向虚拟角色的智能体系统，把环境感知、长期记忆、推理、情绪与行为响应连成循环。",
+        "problem_solved": "它试图让复杂场景中的非玩家角色记住过往互动，并根据当前环境持续做出连贯、拟人的行为反馈。",
+        "who_should_care": "做虚拟角色、数字人、模拟游戏和交互式内容的开发者。",
+        "use_cases": [
+          "开放世界非玩家角色行为",
+          "数字人长期互动记忆",
+          "仿真环境角色可视化"
+        ],
+        "alternatives": "相比基础触发逻辑，强调多模态感知、长期记忆和实时响应。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但创建时间很短。",
+        "risk_notes": "高级能力仍属实验性，部分功能依赖可选服务；发布前需排查本地凭据、生成输出和私有文档。",
+        "evidence": [
+          "Pekingman connects perception, memory, reasoning, emotion, and action into one continuous agent loop.",
+          "Several advanced capabilities are experimental and may fall back when optional services are unavailable.",
+          "破千时的 Star 数：1005；本周上日榜天数：1"
+        ]
+      }
+    },
+    "D2I-CUHKSZ/MicroWorld": {
+      "category": "other",
+      "one_liner": "信息不足的 Python 项目",
+      "intro": {
+        "one_liner": "多模态社会模拟系统",
+        "what_it_is": "MicroWorld 把文档、图片、视频等材料整理成事件图谱，生成智能体画像并运行可检查的社会模拟。",
+        "problem_solved": "它让事件分析不只产出最终报告，还保留图谱、提示、轨迹、记忆和报告，便于复盘讨论演化。",
+        "who_should_care": "研究事件传播、多智能体模拟或需要复盘材料链路的开发者。",
+        "use_cases": [
+          "分析新闻事件的舆论演化",
+          "构建多平台讨论模拟",
+          "检查智能体运行中间产物"
+        ],
+        "alternatives": "相比只给报告的流程，它强调多模态输入、拓扑影响和可检查产物。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "需配置大模型和 ZEP 密钥；视频输入推荐安装 ffmpeg 与 ffprobe；创建时间较新。",
+        "evidence": [
+          "A lightweight system for turning event materials into structured graphs, agent populations, and inspectable social simulations.",
+          "It is built for cases where *the final report is not enough on its own*. The project keeps the graph 📊, prompts 💬, simulation inputs 🎬, action traces 👣, memory states 🧠, and report outputs 📑 tied to the same run.",
+          "破千时的 Star 数：1009；本周上日榜天数：1"
+        ]
+      }
+    },
+    "jofizcd/Soul-of-Waifu": {
+      "category": "ai-agent",
+      "one_liner": "桌面 AI 角色陪伴应用",
+      "intro": {
+        "one_liner": "本地桌面 AI 角色伴侣",
+        "what_it_is": "这是一个开源桌面应用，让自建或导入的 AI 角色在文字语音聊天、桌面陪伴、角色扮演和长期记忆中保持同一身份。",
+        "problem_solved": "它把角色从单一聊天窗口扩展到语音、Live2D/VRM 形象、桌面代理和跑团模式，并用持续记忆减少每次会话割裂。",
+        "who_should_care": "想本地运行 AI 角色、虚拟形象、语音互动或桌面跑团的开发者与爱好者。",
+        "use_cases": [
+          "与角色文字或语音聊天",
+          "用 Live2D/VRM 形象陪伴桌面",
+          "运行带记忆的桌面跑团"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 123 星，并曾有一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0；桌面代理可控制鼠标键盘、运行代码和整理文件，需留意权限与审批设置；仍有 15 个未关闭问题。",
+        "evidence": [
+          "Soul of Waifu is a desktop roleplay & AI companion app featuring Live2D/VRM avatars, voice chat & local LLM.",
+          "Everything runs **100% locally on your PC by default** - your chats with characters can live entirely offline, with no subscriptions and no filters.",
+          "Every risky action is gated behind an on-screen approval system, so nothing runs without your say-so."
+        ]
+      }
+    },
+    "deusyu/translate-book": {
+      "category": "ai-agent",
+      "one_liner": "并行智能体整书翻译技能",
+      "intro": {
+        "one_liner": "整书翻译智能体技能",
+        "what_it_is": "这是一个供 Codex、Claude Code 和 OpenClaw 使用的智能体技能，用并行子智能体把 PDF、DOCX、EPUB 或 Markdown 整书翻译成多种语言，并输出多种格式。",
+        "problem_solved": "它解决长书在单次会话中翻译容易受上下文累积和输出截断影响的问题，通过分块、并行翻译、校验、续跑和合并构建形成完整流程。",
+        "who_should_care": "需要批量翻译整本书，并已使用智能体运行环境的开发者。",
+        "use_cases": [
+          "把整本电子书译成中文",
+          "续跑中断的翻译任务",
+          "生成多格式译文文件"
+        ],
+        "alternatives": "相比原项目以脚本串联命令行，它改为智能体技能，并加入并行子智能体、清单校验、续跑和统一输出流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 24 星，仅一天进入日榜。",
+        "risk_notes": "依赖 Codex、Claude Code 或 OpenClaw，以及 Calibre、Pandoc 和 Python 组件；贡献方式不鼓励直接提交拉取请求；未关闭问题仅 1 个，但项目创建较新。",
+        "evidence": [
+          "An agent skill for Codex, Claude Code, and OpenClaw that translates entire books (PDF/DOCX/EPUB) into any language using parallel subagents.",
+          "Each chunk gets its own independent subagent with a fresh context window. This prevents context accumulation and output truncation that happen when translating a full book in a single session.",
+          "Pull requests are not the preferred contribution path and may be closed in favor of an issue."
+        ]
+      }
+    },
+    "Nystik-gh/ignis": {
+      "category": "web-frontend",
+      "one_liner": "自托管 Obsidian 网页应用",
+      "intro": {
+        "one_liner": "浏览器版 Obsidian 自托管工具",
+        "what_it_is": "Ignis 是兼容层，让 Obsidian 在标准浏览器中运行，并把笔记库保存在服务端。项目不分发 Obsidian，容器首次运行时从官方来源下载。",
+        "problem_solved": "它解决远程访问自有 Obsidian 安装时依赖远程桌面、体验较差的问题，提供接近原生形态的浏览器访问方式。",
+        "who_should_care": "想自托管并从浏览器访问 Obsidian 的笔记用户和运维开发者。",
+        "use_cases": [
+          "用 Docker 部署浏览器笔记环境",
+          "远程访问服务端笔记库",
+          "多标签页管理多个笔记库"
+        ],
+        "alternatives": "相比远程桌面方案，它无需 VNC，直接在浏览器中运行，但部分插件能力受限。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 80 星，曾有一天进入日榜。",
+        "risk_notes": "项目仍较新且处于活跃开发；无内置认证，暴露到公网前需加认证和 HTTPS；部分依赖 Electron 或 Node 能力的插件不可用。",
+        "evidence": [
+          "Run Obsidian as a self-hosted web app. Not remote desktop, an actual web app.",
+          "Ignis is a compatibility shim that provides browser-compatible implementations of the Electron APIs used by Obsidian, allowing Obsidian to run in a standard browser while keeping your vault on the server.",
+          "It's still a new project, so gaps get documented and fixed as I go."
+        ]
+      }
+    },
+    "1771-Technologies/lytenyte": {
+      "category": "web-frontend",
+      "one_liner": "轻量 React 数据表格",
+      "intro": {
+        "one_liner": "React 数据表格组件库",
+        "what_it_is": "LyteNyte Grid 是 TypeScript 编写的 React 数据表格单仓库，提供无样式和预置样式两种用法，并包含声明式接口与企业级表格功能。",
+        "problem_solved": "它想减少从零构建功能丰富数据表格的工程投入，让开发者更快获得筛选、分组、编辑、虚拟化和主题定制等能力。",
+        "who_should_care": "需要在 React 应用中构建复杂数据表格的开发者，尤其关注定制和类型安全的人。",
+        "use_cases": [
+          "后台管理系统的大数据表格",
+          "需要筛选分组编辑的表格",
+          "用 AI 工具生成表格实现"
+        ],
+        "alternatives": "强调零依赖、声明式接口、无样式与预置样式可切换，并提供 AI Skills。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "专业版无许可证会显示水印；仓库创建于 2025 年，项目较新；功能与定价分 Core 和 PRO。",
+        "evidence": [
+          "LyteNyte Grid monorepo: Build powerful data tables with a lightning-fast, zero-dependency React data grid (~40 KB). Headless or pre-styled. Declarative API. 150+ enterprise-grade features. Supported by 1771 Technologies.",
+          "Building a feature-rich data grid that remains highly performant for end users takes a long time. Time that could be spent focusing on your application.",
+          "You can install and use LyteNyte Grid PRO without a license, but a watermark will be displayed."
+        ]
+      }
+    },
+    "alvinunreal/openpets": {
+      "category": "desktop-system",
+      "one_liner": "本地优先桌宠伴侣平台",
+      "intro": {
+        "one_liner": "桌面宠物伴侣平台",
+        "what_it_is": "一个本地优先的桌面伴侣平台，包含动画宠物、插件开发工具和编码智能体集成。",
+        "problem_solved": "把桌面宠物、插件扩展和编码智能体连接放到同一桌面平台中。",
+        "who_should_care": "关注桌面宠物、插件扩展和编码智能体集成的开发者。",
+        "use_cases": [
+          "开发桌面宠物插件",
+          "接入编码智能体",
+          "迁移旧版安装"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 24 星，仅一天进入日榜。",
+        "risk_notes": "该仓库被描述为兼容发布镜像，正式源码和发布地址另有指向；创建日期晚于最近提交日期，数据存在异常。",
+        "evidence": [
+          "Compatibility release mirror for migrated OpenPets installs.",
+          "Local first, desktop companion platform with animated pets, plugin SDK and coding-agent integrations.",
+          "创建日期：2026-05-04；最近一次提交：2026-09-27"
+        ]
+      }
+    },
+    "HalFrgrd/flyline": {
+      "category": "dev-tools",
+      "one_liner": "现代化 Bash 行编辑插件",
+      "intro": {
+        "one_liner": "现代化 Bash 行编辑插件",
+        "what_it_is": "Flyline 是替换 Bash 默认 readline 的插件，用 Rust 编写，提供语法高亮、丰富提示符、提示气泡、模糊历史搜索等命令行编辑能力。",
+        "problem_solved": "它解决 Bash 默认行编辑功能较少的问题，把自动建议、鼠标操作、补全改进、代理辅助写命令和界面定制集中到一个插件里。",
+        "who_should_care": "重度 Bash 用户、终端定制爱好者，以及想用 Rust 扩展 Shell 体验的开发者。",
+        "use_cases": [
+          "定制动态提示符",
+          "模糊搜索命令历史",
+          "改进补全与鼠标编辑"
+        ],
+        "alternatives": "资料提到与 ble.sh 相似；差异是 Flyline 用 Rust 编写，并借助 ratatui.rs 绘制复杂界面。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星后一周新增 21 星，仅一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0；未关闭 Issue 有 52 个；安装需加载 Bash 内置模块，macOS 还需较新 Bash。",
+        "evidence": [
+          "Flyline is a readline replacement that provides an enhanced line editing experience",
+          "Flyline is similar to ble.sh but is written in Rust and uses ratatui.rs to more easily draw complex user interfaces.",
+          "许可证：GPL-3.0；未关闭 Issue 数：52"
+        ]
+      }
+    },
+    "mikiarlo3/ai-copywriter": {
+      "category": "content-media",
+      "one_liner": "拟人语气 AI 文案工具",
+      "intro": {
+        "one_liner": "拟人化营销文案技能",
+        "what_it_is": "一个以 Markdown 提供的可移植智能体技能，结合文案写作方法与人味化规则，用于生成标题、简介、短文案等。",
+        "problem_solved": "解决模型文案空泛、像机器生成、容易编造产品事实的问题；写作前会追问受众、品类和真实故事。",
+        "who_should_care": "需要营销文案、产品微文案，并使用智能体技能或大模型的开发者与内容工作者。",
+        "use_cases": [
+          "生成标题和邮件主题",
+          "改写产品简介与按钮文案",
+          "去除文案中的机器味"
+        ],
+        "alternatives": "在 Humanizer 的 33 条模式上加入文案创作与访谈流程，强调先写吸引人的文案再避免机器味。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾破千星且上过日榜，但一周减少 50 星。",
+        "risk_notes": "创建时间很新，未关闭问题仍有 2 个；一周星数回落，热度可能不稳定；依赖用户先提供真实事实。",
+        "evidence": [
+          "A portable agent skill that does the two halves of the copy job most tools split apart: it writes copy that earns attention (clickbait titles, short descriptions, microcopy, subject lines), and it strips out every sign of AI-generated writing so the result reads like a person wrote it.",
+          "It is built on [blader's Humanizer](https://github.com/blader/humanizer), which packaged Wikipedia's \"Signs of AI writing\" guide into 33 detectable, fixable patterns.",
+          "The skill also refuses to invent product facts. If the strongest headline needs a number, the number has to come from you. It will ask rather than make one up."
+        ]
+      }
+    },
+    "cv-cat/XianYuApis": {
+      "category": "automation",
+      "one_liner": "闲鱼接口与自动运营基座",
+      "intro": {
+        "one_liner": "闲鱼第三方接口库",
+        "what_it_is": "一个封装闲鱼消息通信与部分接口的第三方集成库，用于搭建自动回复和智能客服底座。",
+        "problem_solved": "闲鱼官方未开放私信接口，它提供消息收发、登录态维持、商品信息和图片上传等能力。",
+        "who_should_care": "想做闲鱼自动回复、客服机器人或智能体接入的开发者。",
+        "use_cases": [
+          "接入大模型自动回复私信",
+          "获取历史聊天与商品详情",
+          "常驻进程收发文字和图片"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且已有多个衍生案例。",
+        "risk_notes": "依赖逆向协议和登录 Cookie，平台变化可能导致失效；需自行注意合规与账号风险。",
+        "evidence": [
+          "闲鱼官方没有开放 IM 消息接口。想要接入 GPT、Claude、本地大模型来做智能客服，首先需要能**稳定收发消息**。",
+          "逆向还原了闲鱼 WebSocket 私信协议（sign 签名 + base64 + Protobuf）",
+          "破千时的 Star 数：1001；本周上日榜天数：1；Fork 数：254"
+        ]
+      }
+    },
+    "cisco-ai-defense/mcp-scanner": {
+      "category": "security",
+      "one_liner": "MCP 服务安全扫描器",
+      "intro": {
+        "one_liner": "MCP 服务安全扫描器",
+        "what_it_is": "这是一个用 Python 编写的工具，可扫描 MCP 服务器、工具、提示、资源和源码中的潜在安全发现。",
+        "problem_solved": "它帮助发现恶意 MCP 工具、依赖漏洞、二进制恶意文件、生产就绪问题和行为代码威胁。",
+        "who_should_care": "开发或接入 MCP 服务、关注智能体供应链安全的开发者与安全团队。",
+        "use_cases": [
+          "上线前检查 MCP 服务",
+          "在流水线中离线扫描",
+          "审计依赖和二进制文件"
+        ],
+        "alternatives": "相比单一规则扫描，它组合 YARA、大模型分析和 Cisco AI Defense 三类引擎。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 11 星且曾上日榜，但新增热度不高。",
+        "risk_notes": "部分能力依赖可选接口密钥；未关闭 Issue 较多；README 提到现代协议与旧协议兼容，接入时需验证。",
+        "evidence": [
+          "A Python tool for scanning MCP (Model Context Protocol) servers and tools for potential security findings.",
+          "The MCP Scanner combines Cisco AI Defense inspect API, YARA rules and LLM-based analysis to detect malicious MCP tools.",
+          "Multiple Modes: Run scanner as a stand-alone CLI tool or REST API server"
+        ]
+      }
+    },
+    "TinyLLaVA/TinyLLaVA_Factory": {
+      "category": "ai-model",
+      "one_liner": "小型多模态模型框架",
+      "intro": {
+        "one_liner": "小型多模态模型框架",
+        "what_it_is": "这是一个用 Python 编写的开源模块化代码库，基于 PyTorch 和 HuggingFace，用于构建、训练和评估小规模大型多模态模型。",
+        "problem_solved": "它把语言模型、视觉塔、连接器和训练配方组合起来，帮助开发者用更少代码定制多模态模型，并强调实现简洁、功能可扩展和训练可复现。",
+        "who_should_care": "研究或开发视觉语言模型、想低成本定制和微调小型多模态模型的开发者。",
+        "use_cases": [
+          "组合不同语言模型与视觉编码器",
+          "训练或微调小型视觉语言模型",
+          "运行本地演示与命令行推理"
+        ],
+        "alternatives": "强调模块化、可扩展和训练可复现，并集成多种语言模型、视觉塔、连接器与微调方式。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，近期有相关新工作发布。",
+        "risk_notes": "环境要求与 LLaVA 不同，建议从零创建环境；安装还需额外组件；演示访问设有密码。",
+        "evidence": [
+          "TinyLLaVA Factory is an open-source modular codebase for small-scale large multimodal models (LMMs), implemented in PyTorch and HuggingFace, with a focus on simplicity of code implementations, extensibility of new features, and reproducibility of training results.",
+          "With TinyLLaVA Factory, you can customize your own large multimodal models with less coding effort and less coding mistakes.",
+          "Please note that our environment requirements are different from LLaVA's environment requirements. We strongly recommend you create the environment from scratch as follows."
+        ]
+      }
+    },
+    "abizovnuralem/go2_ros2_sdk": {
+      "category": "hardware-iot",
+      "one_liner": "Unitree GO2 的 ROS2 SDK",
+      "intro": {
+        "one_liner": "Unitree Go2 的 ROS2 集成",
+        "what_it_is": "这是面向 Unitree GO2 AIR、PRO、EDU 的非官方 ROS2 支持项目，使用 Python，可通过无线或以太网连接机器人。",
+        "problem_solved": "让 Go2 机器人接入 ROS2，提供状态、传感器、相机、雷达、建图、导航和手柄控制等能力。",
+        "who_should_care": "使用 Go2 做机器人开发、ROS2 建图导航或传感器集成的开发者。",
+        "use_cases": [
+          "用手柄实时控制 Go2",
+          "采集雷达数据并建图",
+          "在 ROS2 中查看相机与状态"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注集中。",
+        "risk_notes": "项目为非官方支持；近期重构后仍有关节状态延迟；安装依赖和固件版本可能影响功能。",
+        "evidence": [
+          "Unofficial ROS2 SDK support for Unitree GO2 AIR/PRO/EDU",
+          "This repo will empower your Unitree GO2 AIR/PRO/EDU robots with ROS2 capabilities, using both WebRTC (Wi-Fi) and CycloneDDS (Ethernet) protocols.",
+          "However, joint states still arrive at 1 Hz, so you may notice some URDF update lag—that’s expected with the new firmware (v1.1.7)."
+        ]
+      }
+    },
+    "doccker/cc-use-exp": {
+      "category": "dev-tools",
+      "one_liner": "AI 编程工具配置模板",
+      "intro": {
+        "one_liner": "AI 编码助手配置模板",
+        "what_it_is": "一套面向多种编码助手的分层配置模板，包含规则、技能、命令、模板和同步脚本，主要语言为 Python。",
+        "problem_solved": "减少在不同工具中重复说明技术栈、项目结构和编码规范，并把协作约定沉淀为可维护配置。",
+        "who_should_care": "同时使用多种 AI 编码助手、希望统一协作规则的开发者和团队。",
+        "use_cases": [
+          "为多个编码助手同步规则",
+          "沉淀团队编码约定",
+          "降低危险操作风险"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增三星且仅一天进入日榜。",
+        "risk_notes": "仓库已声明停止更新，现有内容保持可用；新能力迁往别处，且加入方式为付费小群。",
+        "evidence": [
+          "让 Claude Code、Antigravity、Gemini CLI、Codex、Cursor 开箱即用的分层配置模板，总结十多年的日常开发经验，持续完善中……",
+          "不是提示词集合，而是一套可维护的 AI 协作配置系统。",
+          "本仓库已停止更新 / This Repository Is No Longer Maintained"
+        ]
+      }
+    },
+    "gdsfactory/gdsfactory": {
+      "category": "hardware-iot",
+      "one_liner": "芯片与硬件设计库",
+      "intro": {
+        "one_liner": "Python 硬件设计库",
+        "what_it_is": "GDSFactory 是用 Python 编写芯片、电路板和三维可打印对象设计的库，可输出 GDS、OASIS、STL、GERBER 等文件。",
+        "problem_solved": "它把硬件版图设计、验证和仿真流程用代码串起来，减少重复绘制，并让设计意图、参数和测试协议更易管理。",
+        "who_should_care": "光子芯片、模拟、量子、微机电及硬件自动化开发者。",
+        "use_cases": [
+          "用 Python 生成芯片版图",
+          "输出制造用 CAD 文件",
+          "连接仿真与验证流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，硬件设计代码化和端到端流程有持续需求。",
+        "risk_notes": "当前版本为 10.0.0rc1，属于候选发布版；部分代工厂工艺设计套件需保密协议和订阅。",
+        "evidence": [
+          "GDSFactory is a Python library for designing chips (Photonics, Analog, Quantum, MEMS), PCBs, and 3D-printable objects.",
+          "As input you write python code, as an output GDSFactory creates CAD files (GDS, OASIS, STL, GERBER).",
+          "Access PDKs under NDA require a **GDSFactory+** subscription."
+        ]
+      }
+    },
+    "chiphuyen/just-pandas-things": {
+      "category": "learning-resource",
+      "one_liner": "pandas 怪癖清单",
+      "intro": {
+        "one_liner": "pandas 怪异行为清单",
+        "what_it_is": "这是一个用 Jupyter Notebook 整理的 pandas 特性清单，记录索引、切片、访问器、数据探索和常见陷阱等容易让人困惑的行为。",
+        "problem_solved": "帮助已经用过 pandas 的开发者理解反直觉行为，避开警告和常见坑，并写出更顺手的代码。",
+        "who_should_care": "日常使用 pandas 的数据分析、数据科学和机器学习开发者。",
+        "use_cases": [
+          "排查 SettingWithCopyWarning",
+          "理解索引与切片差异",
+          "查阅 pandas 常见陷阱"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千星时为一千星。",
+        "risk_notes": "内容定位不是初学者教程；仓库仍计划持续更新，且作者表示自己仍在学习 pandas 怪异之处。",
+        "evidence": [
+          "An ongoing list of pandas quirks",
+          "This repo contains a few peculiar things I've learned about pandas that have made my life easier and my code faster.",
+          "I'll continue updating this repo as I have more time. As I'm still learning pandas quirks, feedback is much appreciated."
+        ]
+      }
+    },
+    "jianzongwu/Awesome-Open-Vocabulary": {
+      "category": "learning-resource",
+      "one_liner": "开放词汇学习综述",
+      "intro": {
+        "one_liner": "开放词汇学习资料库",
+        "what_it_is": "这是开放词汇学习综述的配套仓库，记录、跟踪并整理相关论文、实现与结果对比。",
+        "problem_solved": "它把检测、分割、视频与三维场景等开放词汇研究集中梳理，方便查阅方法和比较代表性工作。",
+        "who_should_care": "计算机视觉研究者，以及需要调研开放词汇方法的开发者。",
+        "use_cases": [
+          "查找开放词汇论文",
+          "比较代表性方法结果",
+          "追踪新论文与代码"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天登上日榜。",
+        "risk_notes": "内容以论文清单和综述补充为主，收录范围可能不全，更新依赖社区提交。",
+        "evidence": [
+          "This repo is used for recording, tracking, and benchmarking several recent open vocabulary methods to supplement our [survey](https://arxiv.org/abs/2306.15880).",
+          "This survey presents the first detailed survey on open vocabulary tasks, including open-vocabulary object detection, open-vocabulary segmentation, and 3D/video open-vocabulary tasks.",
+          "We list detailed results for the most representative works and give a fairer and clearer comparison of different approaches."
+        ]
+      }
+    },
+    "d2lang/d2": {
+      "category": "dev-tools",
+      "one_liner": "文本转图表的脚本语言",
+      "intro": {
+        "one_liner": "文本转图表语言",
+        "what_it_is": "D2 是一门用文本描述并生成图表的脚本语言，可用命令行把 .d2 文件渲染成 SVG，也可作为 Go 库使用。",
+        "problem_solved": "让开发者用可维护的文本编写架构图、流程图等图示，并支持主题、自动格式化、语法高亮和多种导出格式。",
+        "who_should_care": "需要文档化软件架构、维护大型图示或把绘图集成进 Go 程序的开发者。",
+        "use_cases": [
+          "用文本绘制软件架构图",
+          "命令行生成并实时预览 SVG",
+          "在 Go 程序中生成图表"
+        ],
+        "alternatives": "提供三种内置布局引擎、主题、语言工具链和多种导出格式；具体对比资料指向专门页面。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，文本化图表便于版本管理和文档维护，已有较多关注与分支。",
+        "risk_notes": "采用 Mozilla Public License 2.0；部分语言工具仍列为计划；TALA 布局引擎为可选启用。",
+        "evidence": [
+          "D2 is a modern diagram scripting language that turns text to diagrams.",
+          "The most convenient way to use D2 is to just run it as a CLI executable to produce SVGs from `.d2` files.",
+          "Open sourced under the Mozilla Public License 2.0."
+        ]
+      }
+    },
+    "google/gemma.cpp": {
+      "category": "ai-model",
+      "one_liner": "Gemma 轻量 C++ 推理引擎",
+      "intro": {
+        "one_liner": "Gemma 轻量推理引擎",
+        "what_it_is": "一个用 C++ 编写的轻量、独立推理引擎，面向 Google 的 Gemma 基础模型，支持 Gemma 2、Gemma 3 和 PaliGemma 2 的极简实现。",
+        "problem_solved": "填补部署型 C++ 推理运行时不便实验、Python 研究框架又隐藏底层计算之间的空白，便于直接修改和嵌入。",
+        "who_should_care": "关注模型推理底层实现、算法与计算协同设计的研究者和 C++ 开发者。",
+        "use_cases": [
+          "在 CPU 上实验 Gemma 推理",
+          "嵌入其他项目并减少依赖",
+          "研究采样、反向传播和优化器"
+        ],
+        "alternatives": "相比通用部署路径，更强调简洁、直接、易修改；生产边缘部署建议使用标准 Python 框架路径。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 7,004 星，本周上日榜一天。",
+        "risk_notes": "定位为实验和研究用途，不建议作为生产边缘部署路径；活跃开发在 dev 分支，main 分支更稳定；模型转换尚未开源。",
+        "evidence": [
+          "lightweight, standalone C++ inference engine for Google's Gemma models.",
+          "gemma.cpp targets experimentation and research use cases.",
+          "For production-oriented edge deployments we recommend standard deployment pathways using Python frameworks like JAX, Keras, PyTorch, and Transformers"
+        ]
+      }
+    },
+    "qianguyihao/blog-list": {
+      "category": "learning-resource",
+      "one_liner": "精品中文独立博客榜",
+      "intro": {
+        "one_liner": "精品中文独立博客榜单",
+        "what_it_is": "一个按主题整理的中文独立博客收录清单，强调持续更新、高质量、阅读体验和订阅支持。",
+        "problem_solved": "帮助读者从分散的中文博客中筛选优质站点，并按主题发现值得长期阅读的内容。",
+        "who_should_care": "想发现优质中文博客、寻找订阅源或交流写作的读者与博主。",
+        "use_cases": [
+          "按主题挑选博客阅读",
+          "寻找可订阅的优质内容源",
+          "参考分类整理个人阅读清单"
+        ],
+        "alternatives": "列出多个同类博客列表与订阅计划链接，差异是按主题精选并设收录条件。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且已有较多收藏。",
+        "risk_notes": "收录标准依赖人工判断；不接受自荐；部分分类包含很久未更新的经典内容。",
+        "evidence": [
+          "中文博客琅琊榜，只收录优质的中文独立博客，全网最精品。已收录博客数量：605 个博客站点。",
+          "收录条件：持续更新、高质量、阅读体验良好、最好提供RSS订阅链接。",
+          "中文博客琅琊榜，只收录精品独立博客"
+        ]
+      }
+    },
+    "MIgHTy-alIeN/Ethereum-Trading-Bot": {
+      "category": "data-finance",
+      "one_liner": "以太坊套利交易机器人",
+      "intro": {
+        "one_liner": "以太坊套利机器人",
+        "what_it_is": "这是一个由智能合约和外部自动化脚本组成的以太坊套利机器人，主要用 Solidity 编写，可在资金池和路由之间查找并执行套利机会。",
+        "problem_solved": "它把套利机会检查、单笔交易执行、路由与代币白名单、额度限制、暂停和提现等操作集中到合约与外部脚本中，减少手动调用。",
+        "who_should_care": "关注链上套利、智能合约部署和自动化脚本的开发者。",
+        "use_cases": [
+          "部署合约并配置白名单",
+          "用自动化脚本定时检查套利",
+          "查看主网兑换事件日志"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千七百六十星，本周上日榜一天。",
+        "risk_notes": "资料要求向合约转入 0.5 到 1 ETH，并连接钱包确认交易；收益描述明确不保证，且涉及资金授权、提现和暂停权限。",
+        "evidence": [
+          "An arbitrage bot is a smart contract connected to an external automation script that controls its operation.",
+          "send **0.5 to 1 ETH** — this is enough for beginners.",
+          "Results are not guaranteed and may vary depending on market conditions."
+        ]
+      }
+    },
+    "gs00s/awesome-vue-3": {
+      "category": "learning-resource",
+      "one_liner": "Vue 3 精选资源清单",
+      "intro": {
+        "one_liner": "Vue 3 资源精选清单",
+        "what_it_is": "这是一个围绕 Vue 3 的精选资源清单，汇总官方文档、文章、包、示例、工具、视频、书籍和课程等链接。",
+        "problem_solved": "它把分散的 Vue 3 学习与开发资料集中整理，方便开发者按主题查找入门、迁移、组件开发和生态工具资料。",
+        "who_should_care": "正在学习、迁移或使用 Vue 3 的前端开发者，以及需要查找相关生态资源的人。",
+        "use_cases": [
+          "查找 Vue 3 官方资料",
+          "按主题学习新特性",
+          "寻找包、示例和工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时已有 1,645 星。",
+        "risk_notes": "清单类项目依赖链接持续维护；资料可能过时；成熟度与许可证信息未提供。",
+        "evidence": [
+          "A curated list of awesome things related to Vue 3",
+          "- [Resources](#resources)",
+          "破千时的 Star 数：1645"
+        ]
+      }
+    }
+  }
+}

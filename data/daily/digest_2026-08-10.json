@@ -1,1 +1,638 @@
-{"date":"2026-08-10","headline":"邮箱批量注册工具领跑今日热度","points":["daimon3332/OutlookRegister 新增 347，批量注册邮箱账号工具最受关注。","video-db/call.md 新增 327，会议实时转写分析智能体紧随其后。","AI Agent 与桌面系统各有 4 个项目，Python 以 11 个项目最常见。"],"items":{"daimon3332/OutlookRegister":{"category":"automation","one_liner":"批量注册邮箱账号工具"},"video-db/call.md":{"category":"ai-agent","one_liner":"会议实时转写分析智能体"},"SteveSuv/remix-words-funny":{"category":"learning-resource","one_liner":"全栈英语单词学习网站"},"onetoken-oss/K3Flight":{"category":"ai-model","one_liner":"CPU本地运行Kimi K3"},"OStudi/short-video-generator-AI":{"category":"content-media","one_liner":"长视频转爆款短视频工具"},"chr0nzz/traefik-manager":{"category":"dev-tools","one_liner":"Traefik反向代理管理界面"},"tianma-if/edgeever":{"category":"content-media","one_liner":"免费自托管印象笔记替代"},"Shrey113/Android-Dex":{"category":"desktop-system","one_liner":"安卓无线变桌面体验"},"agiwhitelist/auteur":{"category":"ai-agent","one_liner":"导演式网站生成技能"},"SeanJ1ang/design-judge-skills":{"category":"ai-agent","one_liner":"设计奖项评审智能技能"},"QNLab-USTC/SimQN":{"category":"other","one_liner":"量子网络层模拟器"},"veryl-lang/veryl":{"category":"hardware-iot","one_liner":"现代硬件描述语言"},"JailbrokenAI/wallbreaker":{"category":"security","one_liner":"AI越狱相关工具"},"rayenfeng/riko_project":{"category":"other","one_liner":"Riko项目公开版本"},"brenpoly/be-more-agent":{"category":"ai-agent","one_liner":"树莓派本地AI智能体"},"TT-ReBORN/Georgia-ReBORN":{"category":"desktop-system","one_liner":"Foobar2000动态配色皮肤"},"PrithivirajDamodaran/FlashRank":{"category":"ai-model","one_liner":"轻量检索重排序库"},"SnapXL/SnapX":{"category":"desktop-system","one_liner":"跨平台截图录屏分享工具"},"Supprise0901/TVBox_live":{"category":"content-media","one_liner":"直播源检索测速工具"},"bobbyiliev/101-linux-commands":{"category":"learning-resource","one_liner":"Linux命令电子书与工具"},"msitarzewski/brew-browser":{"category":"desktop-system","one_liner":"Homebrew原生图形界面"},"Netw0rkNoob/VulnClaw":{"category":"security","one_liner":"自然语言驱动渗透智能体"},"mflux-community/mflux":{"category":"ai-model","one_liner":"MLX原生图像生成模型"},"Yazelix/nova":{"category":"dev-tools","one_liner":"Nix打包终端工作区"},"OpenMouse-Project/openmouse":{"category":"other","one_liner":"开源鼠标相关项目"},"emexlab/Nyxian":{"category":"mobile","one_liner":"iOS端原生应用开发IDE"}}}
+{
+  "date": "2026-08-10",
+  "headline": "邮箱批量注册工具领跑今日热度",
+  "points": [
+    "daimon3332/OutlookRegister 新增 347，批量注册邮箱账号工具最受关注。",
+    "video-db/call.md 新增 327，会议实时转写分析智能体紧随其后。",
+    "AI Agent 与桌面系统各有 4 个项目，Python 以 11 个项目最常见。"
+  ],
+  "items": {
+    "daimon3332/OutlookRegister": {
+      "category": "automation",
+      "one_liner": "批量注册邮箱账号工具",
+      "intro": {
+        "one_liner": "邮箱批量注册工具",
+        "what_it_is": "这是一个用 Python 编写的 Outlook、Hotmail 账号批量注册工具，通过浏览器自动化完成注册，并获取 OAuth2 刷新令牌。",
+        "problem_solved": "它把账号生成、表单填写、验证码处理、可选恢复邮箱绑定和令牌收集串成批量流程，减少重复手工操作。",
+        "who_should_care": "需要批量处理微软邮箱注册与授权凭据的自动化开发者。",
+        "use_cases": [
+          "批量注册 Outlook 邮箱",
+          "批量获取 OAuth2 刷新令牌",
+          "配合代理池并发执行任务"
+        ],
+        "alternatives": "相比上游项目，强调注册与 OAuth2 加固、恢复邮箱绑定、分批统计和中断摘要。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 23 星，仅上过一天日榜。",
+        "risk_notes": "涉及账号批量注册、验证码与代理配置，使用合规风险高；需自行准备代理，且配置文件含敏感信息。",
+        "evidence": [
+          "Outlook/Hotmail account batch registration tool.                          Outlook / Hotmail 账号批量注册工具，支持自动获取 OAuth2 refresh_token",
+          "Automated Outlook / Hotmail registration and Microsoft Graph OAuth2 refresh_token collection (browser automation via patchright).",
+          "Concurrent multi-proxy registration"
+        ]
+      }
+    },
+    "video-db/call.md": {
+      "category": "ai-agent",
+      "one_liner": "会议实时转写分析智能体",
+      "intro": {
+        "one_liner": "会议实时智能助手",
+        "what_it_is": "Call.md 是一款桌面会议应用，可本地录制、实时转写，并在会前、会中、会后提供智能分析。",
+        "problem_solved": "把会议内容转成可复用的记录与行动项，并在通话中提供实时建议、指标和工具调用。",
+        "who_should_care": "经常开会、需要纪要和后续自动化，并关注智能体工具接入的开发者。",
+        "use_cases": [
+          "实时转写与会议辅助",
+          "生成纪要和行动项",
+          "会后推送到自动化流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 110 星，并曾进入日榜一天。",
+        "risk_notes": "录制仅支持部分平台；Linux 和 Windows ARM64 不支持录制；转写与智能功能需要联网和接口密钥。",
+        "evidence": [
+          "Turn meetings into live agent loops. Record, transcribe, and analyze meetings with real-time AI intelligence — before, during, and after calls.",
+          "Local-First - Settings, meeting history, transcripts, and generated metadata are stored in the local SQLite database",
+          "Windows ARM64 | — | Recording not supported"
+        ]
+      }
+    },
+    "SteveSuv/remix-words-funny": {
+      "category": "learning-resource",
+      "one_liner": "全栈英语单词学习网站",
+      "intro": {
+        "one_liner": "开源英语单词学习站",
+        "what_it_is": "WordsFunny 是免费开源的英语单词学习网站，围绕单词书、单词详情、学习进度和评论互动组织学习流程。",
+        "problem_solved": "它把词书、释义、发音、例句、搜索、掌握状态和复习日历集中起来，减少查词与记录进度的切换成本。",
+        "who_should_care": "英语学习者，以及想参考全栈学习站实现的开发者。",
+        "use_cases": [
+          "按单词书背词并标记掌握状态",
+          "集中查看音标、例句和同根词",
+          "全站搜索陌生词并查看来源词书"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时有一千二百二十四星。",
+        "risk_notes": "词库数据需另行下载导入；邮箱验证码依赖邮件服务配置；许可证信息未提供。",
+        "evidence": [
+          "WordsFunny 是一个简单、免费、开源的英语单词学习网站，围绕单词书、单词详情、学习进度和评论互动组织学习流程。",
+          "登录后可以记录个人学习进度，标记单词掌握状态，并通过个人资料中的学习日历查看近半年的学习情况。",
+          "下载数据压缩包，解压后使用 TablePlus、psql 或其他数据库工具导入。"
+        ]
+      }
+    },
+    "onetoken-oss/K3Flight": {
+      "category": "ai-model",
+      "one_liner": "CPU本地运行Kimi K3",
+      "intro": {
+        "one_liner": "本地 CPU 推理服务",
+        "what_it_is": "一个单文件 Linux 推理服务，目标是在 CPU 上本地运行 Kimi K3，并依托 cPilot Runtime。",
+        "problem_solved": "面向本地大模型运行需求，尝试让 Kimi K3 在 CPU 环境中以较低运行时内存占用进行推理。",
+        "who_should_care": "关注本地大模型、CPU 推理和低内存部署的 Linux 开发者。",
+        "use_cases": [
+          "在 Linux 上本地运行模型",
+          "验证 CPU 推理可行性",
+          "研究低内存推理部署"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且仅一天上日榜，但资料不足。",
+        "risk_notes": "没有说明文档，成熟度难以判断；Fork 数为 0，社区验证信息有限；主要语言标为 HTML，与推理服务定位需谨慎看待。",
+        "evidence": [
+          "Run Kimi K3 locally on CPU with ~55GB measured runtime RAM. A single-file Linux inference server powered by cPilot Runtime.",
+          "破千时的 Star 数：1009",
+          "Fork 数：0"
+        ]
+      }
+    },
+    "OStudi/short-video-generator-AI": {
+      "category": "content-media",
+      "one_liner": "长视频转爆款短视频工具",
+      "intro": {
+        "one_liner": "短视频生成工具",
+        "what_it_is": "一个用 Python 编写的开源项目，用于把 YouTube 视频转成短视频，并集成字幕、翻译和配音等功能。",
+        "problem_solved": "帮助内容创作者从长视频中提炼片段，减少剪辑、加字幕、翻译和配音的重复工作。",
+        "who_should_care": "做短视频分发、二创剪辑和多语言内容运营的开发者。",
+        "use_cases": [
+          "从长视频提取精彩片段",
+          "为短视频生成字幕",
+          "翻译并配音短视频"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但缺少文档支撑。",
+        "risk_notes": "没有 README，功能细节、安装方式、许可证和可用状态均无法确认；创建日期较新，Fork 数较少。",
+        "evidence": [
+          "Free open-source project designed for turning youtube-viedos into viral short videos. Highlight detection, subtitles, translation, voiceover, all in one for your content.",
+          "破千时的 Star 数：1001",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "chr0nzz/traefik-manager": {
+      "category": "dev-tools",
+      "one_liner": "Traefik反向代理管理界面",
+      "intro": {
+        "one_liner": "Traefik 可视化管理界面",
+        "what_it_is": "一个自托管的网页界面，用于管理 Traefik 反向代理的路由、中间件、服务、证书、插件和日志。",
+        "problem_solved": "让使用者不必手工编辑 YAML，就能配置 Traefik 的路由、服务、证书和中间件，并查看状态与日志。",
+        "who_should_care": "自建服务、家庭实验室和已在使用 Traefik 的运维开发者。",
+        "use_cases": [
+          "用向导配置路由和中间件",
+          "查看证书、健康状态和日志",
+          "管理多主机上的 Traefik"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 130 星，并曾进入日榜一天。",
+        "risk_notes": "采用 GPL-3.0 许可证；资料列有测试版文档，但无法确认当前版本稳定性。",
+        "evidence": [
+          "A clean, self-hosted web UI for your Traefik reverse proxy.",
+          "Routes, middlewares, Services, Plugins, certificates, crowdsec and logs, without editing YAML by hand.",
+          "Security - bcrypt, TOTP two-factor, OIDC single sign-on, per-device API keys, CSRF protection, rate limiting, and secrets encrypted at rest."
+        ]
+      }
+    },
+    "tianma-if/edgeever": {
+      "category": "content-media",
+      "one_liner": "免费自托管印象笔记替代",
+      "intro": {
+        "one_liner": "基于 Cloudflare 的开源自托管笔记知识库",
+        "what_it_is": "EdgeEver 是一个开源的笔记与知识库工作区，采用经典三栏布局（目录树、笔记列表、编辑器），可部署在 Cloudflare 免费额度上，也可通过 Docker 自托管，并原生支持 MCP 以接入 AI Agent。",
+        "problem_solved": "针对印象笔记广告多、免费额度收紧，Obsidian 同步收费且冷启动慢，Joplin 界面陈旧、自托管需自备服务器等取舍，提供全栈开源、零成本 serverless 部署与多端即时同步的替代方案。",
+        "who_should_care": "希望自托管、重视数据所有权、想零成本部署个人知识库的用户，以及需要 AI Agent 接入笔记数据的开发者。",
+        "use_cases": [
+          "在 Cloudflare 免费额度上搭建个人笔记与知识库并多端同步",
+          "用浏览器扩展从 X、知乎、小红书、YouTube 等 20+ 平台结构化剪藏内容",
+          "将整个笔记本一键发布为带树形导航的静态文档站",
+          "通过原生 MCP 让 AI Agent 读写个人笔记数据"
+        ],
+        "alternatives": "README 自述与 Evernote、Obsidian、Joplin、Memos、SiYuan 对比：强调全栈开源、零成本 serverless 部署、三栏工作流与原生 AI Agent（MCP/ACP）能力，而上述方案分别在广告与配额、同步收费与冷启动、界面陈旧与需自维护服务器、时间线布局、块级架构认知负担等方面存在取舍。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：自托管知识库与 AI Agent 原生集成是持续需求，但项目创建于 2026-06，仍处早期阶段。",
+        "risk_notes": "许可证为 AGPL-3.0，商用或二次分发需注意 copyleft 义务；项目创建时间短（2026-06），fork 数（1553）高于 star 数（1163）且 open issues 55，成熟度与社区信号需谨慎看待；README 中 iOS 应用需非中国大陆 Apple ID。",
+        "evidence": [
+          "Serverless, 100% free, and open-source Evernote alternative on Cloudflare with native MCP",
+          "EdgeEver can run within Cloudflare's free quotas with no server purchase or VPS maintenance. Users who prefer a VPS, NAS, or home server can deploy the same application with Docker.",
+          "The entire stack is open source, delivering truly seamless, low-latency, instant multi-device cloud sync with full self-hosting freedom."
+        ]
+      }
+    },
+    "Shrey113/Android-Dex": {
+      "category": "desktop-system",
+      "one_liner": "安卓无线变桌面体验",
+      "intro": {
+        "one_liner": "安卓桌面化控制工具",
+        "what_it_is": "Android DEX 是闭源桌面应用，可把安卓手机以可缩放窗口方式投到电脑，并提供音频、通知、媒体和键鼠控制。",
+        "problem_solved": "让用户在电脑上更方便地运行和控制安卓应用，支持无线或 USB 连接、分应用音频、通知管理和游戏键位映射。",
+        "who_should_care": "需要电脑操控安卓应用、投屏、通知管理或键鼠玩手游的开发者与重度用户。",
+        "use_cases": [
+          "电脑窗口运行安卓应用",
+          "无线投屏并串流应用音频",
+          "用键鼠映射控制手游"
+        ],
+        "alternatives": "基于 scrcpy 与 ADB，强调桌面窗口、分应用音频、通知和游戏控制整合。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 264 星，并曾进入日榜一天。",
+        "risk_notes": "软件为专有闭源，禁止修改、再分发和商业使用；仓库主要语言标为 HTML，与桌面应用描述不完全一致；创建于 2026 年，未关闭问题 12 个。",
+        "evidence": [
+          "Enable a full desktop experience from any Android device over Wi‑Fi. No root, scrcpy-powered, Flutter desktop app with wireless ADB, per‑app audio, and quick controls.",
+          "Android DEX is a free, closed-source desktop application for Windows, Linux, and macOS",
+          "Android DEX is proprietary, closed-source software."
+        ]
+      }
+    },
+    "agiwhitelist/auteur": {
+      "category": "ai-agent",
+      "one_liner": "导演式网站生成技能",
+      "intro": {
+        "one_liner": "电影化网页生成技能",
+        "what_it_is": "一个给编码代理使用的技能包，用艺术方向清单、素材生成、构建配方和检查脚本，指导制作电影感落地页。",
+        "problem_solved": "把网页视觉方向先写定，再用可执行检查拦截常见模板化设计、动效问题和交付漂移。",
+        "who_should_care": "用编码代理制作高表现力落地页、并希望有交付检查的开发者。",
+        "use_cases": [
+          "生成电影感品牌落地页",
+          "为动效页面设置质量门禁",
+          "按统一艺术方向制作多屏页面"
+        ],
+        "alternatives": "不提供现成组件，而是从艺术方向到检查流程指导整页创作。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾破千星且上过日榜，但一周减少 24 星。",
+        "risk_notes": "创建时间较新；仍有 1 个未关闭问题；依赖本地命令行工具生成素材。",
+        "evidence": [
+          "The Claude Code skill that directs a website like a film. Commit-sheet, generated assets, build, and an executable anti-slop linter that gates every ship.",
+          "auteur is an [Agent Skill](https://code.claude.com/docs/en/skills): a `SKILL.md` plus reference recipes and a few runnable scripts. ~1MB, no dependencies, no API keys, no build step.",
+          "**`slopscan`** — a zero-dependency linter that *fails the build* on concrete slop, not vibes:"
+        ]
+      }
+    },
+    "SeanJ1ang/design-judge-skills": {
+      "category": "ai-agent",
+      "one_liner": "设计奖项评审智能技能",
+      "intro": {
+        "one_liner": "设计奖申报全流程 Agent Skills 工具集",
+        "what_it_is": "一套面向 AI Agent 的设计奖申报技能包，把获奖案例检索、设计评价、奖项匹配、申报文字准备和提交终检拆成可独立触发的模块，以 SKILL.md 形式分发，支持 Claude Code、Codex 等 Agent。",
+        "problem_solved": "设计奖申报流程分散、规则以官方页面为准且逐年变化，申报者难以系统检索同类获奖案例、判断奖项适配度并检查提交合规性；该项目用证据化、可追溯的技能流程把这些环节结构化。",
+        "who_should_care": "工业设计、产品设计方向的学生与设计师，以及需要批量辅导申报的设计院校教师或设计咨询团队；同时适合使用 Claude Code、Codex 等 Agent 的从业者。",
+        "use_cases": [
+          "为某件设计作品检索并核验同类别获奖案例",
+          "按指定成熟度评价设计本体与展示表达并输出 Critical 问题",
+          "比较 iF、Red Dot、IDEA、DIA、Core77 等赛事对某项目的适配度",
+          "基于附件准备目标奖项的申报文字并做字数校验",
+          "按当届官方规则对提交包做 go / conditional go / no-go 终检"
+        ],
+        "alternatives": "README 未与其他同类项目做对比，unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Agent Skills 生态（Claude Code、Codex）快速获得关注，但垂直领域（设计奖申报）需求相对小众，长期价值取决于奖项规则维护与数据更新。",
+        "risk_notes": "README 自述多数技能为 Beta 状态；奖项截止日期、费用、资格等需运行时核验，不能作为稳定事实；README 中的评分命中率对比为作者自述测试结果，未经第三方验证；项目创建于 2026-07-18，历史较短。",
+        "evidence": [
+          "面向设计奖全流程的证据驱动 Agent Skills：从获奖案例检索、设计评价和奖项匹配，到申报文字准备与提交终检。",
+          "当前配置覆盖 iF DESIGN AWARD、iF DESIGN STUDENT AWARD、Red Dot Product Design、Red Dot Design Concept、IDEA、DIA、K-Design、GOOD DESIGN AWARD Japan、Core77、James Dyson 和 EPDA。",
+          "状态含义：`Beta` 表示已通过示例与自动化测试但仍可能存在边界问题；`Stable` 表示工作流和规则相对稳定"
+        ]
+      }
+    },
+    "QNLab-USTC/SimQN": {
+      "category": "other",
+      "one_liner": "量子网络层模拟器",
+      "intro": {
+        "one_liner": "量子网络模拟器",
+        "what_it_is": "SimQN 是基于离散事件的量子网络层模拟平台，也是用于量子网络研究的 Python3 库。",
+        "problem_solved": "它帮助研究者在大规模量子网络中评估协议、路由和资源分配，并减少重复实现网络模块的负担。",
+        "who_should_care": "量子网络、QKD、纠缠分发与路由算法研究者。",
+        "use_cases": [
+          "设计并评估 QKD 路由算法",
+          "模拟纠缠分发协议",
+          "构建量子网络拓扑与会话"
+        ],
+        "alternatives": "更关注网络层仿真，提供模块化节点、可复用算法和协议，不预设网络架构。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，量子网络研究需要可复用的仿真平台。",
+        "risk_notes": "采用 GPL-3.0 许可证；0.2.x 仍在开发，部分功能列入未来版本。",
+        "evidence": [
+          "SimQN is a discrete-event-based network simulation platform for quantum networks.",
+          "SimQN is a Python3 library for quantum networking simulation. It is designed to be general purpose.",
+          "Currently, we are focusing on developing the 0.2.x version of SimQN"
+        ]
+      }
+    },
+    "veryl-lang/veryl": {
+      "category": "hardware-iot",
+      "one_liner": "现代硬件描述语言",
+      "intro": {
+        "one_liner": "现代硬件描述语言",
+        "what_it_is": "Veryl 是基于 SystemVerilog 的现代硬件描述语言，提供简化语法、可综合保证和配套开发工具。",
+        "problem_solved": "它试图缓解 SystemVerilog 复杂、工具支持不一致和开发效率低的问题，并生成可读的 SystemVerilog 代码。",
+        "who_should_care": "硬件设计者、SystemVerilog 使用者和关注硬件描述语言工具链的开发者。",
+        "use_cases": [
+          "编写可综合的硬件设计代码",
+          "逐步替换现有 SystemVerilog 模块",
+          "用配套工具提升硬件开发效率"
+        ],
+        "alternatives": "相比内嵌式硬件描述语言，它强调专用语法、可读代码生成和与 SystemVerilog 互操作。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时星数为一千零四。",
+        "risk_notes": "语言设计仍处于探索阶段，功能与规范可能继续变化；部分高级特性有意不采用。",
+        "evidence": [
+          "Veryl is a modern hardware description language.",
+          "This project is under the exploration phase of language design.",
+          "Veryl is a hardware description language based on SystemVerilog, providing the following advantages:"
+        ]
+      }
+    },
+    "JailbrokenAI/wallbreaker": {
+      "category": "security",
+      "one_liner": "AI越狱相关工具",
+      "intro": {
+        "one_liner": "大模型红队测试终端",
+        "what_it_is": "一个面向大模型红队测试的终端工具，可配置攻击模型、目标模型和评判模型，并调用多种攻击与验证工具循环测试。",
+        "problem_solved": "把越狱测试、提示词变换、行为基准、结果判定和重复验证集中到可配置流程中，减少手工挑选样例和误判成功率。",
+        "who_should_care": "做授权安全评估、模型防护验证和红队工具研究的开发者。",
+        "use_cases": [
+          "授权环境下评估模型防护",
+          "批量运行标准化行为测试",
+          "复测攻击结果的稳定性"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 142 星，并曾登上日榜。",
+        "risk_notes": "仅限授权安全测试；采用 AGPL-3.0；项目创建较新，仍有 10 个未关闭问题。",
+        "evidence": [
+          "A Claude-Code-style terminal built for red-teaming LLMs (CLI command: `wallbreaker`).",
+          "> For authorized security testing only.",
+          "**Reliability-first:** `validate` re-fires N times for the real success rate; a one-shot COMPLIED is never called a \"bypass\"."
+        ]
+      }
+    },
+    "rayenfeng/riko_project": {
+      "category": "other",
+      "one_liner": "Riko项目公开版本",
+      "intro": {
+        "one_liner": "本地动漫语音伴侣",
+        "what_it_is": "一个用 Python 编写、可在个人电脑运行的动漫人工智能语音伴侣开源核心，带声音和会同步口型的三维虚拟形象。",
+        "problem_solved": "把语音识别、对话生成、语音合成和虚拟形象串成完整语音互动流程，并让性格、声音和外观集中配置。",
+        "who_should_care": "想自建、改造语音伴侣和虚拟形象互动原型的开发者。",
+        "use_cases": [
+          "本地搭建语音对话伴侣",
+          "定制性格、声音和虚拟形象",
+          "学习语音到语音的完整流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "该版本是冻结快照，后续功能与桌面应用在别处；仓库问题不提供支持；运行需要第三方接口密钥。",
+        "evidence": [
+          "An anime AI companion that runs on your own PC, with her own voice and a 3D avatar that lip-syncs every word.",
+          "This is the 50K snapshot: a complete Riko, open source and yours to keep. It's frozen at this release, so it stays a stable base to build on.",
+          "GitHub issues aren't monitored, so there's no support here."
+        ]
+      }
+    },
+    "brenpoly/be-more-agent": {
+      "category": "ai-agent",
+      "one_liner": "树莓派本地AI智能体",
+      "intro": {
+        "one_liner": "树莓派本地语音智能体",
+        "what_it_is": "一个用 Python 编写、面向树莓派的离线优先对话智能体，支持唤醒词、语音识别、本地大模型、语音合成、表情动画和摄像头视觉。",
+        "problem_solved": "把树莓派变成可定制的本地语音助手，减少云端接口费用与云端数据使用，并提供可替换的角色形象和音效。",
+        "who_should_care": "想在树莓派上做本地语音机器人、离线助手或角色化交互原型的开发者。",
+        "use_cases": [
+          "制作离线语音助手",
+          "定制角色表情与音效",
+          "用摄像头描述周围环境"
+        ],
+        "alternatives": "相比云端助手，强调本地运行、无接口费用、无云端数据使用，并可替换唤醒词、形象和声音。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾有一天登上日榜。",
+        "risk_notes": "代码与硬件模型采用双重许可，硬件模型为非商业用途；安装依赖较多，音频采样率不匹配可能导致变声；联网搜索依赖 DuckDuckGo。",
+        "evidence": [
+          "A Customizable, Offline-First AI Agent for Raspberry Pi",
+          "This project turns a Raspberry Pi into a fully functional, conversational AI agent. Unlike cloud-based assistants, this agent runs 100% locally on your device.",
+          "This project is dual-licensed: Software / Code: All source code is licensed under the MIT License. Hardware / 3D Models: The .obj, .stl, and other 3D modeling files associated with the physical case are licensed under the Creative Commons Attribution-NonCommercial-ShareA"
+        ]
+      }
+    },
+    "TT-ReBORN/Georgia-ReBORN": {
+      "category": "desktop-system",
+      "one_liner": "Foobar2000动态配色皮肤",
+      "intro": {
+        "one_liner": "foobar2000 桌面主题",
+        "what_it_is": "Georgia-ReBORN 是 foobar2000 的桌面主题，主打简洁布局、封面与播放列表展示，并提供多种主题、样式和预设。",
+        "problem_solved": "它让播放器界面更干净、更可定制，并能根据专辑封面自动调整配色，也整合了资料库、传记和歌词展示。",
+        "who_should_care": "使用 foobar2000、重视桌面听歌界面与视觉定制的开发者和音乐爱好者。",
+        "use_cases": [
+          "按专辑封面自动换配色",
+          "定制主题、样式与预设",
+          "浏览资料库、传记和歌词"
+        ],
+        "alternatives": "基于 original Georgia 开发，强调简洁桌面布局、动态配色和大量主题预设。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "正文提到正向 64 位支持过渡；部分图像资源需另行下载；界面有最小尺寸限制。",
+        "evidence": [
+          "Georgia-ReBORN is a feature-rich foobar2000 theme developed and based on Mordred's **[original Georgia]**",
+          "this theme will completely change its appearance based on album art",
+          "Georgia-ReBORN is transitioning to focus on 64-bit support for foobar2000."
+        ]
+      }
+    },
+    "PrithivirajDamodaran/FlashRank": {
+      "category": "ai-model",
+      "one_liner": "轻量检索重排序库",
+      "intro": {
+        "one_liner": "轻量检索重排库",
+        "what_it_is": "FlashRank 是一个 Python 库，为搜索和检索流程加入重排能力，支持成对、逐点和列表式重排模型。",
+        "problem_solved": "它解决检索结果送入大模型前排序不够精准的问题，并强调轻量、可在 CPU 上运行和较低部署开销。",
+        "who_should_care": "做搜索、混合检索和检索增强生成应用的 Python 开发者。",
+        "use_cases": [
+          "为检索增强生成结果重排",
+          "优化全文或混合搜索排序",
+          "在服务端轻量部署重排"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "详细基准测试仍标注为待办；部分模型体积较大；列表式重排需额外安装项。",
+        "evidence": [
+          "Lite & Super-fast re-ranking for your search & retrieval pipelines.  Supports SoTA Listwise and Pairwise reranking based on LLMs and  cross-encoders and more.",
+          "Ultra-lite &amp; Super-fast Python library to add re-ranking to your existing search &amp; retrieval pipelines. It is based on SoTA LLMs and cross-encoders, with gratitude to all the model owners.",
+          "Detailed benchmarking, TBD"
+        ]
+      }
+    },
+    "SnapXL/SnapX": {
+      "category": "desktop-system",
+      "one_liner": "跨平台截图录屏分享工具",
+      "intro": {
+        "one_liner": "跨平台截图分享工具",
+        "what_it_is": "SnapX 是 ShareX 的分支，用 C# 开发，可跨平台捕获或录制屏幕区域，并上传到多个目标。",
+        "problem_solved": "它让截图、录屏、文字等内容的捕获与分享更便捷，并补齐 ShareX 在非 Windows 平台的使用需求。",
+        "who_should_care": "需要跨平台截图、录屏并快速分享的开发者和重度桌面用户。",
+        "use_cases": [
+          "截取屏幕区域并上传",
+          "录制屏幕内容并分享",
+          "迁移 ShareX 上传配置"
+        ],
+        "alternatives": "基于 ShareX 分支，强调跨平台、XDG 截图接口和多种打包方式。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "处于早期体验阶段，核心上传与捕获引擎仍为实验性，热键支持等基础功能尚待重写补齐。",
+        "evidence": [
+          "SnapX is a free, open-source, cross-platform tool that lets you capture or record any area of your screen and instantly share it with a single keypress. Upload images, videos, text, and more to multiple supported destinations—all with ease. ShareX fork",
+          "SnapX is in **_Early Access_**.",
+          "The core upload engine and capture engine are currently experimental. An ongoing rewrite will improve stability, add essential features like hotkey support, and reduce app size."
+        ]
+      }
+    },
+    "Supprise0901/TVBox_live": {
+      "category": "content-media",
+      "one_liner": "直播源检索测速工具",
+      "intro": {
+        "one_liner": "电视直播源优选工具",
+        "what_it_is": "一个围绕电视直播源检索、分类、去重、测速和优选的工具与订阅源仓库，主要使用 Python。",
+        "problem_solved": "用于从网络直播源中验证播放速度并筛选较优线路，减少直播观看时的卡顿和选源成本。",
+        "who_should_care": "使用电视直播软件、需要维护直播源列表的开发者和折腾用户。",
+        "use_cases": [
+          "批量检索并合并直播源",
+          "测试直播流速度并优选",
+          "生成可订阅的直播源列表"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千星且有一百六十九个复刻。",
+        "risk_notes": "直播源更新频繁且依赖网络线路；本地工具要求 FFmpeg 4.0 或更高版本和较新的显卡驱动；部分软件与源地址需自行配置或更换加速。",
+        "evidence": [
+          "作者填写的描述：直播源检索、测速、优选",
+          "主在验证直播源的播放速度，选择最优直播源，提高观看体验",
+          "必须使用FFmpeg4.0或更高版本，显卡驱动到最新版本"
+        ]
+      }
+    },
+    "bobbyiliev/101-linux-commands": {
+      "category": "learning-resource",
+      "one_liner": "Linux命令电子书与工具",
+      "intro": {
+        "one_liner": "开源 Linux 命令电子书与 CLI 工具",
+        "what_it_is": "一个开源 eBook 项目，收录了 101 个 Linux 命令，并提供在线版本以及 PDF、EPUB、HTML 等多种格式的下载。",
+        "problem_solved": "帮助 DevOps/SysOps 工程师、开发者和 Linux 爱好者系统查阅和掌握常用终端命令。",
+        "who_should_care": "Linux 初学者、DevOps/SysOps 工程师、需要速查终端命令的开发者",
+        "use_cases": [
+          "作为 Linux 命令速查手册",
+          "新手系统学习终端操作",
+          "离线阅读 PDF/EPUB 版本备考或培训"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，Linux 命令类基础资料需求稳定，但内容型项目增长空间有限",
+        "risk_notes": "README 含 DigitalOcean 推荐链接等推广内容；项目创建于 2025-11-23，历史较短",
+        "evidence": [
+          "This is an open-source eBook with 101 Linux commands that everyone should know.",
+          "An online copy of this ebook is available here",
+          "This eBook is now available in multiple formats to suit different reading preferences"
+        ]
+      }
+    },
+    "msitarzewski/brew-browser": {
+      "category": "desktop-system",
+      "one_liner": "Homebrew原生图形界面",
+      "intro": {
+        "one_liner": "Homebrew 原生图形界面",
+        "what_it_is": "Brew Browser 是面向 Homebrew 的桌面应用，提供浏览、搜索、安装、升级、快照和服务管理，并有 Tauri 与 Swift 两种构建。",
+        "problem_solved": "它把 Homebrew 的命令行操作变成可视化界面，方便查看已装包、管理更新、恢复 Brewfile，并集中处理服务与漏洞扫描。",
+        "who_should_care": "常用 Homebrew 的 macOS 和 Linux 桌面用户，以及需要迁移或维护开发环境的开发者。",
+        "use_cases": [
+          "搜索并安装 Homebrew 包",
+          "用 Brewfile 配置新电脑",
+          "查看更新、服务和漏洞"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 6 星且仅一天上日榜，热度有限。",
+        "risk_notes": "创建于 2026 年，未关闭 Issue 有 46 个；原生构建要求 macOS 26，Tauri 构建要求 macOS 13 及以上或 Linux。",
+        "evidence": [
+          "Homebrew is the standard package manager on macOS. brew-browser gives it a real native GUI.",
+          "A small, fast desktop app for browsing, searching, installing, and snapshotting Homebrew packages. Full source, MIT-licensed, no telemetry, no accounts.",
+          "Not a Homebrew replacement — every action shells out to the real `brew` CLI"
+        ]
+      }
+    },
+    "Netw0rkNoob/VulnClaw": {
+      "category": "security",
+      "one_liner": "自然语言驱动渗透智能体",
+      "intro": {
+        "one_liner": "AI 渗透测试命令行工具",
+        "what_it_is": "一个可独立运行的 AI 渗透测试 Agent，用自然语言驱动信息收集、漏洞发现、漏洞利用和报告生成。",
+        "problem_solved": "把授权渗透、竞赛和教学中的多阶段工具调用与证据整理交给模型编排，减少手工切换命令和编写报告。",
+        "who_should_care": "安全测试人员、竞赛选手、安全教学与红队演练参与者。",
+        "use_cases": [
+          "授权靶场的全流程渗透测试",
+          "竞赛中寻找并验证目标",
+          "生成结构化报告与验证脚本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 123 星且曾上日榜。",
+        "risk_notes": "涉及漏洞利用，仅适合授权场景；代码执行能力被说明为高风险实验能力，不应视为强隔离沙箱；仍有 12 个未关闭问题。",
+        "evidence": [
+          "本项目是可独立运行的 AI 渗透测试 Agent。",
+          "自然语言输入 → 自动完成「信息收集 → 漏洞发现 → 漏洞利用 → 报告生成」全流程。",
+          "适用于已授权的渗透测试、CTF 竞赛、安全教学、红队演练等场景。"
+        ]
+      }
+    },
+    "mflux-community/mflux": {
+      "category": "ai-model",
+      "one_liner": "MLX原生图像生成模型",
+      "intro": {
+        "one_liner": "Mac 本地图像生成工具",
+        "what_it_is": "一个用 Python 编写的 MLX 原生实现，支持在 Mac 本地运行多种先进生成式图像模型，并提供命令行和 Python 接口。",
+        "problem_solved": "让 Mac 用户不必依赖远端服务，即可用 MLX 在本地运行图像生成、编辑、放大等模型。",
+        "who_should_care": "使用 Apple Silicon Mac、想在本地生成或编辑图像的开发者。",
+        "use_cases": [
+          "用提示词本地生成图片",
+          "图像编辑与参考图控制",
+          "加载量化模型或 LoRA"
+        ],
+        "alternatives": "相比基于 Diffusers 的方案，强调逐行移植到 MLX、实现精简显式，仅复用分词器。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：破千时已有 2,271 星，且本周上过一次日榜。",
+        "risk_notes": "资料列出多个未来日期模型，需留意版本与模型可用性；首次运行会自动下载模型，可能耗时。",
+        "evidence": [
+          "Run the latest state-of-the-art generative image models locally on your Mac in native MLX!",
+          "MFLUX is a line-by-line MLX port of several state-of-the-art generative image models from the [Huggingface Diffusers](https://github.com/huggingface/diffusers) and [Huggingface Transformers](https://github.com/huggingface/transformers) libraries.",
+          "The first time you run this, the model will automatically download which can take some time."
+        ]
+      }
+    },
+    "Yazelix/nova": {
+      "category": "dev-tools",
+      "one_liner": "Nix打包终端工作区",
+      "intro": {
+        "one_liner": "Nix 终端工作台",
+        "what_it_is": "Yazelix Nova 是用 Nix 打包的终端工作台，整合终端复用、文件管理、编辑器、Shell、弹窗和状态组件。",
+        "problem_solved": "它把终端开发所需工具组合成开箱即用的统一工作区，减少安装、配置和快捷键适配成本。",
+        "who_should_care": "偏好终端工作流、使用 Nix 或 Home Manager 的开发者。",
+        "use_cases": [
+          "在终端中编辑与管理文件",
+          "通过 SSH 进入统一工作区",
+          "用弹窗处理 Git 操作"
+        ],
+        "alternatives": "相比单一编辑器或复用器，它提供打包好的整套终端工作台与默认配置。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上过一次日榜，破千时有一千一百四十五星。",
+        "risk_notes": "无 Nix 安装缺少 Rio；macOS 的 Rio 图形界面没有自动化交互覆盖；存在 Main、Edge 等不同渠道。",
+        "evidence": [
+          "Yazelix Nova is a Nix-packaged terminal workspace built around",
+          "Great defaults out of the box!",
+          "The Nix-free install has no Rio, so open Nova with `yzx enter` in your terminal."
+        ]
+      }
+    },
+    "OpenMouse-Project/openmouse": {
+      "category": "other",
+      "one_liner": "开源鼠标相关项目",
+      "intro": {
+        "one_liner": "浏览器外设控制面板",
+        "what_it_is": "OpenMouse 是基于浏览器的控制面板，可查看受支持游戏鼠标信息，并调整 DPI、回报率等设置，也支持部分键盘命令接口。",
+        "problem_solved": "它让用户不必为每个品牌安装不同应用，就能在支持 WebHID 的浏览器中管理兼容外设的部分设置。",
+        "who_should_care": "拥有受支持游戏鼠标或键盘、希望用网页调参的开发者和玩家。",
+        "use_cases": [
+          "查看已连接鼠标信息",
+          "调整 DPI 和回报率",
+          "为游戏或应用配置本地配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 106 星，并曾登上日榜。",
+        "risk_notes": "采用 AGPL-3.0；当前分支是公共开发控制面板；部分键盘路径未接实体键盘集成验证，且部分灯效写入缺少状态回读。",
+        "evidence": [
+          "OpenMouse is a browser-based control panel for supported gaming mice.",
+          "Connect a mouse, view its information, and change supported settings such as DPI\nand polling rate without installing a different app for every brand.",
+          "The new Razer, Logitech and SteelSeries paths have codec and simulated-HID\ncoverage, but no physical keyboard was connected during integration."
+        ]
+      }
+    },
+    "emexlab/Nyxian": {
+      "category": "mobile",
+      "one_liner": "iOS端原生应用开发IDE",
+      "intro": {
+        "one_liner": "设备端 iOS 原生开发 IDE",
+        "what_it_is": "Nyxian 是面向未越狱 iOS 的原生开发环境，包含 IDE、工具链与用户态微内核，可在设备上编译并运行应用和工具。",
+        "problem_solved": "让开发者无需电脑或云端，也能在 iPhone 上离线编写、编译、签名并运行 iOS 应用与命令行工具。",
+        "who_should_care": "关注设备端开发、未越狱 iOS 工具链和移动实验环境的开发者。",
+        "use_cases": [
+          "在 iPhone 上离线编译 Swift 或 C 代码",
+          "在未越狱设备上运行自制应用",
+          "实验用户态微内核与签名执行"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但创建时间很短。",
+        "risk_notes": "索引、线程局部存储修复和终端支持仍有未完成项；自述限制为无法拦截 arm64 监管调用；需下载 SDK 与资源后才能离线使用。",
+        "evidence": [
+          "A full native IDE and a userspace microkernel for building and running iOS apps entirely on-device. offline, unjailbroken, iOS 18.0 all the way through iOS 27.2 Beta 2",
+          "It supports Swift, C, Objective-C, C++ and Objective-C++.",
+          "The only current limitation is that we cannot intercept a arm64 supervisor call"
+        ]
+      }
+    }
+  }
+}

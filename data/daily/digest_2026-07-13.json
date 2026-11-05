@@ -1,1 +1,732 @@
-{"date":"2026-07-13","headline":"模拟器与3D生成领跑热度","points":["par274/sharpemu 以实验性 PS5 模拟器获得 355 新增，oso95/scroll-world 以 354 紧随其后。","AI Agent 有 7 个项目、开发工具有 6 个项目，智能体编排与编码助手仍是焦点。","Python 出现 9 次、Rust 出现 5 次；nasa/spacewasm 把 WebAssembly 带向航天场景。"],"items":{"par274/sharpemu":{"category":"game","one_liner":"实验性 PS5 模拟器"},"oso95/scroll-world":{"category":"web-frontend","one_liner":"品牌滚动式 3D 世界生成器"},"zhishile/codex-auth-helper":{"category":"dev-tools","one_liner":"本地导出 Codex 登录配置"},"Hao0321/video-autopilot-kit":{"category":"automation","one_liner":"短视频自动化制作框架"},"nasa/spacewasm":{"category":"dev-tools","one_liner":"航天级 WebAssembly 解释器"},"andyrewlee/awesome-agent-orchestrators":{"category":"learning-resource","one_liner":"智能体编排器清单"},"WenXiaoWendy/cyberboss":{"category":"ai-agent","one_liner":"微信接入的生活智能体桥"},"krusemediallc/arcads-claude-code":{"category":"ai-agent","one_liner":"Arcads 智能体技能工作区"},"gooseworks-ai/goose-skills":{"category":"ai-agent","one_liner":"增长营销智能体技能库"},"Abao135/jc-tizi-tj":{"category":"other","one_liner":"代理节点测评推荐站"},"g0ldyy/comet":{"category":"content-media","one_liner":"Stremio 极速种子搜索插件"},"smoochiee/Bluetooth-jammer-esp32":{"category":"hardware-iot","one_liner":"ESP32 蓝牙干扰器"},"danielweidman/pixmob-ir-reverse-engineering":{"category":"hardware-iot","one_liner":"PixMob 手环协议逆向项目"},"AlphaFin-proj/AlphaFin":{"category":"data-finance","one_liner":"金融智能项目"},"YingfanWang/PaCMAP":{"category":"ai-model","one_liner":"大规模降维算法库"},"catppuccin/vscode-icons":{"category":"dev-tools","one_liner":"VSCode 柔和图标主题"},"RupertAvery/DiffusionToolkit":{"category":"content-media","one_liner":"AI 图像元数据索引查看器"},"marcus/nightshift":{"category":"ai-agent","one_liner":"夜间自动生成 PR 的智能体"},"paean-ai/deeptide":{"category":"ai-agent","one_liner":"macOS 原生编码智能体"},"Supreeeme/xwayland-satellite":{"category":"desktop-system","one_liner":"Wayland 外置 Xwayland 组件"},"mehdihadeli/food-delivery-microservices":{"category":"learning-resource","one_liner":"云原生外卖微服务示例"},"re4/LibreCode":{"category":"dev-tools","one_liner":"本地模型编码逆向界面"},"astrid-runtime/astrid":{"category":"ai-agent","one_liner":"面向智能体的安全操作系统"},"astrid-runtime/sdk-js":{"category":"dev-tools","one_liner":"Astrid 胶囊 JS SDK"},"astrid-runtime/book":{"category":"learning-resource","one_liner":"Astrid OS 权威参考文档"},"astrid-runtime/handbook":{"category":"learning-resource","one_liner":"Astrid 开发协作手册"},"astrid-runtime/sdk-rust":{"category":"dev-tools","one_liner":"Astrid 胶囊 Rust SDK"},"astrid-runtime/rfcs":{"category":"learning-resource","one_liner":"Astrid 运行时提案集"},"imraywang/wewrite":{"category":"content-media","one_liner":"公众号文章全流程 AI 技能"},"fujibee/agmsg":{"category":"ai-agent","one_liner":"CLI 编码智能体消息互通"}}}
+{
+  "date": "2026-07-13",
+  "headline": "模拟器与3D生成领跑热度",
+  "points": [
+    "par274/sharpemu 以实验性 PS5 模拟器获得 355 新增，oso95/scroll-world 以 354 紧随其后。",
+    "AI Agent 有 7 个项目、开发工具有 6 个项目，智能体编排与编码助手仍是焦点。",
+    "Python 出现 9 次、Rust 出现 5 次；nasa/spacewasm 把 WebAssembly 带向航天场景。"
+  ],
+  "items": {
+    "par274/sharpemu": {
+      "category": "game",
+      "one_liner": "实验性 PS5 模拟器",
+      "intro": {
+        "one_liner": "实验性 PS5 模拟器，C# 编写",
+        "what_it_is": "SharpEmu 是一个用 C# 从零开发的实验性 PlayStation 5 模拟器，支持 Windows x64 与 Linux x64，并带有实验性的 PS4 游戏向下兼容模式。",
+        "problem_solved": "为 PS5（及部分 PS4）游戏提供可在 PC 上加载并运行的开源模拟环境，当前重点在准确性与基础设施搭建，而非逐游戏兼容。",
+        "who_should_care": "模拟器研究者、逆向工程爱好者、C# 与 .NET 生态开发者，以及关注 PS5 模拟进展的玩家。",
+        "use_cases": [
+          "在 Windows/Linux PC 上加载自备的 PS5 游戏 eboot.bin 进行研究与测试",
+          "学习 PS5/PS4 系统架构与原生 CPU 指令执行机制",
+          "作为 C# 低层模拟器实现的教学与参考项目"
+        ],
+        "alternatives": "README 提到 Kyty 是少数已有的 PS5 模拟器项目之一，ShadPS4 帮助理解 PS4 架构；SharpEmu 的差异点在于完全用 C# 从零实现并同时覆盖 PS5 与 PS4 兼容模式。",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点：PS5 模拟仍处早期，项目自述为实验性、以准确性为主，兼容性与性能因游戏和驱动而异。",
+        "risk_notes": "GPL-2.0 许可证；项目自述为实验性早期阶段，兼容性与性能不稳定；需自备合法游戏与支持 Vulkan 的 GPU；README 提示仅 sharpemu.app 与仓库内链接为官方渠道，其他站点与捐赠页均非官方。",
+        "evidence": [
+          "An experimental PlayStation 5 emulator for Windows and Linux, with experimental backward compatibility support for PlayStation 4 games.",
+          "SharpEmu is an emulator project currently in its early stages of development.",
+          "The current focus is on accuracy and infrastructure setup rather than game-specific compatibility."
+        ]
+      }
+    },
+    "oso95/scroll-world": {
+      "category": "web-frontend",
+      "one_liner": "品牌滚动式 3D 世界生成器",
+      "intro": {
+        "one_liner": "把品牌变成可滚动 3D 世界的 Agent 技能",
+        "what_it_is": "scroll-world 是一个面向 Claude Code、Codex 等兼容 SKILL.md 的 Agent 的 skill，用于为任意行业或品牌生成沉浸式、由滚动驱动的“飞越世界”落地页。它通过 AI 生成等距场景静帧与镜头飞行视频，并用可移植的 vanilla-JS scrub 引擎按滚动位置播放整条连续镜头链。",
+        "problem_solved": "解决制作 Apple 式滚动穿越产品页时，场景美术与镜头衔接需要大量手工制作的问题；它把场景生成、镜头衔接和前端播放整合成一套可被 Agent 调用的流程。",
+        "who_should_care": "需要快速产出高视觉冲击品牌落地页的前端开发者、创意代理与营销团队，以及使用 Claude Code、Codex 等 Agent 工作流的用户。",
+        "use_cases": [
+          "为品牌或行业制作滚动穿越式 3D 落地页",
+          "为产品发布页生成连续镜头动画素材",
+          "在 Next.js、Vue 或纯 HTML 页面中嵌入滚动驱动视频链"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依赖 Agent skill 生态与付费视频生成 API，属于当前 AI 生成前端素材的热门玩法，但成本与依赖较重。",
+        "risk_notes": "使用需 Monid CLI（API key 与余额）或 Higgsfield CLI（credits），并依赖 ffmpeg、Python Pillow；素材生成按次计费（README 称 6 场景 1080p 链约 27 美元），移动端链会使视频生成量翻倍；生成的 mp4/webp 资产不随仓库分发。",
+        "evidence": [
+          "An agent skill — for Claude Code, Codex, and any `SKILL.md`-compatible agent — that builds an immersive, **scroll-scrubbed \"fly through the world\" landing page** for any industry or brand",
+          "It's **framework-agnostic**: you get the Higgsfield pipeline, the prompt templates, and a portable vanilla-JS scrub engine that drops into plain HTML, Next.js, Vue, or a Python-served page",
+          "Asset generation costs money (~N image gens on Higgsfield credits + ~2N-1 video gens billed per clip on Monid by default; the mobile chain doubles the video gens)"
+        ]
+      }
+    },
+    "zhishile/codex-auth-helper": {
+      "category": "dev-tools",
+      "one_liner": "本地导出 Codex 登录配置",
+      "intro": {
+        "one_liner": "本地导出 Codex 认证配置",
+        "what_it_is": "这是一个 Chrome 扩展，用于在本地读取已登录的 ChatGPT 会话，并生成符合 Codex 规范的 auth.json 备份文件。",
+        "problem_solved": "它解决手动整理 Codex 认证配置不便的问题，把会话状态检测、格式合成和本地下载集中到插件里。",
+        "who_should_care": "需要在本地使用 Codex 认证配置的开发者，以及关注凭证处理流程的人。",
+        "use_cases": [
+          "为本地 Codex 生成认证文件",
+          "查看当前 ChatGPT 登录状态",
+          "备份会话对应的配置文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,073 星，但只上过一天日榜。",
+        "risk_notes": "涉及敏感会话凭证，需自行核验代码与权限；未关闭问题较多；创建时间较新，成熟度未知。",
+        "evidence": [
+          "Codex登陆助手：安全地在本地导出您的已登录 ChatGPT 会话配置，生成符合 Codex 规范的 auth.json 本地备份文件。",
+          "通过高度安全的本地沙盒机制，本插件能够帮助您一键将 ChatGPT 登录会话凭证快速安全地导出，并自动转换为符合 Codex 运行规范的 `auth.json` 配置文件。",
+          "您的身份凭证与 Session 属于极度敏感的用户隐私，**绝对不能泄露或上传到任何服务器**！"
+        ]
+      }
+    },
+    "Hao0321/video-autopilot-kit": {
+      "category": "automation",
+      "one_liner": "短视频自动化制作框架",
+      "intro": {
+        "one_liner": "YouTube/短视频自动化剪辑框架",
+        "what_it_is": "一个 Python 编写的框架式视频自动化工具包，提供 CapCut JSON 与 ffmpeg 工具链、可续跑的剪辑工作流合约、质量闸门与一份引导问卷，仓库本身不含任何私人数据。",
+        "problem_solved": "把长视频、Shorts、访谈等视频生产流程拆成可稽核、可续跑的步骤，并用机械闸门（脚本、节奏、字幕、交付 QA）替代靠记忆的人工检查。",
+        "who_should_care": "做 YouTube 长视频或竖屏 Shorts 的内容创作者、需要批量视频生产流程的独立开发者，以及想用 AI agent 驱动剪辑流水线的人。",
+        "use_cases": [
+          "教学长视频的脚本、节奏与交付 QA 流水线",
+          "竖屏 Shorts/Reels 的结构与字幕规则校验",
+          "线上访谈企划与来宾数据来源核查",
+          "频道 D2/D7/D28 数据快照与运营健康检查"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 AI agent 与短视频批量生产的工具需求旺盛，但项目版本号仅 v0.25.0、依赖外部预览版软件，尚需观察。",
+        "risk_notes": "核心渲染依赖另行安装的 Editkin（GPL-3.0、仅 Windows、预览版无数字签名、无自动更新）；README 自述离线测试用合成 fixture，不等同真实成片验收；闸门阈值为示例校准值需自行重算。",
+        "evidence": [
+          "Fill-in-your-own-data framework for YouTube / short-form video automation: CapCut JSON + ffmpeg tooling + an onboarding questionnaire. Ships with zero private data.",
+          "VA 只負責規劃和檢查，真正剪片、渲染的是 Editkin。沒裝 Editkin，什麼都剪不出來。",
+          "這是預覽版：目前只有 Windows、沒有自動更新，一定會遇到 bug"
+        ]
+      }
+    },
+    "nasa/spacewasm": {
+      "category": "dev-tools",
+      "one_liner": "航天级 WebAssembly 解释器",
+      "intro": {
+        "one_liner": "面向航天飞控的 WebAssembly 解释器",
+        "what_it_is": "SpaceWasm 是 NASA JPL 开发的、符合 Wasm 1.0 规范的 WebAssembly 解释器，用于在航天器上解释执行 Wasm 二进制。它包含解码/校验器和解释器两大组件，将字节码转换为中间表示（IR）后执行。",
+        "problem_solved": "解决航天飞行软件中指令序列实现碎片化、新自主软件上星验证周期长、以及平台移植困难的问题；通过 WebAssembly 沙箱让低信任可执行程序在受限访问和计算时间的前提下上星运行。",
+        "who_should_care": "航天飞行软件工程师、嵌入式与资源受限系统开发者，以及关注 WebAssembly 沙箱化执行的研究者。",
+        "use_cases": [
+          "在航天器上以标准化的 Wasm 指令序列执行高级活动（如火星车驱动、机械臂操作）",
+          "在飞控软件中沙箱化运行低信任或第三方自主软件并限制其资源访问",
+          "借助 spacewasi 在沙箱环境中运行符合 WASI 0.1 规范的 Wasm 模块"
+        ],
+        "alternatives": "README 提到其需求参考了 DLR 的 wasm-interpreter 工作；差异在于 SpaceWasm 强调流式单遍解码以降低峰值内存、确定性的动态内存分配模型，以及面向飞行软件标准的约束。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：WebAssembly 作为沙箱化执行标准正扩展到嵌入式与航天等资源受限领域，但项目仍处早期（spacewasm-check 尚未开发）。",
+        "risk_notes": "README 明确 spacewasm-check 工具尚未开发；解释器对 Wasm 规范施加了额外限制；项目创建时间较新，长期维护情况未知。",
+        "evidence": [
+          "SpaceWasm is an implementation of the Wasm 1.0 specification meant to interpret Wasm binary on-board spacecraft.",
+          "WebAssembly gives the opportunity for untrusted or low-trust executables to make their way on-board in a way that flight-software can restrict access and compute time as well as monitor health and safety.",
+          "spacewasm-check has not been developed yet."
+        ]
+      }
+    },
+    "andyrewlee/awesome-agent-orchestrators": {
+      "category": "learning-resource",
+      "one_liner": "智能体编排器清单",
+      "intro": {
+        "one_liner": "智能体编排工具清单",
+        "what_it_is": "这是一个精选清单，收录开源和源码可用的智能体编排工具，并按并行编码、自主运行、群体协作等场景分类。",
+        "problem_solved": "它帮助开发者在大量智能体工具中按使用方式查找方案，覆盖并行会话管理、任务自动推进、分工协作和自建编排基础设施。",
+        "who_should_care": "关注智能体编码、多智能体协作和工具选型的开发者。",
+        "use_cases": [
+          "查找并行编码智能体工具",
+          "比较自主任务运行方案",
+          "寻找智能体基础设施组件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，创建后破千星且本周一天上日榜。",
+        "risk_notes": "清单类仓库，成熟度取决于收录项目；部分条目标注为早期版本。",
+        "evidence": [
+          "A curated list of open source and source available tools for orchestrating agents.",
+          "Run several agents at once and review each diff.",
+          "Build your own orchestrator."
+        ]
+      }
+    },
+    "WenXiaoWendy/cyberboss": {
+      "category": "ai-agent",
+      "one_liner": "微信接入的生活智能体桥",
+      "intro": {
+        "one_liner": "微信生活智能体桥",
+        "what_it_is": "这是一个把本地 Codex 或 Claude Code 接入微信的桥接项目，可记录时间轴、写日记、发文件，并按随机或预设唤醒智能体。",
+        "problem_solved": "它面向需要外部督促的人，把提醒、陪伴和时间记录交给常驻智能体，减少对自律和手动开启工具的依赖。",
+        "who_should_care": "使用 Codex 或 Claude Code，且希望通过微信获得主动提醒与生活记录的开发者。",
+        "use_cases": [
+          "微信里接收智能体主动提醒",
+          "自动整理聊天形成生活时间轴",
+          "本地写日记并发送文件表情"
+        ],
+        "alternatives": "相比番茄钟和待办工具，它强调常驻微信、随机唤醒和跨时间记忆。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 38 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0；需本地安装运行环境并配置微信相关参数；未关闭议题有 32 个。",
+        "evidence": [
+          "It is an agent bridge that plugs a local coding runtime directly into WeChat and turns it into a time-aware, context-persistent accountability companion.",
+          "At random intervals, the system wakes the agent up and lets it decide what to do next: send a message, stay silent, write in the diary, update the timeline, or use tools.",
+          "Node.js `>= 22`"
+        ]
+      }
+    },
+    "krusemediallc/arcads-claude-code": {
+      "category": "ai-agent",
+      "one_liner": "Arcads 智能体技能工作区",
+      "intro": {
+        "one_liner": "AI 广告创意技能包",
+        "what_it_is": "一个面向 Claude Code 和 Cursor 的 Python 工作区，封装 Arcads 外部接口、代理技能、提示词库和广告素材生成流程。",
+        "problem_solved": "把 AI 营销视频、图片广告、竞品素材整理和提示词生成串成可交给代理执行的工作流。",
+        "who_should_care": "用 AI 编辑器批量制作广告素材的开发者、增长团队和媒体投放人员。",
+        "use_cases": [
+          "生成短视频广告素材",
+          "批量制作静态图片广告",
+          "整理竞品广告到 Airtable"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 16 星，仅一天进入日榜。",
+        "risk_notes": "依赖 Arcads 账号和接口密钥；部分流程需额外命令行工具、浏览器和第三方接口权限；创建日期晚于最近提交日期，时间信息存疑。",
+        "evidence": [
+          "Arcads external API: agent skills, prompting library, and Cursor/Claude workspace",
+          "Create AI marketing videos and images using your [Arcads](https://arcads.ai/?via=claude-code) account, powered by AI agents in **Claude Code** or **Cursor**.",
+          "The agent handles API calls, polling, prompt engineering, file organization, and cost confirmation."
+        ]
+      }
+    },
+    "gooseworks-ai/goose-skills": {
+      "category": "ai-agent",
+      "one_liner": "增长营销智能体技能库",
+      "intro": {
+        "one_liner": "增长营销技能库",
+        "what_it_is": "这是面向 Claude Code、Cursor、Codex 等编码智能体的技能与数据接口库，主要用 Python 编写，覆盖广告、社交、内容、潜客、搜索优化和数据抓取。",
+        "problem_solved": "它把市场研究、竞品与受众分析、广告投放复盘、内容创作、邮件、达人协作、视频广告等流程整理为可安装、可路由的技能，供智能体按目标调用。",
+        "who_should_care": "用编码智能体辅助增长、营销和广告制作的开发者与团队。",
+        "use_cases": [
+          "让智能体调研市场与竞品",
+          "生成静态广告和内容素材",
+          "复盘投放表现并规划活动"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 23 星，仅一天进入日榜。",
+        "risk_notes": "未关闭问题有 73 个；多数技能依赖服务器与实时数据；旧增长库已删除，需留意迁移映射。",
+        "evidence": [
+          "Library of Growth & GTM skills + data APIs for Claude Code, Codex, Cursor to run ads, social, content, lead gen, seo and data scraping",
+          "Goose Skills gives Claude Code, Cursor, Codex, and other coding agents 14 marketing playbooks and the video-ad skills behind GooseWorks.",
+          "The old GTM library was deleted on 23 Oct 2026."
+        ]
+      }
+    },
+    "Abao135/jc-tizi-tj": {
+      "category": "other",
+      "one_liner": "代理节点测评推荐站",
+      "intro": {
+        "one_liner": "机场推荐清单",
+        "what_it_is": "这是一个整理机场服务、线路协议、套餐价格、设备限制和优惠码的推荐清单，并附选购建议与常见问题。",
+        "problem_solved": "帮助用户按日常办公、流媒体、轻度使用和备用线路等需求比较机场服务，减少选择成本。",
+        "who_should_care": "关注代理服务选购、订阅协议兼容和备用线路配置的普通开发者。",
+        "use_cases": [
+          "按用途筛选主力机场",
+          "比较套餐价格与设备限制",
+          "查看优惠码和常见问题"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注集中。",
+        "risk_notes": "内容含大量推广入口、优惠码和频道引导；服务评价与性能数字来自清单自述，需自行核验。",
+        "evidence": [
+          "这份机场推荐清单整理了 **4 家主力与 10 家备用机场**，对比线路、协议、套餐价格、设备限制和优惠码。",
+          "**选购要点**：找稳定机场，先用月付测试自己运营商的晚高峰；选 Clash 机场，先确认订阅开放及内核支持 VLESS、AnyTLS、Hysteria2 等对应协议；准备备用时，尽量选择不同服务商和线路。",
+          "破千时的 Star 数：1001；本周上日榜天数：1"
+        ]
+      }
+    },
+    "g0ldyy/comet": {
+      "category": "content-media",
+      "one_liner": "Stremio 极速种子搜索插件",
+      "intro": {
+        "one_liner": "Stremio 资源搜索插件",
+        "what_it_is": "Comet 是用 Python 编写的 Stremio 插件，用于搜索种子和网盘转存资源，并支持多种抓取器与自托管部署。",
+        "problem_solved": "它把多个来源的资源检索、缓存、排序和网盘转存服务整合起来，减少重复查找，并提供代理、连接限制和管理面板。",
+        "who_should_care": "使用 Stremio、网盘转存服务或自建媒体检索工具的开发者。",
+        "use_cases": [
+          "在 Stremio 中聚合搜索资源",
+          "自建带缓存和排序的检索服务",
+          "接入 Kodi 或自动化工具"
+        ],
+        "alternatives": "支持 CometNet 元数据共享、Kodi 插件、Torznab 集成和多种抓取器。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "涉及种子与网盘转存资源检索，使用时应留意来源合规与服务条款；自托管需要配置环境变量。",
+        "evidence": [
+          "Stremio's fastest torrent/debrid search add-on.",
+          "CometNet: Decentralized P2P network for automatic torrent metadata sharing",
+          "Kodi Support: Dedicated official add-on with automatic updates"
+        ]
+      }
+    },
+    "smoochiee/Bluetooth-jammer-esp32": {
+      "category": "hardware-iot",
+      "one_liner": "ESP32 蓝牙干扰器",
+      "intro": {
+        "one_liner": "ESP32 无线干扰实验",
+        "what_it_is": "这是一个用 ESP32 与 nRF24L01 产生 2.4GHz 噪声信号的 C++ 项目，提供接线、烧录和编译说明。",
+        "problem_solved": "它面向蓝牙、Wi-Fi 等 2.4GHz 设备的信号干扰实验，并给出硬件连接与代码上传方式。",
+        "who_should_care": "关注无线协议、射频实验和嵌入式硬件的开发者。",
+        "use_cases": [
+          "学习 ESP32 与 nRF24L01 接线",
+          "研究 2.4GHz 信道噪声",
+          "编译并烧录实验代码"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注度集中。",
+        "risk_notes": "资料明确警告干扰行为违法；效果受设备版本影响；部分设备未测试，且指向更新代码仓库。",
+        "evidence": [
+          "**WARNING!!! JAMMING IS ILLEGAL**",
+          "**IT CREATES NOISE SIGNAL TO JAM BLUETOOTH AND WIFI USING NRF24L01 AND ESP32 IN RANGE 2.4GHZ DEVICES , EFFECTS MAY VARY DEPENDS ON DEVICE BLUETOOTH VERSIONS **",
+          "`NOT TESTED ON 2.4GHZ DRONE I DONT HAVE ONE BUT IT CAN JAM ONE..... MAYBE?`"
+        ]
+      }
+    },
+    "danielweidman/pixmob-ir-reverse-engineering": {
+      "category": "hardware-iot",
+      "one_liner": "PixMob 手环协议逆向项目",
+      "intro": {
+        "one_liner": "PixMob 手环协议逆向工具",
+        "what_it_is": "一个以 Python 为主的仓库，目标是逆向 PixMob 红外及射频协议，让用户在家里控制 PixMob 手环。",
+        "problem_solved": "解决 PixMob 手环离场后难以自行控制的问题，尝试弄清红外和射频通信方式。",
+        "who_should_care": "对硬件协议逆向、红外射频控制和互动装置感兴趣的开发者。",
+        "use_cases": [
+          "在家控制 PixMob 手环",
+          "研究红外与射频协议",
+          "制作互动灯光装置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "缺少说明资料，功能完整度、可用性和维护状态均无法确认。",
+        "evidence": [
+          "Hacking the PixMob infrared (and now also RF!) protocol to enable control of PixMob wristbands at home.",
+          "主要语言：Python",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "AlphaFin-proj/AlphaFin": {
+      "category": "data-finance",
+      "one_liner": "金融智能项目",
+      "intro": {
+        "one_liner": "金融分析开源框架",
+        "what_it_is": "AlphaFin 开源了金融数据集、StockGPT 两阶段模型和 Stock-Chain 检索增强金融分析框架，面向股票趋势预测与金融问答。",
+        "problem_solved": "它尝试用检索增强缓解大模型在金融分析中的幻觉，以及无法生成实时内容的问题。",
+        "who_should_care": "金融大模型、检索增强和量化问答研究者，以及相关应用开发者。",
+        "use_cases": [
+          "股票趋势预测实验",
+          "金融问答系统原型",
+          "金融数据集与模型评测"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾有一天登上日榜。",
+        "risk_notes": "内容明确仅供学术研究和教育用途，生成内容不构成金融、法律或投资建议；使用风险由用户自行承担。",
+        "evidence": [
+          "We opensource our **AlphaFin** series, now including **AlphaFin dataset**, the chat models trained on AlphaFin, namely **StockGPT-Stage1** and **StockGPT-Stage2**, as well as **Stock-Chain**, the retrieval-augmented financial analysis framework.",
+          "By integrating with RAG, we address the issue of hallucination of LLM’s output and LLM’s inability to generate real-time content.",
+          "The content in this repository is for **ACADEMIC RESEARCH AND EDUCATIONAL PURPOSE ONLY**."
+        ]
+      }
+    },
+    "YingfanWang/PaCMAP": {
+      "category": "ai-model",
+      "one_liner": "大规模降维算法库",
+      "intro": {
+        "one_liner": "兼顾全局与局部的降维工具",
+        "what_it_is": "PaCMAP 是 Python 降维方法，用于高维数据可视化，尽量同时保留原始空间中的局部结构和全局结构。",
+        "problem_solved": "它针对传统降维方法偏重局部或全局结构的问题，通过近邻、中近和远点对优化低维嵌入。",
+        "who_should_care": "需要可视化高维数据、分析聚类结构的数据分析和机器学习开发者。",
+        "use_cases": [
+          "高维数据二维可视化",
+          "观察数据集中的簇结构",
+          "单细胞数据可视化"
+        ],
+        "alternatives": "相比偏重局部或全局结构的方法，它用中近点对兼顾两类结构。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，降维可视化是持续需求，且已有论文、安装方式和使用示例。",
+        "risk_notes": "部分新算法仍标注将嵌入包中；默认近邻后端已切换，旧配置可能需要适配。",
+        "evidence": [
+          "PaCMAP (Pairwise Controlled Manifold Approximation) is a dimensionality reduction method that can be used for visualization, preserving both local and global structure of the data in original space.",
+          "Previous dimensionality reduction techniques focus on either local structure (e.g. t-SNE, LargeVis and UMAP) or global structure (e.g. TriMAP), but not both",
+          "The `pacmap` package is designed to be compatible with `scikit-learn`, meaning that it has a similar interface with functions in the `sklearn.manifold` module."
+        ]
+      }
+    },
+    "catppuccin/vscode-icons": {
+      "category": "dev-tools",
+      "one_liner": "VSCode 柔和图标主题",
+      "intro": {
+        "one_liner": "柔和配色编辑器图标",
+        "what_it_is": "这是给 VSCode 和 VSCodium 使用的图标扩展，提供 Catppuccin 配色和多套预览风格。",
+        "problem_solved": "让编辑器中的文件、文件夹和语言图标更统一，并支持单色、自定义关联等外观调整。",
+        "who_should_care": "喜欢统一编辑器外观、使用 VSCode 或 VSCodium 的开发者。",
+        "use_cases": [
+          "统一项目文件树图标风格",
+          "为语言和文件类型配图标",
+          "调整单色或文件夹图标"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "修改设置会重写主题文件，低配机器可能较慢；不支持自定义或外部 SVG。",
+        "evidence": [
+          "Soothing colors from the Catppuccin palette.",
+          "Custom associations, monochrome icons, and more!",
+          "Custom/external SVGs are not supported"
+        ]
+      }
+    },
+    "RupertAvery/DiffusionToolkit": {
+      "category": "content-media",
+      "one_liner": "AI 图像元数据索引查看器",
+      "intro": {
+        "one_liner": "AI 图像元数据管理工具",
+        "what_it_is": "这是一个用 C# 编写的 Windows 桌面工具，用于索引、查看和管理 AI 生成图像及视频的元数据。",
+        "problem_solved": "它帮助整理不断增多的 AI 图像，按提示词等元数据搜索，并用标签、评分、相册和排序管理素材。",
+        "who_should_care": "拥有大量 Stable Diffusion 等生成图像、需要本地检索整理的创作者。",
+        "use_cases": [
+          "按提示词搜索历史生成图",
+          "给图片评分、收藏和打标签",
+          "用相册整理生成素材"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "目前仅支持 Windows；安装依赖 .NET 6 Desktop Runtime；源码构建要求 Visual Studio 2026 和 .NET 10 SDK。",
+        "evidence": [
+          "Metadata-indexer and Viewer for AI-generated images",
+          "It aims to help you organize, search and sort your ever-growing collection.",
+          "Currently runs on Windows only"
+        ]
+      }
+    },
+    "marcus/nightshift": {
+      "category": "ai-agent",
+      "one_liner": "夜间自动生成 PR 的智能体",
+      "intro": {
+        "one_liner": "夜间自动提代码改进请求",
+        "what_it_is": "Nightshift 是用 Go 编写的工具，利用剩余的 Claude、Codex 等额度，在夜间扫描代码库并生成分支或 PR。",
+        "problem_solved": "它把容易被忽略的死代码、文档漂移、测试缺口和安全问题整理成可审阅的 PR，且不直接改主分支。",
+        "who_should_care": "维护多个仓库、订阅 AI 编码工具并愿意审阅自动 PR 的开发者。",
+        "use_cases": [
+          "夜间清理死代码",
+          "补齐文档和测试缺口",
+          "批量生成可关闭的改进 PR"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周只涨了 2 星，仅一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 180 个；配置示例包含跳过权限与沙箱审批的选项；README 含无关指令，应忽略。",
+        "evidence": [
+          "Nightshift uses your leftover Claude / Codex budget to surprise you with useful PRs. Love them or leave them.",
+          "Nightshift runs overnight to find dead code, doc drift, test gaps, security issues, and 20+ other things silently accumulating while you ship features.",
+          "Everything lands as a branch or PR. It never writes directly to your primary branch."
+        ]
+      }
+    },
+    "paean-ai/deeptide": {
+      "category": "ai-agent",
+      "one_liner": "macOS 原生编码智能体",
+      "intro": {
+        "one_liner": "面向编码的智能体工具集",
+        "what_it_is": "DeepTide 是围绕 DeepSeek 的编码智能体项目，包含 macOS 原生应用、命令行工具和 Rust 版本，并提供文档与问题跟踪入口。",
+        "problem_solved": "它让开发者在终端或桌面中通过对话调用工具，完成代码阅读、修改、检索、命令执行等编码任务。",
+        "who_should_care": "使用 DeepSeek 或兼容接口、需要命令行与桌面编码助手的开发者。",
+        "use_cases": [
+          "在终端里解释代码库",
+          "用一次性命令分析代码",
+          "在桌面端续接会话"
+        ],
+        "alternatives": "提供三种形态，Rust 版本强调单文件、无运行时，并与命令行共享配置和会话。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增星数为零，仅一天进入日榜。",
+        "risk_notes": "Rust 版本仍在成熟中；命令行依赖 Bun；macOS 原生版要求较新系统。",
+        "evidence": [
+          "Built by DeepSeek, for DeepSeek — a Swift-native macOS coding agent",
+          "This repository is the community front door for all three — docs, FAQ, issue tracking",
+          "It is intended to grow into the canonical cross-platform CLI over time"
+        ]
+      }
+    },
+    "Supreeeme/xwayland-satellite": {
+      "category": "desktop-system",
+      "one_liner": "Wayland 外置 Xwayland 组件",
+      "intro": {
+        "one_liner": "通用无根 Xwayland 集成器",
+        "what_it_is": "一个用 Rust 编写的工具，为实现了 xdg_wm_base 和 viewporter 的 Wayland 合成器提供无根 Xwayland 集成。",
+        "problem_solved": "让合成器无需自行实现 X11 窗口管理、绝对定位和缩放适配，也能运行 X11 应用。",
+        "who_should_care": "Wayland 合成器开发者，以及需要兼容 X11 应用的桌面用户。",
+        "use_cases": [
+          "为合成器接入 X11 应用",
+          "手动启动独立 Xwayland 实例",
+          "调试 X11 应用缩放与显示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且已有一定分叉。",
+        "risk_notes": "宿主合成器必须实现指定协议；混合 DPI 下会选最小显示器 DPI；部分 Java、Wine 应用需额外配置。",
+        "evidence": [
+          "xwayland-satellite grants rootless Xwayland integration to any Wayland compositor implementing xdg_wm_base and viewporter.",
+          "Supporting rootless XWayland involves writing an X11 window manager and dealing with all those quirks.",
+          "The host compositor **must** implement the following protocols/interfaces for satellite to function"
+        ]
+      }
+    },
+    "mehdihadeli/food-delivery-microservices": {
+      "category": "learning-resource",
+      "one_liner": "云原生外卖微服务示例",
+      "intro": {
+        "one_liner": "云原生外卖微服务示例",
+        "what_it_is": "一个用 C# 编写的云原生外卖微服务实践项目，结合 .NET Aspire、Wolverine、领域驱动设计、命令查询职责分离、垂直切片和事件驱动架构。",
+        "problem_solved": "帮助开发者学习如何组合微服务、异步消息、事件溯源、可观测性、测试和部署等常见架构技术。",
+        "who_should_care": "想学习 .NET 微服务架构与分布式设计的开发者。",
+        "use_cases": [
+          "学习微服务架构设计",
+          "研究事件驱动与消息处理",
+          "参考云原生应用编排"
+        ],
+        "alternatives": "另有模块化单体和 Go 版本，可按生产需求选择架构。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时为一千星。",
+        "risk_notes": "项目仍在进行中，会持续新增功能；并非面向真实业务，重点偏技术实现。",
+        "evidence": [
+          "This project is in progress. I add new features over the time.",
+          "This application is not business oriented and my focus is mostly on technical part",
+          "Using .NET Aspire for cloud-native application orchestration and enhanced developer experience"
+        ]
+      }
+    },
+    "re4/LibreCode": {
+      "category": "dev-tools",
+      "one_liner": "本地模型编码逆向界面",
+      "intro": {
+        "one_liner": "开源逆向编程界面",
+        "what_it_is": "这是一个用 C# 编写、面向编程与逆向工作的界面，描述中提到类似 Ollama 与 Cursor 的编码体验。",
+        "problem_solved": "它试图把代码编写、反编译和逆向分析放到同一套交互界面中，方便开发者处理相关任务。",
+        "who_should_care": "关注本地模型编程、反编译和逆向分析的开发者。",
+        "use_cases": [
+          "辅助阅读与编写代码",
+          "配合反编译结果分析",
+          "探索逆向工作流界面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时星数极高但分叉数很少，且仅一天上日榜。",
+        "risk_notes": "星数与分叉数、上榜天数明显不匹配；资料极少，成熟度与可用性难以判断；创建日期为未来时间。",
+        "evidence": [
+          "LibreCode - A Ollama cursor like coding / Reversing Interface",
+          "主要语言：C#",
+          "破千时的 Star 数：519968"
+        ]
+      }
+    },
+    "astrid-runtime/astrid": {
+      "category": "ai-agent",
+      "one_liner": "面向智能体的安全操作系统",
+      "intro": {
+        "one_liner": "面向智能体的安全运行时",
+        "what_it_is": "Astrid 是面向智能体系统的操作系统项目，当前提供可在 macOS 和 Linux 运行的用户态运行时，以 WebAssembly capsules 组合软件。",
+        "problem_solved": "它把模型决策与权限授权分开，用沙箱、能力令牌、清单门禁和审计链限制文件、网络、进程等外部访问。",
+        "who_should_care": "构建智能体系统、工具平台或需要隔离组件权限的开发者。",
+        "use_cases": [
+          "隔离运行智能体工具",
+          "组合可替换的服务组件",
+          "构建自有运行时发行版"
+        ],
+        "alternatives": "相比把信任放在提示词的智能体框架，它把授权放到运行时边界。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但创建时间很短。",
+        "risk_notes": "当前发布的是托管运行时，不是可启动系统镜像；Windows 仅在持续集成中测试，未包含在发布包；macOS 文件系统前端要求签名应用与扩展批准。",
+        "evidence": [
+          "Unicity Astrid OS: a secure operating system for AI agents.",
+          "Today it runs as a portable user-space runtime on macOS and Linux; the direction is a standalone operating system. This release is the hosted runtime, not a bootable OS image.",
+          "Agent frameworks put trust in the prompt. Astrid puts it in the runtime."
+        ]
+      }
+    },
+    "astrid-runtime/sdk-js": {
+      "category": "dev-tools",
+      "one_liner": "Astrid 胶囊 JS SDK",
+      "intro": {
+        "one_liner": "Astrid 胶囊开发套件",
+        "what_it_is": "这是用于构建 Astrid 胶囊的 JavaScript 与 TypeScript 开发工具包，包含作者接口、构建编排和自动生成的契约类型。",
+        "problem_solved": "让 TypeScript 开发者按熟悉的异步接口编写 Astrid 胶囊，并生成与 Rust 侧一致的组件和归档格式。",
+        "who_should_care": "使用 TypeScript 开发 Astrid 胶囊或关注跨语言胶囊构建的开发者。",
+        "use_cases": [
+          "用装饰器定义胶囊工具",
+          "构建 wasip2 组件与归档",
+          "复用跨胶囊通信类型"
+        ],
+        "alternatives": "与 Rust 配套工具共享契约和输出格式，但采用 TypeScript 装饰器与 Node 风格接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 8,197 星且本周上过一次日榜。",
+        "risk_notes": "当前状态为 Alpha，仍需人工冒烟测试；生成的 JavaScript 胶囊体积明显大于 Rust 胶囊。",
+        "evidence": [
+          "JavaScript / TypeScript SDK for building Astrid OS capsules. Companion to unicity-astrid/sdk-rust.",
+          "Same WIT contract, same wasip2 Component Model output, same `.capsule` archive format — your kernel can't tell which language built the binary.",
+          "Alpha. The vertical slice (TypeScript → wasip2 component → `.capsule` → installed by `astrid capsule install` → kernel lifecycle hook execution) is proven end-to-end."
+        ]
+      }
+    },
+    "astrid-runtime/book": {
+      "category": "learning-resource",
+      "one_liner": "Astrid OS 权威参考文档",
+      "intro": {
+        "one_liner": "Astrid 系统参考书",
+        "what_it_is": "这是 Astrid 的权威参考文档，覆盖内核、capsule 模型、host ABI、总线和安全模型，使用 mdBook 构建。",
+        "problem_solved": "把 Astrid 的核心架构、接口约定和安全规则集中成册，并可从源码生成部分附录与交叉引用。",
+        "who_should_care": "开发或研究 Astrid 内核、capsule、host ABI 与总线的人。",
+        "use_cases": [
+          "查阅 Astrid 架构说明",
+          "生成接口与能力附录",
+          "本地预览参考文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时已有七千五百二十五颗星。",
+        "risk_notes": "创建日期为 2026 年 6 月 6 日；文档生成脚本依赖同级源码目录；成熟度未说明。",
+        "evidence": [
+          "The canonical reference for Astrid: the kernel, the capsule model, the host ABI, the bus, and the security model.",
+          "Built with [mdBook](https://github.com/rust-lang/mdBook).",
+          "The reference appendices (capability catalog, host ABI error codes, topic registry) are generated from the Astrid source by `tools/gen-appendices.sh`."
+        ]
+      }
+    },
+    "astrid-runtime/handbook": {
+      "category": "learning-resource",
+      "one_liner": "Astrid 开发协作手册",
+      "intro": {
+        "one_liner": "Astrid 贡献者手册",
+        "what_it_is": "这是 Astrid 的贡献者手册，说明多仓库协作、内核设计原则、提案触发条件、贡献层级和发布流程，并用 mdBook 构建。",
+        "problem_solved": "它把参与 Astrid 开发所需的协作约定、贡献路径和发布流程集中说明，降低新贡献者理解项目规则的门槛。",
+        "who_should_care": "准备参与 Astrid 开发、提交提案或维护发布流程的贡献者。",
+        "use_cases": [
+          "了解多仓库协作方式",
+          "查阅贡献层级与流程",
+          "本地预览手册内容"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 7,472 星，且本周上过一次日榜。",
+        "risk_notes": "创建日期为 2026 年 6 月 6 日，时间较新；内容主要是协作规范，不是可运行系统；成熟度未说明。",
+        "evidence": [
+          "How to work on Astrid: the polyrepo, the kernel-is-dumb law, the RFC trigger, contribution tiers, and the release process.",
+          "Built with [mdBook](https://github.com/rust-lang/mdBook).",
+          "Dual-licensed under [MIT](LICENSE-MIT) and [Apache 2.0](LICENSE-APACHE)."
+        ]
+      }
+    },
+    "astrid-runtime/sdk-rust": {
+      "category": "dev-tools",
+      "one_liner": "Astrid 胶囊 Rust SDK",
+      "intro": {
+        "one_liner": "Astrid 胶囊开发套件",
+        "what_it_is": "这是用于构建 Astrid 胶囊的 Rust 开发工具包，提供安全、类型化的内核服务访问，并包含宏和底层绑定。",
+        "problem_solved": "它把文件系统、网络、进程、定时任务等能力封装成 Rust 接口，并自动生成 WASM 边界代码，减少手写胶水代码。",
+        "who_should_care": "使用 Rust 开发 Astrid 胶囊、工具或用户态进程的开发者。",
+        "use_cases": [
+          "编写可调用外部接口的工具",
+          "实现命令、钩子和定时任务",
+          "访问文件、网络与键值存储"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾登上日榜，但只有一次上榜记录。",
+        "risk_notes": "项目创建时间很新，破千星时 Fork 数较少；依赖版本为 0.2，成熟度未明确。",
+        "evidence": [
+          "Rust SDK for building Astrid capsules. Part of Unicity Astrid OS.",
+          "The `#[capsule]` macro generates all WASM ABI boilerplate: `extern \"C\"` exports, JSON serialization across the boundary, tool schema generation, and dispatch routing.",
+          "astrid-sdk = \"0.2\""
+        ]
+      }
+    },
+    "astrid-runtime/rfcs": {
+      "category": "learning-resource",
+      "one_liner": "Astrid 运行时提案集",
+      "intro": {
+        "one_liner": "Astrid 运行时规范提案库",
+        "what_it_is": "这是 Astrid 智能体运行时的设计提案仓库，用 RFC 管理内核与用户空间契约的重大变更。",
+        "problem_solved": "把 ABI、进程间通信、能力模型、清单格式和接口标准的变更纳入提案、讨论与规范流程。",
+        "who_should_care": "参与 Astrid 运行时、SDK 或 capsule 开发的贡献者。",
+        "use_cases": [
+          "新增或修改宿主函数",
+          "调整能力令牌格式",
+          "变更清单或接口标准"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时已有四千二百九十四星。",
+        "risk_notes": "索引仅列出一项活跃流程提案；仓库创建于二〇二六年三月十六日，内容仍可能快速变化。",
+        "evidence": [
+          "RFCs for the Astrid agent runtime.",
+          "Design proposals for changes to [Astrid's](https://github.com/astrid-runtime/astrid) kernel-to-user-space contract.",
+          "They are the authoritative specification - implementations conform to them, not the other way around."
+        ]
+      }
+    },
+    "imraywang/wewrite": {
+      "category": "content-media",
+      "one_liner": "公众号文章全流程 AI 技能",
+      "intro": {
+        "one_liner": "公众号全流程写作工具",
+        "what_it_is": "一个给智能体使用的公众号内容技能集，覆盖热点抓取、选题、素材、写作、审稿、配图、排版和草稿箱推送。",
+        "problem_solved": "把公众号从找题到成稿、排版发布的流程串起来，并强调来源核对、编辑复审和风格学习。",
+        "who_should_care": "公众号创作者、内容编辑，以及想用智能体辅助出稿的人。",
+        "use_cases": [
+          "一句话生成并审过成稿",
+          "单独做选题、配图或排版",
+          "一稿改写为多平台内容"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 107 星且曾上日榜。",
+        "risk_notes": "创建日期与最近提交日期异常；推送草稿箱和生图需额外配置；仍有 8 个未关闭问题。",
+        "evidence": [
+          "公众号文章全流程 AI Skill for Claude Code — 热点抓取 → 选题 → 写作 → SEO → 视觉AI → 排版 → 微信草稿箱",
+          "一个给 AI Agent（Claude Code / Codex / OpenClaw / Hermes 等）用的公众号内容 Skill。",
+          "**✅ 适合**：公众号创作者的日常出稿（热点文/干货文/故事文/测评文）· 只想要某个环节的人（选题灵感、封面配图、质量自检、排版发布）· 想把已有文章一稿多发到小红书/抖音 · 想让 AI 逐渐学会自己文风的长期使用者。"
+        ]
+      }
+    },
+    "fujibee/agmsg": {
+      "category": "ai-agent",
+      "one_liner": "CLI 编码智能体消息互通",
+      "intro": {
+        "one_liner": "命令行智能体互传消息工具",
+        "what_it_is": "agmsg 是让不同厂商的命令行人工智能编码智能体在同一团队内互发消息的 Shell 工具，基于本地 SQLite 文件，无需常驻服务或框架。",
+        "problem_solved": "它减少人工在多个智能体之间复制粘贴消息，让 Claude Code、Codex、Gemini CLI、GitHub Copilot CLI 等会话通过共享数据库直接交流。",
+        "who_should_care": "同时使用多个命令行编码智能体协作的开发者。",
+        "use_cases": [
+          "让 Claude Code 请 Codex 做代码评审",
+          "多个智能体在同一团队内交换进度",
+          "回放历史消息给新加入的智能体"
+        ],
+        "alternatives": "明确不是 MCP、子智能体或消息队列，只用 Bash 与 SQLite 连接对等会话。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 232 星，并曾有一天进入日榜。",
+        "risk_notes": "未关闭议题有 413 个；可选常驻服务处于测试阶段；Windows 需 Git Bash 与 sqlite3，npm 和插件安装可能落后于主分支。",
+        "evidence": [
+          "Cross-vendor messaging for CLI AI coding agents — let Claude Code, Codex, Gemini & Copilot talk to each other in one team. Bash + SQLite, no daemon, no framework.",
+          "You stop being the copy-paste courier between your agents. Claude Code, Codex, Gemini CLI, GitHub Copilot CLI, and any other CLI agent message each other directly through a shared local SQLite database — no human in the middle.",
+          "Not MCP. No MCP server, no extra runtime — just `bash` + `sqlite3`."
+        ]
+      }
+    }
+  }
+}

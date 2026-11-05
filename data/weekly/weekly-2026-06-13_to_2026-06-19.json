@@ -181,21 +181,21 @@
       "triage_quality": "suspicious",
       "triage_reason": "星增与体量疑",
       "intro": {
-        "one_liner": "Google Cloud 数据目录工具与示例集",
-        "what_it_is": "GoogleCloudPlatform 官方仓库，收录 Knowledge Catalog（原 Dataplex）的工具、agent 与示例代码，用于演示该 AI 驱动的数据目录与元数据管理平台的能力。",
-        "problem_solved": "为结构化与非结构化数据构建动态知识图谱，为 AI agent 提供语义与业务上下文，并支持上下文管理、元数据丰富与检索方案的搭建。",
-        "who_should_care": "使用 Google Cloud 数据栈的数据工程师、元数据与数据治理团队，以及需要为 AI agent 构建上下文检索方案（RAG 类）的开发者。",
+        "one_liner": "知识目录示例工具集",
+        "what_it_is": "这是围绕 Knowledge Catalog 的 Python 工具、智能体和示例集合，用于演示数据目录能力，以及上下文管理、增强和检索方案。",
+        "problem_solved": "帮助开发者为结构化和非结构化数据补充语义与业务上下文，让智能体更容易理解、检索和使用数据。",
+        "who_should_care": "使用云端数据目录、元数据管理或智能体上下文方案的开发者。",
         "use_cases": [
-          "在 Google Cloud 上搭建数据目录与元数据管理示例",
-          "为 AI agent 构建基于知识图谱的上下文检索与丰富流程",
-          "通过 Cloud Shell 快速试用 Knowledge Catalog 功能"
+          "体验知识目录功能示例",
+          "构建数据上下文管理方案",
+          "演示元数据增强与检索"
         ],
         "alternatives": "unknown",
         "maturity": "unknown",
-        "hype_or_trend": "短期热点：一周新增约 2983 星，但仓库定位为工具与示例集合，热度更多来自 AI 数据上下文话题。",
-        "risk_notes": "README 明确声明该仓库及其内容并非 Google 官方产品；仓库创建时间与 pushed_at 时间线异常（创建于 2026-05-04），数据可信度需谨慎；open issues 224 个，维护响应情况未知。",
+        "hype_or_trend": "短期热点，一周新增 2,983 星且仅一天进入日榜。",
+        "risk_notes": "内容明确声明不是官方产品；未关闭议题 225 个，仓库创建时间较新。",
         "evidence": [
-          "This repository features tools, agents, and samples that demonstrate Knowledge Catalog features",
+          "This repository features tools, agents, and samples that demonstrate Knowledge Catalog features, and building context management, enrichment and retrieval solutions.",
           "It provides a dynamic knowledge graph of all your data, structured and unstructured, to provide semantics and business context to AI agents",
           "This repository and its contents are not an official Google product."
         ]
@@ -304,23 +304,23 @@
       "triage_quality": "ok",
       "triage_reason": "编码代理工具",
       "intro": {
-        "one_liner": "Codex 复杂代码库智能体框架",
-        "what_it_is": "LazyCodex 是一个面向 Codex 的 agent harness（智能体框架），把 OmO（oh-my-openagent）打包成 Codex 发行版，提供项目记忆、规划、执行与验证完成能力。",
-        "problem_solved": "解决在大型复杂代码库中让 Codex 智能体具备持久项目上下文、结构化规划与可验证完成的问题，避免智能体凭记忆猜测代码结构或草率收尾。",
-        "who_should_care": "使用 Codex 进行大型代码库开发的工程师，以及希望获得开箱即用智能体工作流、不想自行搭建配置的团队。",
+        "one_liner": "Codex 代码库代理套件",
+        "what_it_is": "LazyCodex 把 OmO 代理框架打包到 Codex，提供项目记忆、规划、执行、验证完成、技能、钩子和诊断。",
+        "problem_solved": "为复杂代码库中的代理工作补齐上下文、计划执行和结果验证，减少手工配置与流程散乱。",
+        "who_should_care": "使用 Codex 处理大型代码库、需要多代理协作的开发者。",
         "use_cases": [
-          "用 $init-deep 为大型仓库生成分层 AGENTS.md 项目记忆",
-          "用 $ulw-plan 先产出决策完整的计划，再用 $start-work 按清单执行",
-          "用 $ulw-loop 让开放式任务循环执行直到证据验证完成"
+          "为大型仓库生成分层项目记忆",
+          "先写计划再按清单执行开发",
+          "循环执行任务直到验证完成"
         ],
-        "alternatives": "README 自述为 Codex 版的 LazyVim，并称是 OmO 的 Codex 发行版；其他同类项目未在材料中提及，具体差异 unknown。",
+        "alternatives": "以 Codex 分发方式打包 OmO，并类比 LazyVim 的即用配置体验。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：周增 465 stars、登上日榜 1 天，属于 AI 编程智能体工具链的阶段性关注，但项目创建时间与推送时间字段存在异常，长期趋势难以判断。",
-        "risk_notes": "README 含大量营销化表述与外部链接引导（如 X 帖子、官网），需自行甄别；安装脚本通过 npx 执行远程包并修改 ~/.codex/config.toml，存在供应链与本地配置改动风险；项目事实中 created_at 与 pushed_at 时间线异常，成熟度与维护情况需谨慎核实。",
+        "hype_or_trend": "短期热点，一周涨了 465 星，并曾进入日榜一天。",
+        "risk_notes": "市场安装路径仍标为实验性；升级后需重新批准钩子；仍有 18 个未关闭问题。",
         "evidence": [
           "The one and only agent harness for complex codebases. Project memory, planning, execution, and verified completion inside Codex.",
-          "LazyCodex packages OmO (oh-my-openagent) as the Codex agent harness for complex codebases.",
-          "Think LazyVim for lazy.nvim, but for Codex."
+          "LazyCodex packages [OmO (oh-my-openagent)](https://github.com/code-yeongyu/oh-my-openagent) as the Codex agent harness for complex codebases.",
+          "Install from the Codex marketplace (experimental)"
         ]
       }
     },
@@ -920,22 +920,21 @@
       "triage_quality": "ok",
       "triage_reason": "LLM知识抽取",
       "intro": {
-        "one_liner": "用 LLM 把文档转成知识图谱的 CLI 工具",
-        "what_it_is": "Hyper-Extract 是一个 Python 命令行工具，通过 LLM 将非结构化文本抽取为结构化知识，支持图、超图与时空抽取，并提供查询、可视化与导出能力。",
-        "problem_solved": "解决从 PDF、Word、网页等非结构化文档中人工整理实体与关系成本高的问题，用一条命令生成可查询的知识结构。",
-        "who_should_care": "需要构建知识库的研究人员、金融/法律/医疗领域分析师，以及关注本地化部署的数据敏感团队。",
+        "one_liner": "文档转结构化知识工具",
+        "what_it_is": "一个 Python 命令行工具，用大模型把非结构化文档抽取为图谱、超图、时空图等结构化知识，并提供查询、可视化和导出。",
+        "problem_solved": "把论文、报告、合同等文档中的实体、关系和事实整理成可检索、可追溯、可增量更新的知识库。",
+        "who_should_care": "需要整理大量文档、构建知识库或做信息抽取的开发者与研究人员。",
         "use_cases": [
-          "把学术论文抽取为概念、作者与引用关系图",
-          "从财报或合同文档中抽取实体与风险要素并检索",
-          "用 vLLM 本地模型在离线环境构建知识库",
-          "将抽取结果导出为 Obsidian 笔记库"
+          "把论文转成知识图谱",
+          "抽取财报实体与关系",
+          "维护可追溯知识库"
         ],
-        "alternatives": "README 列出 chunk_rag、GraphRAG、LightRAG、Hyper-RAG、KG-Gen 等 11+ 抽取引擎作为可选后端，并强调超图与时空图结构、80+ YAML 模板与增量溯源能力；与这些项目的直接对比未提供。",
+        "alternatives": "提供超图、时空图、多种抽取引擎和模板，并支持来源追溯与增量更新。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点 + 一周新增约 977 stars、登上 daily board 1 天，属于 LLM 知识抽取方向的快速升温项目，但长期价值需观察维护与生态。",
-        "risk_notes": "项目事实中 license 为 null，使用前需确认许可证；创建于 2026-01-07、star 增长快且 fork 数偏高（483），存在刷星或热度虚高可能，建议自行评估；README 中部分模型名与版本信息需以实际发布为准。",
+        "hype_or_trend": "短期热点，一周涨了 977 星，且曾登上日榜。",
+        "risk_notes": "依赖支持函数调用的大模型；部分平台还需另配嵌入服务；本地部署需要图形处理器。",
         "evidence": [
-          "Transform unstructured text into structured knowledge with LLMs. Graphs, hypergraphs, and spatio-temporal extractions — with one command.",
+          "Transform documents into structured knowledge with one command.",
           "9 Knowledge Structures | From raw chunk corpora and simple Lists to advanced Graphs, Hypergraphs, and Spatio-Temporal Graphs",
           "Incremental Evolution & Provenance | Feed new documents anytime — every source is attributed and the index updates incrementally"
         ]
@@ -987,24 +986,23 @@
       "triage_quality": "ok",
       "triage_reason": "Agent框架",
       "intro": {
-        "one_liner": "文件系统优先的持久化 AI Agent 框架",
-        "what_it_is": "eve 是 Vercel 推出的、以文件系统为编写界面的 AI Agent 框架，用 TypeScript 编写；Agent 的指令、工具、技能、消息通道和定时任务都放在约定的目录结构中。",
-        "problem_solved": "把 Agent 的提示词、工具、技能、通道和调度分散在代码各处的问题，统一收敛到可读、可扩展、可运维的目录约定中。",
-        "who_should_care": "需要构建和长期运维 AI Agent 的 TypeScript/JavaScript 开发者，以及已在 Vercel 生态中部署应用的团队。",
+        "one_liner": "文件系统式智能体框架",
+        "what_it_is": "eve 是用 TypeScript 编写的智能体框架，以文件系统组织提示词、工具、技能、消息通道和定时任务。",
+        "problem_solved": "它把智能体能力放进约定目录，让项目更容易检查、扩展和运行，也便于加入网页聊天与部署流程。",
+        "who_should_care": "构建、维护智能体应用的 TypeScript 开发者。",
         "use_cases": [
-          "用 npx eve init 快速搭建带工具调用的 Agent 原型",
-          "为 Agent 接入 Slack、Discord、HTTP 等消息通道",
-          "用 schedules 目录配置周期性 cron 任务，例如每周回顾",
-          "把 Agent 部署到 Vercel 并启用带登录的 Web Chat"
+          "初始化并本地开发智能体",
+          "为智能体添加工具和技能",
+          "接入网页聊天并部署"
         ],
         "alternatives": "unknown",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：项目创建时间很短，一周内新增 283 星，并登上 daily board 一天，热度主要由 Vercel 品牌和 Agent 框架话题带动。",
-        "risk_notes": "open_issues 高达 756，与 1638 星、636 fork 相比，问题积压明显；项目创建时间很短，成熟度尚待验证；README 中的模型名（如 openai/gpt-6-luna-fast）无法独立核实。",
+        "hype_or_trend": "短期热点，一周涨了 283 星，并有一天登上日榜。",
+        "risk_notes": "未关闭 Issue 有 829 个，维护压力值得关注；快速上手依赖初始化命令和交互式终端界面。",
         "evidence": [
-          "eve is a filesystem-first framework for durable AI agents.",
-          "Core agent capabilities live in conventional locations, so projects are easier to inspect, extend, and operate.",
-          "The `eve` package includes its full documentation, so coding agents can read it locally from `node_modules/eve/docs`."
+          "The Framework for Building Agents",
+          "eve is a filesystem-first framework for durable AI agents. Core agent capabilities live in conventional locations, so projects are easier to inspect, extend, and operate.",
+          "npx eve@latest init my-agent"
         ]
       }
     },
@@ -1845,24 +1843,23 @@
       "triage_quality": "ok",
       "triage_reason": "传统色展示",
       "intro": {
-        "one_liner": "中华传统色配色工作台",
-        "what_it_is": "一个以 JavaScript 构建的静态站点，收录 742 张中华传统色高分辨率色卡，并提供配色生成、场景预览、shadcn 主题与终端配色等工具。",
-        "problem_solved": "解决“找到好看的传统色之后不知道如何搭配、如何验证可读性、如何落地到产品 UI”的问题，把选色、配色、场景测试与导出串成一条流程。",
-        "who_should_care": "需要东方配色素材的前端与 UI 设计师、品牌与内容设计者，以及使用 Claude Code 等 Agent 工作流的开发者。",
+        "one_liner": "中华传统色工作台",
+        "what_it_is": "这是一个中华传统色演示、色卡浏览与颜色知识科普项目，提供静态设计工作区、配色数据、场景预览和主题导出。",
+        "problem_solved": "它把找颜色、判断搭配、检查可读性、预览真实布局和生成开发主题串成一套流程，减少只拿到色值后反复试错。",
+        "who_should_care": "做国风视觉、界面主题、演示文稿、品牌稿或终端配色的设计与前端开发者。",
         "use_cases": [
-          "按名称、HEX 或色相检索传统色并下载色卡",
-          "由单个锚点色生成五色配色方案并做网页、海报等场景预览",
-          "把传统色转成 shadcn 明暗语义主题并导出 globals.css",
-          "生成 16 色 ANSI 终端配色（Ghostty、Alacritty、kitty 等）"
+          "按名称或色值查找传统色卡",
+          "从主色生成五色配色方案",
+          "导出界面语义主题与终端配色"
         ],
-        "alternatives": "unknown",
+        "alternatives": "相比单纯色值表，它强调场景测试、搭配数据、对比检查和主题导出。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点：传统色素材本身属于长期需求，但当前热度更多来自 Agent Skills 与 shadcn 主题导出等新玩法。",
-        "risk_notes": "项目事实中的 license 为 GPL-3.0，而 README 写的是 MIT License，两者不一致，商用前需核实；README 也提示传统色值因来源、屏幕与印刷工艺而异，生产印刷前需以实际介质校验。",
+        "hype_or_trend": "短期热点，一周涨了 54 星且仅一天进入日榜。",
+        "risk_notes": "项目数据标注为 GPL-3.0，而说明文字写的是 MIT License，许可证信息不一致；传统色值需按实际媒介复核后再用于印刷生产。",
         "evidence": [
-          "742 high-resolution cards, 8,904 harmony sets, real-scene previews, shadcn themes, and terminal palettes",
-          "Traditional color values vary across sources, screens, print processes, inks, and materials",
-          "Released under the [MIT License](LICENSE)"
+          "中华传统色演示、色卡浏览与颜色知识科普开源项目",
+          "This is a practical workspace for moving from **finding a Chinese color to pairing, testing, and shipping it**",
+          "Traditional color values vary across sources, screens, print processes, inks, and materials. Use this project to search, compare, prototype, and communicate; verify against the real medium before production printing."
         ]
       }
     },
@@ -2096,24 +2093,23 @@
       "triage_quality": "suspicious",
       "triage_reason": "fork 比例异常",
       "intro": {
-        "one_liner": "为 AI Agent 管理记忆的伴生 Agent",
-        "what_it_is": "Memanto 是一个用 Python 编写的「Memory Agent」（记忆 Agent），作为伴生 Agent 管理其他 Agent 的记忆：决定保留什么、什么内容相互冲突、什么内容过期，以及哪些 Agent 需要知道这些记忆。它提供 pip、npm、Go SDK 三种安装方式，采用 MIT 许可证。",
-        "problem_solved": "README 指出，各平台和向量库只负责存储 Agent 写入的记忆，却不负责管理：不会提示两个 Agent 对同一件事的认知相互矛盾、旧偏好压过新决策，也不会提示新 Agent 重复他人已完成并回滚的工作。Memanto 负责抽取、合并、消解冲突、按策略遗忘，并在 Agent 行动前向其提供所需记忆。",
-        "who_should_care": "同时使用多个 AI Agent 框架（如 Claude Code、Cursor、LangChain、CrewAI 等）、需要跨平台共享长期记忆，或对数据主权和本地部署有要求的开发者与团队。",
+        "one_liner": "智能体记忆管家",
+        "what_it_is": "Memanto 是管理其他智能体记忆的伴随智能体，负责提取、合并、校正、遗忘和分发知识。",
+        "problem_solved": "它解决多个智能体记忆分散、冲突、过期和重复劳动的问题，让共享记忆可被持续整理。",
+        "who_should_care": "使用多个智能体、需要共享长期记忆的开发者和团队。",
         "use_cases": [
-          "多 Agent 共享同一份受管理的长期记忆，避免各 Agent 各自维护一套孤立记忆",
-          "按策略自动让过期记忆失效，并保留可审计、可恢复的过期记录",
-          "以 Open Knowledge Format 导出或迁移记忆，在 Mem0、Letta、Zep 等工具之间互换",
-          "在本地 Docker + Ollama 环境中离线运行完整的记忆管理流程"
+          "多智能体共享决策记忆",
+          "处理冲突与过期知识",
+          "迁移或导出记忆资产"
         ],
-        "alternatives": "README 自称与 Mem0、Letta、Supermemory、Zep、Hindsight 等记忆方案可迁移互通，差异在于它把自身定位为「管理记忆的 Agent」而非存储 API，并强调 OKF 开放格式、本地部署与 MIT 无开源核心限制；但这些对比均为项目自述，未提供独立验证。",
-        "maturity": "可试用",
-        "hype_or_trend": "短期热点：agent-memory 是当前 AI Agent 生态的热门方向，但项目创建时间较新、周增星仅 35，尚待观察。",
-        "risk_notes": "项目事实显示创建于 2026-03-23，仓库较新；fork 数 738 与 star 数 1049 比例偏高，需留意 star 与 fork 数据的真实性；README 中的 arXiv 链接、性能与对比表述均属项目自述，未经独立验证。",
+        "alternatives": "强调由独立智能体主动管理记忆，并提供开放知识格式用于跨框架迁移。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 35 星，且曾有一天进入日榜。",
+        "risk_notes": "创建时间较新；分叉数相对星数偏高；未关闭问题仍有 6 个。",
         "evidence": [
           "Memanto is a Memory Agent; a companion agent that manages the memories of your other agents",
-          "Every platform will store your agents' memory. None of them will manage it.",
-          "memanto memory export --okf gives you the Open Knowledge Format — plain Markdown, readable, diffable, committable, greppable."
+          "When new knowledge contradicts old, Memanto supersedes rather than appends",
+          "Your estate is a file. memanto memory export --okf gives you the Open Knowledge Format"
         ]
       }
     },

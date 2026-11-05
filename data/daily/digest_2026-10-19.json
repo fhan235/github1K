@@ -1,1 +1,1404 @@
-{"date":"2026-10-19","headline":"Mermaid 渲染器领跑今日热度","points":["obsidianmd/pele 是极速 Mermaid 图表渲染器，今日新增 1085，成为最抢眼项目。","开发工具 10 个、内容媒体 8 个、AI Agent 7 个，工具与内容生态仍受关注。","Python 19 个居语言分布前列；USDT-Payment-Gateway 新增 490，支付网关也升温。"],"items":{"obsidianmd/pele":{"category":"dev-tools","one_liner":"极速 Mermaid 图表渲染器"},"DigitalShieldOfficial/USDT-Payment-Gateway":{"category":"data-finance","one_liner":"多链稳定币支付网关"},"strelov1/freehire":{"category":"other","one_liner":"开源求职者搜索引擎"},"rohit267/net-merge":{"category":"desktop-system","one_liner":"多网卡聚合负载均衡工具"},"Vincentwei1021/mg-styles-15":{"category":"content-media","one_liner":"十五种动效设计范例"},"eternityspring/reelbench-skills":{"category":"learning-resource","one_liner":"AI 视频学习与工具笔记"},"Ojhaharsh/30u30":{"category":"learning-resource","one_liner":"三十天速读 AI 论文"},"AjncSystem/ShadowOfTheColossus-PC":{"category":"game","one_liner":"旺达与巨像原生 PC 移植"},"jwuthri-cloud/Tracely-ai":{"category":"ai-agent","one_liner":"AI 智能体轨迹回归测试平台"},"heartleo/zlib":{"category":"content-media","one_liner":"Z-Library 命令行下载工具"},"fy-agent/fyagent":{"category":"ai-agent","one_liner":"随身个人数字人格助手"},"saawant12/orbit-store-ps5":{"category":"game","one_liner":"PS5 下载管理器与电视应用"},"jasonxu114514/opencode2api":{"category":"dev-tools","one_liner":"兼容主流接口的代码模型代理"},"Hidashimora/free-vpn-anti-rkn":{"category":"security","one_liner":"免费抗封锁 VPN 配置集"},"YeonwooSung/my-claude-code-mods":{"category":"dev-tools","one_liner":"Claude Code 自定义改造集"},"YeonwooSung/llm-architecture-from-scratch":{"category":"ai-model","one_liner":"从零实现大模型架构"},"sirioberati/Genjustsu-Open-Source-Workflow":{"category":"content-media","one_liner":"开源 AI 视频替换工作流"},"qwdwqfwq/topconf-paper-figure-gallery":{"category":"learning-resource","one_liner":"顶会论文首图精选画廊"},"chuansirrr/Unsupervised-Log-Anomaly-Detection-Microservices":{"category":"ai-model","one_liner":"微服务日志异常检测器"},"GLinnik21/plx-native":{"category":"content-media","one_liner":"webOS 原生 Plex 客户端"},"SunnyMaria/csapp-zh-markdown":{"category":"learning-resource","one_liner":"CSAPP 中文文档与实验资料"},"germondai/trawl":{"category":"automation","one_liner":"自托管反爬抓取引擎"},"tharunbirla/LibreCuts":{"category":"mobile","one_liner":"简洁开源安卓视频编辑器"},"DasterProkio/awesome-ai-companion":{"category":"ai-agent","one_liner":"开源 AI 伴侣项目大全"},"WangJunqing-coder/huasheng13-skill":{"category":"learning-resource","one_liner":"花生十三教学资料技能包"},"kishanrajput23/Jarvis-Desktop-Voice-Assistant":{"category":"desktop-system","one_liner":"桌面语音命令助手"},"sidpalas/devops-directive-github-actions-course":{"category":"learning-resource","one_liner":"GitHub Actions 课程配套仓库"},"cclank/lanshu-animated-architecture-diagram":{"category":"dev-tools","one_liner":"手绘架构动图生成技能"},"Evolink-AI/awesome-gpt-image-2-API-Prompts":{"category":"content-media","one_liner":"GPT-Image-2 接口提示词集"},"AhmadHassan-BTed/Turnitout-Humanizer":{"category":"content-media","one_liner":"文本查重规避改写工具"},"Gathin23/tv-vibehack":{"category":"mobile","one_liner":"安卓电视去广告精简工具"},"munich-data-engineering/reflect-cpp":{"category":"dev-tools","one_liner":"C++ 反射序列化校验库"},"wannabespace/tamery":{"category":"dev-tools","one_liner":"面向人与智能体的数据库客户端"},"youpi-pg/YouPI-PG":{"category":"data-finance","one_liner":"自托管零抽成支付网关"},"AhmadHassan-BTed/AhmadHassan-BTed":{"category":"other","one_liner":"终端风开发者主页蓝图"},"AhmadHassan-BTed/AhSilence":{"category":"mobile","one_liner":"安卓主动降噪引擎"},"AhmadHassan-BTed/B":{"category":"ai-agent","one_liner":"感知屏幕的桌面 AI 伴侣"},"AhmadHassan-BTed/CoDiver":{"category":"dev-tools","one_liner":"代码质量与架构分析平台"},"AhmadHassan-BTed/NaSuno":{"category":"content-media","one_liner":"AI 音频水印移除工具"},"AhmadHassan-BTed/CursedTomorrow":{"category":"game","one_liner":"C++ 二维恐怖逃生游戏"},"Fractal-Compute-Orchestrations/FractalWorkspace":{"category":"ai-model","one_liner":"联邦学习与边缘智能工作区"},"AhmadHassan-BTed/SoulMatrix":{"category":"content-media","one_liner":"命运矩阵实时解读看板"},"AhmadHassan-BTed/SilentSniffer":{"category":"security","one_liner":"浏览器去匿名化诊断框架"},"AhmadHassan-BTed/JinaClip":{"category":"ai-agent","one_liner":"本地网页转 Markdown 扩展"},"AhmadHassan-BTed/RoseWish":{"category":"game","one_liner":"玫瑰日互动叙事小游戏"},"AhmadHassan-BTed/FormFilla":{"category":"automation","one_liner":"本地求职表单自动填充器"},"AhmadHassan-BTed/ThreadRace":{"category":"dev-tools","one_liner":"C++ 并发策略遥测框架"},"AhmadHassan-BTed/Noria":{"category":"ai-agent","one_liner":"聊天驱动网页评分提取器"},"AhmadHassan-BTed/Parchment":{"category":"mobile","one_liner":"安卓暖纸风 PDF 阅读器"},"AhmadHassan-BTed/OpenHeart":{"category":"dev-tools","one_liner":"静态分析与 UML 图生成器"},"AhmadHassan-BTed/OpenOPC-Shadow-Adapter":{"category":"ai-agent","one_liner":"智能体 DAG 人工介入适配器"},"AhmadHassan-BTed/MotionShot":{"category":"mobile","one_liner":"频闪合成运动相机应用"},"AhmadHassan-BTed/LichArch":{"category":"desktop-system","one_liner":"KDE Plasma 暗色主题套件"},"Fractal-Compute-Orchestrations/FractalCore":{"category":"ai-model","one_liner":"联邦学习后端调度核心"},"AhmadHassan-BTed/Jantt":{"category":"web-frontend","one_liner":"JSON 驱动的甘特图引擎"},"Fractal-Compute-Orchestrations/FractalAndroid":{"category":"mobile","one_liner":"安卓边缘联邦学习节点"},"AhmadHassan-BTed/ShopifyAutoAuth":{"category":"dev-tools","one_liner":"Shopify API 自动认证适配器"},"AhmadHassan-BTed/Ledgerify":{"category":"data-finance","one_liner":"Shopify 表格账本分析平台"}}}
+{
+  "date": "2026-10-19",
+  "headline": "Mermaid 渲染器领跑今日热度",
+  "points": [
+    "obsidianmd/pele 是极速 Mermaid 图表渲染器，今日新增 1085，成为最抢眼项目。",
+    "开发工具 10 个、内容媒体 8 个、AI Agent 7 个，工具与内容生态仍受关注。",
+    "Python 19 个居语言分布前列；USDT-Payment-Gateway 新增 490，支付网关也升温。"
+  ],
+  "items": {
+    "obsidianmd/pele": {
+      "category": "dev-tools",
+      "one_liner": "极速 Mermaid 图表渲染器",
+      "intro": {
+        "one_liner": "Mermaid 图表渲染库",
+        "what_it_is": "Pele 用 TypeScript 把 Mermaid 文本渲染成 SVG，支持浏览器挂载、按需加载和 CSS 变量主题。",
+        "problem_solved": "为网页图表提供同步、无运行时依赖的渲染方式，并支持主题适配、容器宽度布局和按需减小初始包体。",
+        "who_should_care": "需要在网页或文档工具中嵌入 Mermaid 图表的开发者。",
+        "use_cases": [
+          "把 Mermaid 文本渲染成 SVG",
+          "在页面中挂载自适应图表",
+          "用 CSS 变量定制图表主题"
+        ],
+        "alternatives": "兼容 Mermaid 12.1.0 语法，但采用自有布局和视觉风格，并强调同步、无运行时依赖。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,070 星，但只上过一天日榜。",
+        "risk_notes": "创建时间较新，仍有 19 个未关闭问题；兼容范围限定在 Mermaid 12.1.0 语法。",
+        "evidence": [
+          "Pele renders [Mermaid](https://mermaid.js.org) diagrams to SVG. It is small, synchronous, has no runtime dependencies, and uses CSS variables for colors and fonts.",
+          "Pele supports every diagram type built into Mermaid 12.1.0.",
+          "Pele targets Mermaid 12.1.0 syntax, with its own layout and visual style."
+        ]
+      }
+    },
+    "DigitalShieldOfficial/USDT-Payment-Gateway": {
+      "category": "data-finance",
+      "one_liner": "多链稳定币支付网关",
+      "intro": {
+        "one_liner": "多链稳定币支付网关",
+        "what_it_is": "这是一个非托管的链上支付接入工具，提供订单创建、链上交易匹配、状态同步、回调通知和商户演示程序。",
+        "problem_solved": "帮助开发者和商户把稳定币付款接入现有业务系统，并自动核对链上交易与订单状态。",
+        "who_should_care": "需要接受稳定币付款的商户、后端开发者和支付系统集成人员。",
+        "use_cases": [
+          "软件服务收款",
+          "数字内容付费",
+          "电商订单收款"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星时有一千零十九星，本周上日榜一天。",
+        "risk_notes": "需自行确认各地数字资产收款合法性；平台费用政策可能变化；浏览器跳转不能作为付款凭证。",
+        "evidence": [
+          "DigitalShieldPay is a non-custodial on-chain payment integration tool for developers and merchants. It creates orders, matches on-chain transactions, and synchronizes payment status.",
+          "DS-Pay currently charges no platform transaction service fee. Blockchain network, wallet, and third-party fees are excluded. Fee policies may change; refer to the latest official terms.",
+          "A browser redirect is never proof of payment."
+        ]
+      }
+    },
+    "strelov1/freehire": {
+      "category": "other",
+      "one_liner": "开源求职者搜索引擎",
+      "intro": {
+        "one_liner": "开源职位搜索引擎",
+        "what_it_is": "freehire 是用 Go 编写的开源职位搜索引擎，直接抓取公司招聘系统职位页，并提供搜索、接口、命令行和自托管能力。",
+        "problem_solved": "它把分散在招聘系统和渠道里的职位统一整理、去重和规范化，减少重复转载、失效链接和多平台反复查找。",
+        "who_should_care": "求职者、招聘数据开发者，以及想自建职位搜索服务的人。",
+        "use_cases": [
+          "按地区、技能和级别找职位",
+          "自建职位搜索站点或接口",
+          "订阅职位更新并跟踪投递"
+        ],
+        "alternatives": "强调直接来自公司招聘系统、统一结构去重，并以 MIT 协议开放数据和流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,118 星，并曾登上日榜。",
+        "risk_notes": "仓库创建时间较新；部分智能功能需要额外配置；托管服务包含每月 5 美元的付费方案。",
+        "evidence": [
+          "freehire — the open-source search engine for job seekers",
+          "Every listing is crawled directly from a company's own ATS — Workday, Greenhouse, Lever, Ashby, iCIMS and a long tail of others — and links to the original posting. No recruiter reposts, no aggregator middlemen, no dead links.",
+          "MIT-licensed and self-hostable, pipeline and data both in the open."
+        ]
+      }
+    },
+    "rohit267/net-merge": {
+      "category": "desktop-system",
+      "one_liner": "多网卡聚合负载均衡工具",
+      "intro": {
+        "one_liner": "多网卡带宽聚合与按连接负载均衡",
+        "what_it_is": "net-merge 是一个用 Go 编写的跨平台工具，通过 TUN 与 Wintun 把 Wi-Fi、以太网、手机 USB 共享网络等多个网络适配器同时利用起来，按连接做负载均衡。",
+        "problem_solved": "解决单条网络链路带宽有限、无法同时利用多条可用连接的问题；它把新连接分散到各条链路上，让多连接应用叠加使用所有链路的带宽。",
+        "who_should_care": "需要同时使用多条网络（如 Wi-Fi 加手机热点）来加速下载的 Windows、macOS、Linux 用户，尤其是游戏平台下载、下载管理器、种子下载和云盘上传的重度用户。",
+        "use_cases": [
+          "Steam 或游戏平台多线程下载加速",
+          "IDM 等下载管理器与 BT 种子多连接下载",
+          "浏览器、系统更新与云盘上传时叠加多条链路带宽"
+        ],
+        "alternatives": "README 未与其他同类项目做对比，unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 441 星，但项目创建仅数日、尚无长期维护记录，热度更多来自话题性",
+        "risk_notes": "项目创建于 2026-10-12、推送于 2026-10-21，历史极短，长期维护情况未知；Windows 安装包尚未签名，可能触发系统警告；单条连接无法提速，仅对多连接场景有效；安装脚本以 curl | sh 方式执行，需自行评估信任风险",
+        "evidence": [
+          "Use all your network adapters at once on Windows/Linux/Mac: per-connection load balancing over Wi-Fi, Ethernet and phone/USB tethers (TUN + Wintun)",
+          "net-merge gives every new connection to one of your links. When an app opens many connections, they spread over all your links.",
+          "Not for: one single connection. One connection always uses one link, so one big file from one connection does not get faster."
+        ]
+      }
+    },
+    "Vincentwei1021/mg-styles-15": {
+      "category": "content-media",
+      "one_liner": "十五种动效设计范例",
+      "intro": {
+        "one_liner": "15 种 MG 动态设计风格的开源影片与提示词集",
+        "what_it_is": "这是一个开源仓库，收录 15 支各 10 秒的 motion design 短片，每支对应一种风格；这些影片全部由 Claude Opus 5.5 根据提示词编写代码生成，仓库同时公开了风格说明、完整提示词和全部源码。",
+        "problem_solved": "它把「某种动态设计风格如何用代码实现」拆解成可复用的提示词和源码，让使用者不必从零摸索，就能照着复现或改造出同风格的短片。",
+        "who_should_care": "想学习或批量产出 MG 动态设计的内容创作者、前端与创意开发者，以及研究 AI 写代码生成视觉内容的从业者。",
+        "use_cases": [
+          "按 prompts/ 中的提示词，用 Claude Code 等 AI 助手复现某种风格的 10 秒短片",
+          "替换提示词中的故事、品牌名、文案与配色，改造成自己的品牌片或竖版 1080×1920 内容",
+          "参考 harness/render.mjs 与 lib/audio 的渲染和音频合成方案，搭建自己的代码化视频管线"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 理由：项目以「Claude Opus 5.5 写代码做动画」为卖点，一周内新增约 487 stars，热度更多来自 AI 生成内容的话题性，而非长期工程沉淀。",
+        "risk_notes": "README 中的评分（7.57–8.21/10）来自其自称的 AI jury，并非第三方评测；部分影片使用 CC0 或公有领域照片，商用前需自行核实素材授权；项目创建于 2026-10-02，历史极短，长期维护情况未知。",
+        "evidence": [
+          "Fifteen styles, one 10-second film each, all made by Claude Opus 5.5 writing code.",
+          "No image or video generation. The picture is code: SVG, Canvas, WebGL and Three.js, with Blender for the 3D film.",
+          "Each film's `audio.py` synthesises its music and sound effects; the 15 soundtracks draw on 103 recorded instrument samples."
+        ]
+      }
+    },
+    "eternityspring/reelbench-skills": {
+      "category": "learning-resource",
+      "one_liner": "AI 视频学习与工具笔记",
+      "intro": {
+        "one_liner": "AI 视频分镜与清洗的 Claude/Codex skill 集",
+        "what_it_is": "一套面向 Claude Code / Codex 的 AI 视频处理 skill 集合，包含镜头拆解（video-shots）、分镜数据与画面同步合成（video-sync）、元数据清洗（video-scrub）三个工具，基于 Node 与 ffmpeg 实现。",
+        "problem_solved": "把成片自动拆成逐镜头表格（时长、景别、运镜、画面描述等），并将分镜数据与视频画面同步呈现；同时清除视频中 ffprobe 看不到的隐藏元数据（SEI、AAC DSE、compressorname）。",
+        "who_should_care": "需要做视频分镜分析、拉片学习、AI 视频工作流搭建的内容创作者、剪辑与影视分析人员，以及使用 Claude Code / Codex 的开发者。",
+        "use_cases": [
+          "对成片做逐镜头拆解并生成可交互 HTML 报告",
+          "将分镜数据与视频画面并排同步播放，便于拉片对照",
+          "发布前清除视频中的 GPS、设备、账号等隐私元数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Claude Skills 生态与 AI 视频话题获得关注，但项目本身是工具型 skill 集，长期价值取决于维护与生态演进。",
+        "risk_notes": "README 含作者付费社群与付费产品推广链接；项目创建于 2026-09-11，历史很短，长期维护情况未知。",
+        "evidence": [
+          "Shot breakdown: turns a finished film into a shot-by-shot table — duration, shot size, category, camera move, frame description, rhythm role.",
+          "Requirements: node >= 18 and ffmpeg / ffprobe ... No npm dependencies, no API keys",
+          "the textbook recipe leaves ffprobe looking spotless while the bitstream still carries x264's encoder-settings SEI in 4 places and the AAC DSE in 8"
+        ]
+      }
+    },
+    "Ojhaharsh/30u30": {
+      "category": "learning-resource",
+      "one_liner": "三十天速读 AI 论文",
+      "intro": {
+        "one_liner": "AI 论文学习指南",
+        "what_it_is": "这是一个按三十天研读三十篇基础 AI 论文的开源学习指南，配有从零实现、笔记、练习和可视化。",
+        "problem_solved": "它把论文阅读、数学理解和动手实现串成每日任务，帮助学习者系统补齐深度学习基础。",
+        "who_should_care": "想系统学习 AI 基础论文并动手复现的 Python 开发者和学生。",
+        "use_cases": [
+          "按天学习经典 AI 论文",
+          "用交互笔记理解模型原理",
+          "通过练习复现核心算法"
+        ],
+        "alternatives": "以类似 Rustlings 的渐进练习方式组织论文学习，强调从零实现与可视化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 428 星，并曾进入日榜一天。",
+        "risk_notes": "创建于 2026 年且最近提交为 2026 年 2 月，材料较新；内容仍提到补充论文即将推出。",
+        "evidence": [
+          "30u30 is an open-source study guide that takes you through the 30 foundational AI papers recommended by Ilya Sutskever — one paper per day.",
+          "Each paper comes with a full implementation from scratch, detailed notes, interactive exercises with solutions, and visualizations.",
+          "All units are complete! Bonus papers are coming soon!!!"
+        ]
+      }
+    },
+    "AjncSystem/ShadowOfTheColossus-PC": {
+      "category": "game",
+      "one_liner": "旺达与巨像原生 PC 移植",
+      "intro": {
+        "one_liner": "PS4《旺达与巨像》原生 Windows 移植",
+        "what_it_is": "一个把 PS4 版《Shadow of the Colossus》(CUSA08809) 移植到 Windows 10/11 的原生加载器项目，用 C++ 编写，游戏自身的 x86-64 代码直接跑在 PC CPU 上，PS4 GPU 调用被翻译为 Vulkan。它不是完整模拟器，而是类似 bloodborne_pc 的加载器方案。",
+        "problem_solved": "让玩家在 PC 上以原生方式运行 PS4 版《旺达与巨像》，支持 60 FPS、高分辨率纹理、宽屏与 PS4 Pro 模式等增强，无需完整模拟器。",
+        "who_should_care": "拥有正版 PS4 游戏 dump 与主机固件模块、希望在高配 PC 上体验该作的玩家；以及对 PS4 游戏原生移植/加载器技术感兴趣的开发者。",
+        "use_cases": [
+          "在 Windows PC 上以 60 FPS 和高质量纹理通关《旺达与巨像》",
+          "导入 shadPS4 存档继续游玩，或使用 21:9/32:9 宽屏体验",
+          "研究 PS4 游戏代码在 PC 上原生运行、GPU 调用转 Vulkan 的加载器实现"
+        ],
+        "alternatives": "README 自述为加载器而非完整模拟器，风格参照 bloodborne_pc；与 shadPS4 有交集（复用其系统模块与存档导入），但走原生执行路线而非完整模拟。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目短期内获得千余星标，但依赖用户自备游戏 dump 与固件，且已知问题较多（高纹理崩溃、AMD GCN 白模、帧生成实验性）。",
+        "risk_notes": "需自备 CUSA08809 游戏 dump 及主机解密的 libSceNgs2.sprx、libSceUlt.sprx，项目不分发任何 Sony 文件；与 Sony/Bluepoint 无关联，存在版权与法律风险；README 列出多项已知崩溃与显卡兼容问题，133 个 open issues，维护活跃度尚短。",
+        "evidence": [
+          "Native Windows port of Shadow of the Colossus (PS4, CUSA08809) - bring your own game dump.",
+          "It is not a full emulator: it is a loader with the system functions the game needs, in the style of bloodborne_pc.",
+          "No game or Sony files are included. You need your own game dump and, for sound, two modules from your own console."
+        ]
+      }
+    },
+    "jwuthri-cloud/Tracely-ai": {
+      "category": "ai-agent",
+      "one_liner": "AI 智能体轨迹回归测试平台",
+      "intro": {
+        "one_liner": "智能体回归测试门禁",
+        "what_it_is": "Tracely 是面向 AI 智能体的持续集成与交付工具，可评估生产轨迹、聚类失败，并把失败运行固化为可重放回归测试。",
+        "problem_solved": "它把线上真实失败轨迹转成测试用例，在合并请求中重放并阻止回归，减少手工编写评测数据集的负担。",
+        "who_should_care": "开发智能体应用、做评测与持续集成的团队，以及需要自托管观测与回归门禁的开发者。",
+        "use_cases": [
+          "把线上失败轨迹固化为回归用例",
+          "在合并请求中重放并阻断回归",
+          "聚类失败并配置告警流程"
+        ],
+        "alternatives": "相比手工数据集优先的评测工具，它从真实失败轨迹生成用例，并用录制夹具在持续集成中离线重放。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 145 星，且曾有一天进入日榜。",
+        "risk_notes": "创建时间较新，最近一次提交距周末复查较近；未关闭问题 21 个，成熟度仍需观察。",
+        "evidence": [
+          "Trace-native CI/CD for AI agents: grade production traces, cluster failures, freeze them into replayable regression tests, and block PRs that regress. Self-hostable.",
+          "Production failures become regression tests.",
+          "The recorded run _is_ the test. Tracely freezes that trace into a hermetic regression case and replays it on every PR."
+        ]
+      }
+    },
+    "heartleo/zlib": {
+      "category": "content-media",
+      "one_liner": "Z-Library 命令行下载工具",
+      "intro": {
+        "one_liner": "Z-Library 命令行工具",
+        "what_it_is": "一个用 Go 编写的命令行工具，提供终端界面、脚本命令和智能体接入，用于搜索、浏览、下载书籍并发送到 Kindle。",
+        "problem_solved": "把找书、筛选、下载、投递和额度查询集中到终端，也方便脚本与智能体调用。",
+        "who_should_care": "常用终端、需要批量找书，或想让智能体接入书籍检索的开发者。",
+        "use_cases": [
+          "按年份、语言和格式搜书",
+          "在终端下载并管理历史",
+          "把电子书发送到 Kindle"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 56 星，并曾登上日榜一天。",
+        "risk_notes": "需要 Z-Library 账号；依赖可用域名、登录和网络配置；登录信息保存在本地。",
+        "evidence": [
+          "A Z-Library CLI for you and your AI agents.",
+          "You need a Z-Library account. First, find a domain reachable from your network:",
+          "Login is saved locally; subsequent sessions only need `zlib tui`."
+        ]
+      }
+    },
+    "fy-agent/fyagent": {
+      "category": "ai-agent",
+      "one_liner": "随身个人数字人格助手",
+      "intro": {
+        "one_liner": "个人智能体配置中心",
+        "what_it_is": "FyAgent 是本地桌面应用，集中管理多种 AI 软件的模型、账号、Skills、MCP、提示词和记忆配置。",
+        "problem_solved": "它把分散、隐蔽且容易改错的 AI 工具配置变得可见、可改，并支持随用户迁移。",
+        "who_should_care": "同时使用多款 AI Agent、AI Worker 或智能助手的开发者。",
+        "use_cases": [
+          "统一查看和修改模型设置",
+          "为软件分配 Skills 与 MCP",
+          "集中管理提示词和记忆"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨 18 星，上日榜一天。",
+        "risk_notes": "仍在持续开发，升级前需备份；非开源软件，商业使用需书面授权；Windows 安装包未包含 Authenticode 签名。",
+        "evidence": [
+          "FyAgent 仍在持续开发。升级前请备份重要配置，并在安装前阅读当次发布的可信度说明。",
+          "FyAgent 是源码可用软件，不是 OSI 定义的开源软件。FyAgent 自有组件和修改采用 PolyForm Noncommercial License 1.0.0；继承自 CC Switch 的部分继续使用 MIT 许可证。",
+          "目前 Windows 安装包尚未包含 Authenticode 签名，在 Release 页面显示为 `NotSigned`。"
+        ]
+      }
+    },
+    "saawant12/orbit-store-ps5": {
+      "category": "game",
+      "one_liner": "PS5 下载管理器与电视应用",
+      "intro": {
+        "one_liner": "PS5 自制系统下载管理器",
+        "what_it_is": "Orbit Store 是一个运行在 PS5 上的下载管理器，提供原生 TV 应用、手机遥控，以及面向 Mac、Windows、Linux 的 Orbit Zero 客户端；用户可选择游戏、来源和格式，把游戏直接下载到主机或外接硬盘。",
+        "problem_solved": "它把在 PS5 上查找、下载、安装游戏和 DLC 的流程集中到一个界面里，并提供队列控制、自动解压、库管理和文件管理；Orbit Zero 还允许先在电脑上下载，再传给 PS5，因此 PS5 无需联网。",
+        "who_should_care": "拥有可运行 homebrew ELF payload 的 PS5、并希望用图形界面管理游戏下载与安装的玩家；以及想在电脑端下载后再推送到 PS5 的用户。",
+        "use_cases": [
+          "在 PS5 电视端用手柄浏览并下载游戏、DLC",
+          "用手机配对后远程排队和跟踪下载进度",
+          "在 Mac、Windows、Linux 上用 Orbit Zero 下载后传输到 PS5",
+          "管理 PS5 各硬盘上的已安装游戏与文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建不足一月即获千余星，但依赖 PS5 homebrew 生态，受众相对小众。",
+        "risk_notes": "项目无许可证信息；README 标注为 Beta；依赖 kstuff、ShadowMountPlus 等第三方 payload；下载来源为 Archive.org、Vikingfile、AkiraBox 等第三方站点，涉及游戏分发的合规风险需自行评估。",
+        "evidence": [
+          "A modern PS5 download manager with a native TV app, phone controls and Orbit Zero for Mac, Windows and Linux.",
+          "Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit downloads it straight to the console or a drive plugged into it.",
+          "Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access."
+        ]
+      }
+    },
+    "jasonxu114514/opencode2api": {
+      "category": "dev-tools",
+      "one_liner": "兼容主流接口的代码模型代理",
+      "intro": {
+        "one_liner": "OpenCode Zen 多协议 API 网关",
+        "what_it_is": "一个用 Go 编写的 OpenCode Zen / Zen Go 上游网关，对外提供 OpenAI Chat Completions、Responses 与 Anthropic Messages 兼容接口，并在协议之间做转换。",
+        "problem_solved": "让客户端用统一的 OpenAI 或 Anthropic 协议访问 OpenCode Zen / Zen Go，同时集中管理上游密钥、代理池、路由与重试。",
+        "who_should_care": "需要在本地或自建环境中统一接入 OpenCode Zen 系列模型、并希望复用现有 OpenAI 或 Anthropic SDK 的开发者与运维人员。",
+        "use_cases": [
+          "用现有 OpenAI SDK 调用 OpenCode Zen 模型",
+          "为多组 Zen / Go 密钥做池化、分层偏好与失败重试",
+          "通过 WebUI 管理本地 API Key、查看配额与实时日志"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕单一上游服务的协议兼容网关，热度依赖该上游服务的可用性与政策。",
+        "risk_notes": "许可证为 GPL-3.0，商用集成需评估传染性条款；项目创建于 2026-08-13，历史较短，长期维护情况尚不明确；README 含赞助商推广内容，需自行甄别。",
+        "evidence": [
+          "A Go-based OpenCode Zen / Zen Go API proxy with OpenAI & Anthropic API compatibility, key/proxy pooling, automatic routing, and WebUI.",
+          "It exposes Chat Completions, Responses, and Anthropic Messages endpoints, translates between their native protocols, and manages upstream keys and proxies.",
+          "The executable includes the WebUI. Running the service requires no Node.js runtime or database."
+        ]
+      }
+    },
+    "Hidashimora/free-vpn-anti-rkn": {
+      "category": "security",
+      "one_liner": "免费抗封锁 VPN 配置集",
+      "intro": {
+        "one_liner": "精简 VPN 订阅列表",
+        "what_it_is": "它整理多个来源的 VPN 订阅配置，提供短列表和完整列表，并通过网页与文本文件分发。",
+        "problem_solved": "超长配置列表会让客户端加载慢、卡顿甚至崩溃；它把每个短列表控制在三百条以内，并自动更新。",
+        "who_should_care": "需要订阅链接、使用兼容客户端且关注俄罗斯网络封锁绕行的用户。",
+        "use_cases": [
+          "在客户端导入短订阅",
+          "从网页选择配置链接",
+          "按需使用完整列表"
+        ],
+        "alternatives": "相比直接引用大型公开列表，它提供裁剪后的短订阅，并保留部分完整列表。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 1,044 星，且本周上过一天日榜。",
+        "risk_notes": "完整列表被标注为不推荐，可能导致设备卡顿；配置来自第三方来源，需自行判断可用性与信任。",
+        "evidence": [
+          "В популярных открытых списках нередко содержится **более тысячи узлов**. При загрузке и обработке такого объёма данных клиентское приложение испытывает повышенную нагрузку: замедляется интерфейс, долго подгружается список, возможны сбои и завершение работы приложения.",
+          "В каждом **коротком** файле — не более 300 конфигов из соответствующего источника. **Полные** списки (№1.2–№26.2 и №28.2, №32.2, №33.2) — все серверы источника (не рекомендовано: могут тормозить устройство).",
+          "破千时的 Star 数：1044；本周上日榜天数：1"
+        ]
+      }
+    },
+    "YeonwooSung/my-claude-code-mods": {
+      "category": "dev-tools",
+      "one_liner": "Claude Code 自定义改造集",
+      "intro": {
+        "one_liner": "Claude Code 增强插件集",
+        "what_it_is": "一组用 TypeScript 编写的 Claude Code Mods，覆盖会话分析、文件回溯、验证、环境检查和界面提示等能力。",
+        "problem_solved": "补足编码会话中的上下文浪费、重复失败、改动追踪、验证状态和交接记录等可观测性与流程管理问题。",
+        "who_should_care": "经常使用 Claude Code 做复杂开发、调试和代码审查的开发者。",
+        "use_cases": [
+          "分析会话耗时与上下文浪费",
+          "回溯工具调用和文件快照",
+          "整理验证结果与交接信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但复刻数仅六个。",
+        "risk_notes": "十个新工作流插件仍是本地预览，首批只返回命令文本，不添加实时面板；实时界面和组合引擎加载仍需单独集成检查。",
+        "evidence": [
+          "Custom Claude Code Mods that I need",
+          "The ten new workflow mods can be loaded from this checkout before the branch is published to the marketplace.",
+          "These first releases return command text; they do not add live panels."
+        ]
+      }
+    },
+    "YeonwooSung/llm-architecture-from-scratch": {
+      "category": "ai-model",
+      "one_liner": "从零实现大模型架构",
+      "intro": {
+        "one_liner": "从零用 PyTorch 复现主流 LLM 架构",
+        "what_it_is": "一个用 PyTorch 从零实现多种现代 LLM 架构的开源项目，覆盖 GPT-2 XL、Llama3、DeepSeek v3、Gemma 3、Kimi K2、GLM 4.5 等模型的结构。",
+        "problem_solved": "帮助读者通过亲手实现来深入理解现代 LLM 架构的归一化、位置编码、注意力与 MoE 等设计差异。",
+        "who_should_care": "想深入理解 LLM 内部结构的研究者、学生和需要自行改造模型结构的工程师。",
+        "use_cases": [
+          "学习并对比不同 LLM 架构的组件设计",
+          "作为自定义模型结构的参考实现",
+          "教学或技术分享中的代码示例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，因为系统梳理主流架构差异对理解 LLM 演进有持续价值",
+        "risk_notes": "项目创建时间较新，fork 数仅 5，维护深度与代码质量尚未经长期验证；README 未说明是否提供预训练权重或完整训练流程。",
+        "evidence": [
+          "Implementing LLM architectures from scratch for deep understanding of modern LLM architectures.",
+          "Implementing LLM architectures from scratch in PyTorch",
+          "| [DeepSeek v3](./deepseekv3/) | 671B | Text | RMSNorm | RoPE | Multi-head Latent Attention | ✅ |"
+        ]
+      }
+    },
+    "sirioberati/Genjustsu-Open-Source-Workflow": {
+      "category": "content-media",
+      "one_liner": "开源 AI 视频替换工作流",
+      "intro": {
+        "one_liner": "本地 AI 视频换角工作流",
+        "what_it_is": "Genjustsu 是一个开源的 AI 视频角色替换工作流，用 Python 实现，提供本地 Web UI；它把深度图、SAM 3 分割、人脸网格和音频处理组合起来，再通过 Enhancor 调用 Seedance 完成角色或物体替换。",
+        "problem_solved": "它把视频换角中繁琐的预处理步骤（音频分离、变调、深度估计、掩码分割、合成）和生成后的音频还原串成一条可复核的流水线，并强制在生成前进行全片掩码审核，最终导出时还原完整的原始音轨。",
+        "who_should_care": "需要做视频角色替换的内容创作者、短视频或影视后期人员，以及希望用 coding agent 半自动跑通视频处理流水线的开发者。",
+        "use_cases": [
+          "把已有视频中的角色替换为自定义角色参考",
+          "在保留原始对白与配乐的前提下重制视频主体",
+          "借助 coding agent 按 runbook 自动完成环境搭建与流程执行"
+        ],
+        "alternatives": "README 未与其他同类项目做对比，unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依赖第三方托管 API（Enhancor/Seedance、Replicate）的换角工作流，热度随视频生成模型走，但项目本身是本地单用户工具。",
+        "risk_notes": "需自备 ENHANCOR_API_KEY 与 REPLICATE_API_TOKEN 并自行承担调用费用；默认依赖托管模型，无本地权重；README 明示为本地单用户应用，公网部署需自行加认证与任务队列；Windows 需 WSL2；项目创建与推送时间仅相隔两天，成熟度有限。",
+        "evidence": [
+          "Open-source AI video replacement workflow by TEIN. Combine depth maps, SAM segmentation, face meshes, and audio processing to replace characters and objects with Seedance.",
+          "The final export restores the **entire original source audio**, not generated audio.",
+          "This is a local single-user application, not a multi-user hosted service. Bind to localhost; add authentication and a durable worker queue before public hosting."
+        ]
+      }
+    },
+    "qwdwqfwq/topconf-paper-figure-gallery": {
+      "category": "learning-resource",
+      "one_liner": "顶会论文首图精选画廊",
+      "intro": {
+        "one_liner": "顶会论文主图灵感画廊",
+        "what_it_is": "收录六大机器学习与人工智能会议 2023 至 2026 年的论文主图，提供搜索、筛选和视觉模式标签，并附带 FigureForge 初稿生成工具。",
+        "problem_solved": "帮助写论文的人参考顶会主图的排版、框架和叙事方式，也可基于参考图快速起草 Figure 1。",
+        "who_should_care": "需要绘制论文主图、准备投稿或做学术写作的研究者与开发者。",
+        "use_cases": [
+          "查找同类论文主图版式",
+          "按会议和年份筛选参考图",
+          "生成论文主图初稿"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "FigureForge 标注为 Beta；图片版权归作者和出版方，项目设有教育用途与下架政策；生成初稿需检查文字和数字。",
+        "evidence": [
+          "3,516 curated Figure 1 / teasers from ICLR, ICML, NeurIPS, CVPR, ACL, AAAI (2023-2026), with tier badges and FigureForge retrieval-augmented figure drafting",
+          "A searchable, filterable gallery of Figure 1 / teaser figures. Static HTML/CSS/JS, no build, works offline.",
+          "FigureForge Beta"
+        ]
+      }
+    },
+    "chuansirrr/Unsupervised-Log-Anomaly-Detection-Microservices": {
+      "category": "ai-model",
+      "one_liner": "微服务日志异常检测器",
+      "intro": {
+        "one_liner": "微服务日志异常检测框架",
+        "what_it_is": "这是一个用 Python 编写的研究型无监督异常检测框架，面向微服务日志，结合语义、时序、图模型和集成评分，并提供可视化面板。",
+        "problem_solved": "用于在无标注日志中发现异常，模拟日志流、建模服务依赖，并给出异常分数、阈值和解释信息。",
+        "who_should_care": "做微服务可观测性、日志分析和异常检测实验的开发者与研究者。",
+        "use_cases": [
+          "离线训练并评估日志异常分数",
+          "模拟日志流并注入异常",
+          "查看异常解释和可视化结果"
+        ],
+        "alternatives": "相比基础方案，加入多模态表示、图注意力、动态阈值、流式模拟和解释能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜，但复刻数较少。",
+        "risk_notes": "创建于 2025 年 10 月 21 日，项目较新；引用信息中的作者为占位内容；面板依赖产物输出。",
+        "evidence": [
+          "This repository provides a research-grade, unsupervised anomaly detection framework for microservice logs, combining multi-modal embeddings, graph attention networks, hybrid ensembles with GMM thresholding, streaming simulation, and explainability (SHAP + gradients).",
+          "CI + tests: Import tests, basic trainer tests, and style checks.",
+          "破千时的 Star 数：1003"
+        ]
+      }
+    },
+    "GLinnik21/plx-native": {
+      "category": "content-media",
+      "one_liner": "webOS 原生 Plex 客户端",
+      "intro": {
+        "one_liner": "LG 电视原生 Plex 客户端",
+        "what_it_is": "一个面向 LG webOS 电视的非官方 Plex 客户端，主要用 Rust 编写，界面直接由 GPU 绘制，视频交给电视解码。",
+        "problem_solved": "它想解决旧款 LG 电视上官方 Plex 应用像网页一样卡顿的问题，去掉 Chromium 和网页视图，提供更跟手的浏览与播放体验。",
+        "who_should_care": "拥有 LG webOS 电视、使用 Plex 媒体库并受客户端卡顿困扰的开发者或影音用户。",
+        "use_cases": [
+          "在 LG 电视浏览 Plex 媒体库",
+          "跨服务器搜索影片和剧集",
+          "直接播放 4K、HEVC 等片源"
+        ],
+        "alternatives": "相比网页式客户端，它不用 Chromium 或网页视图，界面由 GPU 绘制，视频走电视自带解码器。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 59 星，曾有一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0；是非官方项目；部分 2019、2018 机型和 webOS 3.x 存在播放、跳转或崩溃问题；开发者模式安装会过期。",
+        "evidence": [
+          "A fast, unofficial [Plex](https://www.plex.tv/) client for LG webOS televisions. Native, not a web page — the interface is drawn straight on the GPU at 60 fps, and video plays on the TV's own decoder.",
+          "The official Plex app on my old LG is slow. Scrolling a shelf stutters, opening a poster takes a beat too long. It behaves like a web page because it is one: a web app running in the television's Chromium.",
+          "**It needs webOS 4.0 or newer**, with two tested exceptions"
+        ]
+      }
+    },
+    "SunnyMaria/csapp-zh-markdown": {
+      "category": "learning-resource",
+      "one_liner": "CSAPP 中文文档与实验资料",
+      "intro": {
+        "one_liner": "CSAPP 中文学习资料库",
+        "what_it_is": "整理《深入理解计算机系统》第三版全章节中文 Markdown，含练习题答案、八个实验译文和官方自学实验包，支持在线阅读与离线学习。",
+        "problem_solved": "把正文、图表、习题、答案和实验集中到可检索的中文资料中，减少系统学习时查找、携带和衔接材料的阻碍。",
+        "who_should_care": "正在学习 CSAPP、需要中文阅读和配套实验资料的开发者与学生。",
+        "use_cases": [
+          "按章节系统阅读 CSAPP",
+          "做完练习题后核对答案",
+          "下载实验包并完成八个实验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 40 星且曾上日榜，但增量不算突出。",
+        "risk_notes": "资料涉及原书正文与官方实验包，使用时应留意版权边界；自学包主要面向 Linux，部分工具链较旧；Malloc 自学包不含完整评分跟踪文件。",
+        "evidence": [
+          "当前版本：**v1.2**。新增在线阅读网站，支持章节导航、全文搜索、前后页跳转和深色模式，同时保留完整的 Markdown 资料，方便下载阅读和记录笔记。",
+          "答案部分是原书提供的**练习题答案**，不包含自行编写的家庭作业解答或实验解答。",
+          "实验包主要面向 Linux 环境，部分使用较早的工具链或解释器。"
+        ]
+      }
+    },
+    "germondai/trawl": {
+      "category": "automation",
+      "one_liner": "自托管反爬抓取引擎",
+      "intro": {
+        "one_liner": "自托管网页抓取引擎",
+        "what_it_is": "一个用 TypeScript 编写的自托管抓取服务，通过接口或 MCP 获取页面内容，并处理受支持的浏览器挑战与验证码。",
+        "problem_solved": "为应用和智能体提供统一抓取入口，复用已验证的会话，减少重复处理浏览器挑战，并在需要时回退到浏览器。",
+        "who_should_care": "需要自托管抓取、兼容既有工具链或为智能体接入网页读取能力的开发者。",
+        "use_cases": [
+          "通过接口抓取受保护页面",
+          "为智能体提供网页读取",
+          "复用会话抓取动态页面"
+        ],
+        "alternatives": "提供兼容 FlareSolverr 的接口，并自称可作为相关栈的替代方案。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 36 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0 许可证；涉及反机器人与验证码绕过，使用需关注目标站点规则；仍有 4 个未关闭问题。",
+        "evidence": [
+          "Self-hosted web scraping for applications and AI agents. Get page content through an API or MCP, with built-in handling for supported browser challenges and CAPTCHAs.",
+          "TRAWL starts with HTTP, reuses verified clearance and opens Camoufox when a browser is needed.",
+          "FlareSolverr & Byparr alternative and drop-in replacement for your *arr stack."
+        ]
+      }
+    },
+    "tharunbirla/LibreCuts": {
+      "category": "mobile",
+      "one_liner": "简洁开源安卓视频编辑器",
+      "intro": {
+        "one_liner": "安卓开源视频编辑器",
+        "what_it_is": "一个用 Kotlin 编写的安卓免费开源视频编辑器，强调简洁、高效和本地处理，支持剪辑、叠加、字幕、音频与导出。",
+        "problem_solved": "让用户在设备本地完成视频剪辑、叠加、字幕、音频处理和导出，并输出无水印视频。",
+        "who_should_care": "安卓端视频创作者、开源应用用户和移动端剪辑工具开发者。",
+        "use_cases": [
+          "裁剪、合并与调速视频片段",
+          "添加字幕、贴纸和叠加层",
+          "导入音乐并导出成片"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "资料提到导出失败、编解码错误和意外崩溃需查排障指南；项目创建于 2024 年 10 月。",
+        "evidence": [
+          "LibreCuts is a free, open-source video editor for Android that prioritizes simplicity, efficiency, and privacy.",
+          "it empowers creators to easily select, edit, and export watermark-free videos locally on their device.",
+          "If you encounter any export failures, codec errors, or unexpected crashes during your editing workflow"
+        ]
+      }
+    },
+    "DasterProkio/awesome-ai-companion": {
+      "category": "ai-agent",
+      "one_liner": "开源 AI 伴侣项目大全",
+      "intro": {
+        "one_liner": "人机恋开源项目清单",
+        "what_it_is": "汇总面向长期 AI 伴侣关系的软件、基础设施与社区，按客户端、记忆、主动消息、语音形象等主题分类，并标注状态与平台。",
+        "problem_solved": "帮助想自建 AI 伴侣的人找到可用项目，减少在客户端、长期记忆、主动聊天和数据掌控方案之间的检索成本。",
+        "who_should_care": "想自建、自托管或研究 AI 伴侣与桌面宠物生态的开发者。",
+        "use_cases": [
+          "挑选可自托管的伴侣客户端",
+          "查找长期记忆与身份状态组件",
+          "比较主动消息和桌面宠物方案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "创建日期为 2026 年 7 月 3 日；清单含需自行核验或适配的条目，使用前应检查代码与依赖。",
+        "evidence": [
+          "Software, infrastructure, and communities for long-term AI companion relationships.",
+          "We read the code of every project here, and each description says what it actually does.",
+          "Anything unfinished or unclear is tagged `verify` or `adapt`."
+        ]
+      }
+    },
+    "WangJunqing-coder/huasheng13-skill": {
+      "category": "learning-resource",
+      "one_liner": "花生十三教学资料技能包",
+      "intro": {
+        "one_liner": "公考备考技能库",
+        "what_it_is": "整理花生十三公开教学体系、课程资料和历年真题的技能文件，覆盖行测、申论题型方法、速算公式、真题示例与复盘方法。",
+        "problem_solved": "帮助公考备考者把零散解题技巧整理成可查询的方法库，用于单题讲解、模块提速、套题实战和备考规划。",
+        "who_should_care": "准备国考省考、需要行测提速和申论框架指导的开发者或考生。",
+        "use_cases": [
+          "询问资料分析速算方法",
+          "让助手讲解公考单题",
+          "制定行测时间分配计划"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜，但创建时间很新。",
+        "risk_notes": "内容基于公开渠道整理，需注意课程资料与真题示例的版权边界；项目较新，成熟度未说明。",
+        "evidence": [
+          "基于花生十三公开教学体系、课程资料、历年真题整理得到的skill。",
+          "基于花生十三公开教学体系，覆盖六大模块、二十余题型、上百条速算公式",
+          "真题示例使用公开真题或自编数据，不收录任何付费课程原题与讲义原文。"
+        ]
+      }
+    },
+    "kishanrajput23/Jarvis-Desktop-Voice-Assistant": {
+      "category": "desktop-system",
+      "one_liner": "桌面语音命令助手",
+      "intro": {
+        "one_liner": "Python 桌面语音助手",
+        "what_it_is": "一个用 Python 编写的桌面语音助手，支持语音识别、语音播报、系统命令执行和异步交互。",
+        "problem_solved": "把查资料、打开网站、播放音乐、截图、记笔记等日常电脑操作集中到语音命令中。",
+        "who_should_care": "想学习语音助手或桌面自动化的 Python 开发者。",
+        "use_cases": [
+          "语音打开网站或搜索维基百科",
+          "语音播放本地音乐或讲笑话",
+          "语音截图、记笔记、查询时间"
+        ],
+        "alternatives": "相比通用智能助手，更偏桌面命令脚本，支持英法双语和跨平台。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "语音控制包含重启和关机，误触发风险较高；安装依赖涉及系统组件和 PyAudio，配置可能较繁琐。",
+        "evidence": [
+          "A python based desktop voice assistant capable of executing system-level commands, integrating speech recognition and text-to-speech, and handling asynchronous user interactions.",
+          "This project is simple desktop voice assistant built with python named as “Jarvis Desktop Voice Assistant”. This project is fully completed and error free.",
+          "System Control: Restart or Shut down your system via voice commands."
+        ]
+      }
+    },
+    "sidpalas/devops-directive-github-actions-course": {
+      "category": "learning-resource",
+      "one_liner": "GitHub Actions 课程配套仓库",
+      "intro": {
+        "one_liner": "GitHub Actions 课程配套仓库",
+        "what_it_is": "这是 GitHub Actions 入门到进阶课程的配套代码仓库，包含课程大纲和本地开发环境配置说明。",
+        "problem_solved": "为学习 GitHub Actions 的开发者提供练习代码、课程结构和所需工具的安装配置指引。",
+        "who_should_care": "想系统学习 GitHub Actions 与持续集成工作流的开发者。",
+        "use_cases": [
+          "跟课练习工作流配置",
+          "搭建课程开发环境",
+          "学习编写自定义动作"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天且刚破千星。",
+        "risk_notes": "仓库创建于二〇二五年五月，较新；分叉数高于星数，需留意数据异常；课程配套仓库，独立使用价值可能有限。",
+        "evidence": [
+          "Companion repo for the DevOps Directive \"Github Actions: Beginner to Pro\" course",
+          "This is the companion repo to: [GitHub Actions: Beginner to Pro]",
+          "## 📚 Course Outline"
+        ]
+      }
+    },
+    "cclank/lanshu-animated-architecture-diagram": {
+      "category": "dev-tools",
+      "one_liner": "手绘架构动图生成技能",
+      "intro": {
+        "one_liner": "手绘动态架构图生成器",
+        "what_it_is": "这是一个 Codex 技能和本地 Python 渲染器，可把 JSON 规格生成可编辑的 Excalidraw 文件、PNG 预览和动态 GIF。",
+        "problem_solved": "它让技术文章、系统架构和流程说明能快速得到风格统一、带动画且可继续编辑的示意图。",
+        "who_should_care": "写技术文章、做系统讲解或需要配图的开发者。",
+        "use_cases": [
+          "把文章整理成动态架构图",
+          "生成系统流程示意图",
+          "输出可编辑的配图源文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾上榜一天，但创建时间很新。",
+        "risk_notes": "项目创建时间很新，视觉系统刻意收窄，适合固定版式；动态效果依赖本地渲染与校验流程。",
+        "evidence": [
+          "`JSON spec` -> `.excalidraw` + `.png` + animated `.gif`",
+          "It is designed for article explanations, system architecture diagrams, process diagrams, and DailyDoseOfDS-style black-background technical sketches.",
+          "This project intentionally keeps the visual system narrow"
+        ]
+      }
+    },
+    "Evolink-AI/awesome-gpt-image-2-API-Prompts": {
+      "category": "content-media",
+      "one_liner": "GPT-Image-2 接口提示词集",
+      "intro": {
+        "one_liner": "图像提示词精选库",
+        "what_it_is": "这是收录四百六十二个 GPT Image 2 案例的提示词库，按电商、广告、人像、海报等分类整理，可复制完整提示词并改写占位内容。",
+        "problem_solved": "它把分散的图像生成、编辑和设计案例集中成可浏览清单，减少从零写提示词和寻找参考风格的成本。",
+        "who_should_care": "做图像生成、广告创意、电商视觉和界面样机的开发者与设计师。",
+        "use_cases": [
+          "查找电商主图提示词",
+          "复用广告创意构图",
+          "参考海报与角色设计"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有一万七千三百二十二星，且本周上日榜一天。",
+        "risk_notes": "内容以提示词清单为主，接口自动化、可调用技能和图生视频流程被列为独立仓库；案例依赖外部来源与署名，使用前需自行核验。",
+        "evidence": [
+          "This is a prompt-first library of 462 curated GPT Image 2 examples for image generation, editing, design, advertising, and visual experimentation.",
+          "Browse by category, copy a complete prompt, and adapt its placeholders or constraints to your own image.",
+          "This repository owns the curated prompt library. API automation, callable skills, and image-to-video workflows are separate surfaces listed under [Related Repositories](#related-repositories)."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/Turnitout-Humanizer": {
+      "category": "content-media",
+      "one_liner": "文本查重规避改写工具",
+      "intro": {
+        "one_liner": "程序化文本痕迹清理工具",
+        "what_it_is": "一个声称不使用生成式人工智能、以规则方式处理文本与文档痕迹的引擎，面向论文、LaTeX、Word 文档和多语言源码。",
+        "problem_solved": "它试图清除隐藏字符、元数据和文本水印，并规避查重或人工智能检测系统的识别。",
+        "who_should_care": "关注文档检测、文本水印与学术写作合规风险的开发者。",
+        "use_cases": [
+          "清理文档隐藏字符",
+          "处理论文与 LaTeX 文件",
+          "检查源码中的不可见字符"
+        ],
+        "alternatives": "与常见改写工具相比，强调不使用生成式人工智能，并保留版式、公式和代码逻辑。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 2,059 星，且本周上过一次日榜。",
+        "risk_notes": "用途涉及规避检测，存在学术诚信与合规风险；效果保证、隐私承诺和合规声明均来自自述，需谨慎核验。",
+        "evidence": [
+          "100% Programmatic, Zero-AI Plagiarism Remover & Similarity Evader. Bypass Turnitin, iThenticate, GPTZero, CopyLeaks, & ZeroGPT for LaTeX, DOCX, & Multi-Language Source Code.",
+          "The world's first 100% programmatic, zero-generative-AI footprint removal engine. Mathematically shatter cryptographic token trackers, purge invisible zero-width Unicode, and strip C2PA metadata.",
+          "Turnitout does NOT use AI. It is a 100% programmatic, rule-based engine that mathematically disrupts contiguous n-gram sequences to evade detectors"
+        ]
+      }
+    },
+    "Gathin23/tv-vibehack": {
+      "category": "mobile",
+      "one_liner": "安卓电视去广告精简工具",
+      "intro": {
+        "one_liner": "安卓电视去广告启动器",
+        "what_it_is": "一个通过调试桥为安卓电视禁用预装广告、遥测和推荐内容，并安装类电视系统风格启动器的工具。",
+        "problem_solved": "它解决电视首页广告、赞助内容、追踪和预装冗余干扰的问题，并提供可恢复的清理流程。",
+        "who_should_care": "使用安卓电视或谷歌电视、能开启调试并接受命令行操作的普通用户。",
+        "use_cases": [
+          "清理电视首页广告和推荐行",
+          "替换成简洁的电视启动器",
+          "备份并恢复被禁用的软件包"
+        ],
+        "alternatives": "差异是无需 root、不卸载应用，并提供一行恢复；同类可比信息不足。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 1,955 星且本周上过一天日榜。",
+        "risk_notes": "需要开启调试并让电脑连接电视；不同品牌冗余项不同，误禁用可能影响常用功能；资料称有官方域名与仿冒域名，需要留意来源。",
+        "evidence": [
+          "Your TV, minus the ads. Debloat any Android TV over ADB and give it a clean, tvOS-inspired launcher. Built in an afternoon with Claude Code.",
+          "No root, no cable, nothing uninstalled, and a one-line restore if you change your mind.",
+          "CleanYourTV publishes no app in any app store, and clean-your-tv.net is not ours either."
+        ]
+      }
+    },
+    "munich-data-engineering/reflect-cpp": {
+      "category": "dev-tools",
+      "one_liner": "C++ 反射序列化校验库",
+      "intro": {
+        "one_liner": "C++ 反射序列化库",
+        "what_it_is": "reflect-cpp 是面向 C++20 与 C++26 的库，用反射提供序列化、反序列化和校验，并统一接入多种数据格式。",
+        "problem_solved": "它减少 C++ 数据转换的样板代码，让结构体与 JSON、CSV、YAML、命令行参数、环境变量等格式之间的读写更统一。",
+        "who_should_care": "需要多格式数据交换、配置读取或数据处理管道的 C++ 开发者。",
+        "use_cases": [
+          "结构体与 JSON 互转",
+          "读取命令行参数和环境变量",
+          "处理 CSV 与 parquet 表格数据"
+        ],
+        "alternatives": "类似 Python 的 pydantic、Rust 的 serde，但面向 C++ 并提供多格式统一接口。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 1,954 星，本周曾一天登上日榜。",
+        "risk_notes": "支持 C++26 反射，但多数功能在 C++20 可用，部分能力可能受标准版本限制；更多格式仍在开发中。",
+        "evidence": [
+          "A C++20 library for fast serialization, deserialization and validation using reflection.",
+          "reflect-cpp provides a unified reflection-based interface across different serialization formats.",
+          "reflect-cpp supports C++-26 reflection, but most of the functionality is also available in C++-20, except where explicitly noted otherwise."
+        ]
+      }
+    },
+    "wannabespace/tamery": {
+      "category": "dev-tools",
+      "one_liner": "面向人与智能体的数据库客户端",
+      "intro": {
+        "one_liner": "面向人与智能体的数据库客户端",
+        "what_it_is": "Tamery 是支持桌面和网页的数据库客户端，也提供 MCP server，可连接多种数据库并辅助编写、解释和修复 SQL。",
+        "problem_solved": "它想解决数据库客户端不够简洁、连接配置繁琐、智能体访问数据库缺少人工确认的问题。",
+        "who_should_care": "经常管理多种数据库、使用 SQL 助手或让智能体查询数据库的开发者。",
+        "use_cases": [
+          "浏览表格并直接编辑单元格",
+          "用 AI 辅助编写和修复 SQL",
+          "让智能体经确认后查询数据库"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星数为 1453。",
+        "risk_notes": "不接受 pull requests；完整 AI 助手属于 Pro；自托管需要 pnpm、Bun、Postgres 与 Redis 或 Docker。",
+        "evidence": [
+          "The AI-powered database client and MCP server for desktop and web",
+          "Everyday features are free. Pro adds the full AI assistant.",
+          "We don't accept pull requests. But we read every issue."
+        ]
+      }
+    },
+    "youpi-pg/YouPI-PG": {
+      "category": "data-finance",
+      "one_liner": "自托管零抽成支付网关",
+      "intro": {
+        "one_liner": "自托管支付网关",
+        "what_it_is": "这是一个用 JavaScript 编写的自托管 UPI 与货到付款支付网关，提供结账集成、动态二维码、WhatsApp 验证码和自动核验。",
+        "problem_solved": "它面向希望自行接入收款流程的商户，尝试减少平台按笔收费，并把结账、二维码和支付状态观察放在自托管系统里。",
+        "who_should_care": "研究支付流程、做本地演示或受控实验的开发者。",
+        "use_cases": [
+          "本地开发测试结账流程",
+          "演示动态二维码收款",
+          "研究支付通知核验"
+        ],
+        "alternatives": "强调自托管、零平台按笔费用、直接到账和银行通知观察。",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，一周涨了 761 星，但仅一天进入日榜。",
+        "risk_notes": "明确标注为实验研究项目，不保证合规、安全、可用性或生产就绪；不能用于关键、高额或高频交易；需独立核验结算并遵守银行与监管要求。",
+        "evidence": [
+          "A self-hosted UPI & COD payment gateway with zero per-transaction platform fees, universal JavaScript checkout integration, dynamic QR payments, WhatsApp OTP authentication, and automated payment verification.",
+          "YOUPI PG V2 is an independent, experimental research and learning project. It is not represented as a certified, bank-approved, NPCI-approved, audited, or production-ready payment gateway.",
+          "Not for critical payments: do not rely on it for essential, high-value, high-volume, time-sensitive, or business-critical transactions."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/AhmadHassan-BTed": {
+      "category": "other",
+      "one_liner": "终端风开发者主页蓝图",
+      "intro": {
+        "one_liner": "终端风开发者主页蓝图",
+        "what_it_is": "一个以终端风格呈现开发者运行时蓝图、交互式工作区统计和系统诊断的 Python 仓库，用于编目代码库足迹。",
+        "problem_solved": "把个人主页、代码库概览和系统诊断信息集中成终端式展示，便于呈现开发者工作区状态。",
+        "who_should_care": "想做终端风 GitHub 个人主页或展示工作区统计的开发者。",
+        "use_cases": [
+          "制作终端风个人主页",
+          "展示工作区统计信息",
+          "编目代码库诊断信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾登上日榜，但缺少功能与成熟度依据。",
+        "risk_notes": "资料极少，仅含图片展示；创建日期为未来时间，且无分叉，成熟度与可用性难以判断。",
+        "evidence": [
+          "Terminal-style developer runtime blueprint, interactive workspace statistics, and systems diagnostics cataloging the codebase footprint",
+          "创建日期：2026-05-09",
+          "Fork 数：0"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/AhSilence": {
+      "category": "mobile",
+      "one_liner": "安卓主动降噪引擎",
+      "intro": {
+        "one_liner": "安卓主动降噪引擎",
+        "what_it_is": "AhSilence 是用 Kotlin 和 Jetpack Compose 构建的原生 Android 主动降噪引擎，面向持续低频环境噪声。",
+        "problem_solved": "它尝试识别空调、电器等持续低频嗡鸣，并发出反相音频来抵消环境噪声。",
+        "who_should_care": "关注安卓音频处理、数字信号处理和主动降噪实践的开发者。",
+        "use_cases": [
+          "研究安卓实时音频处理",
+          "试验低频嗡鸣抵消",
+          "学习 FFT 与相位校准"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "创建日期为 2026 年 7 月 3 日，破千星时仅 1 个复刻；需要实体设备，模拟器不支持低延迟硬件麦克风 FFT 测试。",
+        "evidence": [
+          "An open-source Android Active Noise Cancellation (ANC) engine. Leveraging low-latency DSP to neutralize environmental hums and help you reclaim your quiet.",
+          "Physical Android device — emulators do not support low-latency hardware microphone FFT testing",
+          "破千时的 Star 数：1214"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/B": {
+      "category": "ai-agent",
+      "one_liner": "感知屏幕的桌面 AI 伴侣",
+      "intro": {
+        "one_liner": "主动式桌面 AI 伴侣",
+        "what_it_is": "B 是一个用 Python 构建的自主、上下文感知桌面 AI 伴侣，包含屏幕视觉、语音合成、活动窗口跟踪和带表情的浮动界面。",
+        "problem_solved": "它让助手不再只等待命令，而是观察屏幕与当前焦点，在合适时机主动提供有价值的回应。",
+        "who_should_care": "关注桌面智能体、屏幕上下文感知和拟人交互的 Python 开发者。",
+        "use_cases": [
+          "根据当前窗口内容主动提示",
+          "用语音和表情进行桌面交互",
+          "实验事件驱动的智能体架构"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上过日榜且破千星时有一千一百九十七星。",
+        "risk_notes": "创建日期为 2026 年 5 月 2 日，分叉数仅 1；资料未提供许可证、安装验证和稳定性结论。",
+        "evidence": [
+          "An autonomous, context-aware AI desktop companion. Built with Python, featuring real-time screen vision, custom ONNX voice synthesis, active window tracking, and a dynamic floating UI with reactive facial expressions.",
+          "Traditional assistants wait for a command. **B** waits for a moment.",
+          "B is designed as a **proactive desktop companion**."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/CoDiver": {
+      "category": "dev-tools",
+      "one_liner": "代码质量与架构分析平台",
+      "intro": {
+        "one_liner": "代码质量与敏捷分析台",
+        "what_it_is": "一个用 Python 编写的代码分析平台，提供 Python 抽象语法树解析、Java 静态分析和基于 Streamlit 的项目健康看板。",
+        "problem_solved": "把代码复杂度、架构异味和敏捷过程数据汇总到统一看板，让技术债和项目状态更直观。",
+        "who_should_care": "关注代码质量、技术债和迭代数据的开发者与团队。",
+        "use_cases": [
+          "分析 Python 代码复杂度",
+          "检查 Java 代码异味",
+          "查看敏捷迭代指标"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一天日榜。",
+        "risk_notes": "创建时间较新，复刻数很少；线上演示与自托管依赖第三方平台。",
+        "evidence": [
+          "An advanced, unified platform for code quality, architectural metrics, and Agile analytics. Features Python AST parsing, Java static analysis (code smells), and interactive project health dashboards built with Streamlit.",
+          "The platform is currently live and operational on Streamlit Community Cloud.",
+          "This repository is published under the [MIT License](LICENSE), promoting open knowledge and collaborative engineering."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/NaSuno": {
+      "category": "content-media",
+      "one_liner": "AI 音频水印移除工具",
+      "intro": {
+        "one_liner": "音频水印清除工具",
+        "what_it_is": "NaSuno 是面向 AI 音频的防御型信号处理工具，宣称可清除 Suno、Udio 等生成音频中的水印与溯源标记，并提供浏览器端音频工作台。",
+        "problem_solved": "它试图解决生成音频素材混入人工作品后，整首作品被水印、元数据或声学指纹自动归因的问题。",
+        "who_should_care": "关注音频取证、水印处理与音乐制作的开发者和声音设计师。",
+        "use_cases": [
+          "清除生成音频中的高频载波",
+          "剥离音频文件的溯源元数据",
+          "在浏览器中试验音频处理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千一百八十九星且本周上日榜一天。",
+        "risk_notes": "目标涉及去除水印与反归因，可能带来合规和平台规则风险；分叉数为零，成熟度难以判断。",
+        "evidence": [
+          "AI audio watermark removal & forensic anti-attribution toolkit. Neutralizes Suno, Udio, and neural fingerprints with ISO 226 perceptual masking.",
+          "Generative audio models (Suno, Udio, ElevenLabs, Google SynthID) inject proprietary synthetic watermarks, high-frequency ultrasonic carriers (19.5 kHz), phase-locked spread spectrums, and latent provenance tags into generated waveforms.",
+          "Test and experience NaSuno directly in your browser with zero installation:"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/CursedTomorrow": {
+      "category": "game",
+      "one_liner": "C++ 二维恐怖逃生游戏",
+      "intro": {
+        "one_liner": "C++ 二维恐怖逃生游戏",
+        "what_it_is": "这是一个用 C++ 从零构建的二维恐怖生存逃生游戏，包含自定义游戏核心、资源管理和系统架构文档。",
+        "problem_solved": "它提供可运行的横版恐怖逃生体验，也展示模块化游戏核心、状态流程、资源缓存和构建测试流程。",
+        "who_should_care": "适合学习 C++ 游戏开发、自定义游戏核心和架构文档的开发者。",
+        "use_cases": [
+          "体验二维恐怖逃生关卡",
+          "学习模块化游戏核心设计",
+          "参考构建与测试流程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星时有一千一百八十五星，且一周上过一天日榜。",
+        "risk_notes": "复刻数为零，成熟度难以判断；依赖 Raylib，构建前需配置编译器、CMake 和依赖。",
+        "evidence": [
+          "A 2D horror-survival and escape game built from scratch in C++.",
+          "Features a custom C++ game core, robust asset management, and comprehensive system architecture documentation.",
+          "Ensure a C++17 compiler and CMake (3.15+) are installed. Raylib is the primary dependency."
+        ]
+      }
+    },
+    "Fractal-Compute-Orchestrations/FractalWorkspace": {
+      "category": "ai-model",
+      "one_liner": "联邦学习与边缘智能工作区",
+      "intro": {
+        "one_liner": "联邦边缘计算框架",
+        "what_it_is": "Fractal 是面向大规模联邦学习与边缘智能的统一工作区，包含中心编排端和安卓边缘节点。",
+        "problem_solved": "它试图把中心侧模型编排与分散设备上的训练、推理连接起来，并兼顾隐私和设备状态约束。",
+        "who_should_care": "关注联邦学习、边缘计算、分布式推理的开发者。",
+        "use_cases": [
+          "安卓设备参与联邦训练",
+          "多设备分片模型推理",
+          "中心端调度边缘任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,748 星且曾上日榜。",
+        "risk_notes": "疑似刷星，fork 数相对 star 数过低；创建于 2026 年，成熟度不明。",
+        "evidence": [
+          "A unified ecosystem and workspace for large-scale federated learning, bridging the gap between centralized model evolution and decentralized edge intelligence.",
+          "Fractal is a high-performance distributed computing ecosystem engineered to harvest fragmented consumer compute across mobile edge devices while strictly preserving user privacy and device health.",
+          "疑似刷星（fork 数相对 star 数过低）"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/SoulMatrix": {
+      "category": "content-media",
+      "one_liner": "命运矩阵实时解读看板",
+      "intro": {
+        "one_liner": "命理矩阵直播看板",
+        "what_it_is": "一个本地优先的 Destiny Matrix 互动看板，可按生日生成矩阵图，并弹出同步的解读脚本窗口。",
+        "problem_solved": "把生日矩阵计算、解读资料维护、双屏直播展示和伴侣兼容分析集中到离线工具中。",
+        "who_should_care": "命理咨询师、数字命理从业者，以及需要双屏展示的直播讲解者。",
+        "use_cases": [
+          "直播时展示矩阵图",
+          "私屏查看解读脚本",
+          "生成伴侣兼容分析"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾有一天进入日榜。",
+        "risk_notes": "创建时间很新，分叉数仅 1；资料称本地优先、零依赖，但未提供许可证与生产可用性说明。",
+        "evidence": [
+          "破千时的 Star 数：1182",
+          "本周上日榜天数：1",
+          "A premium, local-first interactive live-reading matrix dashboard and pop-out Script Board for Destiny Matrix (Soul Blueprint) analysis."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/SilentSniffer": {
+      "category": "security",
+      "one_liner": "浏览器去匿名化诊断框架",
+      "intro": {
+        "one_liner": "浏览器隐私诊断沙箱",
+        "what_it_is": "一个用 JavaScript 编写的浏览器安全诊断框架，以本地沙箱和动态插件架构展示浏览器接口、硬件与行为信息暴露面。",
+        "problem_solved": "帮助用户直观看到标准网页接口可能暴露的设备状态、硬件遥测和行为数据，用于隐私教育、能力审计与安全研究。",
+        "who_should_care": "关注浏览器隐私、前端安全、取证与伦理黑客工具的开发者和研究人员。",
+        "use_cases": [
+          "演示浏览器信息暴露面",
+          "审计本地网页接口能力",
+          "教学浏览器隐私风险"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜，但分叉数为零。",
+        "risk_notes": "定位涉及去匿名化和攻击向量演示，需谨慎合规使用；创建日期为未来日期，数据可信度需留意；分叉数为零，成熟度难以判断。",
+        "evidence": [
+          "A professional, high-fidelity de-anonymization and vulnerability diagnostic framework. Features a zero-coupling modular architecture for browser-based intelligence gathering, hardware fingerprinting, and security research.",
+          "Operating strictly as a self-contained, client-side sandbox, zero data is exported or transmitted anywhere.",
+          "All 54 modules across Levels 1 through 6 run strictly within your browser."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/JinaClip": {
+      "category": "ai-agent",
+      "one_liner": "本地网页转 Markdown 扩展",
+      "intro": {
+        "one_liner": "本地网页转 Markdown 扩展",
+        "what_it_is": "这是一个浏览器扩展，可在浏览器内把网页提取并转换为适合大模型使用的 Markdown、JSON、HTML 或文本。",
+        "problem_solved": "它解决网页内容转给大模型时依赖云端服务、存在速率限制和隐私外传的问题，强调本地处理与复制。",
+        "who_should_care": "常把网页内容喂给大模型、重视隐私和本地处理的开发者。",
+        "use_cases": [
+          "复制网页正文为 Markdown",
+          "提取 Shadow DOM 页面内容",
+          "用快捷键抓取页面"
+        ],
+        "alternatives": "相比云端 Reader，强调无需云服务、无限使用和支持 Shadow DOM。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜一天。",
+        "risk_notes": "创建日期为 2026-05-16，Fork 数为 0；README 自称专业级与无限使用，实际成熟度未知。",
+        "evidence": [
+          "Professional-grade, local-first browser extension that transforms any webpage into high-fidelity, LLM-friendly Markdown entirely within the browser's runtime.",
+          "This project eliminates the middleman, removing the need for `r.jina.ai` cloud calls by implementing the entire extraction and transformation pipeline directly in the browser's runtime.",
+          "Distributed under the **MIT License**."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/RoseWish": {
+      "category": "game",
+      "one_liner": "玫瑰日互动叙事小游戏",
+      "intro": {
+        "one_liner": "Python 互动叙事小游戏",
+        "what_it_is": "RoseWish 是用 Python 制作的 Rose Day 主题互动叙事小游戏，包含自定义角色、动态对话、粒子效果和音频。",
+        "problem_solved": "它提供可个性化配置的数字祝福体验，用故事、画面和音乐表达心意。",
+        "who_should_care": "想送创意数字礼物的人，以及关注 Python 小游戏结构的开发者。",
+        "use_cases": [
+          "定制名字和问候送祝福",
+          "体验像素风互动故事",
+          "学习小游戏模块组织"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千一百七十三星且一周上过一天日榜。",
+        "risk_notes": "创建日期为 2026-04-26，分叉数为零；资料中同时出现 raylib 标签与 Pygame 说明，技术栈表述不一致。",
+        "evidence": [
+          "A heartfelt, interactive narrative mini-game built in Python for Rose Day. Features custom entities, a dynamic dialogue system, animated particle effects, and integrated audio to deliver a unique, romantic digital experience.",
+          "Fully customizable names, greetings, and secrets tucked away in the environment configuration.",
+          "Python 3.12 or higher"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/FormFilla": {
+      "category": "automation",
+      "one_liner": "本地求职表单自动填充器",
+      "intro": {
+        "one_liner": "本地求职表单自动填充扩展",
+        "what_it_is": "一个本地优先的浏览器扩展，用本地 JSON 档案和文件填充求职申请表，并通过多信号评分、重复区块识别和二分图优化计算匹配。",
+        "problem_solved": "减少在求职系统中反复复制粘贴个人经历、联系方式和附件的工作，也避免简历解析错位、字段漏填和资料上传云端。",
+        "who_should_care": "频繁投递职位、重视简历资料隐私的求职者，以及开发浏览器自动填充工具的人。",
+        "use_cases": [
+          "批量填写求职申请表",
+          "本地保存并复用个人档案",
+          "自动附加简历等文件"
+        ],
+        "alternatives": "相比云端或大模型填充插件，强调零网络、确定性匹配和本地存储。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,173 星且仅一天进入日榜。",
+        "risk_notes": "创建时间很新且分叉数为零，社区验证有限；README 自称零网络和零遥测，仍需自行核验。",
+        "evidence": [
+          "A local-first browser extension that fills job-application forms from local JSON profile data and files.",
+          "Matches are computed deterministically via multi-signal scoring, structural repeated-block detection, and bipartite optimization.",
+          "Unlike cloud-based or LLM-driven autofill plugins that transmit your personal credentials, resume texts, and references to third-party AI endpoints, FormFilla is **100% local-first and deterministic**."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/ThreadRace": {
+      "category": "dev-tools",
+      "one_liner": "C++ 并发策略遥测框架",
+      "intro": {
+        "one_liner": "C++ 并发测速框架",
+        "what_it_is": "ThreadRace 是一个 C++ 并发遥测与执行速度测试框架，用 Ackermann 函数比较顺序与并行执行，并提供命令行计时和可视化套件。",
+        "problem_solved": "它把递归重负载任务在单线程与多线程下的耗时、进度、线程活动和加速情况呈现出来，帮助理解并发执行差异。",
+        "who_should_care": "学习 C++ 多线程、基准测试和可视化调试的开发者。",
+        "use_cases": [
+          "比较顺序与并行执行耗时",
+          "观察递归调用栈与线程进度",
+          "演示并发策略和计时遥测"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但分叉数为零。",
+        "risk_notes": "分叉数为零，成熟度不明；README 未提供许可证信息；可视化依赖 SDL2 与 OpenGL，构建门槛可能较高。",
+        "evidence": [
+          "Quantifying the pulse of parallelism: A C++ concurrency telemetry framework measuring the human-perceived efficiency of concurrent execution strategies.",
+          "By comparing Typical (Sequential) execution with Threaded (Parallel) execution, ThreadRace measures the efficiency of digital cooperation.",
+          "ThreadRace provides high-precision CLI timing telemetry alongside a 60 FPS Native C++ SDL2 + OpenGL Hardware-Accelerated Visualizer Suite"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/Noria": {
+      "category": "ai-agent",
+      "one_liner": "聊天驱动网页评分提取器",
+      "intro": {
+        "one_liner": "消息驱动的智能机会提取器",
+        "what_it_is": "这是一个从聊天消息接收网址，抓取网页内容，用自定义评分矩阵评估，并把结构化摘要和匹配分数发回指定消息号码的自动化工具。",
+        "problem_solved": "它把职位、奖学金等机会的发现、筛选和通知流程自动化，减少人工浏览网页、比对条件和整理结果的负担。",
+        "who_should_care": "关注职位、奖学金匹配，或想搭建消息触发式抓取评估流程的开发者。",
+        "use_cases": [
+          "从聊天链接筛选远程职位",
+          "按个人资料评估奖学金",
+          "向指定号码推送匹配提醒"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星时达 1,168 星，且本周上过一天日榜。",
+        "risk_notes": "创建日期为 2026 年 5 月 31 日，Fork 数仅 2；资料提到 Windows 启动器、编译可执行文件和本地数据保留，部署环境可能受限。",
+        "evidence": [
+          "An agentic extractor for messaging platforms. Noria receives messages & URLs via chat; scrapes web data to evaluate the content against custom scoring matrices (e.g., jobs, scholarships); and sends a structured summary with a calculated match score directly to the assigned messenger number.",
+          "Noria connects humans to life-changing possibilities by crawling raw web pages, executing rigorous AI evaluations against human profiles, and sending real-time alerts.",
+          "Match Score >= 50 (High Alignment)"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/Parchment": {
+      "category": "mobile",
+      "one_liner": "安卓暖纸风 PDF 阅读器",
+      "intro": {
+        "one_liner": "安卓暖纸风 PDF 阅读器",
+        "what_it_is": "Parchment 是用 Kotlin 与 Jetpack Compose 构建的安卓 PDF 阅读器，强调暖纸视觉、手势界面和模块化架构。",
+        "problem_solved": "它想减少数字阅读的冰冷感和界面干扰，让 PDF 阅读更接近纸质书的专注体验。",
+        "who_should_care": "安卓原生开发者，以及关注 PDF 阅读体验与 Compose 架构的人。",
+        "use_cases": [
+          "阅读内置 PDF 文档",
+          "按目录快速跳转",
+          "研究 Compose 阅读器实现"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千一百六十一星，但仅一天上日榜且仅一个复刻。",
+        "risk_notes": "创建日期为 2026 年 5 月 13 日，复刻数仅一个；README 提到路线图和贡献指南，成熟度需谨慎判断。",
+        "evidence": [
+          "A soulful, production-grade PDF reader for Android featuring a \"Warm Paper\" aesthetic, gesture-driven interface, and a high-performance modular architecture. Built with Kotlin 2.0 and Jetpack Compose",
+          "Digital PDF readers often feel cold and industrial. **Parchment**, envisioned and engineered by **Ahmad Hassan (B-Ted)**, prioritizes the human element.",
+          "The system is built on a strict **Modular Layered Architecture**."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/OpenHeart": {
+      "category": "dev-tools",
+      "one_liner": "静态分析与 UML 图生成器",
+      "intro": {
+        "one_liner": "静态分析与 UML 生成引擎",
+        "what_it_is": "OpenHeart 是用 Rust 编写的静态程序分析引擎，围绕 SCPG 图表示组织代码结构，并生成 UML 与编译器中间表示图。",
+        "problem_solved": "它试图解决传统静态分析图结构内存膨胀、上下文丢失，以及源码、分析图和 UML 图之间难以追踪的问题。",
+        "who_should_care": "关注静态分析、编译器理论、代码图结构和 UML 自动生成的开发者。",
+        "use_cases": [
+          "从代码生成 UML 图",
+          "研究程序图表示",
+          "查看控制流与调用图"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但复刻数为零。",
+        "risk_notes": "创建日期为 2026 年 8 月 8 日，复刻数为零；README 宣称十阶段均已完成，但缺少可据此确认成熟度的信息。",
+        "evidence": [
+          "Succinct Compositional Program Graph (SCPG) static analysis engine & 14-diagram UML generator in Rust.",
+          "A high-performance static program analysis compiler and bidirectional UML 2.5 projection platform built on succinct bitstring trees, memory-mapped binary layouts, and formal graph semantics.",
+          "Phase 1 (COMPLETED) ──► Phase 2 (COMPLETED) ──► Phase 3 (COMPLETED) ──► Phase 4 (COMPLETED) ──► Phase 5 (COMPLETED)"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/OpenOPC-Shadow-Adapter": {
+      "category": "ai-agent",
+      "one_liner": "智能体 DAG 人工介入适配器",
+      "intro": {
+        "one_liner": "智能体流程人工审批适配器",
+        "what_it_is": "这是一个面向智能体工作流运行时的非侵入式扩展，用独立服务承接人工审批、远程执行和交付物提交，再恢复原有流程状态。",
+        "problem_solved": "它解决智能体流程等待人工或远程节点时容易超时、阻塞并行分支的问题，并提供任务队列、附件、审计和状态恢复能力。",
+        "who_should_care": "使用智能体工作流编排、需要人工签核或远程算力接入的开发者。",
+        "use_cases": [
+          "为流程节点加入人工审批",
+          "接入远程执行节点",
+          "提交文件并恢复后续任务"
+        ],
+        "alternatives": "相比标准运行时，增加持久队列、多用户访问、附件、审计和返工状态。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但分叉数很少。",
+        "risk_notes": "创建日期为未来时间，星数与分叉数差异明显；资料自称生产发布，但缺少可核验的成熟度信息。",
+        "evidence": [
+          "Zero-modification Human-in-the-Loop adapter for OpenOPC's agentic DAG runtime.",
+          "Production Release v0.1.0",
+          "Built for [AutoSwarm](https://github.com/HKUDS/AutoSwarm) | Zero Core Modifications | Production Release v0.1.0"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/MotionShot": {
+      "category": "mobile",
+      "one_liner": "频闪合成运动相机应用",
+      "intro": {
+        "one_liner": "安卓频闪动作相机",
+        "what_it_is": "MotionShot 是一个用 Kotlin 开发的安卓相机应用，把快速动作序列合成为单张频闪合成照片，支持设备端视觉处理、二维防抖和手动曝光控制。",
+        "problem_solved": "它解决快速动作难以在一张照片中呈现的问题，通过连续取帧、对齐背景、提取运动区域并叠加，形成稳定的多姿态轨迹图。",
+        "who_should_care": "关注安卓相机、运动摄影和移动端图像处理的开发者。",
+        "use_cases": [
+          "拍摄运动员连续动作",
+          "记录舞蹈或体操姿态",
+          "验证设备端图像合成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千一百四十一星，但只上过一天日榜。",
+        "risk_notes": "创建日期为二〇二六年八月四日，复刻数为零；资料未提供许可证、版本状态与设备兼容范围。",
+        "evidence": [
+          "Camera app that freezes fast motion sequences into a single stroboscopic photo; powered by on-device computer vision, 2D stabilization, and manual exposure controls",
+          "MotionShot captures dynamic action bursts and synthesizes a single, multi-pose stroboscopic composite image directly on-device in real time.",
+          "Operating entirely offline with zero cloud latency and zero reliance on heavy AI neural networks"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/LichArch": {
+      "category": "desktop-system",
+      "one_liner": "KDE Plasma 暗色主题套件",
+      "intro": {
+        "one_liner": "KDE Plasma 6 桌面套件",
+        "what_it_is": "面向 Arch Linux 与 KDE Plasma 6 的深色主题、手势配置和自动安装脚本集合，主要使用 QML。",
+        "problem_solved": "把主题、配色、窗口平铺、触摸板手势、截图识别和常用应用配置拆成独立模块，便于按需部署。",
+        "who_should_care": "使用 Arch Linux 与 KDE Plasma 6、想定制桌面的开发者。",
+        "use_cases": [
+          "一键配置深色桌面外观",
+          "设置触摸板与鼠标手势",
+          "安装区域截图文字识别"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但复刻数为零。",
+        "risk_notes": "创建日期为 2026 年 7 月 27 日，复刻数为零；安装脚本会改动桌面、输入和终端配置。",
+        "evidence": [
+          "Hyper-optimized dark theme suite, native KWin gesture engine, and automated setup launcher for KDE Plasma 6 on Arch Linux.",
+          "100% Decoupled & Dynamic Architecture: Independent installer scripts for custom executable tools, OCR screen capture (`Meta+Shift+T`), Plasma themes & color schemes, KWin Krohnkite tiling, Konsole terminal profiles, Rofi glassmorphism launcher, application configs, system info tools, and master interactive launcher.",
+          "Every installer script is standalone and lives in `scripts/`. You can execute any script directly or launch the master interactive launcher"
+        ]
+      }
+    },
+    "Fractal-Compute-Orchestrations/FractalCore": {
+      "category": "ai-model",
+      "one_liner": "联邦学习后端调度核心",
+      "intro": {
+        "one_liner": "分布式算力编排后端",
+        "what_it_is": "FractalCore 是 Fractal 生态的中心服务端，负责多租户任务调度、实时算力预算、联邦权重聚合，并包含模型切片编译能力。",
+        "problem_solved": "它用于协调边缘节点上的分布式机器学习任务，处理数据分箱、任务分发、检查点验证、FedAvg 聚合，以及面向移动节点的模型分区导出。",
+        "who_should_care": "做联邦学习、边缘设备调度或移动端模型部署的后端开发者。",
+        "use_cases": [
+          "调度安卓节点训练任务",
+          "按租户管理算力预算",
+          "聚合本地模型检查点"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，破千时有一千一百二十一颗星。",
+        "risk_notes": "创建日期为 2026 年 5 月 12 日，分叉数为零；成熟度、许可证与生产可用性均未提供。",
+        "evidence": [
+          "The central nervous system and backend orchestrator for Fractal. It handles multi-tenant task scheduling, real-time TFLOPs budgeting, and federated weight aggregation using FedAvg.",
+          "FractalCore serves as the centralized orchestration backbone that coordinates decentralized edge nodes (`FractalAndroid`).",
+          "Foundation Model Slicing: Offline neural graph surgery, INT4 weight quantization, static ATen graph tracing, and XNNPACK lowering (`inference-model-maker/slicer`) to produce memory-safe `.pte` layer partitions for mobile nodes."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/Jantt": {
+      "category": "web-frontend",
+      "one_liner": "JSON 驱动的甘特图引擎",
+      "intro": {
+        "one_liner": "声明式 JSON 甘特引擎",
+        "what_it_is": "Jantt 是用 TypeScript 编写的甘特图引擎，把声明式 JSON 文档转成可交互时间线，支持 React、脚本标签、命令行、依赖图求解和 JSON 模式。",
+        "problem_solved": "它试图降低时间线图表接入和生成的复杂度，让项目计划以 JSON 描述，并支持拖拽编辑、关键路径分析等排期能力。",
+        "who_should_care": "做项目排期可视化、前端图表集成或智能体生成计划数据的开发者。",
+        "use_cases": [
+          "把项目计划 JSON 渲染成甘特图",
+          "在网页中拖拽调整任务排期",
+          "让智能体按模式生成时间线数据"
+        ],
+        "alternatives": "相比命令式接口或静态图表，强调零运行时依赖、声明式 JSON、交互编辑和关键路径求解。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,854 星，并曾有一天进入日榜。",
+        "risk_notes": "创建时间较新，未关闭问题有 12 个；部分能力来自自述，实际完成度需自行核验。",
+        "evidence": [
+          "The AI-native JSON Gantt chart engine. Dependency-free interactive timelines with React, script-tag, CLI, topological DAG solver, and formal JSON schema.",
+          "Turn any declarative JSON document into a high-performance, interactive, draggable Gantt chart.",
+          "Zero Runtime Dependencies: The core math and layout engine (`@jantt/core`) is pure, zero-dependency TypeScript weighing under 14 KB gzipped."
+        ]
+      }
+    },
+    "Fractal-Compute-Orchestrations/FractalAndroid": {
+      "category": "mobile",
+      "one_liner": "安卓边缘联邦学习节点",
+      "intro": {
+        "one_liner": "安卓边缘计算节点",
+        "what_it_is": "这是一个用 Kotlin 编写的安卓客户端，作为 Fractal 分布式智能框架的边缘计算节点，负责本地机器学习任务执行与硬件状态管理。",
+        "problem_solved": "它试图让手机参与边缘计算和联邦学习时，兼顾用户数据本地化，并根据电量、温度、网络与内存状态限制任务执行。",
+        "who_should_care": "关注安卓端联邦学习、边缘计算和移动端资源调度的开发者。",
+        "use_cases": [
+          "在安卓设备上运行本地训练",
+          "按硬件状态控制计算任务",
+          "上传模型检查点到服务端"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千一百一十四星，但本周只上过一天日榜。",
+        "risk_notes": "创建于二零二五年十一月二十一日，分叉数为零；资料未提供许可证、版本状态与生产部署信息，成熟度难以判断。",
+        "evidence": [
+          "FractalAndroid turns Android mobile devices into autonomous, privacy-preserving compute nodes within the Fractal distributed network.",
+          "the engine continuously monitors physical hardware telemetry (SoC temperature, battery level, charging status, RAM pressure) and dynamically gates computation to guarantee zero impact on user experience or battery longevity.",
+          "The client application follows a decoupled Model-View-ViewModel (MVVM) architecture with strict separation between UI telemetry rendering, hardware gating controllers, execution runtimes, and network synchronization layers."
+        ]
+      }
+    },
+    "AhmadHassan-BTed/ShopifyAutoAuth": {
+      "category": "dev-tools",
+      "one_liner": "Shopify API 自动认证适配器",
+      "intro": {
+        "one_liner": "Shopify 自动鉴权适配器",
+        "what_it_is": "一个 Python 包，为 Shopify Admin API 提供 OAuth 2.0 客户端凭据鉴权，自动获取、缓存并刷新短期访问令牌。",
+        "problem_solved": "帮助仍使用静态访问令牌的旧应用迁移到新的短期令牌机制，尽量保留原有赋值方式，并减少令牌过期带来的中断。",
+        "who_should_care": "维护 Python 版 Shopify 旧应用、需要升级鉴权方式的开发者。",
+        "use_cases": [
+          "替换已弃用的静态令牌",
+          "自动刷新短期访问令牌",
+          "调用 REST 与 GraphQL 接口"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且曾有一天登上日榜，但复刻数为零。",
+        "risk_notes": "创建日期为 2026 年 8 月 20 日，却已有 1,112 星且复刻数为零，热度与项目沉淀不匹配；成熟度无法确认。",
+        "evidence": [
+          "Enterprise-grade Shopify Admin API authentication adapter — OAuth 2.0 Client Credentials Grant with automatic token refresh.",
+          "Existing applications can preserve their variable assignment patterns while under the hood tokens are acquired, cached in volatile RAM, and refreshed prior to expiration without runtime interruption.",
+          "破千时的 Star 数：1112；本周上日榜天数：1；Fork 数：0"
+        ]
+      }
+    },
+    "AhmadHassan-BTed/Ledgerify": {
+      "category": "data-finance",
+      "one_liner": "Shopify 表格账本分析平台",
+      "intro": {
+        "one_liner": "浏览器端电商台账分析台",
+        "what_it_is": "Ledgerify 是面向 Shopify Excel 导出的浏览器端分析平台，可解析多工作表台账，生成部门仪表盘和对比基准。",
+        "problem_solved": "它处理导出表结构不统一、组合商品拆分、日期格式混乱和部门口径分散，让原始表格变成可读结论。",
+        "who_should_care": "处理 Shopify 导出表的运营、财务、供应链和管理者。",
+        "use_cases": [
+          "上传台账查看部门指标",
+          "清洗表头与日期格式",
+          "对比多份数据集表现"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "创建日期为未来时间，且没有分叉；资料提到在线演示和架构文档，但未提供许可证与生产验证信息。",
+        "evidence": [
+          "Shopify Excel Ledger intelligence platform with dark aesthetic, multi-sheet workbook analysis, 7 departmental dashboards, and live comparative benchmarking.",
+          "100% client-side computation. Workbooks are parsed in-memory, cached in browser IndexedDB, and never transmitted over the network.",
+          "Modern e-commerce ledgers generated by Shopify exports often contain irregular schemas, composite product bundles, inconsistent date serials, and fragmented departmental requirements."
+        ]
+      }
+    }
+  }
+}

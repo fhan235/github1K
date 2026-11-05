@@ -1,1 +1,708 @@
-{"date":"2026-06-25","headline":"AI Agent 与自动化项目领跑","points":["AI Agent 有 6 个，开发工具 4 个；Python 9 个，TypeScript 4 个。","ShadowHackrs/gmail-account-creator 增 833，xbtlin/ai-berkshire 增 405。","安全与滥用治理受关注：Albert-Weasker/niubi_guard 增 65。"],"items":{"ShadowHackrs/gmail-account-creator":{"category":"automation","one_liner":"批量注册 Gmail 的自动化工具"},"xbtlin/ai-berkshire":{"category":"ai-agent","one_liner":"多智能体价值投资研究框架"},"fivetaku/insane-search":{"category":"ai-agent","one_liner":"Claude Code 网站拦截绕过器"},"Albert-Weasker/niubi_guard":{"category":"security","one_liner":"GitHub 滥用检测响应系统"},"xrpcommunity/XRP-community-wallet":{"category":"data-finance","one_liner":"去中心化 XRP 与 EVM 钱包"},"zLanqing/codex-claude-academic-skills":{"category":"ai-agent","one_liner":"学术科研全流程技能集"},"kunchenguid/axi":{"category":"ai-agent","one_liner":"低耗高准的智能体交互规范"},"nolangz/pixel2motion":{"category":"content-media","one_liner":"位图 Logo 转动画技能"},"caomaolufei/AIInfraGuide":{"category":"learning-resource","one_liner":"AI Infra 全栈入门资料"},"LiteLLM-Labs/litellm-agent-control-plane":{"category":"ai-agent","one_liner":"统一调用各类智能体平台"},"MIT-SPARK/VGGT-SLAM":{"category":"ai-model","one_liner":"稠密 RGB 视觉 SLAM 系统"},"ClawBio/ClawBio":{"category":"ai-agent","one_liner":"生物信息学智能体技能库"},"NVIDIA-NeMo/Gym":{"category":"ai-model","one_liner":"模型与智能体评测环境"},"ebrasha/free-v2ray-public-list":{"category":"other","one_liner":"免费 V2Ray 节点列表"},"cloudflare/artifact-fs":{"category":"dev-tools","one_liner":"按需加载的大型仓库文件系统"},"AlibabaCloudDocs/aliyun_acp_learning":{"category":"learning-resource","one_liner":"阿里云 ACP 学习资料"},"sirius-db/sirius":{"category":"other","one_liner":"Sirius 数据库项目"},"Junyi-99/ChatGPT-API-Scanner":{"category":"security","one_liner":"扫描 GitHub 可用 API 密钥"},"superxslam/SuperOdom":{"category":"hardware-iot","one_liner":"高鲁棒激光雷达里程计"},"djylb/nps":{"category":"dev-tools","one_liner":"带界面的内网穿透代理"},"librepods-org/librepods":{"category":"mobile","one_liner":"脱离苹果生态的 AirPods 工具"},"ente/ente":{"category":"security","one_liner":"端到端加密云存储服务"},"xberg-io/kreuzberg":{"category":"dev-tools","one_liner":"多语言文档智能提取框架"},"idurar/idurar-erp-crm":{"category":"web-frontend","one_liner":"开源 ERP 与客户管理系统"},"pvolok/dekit":{"category":"dev-tools","one_liner":"并行运行多命令的工具"},"NodePassProject/Anywhere":{"category":"mobile","one_liner":"苹果设备原生代理客户端"},"bozhouDev/codex-orange-book":{"category":"learning-resource","one_liner":"Codex 实战使用指南"},"SmokingRabbit/ejyy":{"category":"web-frontend","one_liner":"开源智慧物业解决方案"},"Starmel/OpenSuperWhisper":{"category":"desktop-system","one_liner":"macOS 语音听写应用"}}}
+{
+  "date": "2026-06-25",
+  "headline": "AI Agent 与自动化项目领跑",
+  "points": [
+    "AI Agent 有 6 个，开发工具 4 个；Python 9 个，TypeScript 4 个。",
+    "ShadowHackrs/gmail-account-creator 增 833，xbtlin/ai-berkshire 增 405。",
+    "安全与滥用治理受关注：Albert-Weasker/niubi_guard 增 65。"
+  ],
+  "items": {
+    "ShadowHackrs/gmail-account-creator": {
+      "category": "automation",
+      "one_liner": "批量注册 Gmail 的自动化工具",
+      "intro": {
+        "one_liner": "批量自动注册 Gmail 账号工具",
+        "what_it_is": "一个基于 Python 和 Selenium 的自动化工具，通过模拟人类输入、轮换代理、绕过手机验证（集成 5sim 接码）等方式批量创建 Gmail 账号，并提供 Rich 终端界面与账号统计。",
+        "problem_solved": "针对需要批量获取 Gmail 邮箱的场景，尝试降低注册过程中的自动化检测与手机验证门槛。",
+        "who_should_care": "需要批量邮箱进行测试或运营的自动化开发者；但需自行评估合规风险，普通用户不建议使用。",
+        "use_cases": [
+          "批量注册邮箱用于内部测试环境",
+          "自动化账号创建流程的技术研究"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，因为批量注册邮箱属于灰色需求，热度依赖平台风控强度变化，难以形成长期趋势。",
+        "risk_notes": "无许可证声明；功能涉及绕过 Google 手机验证与反检测，违反 Google 服务条款，可能被用于垃圾注册、欺诈等滥用场景，账号与 IP 存在封禁风险；README 含外部视频与个人站点引导，需谨慎访问。",
+        "evidence": [
+          "Advanced automated Gmail account creation tool with anti-detection, phone verification bypass, 5sim integration",
+          "Human-like Typing Simulation - Random delays between keystrokes (0.1-0.3s)",
+          "5sim API Integration - Automatic phone number purchase and SMS code retrieval"
+        ]
+      }
+    },
+    "xbtlin/ai-berkshire": {
+      "category": "ai-agent",
+      "one_liner": "多智能体价值投资研究框架",
+      "intro": {
+        "one_liner": "基于 Claude Code 的价值投资研究框架",
+        "what_it_is": "AI Berkshire 是一套兼容 Claude Code 与 Codex 的投资研究 Skill 合集，把巴菲特、芒格、段永平、李录四位价值投资大师的方法论结构化，通过多 Agent 并行实现投资研究。",
+        "problem_solved": "解决直接问 AI 得到的分析“看起来对但没法做决策”的问题：强制给出通过/不通过结论与价格区间，用四大师视角对抗、结构化反偏见机制和精确财务计算提升研究质量与决策纪律。",
+        "who_should_care": "使用 Claude Code 或 Codex 的个人投资者、投研人员，以及希望把价值投资方法论流程化、可复现化的研究者。",
+        "use_cases": [
+          "对单一上市公司做四大师视角的深度投研并输出分层建仓建议",
+          "用行业漏斗从全市场粗筛到 3 家终选深度分析",
+          "财报精读与多 Agent 并行解读并产出可发布文章",
+          "持仓组合管理与投资论文证伪追踪"
+        ],
+        "alternatives": "README 强调与“直接问 AI”的差异：强制结论、四视角对抗、信息丰富度评级、快速否决清单、Decimal 精确计算与可复现流程；未与其他同类开源项目做直接对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Claude Code 生态与多 Agent 投研概念，周增约 1772 星，但 README 中的实盘收益等业绩宣称无法独立验证。",
+        "risk_notes": "README 含实盘收益、跑赢指数等业绩宣称，属作者自述，不可作为投资依据；深度投研 token 消耗高、成本不低；项目创建于 2026-04，历史较短；README 存在公众号引流内容，需自行甄别。",
+        "evidence": [
+          "AI Berkshire 是一套同时兼容 Claude Code 与 Codex 的投资研究 Skill 合集，将巴菲特、芒格、段永平、李录四位价值投资大师的方法论系统化、结构化",
+          "AI Berkshire 解决的不是\"能不能分析\"的问题，而是**分析质量和决策纪律**的问题",
+          "深度投研类 Skill 默认会进行多轮研究、交叉验证和多 Agent 综合判断，因此 token 消耗较高"
+        ]
+      }
+    },
+    "fivetaku/insane-search": {
+      "category": "ai-agent",
+      "one_liner": "Claude Code 网站拦截绕过器",
+      "intro": {
+        "one_liner": "Claude Code 公共网页抓取插件",
+        "what_it_is": "insane-search 是一个面向 Claude Code 的插件，用于读取被拦截的公共网页。它采用 Phase 0→3 自适应调度，依次尝试公共 API、聚合网关、TLS 指纹模拟和真实无头浏览器，无需 API key 或代理配置。",
+        "problem_solved": "解决 Claude Code 默认抓取遇到 403、WAF 或反爬挑战时直接放弃的问题，通过逐级升级的公共访问路径获取可用文本。",
+        "who_should_care": "经常用 Claude Code 做网页调研、社媒内容汇总和资料抓取，又不想配置代理或申请 API key 的开发者与研究者。",
+        "use_cases": [
+          "汇总 Reddit、X、Hacker News 上的公开讨论",
+          "提取 YouTube 视频字幕与元数据",
+          "抓取被反爬拦截的公开页面标题、摘要与价格信息"
+        ],
+        "alternatives": "与默认 Claude Code 抓取相比，差异在于失败后会逐级升级尝试公共路径，而非直接放弃；其他同类工具未在材料中提及，具体对比 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由是其热度主要来自 Claude Code 插件生态的阶段性关注，且项目创建时间较新。",
+        "risk_notes": "README 明确说明该工具属于双用途开发者工具，使用者需自行承担遵守目标站点 ToS、robots.txt、速率限制及法律的责任；遇到登录墙或付费墙会停止。",
+        "evidence": [
+          "Auto-bypass for blocked websites in Claude Code — Phase 0→3 adaptive scheduler, no API keys",
+          "It escalates, never pre-judges — public API readers → syndication gateways → TLS impersonation → a real headless browser, trying each route until one works.",
+          "Stops at logins and paywalls — it reports `authentication required` instead of trying to defeat them."
+        ]
+      }
+    },
+    "Albert-Weasker/niubi_guard": {
+      "category": "security",
+      "one_liner": "GitHub 滥用检测响应系统",
+      "intro": {
+        "one_liner": "GitHub 滥用防护系统",
+        "what_it_is": "Niubi Guard 是开源的 GitHub 仓库滥用检测与响应系统，提供命令行、网页界面和可配置规则，并支持接入兼容 OpenAI 的模型。",
+        "problem_solved": "帮助维护者识别垃圾信息、骚扰、协同攻击和模板化恶意议题，默认只做预演，由维护者决定是否启用处置动作。",
+        "who_should_care": "遭遇恶意议题、刷屏或协同骚扰的 GitHub 维护者。",
+        "use_cases": [
+          "扫描议题和评论中的滥用内容",
+          "配置关键词、用户和允许名单",
+          "预演删除、关闭、锁定等动作"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 78 星，仅一天进入日榜。",
+        "risk_notes": "创建时间较新；强处置动作需自行启用；人工智能检测依赖外部模型与密钥配置。",
+        "evidence": [
+          "A free, open-source defense system that protects GitHub maintainers from spam, harassment, and coordinated abuse.",
+          "Dry-run is the default. Strong actions only happen when you configure them and run apply mode.",
+          "Open-source GitHub repository abuse detection and response system."
+        ]
+      }
+    },
+    "xrpcommunity/XRP-community-wallet": {
+      "category": "data-finance",
+      "one_liner": "去中心化 XRP 与 EVM 钱包",
+      "intro": {
+        "one_liner": "XRP 与 EVM 多链非托管社区钱包",
+        "what_it_is": "Ripple Community Wallet 是一个面向 XRP 生态及兼容网络的非托管钱包，私钥和助记词加密后仅保存在用户本地浏览器中。",
+        "problem_solved": "解决用户需要自行掌控私钥、不依赖中心化服务器托管资产的问题，并在同一界面管理 XRP Ledger 与 EVM 网络资产。",
+        "who_should_care": "需要自托管 XRP 与 EVM 资产、重视本地密钥管理的 XRP 社区用户和前端开发者。",
+        "use_cases": [
+          "创建或通过助记词导入钱包并本地加密存储",
+          "在 XRP Ledger 与 Ethereum/BNB Chain/Polygon 间收发资产、查看组合与交易历史",
+          "通过 WebHID 连接 Ledger 硬件钱包管理 XRP"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：项目创建于 2026-05，周增约 54 星、上榜 1 天，属于新近获得关注的社区项目。",
+        "risk_notes": "README 称贡献方式与许可证条款将发布于项目网站，与仓库标注的 MIT 存在不一致；项目依赖未公开的 @rc/* monorepo 共享包，独立构建可能受阻；创建时间较新，长期维护情况未知。",
+        "evidence": [
+          "Private keys and your seed phrase never leave your device: everything is stored encrypted locally, in the user's browser.",
+          "This app is part of the Ripple Community monorepo and relies on shared workspace packages: `@rc/types`, `@rc/ui`, `@rc/i18n`, `@rc/api-client`, and `@rc/config`",
+          "Ways to contribute, feedback channels, and license terms will be published on the project website."
+        ]
+      }
+    },
+    "zLanqing/codex-claude-academic-skills": {
+      "category": "ai-agent",
+      "one_liner": "学术科研全流程技能集",
+      "intro": {
+        "one_liner": "面向中文科研的 Claude Code/Codex 技能包",
+        "what_it_is": "这是一个包含三个 Skill 的仓库，分别负责论文写作、学术 Word/PPT 文档生成和科研计算，可在 Claude Code 与 Codex 中加载调用。",
+        "problem_solved": "把文献阅读、论文撰写润色、审稿回复、答辩 PPT 制作与 MATLAB/Python 科学计算出图等科研流程，整合为可一键调用的 AI 技能。",
+        "who_should_care": "使用 Claude Code 或 Codex 的中文科研人员、研究生与需要撰写论文和答辩材料的高校师生。",
+        "use_cases": [
+          "从 PDF 论文生成中文文献阅读报告与组会 PPT",
+          "论文各章节撰写、润色及审稿意见回复",
+          "MATLAB/Python 仿真、数据分析并生成期刊级配图",
+          "开题/中期/答辩 PPT 的模板化生成"
+        ],
+        "alternatives": "README 致谢中列出多个同类 Skill 项目（如 thesis-defense-pptx-skill、scientific-agent-skills、claude-office-skills），本项目差异在于将写作、Office 文档与科学计算三类技能整合为互补协作的中文优先套件。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Claude Code/Codex Skills 生态快速获得关注，但仓库创建与最后推送均为 2026-05-14，尚缺长期维护记录。",
+        "risk_notes": "仓库创建与最近推送为同一天，star 数较高而 fork 数也偏高，需留意是否为短期热度；README 中安装命令使用占位用户名，需自行替换；引用的外部资源遵循各自原始许可。",
+        "evidence": [
+          "本仓库包含三个面向学术科研人员的Skills，覆盖从文献阅读、论文写作到科学计算的完整研究工作流。",
+          "三个 Skill 专为中文科研用户设计，可在 Claude Code 和 codex 中一键调用。",
+          "本仓库采用 MIT License 开源许可。"
+        ]
+      }
+    },
+    "kunchenguid/axi": {
+      "category": "ai-agent",
+      "one_liner": "低耗高准的智能体交互规范",
+      "intro": {
+        "one_liner": "智能体友好命令行规范",
+        "what_it_is": "AXI 提出面向智能体的命令行设计原则，并提供参考实现目录，强调节省令牌、结构化输出和更少交互轮次。",
+        "problem_solved": "它试图解决传统命令行和结构化工具协议给智能体带来的输出冗长、上下文浪费和往返次数多的问题。",
+        "who_should_care": "构建智能体工具链、命令行封装和自动化工作流的开发者。",
+        "use_cases": [
+          "为智能体设计命令行工具",
+          "封装 GitHub 操作输出",
+          "优化浏览器自动化交互"
+        ],
+        "alternatives": "相比传统命令行和结构化工具协议，强调令牌预算、精简输出和预聚合结果。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 36 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间较新，仍有 12 个未关闭问题；基准结果来自特定模型，其他模型表现未公布。",
+        "evidence": [
+          "10 design principles for building agent-ergonomic apps.",
+          "AXI is a **new paradigm** - agent-native CLI tools built from **10 design principles** that treat token budget as a first-class constraint.",
+          "一周新增 Star：36"
+        ]
+      }
+    },
+    "nolangz/pixel2motion": {
+      "category": "content-media",
+      "one_liner": "位图 Logo 转动画技能",
+      "intro": {
+        "one_liner": "像素标志动效技能",
+        "what_it_is": "这是一个面向 Codex 和 Claude 的开源技能，把 PNG、JPG、WebP 或截图标志转成适合动效的 SVG，并生成 HTML 动效展示、预览和质检材料。",
+        "problem_solved": "它解决像素标志难以平滑矢量化、动效结构不可复用、交付缺少可审查证据的问题，把拟合、编排和质检串成流程。",
+        "who_should_care": "做品牌动效、标志重绘和前端动效展示的设计与开发者。",
+        "use_cases": [
+          "把像素标志做成 SVG 揭示动画",
+          "生成可交互的 HTML 动效展示",
+          "导出动图、视频预览和质检证据"
+        ],
+        "alternatives": "强调先质检静态矢量，再基于语义 SVG 部件编排动效，并提供拟合与逐帧证据。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 88 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间较新；商业服务仍在上线；发布清单提到需添加许可证文件，但项目数据已标注 MIT。",
+        "evidence": [
+          "Pixel2Motion is an open-source Codex and Claude skill for **logo animation**, **SVG animation**, and AI-assisted brand motion.",
+          "Every animation is authored against a QA-verified static vector.",
+          "A more polished commercial Pixel2Motion service is coming online"
+        ]
+      }
+    },
+    "caomaolufei/AIInfraGuide": {
+      "category": "learning-resource",
+      "one_liner": "AI Infra 全栈入门资料",
+      "intro": {
+        "one_liner": "AI 基础设施中文学习库",
+        "what_it_is": "这是一个系统梳理 AI Infra 技术栈的中文知识库，覆盖 GPU 硬件、CUDA 编程、分布式训练、推理优化和面试真题。",
+        "problem_solved": "它把分散的 AI 基础设施资料整理成从硬件到软件、从训练到推理的学习路径，降低入门和体系化学习门槛。",
+        "who_should_care": "想入门或补齐 AI Infra 知识体系的工程师、学生和面试准备者。",
+        "use_cases": [
+          "按路线自学 AI Infra",
+          "学习 CUDA 与算子优化",
+          "准备 AI Infra 面试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 12 星且曾上日榜，但增速不算高。",
+        "risk_notes": "内容持续更新中，性能分析板块仍规划中；创建日期晚于最近提交日期，时间信息存在异常。",
+        "evidence": [
+          "从零开始深入理解 AI Infra 的核心全栈技术",
+          "本项目系统梳理 AI Infra 的技术栈，从 GPU 硬件、CUDA 编程与算子优化，到分布式训练和推理优化，帮助工程师建立完整的 AI 基础设施知识体系。",
+          "一周新增 Star：12"
+        ]
+      }
+    },
+    "LiteLLM-Labs/litellm-agent-control-plane": {
+      "category": "ai-agent",
+      "one_liner": "统一调用各类智能体平台",
+      "intro": {
+        "one_liner": "统一调用多种 Agent 运行时的控制平面",
+        "what_it_is": "LiteLLM Agent Control Plane 是一个用 Rust 编写的 Agent 控制平面，位于任意 Agent 运行时之上，提供统一的 Web UI 与 API 来创建、运行和管理 Agent。",
+        "problem_solved": "解决多种 Agent 运行时（OpenCode、Hermes、Claude Managed Agents、Cursor Agents API、Deep Agents 等）各自独立、难以统一接入与管理的问题，把创建、运行、会话、定时与记忆集中到一个入口。",
+        "who_should_care": "需要在团队内统一接入多种 Agent 运行时、又不想让开发者直接访问 Bedrock 或 Anthropic 控制台的平台团队与 AI 基础设施工程师。",
+        "use_cases": [
+          "为团队提供统一的 Agent 创建与运行入口，屏蔽底层运行时差异",
+          "用 CRON 定时调度 Agent 任务并保持跨会话记忆",
+          "通过 Docker Compose 快速搭建本地多运行时 Agent 平台试用环境"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，多 Agent 运行时统一编排是当前 AI 工程化热点，但项目创建时间较新、仍在快速迭代。",
+        "risk_notes": "项目创建于 2026-05-07、仍处于早期阶段，open issues 40 个，生产可用性需自行验证；README 中的默认 master key（sk-local）仅适合本地环境。",
+        "evidence": [
+          "1 place to call all your agents - OpenCode, Hermes, Claude Managed Agents, Cursor Agents API, Deep Agents.",
+          "LiteLLM Agent Control Plane sits on top of any runtime. Pick a runtime, create an agent, give your team one UI.",
+          "Unified API across runtimes - one API to create and run agents, regardless of the runtime underneath"
+        ]
+      }
+    },
+    "MIT-SPARK/VGGT-SLAM": {
+      "category": "ai-model",
+      "one_liner": "稠密 RGB 视觉 SLAM 系统",
+      "intro": {
+        "one_liner": "稠密 RGB 实时重建工具",
+        "what_it_is": "这是一个以 Python 为主的稠密 RGB 建图项目，提供离线图像序列、在线相机输入、评测脚本和可视化功能。",
+        "problem_solved": "它面向从图像或实时相机增量构建稠密地图，并支持回环、可视化和可选的开放词汇三维目标检测。",
+        "who_should_care": "做视觉定位、三维重建、机器人建图与评测的开发者。",
+        "use_cases": [
+          "用图像文件夹生成增量地图",
+          "接入 RealSense 在线建图",
+          "在 TUM 和 7-Scenes 上评测"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，实时代码与可视化功能较新。",
+        "risk_notes": "安装会自动下载第三方包；可选开放词汇检测依赖额外模型及各自许可；大数据集可视化可能变慢或崩溃。",
+        "evidence": [
+          "VGGT-SLAM 2.0: Real-time Dense Feed-forward Scene Reconstruction",
+          "run `python main.py --image_folder /path/to/image/folder --max_loops 1 --vis_map` replacing the image path with your folder of images.",
+          "To run online, plug in a RealSense camera and run `python main_realtime.py --vis_map`."
+        ]
+      }
+    },
+    "ClawBio/ClawBio": {
+      "category": "ai-agent",
+      "one_liner": "生物信息学智能体技能库",
+      "intro": {
+        "one_liner": "生物信息智能体技能库",
+        "what_it_is": "ClawBio 是面向生物信息学的 AI agent 技能库，基于 OpenClaw，强调本地优先、隐私和可复现，可用命令行或 Python 库运行技能。",
+        "problem_solved": "它把领域分析流程、演示数据和复现输出封装为技能，减少依赖、参考数据、硬编码路径导致的论文结果难以重放问题。",
+        "who_should_care": "生物信息开发者、基因组学研究者，以及需要本地可复现分析流程的团队。",
+        "use_cases": [
+          "用药基因组学演示分析",
+          "查询变异与疾病关联",
+          "重放论文图表分析流程"
+        ],
+        "alternatives": "强调技能规范层，而非只做推理约束或工具连接；技能可作为普通 Agent Skills 文件夹使用。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周只涨了 4 星，但曾有一天进入日榜。",
+        "risk_notes": "演示基因组数据仅供研究和教育用途；部分复现仍需原始外部输入；公开测试通过率为 88.5%，并非全绿。",
+        "evidence": [
+          "A bioinformatics-native AI agent skill library.",
+          "Local-first. Privacy-focused. Reproducible.",
+          "The goal is to make replayable bioinformatics workflows straightforward when a skill ships demo data and helper-backed reproducibility outputs."
+        ]
+      }
+    },
+    "NVIDIA-NeMo/Gym": {
+      "category": "ai-model",
+      "one_liner": "模型与智能体评测环境",
+      "intro": {
+        "one_liner": "智能体环境评测库",
+        "what_it_is": "NeMo Gym 是用环境评测和改进模型、智能体的 Python 库，提供环境开发、可扩展评测与训练基础设施，以及常用基准和训练环境集合。",
+        "problem_solved": "它解决有状态智能体任务难以复现评测、难以大规模运行、评测与训练衔接复杂的问题，统一数据集、交互框架、验证器和任务状态。",
+        "who_should_care": "做模型评测、智能体训练、强化学习环境和基准复现的开发者。",
+        "use_cases": [
+          "在代码执行或工具调用环境中评测智能体",
+          "用共享环境和验证器做可复现评测",
+          "大规模运行评测并衔接训练流程"
+        ],
+        "alternatives": "相比简单脚本，它面向有状态、可扩展评测与训练；也提供环境集合和模块化接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 4 星且仅一天上日榜，但关注基数已破千。",
+        "risk_notes": "未关闭议题有一千四百零六个；快速开始示例需要接口密钥；要求较新的 Python 版本。",
+        "evidence": [
+          "NeMo Gym is a library for evaluating and improving models and agents using environments.",
+          "An environment is the complete system an agent interacts with to complete a task. It consists of a dataset (tasks to solve), an agent harness (how the model interacts with the world), a verifier (task completion scoring), and state (per-task execution context).",
+          "You need to use environments at scale — multiple repeats per task, or thousands of concurrent requests for training"
+        ]
+      }
+    },
+    "ebrasha/free-v2ray-public-list": {
+      "category": "other",
+      "one_liner": "免费 V2Ray 节点列表",
+      "intro": {
+        "one_liner": "免费代理节点列表",
+        "what_it_is": "一个持续更新的免费 V2Ray 服务器列表，涵盖多种代理协议，便于复制配置后连接。",
+        "problem_solved": "为需要现成代理节点的人省去注册、付费和自行搜集配置的步骤。",
+        "who_should_care": "关注代理配置、需要临时测试节点的开发者。",
+        "use_cases": [
+          "复制节点配置进行连接",
+          "测试多种代理协议配置",
+          "获取定期更新的节点列表"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，且已破千星。",
+        "risk_notes": "缺少说明文档，节点可用性、来源和安全性难以确认；免费公共代理存在隐私与合规风险。",
+        "evidence": [
+          "A simple and always-updated list of free, working V2Ray servers. including SS, SSR, Trojan, VLESS, VMess, TUIC, and Hysteria2.",
+          "Just copy, paste, and connect — no signup, no payment, no nonsense. ⏰ Updated every 15 minutes .",
+          "破千时的 Star 数：1003"
+        ]
+      }
+    },
+    "cloudflare/artifact-fs": {
+      "category": "dev-tools",
+      "one_liner": "按需加载的大型仓库文件系统",
+      "intro": {
+        "one_liner": "按需加载的 Git 文件系统",
+        "what_it_is": "ArtifactFS 是用 Go 编写的 Git 支撑文件系统守护进程，通过 FUSE 把仓库挂载为普通工作树，并按需获取文件内容。",
+        "problem_solved": "它避免大型仓库启动时等待完整克隆，先快速呈现目录树，再在读取时补齐所需文件。",
+        "who_should_care": "关注启动速度的沙箱、智能体、容器和持续集成系统开发者。",
+        "use_cases": [
+          "短生命周期沙箱快速挂载代码仓库",
+          "智能体按需读取大型仓库文件",
+          "持续集成环境减少完整克隆等待"
+        ],
+        "alternatives": "相比直接克隆，可先挂载目录树并按需获取文件内容，但属于可选驱动。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周涨了 9 星，曾有一天进入日榜。",
+        "risk_notes": "当前为 beta 版本，使用效果可能不稳定；需要 Go 1.26+ 和 FUSE 实现；仍有 10 个未关闭问题。",
+        "evidence": [
+          "This is a beta release of ArtifactFS. Your mileage may vary.",
+          "It exposes the tree quickly, then hydrates file contents on demand.",
+          "Requires Go 1.26+ and a FUSE implementation"
+        ]
+      }
+    },
+    "AlibabaCloudDocs/aliyun_acp_learning": {
+      "category": "learning-resource",
+      "one_liner": "阿里云 ACP 学习资料",
+      "intro": {
+        "one_liner": "大模型认证实战课程",
+        "what_it_is": "这是阿里云大模型高级工程师认证课程资料，以 Jupyter Notebook 为主，围绕新人答疑机器人讲解应用开发、评测与上线。",
+        "problem_solved": "帮助有编程基础的学习者系统掌握提示词、检索增强、智能体、评测、部署和安全合规，完成大模型应用从想法到落地。",
+        "who_should_care": "准备认证考试、学习大模型应用开发与阿里云百炼平台实践的开发者。",
+        "use_cases": [
+          "备考大模型高级工程师认证",
+          "搭建并优化答疑机器人",
+          "学习智能体与生产上线实践"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "内容绑定阿里云百炼平台与认证体系；课程更新记录含未来日期，需留意版本状态；许可证信息未知。",
+        "evidence": [
+          "欢迎来到阿里云大模型ACP高级工程师认证课程，这是阿里云大模型认证的进阶篇。",
+          "本课程面向具备编程基础的生成式人工智能技术爱好者和应用开发者，不仅传授理论知识，更聚焦于实战落地。",
+          "使用阿里云百炼平台构建大模型应用(开发、测评、部署、发布)"
+        ]
+      }
+    },
+    "sirius-db/sirius": {
+      "category": "other",
+      "one_liner": "Sirius 数据库项目",
+      "intro": {
+        "one_liner": "GPU 原生分析引擎",
+        "what_it_is": "Sirius 是用 C++ 编写的 GPU 原生可组合分析引擎，通过 Substrait 接入现有数据库，目前支持 DuckDB，Starrocks 即将支持。",
+        "problem_solved": "它让现有数据库的 SQL 查询无需重写即可在 GPU 上执行，并提供分层内存、数据分区、溢出和固定表等机制。",
+        "who_should_care": "使用 DuckDB、有 NVIDIA GPU 且关注分析查询的开发者。",
+        "use_cases": [
+          "在 DuckDB 中透明执行 GPU 查询",
+          "分析本地 Parquet 文件",
+          "固定热表减少重复读取"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星时达到一千星。",
+        "risk_notes": "依赖特定 Linux、NVIDIA GPU、CUDA、io_uring 和直接 I/O 环境；扩展要求匹配仓库固定的 DuckDB 版本；最新预构建版本可能有破坏性变更。",
+        "evidence": [
+          "Sirius is a GPU-Native Composable Analytics Engine. It plugs into existing databases via the standard Substrait query format, requiring no query rewrites or major system changes.",
+          "Either way, all DuckDB queries are automatically intercepted by the optimizer hook and run on GPU — no query rewrites required. Queries with unsupported operators fall back silently to CPU.",
+          "The v2 extension requires the exact DuckDB revision pinned in this repository."
+        ]
+      }
+    },
+    "Junyi-99/ChatGPT-API-Scanner": {
+      "category": "security",
+      "one_liner": "扫描 GitHub 可用 API 密钥",
+      "intro": {
+        "one_liner": "扫描公开仓库密钥的工具",
+        "what_it_is": "这是一个用 Python 编写的工具，通过浏览器自动化扫描 GitHub 上可用的 OpenAI API Key，并把结果存入本地 SQLite 数据库。",
+        "problem_solved": "它用于发现公开代码里泄露的 OpenAI API Key，也提醒开发者保护密钥，避免被未授权访问。",
+        "who_should_care": "安全研究者、仓库维护者，以及关注密钥泄露治理的开发者。",
+        "use_cases": [
+          "排查公开仓库密钥泄露",
+          "验证已有密钥状态",
+          "按关键词和语言定制扫描"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千星且复刻数一百九十二。",
+        "risk_notes": "用途涉及扫描他人密钥，存在明显合规与滥用风险；说明要求仅用于安全研究，作者不对误用后果负责；GitHub 推送保护可能显著影响效果。",
+        "evidence": [
+          "Scan GitHub for available OpenAI API Keys",
+          "THIS PROJECT IS ONLY FOR ***SECURITY RESEARCH*** AND REMINDS OTHERS TO PROTECT THEIR PROPERTY, DO NOT USE IT ILLEGALLY!!",
+          "As of `August 21, 2024`, GitHub has enabled push protection to prevent API key leakage, which could significantly impact this repository."
+        ]
+      }
+    },
+    "superxslam/SuperOdom": {
+      "category": "hardware-iot",
+      "one_liner": "高鲁棒激光雷达里程计",
+      "intro": {
+        "one_liner": "激光惯性里程计框架",
+        "what_it_is": "一个用 C++ 编写的 ROS 2 里程计与建图项目，支持仅激光和激光惯性两种模式，兼容多种激光雷达。",
+        "problem_solved": "面向机器人定位与建图中的位姿估计，提供惯性预测、激光约束、退化检测和配准风险预测。",
+        "who_should_care": "做 ROS 2 机器人定位、建图、三维重建和多传感器融合的开发者。",
+        "use_cases": [
+          "机器人实时里程计估计",
+          "激光雷达建图与定位",
+          "退化环境下的配准风险评估"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "依赖 ROS 2 Humble、PCL、GTSAM、Ceres 等组件；安装涉及 Docker、驱动和固定工作区结构。",
+        "evidence": [
+          "A highly robust and accurate LiDAR-only,  LiDAR-inertial odometry",
+          "Support LiDAR Only or LiDAR inertial Odometry",
+          "Built on ROS 2 Humble for modern robotics development"
+        ]
+      }
+    },
+    "djylb/nps": {
+      "category": "dev-tools",
+      "one_liner": "带界面的内网穿透代理",
+      "intro": {
+        "one_liner": "内网穿透与反向代理工具",
+        "what_it_is": "这是一个带网页管理界面的内网穿透和反向代理系统，基于原有 NPS 持续维护改进，使用 Go 开发。",
+        "problem_solved": "用于把位于内网或防火墙后的服务暴露出来，并通过网页界面配置、监控和管理连接。",
+        "who_should_care": "需要远程访问内网服务、搭建反向代理或管理隧道的开发者与运维人员。",
+        "use_cases": [
+          "远程访问内网服务",
+          "配置网站反向代理",
+          "集中监控隧道连接"
+        ],
+        "alternatives": "相比原版 NPS，强调持续维护、重构、稳定性改进和更多部署场景增强。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾登上日榜一天。",
+        "risk_notes": "资料未提供许可证、版本状态和稳定性验证信息；部署涉及公网暴露，需自行核对配置与安全边界。",
+        "evidence": [
+          "NPS Enhanced — Lightweight intranet tunneling and reverse proxy with Web UI | NPS 内网穿透 反向代理 增强版 全修 新版 二开",
+          "NPS is a lightweight and efficient NAT traversal and reverse proxy system for exposing services behind NAT or firewalls.",
+          "Based on the original [NPS](https://github.com/ehang-io/nps) project, **NPS Enhanced** has evolved into an actively maintained and extensively improved edition with continuous refactoring, better stability, and many practical enhancements for modern deployment scenarios."
+        ]
+      }
+    },
+    "librepods-org/librepods": {
+      "category": "mobile",
+      "one_liner": "脱离苹果生态的 AirPods 工具",
+      "intro": {
+        "one_liner": "解锁 AirPods 功能",
+        "what_it_is": "LibrePods 让 AirPods 在非 Apple 平台上使用原本限于 Apple 设备的功能，主要面向 Android 与 Linux。",
+        "problem_solved": "它通过实现 AirPods 与 Apple 设备间的专有协议，解决非 Apple 平台无法调节降噪、查看电量、耳部检测等问题。",
+        "who_should_care": "在 Android 或 Linux 上使用 AirPods，并需要高级设置与辅助功能的开发者。",
+        "use_cases": [
+          "切换聆听模式与降噪",
+          "查看准确电量与重命名",
+          "配置辅助听力选项"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有两万七千多星，本周一天登上日榜。",
+        "risk_notes": "部分功能未实现、实验性或需要 VendorID spoofing；README 警告有非官方网站冒称官方；部分能力可能需要 root。",
+        "evidence": [
+          "AirPods liberated from Apple's ecosystem.",
+          "LibrePods allows you to use AirPods features that are exclusive to Apple devices.",
+          "⚪     | Needs [VendorID spoofing](#vendorid-spoofing); use at your own risk"
+        ]
+      }
+    },
+    "ente/ente": {
+      "category": "security",
+      "one_liner": "端到端加密云存储服务",
+      "intro": {
+        "one_liner": "端到端加密云服务",
+        "what_it_is": "Ente 是开源端到端加密云平台，仓库包含多端客户端和服务端，提供照片、验证器与重要资料保管应用。",
+        "problem_solved": "让用户把照片、二次验证和重要资料存到云端时，无需信任服务提供方，降低隐私数据暴露风险。",
+        "who_should_care": "重视隐私、想替代相册或 Authy，并考虑自托管的个人与开发者。",
+        "use_cases": [
+          "加密备份和整理照片",
+          "管理二次验证令牌",
+          "保管文档、凭据和笔记"
+        ],
+        "alternatives": "以完全开源、端到端加密和多应用共用平台为差异，覆盖照片、验证器与资料保管。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且已有两万七千三百零三星。",
+        "risk_notes": "Ente Photos 是付费服务，仅提供 10GB 免费空间；Locker 免费额度为 100 项，订阅 Photos 可存 1000 项。",
+        "evidence": [
+          "Ente is a service that provides a fully open source, end-to-end encrypted platform for you to store your data in the cloud without needing to trust the service provider.",
+          "This monorepo contains all our source code - the client apps (iOS / Android / F-Droid / Web / Linux / macOS / Windows) for both the products (and more planned future ones!), and the server that powers them.",
+          "Ente Photos is a paid service, but we offer 10GB of free storage. You can also clone this repository and choose to self-host."
+        ]
+      }
+    },
+    "xberg-io/kreuzberg": {
+      "category": "dev-tools",
+      "one_liner": "多语言文档智能提取框架",
+      "intro": {
+        "one_liner": "多语言文档智能框架",
+        "what_it_is": "以 Rust 为核心的文档智能框架，可从 PDF、Office、图片等格式提取文本、元数据、图片和结构化信息，并提供多种语言绑定、命令行、接口和服务。",
+        "problem_solved": "把格式识别、读取、文字识别和抽取集中到一个引擎，减少开发者自行拼接多种文档处理库的负担。",
+        "who_should_care": "需要处理多格式文档抽取、检索增强或内容解析的开发者。",
+        "use_cases": [
+          "批量提取 PDF 与 Office 内容",
+          "为检索增强准备结构化文本",
+          "通过命令行或服务解析文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 8,543 星且本周上过一次日榜。",
+        "risk_notes": "资料称其为 Kreuzberg 的下一迭代并重新命名，部分能力需要启用特性；项目创建于 2025 年，成熟度未明确。",
+        "evidence": [
+          "A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats.",
+          "One engine handles format detection, reading, OCR, and extraction, so you never stitch a pipeline together from a dozen libraries.",
+          "Xberg is the next iteration of Kreuzberg. Same document-intelligence engine, rebuilt and rebranded under a fresh v1 line."
+        ]
+      }
+    },
+    "idurar/idurar-erp-crm": {
+      "category": "web-frontend",
+      "one_liner": "开源 ERP 与客户管理系统",
+      "intro": {
+        "one_liner": "开源企业管理系统",
+        "what_it_is": "IDURAR 是开源 ERP 与客户关系管理系统，包含发票、报价、付款、客户和会计等功能，基于 JavaScript 技术栈。",
+        "problem_solved": "为需要自部署管理系统的团队提供客户、报价、发票、付款等业务流程的集中管理。",
+        "who_should_care": "需要自部署 ERP 或客户管理系统的开发者、小团队。",
+        "use_cases": [
+          "管理客户与报价",
+          "开具并跟踪发票",
+          "记录付款与会计信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "采用 GNU Affero General Public License v3.0，商业使用需留意源码开放义务；资料提到自托管企业版本，需确认功能边界。",
+        "evidence": [
+          "IDURAR is Open Source ERP / CRM (Invoice / Quote / Accounting ) Based on Advanced Mern Stack (Node.js / Express.js / MongoDb / React.js ) with Ant Design (AntD) and Redux",
+          "Yes You can use IDURAR for free for personal or Commercial use.",
+          "IDURAR is Free Open Source Released under the GNU Affero General Public License v3.0."
+        ]
+      }
+    },
+    "pvolok/dekit": {
+      "category": "dev-tools",
+      "one_liner": "并行运行多命令的工具",
+      "intro": {
+        "one_liner": "并行任务进程管理器",
+        "what_it_is": "dekit 是用 Rust 编写的命令行进程管理器，可在配置文件中定义服务、数据库、后台任务等，并通过终端界面和命令行控制。",
+        "problem_solved": "它解决开发或生产环境中多个任务需要并行运行、依赖排序、崩溃重启和统一查看控制的问题。",
+        "who_should_care": "需要同时管理多个本地服务或常驻进程的开发者与运维人员。",
+        "use_cases": [
+          "启动项目依赖的多个服务",
+          "在终端界面查看任务状态",
+          "从 mprocs 配置迁移"
+        ],
+        "alternatives": "它是 mprocs 的下一版本，可兼容运行原有配置，并增加生产用途、脚本和代理命令行支持。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时已有两千六百二十九星。",
+        "risk_notes": "资料未说明稳定性、版本状态和生产验证情况；安装方式涉及直接执行远程脚本，需自行留意。",
+        "evidence": [
+          "Run multiple commands in parallel",
+          "dekit is a process manager.",
+          "It runs your project's tasks, such as servers, databases and workers, in development and in production."
+        ]
+      }
+    },
+    "NodePassProject/Anywhere": {
+      "category": "mobile",
+      "one_liner": "苹果设备原生代理客户端",
+      "intro": {
+        "one_liner": "苹果平台原生代理客户端",
+        "what_it_is": "Anywhere 是面向 iOS、iPadOS、macOS 和 tvOS 的原生代理客户端，主打零依赖、纯协议实现和多协议支持。",
+        "problem_solved": "它试图解决苹果平台代理客户端依赖第三方内核、桥接层和网页容器的问题，并提供路由、拦截改写与系统集成能力。",
+        "who_should_care": "使用苹果设备、需要多协议代理与细粒度路由的开发者和进阶用户。",
+        "use_cases": [
+          "在苹果设备上配置代理",
+          "按域名和地址分流流量",
+          "导入订阅、规则集或模块"
+        ],
+        "alternatives": "相比常见封装 sing-box 或 Xray-core 的客户端，强调 Swift 原生实现、无桥接层。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 21 星，本周上日榜 1 天。",
+        "risk_notes": "采用 GPL-3.0；主要语言标为 C，但资料称完全用 Swift 构建；未关闭 Issue 有 9 个。",
+        "evidence": [
+          "The best native proxy client for iOS, iPadOS, macOS, and tvOS.",
+          "A native, zero-dependency proxy client built entirely in Swift.",
+          "Most iOS proxy clients wrap sing-box or Xray-core in a Go/C++ bridge. Anywhere takes a different approach"
+        ]
+      }
+    },
+    "bozhouDev/codex-orange-book": {
+      "category": "learning-resource",
+      "one_liner": "Codex 实战使用指南",
+      "intro": {
+        "one_liner": "Codex 中文实战指南",
+        "what_it_is": "一份非官方中文指南，围绕 Codex 的安装配置、核心能力、标准工作流和实战案例展开，提供在线阅读、Markdown 原稿与 PDF。",
+        "problem_solved": "帮助开发者把智能体能力用于真实工作与软件项目，降低从入门到案例实践的上手成本。",
+        "who_should_care": "开发者、独立开发者和 AI 工具重度用户。",
+        "use_cases": [
+          "按路线学习 Codex 安装配置",
+          "参考需求到交付的工作流",
+          "查阅前端页面等实战案例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但创建时间较新。",
+        "risk_notes": "内容非官方，不代表官方产品承诺；Codex 更新快，安装方式、模型名称、额度、入口和命令参数都可能变化。",
+        "evidence": [
+          "一本写给开发者、独立开发者和 AI 工具重度用户的 ChatGPT 智能体与 Codex 非官方开源指南。",
+          "它不是 OpenAI 官方文档，也不代表官方产品承诺；书中内容主要基于公开能力、实际界面和实战案例整理，适合作为上手路线、工作流参考和案例材料阅读。",
+          "Codex 更新很快，安装方式、模型名称、额度、入口位置和命令参数都可能变化。"
+        ]
+      }
+    },
+    "SmokingRabbit/ejyy": {
+      "category": "web-frontend",
+      "one_liner": "开源智慧物业解决方案",
+      "intro": {
+        "one_liner": "开源智慧物业方案",
+        "what_it_is": "「e家宜业」是一套开源智慧物业解决方案，包含中台、业主与员工小程序、公众号和物联网应用。",
+        "problem_solved": "把业主服务、物业运营、智能物联和数据统计整合到多端系统，便于物业统一管理。",
+        "who_should_care": "物业系统开发者、智慧社区方案维护者、小程序与物联网应用开发者。",
+        "use_cases": [
+          "搭建物业中台",
+          "开发业主服务小程序",
+          "接入智能物联设备"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星时达 1,245 星，且本周上日榜一天。",
+        "risk_notes": "采用 AGPL v3 协议；资料明确禁止将代码和资源用于出售和盈利。",
+        "evidence": [
+          "「e家宜业」是一套基于AGPL v3开源协议开源的智慧物业解决方案。实现了微信公众号、小程序、PC、H5、智能硬件多端打通。",
+          "禁止将本项目的代码和资源进行任何形式的出售和盈利，产生的一切后果由侵权者自负！！",
+          "作者填写的描述：「e家宜业」是一套开源智慧物业解决方案，基于nodejs、typescript、koa、vue开发，包含web中台、业主小程序、员工小程序、公众号、物联网应用等，涵盖业主服务、物业运营、智能物联、数据统计等功能。"
+        ]
+      }
+    },
+    "Starmel/OpenSuperWhisper": {
+      "category": "desktop-system",
+      "one_liner": "macOS 语音听写应用",
+      "intro": {
+        "one_liner": "macOS 语音转写工具",
+        "what_it_is": "这是一个用 Swift 编写的 macOS 应用，提供实时录音转写，支持 Whisper 和 Parakeet 两种引擎，并可从应用内下载模型。",
+        "problem_solved": "它把录音、音频文件转写、快捷键触发和多语言识别整合到桌面应用中，减少手动整理与切换工具的步骤。",
+        "who_should_care": "需要在 macOS 上频繁听写、整理录音或做多语言转写的开发者与普通用户。",
+        "use_cases": [
+          "用全局快捷键快速听写",
+          "拖入音频文件批量转写",
+          "切换麦克风录制并转写"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 94 星，并曾有一天进入日榜。",
+        "risk_notes": "仅支持 Apple Silicon 的 macOS；流式转写、自定义词典和 Intel 兼容仍在待办中；未关闭 Issue 有 99 个。",
+        "evidence": [
+          "OpenSuperWhisper is a macOS application that provides real-time audio transcription using the Whisper model.",
+          "Two transcription engines: [Whisper](https://github.com/ggerganov/whisper.cpp) and [Parakeet](https://github.com/AntinomyCollective/FluidAudio) — download models directly from the app",
+          "- macOS (Apple Silicon/ARM64)"
+        ]
+      }
+    }
+  }
+}

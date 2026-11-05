@@ -1,1 +1,615 @@
-{"date":"2026-08-22","headline":"AI Agent 与开发工具领跑","points":["25 个破千项目中，开发工具 8 个、AI Agent 6 个，TypeScript 11 个最集中。","wang2122/sprix-sage-router 增 331，zenbu-labs/terminal-code 增 288，聚焦多智能体与终端编码。","raindrop-ai/workshop、Rath-Team/OpenRath 把评测与运行时带进 AI Agent 生态。"],"items":{"wang2122/sprix-sage-router":{"category":"ai-agent","one_liner":"多智能体状态路由框架"},"zenbu-labs/terminal-code":{"category":"dev-tools","one_liner":"终端里的 VS Code"},"harry0703/MangoDisk":{"category":"desktop-system","one_liner":"安全优先磁盘清理器"},"elie222/rakazo":{"category":"ai-agent","one_liner":"可自选模型的 Grok Bot"},"raindrop-ai/workshop":{"category":"dev-tools","one_liner":"编码智能体评测工具"},"Rath-Team/OpenRath":{"category":"ai-agent","one_liner":"类 PyTorch 智能体运行时"},"eneskirca/nodeterm":{"category":"dev-tools","one_liner":"节点式智能体终端管理器"},"nottelabs/reverse-api-engineer":{"category":"ai-agent","one_liner":"网站逆向生成 API 智能体"},"RongleCat/grok-app":{"category":"desktop-system","one_liner":"Grok Build 桌面工作台"},"RockxyApp/Rockxy":{"category":"dev-tools","one_liner":"macOS 原生 HTTP 调试代理"},"hashgraph-online/standards-sdk":{"category":"dev-tools","one_liner":"HOL 标准官方 SDK"},"toniebox-reverse-engineering/teddycloud":{"category":"hardware-iot","one_liner":"Toniebox 云端替代服务"},"pullfrog/pullfrog":{"category":"automation","one_liner":"自携模型 GitHub 机器人"},"microsoft/skills-for-fabric":{"category":"ai-agent","one_liner":"操作 Microsoft Fabric 技能集"},"170-carry/codex-tools":{"category":"dev-tools","one_liner":"Codex 账号用量代理工具"},"superturtlee/gbl_root_canoe":{"category":"mobile","one_liner":"Canoe 设备根方案"},"AnnaSuSu/TechSpar":{"category":"learning-resource","one_liner":"技术面试闭环训练平台"},"davis7dotsh/my-pi-setup":{"category":"other","one_liner":"个人 pi 配置示例"},"sk-ruban/notchi":{"category":"desktop-system","one_liner":"编码智能体灵动岛应用"},"devkodeio/frontend-system-design":{"category":"learning-resource","one_liner":"前端系统设计指南"},"HyNetworks/hysteria":{"category":"security","one_liner":"抗审查高速代理软件"},"Manavarya09/design-extract":{"category":"dev-tools","one_liner":"一键提取网站设计系统"},"vercel-labs/lat.md":{"category":"dev-tools","one_liner":"Markdown 代码知识图谱"},"s2b-dev/smart-second-brain":{"category":"ai-agent","one_liner":"隐私 AI 第二大脑插件"},"wangeai/K3Flight":{"category":"ai-model","one_liner":"CPU 本地运行 Kimi K3"}}}
+{
+  "date": "2026-08-22",
+  "headline": "AI Agent 与开发工具领跑",
+  "points": [
+    "25 个破千项目中，开发工具 8 个、AI Agent 6 个，TypeScript 11 个最集中。",
+    "wang2122/sprix-sage-router 增 331，zenbu-labs/terminal-code 增 288，聚焦多智能体与终端编码。",
+    "raindrop-ai/workshop、Rath-Team/OpenRath 把评测与运行时带进 AI Agent 生态。"
+  ],
+  "items": {
+    "wang2122/sprix-sage-router": {
+      "category": "ai-agent",
+      "one_liner": "多智能体状态路由框架",
+      "intro": {
+        "one_liner": "A2A 网络中执行中途重路由决策层",
+        "what_it_is": "Sprix SAGE Router 是 Sprix AI 在屿智同行发布的开源研究项目，用 Python 实现，位于 A2A 协议之上，负责在任务执行中途判断应继续由当前 agent 执行、招募协作方，还是整体交接。",
+        "problem_solved": "Agent 发现机制只能回答有哪些 agent 存在，无法回答执行开始后谁该与谁协作；SAGE 在权限、预算、截止时间约束下，对 SELF、COLLABORATE、HANDOFF 三种路线统一打分并给出可审计的选择。",
+        "who_should_care": "构建多 agent 系统、A2A 协议集成、agent 编排与任务调度平台的开发者与研究者。",
+        "use_cases": [
+          "多 agent 任务执行中途因失败或质量不足而重新分配负责人",
+          "在预算与截止时间约束下决定是否引入互补专家协作",
+          "将 A2A Agent Card、报价与任务状态映射为可审计的执行计划"
+        ],
+        "alternatives": "README 称其聚焦于执行开始后的 checkpoint 感知重配置，与 progress-masked、static-coalition 基线在同一注册表与限制下对比；其他同类项目未提及，具体差异填 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：A2A 与多 agent 编排是当前活跃方向，但项目创建于 2026-08-18，尚属早期原型。",
+        "risk_notes": "README 明确当前原型不传输任务、不认证端点、不验证签名；项目创建不足一月，长期维护情况未知；周增 1603 星、总星 2612，增长较快，需留意热度与成熟度不匹配。",
+        "evidence": [
+          "SAGE—State-Aware Graph Exchange—is the decision layer between A2A discovery and task execution.",
+          "The current prototype intentionally does not transmit tasks, authenticate endpoints, or verify signatures.",
+          "The reference implementation requires Python 3.10+ and has no runtime dependencies."
+        ]
+      }
+    },
+    "zenbu-labs/terminal-code": {
+      "category": "dev-tools",
+      "one_liner": "终端里的 VS Code",
+      "intro": {
+        "one_liner": "在终端里运行 VS Code",
+        "what_it_is": "terminal-code 是一个用 TypeScript 编写的 CLI 工具，它把 terminal-browser（终端内的浏览器）和 code-server（浏览器版 VS Code）结合起来，让 VS Code 直接运行在终端里，命令名为 tode。",
+        "problem_solved": "让用户在纯终端环境中使用 VS Code 的编辑体验，无需离开终端或启动图形界面；并通过 tode --ssh 只把后端放在远端运行，以改善远程开发时的交互延迟。",
+        "who_should_care": "重度使用终端、经常通过 SSH 远程开发、偏好键盘操作且终端支持 kitty graphics protocol 的开发者。",
+        "use_cases": [
+          "在终端内直接打开并编辑本地项目文件夹或文件",
+          "通过 tode --ssh 在远程服务器上开发，同时保持本地前端交互",
+          "用 tode --diff 在终端内比较两个文件",
+          "从 VS Code 等兼容编辑器导入设置、快捷键、代码片段与扩展"
+        ],
+        "alternatives": "README 自述其由 terminal-browser 与 code-server 组合而成，未与其他同类项目做直接对比，差异点填 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：周增约 533 星、上榜 1 天，属于新鲜度驱动的关注，长期价值取决于终端图形协议普及度。",
+        "risk_notes": "依赖 kitty graphics protocol，Windows 无官方构建且多数 Windows 终端不支持；安装方式为 curl 管道执行脚本；项目创建于 2026-08-08，历史很短，open issues 27 个。",
+        "evidence": [
+          "VS Code in the terminal",
+          "terminal-code combines terminal-browser (a browser in the terminal) and code-server (VS Code in the browser) to bring VS Code to the terminal",
+          "terminal-code depends on a modern terminal feature (the kitty graphics protocol) that not many terminals on Windows support"
+        ]
+      }
+    },
+    "harry0703/MangoDisk": {
+      "category": "desktop-system",
+      "one_liner": "安全优先磁盘清理器",
+      "intro": {
+        "one_liner": "跨平台安全优先磁盘清理工具",
+        "what_it_is": "MangoDisk 是一款用 Rust 编写的跨平台桌面磁盘清理与空间分析工具，支持 macOS、Windows 和 Linux，提供深度清理、大文件与重复文件清理、磁盘空间可视化、隐私清理、应用卸载、启动项管理等功能。",
+        "problem_solved": "解决磁盘空间被缓存、日志、构建产物、AI 模型等分散内容占用，以及用户难以安全判断哪些内容可以删除的问题；它通过只读扫描、清理前确认和操作历史记录来降低误删风险。",
+        "who_should_care": "需要定期清理磁盘的普通桌面用户、开发者（尤其是 Node.js、Rust、Xcode、Docker 等工具链用户），以及关注隐私痕迹清理和启动项管理的用户。",
+        "use_cases": [
+          "清理系统、应用、浏览器、开发者工具与容器缓存",
+          "查找并删除大文件与重复文件",
+          "用 treemap 或 sunburst 图分析磁盘空间占用",
+          "卸载应用并清理残留配置与缓存",
+          "管理启动项与系统优化、维护"
+        ],
+        "alternatives": "README 未与其他同类项目做直接对比，仅说明其清理规则为自研，第三方项目只作为研究线索，且规则库与修订历史公开可查；具体差异填 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 559 stars 并登上日榜，但项目创建时间较新，长期维护与规则覆盖仍需观察。",
+        "risk_notes": "许可证为 GPL-3.0，商用或二次分发需注意合规；项目创建时间较新、版本迭代快，清理类工具涉及删除与系统设置修改，建议先在小范围验证并保留备份；README 中 AI 解释功能涉及外部 AI 服务，需注意数据外发。",
+        "evidence": [
+          "Safety-first disk cleaner and disk space analyzer for macOS and Windows, with duplicate file finder, large file cleanup, app uninstaller, and startup manager",
+          "MangoDisk scans in read-only mode by default. Before cleanup, deletion, uninstall, or system setting changes begin, you can review and confirm exactly what will happen.",
+          "MangoDisk maintains its own cleanup rules. Third-party projects may provide research leads, but a candidate rule is only accepted after reliable sources, safe boundaries, and real-system behavior have been verified."
+        ]
+      }
+    },
+    "elie222/rakazo": {
+      "category": "ai-agent",
+      "one_liner": "可自选模型的 Grok Bot",
+      "intro": {
+        "one_liner": "可自托管的持久化 AI 队友",
+        "what_it_is": "Rakazo 是一个开源 AI agent 项目，提供具有独立对话、记忆、例程与历史的持久化 bot，可在 Web、Electron 桌面端以及 iPhone/Android 上运行，并支持自带模型与沙箱提供方。",
+        "problem_solved": "它让用户在自己的机器或服务器上运行完整的 AI 助手技术栈，避免绑定单一厂商的模型与执行环境，同时为 bot 提供持久记忆、工具调用和计算机访问能力。",
+        "who_should_care": "希望自托管 AI 助手、重视数据自主与模型可替换性的开发者、小团队和隐私敏感用户。",
+        "use_cases": [
+          "在本地或 VPS 上部署带记忆与例程的个人 AI 助手",
+          "为团队搭建共享 Team Computers 与隔离 Private computers 的协作 agent",
+          "通过 MCP、OpenAPI、Composio/Pipedream 接入自有工具与业务系统"
+        ],
+        "alternatives": "README 自称是 Grok Bot、Meta Muse、OpenAI Dots、Instinct、OpenClaw、Hermes Agent、Claude Duet 的开源自托管替代品，差异点在于可自带模型凭据并自选沙箱提供方（Docker、E2B、Daytona 等）。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：自托管、模型可替换的 AI agent 是持续增长的方向，但项目自身仍标注为 beta。",
+        "risk_notes": "README 明确说明项目处于 beta；Treg 按用量计费，托管转售需另行书面协议；forks 数（1165）与 stars 数接近，存在异常信号，需谨慎看待热度。",
+        "evidence": [
+          "Rakazo is an open source AI agent for persistent teammates, and a self-hosted AI assistant you can run on your own machine.",
+          "It is an open source, self-hosted alternative to Grok Bot, Meta Muse, OpenAI Dots, Instinct, OpenClaw, Hermes Agent, and Claude Duet.",
+          "Rakazo is in beta."
+        ]
+      }
+    },
+    "raindrop-ai/workshop": {
+      "category": "dev-tools",
+      "one_liner": "编码智能体评测工具",
+      "intro": {
+        "one_liner": "本地智能体调试器",
+        "what_it_is": "Raindrop Workshop 是本地调试器，实时展示编码智能体的令牌、工具调用和决策轨迹，并支持编写与运行评测。",
+        "problem_solved": "它让开发者能看见智能体运行过程，定位失败，并通过评测、重放和修复循环改进代码。",
+        "who_should_care": "使用编码智能体、需要调试智能体轨迹和评测的开发者。",
+        "use_cases": [
+          "实时查看智能体轨迹",
+          "编写并运行代码评测",
+          "本地重放生产轨迹"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨了 15 星，上日榜 1 天。",
+        "risk_notes": "创建日期为 2026 年，时间信息异常；未关闭问题 14 个；云产品需登录并写入密钥。",
+        "evidence": [
+          "The local debugger your agent is missing.",
+          "Live streamed traces. Every token, tool call, and span streams into Workshop as it happens. No polling, no refreshing.",
+          "Self-healing eval loop. Claude writes the eval, runs your agent, sees the failure, fixes the code, and re-runs until every assertion passes."
+        ]
+      }
+    },
+    "Rath-Team/OpenRath": {
+      "category": "ai-agent",
+      "one_liner": "类 PyTorch 智能体运行时",
+      "intro": {
+        "one_liner": "多智能体工作流框架",
+        "what_it_is": "OpenRath 是 Python 编写的类 PyTorch 多智能体框架，把会话、沙箱、记忆、工具、智能体和工作流做成可组合对象。",
+        "problem_solved": "它面向多智能体、多会话协作中的状态复用、分支追踪、记忆持久化和工具执行隔离，也提供持久化运行能力。",
+        "who_should_care": "构建复杂多智能体系统、需要会话追踪与持久化运行的 Python 开发者。",
+        "use_cases": [
+          "编排多个智能体协作",
+          "追踪分支会话来源",
+          "部署可恢复的智能体流程"
+        ],
+        "alternatives": "以会话为数据流核心，强调多智能体、多会话、可组合工作流与运行溯源。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 24 星且上过一次日榜。",
+        "risk_notes": "服务接口仍为 Beta；旧版导入记录不能作为可恢复运行；未关闭问题 8 个。",
+        "evidence": [
+          "OpenRath is a PyTorch-like multi-agent & multi-session framework.",
+          "OpenRath v2.0.0 is designed for production deployment while keeping interface maturity explicit: the Agent Server HTTP surface remains **Beta**",
+          "一周新增 Star：24"
+        ]
+      }
+    },
+    "eneskirca/nodeterm": {
+      "category": "dev-tools",
+      "one_liner": "节点式智能体终端管理器",
+      "intro": {
+        "one_liner": "画布式终端管理器",
+        "what_it_is": "把终端和 AI 编码代理会话做成可拖拽节点的桌面与浏览器应用，支持无限画布、看板视图和 tmux 会话保持。",
+        "problem_solved": "解决多终端标签隐藏上下文、并行代理难追踪的问题，用空间布局和状态提示让会话位置、进度与待处理事项更清楚。",
+        "who_should_care": "并行使用多个编码代理、需要长期维护终端会话的开发者。",
+        "use_cases": [
+          "并行管理多个代理会话",
+          "用看板跟踪代理任务",
+          "远程浏览器访问终端画布"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 337 星且曾上日榜。",
+        "risk_notes": "Windows 桌面版标注为 beta；浏览器版有当前限制；未关闭 Issue 有 74 个。",
+        "evidence": [
+          "A node-based terminal manager — your terminals and agents on an infinite canvas.",
+          "Stacked terminal tabs hide context — you lose track of what's running where. nodeterm turns that into a map",
+          "as the desktop app for macOS, Linux and Windows (beta), as a self-hosted browser app you reach from anywhere (Server Edition)"
+        ]
+      }
+    },
+    "nottelabs/reverse-api-engineer": {
+      "category": "ai-agent",
+      "one_liner": "网站逆向生成 API 智能体",
+      "intro": {
+        "one_liner": "把网站转成接口客户端",
+        "what_it_is": "这是一个用浏览器流量生成接口客户端的工具，支持人工浏览或智能体浏览，并输出多种语言的带类型客户端。",
+        "problem_solved": "它减少手工查看开发者工具、复制请求命令和拼接客户端的工作，把网站实际调用的端点整理成可复用代码。",
+        "who_should_care": "需要抓取网页数据、封装内部网页功能或给编码智能体补充接口能力的开发者。",
+        "use_cases": [
+          "为招聘页生成职位查询客户端",
+          "把网页操作整理成接口代码",
+          "从浏览记录重跑客户端生成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 77 星，并曾登上日榜一天。",
+        "risk_notes": "部分平台不受安装支持；浏览器智能体模式依赖外部工具和会话配置；部分模式不保存流量文件，无法重跑生成。",
+        "evidence": [
+          "The agent that turns websites into APIs!",
+          "Turn websites into APIs. Browse (or let an agent browse), and get a clean, typed client for the endpoints the site actually uses.",
+          "Network traffic is captured to a HAR file."
+        ]
+      }
+    },
+    "RongleCat/grok-app": {
+      "category": "desktop-system",
+      "one_liner": "Grok Build 桌面工作台",
+      "intro": {
+        "one_liner": "Grok Build CLI 的桌面工作台",
+        "what_it_is": "Grok App 是一个基于 Tauri 2 与 TypeScript 构建的开源桌面客户端，为本地 Grok Build CLI（grok agent stdio）提供图形化工作台，并明确声明并非 xAI 官方产品。",
+        "problem_solved": "把命令行形式的 Grok Build 代理会话搬到桌面图形界面，统一管理多项目会话、文件编辑、权限确认与远程 IM 接入。",
+        "who_should_care": "已安装并登录 Grok Build CLI、希望在桌面端高效管理多项目代理会话的开发者与重度 CLI 用户。",
+        "use_cases": [
+          "多项目并行代理会话与 Kanban 状态管理",
+          "在应用内编辑代码、查看 Git Diff 并审阅代理改动",
+          "通过飞书、Telegram、Discord 等 IM 远程监控与接管本地代理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 Grok CLI 生态的第三方桌面封装，热度依赖上游 CLI 的可用性与社区关注度。",
+        "risk_notes": "非官方项目，完整功能依赖用户自行安装并登录 Grok Build CLI；README 含官网与社交链接，需自行甄别；项目创建于 2026-07-23，历史较短。",
+        "evidence": [
+          "Grok App is an open-source desktop client and workbench for the local Grok Build CLI (`grok agent stdio`). It is **not an official xAI product**.",
+          "The application does not bundle proprietary model backends; all chat reasoning, tool execution, and permissions run directly through your installed `grok` CLI.",
+          "Full agent capabilities require an installed and signed-in Grok Build CLI."
+        ]
+      }
+    },
+    "RockxyApp/Rockxy": {
+      "category": "dev-tools",
+      "one_liner": "macOS 原生 HTTP 调试代理",
+      "intro": {
+        "one_liner": "macOS 原生抓包调试代理",
+        "what_it_is": "Rockxy 是面向 macOS 的开源原生 HTTP 调试代理，用 Swift 编写，可拦截并检查 HTTPS、WebSocket 和 GraphQL 流量。",
+        "problem_solved": "帮助开发者查看、修改和模拟接口请求与响应，定位浏览器开发者工具难以覆盖的 Mac 与 iOS 应用网络问题。",
+        "who_should_care": "做接口、移动端、WebSocket、GraphQL 或 AI 接口调试的 macOS 开发者。",
+        "use_cases": [
+          "检查应用接口请求",
+          "模拟接口响应",
+          "调试 WebSocket 流量",
+          "分析 GraphQL 请求"
+        ],
+        "alternatives": "定位为 Proxyman 和 Charles Proxy 的本地优先、AGPL-3.0 开源替代。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 31 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0；官方签名构建另有二进制许可，且仓库不代表完整官方构建源码；未关闭问题有 85 个。",
+        "evidence": [
+          "Open-source native macOS HTTP debugging proxy — intercept HTTPS, inspect APIs, mock responses, debug WebSocket & GraphQL. Community-driven. For developers, by developers.",
+          "A local-first, AGPL-3.0 alternative to Proxyman and Charles Proxy.",
+          "This repository is not represented as the complete source tree used to build the official DMG."
+        ]
+      }
+    },
+    "hashgraph-online/standards-sdk": {
+      "category": "dev-tools",
+      "one_liner": "HOL 标准官方 SDK",
+      "intro": {
+        "one_liner": "Hedera 标准实现工具包",
+        "what_it_is": "这是用 TypeScript 编写的官方 HOL Standards SDK，提供 HCS 标准的参考实现，并包含 Registry Broker 客户端、命令行工具和演示。",
+        "problem_solved": "它把 Hedera 生态中的文件存储、注册索引、身份、代理通信等标准封装成可调用接口，降低按规范开发代理应用的门槛。",
+        "who_should_care": "构建 Hedera 代理、身份或注册功能的开发者。",
+        "use_cases": [
+          "实现 HCS 标准接口",
+          "验证代理技能与域名",
+          "运行代理通信演示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 99 星且曾上日榜。",
+        "risk_notes": "创建于 2025 年，仍有 13 个未关闭问题；部分功能依赖可选网络传输、账本认证组件和环境变量配置。",
+        "evidence": [
+          "The official HOL Standards SDK, implementing the standards found in https://hol.org/docs/standards",
+          "A lightweight SDK providing reference implementations for Hashgraph Consensus Standards (HCS) created by HOL.",
+          "The SDK includes demo implementations that showcase registry broker flows (discovery, chat, ledger auth, OpenRouter) and HCS-10 agent communication."
+        ]
+      }
+    },
+    "toniebox-reverse-engineering/teddycloud": {
+      "category": "hardware-iot",
+      "one_liner": "Toniebox 云端替代服务",
+      "intro": {
+        "one_liner": "Toniebox 本地云替代服务",
+        "what_it_is": "一个用 C 编写的开源服务端，可替代 Boxine Cloud，让 Toniebox 连接自建服务并在本地托管云服务。",
+        "problem_solved": "让用户控制哪些数据发往原厂云，并可自行托管音频文件、缓存原版内容和管理设备行为。",
+        "who_should_care": "想自建 Toniebox 服务、管理音频内容或做家庭自动化集成的开发者。",
+        "use_cases": [
+          "在本地服务器托管音频内容",
+          "缓存或透传原版音频",
+          "接入 Home Assistant"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 22 星，曾有一天进入日榜。",
+        "risk_notes": "网页登录默认关闭；直接接口仍无保护，不建议公开暴露。另有 88 个未关闭问题，且存在候选版供测试。",
+        "evidence": [
+          "teddyCloud is an open source server replacement for the Boxine Cloud",
+          "This gives you the control about which data is sent to the original manufacturer's cloud and allows you to host your own figurine audio files on e.g. your NAS or any other server.",
+          "**Still not recommended for public exposure:** the login only protects the web UI. The direct APIs are still unprotected"
+        ]
+      }
+    },
+    "pullfrog/pullfrog": {
+      "category": "automation",
+      "one_liner": "自携模型 GitHub 机器人",
+      "intro": {
+        "one_liner": "自托管代码代理机器人",
+        "what_it_is": "Pullfrog 是在 GitHub Actions 中运行的开源机器人，按配置监听 GitHub 事件，并调用 Claude Code、Codex、OpenCode 等代理完成任务。",
+        "problem_solved": "它把代码评审、问题分诊、CI 修复等自动化放进仓库自己的工作流，让用户掌控基础设施、密钥和成本。",
+        "who_should_care": "维护 GitHub 仓库、已使用编码代理订阅或想自控密钥的开发者与团队。",
+        "use_cases": [
+          "自动评审新 PR",
+          "修复 CI 失败",
+          "分诊问题并打标签"
+        ],
+        "alternatives": "相比托管式代码评审服务，它强调在自有 Actions 中运行，并复用现有代理配置。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 84 星，且曾有一天进入日榜。",
+        "risk_notes": "创建时间较近；组织私有仓库需付费方案；自动化涉及密钥、权限与 shell 执行，需谨慎配置。",
+        "evidence": [
+          "Open-source model-agnostic BYOK GitHub bot that runs in GitHub Actions",
+          "It listens for GitHub events — PRs opened, issues created, reviews submitted, CI failures — and triggers agent runs based on your configuration, via a `pullfrog.yml` workflow that uses this open-source action. You control the infrastructure, the keys, and the costs.",
+          "Pullfrog is free for developers on personal GitHub accounts and free for open-source repos. Pro is $30/month for the whole organization with no per-run or per-seat billing — required for an org's private repos, optional everywhere else."
+        ]
+      }
+    },
+    "microsoft/skills-for-fabric": {
+      "category": "ai-agent",
+      "one_liner": "操作 Microsoft Fabric 技能集",
+      "intro": {
+        "one_liner": "Fabric 智能助手技能集",
+        "what_it_is": "这是面向 Microsoft Fabric 的可复用 AI 助手指令与 MCP 系统集合，供 GitHub Copilot CLI、Claude Code 等工具理解 Fabric 工作负载、接口和操作实践。",
+        "problem_solved": "让兼容的 AI 编码工具更准确地处理 Fabric 的查询模式、接口、工作负载和运维任务，减少从零编写上下文说明的成本。",
+        "who_should_care": "使用 Microsoft Fabric 并借助 AI 编码助手开发、查询或管理数据平台的开发者。",
+        "use_cases": [
+          "设计奖牌架构数据流程",
+          "编写 Power BI 报表技能",
+          "生成工作区说明文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 32 星，曾有一天进入日榜。",
+        "risk_notes": "部分角色包已退役，仅作为弃用别名保留；自动更新需用户手动开启；多数操作需要 Azure 身份验证。",
+        "evidence": [
+          "Microsoft Fabric Skills are reusable AI assistant instructions for working with Microsoft Fabric.",
+          "The persona bundles `fabric-authoring`, `fabric-consumption` and `fabric-operations` are retired.",
+          "Most Fabric operations require Azure authentication."
+        ]
+      }
+    },
+    "170-carry/codex-tools": {
+      "category": "dev-tools",
+      "one_liner": "Codex 账号用量代理工具",
+      "intro": {
+        "one_liner": "Codex 多账号管理工具",
+        "what_it_is": "面向多个 Codex 账号的桌面应用与命令行工具，支持账号导入、用量查看、登录态切换，并提供本地 OpenAI 兼容接口反代。",
+        "problem_solved": "集中管理多个 Codex 账号，减少手动切换登录态和查看用量的麻烦，并让本地客户端通过账号池调用兼容接口。",
+        "who_should_care": "同时使用多个 Codex 账号、需要切换账号或本地反代的开发者。",
+        "use_cases": [
+          "导入并切换多个账号",
+          "查看用量与重置时间",
+          "为本地客户端提供兼容接口"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 15 星且仅一天进入日榜。",
+        "risk_notes": "创建时间较新；仍有 6 个未关闭问题；自动预热会真实消耗少量额度，公网访问依赖隧道配置。",
+        "evidence": [
+          "Codex Tools 面向同时使用多个 Codex 账号的场景，提供桌面 GUI、命令行入口和本地 `/v1` 反代能力。",
+          "多账号管理：OAuth 登录导入、JSON 批量导入、账号备份回导入。",
+          "一周新增 Star：15"
+        ]
+      }
+    },
+    "superturtlee/gbl_root_canoe": {
+      "category": "mobile",
+      "one_liner": "Canoe 设备根方案",
+      "intro": {
+        "one_liner": "骁龙引导修补工具",
+        "what_it_is": "这是一个基于 EDK2 的工作区，用于修补高通 ABL 镜像中的 EFI 应用，并提供启动项扫描、链式启动和 fastboot 操作工具。",
+        "problem_solved": "它面向特定骁龙设备，利用 GBL 漏洞加载修补后的引导组件，主要用于绕过引导加载程序解锁检测并维持相关启动配置。",
+        "who_should_care": "关注特定骁龙设备引导链、已解锁设备启动定制和底层固件研究的开发者。",
+        "use_cases": [
+          "编译 Linux、Windows 或 Android 工具包",
+          "在已 root 设备上安装模块并配置启动项",
+          "通过 Superfastboot 临时启动或刷写分区"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 22 星，仅一天进入日榜，但已有较多复刻。",
+        "risk_notes": "要求特定芯片、已解锁引导、无 Baseband Guard 且 ABL 含 GBL 漏洞；安装涉及格式化数据、写入 efisp 和 persist，操作不当可能导致数据不可访问或启动异常。",
+        "evidence": [
+          "No TrickyStore on Canoe",
+          "`gbl_root_canoe` is an EDK2-based workspace for patching the EFI applications within Qualcomm ABL (Android Bootloader) images.",
+          "Requirements:\n- Device must be Snapdragon 8 Gen 5 / 8 Elite (Gen 5).\n- Bootloader must be unlocked.\n- Kernel must NOT have Baseband Guard.\n- The ABL on the `abl` partition must contain the GBL vulnerability."
+        ]
+      }
+    },
+    "AnnaSuSu/TechSpar": {
+      "category": "learning-resource",
+      "one_liner": "技术面试闭环训练平台",
+      "intro": {
+        "one_liner": "技术面试闭环训练工具",
+        "what_it_is": "TechSpar 把专项训练、简历面试、岗位描述备面、实时辅助和录音复盘串成持续进化的技术面试系统。",
+        "problem_solved": "它解决练习结果难沉淀、薄弱点无人记住、备面缺少岗位针对性的问题，让每轮结果写回系统并安排下一轮训练。",
+        "who_should_care": "正在准备技术面试、愿意持续记录进步并复盘的人。",
+        "use_cases": [
+          "按薄弱点动态出题训练",
+          "围绕简历做模拟面试",
+          "按岗位描述定向备面"
+        ],
+        "alternatives": "相比只生成题目并结束的工具，它强调长期画像、知识库、薄弱点和复习调度共用。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "自行部署需配置多类模型与服务密钥；桌面端、网页端和容器部署步骤较多；创建日期较新。",
+        "evidence": [
+          "把专项训练、简历面试、JD 备面、实时 Copilot 与录音复盘，串成一个持续进化的技术面试闭环。",
+          "市面上的面试工具大多做同一件事：给你生成一堆题，你答完，结束。没有人记得你上次哪道题答崩了，也没有人知道你下周要面的那家公司想听什么。",
+          "破千时的 Star 数：1001；本周上日榜天数：1"
+        ]
+      }
+    },
+    "davis7dotsh/my-pi-setup": {
+      "category": "other",
+      "one_liner": "个人 pi 配置示例",
+      "intro": {
+        "one_liner": "个性化 pi 配置集",
+        "what_it_is": "这是一套用于 pi 的个人化配置，包含主题、搜索抓取工具、底部状态栏、后台终端管理、子代理、工作流和文件检索工具。",
+        "problem_solved": "把常用界面、检索、交互和任务编排能力整合进 pi，方便展示一种可扩展的个人工作环境。",
+        "who_should_care": "正在使用 pi、想参考个性化配置与扩展方式的开发者。",
+        "use_cases": [
+          "定制 pi 界面与状态栏",
+          "为 pi 添加搜索抓取工具",
+          "参考子代理和工作流配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 22 星，曾有一天进入日榜。",
+        "risk_notes": "作者明确表示配置变动很多，不建议直接照搬；未关闭问题有 6 个。",
+        "evidence": [
+          "The setup I use for pi. Changes a ton, don't recommend hard copying it, just a taste of what's possible with it",
+          "This setup is fairly opinionated, it:",
+          "adds firecrawl tools for searching and scraping"
+        ]
+      }
+    },
+    "sk-ruban/notchi": {
+      "category": "desktop-system",
+      "one_liner": "编码智能体灵动岛应用",
+      "intro": {
+        "one_liner": "编程代理灵动岛伴侣",
+        "what_it_is": "Notchi 是 macOS 灵动岛应用，用动画角色实时展示 Claude Code 和 Codex 的活动状态，并可查看用量与成本。",
+        "problem_solved": "让命令行中的编程代理状态更直观，集中呈现思考、工作、权限请求、错误、完成等事件，以及会话和用量信息。",
+        "who_should_care": "使用带灵动岛 MacBook 的 Claude Code 或 Codex 用户。",
+        "use_cases": [
+          "实时查看代理工作状态",
+          "跟踪每日成本与令牌用量",
+          "管理多个并发会话状态"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨 9 星，且只上过一天日榜。",
+        "risk_notes": "采用 GPL-3.0-only；要求 macOS 15.0 以上且设备带灵动岛；首次启动会自动安装钩子，Codex 还需手动批准钩子。",
+        "evidence": [
+          "A macOS notch companion that reacts to Claude Code and Codex activity in real-time.",
+          "Reacts to Claude Code and Codex events in real-time (thinking, working, permission requests, compaction, errors, completions)",
+          "GPL-3.0-only. See [LICENSE](LICENSE)."
+        ]
+      }
+    },
+    "devkodeio/frontend-system-design": {
+      "category": "learning-resource",
+      "one_liner": "前端系统设计指南",
+      "intro": {
+        "one_liner": "前端系统设计指南",
+        "what_it_is": "这是一份面向复杂大型前端应用架构设计的指南，也作为面试清单和风格指南使用。",
+        "problem_solved": "它把从零设计前端系统时要考虑的工程、高层与低层设计因素整理成清单，便于查阅和深入探索。",
+        "who_should_care": "准备前端系统设计面试的开发者，以及参与前端架构设计的工程师。",
+        "use_cases": [
+          "准备前端系统设计面试",
+          "梳理大型前端架构清单",
+          "查阅性能与组件设计要点"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "资料包含社区加入和求星引导；成熟度、许可证与维护状态未提供。",
+        "evidence": [
+          "Frontend System Design Guide",
+          "Interview checklist & style guide",
+          "Frontend System Design guide attempts to cover the various factors to be considered while architecting a complex large-scale frontend application from scratch."
+        ]
+      }
+    },
+    "HyNetworks/hysteria": {
+      "category": "security",
+      "one_liner": "抗审查高速代理软件",
+      "intro": {
+        "one_liner": "抗审查代理工具",
+        "what_it_is": "Hysteria 是用 Go 编写的开源代理软件，基于定制 QUIC 协议，提供多种代理与转发模式。",
+        "problem_solved": "面向不可靠、易丢包网络，提供较难识别和阻断的代理连接，并支持跨平台部署。",
+        "who_should_care": "需要代理、转发和抗审查网络能力的开发者与运维人员。",
+        "use_cases": [
+          "搭建 SOCKS5 或 HTTP 代理",
+          "配置 TCP、UDP 转发",
+          "在主要平台部署代理服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，星数已超过两万。",
+        "risk_notes": "README 包含第三方链接和社区入口；许可证信息仅由徽章展示，需自行核验。",
+        "evidence": [
+          "Hysteria is powerful, lightning-fast, and censorship-resistant open-source proxy software",
+          "Wide range of modes including SOCKS5, HTTP Proxy, TCP/UDP Forwarding, Linux TProxy, TUN - with more features being added constantly.",
+          "Powered by a customized QUIC protocol, Hysteria is designed to deliver unparalleled performance over unreliable and lossy networks."
+        ]
+      }
+    },
+    "Manavarya09/design-extract": {
+      "category": "dev-tools",
+      "one_liner": "一键提取网站设计系统",
+      "intro": {
+        "one_liner": "网站设计系统提取器",
+        "what_it_is": "designlang 用无头浏览器读取网页实时页面，一条命令导出设计令牌、主题配置、组件说明、品牌文案和报告等文件。",
+        "problem_solved": "它把网站视觉规范从页面里整理出来，减少手工梳理颜色、排版、间距、响应式状态和可访问性问题的成本。",
+        "who_should_care": "前端、设计系统维护者、页面复刻与无障碍审计开发者。",
+        "use_cases": [
+          "提取网站设计令牌",
+          "生成多平台主题文件",
+          "检查克隆页面还原度"
+        ],
+        "alternatives": "相比只读单页的提取器，它强调整站一致性、响应式状态、动效对比和评分报告。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 615 星，并有一天进入日榜。",
+        "risk_notes": "创建日期与最近提交日期看起来异常；未关闭问题有 18 个；功能范围很广，稳定性需自行验证。",
+        "evidence": [
+          "Extract any website's complete design system with one command. DTCG tokens, semantic+primitive+composite, MCP server for Claude Code/Cursor/Windsurf, multi-platform emitters (iOS SwiftUI, Android Compose, Flutter, WordPress), Tailwind v4, Figma variables, shadcn/ui, CSS health audit, WCAG remediation, Chrome extension. MIT, Playwright, Node 20+.",
+          "**designlang** points a headless browser at any URL and reads the design system off the live DOM. One command emits 17+ files — DTCG tokens, Tailwind config, shadcn theme, Figma variables, motion tokens, typed component anatomy, brand voice, page-intent labels, and a paste-ready prompt pack for v0 / Lovable / Cursor / Claude Artifacts.",
+          "It also goes where extractors don't: **layout patterns**, **responsive behavior across 4 breakpoints**, **hover / focus / active states**, **WCAG contrast scoring**, **multi-page consistency**, **drift checks against a live source-of-truth**, **visual-diffs**, and a **shareable graded report card**."
+        ]
+      }
+    },
+    "vercel-labs/lat.md": {
+      "category": "dev-tools",
+      "one_liner": "Markdown 代码知识图谱",
+      "intro": {
+        "one_liner": "代码库知识图谱工具",
+        "what_it_is": "这是一个用 Markdown 文件组织代码库知识图谱的工具，提供命令行程序校验、检索和导航文档与源码之间的关联。",
+        "problem_solved": "它解决单个说明文件难以维护、设计决策被埋没、智能体缺少上下文的问题，并用检查命令防止文档与代码引用失配。",
+        "who_should_care": "使用编码智能体、维护中大型代码库、重视设计说明和测试规格关联的开发者。",
+        "use_cases": [
+          "为智能体提供代码库上下文",
+          "审查语义变更与设计理由",
+          "校验测试规格反向引用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时已有 1,838 星。",
+        "risk_notes": "创建于 2026 年 3 月 9 日；资料提到首个 Action 发布后才提供预构建检查器，且源码分支缺少生成运行时。",
+        "evidence": [
+          "Agent Lattice: a knowledge graph for your codebase, written in markdown.",
+          "`AGENTS.md` doesn't scale. A single flat file can describe a small project, but as a codebase grows, maintaining one monolithic document becomes impractical.",
+          "`lat check` ensures nothing drifts out of sync."
+        ]
+      }
+    },
+    "s2b-dev/smart-second-brain": {
+      "category": "ai-agent",
+      "one_liner": "隐私 AI 第二大脑插件",
+      "intro": {
+        "one_liner": "Obsidian 智能笔记插件",
+        "what_it_is": "这是一个免费开源的 Obsidian 插件，提供搜索、知识图谱和能读取笔记的 AI 助手，支持桌面和移动端。",
+        "problem_solved": "它帮助用户在笔记库中更快找到内容、按主题理解笔记，并让 AI 助手结合笔记回答问题。",
+        "who_should_care": "重度使用 Obsidian 管理知识库、重视本地数据控制的开发者和笔记用户。",
+        "use_cases": [
+          "按关键词和语义查找笔记",
+          "按主题浏览笔记关系图",
+          "让助手基于笔记生成图表"
+        ],
+        "alternatives": "搜索和图谱无需配置 AI 服务即可使用，接入模型后才解锁完整助手能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时有一千二百一十三星。",
+        "risk_notes": "作者称这是业余时间维护的实验性项目；完整助手需配置外部 AI 服务，笔记会发送给你配置的服务方。",
+        "evidence": [
+          "Your Smart Second Brain is a **free** and **open-source** Obsidian plugin that makes your vault smarter: better search, an interactive knowledge graph, and an AI assistant that actually knows your notes.",
+          "**Search and the graph work right away with no AI provider.** Connecting one unlocks the full agent. Runs on desktop and mobile.",
+          "We initially built this as a university project. That's long finished, but we keep developing it in our spare time, as an experimental playground for state-of-the-art AI and as a tool for the Obsidian workflow we're passionate about."
+        ]
+      }
+    },
+    "wangeai/K3Flight": {
+      "category": "ai-model",
+      "one_liner": "CPU 本地运行 Kimi K3",
+      "intro": {
+        "one_liner": "本地 CPU 推理服务",
+        "what_it_is": "一个单文件 Linux 推理服务，主打在 CPU 上本地运行 Kimi K3，并由 cPilot Runtime 提供支撑。",
+        "problem_solved": "面向本地大模型运行需求，尝试降低对 GPU 的依赖，并提供较低内存占用的 CPU 推理方案。",
+        "who_should_care": "关注本地大模型、CPU 推理和边缘部署的 Linux 开发者。",
+        "use_cases": [
+          "在 Linux 上本地运行模型",
+          "验证 CPU 推理流程",
+          "探索低内存部署"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且曾进入日榜，但资料很少。",
+        "risk_notes": "缺少说明文档，成熟度难判断；主要语言标为 HTML，与描述中的单文件服务关系不明；Fork 数仅 1。",
+        "evidence": [
+          "Run Kimi K3 locally on CPU with ~55GB measured runtime RAM. A single-file Linux inference server powered by cPilot Runtime.",
+          "破千时的 Star 数：1018",
+          "Fork 数：1"
+        ]
+      }
+    }
+  }
+}

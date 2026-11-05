@@ -1,1 +1,779 @@
-{"date":"2026-09-21","headline":"桌宠领跑，AI 项目密集上榜","points":["vladelaina/BongoCat 当日新增 546，C 与图形库做的桌宠最受关注。","AI 模型 8 个、AI Agent 7 个，TianyuCodings/NanoJev 与 jaredpalmer/kev 聚焦轻量决策模型。","Python 项目 12 个；typesafe-ai/skills、anthropics/launch-your-agent 把智能体技能带向开发流程。"],"items":{"vladelaina/BongoCat":{"category":"desktop-system","one_liner":"C 与图形库做的桌宠"},"TianyuCodings/NanoJev":{"category":"ai-model","one_liner":"微型并行决策模型复刻"},"jaredpalmer/kev":{"category":"ai-model","one_liner":"可自训的轻量决策模型"},"typesafe-ai/skills":{"category":"ai-agent","one_liner":"TypeSafe API 智能体技能"},"Pridechorouter/Microsoft-Visio":{"category":"desktop-system","one_liner":"Microsoft Visio 相关资源"},"PsycheNavigator/AutoCad":{"category":"desktop-system","one_liner":"AutoCAD 相关资源"},"yegors/deGDID":{"category":"security","one_liner":"清除并阻止 GDID 生成"},"vinnylarouge/jevlike":{"category":"ai-model","one_liner":"类 Jev 决策模型项目"},"Alain00/blobatar":{"category":"other","one_liner":"用途不明的 TypeScript 项目"},"yejy53/Editable-Design":{"category":"ai-agent","one_liner":"智能体生成可编辑视觉稿"},"tophant-ai/aibeat":{"category":"security","one_liner":"AI 应用安全测试工具"},"mokshablr/gander":{"category":"mobile","one_liner":"离线零权限安卓文件查看器"},"sunnypatell/sunnify-spotify-downloader":{"category":"content-media","one_liner":"Spotify 歌单本地下载器"},"ace-trump-tech/DeltaForce-OBS-Locker":{"category":"game","one_liner":"游戏画面识别辅助插件"},"tensorlakeai/tensorlake":{"category":"ai-agent","one_liner":"后台智能体无服务器运行时"},"pmh1314520/MCTier":{"category":"game","one_liner":"跨网虚拟局域网联机工具"},"anthropics/launch-your-agent":{"category":"ai-agent","one_liner":"从想法到上线智能体技能"},"jayin92/Skyfall-GS":{"category":"ai-model","one_liner":"卫星图生成沉浸式城市场景"},"charmbracelet/fantasy":{"category":"ai-agent","one_liner":"Go 构建多模型智能体"},"iptv-org/iptv-org.github.io":{"category":"content-media","one_liner":"IPTV 资源站点"},"huangserva/ComfyUI_MiniMaxH3_Director":{"category":"ai-model","one_liner":"ComfyUI 视频导演工作流"},"getsentry/skills":{"category":"dev-tools","one_liner":"Sentry 团队开发智能体技能"},"alexheretic/ab-av1":{"category":"content-media","one_liner":"按质量自动重编码 AV1"},"Tarquinen/opencode-dynamic-context-pruning":{"category":"dev-tools","one_liner":"OpenCode 动态上下文裁剪插件"},"bostrot/wslmanager":{"category":"desktop-system","one_liner":"WSL 与虚拟机图形管理器"},"DAXIAORobotics/kairos":{"category":"ai-model","one_liner":"Kairos 世界模型官方代码"},"Player-YN/BrowserKitten":{"category":"ai-agent","one_liner":"网页选取生成可编辑文档"},"mizorewww/laya-mlx":{"category":"ai-model","one_liner":"本地 MLX 决策模型运行时"},"okou-ai/okou":{"category":"ai-agent","one_liner":"连接团队工具执行工作"},"bespokelabsai/nimble":{"category":"ai-model","one_liner":"本地类型化决策与评测"},"Ryoku-dev/ryoku":{"category":"desktop-system","one_liner":"Arch 高端工作站配置"},"Anil-matcha/awesome-meta-muse-agent":{"category":"learning-resource","one_liner":"Muse 智能体工作流清单"}}}
+{
+  "date": "2026-09-21",
+  "headline": "桌宠领跑，AI 项目密集上榜",
+  "points": [
+    "vladelaina/BongoCat 当日新增 546，C 与图形库做的桌宠最受关注。",
+    "AI 模型 8 个、AI Agent 7 个，TianyuCodings/NanoJev 与 jaredpalmer/kev 聚焦轻量决策模型。",
+    "Python 项目 12 个；typesafe-ai/skills、anthropics/launch-your-agent 把智能体技能带向开发流程。"
+  ],
+  "items": {
+    "vladelaina/BongoCat": {
+      "category": "desktop-system",
+      "one_liner": "C 与图形库做的桌宠",
+      "intro": {
+        "one_liner": "桌面互动猫宠物",
+        "what_it_is": "BongoCat 是用 C、SDL3 和 OpenGL 构建的桌面互动宠物程序，可响应键盘和鼠标输入，并支持模型渲染。",
+        "problem_solved": "它让桌面宠物能跟随输入动作互动，并提供跨平台构建、诊断后端和可选的完整运行时。",
+        "who_should_care": "喜欢桌面宠物、Live2D 模型或研究原生图形应用的开发者。",
+        "use_cases": [
+          "键盘鼠标互动桌宠",
+          "试用不同猫模型",
+          "学习原生图形架构"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,418 星，且曾登上日榜。",
+        "risk_notes": "源码采用 AGPL-3.0-only；完整运行时需另装兼容的 Cubism SDK，否则只构建诊断后端；未关闭议题有 63 个。",
+        "evidence": [
+          "💘C × SDL3 × OpenGL — Three Mysterious Forces, United as One! Bong~ Bongocat!!!",
+          "The BongoCat source code and native runtime are licensed under\n[AGPL-3.0-only](LICENSE).",
+          "If the Cubism SDK is not present, CMake emits a warning and builds the\ndiagnostic backend."
+        ]
+      }
+    },
+    "TianyuCodings/NanoJev": {
+      "category": "ai-model",
+      "one_liner": "微型并行决策模型复刻",
+      "intro": {
+        "one_liner": "0.6B 并行决策模型复现",
+        "what_it_is": "NanoJev 是 Jev 的 nano 复现项目，基于 Qwen3-0.6B 主干加决策头，输入状态、问题与候选，直接输出概率分布，不做输出 token 解码。",
+        "problem_solved": "把决策类任务从逐 token 生成改为一次前向并行打分，避免生成式解码开销，并给出端到端训练与评测管线。",
+        "who_should_care": "研究 System 1 式快速决策模型、强化学习或游戏智能体策略、以及想在 0.6B 小模型上做概率式动作选择的研究者与工程师。",
+        "use_cases": [
+          "ViZDoom 等游戏中的瞄准、移动与开火决策",
+          "Maze、Snake 等网格环境中的动作选择",
+          "对候选动作或选项做概率排序、采样与选择"
+        ],
+        "alternatives": "README 与 Jev、Untuned Qwen3-0.6B 做了同接口对比；与生成式 LLM 决策相比，其差异在于直接输出概率而非解码答案 token。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 Jev 的复现与 System 1 决策基准讨论正热，但项目创建于 2026-09，仍处早期。",
+        "risk_notes": "README 中的性能对比均为作者自述，未经独立验证；项目仅约一个月历史，长期维护情况未知；演示站点需要访问权限。",
+        "evidence": [
+          "A 0.6B parallel decision model: states and questions in, complete probability distributions out. Zero output-token decoding.",
+          "Choice returns a distribution over 2–255 supplied candidates using a shared scoring head.",
+          "**`unified-games-v1` packages the step-400 checkpoint from the `hard_lr1e5` training run."
+        ]
+      }
+    },
+    "jaredpalmer/kev": {
+      "category": "ai-model",
+      "one_liner": "可自训的轻量决策模型",
+      "intro": {
+        "one_liner": "可自训练的轻量决策模型家族",
+        "what_it_is": "Kev 是一个基于 Qwen3.5 与 Qwen3.8 构建的小型决策模型家族，提供预训练权重，也支持用户自行训练；其 API 与 TypeSafe 的 System One 兼容。",
+        "problem_solved": "它把是/否、多选、评分三类判断问题统一到一次请求中，并默认输出经过校准的概率，让用户可以在本地或自有 GPU 上运行和微调决策模型，而不必依赖托管 API。",
+        "who_should_care": "需要在本地或私有环境做文档判断、问卷打分、规则判定，并且希望自行微调模型的开发者与数据团队。",
+        "use_cases": [
+          "对合同等长文档做是/否或多选判断",
+          "用自有标注样本微调领域决策模型",
+          "以兼容 TypeSafe Python SDK 的方式自建 HTTPS 推理端点"
+        ],
+        "alternatives": "README 以 Jev 作为对照：Kev-27B 在新来源上的准确率与 Jev 相差约 1 个百分点，但 README 明确说明 Jev 的训练数据未知，因此这不是受控的架构对比；Kev 的差异在于权重可自行训练和本地部署。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 6000 star，但项目创建于 2026-09，仍属新发布家族。",
+        "risk_notes": "PyPI 上的 `kev` 是另一个无关包（K.E.V. ORM），本项目未发布到 PyPI，需从源码安装；Kev-9B 与 Kev-27B 在 Mac 上的运行属“预期未实测”；README 自述不清楚 Jev 的训练数据，对比非受控。",
+        "evidence": [
+          "tiny Jev-like family of decision models built on top of Qwen3.5 you can train and run on your own",
+          "The API matches TypeSafe's [System One](https://docs.typesafe.ai/api), so you can point their Python SDK at your local server.",
+          "PyPI name collision: `pip install kev` installs a **different package**"
+        ]
+      }
+    },
+    "typesafe-ai/skills": {
+      "category": "ai-agent",
+      "one_liner": "TypeSafe API 智能体技能",
+      "intro": {
+        "one_liner": "TypeSafe API 的 Agent 技能包",
+        "what_it_is": "这是一个面向 AI Agent 的技能包，用于指导 Agent 使用 TypeSafe 的 System One API 构建带类型化决策与概率输出的集成。",
+        "problem_solved": "帮助 Agent 正确设计 TypeSafe 集成，包括状态与问题定义、请求组装、实时探测，并指向最新文档，减少 Agent 自行摸索 API 的成本。",
+        "who_should_care": "使用 Claude Code 或其他支持 skills.sh 的 Agent、并希望接入 TypeSafe 决策/概率能力的开发者。",
+        "use_cases": [
+          "让 Agent 按部门路由客服工单，对不确定决策转人工复核",
+          "为 Agent 集成 TypeSafe 模型，获取类型化的决策与概率结果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 1020 stars，属于 Agent skills 生态的阶段性关注，但项目创建仅约两个月，长期价值待观察。",
+        "risk_notes": "项目创建于 2026-08-24、推送于 2026-10-23，历史很短；README 主要为安装与调用说明，实际能力依赖外部 TypeSafe 服务与文档。",
+        "evidence": [
+          "Agent skills for building with TypeSafe: typed decisions and probabilities from System One models.",
+          "claude plugin marketplace add typesafe-ai/skills",
+          "Use TypeSafe to route incoming support tickets by department, with human review for uncertain decisions."
+        ]
+      }
+    },
+    "Pridechorouter/Microsoft-Visio": {
+      "category": "desktop-system",
+      "one_liner": "Microsoft Visio 相关资源",
+      "intro": {
+        "one_liner": "Visio 相关仓库",
+        "what_it_is": "仓库名称和标签都围绕 Microsoft Visio、Visio 2026 与桌面版展开；缺少说明，具体交付物 unknown。",
+        "problem_solved": "从标签看可能面向图表绘制软件或 Visio 版本相关需求；缺少说明，实际解决的问题 unknown。",
+        "who_should_care": "关注 Visio、图表绘制软件或 2026 版本信息的开发者。",
+        "use_cases": [
+          "查找 Visio 相关资源",
+          "关注 Visio 2026 信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，但缺少说明支撑长期判断。",
+        "risk_notes": "缺少说明，项目内容、许可证和可用性均无法确认；创建于 2026 年且星数增长较快，需谨慎判断。",
+        "evidence": [
+          "仓库：Pridechorouter/Microsoft-Visio",
+          "话题标签：diagram-software、microsoft-visio、microsoft-visio-2026、microsoft-visio-pro、visio-2026、visio-desktop、visio-free、visio-latest",
+          "README：无"
+        ]
+      }
+    },
+    "PsycheNavigator/AutoCad": {
+      "category": "desktop-system",
+      "one_liner": "AutoCAD 相关资源",
+      "intro": {
+        "one_liner": "AutoCAD 自动化工具",
+        "what_it_is": "仓库名称和标签指向 AutoCAD 相关的 Windows 自动化工具，并涉及 F# Interactive。缺少说明文档，具体形态 unknown。",
+        "problem_solved": "标签显示可能用于 CAD 自动化，但缺少说明文档，具体解决的问题 unknown。",
+        "who_should_care": "使用 AutoCAD 并关注自动化、F# Interactive 的开发者。",
+        "use_cases": [
+          "AutoCAD 自动化",
+          "Windows 上的 CAD 操作",
+          "F# Interactive 相关探索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾上日榜 1 天，破千时有一千一百一十八星。",
+        "risk_notes": "缺少说明文档，功能、许可证、成熟度均无法确认；创建于 2026 年 6 月 13 日，信息不足。",
+        "evidence": [
+          "仓库：PsycheNavigator/AutoCad",
+          "话题标签：autocad、autocad-for-win、autocad-for-windows-free、cad-automation、fsharp-interactive",
+          "README：无"
+        ]
+      }
+    },
+    "yegors/deGDID": {
+      "category": "security",
+      "one_liner": "清除并阻止 GDID 生成",
+      "intro": {
+        "one_liner": "清除并阻止 Windows GDID",
+        "what_it_is": "一个 PowerShell 脚本与配套研究文档，用于删除受支持 Windows 本机中的真实 GDID 状态，并持续阻断 DeviceAdd 生成路径。",
+        "problem_solved": "针对本地账户也可能被分配机器级 GDID 的问题，清理已知本地存储并阻止再次生成；不声称关闭其他遥测或未知网络通道。",
+        "who_should_care": "关注 Windows 设备标识与隐私加固的个人用户、安全研究者。",
+        "use_cases": [
+          "检查本机 GDID 状态",
+          "清理并阻断再次生成",
+          "研究 GDID 生命周期"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨 27 星，且只上过一天日榜。",
+        "risk_notes": "仅支持特定非托管 Windows 环境，其他版本会警告或拒绝；阻断账户相关服务可能影响登录、商店、OneDrive 等功能；状态输出含机器识别信息，需谨慎处理。",
+        "evidence": [
+          "Deletes all instances of Microsoft's GDID and prevents minting of new ones",
+          "On a supported Windows target, remove real server-issued GDID state from the known local stores and keep the DeviceAdd path continuously blocked.",
+          "Blocking `login.live.com`, `account.live.com`, DDS, and the `wlidsvc` service path is expected to break or degrade MSA sign-in, Store and Xbox authentication, OneDrive MSA sign-in, Phone Link, CDP graph features, and related identity workflows."
+        ]
+      }
+    },
+    "vinnylarouge/jevlike": {
+      "category": "ai-model",
+      "one_liner": "类 Jev 决策模型项目",
+      "intro": {
+        "one_liner": "文本选项打分 starter",
+        "what_it_is": "一个 Python 研究型 starter，训练小模型对一段文本和可变数量的文本选项一次性给出每个选项的概率。",
+        "problem_solved": "把从固定选项列表中选择答案的任务变成单次打分，避免逐词生成答案，并提供训练、评估和预测命令。",
+        "who_should_care": "做分类、菜单选择或控制器动作打分实验的开发者。",
+        "use_cases": [
+          "训练文本菜单选择模型",
+          "评估可变选项打分结果",
+          "复现游戏控制器示例"
+        ],
+        "alternatives": "与商业 Jev 输入输出形状相同，但设计未公开；本项目是独立 starter，不声称复现其质量或训练方法。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 220 星，但只上过一天日榜。",
+        "risk_notes": "定位是研究 starter，不是 Jev 复制；效果依赖数据、划分和编码器；字节编码器语义能力弱，预训练路径更耗内存。",
+        "evidence": [
+          "Train a small model that chooses among a changing list of text options.",
+          "This is a research starter, not a copy of Jev.",
+          "Code is released under the [MIT License](LICENSE). Downloaded datasets and pretrained models keep their own terms."
+        ]
+      }
+    },
+    "Alain00/blobatar": {
+      "category": "other",
+      "one_liner": "用途不明的 TypeScript 项目",
+      "intro": {
+        "one_liner": "字符串生成几何头像",
+        "what_it_is": "一个用任意字符串确定性生成几何头像的 TypeScript 库，提供字符串接口和多框架适配。",
+        "problem_solved": "为缺少头像的用户、机器人、团队或仓库生成稳定且可区分的默认头像。",
+        "who_should_care": "需要默认头像、用户列表或聊天界面的前端与跨端开发者。",
+        "use_cases": [
+          "用户资料默认头像",
+          "聊天与在线状态头像",
+          "用户表格和智能体列表"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 261 星，曾有一天进入日榜。",
+        "risk_notes": "创建于 2026 年，资料未提供版本与稳定性说明；React Native 适配要求尺寸且不支持动画。",
+        "evidence": [
+          "Deterministic geometric blobatars from any string. No dependencies, ~4.4 KB gzipped.",
+          "A blobatar always stands for somebody — a user, a bot, a team, a repo",
+          "一周新增 Star：261"
+        ]
+      }
+    },
+    "yejy53/Editable-Design": {
+      "category": "ai-agent",
+      "one_liner": "智能体生成可编辑视觉稿",
+      "intro": {
+        "one_liner": "可编辑视觉设计工具",
+        "what_it_is": "这是一组由编码智能体驱动的技能，用于生成海报、信息图、营销视觉和论文图示，并保留可编辑源文件。",
+        "problem_solved": "它让视觉作品不只是成品图片，而是保留真实文字、独立图层、编辑器和可回放的生成过程，便于后续修改。",
+        "who_should_care": "需要快速制作并反复修改设计稿的开发者、研究者和内容团队。",
+        "use_cases": [
+          "制作可编辑海报与信息图",
+          "生成论文流程或架构图",
+          "把兼容网页转成演示文稿"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 67 星且曾上日榜。",
+        "risk_notes": "输出仍需人工复核科学准确性；依赖编码智能体和技能安装；创建时间较新。",
+        "evidence": [
+          "Agent-driven creation of editable, tastefully crafted visual artifacts.",
+          "The Skill will create the finished design together with its editable source: real text, independent imagery, semantic HTML layers, a visual editor, a layer breakdown, and an Agent Design Replay.",
+          "the output still needs human review for scientific accuracy."
+        ]
+      }
+    },
+    "tophant-ai/aibeat": {
+      "category": "security",
+      "one_liner": "AI 应用安全测试工具",
+      "intro": {
+        "one_liner": "生成式 AI 安全评测工具",
+        "what_it_is": "AI Beat 把场景设计、对抗用例、目标执行、判定和证据整理成可复现的评测流程，包含 PromptBeat 与 AgentBeat。",
+        "problem_solved": "它用于检验大模型、应用接口和智能体在对抗场景下是否安全，并保留回答之外的执行证据。",
+        "who_should_care": "做大模型应用、智能体和安全测试的开发者。",
+        "use_cases": [
+          "评测单个聊天模型",
+          "比较多个模型表现",
+          "检查智能体执行轨迹"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增为零，仅一天进入日榜。",
+        "risk_notes": "创建日期晚于最近提交日期；一周新增为零；仍有五个未关闭问题。",
+        "evidence": [
+          "Security evaluation for generative AI, with evidence from answer to action.",
+          "AI Beat brings scenario design, adversarial cases, target execution, judgment,\nand evidence into one reproducible evaluation workflow.",
+          "A final answer can look safe while the execution is not."
+        ]
+      }
+    },
+    "mokshablr/gander": {
+      "category": "mobile",
+      "one_liner": "离线零权限安卓文件查看器",
+      "intro": {
+        "one_liner": "离线零权限文件查看器",
+        "what_it_is": "Gander 是 Android 上的开源文件查看器，可在本地打开文档、表格、幻灯片、图片、音视频、压缩包、代码等格式。",
+        "problem_solved": "它把多类文件的查看集中到一个应用中，并强调无权限、无联网、无广告与无追踪，减少文件被转到云服务的需要。",
+        "who_should_care": "重视隐私、常需离线查看多种文件的 Android 用户。",
+        "use_cases": [
+          "离线阅读 PDF、Word 和电子书",
+          "查看表格、幻灯片与压缩包",
+          "本地播放图片、音视频文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨 16 星，且只上过一天日榜。",
+        "risk_notes": "创建时间较新；部分格式依赖较新的系统浏览器组件；旧版二进制幻灯片不支持，部分幻灯片元素可能缺失。",
+        "evidence": [
+          "Take a gander at any file. Offline, zero-permission Android viewer for PDF, Word, Excel, PowerPoint, photos, video, audio, Markdown and code.",
+          "A tiny, open source, fully offline file viewer for Android that opens PDF, Word (.docx), Excel, PowerPoint (.pptx), photos, videos, audio, Markdown, text, code and .zip archives in one app, with zero permissions, no ads, no tracking and no internet access at all.",
+          "Legacy binary .ppt is not supported (no open-source renderer is both faithful and small enough to bundle); the app explains this and suggests re-saving as .pptx."
+        ]
+      }
+    },
+    "sunnypatell/sunnify-spotify-downloader": {
+      "category": "content-media",
+      "one_liner": "Spotify 歌单本地下载器",
+      "intro": {
+        "one_liner": "Spotify 歌单下载器",
+        "what_it_is": "Sunnify 是跨平台桌面应用和命令行工具，用 Python 编写，可把 Spotify 歌单、专辑或单曲保存为本地音频文件。",
+        "problem_solved": "它解决把 Spotify 链接批量保存为本地文件的需求，并补齐封面、标题、艺人、专辑等标签信息。",
+        "who_should_care": "需要本地整理自有或获授权音乐、并希望用图形界面或脚本操作的人。",
+        "use_cases": [
+          "下载歌单到本地",
+          "批量补齐音乐标签",
+          "用命令行处理链接"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注集中。",
+        "risk_notes": "自述为学生作品和技术演示，要求仅用于拥有或获授权内容；macOS 直接下载未公证，需手动放行。",
+        "evidence": [
+          "Sunnify is a Spotify downloader application + CLI that allows you to download entire playlists locally onto your Mac/Linux/Windows PC.",
+          "Educational / student portfolio project. Sunnify is a technical demonstration, not a piracy tool. Use it only for content you own or are permitted to download, and only where doing so is legal in your jurisdiction.",
+          "The app is ad-hoc signed but not notarized"
+        ]
+      }
+    },
+    "ace-trump-tech/DeltaForce-OBS-Locker": {
+      "category": "game",
+      "one_liner": "游戏画面识别辅助插件",
+      "intro": {
+        "one_liner": "游戏视觉识别实验项目",
+        "what_it_is": "这是一个围绕《三角洲行动》的 Python 项目，包含电脑端与手机端子项目，涉及画面捕获、目标检测、模拟输入和自动钓鱼模块。",
+        "problem_solved": "它用于演示游戏画面中的目标识别、误判过滤、输入模拟和环境适配，也提供独立仓库作为分端安装入口。",
+        "who_should_care": "适合 Python 初学者、计算机视觉爱好者与安卓测试者关注。",
+        "use_cases": [
+          "学习图像处理与目标检测",
+          "研究模拟输入与窗口穿透",
+          "测试手机端下载脚本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 87 星，且本周上过一天日榜。",
+        "risk_notes": "描述称可稳定过检、提升击杀效率，但正文又声明不建议用于真实对局；许可证禁止商业作弊软件；获取流程要求先点星和复刻，且分叉数高于星数。",
+        "evidence": [
+          "三角洲行动OBS锁头插件 – 基于OBS渲染注入的智能锁头辅助，支持QQ音乐/网易云联精准骨骼识别、平滑自瞄、压枪抑制，稳定过检，提升击杀效率。",
+          "本仓库包含两个独立的子项目，分别面向 **电脑端（PC）** 和 **手机端（Android）**，均以技术教学与原理验证为目的。",
+          "MIT License —— 可自由修改、二次开发，但**严禁用于任何商业作弊软件**。"
+        ]
+      }
+    },
+    "tensorlakeai/tensorlake": {
+      "category": "ai-agent",
+      "one_liner": "后台智能体无服务器运行时",
+      "intro": {
+        "one_liner": "智能体沙箱运行时",
+        "what_it_is": "Tensorlake 是面向智能体应用的计算基础设施，提供隔离沙箱和无服务器编排运行时，主要使用 Python。",
+        "problem_solved": "为智能体、工具调用和大模型生成代码提供隔离执行环境，并支持长时间运行、可编排的后台任务。",
+        "who_should_care": "构建智能体、代码执行平台或需要隔离运行环境的开发者。",
+        "use_cases": [
+          "运行大模型生成代码",
+          "为智能体提供隔离沙箱",
+          "编排长时间后台任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内有一天登上日榜，破千时星数为 1,007。",
+        "risk_notes": "需要注册云端服务并获取密钥；命令行工具通过独立安装脚本分发；部分能力依赖托管环境。",
+        "evidence": [
+          "Tensorlake is a serverless runtime for sandboxes and deploying background agentic applications",
+          "Tensorlake is a compute infrastructure platform for building agentic applications with sandboxes.",
+          "The Sandbox API creates MicroVM sandboxes which you can use to run agents, or use them as an isolated environment for running tools or LLM generated code."
+        ]
+      }
+    },
+    "pmh1314520/MCTier": {
+      "category": "game",
+      "one_liner": "跨网虚拟局域网联机工具",
+      "intro": {
+        "one_liner": "跨网络虚拟局域网联机工具",
+        "what_it_is": "MCTier 是基于 EasyTier 与 WebRTC 的虚拟局域网通用组网工具，支持 Windows 与 Android 加入同一大厅。",
+        "problem_solved": "它让不同网络环境下的设备组成虚拟局域网，便于跨网络访问局域网服务和与好友联机。",
+        "who_should_care": "局域网游戏玩家、需要临时组网协作的小团队、跨端访问本地服务的开发者。",
+        "use_cases": [
+          "跨网络玩 Minecraft 等局域网游戏",
+          "手机与电脑加入同一大厅互联",
+          "临时共享文件夹、语音和屏幕"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时有一千零三星，本周上日榜一天。",
+        "risk_notes": "构建需自行准备第三方二进制；Linux 部分功能暂不可用；CI 产物不签名。",
+        "evidence": [
+          "MCTier 基于 EasyTier 与 WebRTC，用来把不同网络环境下的设备组到同一个虚拟局域网中。",
+          "支持 Windows 10/11 与 Android。电脑端和手机端可加入同一个大厅，快速组成跨网络虚拟局域网。",
+          "破千时的 Star 数：1003；本周上日榜天数：1"
+        ]
+      }
+    },
+    "anthropics/launch-your-agent": {
+      "category": "ai-agent",
+      "one_liner": "从想法到上线智能体技能",
+      "intro": {
+        "one_liner": "托管智能体启动技能",
+        "what_it_is": "这是一组供 Claude Code 使用的技能，引导技术创始人从需求访谈、划定初版范围，到在自己的账户中启动 Claude Managed Agent，并完成评分、迭代和定时部署。",
+        "problem_solved": "它把托管智能体的搭建过程拆成可解释的步骤，帮助使用者把想法落成可运行、可评估、可继续规划升级路径的智能体。",
+        "who_should_care": "适合已使用 Claude Code、想快速搭建并评估托管智能体的技术创始人。",
+        "use_cases": [
+          "搭建内部工作智能体",
+          "为产品加入智能体能力",
+          "创建定时运行的智能体"
+        ],
+        "alternatives": "更偏教学型参考实现，会解释每一步，因此比专用智能体更消耗 token。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但维护状态有限。",
+        "risk_notes": "明确标注为参考实现，不维护且不接受贡献；教学流程更消耗 token；需要使用者自己的 API key，并会产生运行费用。",
+        "evidence": [
+          "Reference implementation. Not maintained and not accepting contributions. Licensed under [Apache 2.0](./LICENSE).",
+          "This is an educational skill that walks you through composing managed-agent primitives to solve your problem. Because it explains each step, it's more token-intensive than a purpose-built agent would be.",
+          "Claude Code skills that take a founder from idea to a live Claude Managed Agent: interview, scope a v0, launch in their own account, grade it, iterate, and schedule it"
+        ]
+      }
+    },
+    "jayin92/Skyfall-GS": {
+      "category": "ai-model",
+      "one_liner": "卫星图生成沉浸式城市场景",
+      "intro": {
+        "one_liner": "卫星影像生成三维城市场景",
+        "what_it_is": "Skyfall-GS 是用卫星影像和扩散模型生成大规模、可探索三维城市场景的框架，主要用 Python 实现。",
+        "problem_solved": "它试图绕开大规模高质量真实三维扫描稀缺的问题，用易得的卫星影像提供粗略几何，再合成近景外观。",
+        "who_should_care": "关注三维重建、三维高斯、遥感影像和沉浸式场景生成的开发者。",
+        "use_cases": [
+          "从卫星影像重建城市场景",
+          "生成可实时探索的三维场景",
+          "在自定义数据上训练模型"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，星数破千。",
+        "risk_notes": "创建日期为 2025-10-14，作者描述标注 ECCV 2026；安装依赖较多，训练分两阶段且参数复杂。",
+        "evidence": [
+          "Synthesizing large-scale, explorable, and geometrically accurate 3D urban scenes is a challenging yet valuable task in providing immersive and embodied applications.",
+          "We propose Skyfall-GS, the first large-scale 3D-scene creation framework without costly 3D annotations, also featuring real-time, immersive 3D exploration.",
+          "The training process is divided into two main stages."
+        ]
+      }
+    },
+    "charmbracelet/fantasy": {
+      "category": "ai-agent",
+      "one_liner": "Go 构建多模型智能体",
+      "intro": {
+        "one_liner": "Go 语言智能体开发库",
+        "what_it_is": "这是一个用 Go 构建 AI agents 的库，通过统一接口接入多家服务商和多种模型，并支持给智能体配置工具。",
+        "problem_solved": "它把不同模型、服务商和工具接入集中到一套接口里，减少开发者为每家服务单独适配的工作量。",
+        "who_should_care": "用 Go 开发智能体、命令行工具或编码助手的开发者。",
+        "use_cases": [
+          "用统一接口切换模型",
+          "为智能体添加自定义工具",
+          "编译成本地可执行程序"
+        ],
+        "alternatives": "差异是强调 Go、统一接口、多服务商和原生编译；同类项目信息未提供。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但项目仍标注为进行中。",
+        "risk_notes": "仍在进行中，暂不支持图像模型、音频模型和 PDF 上传；部分服务商可能需要专门适配。",
+        "evidence": [
+          "Build AI agents with Go. Multi-provider, multi-model, one API.",
+          "Fantasy is designed to support a wide variety of providers and models under a single API.",
+          "## Work in Progress"
+        ]
+      }
+    },
+    "iptv-org/iptv-org.github.io": {
+      "category": "content-media",
+      "one_liner": "IPTV 资源站点",
+      "intro": {
+        "one_liner": "IPTV 频道网站",
+        "what_it_is": "这是一个用 Svelte 编写的网站，汇总频道数据、直播流链接和节目指南，并通过 GitHub Pages 自动部署。",
+        "problem_solved": "把分散在多个仓库中的频道资料、直播流、节目指南和接口文档集中到站点，方便查找 IPTV 资源。",
+        "who_should_care": "关注 IPTV 资源整理、频道数据维护和相关网站开发的开发者。",
+        "use_cases": [
+          "查找频道与直播流",
+          "维护频道数据错误",
+          "参与网站代码贡献"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千时为一千零一颗星。",
+        "risk_notes": "站点数据依赖多个外部仓库，内容错误需到对应仓库反馈；许可证为 CC0。",
+        "evidence": [
+          "All channel data is taken from the [iptv-org/database](https://github.com/iptv-org/database) repository.",
+          "All links to the streams used on the site are taken from the [iptv-org/iptv](https://github.com/iptv-org/iptv) repository.",
+          "The site is automatically deployed when commits land in `main` branch, via [GitHub Pages](https://pages.github.com/)."
+        ]
+      }
+    },
+    "huangserva/ComfyUI_MiniMaxH3_Director": {
+      "category": "ai-model",
+      "one_liner": "ComfyUI 视频导演工作流",
+      "intro": {
+        "one_liner": "ComfyUI 视频工作流集",
+        "what_it_is": "这是五份可导入 ComfyUI 的 MiniMax H3 Director 工作流副本，覆盖文生视频、图生视频、参考素材生视频和视频编辑。",
+        "problem_solved": "它把多种视频生成与编辑流程整理成可直接导入、复现和测试的文件，减少自行搭建工作流的成本。",
+        "who_should_care": "使用 ComfyUI 做视频生成、分段编辑或工作流测试的开发者。",
+        "use_cases": [
+          "文生音视频与首尾帧生成",
+          "用图片、视频、音频参考生成",
+          "按时间轴分段编辑或换人"
+        ],
+        "alternatives": "它是上游导演台插件的工作流副本，便于下载、复现和测试。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 45 星，曾有一天进入日榜。",
+        "risk_notes": "当前已验证环境只有 Ref2VA，T2V、I2V、FL2V 需补齐权重；人物身份没有硬锁，段间交接不能替代一致性检查；模型权重遵循各自许可条款。",
+        "evidence": [
+          "这个仓库保存 5 份可直接导入 ComfyUI 的 MiniMax H3 Director 工作流，覆盖文生视频、图生视频、首尾帧、参考素材生视频、视频编辑和参考素材改视频。",
+          "当前已验证的 4090 环境只有 Ref2VA，可直接运行 R2V、V2V、RV2V。",
+          "导演台没有硬身份锁。"
+        ]
+      }
+    },
+    "getsentry/skills": {
+      "category": "dev-tools",
+      "one_liner": "Sentry 团队开发智能体技能",
+      "intro": {
+        "one_liner": "Sentry 团队开发技能集",
+        "what_it_is": "这是供 Sentry 员工使用的 Agent Skills 集合，遵循开放格式，包含代码评审、提交、文档、安全审查等技能与子代理。",
+        "problem_solved": "把团队开发规范、评审流程、文档写作和安全检查沉淀为可被编码代理自动调用的技能，减少重复沟通。",
+        "who_should_care": "使用编码代理、关注团队规范自动化的开发者和工程团队。",
+        "use_cases": [
+          "按团队规范做代码评审",
+          "生成或改写拉取请求说明",
+          "执行安全与性能审查"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾登上日榜。",
+        "risk_notes": "内容明确面向 Sentry 员工，部分技能依赖内部约定；创建时间较新，成熟度未知。",
+        "evidence": [
+          "Agent Skills used by the Sentry team for development.",
+          "Agent skills for Sentry employees, following the [Agent Skills](https://agentskills.io) open format.",
+          "Works with Claude Code, Cursor, Cline, GitHub Copilot, and other compatible agents."
+        ]
+      }
+    },
+    "alexheretic/ab-av1": {
+      "category": "content-media",
+      "one_liner": "按质量自动重编码 AV1",
+      "intro": {
+        "one_liner": "自动寻优的视频转码工具",
+        "what_it_is": "一个用 Rust 编写的视频编码命令行工具，基于 ffmpeg、svt-av1 和 vmaf，支持自动寻找合适 crf 并转码。",
+        "problem_solved": "它通过短样本编码和 VMAF 采样，帮助在目标画质下寻找 crf，并预估完整转码的体积与耗时。",
+        "who_should_care": "需要批量压制视频、关注画质与体积平衡的开发者和视频处理用户。",
+        "use_cases": [
+          "按目标 VMAF 自动转码",
+          "搜索合适的 crf 参数",
+          "计算视频画质评分"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时为一千星。",
+        "risk_notes": "依赖较新的 ffmpeg，且需启用 libsvtav1、libvmaf、libopus；未提供许可证信息。",
+        "evidence": [
+          "AV1 video encoding tool with fast VMAF sampling & automatic encoder crf calculation.",
+          "Automatically determine the best crf to deliver the `--min-vmaf` and use it to encode a video or image.",
+          "**ffmpeg** newer than git-2022-02-24 with libsvtav1, libvmaf, libopus enabled."
+        ]
+      }
+    },
+    "Tarquinen/opencode-dynamic-context-pruning": {
+      "category": "dev-tools",
+      "one_liner": "OpenCode 动态上下文裁剪插件",
+      "intro": {
+        "one_liner": "OpenCode 上下文剪枝插件",
+        "what_it_is": "这是一个用 TypeScript 编写的 OpenCode 插件，通过压缩会话内容、去重工具调用和清理错误输入来管理对话上下文。",
+        "problem_solved": "它用于减少长对话和工具输出占用的上下文，降低令牌使用，并尽量保留重要技术信息。",
+        "who_should_care": "经常用 OpenCode 处理长会话、大量工具输出的开发者。",
+        "use_cases": [
+          "压缩已完成的对话段落",
+          "清理重复工具调用输出",
+          "移除出错工具调用的大输入"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 29 星，曾有一天进入日榜。",
+        "risk_notes": "开发已放缓，新功能优先落在另一个命令行工具；部分压缩模式仍是实验性；未关闭问题有 82 个。",
+        "evidence": [
+          "Automatically reduces token usage in OpenCode by managing conversation context.",
+          "Development on DCP has slowed because most new context-management work has moved to [Sleev](https://sleev.ai) and the `sleev` CLI.",
+          "message mode (experimental) compresses individual raw messages independently"
+        ]
+      }
+    },
+    "bostrot/wslmanager": {
+      "category": "desktop-system",
+      "one_liner": "WSL 与虚拟机图形管理器",
+      "intro": {
+        "one_liner": "WSL 图形管理器",
+        "what_it_is": "一个用 Dart 编写的图形工具，管理 WSL 发行版，并在 macOS 上管理原生 Linux 与 macOS 虚拟机。",
+        "problem_solved": "把发行版安装、备份、迁移、配置和远程管理从命令行参数中解放出来，并提供给智能体调用的工具接口。",
+        "who_should_care": "常用 WSL、需要批量管理发行版，或想让智能体操作本地环境的开发者。",
+        "use_cases": [
+          "图形化安装、备份和迁移发行版",
+          "编辑配置并挂载磁盘或目录",
+          "通过智能体或远程方式管理环境"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时已有四千零四星。",
+        "risk_notes": "macOS 虚拟机功能标注为测试版；部分容器能力为实验性；智能体与相关能力属于付费版，且需自备接口密钥。",
+        "evidence": [
+          "GUI for the Windows Subsystem for Linux — and native Linux/macOS VMs on Mac. Install, back up, move and configure distros without CLI flags; AI assistant with tools, MCP server for agents, remote WSL over SSH.",
+          "WSL Distro Manager is a free, open source GUI for the Windows Subsystem for Linux — and, on macOS, for native Linux VMs.",
+          "On macOS: native virtual machines *(beta)*",
+          "Everything in this section is part of **Pro**; the free app has none of it."
+        ]
+      }
+    },
+    "DAXIAORobotics/kairos": {
+      "category": "ai-model",
+      "one_liner": "Kairos 世界模型官方代码",
+      "intro": {
+        "one_liner": "跨本体具身世界模型代码",
+        "what_it_is": "Kairos 是面向具身智能的世界模型官方代码，使用 Python，统一理解、生成未来视觉状态并预测可执行机器人动作。",
+        "problem_solved": "它试图解决异构本体数据、长时程推理、视频与动作建模分离，以及边缘侧部署受限等问题。",
+        "who_should_care": "关注机器人动作预测、世界模型和边缘部署的开发者。",
+        "use_cases": [
+          "预测机器人可执行动作",
+          "生成未来视觉状态",
+          "研究跨本体具身任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 48 星，曾有一天进入日榜。",
+        "risk_notes": "项目创建于 2025 年 12 月 2 日，时间较新；未关闭议题有 3 个；部分能力描述来自不可信资料，需自行核验。",
+        "evidence": [
+          "Official code for world model Kairos",
+          "Kairos is a 4B-parameter native cross-embodiment world model for unified understanding, generation, and action prediction.",
+          "We've open-sourced the Kairos3.1 series, including World-Action Model inference code and three model weights"
+        ]
+      }
+    },
+    "Player-YN/BrowserKitten": {
+      "category": "ai-agent",
+      "one_liner": "网页选取生成可编辑文档",
+      "intro": {
+        "one_liner": "浏览器内办公智能体",
+        "what_it_is": "这是一个 Chrome 扩展，在侧边栏运行智能体，操作当前已登录网页，并保留表格、文档和网页产物。",
+        "problem_solved": "让用户直接在现有网页会话中描述目标，由智能体完成操作并生成可编辑的办公文件。",
+        "who_should_care": "需要自动化网页操作并整理成办公文件的开发者。",
+        "use_cases": [
+          "从已登录网页提取资料",
+          "生成可编辑表格文档",
+          "用自有密钥驱动网页任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾登上日榜，星数破千时达到 2,844。",
+        "risk_notes": "未上架 Chrome Web Store，需手动加载未打包扩展；要求 Chrome 135 以上，部分功能还需 Chrome 138 以上并开启用户脚本权限；受限页面不可用。",
+        "evidence": [
+          "Paw Work - selection-first web agent for Chrome: select on the live page, describe the outcome, take away an editable office file. BYOK, sandboxed, no server.",
+          "Not on the Chrome Web Store. No hosted model — bring your own key.",
+          "Needs Chrome 135+. On Chrome 138+, enable **Allow User Scripts** on the extension details page if you want `sys.eval` or page-identity fetch."
+        ]
+      }
+    },
+    "mizorewww/laya-mlx": {
+      "category": "ai-model",
+      "one_liner": "本地 MLX 决策模型运行时",
+      "intro": {
+        "one_liner": "苹果芯片本地决策模型运行时",
+        "what_it_is": "一个用 Python 编写的 MLX 运行时，在苹果芯片上本地运行 Laya 类型化决策模型，输出带概率的选项、评分或真假判断。",
+        "problem_solved": "把受限判断任务从文本生成中拆出来，避免逐词生成、解析结果和调用云端接口，直接得到结构化答案与置信度。",
+        "who_should_care": "在苹果芯片上做本地分类、路由、审核或智能体决策的开发者。",
+        "use_cases": [
+          "工单部门分类与退款意图判断",
+          "按评分标准给内容分级",
+          "为智能体动作做真假判断"
+        ],
+        "alternatives": "相比生成式模型，它不生成文本；相比上游实现，它改用 MLX，不依赖 PyTorch、Transformers 或云端接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 4,679 星，并曾登上日榜。",
+        "risk_notes": "创建于 2026 年 9 月，时间较短；要求苹果芯片、macOS 14 及以上和 Python 3.11 及以上；置信度不保证新任务准确。",
+        "evidence": [
+          "Open-weight typed decisions, running natively on Apple Silicon.",
+          "It generates no tokens and returns no JSON to parse. This package runs the original Laya weights in MLX, without PyTorch, Transformers or a cloud API.",
+          "confidence does not guarantee accuracy on a new task."
+        ]
+      }
+    },
+    "okou-ai/okou": {
+      "category": "ai-agent",
+      "one_liner": "连接团队工具执行工作",
+      "intro": {
+        "one_liner": "团队工作流智能体",
+        "what_it_is": "Okou 是开源智能体运行时，可连接团队已有工具，在受控权限下完成营销、销售、工程和运营工作。",
+        "problem_solved": "它让团队像交代同事一样分派任务，自动拆解步骤、调用工具，并把重复流程沉淀为可共享的工作流。",
+        "who_should_care": "需要跨工具自动化、重视权限隔离和人工审批的团队。",
+        "use_cases": [
+          "从聊天或 Slack 发起跨工具任务",
+          "保存并共享重复工作流",
+          "定时生成报告、草稿和工单"
+        ],
+        "alternatives": "强调按角色分派工作、共享工作流、细粒度权限和隔离执行。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周一天登上日榜。",
+        "risk_notes": "创建时间较新；许可证细节需查看仓库许可文件；对外发送和预算变更需人工确认。",
+        "evidence": [
+          "Okou connects to the tools your team already uses and does the work — across marketing, sales, engineering, and operations, under your control.",
+          "Each teammate runs it with their own permissions — a shared workflow never borrows someone else's access.",
+          "Anything that leaves your company or spends your money stops for a human."
+        ]
+      }
+    },
+    "bespokelabsai/nimble": {
+      "category": "ai-model",
+      "one_liner": "本地类型化决策与评测",
+      "intro": {
+        "one_liner": "本地类型化决策模型",
+        "what_it_is": "Nimble 接收文本和扁平结构定义，对选择题或判断题直接返回类型化答案及各候选答案概率，并公开数据整理、训练和服务配方。",
+        "problem_solved": "它让开发者无需解析模型生成的文本或等待逐步推理，就能按给定选项做快速分类、条件检查和策略判定。",
+        "who_should_care": "需要在本地或自有服务中做结构化判定、路由和评测的开发者。",
+        "use_cases": [
+          "按目标列表路由请求",
+          "依据证据判断条件真假",
+          "按规则输出策略结果",
+          "按等级标准评定结果"
+        ],
+        "alternatives": "强调一步给出类型化答案和概率，并公开数据、训练与服务配方；未从 Jev 蒸馏。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 715 星，且曾有一天进入日榜。",
+        "risk_notes": "自述一天内完成，可能有粗糙之处；仅支持文本和扁平结构，不能生成解释或嵌套结果；概率不保证正确，阈值需用自有数据验证。",
+        "evidence": [
+          "Local typed decisions, contrastive data curation, and model evaluation.",
+          "Nimble takes some text and a schema, and makes typed decisions about the text.",
+          "We built Nimble in one day, so expect some rough edges."
+        ]
+      }
+    },
+    "Ryoku-dev/ryoku": {
+      "category": "desktop-system",
+      "one_liner": "Arch 高端工作站配置",
+      "intro": {
+        "one_liner": "定制 Linux 桌面发行版",
+        "what_it_is": "Ryoku 是面向高性能台式机和笔记本的 Arch 工作站桌面，也提供多个发行版版本，统一外壳、安装器和系统定义。",
+        "problem_solved": "它把桌面外壳、安装器、更新、回滚和系统定义放在同一仓库，减少自行拼装 Linux 桌面的配置工作。",
+        "who_should_care": "喜欢高度定制桌面、使用 Arch 或相关发行版的桌面用户。",
+        "use_cases": [
+          "安装带统一桌面的 Arch 工作站",
+          "在现有系统上切换桌面环境",
+          "体验多种栏样式和桌面部件"
+        ],
+        "alternatives": "相比单纯配置仓库，它自称是发行版，包含桌面、安装器和系统定义。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 53 星且曾上日榜。",
+        "risk_notes": "部分版本仍为 experimental；原地安装脚本会改写桌面配置且仍在测试；未关闭 Issue 有 36 个。",
+        "evidence": [
+          "Opinionated premium Arch workstation for powerful desktops and laptops.",
+          "Ryoku 1.0, Amaterasu, is the first stable release. Arch and CachyOS are the stable editions. Void and Fedora ship the same desktop and update path, but remain experimental while those editions get wider hardware coverage.",
+          "The shell installer rewrites your desktop configuration in place and is still being tested across hardware and setups."
+        ]
+      }
+    },
+    "Anil-matcha/awesome-meta-muse-agent": {
+      "category": "learning-resource",
+      "one_liner": "Muse 智能体工作流清单",
+      "intro": {
+        "one_liner": "Muse 智能体资源清单",
+        "what_it_is": "这是面向 Meta Muse 的社区维护目录，收录连接器技能、工作流模板，以及可复制使用的智能体任务说明。",
+        "problem_solved": "它把连接应用、审批边界、证据要求和任务模板整理成清单，帮助开发者更稳妥地配置智能体工作流。",
+        "who_should_care": "关注智能体工作流、连接器权限和审批设计的开发者。",
+        "use_cases": [
+          "查阅连接器技能目录",
+          "复制工作流任务说明",
+          "设计敏感操作审批"
+        ],
+        "alternatives": "相比单独聊天机器人实现，重点是连接器目录、权限边界和模板化任务说明。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且曾进入日榜，但上榜天数只有一天。",
+        "risk_notes": "社区技能与内置连接器不同，需检查权限和成熟度；可用性与服务接口可能变化；模板不是无人值守自动化配方。",
+        "evidence": [
+          "A community-maintained catalog of integrations and connector skills for Meta Muse.",
+          "Review their permissions and maturity status before use; availability and provider APIs can change.",
+          "Templates are starting points, not unattended automation recipes."
+        ]
+      }
+    }
+  }
+}

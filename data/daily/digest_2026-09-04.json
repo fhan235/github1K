@@ -1,1 +1,1043 @@
-{"date":"2026-09-04","headline":"AI Agent 与本地搜索领跑","points":["zvec-ai/zvec-grep 增长 1316，本地优先工作区搜索工具受关注。","humanlayer/skills、Deuz-AI/Deuz-SDK 分别增长 858、690，AI Agent 技能与框架升温。","AI Agent 项目 7 个，TypeScript 11 个、Python 8 个，开发工具与学习资源也活跃。"],"items":{"zvec-ai/zvec-grep":{"category":"dev-tools","one_liner":"本地优先的工作区搜索工具"},"humanlayer/skills":{"category":"ai-agent","one_liner":"AI 智能体技能集合"},"Deuz-AI/Deuz-SDK":{"category":"ai-agent","one_liner":"生产级 AI 智能体框架"},"Farama-Foundation/Gymnasium-Robotics":{"category":"ai-model","one_liner":"机器人强化学习仿真环境"},"Farama-Foundation/MO-Gymnasium":{"category":"ai-model","one_liner":"多目标强化学习环境库"},"rakanki911/DLSS5-Swapper":{"category":"game","one_liner":"游戏 DLSS 5 管理工具"},"Farama-Foundation/Stable-Retro":{"category":"ai-model","one_liner":"复古游戏强化学习平台"},"metasequoiaime/MetasequoiaImeTsf":{"category":"desktop-system","one_liner":"Windows 水杉中文输入法"},"BohemiaInteractive/CWR":{"category":"game","one_liner":"冷战突击重制版源码"},"GangTailorUpgrade/undress-service":{"category":"content-media","one_liner":"成人内容下载相关服务"},"irinabuht12-oss/marketing-skills":{"category":"learning-resource","one_liner":"营销技能资料集合"},"NirDiamant/Agent_Memory_Techniques":{"category":"learning-resource","one_liner":"智能体记忆教程合集"},"xevrion/breakscale":{"category":"learning-resource","one_liner":"分布式系统设计模拟器"},"paper-design/liquid-logo":{"category":"web-frontend","one_liner":"液态金属标志特效工具"},"CometixSpace/CCursor":{"category":"dev-tools","one_liner":"Cursor 自带密钥接入工具"},"FatihMakes/Mark-LII":{"category":"ai-model","one_liner":"电脑控制型 AI 模型"},"0xMrNiko/Awesome-Red-Teaming":{"category":"security","one_liner":"红队学习资源清单"},"mlightcad/cad-viewer":{"category":"web-frontend","one_liner":"纯浏览器 CAD 查看编辑器"},"matlab/matlab-agentic-toolkit":{"category":"ai-agent","one_liner":"MATLAB 智能体能力工具包"},"gpui-ce/gpui-ce":{"category":"desktop-system","one_liner":"GPUI 社区版界面框架"},"rdi-berkeley/agents-last-exam":{"category":"ai-agent","one_liner":"AI 智能体终极评测"},"tontinton/maki":{"category":"ai-agent","one_liner":"可扩展 Lua 插件编码智能体"},"mosaico-labs/mosaico":{"category":"data-finance","one_liner":"物理 AI 数据平台"},"tomasz-tomczyk/crit":{"category":"dev-tools","one_liner":"智能体反馈循环工具"},"johannesjo/parallel-code":{"category":"dev-tools","one_liner":"并行运行多个编码智能体"},"azooKey/azooKey-Desktop":{"category":"desktop-system","one_liner":"macOS 日文神经输入法"},"DowneyRem/PixivSource":{"category":"content-media","one_liner":"Pixiv 小说阅读书源"},"FedericoBruzzone/tgt":{"category":"desktop-system","one_liner":"Rust 终端版 Telegram"},"bhdicaire/visioStencils":{"category":"content-media","one_liner":"IT 架构 Visio 图形库"},"DravenALG/awesome-vla-wam":{"category":"learning-resource","one_liner":"VLA 与 WAM 研究清单"},"microsoft/qdk":{"category":"dev-tools","one_liner":"微软量子开发工具包"},"noraj/haiti":{"category":"security","one_liner":"哈希类型识别工具"},"saitamasahil/Pixel-Launcher-Extended":{"category":"mobile","one_liner":"Pixel 启动器增强模块"},"Dadoum/Sideloader":{"category":"mobile","one_liner":"跨平台 iOS 应用侧载器"},"longbridge/gpui-kit":{"category":"desktop-system","one_liner":"GPUI 跨平台界面组件库"},"qianjiachun/douyuEx":{"category":"content-media","one_liner":"斗鱼直播间增强插件"},"Jakubantalik/Libraries.dev":{"category":"web-frontend","one_liner":"智能体界面特效组件库"},"dimthink/PriceAI":{"category":"data-finance","one_liner":"AI 订阅渠道比价工具"},"devcelio/resume-template":{"category":"learning-resource","one_liner":"LaTeX 简历模板"},"anthropics/commerce-agents":{"category":"ai-agent","one_liner":"Claude 商业智能体蓝图"},"omacom/try-omarchy":{"category":"desktop-system","one_liner":"免配置在 macOS 运行 Omarchy"},"gfo-project/Gradient-Free-Optimizers":{"category":"ai-model","one_liner":"轻量无梯度优化工具库"},"OpenPetsHQ/openpets":{"category":"ai-agent","one_liner":"本地优先桌宠与编码智能体平台"}}}
+{
+  "date": "2026-09-04",
+  "headline": "AI Agent 与本地搜索领跑",
+  "points": [
+    "zvec-ai/zvec-grep 增长 1316，本地优先工作区搜索工具受关注。",
+    "humanlayer/skills、Deuz-AI/Deuz-SDK 分别增长 858、690，AI Agent 技能与框架升温。",
+    "AI Agent 项目 7 个，TypeScript 11 个、Python 8 个，开发工具与学习资源也活跃。"
+  ],
+  "items": {
+    "zvec-ai/zvec-grep": {
+      "category": "dev-tools",
+      "one_liner": "本地优先的工作区搜索工具",
+      "intro": {
+        "one_liner": "面向人类与 AI agent 的本地优先混合搜索 CLI",
+        "what_it_is": "zvec-grep（命令名 zg）是一个 TypeScript/Node.js 实现的本地优先搜索工具，把 ripgrep 式文本检索、BM25 全文检索与向量语义检索统一在同一个本地接口下，可直接在终端使用，也可供 AI agent 调用。",
+        "problem_solved": "解决关键词搜索无法按语义查找、而纯向量检索又难以精确验证的问题，同时减少 agent 反复调用工具带来的上下文与 token 消耗。",
+        "who_should_care": "需要在本地代码库或文档中做混合检索的开发者，以及为 AI agent 配置检索工具的工程师。",
+        "use_cases": [
+          "在本地代码仓库中做关键词加语义的混合搜索",
+          "让 AI agent 通过 MCP 或 CLI 检索工作区文档并引用出处",
+          "对多格式文档与结构化数据建立本地索引后按相关性排序查询"
+        ],
+        "alternatives": "README 称其将 ripgrep、BM25 与向量搜索统一在一个本地优先接口下，但未与其他同类项目做具体对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：周增约 616 星、上榜 1 天，热度集中，但项目创建于 2026-07，仍需观察长期维护。",
+        "risk_notes": "项目较新（2026-07 创建），open issues 88 个，成熟度与长期维护情况尚不明确；README 提示本地模型与远程 embedding 的数据边界需自行确认。",
+        "evidence": [
+          "unifies ripgrep, BM25, and vector search behind one local-first interface",
+          "Local by default — files, indexes, and local models stay on your machine; remote embeddings receive data only with your permission.",
+          "Requires Node.js 22 or newer."
+        ]
+      }
+    },
+    "humanlayer/skills": {
+      "category": "ai-agent",
+      "one_liner": "AI 智能体技能集合",
+      "intro": {
+        "one_liner": "编码智能体技能集",
+        "what_it_is": "一组用于 Claude Code 的技能，主要用 TypeScript 编写，可通过命令安装并调用。",
+        "problem_solved": "把需求研究、设计讨论、实现、解释、拉取请求说明和项目内指令整理成可调用流程。",
+        "who_should_care": "使用 Claude Code 或 Codex 辅助开发的工程师与代码评审者。",
+        "use_cases": [
+          "按文档研究并实现变更",
+          "生成图示解释当前主题",
+          "创建带可视化提纲的拉取请求"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千四百九十八星，本周上日榜一天。",
+        "risk_notes": "创建日期较新；资料提到 Codex 默认沙箱可能让 .agents 只读，需要写入权限或可写目录。",
+        "evidence": [
+          "Claude Code skills from [HumanLayer](https://humanlayer.dev).",
+          "Researches a change, works through design choices with you, and implements it from local documents.",
+          "Its default sandbox can make `.agents` read-only; grant the session write access to `.agents/artifacts`, or pass a writable task directory such as `artifacts/my-change`."
+        ]
+      }
+    },
+    "Deuz-AI/Deuz-SDK": {
+      "category": "ai-agent",
+      "one_liner": "生产级 AI 智能体框架",
+      "intro": {
+        "one_liner": "TypeScript 智能体框架",
+        "what_it_is": "一个零依赖的 TypeScript 框架，用于构建生产智能体，提供持久执行、长期记忆、混合检索、工具调用与代码沙箱。",
+        "problem_solved": "把多模型流式接口、智能体编排、记忆、审批、恢复和预算控制集中到一套开发工具中，降低长时任务落地复杂度。",
+        "who_should_care": "用 TypeScript 开发智能体、多智能体系统或需要长时运行任务的开发者。",
+        "use_cases": [
+          "构建可恢复的智能体任务",
+          "接入多家模型并统一调用",
+          "编排带依赖的多智能体协作"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但分叉数很少。",
+        "risk_notes": "2.4 新功能默认关闭，Docker 沙箱为预览版；升级说明提到行为变更和已知限制；无租约提供方时需单进程驱动，外部效果重试前需对账。",
+        "evidence": [
+          "Zero-dependency TypeScript framework for production AI agents: durable execution, long-term memory, hybrid RAG, MCP tool calling, human-in-the-loop approval, planning and CodeAct sandboxes.",
+          "Every 2.4 feature is off until you configure it; with them off, provider requests are byte-identical to 2.3's.",
+          "Without a lease provider, drive each swarm or native agent run from one process; uncertain external effects require reconciliation before retry."
+        ]
+      }
+    },
+    "Farama-Foundation/Gymnasium-Robotics": {
+      "category": "ai-model",
+      "one_liner": "机器人强化学习仿真环境",
+      "intro": {
+        "one_liner": "基于 MuJoCo 的强化学习机器人仿真环境集",
+        "what_it_is": "Gymnasium-Robotics 是 Farama Foundation 维护的强化学习机器人仿真环境集合，遵循 Gymnasium API，底层使用 MuJoCo 物理引擎和官方 mujoco python bindings。",
+        "problem_solved": "为强化学习研究提供统一 API 的机器人操作、多智能体与 D4RL 离线数据集环境，避免研究者各自搭建仿真与接口。",
+        "who_should_care": "做机器人强化学习、多目标（HER）算法、离线 RL 或模仿学习研究的学生与研究者。",
+        "use_cases": [
+          "Fetch 机械臂 Reach/Push/Slide/Pick-and-Place 抓取操作任务训练",
+          "Shadow Dexterous Hand 与 Adroit 灵巧手操作任务",
+          "MaMuJoCo 多智能体环境与 PettingZoo ParallelEnv 接口实验",
+          "D4RL 的 Maze、Franka Kitchen 等离线数据集环境复现"
+        ],
+        "alternatives": "README 未与其他同类项目做直接对比，仅说明其环境基于 Gymnasium API 与 MuJoCo，并支持旧版 mujoco-py 兼容安装，具体差异 unknown。",
+        "maturity": "生产可用",
+        "hype_or_trend": "长期趋势：属于 Farama 生态中 Gymnasium 的官方配套环境库，有文档站、Discord 协作与持续维护，是 RL 机器人基准的长期基础设施。",
+        "risk_notes": "需额外安装 MuJoCo 引擎；官方仅支持并测试 Linux 与 macOS，Windows 仅接受 PR 不官方支持；D4RL 环境经过重构，动作/观测空间可能与原始版本不同。",
+        "evidence": [
+          "This library contains a collection of Reinforcement Learning robotic environments that use the Gymnasium API.",
+          "The environments run with the MuJoCo physics engine and the maintained mujoco python bindings.",
+          "We support and test for Linux and macOS. We will accept PRs related to Windows, but do not officially support it."
+        ]
+      }
+    },
+    "Farama-Foundation/MO-Gymnasium": {
+      "category": "ai-model",
+      "one_liner": "多目标强化学习环境库",
+      "intro": {
+        "one_liner": "多目标强化学习环境库",
+        "what_it_is": "一个开源 Python 库，提供标准接口和一组环境，用于开发与比较多目标强化学习算法。环境遵循 Gymnasium 接口，但奖励是向量。",
+        "problem_solved": "让学习算法与多目标环境按统一方式交互，并提供可复现的标准环境，方便基准测试和算法比较。",
+        "who_should_care": "强化学习研究者，以及需要评测多目标算法的开发者。",
+        "use_cases": [
+          "比较多目标强化学习算法",
+          "构建向量奖励环境",
+          "复现实验基准结果"
+        ],
+        "alternatives": "相比普通 Gymnasium，主要差异是返回向量奖励，并提供多目标版本环境。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注度上升。",
+        "risk_notes": "部分环境依赖需额外安装，某些系统可能安装困难；环境变更会影响学习结果，需留意版本后缀。",
+        "evidence": [
+          "MO-Gymnasium is an open source Python library for developing and comparing multi-objective reinforcement learning algorithms by providing a standard API to communicate between learning algorithms and environments, as well as a standard set of environments compliant with that API.",
+          "Essentially, the environments follow the standard [Gymnasium API](https://github.com/Farama-Foundation/Gymnasium), but return vectorized rewards as numpy arrays.",
+          "MO-Gymnasium keeps strict versioning for reproducibility reasons. All environments end in a suffix like \"-v0\".  When changes are made to environments that might impact learning results, the number is increased by one to prevent potential confusion."
+        ]
+      }
+    },
+    "rakanki911/DLSS5-Swapper": {
+      "category": "game",
+      "one_liner": "游戏 DLSS 5 管理工具",
+      "intro": {
+        "one_liner": "DLSS 5 安装管理工具",
+        "what_it_is": "这是一个用于跨游戏和受支持模拟器安装、管理、恢复 DLSS 5 的工具，使用 JavaScript 编写。",
+        "problem_solved": "它面向 DLSS 5 文件部署与恢复，提供自动游戏检测、可选驱动器扫描，并覆盖部分无原生 DLSS 的兼容作品。",
+        "who_should_care": "关注游戏画质增强、模拟器兼容和 DLSS 文件管理的普通玩家与开发者。",
+        "use_cases": [
+          "为游戏安装或恢复 DLSS 5",
+          "扫描驱动器查找游戏",
+          "在受支持模拟器中使用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星时为一千零七十六星，且本周仅一天上日榜。",
+        "risk_notes": "缺少 README，成熟度、许可证、兼容范围和实际效果均无法确认；创建日期为 2026 年 8 月 29 日，信息较新。",
+        "evidence": [
+          "DLSS 5 Swapper is a powerful, easy-to-use tool for installing, managing, and restoring DLSS 5 across games and supported emulators.",
+          "It features automatic game detection, optional drive scanning, DLSS5-Feeder for compatible titles without native DLSS, emulator support, and compatibility with DirectX 9/10/11/12, Vulkan, and OpenGL.",
+          "破千时的 Star 数：1076"
+        ]
+      }
+    },
+    "Farama-Foundation/Stable-Retro": {
+      "category": "ai-model",
+      "one_liner": "复古游戏强化学习平台",
+      "intro": {
+        "one_liner": "经典游戏强化学习环境库",
+        "what_it_is": "它是 gym-retro 的维护分支，把经典电子游戏封装成 Gymnasium 环境，并扩展游戏、模拟器和平台支持。",
+        "problem_solved": "解决 gym-retro 进入维护状态后新游戏和新功能难以合入的问题，也方便研究者用老游戏做强化学习实验。",
+        "who_should_care": "强化学习研究者、游戏环境开发者，以及想用复古游戏做实验的开发者。",
+        "use_cases": [
+          "训练强化学习智能体",
+          "构建复古游戏基准环境",
+          "集成新的游戏或模拟器核心"
+        ],
+        "alternatives": "相比 gym-retro，增加游戏、模拟器和平台支持，并接收新功能贡献。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时有一千零七十六星。",
+        "risk_notes": "文档仍在进行中；游戏文件不随项目提供，需自行获取；部分平台和核心有构建或硬件渲染限制。",
+        "evidence": [
+          "A fork of gym-retro with additional games, emulators and supported platforms",
+          "Since gym-retro is in maintenance now, you can instead submit PRs with new games or features here in stable-retro.",
+          "Documentation is available at https://stable-retro.farama.org/ (work in progress)"
+        ]
+      }
+    },
+    "metasequoiaime/MetasequoiaImeTsf": {
+      "category": "desktop-system",
+      "one_liner": "Windows 水杉中文输入法",
+      "intro": {
+        "one_liner": "开源 Windows 输入法",
+        "what_it_is": "水杉输入法是面向 Windows 10 和 Windows 11 的开源自由输入法，采用纯 TSF 方案，主要使用 C++ 开发。",
+        "problem_solved": "为 Windows 用户提供可安装、可切换、可参与贡献的开源中文等语言输入方案，并提供文档、安装说明和常见问题处理。",
+        "who_should_care": "关注 Windows 输入法、TSF 开发、中文或日文输入体验的开发者与用户。",
+        "use_cases": [
+          "在 Windows 10 或 11 上输入中文",
+          "研究或贡献 TSF 输入法代码",
+          "参与文档、词库和测试贡献"
+        ],
+        "alternatives": "与 weasel、PIME 等参考项目相比，强调纯 TSF 方案、持续开源和贡献标签。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时有一千一百二十三颗星，且本周曾上日榜一天。",
+        "risk_notes": "采用 GPL-3.0，存在协议约束；安装可能依赖 Visual C++ 2015–2022 Redistributable（x64），否则切换或设置窗口可能异常。",
+        "evidence": [
+          "一款开源的自由 Windows 输入法，面向 Windows 10 / Windows 11，采用纯 TSF 方案。",
+          "安装后用 `Win + 空格` 切换到水杉输入法。如果切换不过去、Server 反复退出或设置窗口一闪即关，多半是缺少 Visual C++ 2015–2022 Redistributable（**x64**）",
+          "GPL-3.0。"
+        ]
+      }
+    },
+    "BohemiaInteractive/CWR": {
+      "category": "game",
+      "one_liner": "冷战突击重制版源码",
+      "intro": {
+        "one_liner": "经典战术射击游戏源码",
+        "what_it_is": "这是《Arma: Cold War Assault》重制版的引擎与游戏源码仓库，主要使用 C++，提供 Windows 与 Linux 的构建预设。",
+        "problem_solved": "让社区能研究、修改、修复并基于这款老游戏的引擎与游戏代码继续开发，同时明确区分源码、商标和游戏数据。",
+        "who_should_care": "游戏引擎研究者、模组开发者、经典战术射击游戏爱好者。",
+        "use_cases": [
+          "研究老游戏引擎结构",
+          "构建社区修复分支",
+          "开发移植或衍生版本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 89 星，并曾登上日榜。",
+        "risk_notes": "源码采用 GPL-3.0-or-later 且带附加条款；商标未授权，分叉必须改名；游戏数据不在仓库内且适用 APL-SA；仓库锁定，不接受拉取请求，也不会持续更新。",
+        "evidence": [
+          "This repository holds the engine and game source code (codename *Poseidon*) behind *Arma: Cold War Assault*",
+          "The engine and game executables, licensed under GPL-3.0-or-later with additional terms under Section 7.",
+          "This is a **locked** repository: pull requests are not accepted here, and this repository will not be continuously updated."
+        ]
+      }
+    },
+    "GangTailorUpgrade/undress-service": {
+      "category": "content-media",
+      "one_liner": "成人内容下载相关服务",
+      "intro": {
+        "one_liner": "定位不明的 Python 仓库",
+        "what_it_is": "这是一个主要使用 Python 的仓库，作者填写的描述为 Dress AI Sponsor。缺少说明文档，具体功能 unknown。",
+        "problem_solved": "unknown",
+        "who_should_care": "unknown",
+        "use_cases": [
+          "unknown"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，但缺少说明文档支撑判断。",
+        "risk_notes": "缺少说明文档，用途、成熟度、许可证与维护状态均 unknown；话题标签涉及成人内容，使用前需谨慎核验。",
+        "evidence": [
+          "作者填写的描述：Dress AI Sponsor",
+          "主要语言：Python",
+          "README：无"
+        ]
+      }
+    },
+    "irinabuht12-oss/marketing-skills": {
+      "category": "learning-resource",
+      "one_liner": "营销技能资料集合",
+      "intro": {
+        "one_liner": "营销场景 Claude 技能集",
+        "what_it_is": "提供 49 个免费营销技能，供 Claude Code、Claude Desktop 和 claude.ai 使用，覆盖广告、SEO 与 AI 可见性。",
+        "problem_solved": "把广告审计、预算分配、落地页检查、内容再利用等营销任务整理成可按需加载的步骤说明。",
+        "who_should_care": "使用 Claude 做广告投放、增长分析或 SEO 的营销人员与开发者。",
+        "use_cases": [
+          "审计 Google Ads 浪费花费",
+          "诊断 Meta 广告创意疲劳",
+          "生成程序化 SEO 页面模板"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但创建时间较新。",
+        "risk_notes": "资料称免费且采用 MIT 许可，但需 Claude 订阅或 Claude Code、Cursor；实时数据依赖外部连接器。",
+        "evidence": [
+          "# Claude Skills for Marketing: 49 free marketing skills for Claude Code and claude.ai",
+          "**Are they free?** Yes, all 49, MIT licensed, no signup.",
+          "- 破千时的 Star 数：1020；- 本周上日榜天数：1"
+        ]
+      }
+    },
+    "NirDiamant/Agent_Memory_Techniques": {
+      "category": "learning-resource",
+      "one_liner": "智能体记忆教程合集",
+      "intro": {
+        "one_liner": "智能体记忆教程合集",
+        "what_it_is": "这是一个以 Jupyter Notebook 为主的学习仓库，提供三十个可运行的智能体记忆示例，覆盖对话缓冲、向量存储、知识图谱、语义记忆与生产模式。",
+        "problem_solved": "它把大语言模型智能体跨轮次、跨会话、跨任务记忆信息的方法整理成可运行示例，帮助开发者理解和选择不同记忆方案。",
+        "who_should_care": "正在为智能体增加记忆能力、比较记忆框架或学习生产实践的开发者。",
+        "use_cases": [
+          "学习对话缓冲与工作记忆",
+          "比较向量库和知识图谱记忆",
+          "参考生产部署记忆模式"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增二十星且曾有一天进入日榜。",
+        "risk_notes": "创建日期与最近提交日期显示为未来时间，需留意数据异常；仓库仍有七个未关闭问题。",
+        "evidence": [
+          "Agent memory for LLMs: 30 runnable Jupyter notebooks covering conversation buffers, vector stores, knowledge graphs, episodic and semantic memory, MemGPT, Mem0, Letta, Zep, Graphiti, LoCoMo benchmarks, and production patterns.",
+          "**Learn every agent memory technique for LLM agents.**",
+          "**Agent memory** is the set of techniques that let an LLM-based agent (a system built around a Large Language Model) remember information across turns, sessions, and tasks."
+        ]
+      }
+    },
+    "xevrion/breakscale": {
+      "category": "learning-resource",
+      "one_liner": "分布式系统设计模拟器",
+      "intro": {
+        "one_liner": "分布式系统压测模拟器",
+        "what_it_is": "Breakscale 是一个用画布搭建架构、逐步加压并观察故障成因的系统设计模拟器，基于离散事件仿真给出测量指标。",
+        "problem_solved": "它把静态架构图和经验规则变成可运行实验，帮助理解高利用率、重试、排队和熔断如何引发延迟恶化或整体崩溃。",
+        "who_should_care": "学习系统设计、分布式架构和容量规划的开发者，以及想验证架构瓶颈的人。",
+        "use_cases": [
+          "拖动流量观察系统何时崩溃",
+          "复现重试风暴与熔断恢复",
+          "让助手读取仓库生成架构设计"
+        ],
+        "alternatives": "相比静态系统设计资料，它用逐请求离散事件仿真给出延迟分位数、队列和故障传播。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 42 星，且本周上过一次日榜。",
+        "risk_notes": "创建于 2026 年 8 月，项目较新；仍有 14 个未关闭问题；部分能力依赖网站、扩展和助手接入。",
+        "evidence": [
+          "Build a system, load it until it breaks, and watch why. A system design simulator for learning distributed systems.",
+          "A system design simulator where every number is measured.",
+          "What you see while it happens is a real discrete-event simulation: latency percentiles climbing, queues filling, circuit breakers tripping, and whole systems collapsing into retry storms, all measured from individual simulated requests rather than drawn to look plausible."
+        ]
+      }
+    },
+    "paper-design/liquid-logo": {
+      "category": "web-frontend",
+      "one_liner": "液态金属标志特效工具",
+      "intro": {
+        "one_liner": "液态金属标志效果工具",
+        "what_it_is": "一个用 Paper Shaders 把标志变成液态金属效果的 TypeScript 项目，提供在线体验页面。",
+        "problem_solved": "帮助开发者或设计者快速制作标志的液态金属视觉呈现，减少自行编写着色器效果的门槛。",
+        "who_should_care": "关注网页视觉、着色器和品牌动效的前端与设计开发者。",
+        "use_cases": [
+          "制作液态金属标志",
+          "探索着色器视觉效果",
+          "为品牌页添加趣味动效"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "自述为「Just for fun」，定位偏娱乐实验；成熟度与生产可用性未提供。",
+        "evidence": [
+          "Turn your logo into liquid metal with Paper Shaders",
+          "Just for fun, make your logo in liquid metal: <a href=\"https://liquid.paper.design\">liquid.paper.design</a>",
+          "破千时的 Star 数：1012"
+        ]
+      }
+    },
+    "CometixSpace/CCursor": {
+      "category": "dev-tools",
+      "one_liner": "Cursor 自带密钥接入工具",
+      "intro": {
+        "one_liner": "Cursor 自带密钥工具",
+        "what_it_is": "一个为 Cursor IDE 接入自有大模型密钥的本地服务与扩展，通过拦截请求把模型调用转发到已配置的服务商。",
+        "problem_solved": "让用户在 Cursor IDE 中使用自有大模型接口，绕开官方订阅，并集中管理多家服务商与模型配置。",
+        "who_should_care": "已有模型密钥、想在 Cursor IDE 中自定义服务商的开发者。",
+        "use_cases": [
+          "用自有密钥调用模型",
+          "切换多家模型服务商",
+          "配置智能体工具与模型"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，星数破千且分叉较多。",
+        "risk_notes": "仓库仅用于问题跟踪和文档，源码未公开；需要修改 Cursor IDE 并注入补丁；依赖用户自行保管接口密钥。",
+        "evidence": [
+          "Bring Your Own Key for Cursor IDE！",
+          "Cursor++ lets you use **your own LLM API keys** (Anthropic, OpenAI, Google Gemini, or any OpenAI-compatible provider) with [Cursor IDE](https://cursor.com), bypassing the official subscription.",
+          "This repository is for **issue tracking and documentation only** — source code is not published."
+        ]
+      }
+    },
+    "FatihMakes/Mark-LII": {
+      "category": "ai-model",
+      "one_liner": "电脑控制型 AI 模型",
+      "intro": {
+        "one_liner": "跨平台语音电脑助手",
+        "what_it_is": "一个用 Python 编写的个人语音助手，可听说、看屏幕、控制电脑，并支持选择 Gemini Live 或本地及第三方模型组合。",
+        "problem_solved": "解决语音助手依赖单一模型、额度和联网的问题，也让应用操作结果能按实际观察反馈，减少误报完成。",
+        "who_should_care": "想用语音控制电脑、重视本地模型与隐私的开发者。",
+        "use_cases": [
+          "用语音打开和关闭应用",
+          "切换本地或第三方模型",
+          "查看并删除助手记忆"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千星且上过一次日榜。",
+        "risk_notes": "创建于 2026 年 3 月 2 日，时间很新；星数与分叉数比例较高，需留意关注度质量；资料自称功能很多，成熟度未给出。",
+        "evidence": [
+          "A real-time voice AI that can hear, see, speak, and control your computer — on any OS. Supports Windows, macOS, and Linux.",
+          "Mark LVI adds a second way to hold the conversation — speech recognition, a language model and a voice, assembled from parts you pick in ⚙ → ENGINE & PROVIDERS",
+          "Every tool that drives an application now answers with what it observed rather than with what it attempted: `done` means it was checked, `unverified` means the request went out and could not be confirmed"
+        ]
+      }
+    },
+    "0xMrNiko/Awesome-Red-Teaming": {
+      "category": "security",
+      "one_liner": "红队学习资源清单",
+      "intro": {
+        "one_liner": "红队资源导航清单",
+        "what_it_is": "这是一个整理红队与红队演练学习资源的清单，按身份、Web、云、载荷研究、指挥控制、AI 红队、模糊测试等主题组织。",
+        "problem_solved": "帮助想学习红队但缺少起点的人快速找到资料，也方便有明确目标的读者按主题浏览和检索工具类别。",
+        "who_should_care": "安全研究者、红队操作者、防守方，以及想系统入门红队的人。",
+        "use_cases": [
+          "按主题查找红队资料",
+          "规划授权测试前读方法论",
+          "补充 AI 红队与模糊测试资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时有一千零一十星。",
+        "risk_notes": "资料明确要求仅在获得明确授权时使用，并需明确测试范围、书面许可、证据处理和清理要求。许可证需另看文件。",
+        "evidence": [
+          "List of Awesome Red Team / Red Teaming Resources  This list is for anyone wishing to learn about Red Teaming but do not have a starting point.",
+          "A curated map for red-team operators, security researchers, and defenders.",
+          "Use these resources only where you have explicit authorization. Keep scope, written permission, evidence handling, and cleanup requirements clear before testing."
+        ]
+      }
+    },
+    "mlightcad/cad-viewer": {
+      "category": "web-frontend",
+      "one_liner": "纯浏览器 CAD 查看编辑器",
+      "intro": {
+        "one_liner": "浏览器端 CAD 查看编辑器",
+        "what_it_is": "MLightCAD 是纯浏览器运行的 DXF/DWG 查看与编辑项目，无需后端服务，使用 TypeScript 开发。",
+        "problem_solved": "让 CAD 图纸解析、几何处理和渲染都在浏览器完成，降低云端上传和后端部署需求。",
+        "who_should_care": "需要在网页、离线环境或隐私敏感流程中查看图纸的开发者。",
+        "use_cases": [
+          "网页嵌入 DXF/DWG 预览",
+          "导出可离线分享的图纸",
+          "集成到云盘或编辑器"
+        ],
+        "alternatives": "支持一键导出自带查看器的单文件网页，便于离线分享与归档。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "创建于 2025 年 10 月 10 日，项目较新；依赖较新的 Node.js 与 pnpm 版本。",
+        "evidence": [
+          "The world’s first fully web-based DXF/DWG viewer and editor that runs entirely in the browser — no backend server required.",
+          "By performing DWG/DXF parsing, geometry processing, and rendering directly in the browser, MLightCAD enables true serverless CAD viewing and editing, ideal for cloud apps, offline usage, and privacy-sensitive workflows.",
+          "one-click export to a single, self-contained HTML file"
+        ]
+      }
+    },
+    "matlab/matlab-agentic-toolkit": {
+      "category": "ai-agent",
+      "one_liner": "MATLAB 智能体能力工具包",
+      "intro": {
+        "one_liner": "让智能体用好 MATLAB",
+        "what_it_is": "这是面向 AI 编程智能体的 MATLAB 工具包，提供技能、上下文和 MATLAB MCP Server 连接能力。",
+        "problem_solved": "减少智能体臆造工具箱函数、漏掉新功能和绕远路，帮助其按 MATLAB 惯例编写、运行和测试代码。",
+        "who_should_care": "使用 MATLAB 并借助 AI 编程智能体的工程与科研人员。",
+        "use_cases": [
+          "让智能体编写并运行 MATLAB 代码",
+          "生成测试并诊断代码错误",
+          "构建 MATLAB 应用和分析数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "需要 MATLAB R2021a 或更新版本，并要求智能体支持 MCP servers 和 skills；安装与配置依赖额外组件。",
+        "evidence": [
+          "The MATLAB&reg; Agentic Toolkit allows you to use AI agents with MATLAB by giving your AI agent the knowledge and context to work efficiently with MATLAB and its toolboxes.",
+          "This toolkit can prevent your AI coding agent from hallucinating toolbox functions, missing new features, and wasting time with extra steps that experienced MATLAB users would skip.",
+          "MATLAB R2021a or later"
+        ]
+      }
+    },
+    "gpui-ce/gpui-ce": {
+      "category": "desktop-system",
+      "one_liner": "GPUI 社区版界面框架",
+      "intro": {
+        "one_liner": "Rust 界面框架社区版",
+        "what_it_is": "GPUI-CE 是 Zed 的 GPUI 界面框架的社区分支，主要用 Rust 编写，提供视图、布局、状态、事件、快捷键和绘制能力。",
+        "problem_solved": "它面向 Rust 应用的界面开发，提供网页式样式与布局、状态更新、交互绑定、虚拟列表和自定义绘制等基础能力。",
+        "who_should_care": "用 Rust 开发桌面界面、关注 GPUI 生态或需要可复用组件的开发者。",
+        "use_cases": [
+          "构建 Rust 应用界面",
+          "实现交互视图与快捷键",
+          "渲染大量等高列表项"
+        ],
+        "alternatives": "相比其他围绕具体应用演进的分支，它强调支持更广泛的应用并重视稳定性。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但创建时间较新。",
+        "risk_notes": "与上游大多兼容但正在变化；贡献规则较严格，非担保贡献者的问题和合并请求会自动关闭；禁止用生成式人工智能或大语言模型创建代码或文字。",
+        "evidence": [
+          "GPUI-CE is a fork of Zed's [GPUI](https://gpui.rs) UI Framework.",
+          "It's mostly API compatible with upstream, but that is changing!",
+          "Other forks often develop around the applications that use them. GPUI-CE aims to support a broad range of applications, with a focus on stability."
+        ]
+      }
+    },
+    "rdi-berkeley/agents-last-exam": {
+      "category": "ai-agent",
+      "one_liner": "AI 智能体终极评测",
+      "intro": {
+        "one_liner": "智能体真实任务评测框架",
+        "what_it_is": "这是面向智能体的开放评测框架，包含沙箱配置、运行工具、任务实现和评分器，覆盖多个行业子领域。",
+        "problem_solved": "它用可验证结果衡量智能体完成长流程、真实职业任务的能力，并保留完整轨迹供复现和审计。",
+        "who_should_care": "评测智能体、构建智能体框架或研究电脑操作智能体的开发者。",
+        "use_cases": [
+          "比较不同智能体完成真实任务",
+          "复现并审计一次评测运行",
+          "在沙箱中验证任务评分"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但创建时间较新。",
+        "risk_notes": "版本升级涉及任务退役、重跑和镜像数据固定；部分平台仍为计划支持；本地容器只覆盖较小的 Ubuntu 子集。",
+        "evidence": [
+          "Challenge and measure AI agents on economically valuable, real-world tasks.",
+          "This repository is the **open evaluation framework**: the `ale_run` toolkit that provisions sandboxes, runs agents, and grades them, plus task implementations across all 55 subdomains and reference integrations for several agent harnesses.",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "tontinton/maki": {
+      "category": "ai-agent",
+      "one_liner": "可扩展 Lua 插件编码智能体",
+      "intro": {
+        "one_liner": "省上下文的编程智能体",
+        "what_it_is": "Maki 是用 Rust 编写的 AI 编程智能体，主打减少上下文占用，并可用类似 Neovim 的 Lua 插件扩展。",
+        "problem_solved": "它通过文件骨架索引、代码执行过滤数据和精简提示，减少读取内容占用上下文，同时提供终端界面与权限控制。",
+        "who_should_care": "重视上下文成本、终端体验和插件定制的开发者。",
+        "use_cases": [
+          "在终端里完成代码修改",
+          "用 Lua 插件扩展能力",
+          "无界面接入现有流程"
+        ],
+        "alternatives": "强调上下文节省、子智能体可见、命令权限解析和 Lua 插件扩展。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,093 星且曾上日榜。",
+        "risk_notes": "创建时间较新，成熟度不明；大量代码由自身生成，作者提示部分代码质量一般；部分功能仍有限制，如回退仅支持聊天记录。",
+        "evidence": [
+          "An AI coding agent optimized for minimal use of context tokens, while providing a great user experience.",
+          "Extend with neovim like Lua plugins",
+          "DISCLAIMER: >90% of code in maki was written by maki, guided by humans. Some parts of the code are not as good as what I would've made in the artisanal hand-made style."
+        ]
+      }
+    },
+    "mosaico-labs/mosaico": {
+      "category": "data-finance",
+      "one_liner": "物理 AI 数据平台",
+      "intro": {
+        "one_liner": "物理智能数据平台",
+        "what_it_is": "Mosaico 是面向机器人与物理智能的数据平台，把单体传感器日志转成结构化、可查询的多模态归档，并提供 Python SDK 与 Rust 后端。",
+        "problem_solved": "它解决传感器日志难随机访问、难按物理值查询的问题，并把异步稀疏数据整理成适合模型训练的同步密集格式。",
+        "who_should_care": "机器人数据工程师、物理智能训练团队、需要长期管理多模态传感器数据的开发者。",
+        "use_cases": [
+          "查询指定传感器信号片段",
+          "长期保存机器人数据",
+          "整理模型训练输入"
+        ],
+        "alternatives": "相比 .bag 或 .mcap，强调零拷贝、自动索引、不可变数据层和代码优先查询。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "创建时间较新；引用版本为 0.0；生产可用性、许可证与稳定性信息未提供。",
+        "evidence": [
+          "Mosaico - The data platform for Physical AI",
+          "transforms monolithic sensor logs into a structured, queryable archive built for multi-modal data",
+          "version = {0.0}"
+        ]
+      }
+    },
+    "tomasz-tomczyk/crit": {
+      "category": "dev-tools",
+      "one_liner": "智能体反馈循环工具",
+      "intro": {
+        "one_liner": "给智能体成果做批注",
+        "what_it_is": "Crit 是本地单文件命令行工具，可在浏览器里审阅智能体生成的计划、代码改动、运行中的应用和静态页面，并把行内评论交回智能体。",
+        "problem_solved": "它让开发者能针对具体内容点选并留言，减少在聊天里反复描述修改意见的摩擦，形成可续接的反馈闭环。",
+        "who_should_care": "使用编码智能体、需要审阅计划、差异或本地应用的人。",
+        "use_cases": [
+          "审阅智能体写出的计划文档",
+          "对代码差异逐行留下意见",
+          "给运行中的页面点选批注"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜。",
+        "risk_notes": "创建时间较新；实时模式可能需要转发会话 cookie 或调整页面限制；故事模式会产生额外模型费用。",
+        "evidence": [
+          "Review your coding agent's plans, diffs and running apps in the browser. Click a line, leave a comment, and the agent gets it.",
+          "Everything runs locally from a single binary.",
+          "Crit's iframe loads the app on a different origin/port than your browser tab, so host-scoped session cookies are not shared automatically."
+        ]
+      }
+    },
+    "johannesjo/parallel-code": {
+      "category": "dev-tools",
+      "one_liner": "并行运行多个编码智能体",
+      "intro": {
+        "one_liner": "并行调度编码智能体",
+        "what_it_is": "一个本地桌面工具，把多个终端编码智能体放进各自分支和工作树，并在同一面板里查看、评审和合并改动。",
+        "problem_solved": "它解决同时运行多个编码智能体时任务分散、改动互相干扰、评审与合并流程不统一的问题。",
+        "who_should_care": "已使用多个命令行编码智能体、需要并行试验和评审改动的开发者。",
+        "use_cases": [
+          "并行比较多个智能体实现",
+          "逐行评审并回传修改意见",
+          "合并胜出分支或丢弃任务"
+        ],
+        "alternatives": "相比多个终端或单一厂商应用，它统一工作树、任务面板和评审流程，并支持混用智能体。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，关注集中。",
+        "risk_notes": "创建时间较新；依赖本机运行，电脑关闭后智能体不会继续在云端工作；需要自行安装并登录智能体命令行工具。",
+        "evidence": [
+          "Dispatch AI coding agents in parallel, each in its own worktree.",
+          "Every change isolated — each task gets its own branch and worktree, and optionally its own Docker container.",
+          "Parallel Code runs agents on your computer, so it is not for agents that keep working in the cloud while your laptop is off."
+        ]
+      }
+    },
+    "azooKey/azooKey-Desktop": {
+      "category": "desktop-system",
+      "one_liner": "macOS 日文神经输入法",
+      "intro": {
+        "one_liner": "macOS 日语输入法",
+        "what_it_is": "这是一个用 Swift 编写的开源 macOS 日语输入法，采用 Zenzai 神经假名汉字转换引擎，支持实时转换、可选的智能转换和个性化。",
+        "problem_solved": "它面向 macOS 日文输入，提供高精度转换、历史学习、用户词典、个人优化，以及原生 AZIK 支持。",
+        "who_should_care": "macOS 日文输入用户、输入法开发者、关注神经转换和个性化输入的人。",
+        "use_cases": [
+          "在 macOS 上输入日文",
+          "体验神经假名汉字转换",
+          "开发或调试输入法"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时有一千零一颗星。",
+        "risk_notes": "目前为 alpha 版，动作不保证；仅在 macOS 15 验证，其他版本未验证；构建依赖 Git LFS、签名配置和特定开发环境。",
+        "evidence": [
+          "azooKey-Desktop is an open-source Japanese input method for macOS, written in Swift and powered by the Zenzai neural kana-kanji converter.",
+          "**現在アルファ版のため、動作は一切保証できません**。",
+          "macOS 15で動作確認しています。macOS 14およびmacOS 26でも利用できますが、動作は検証していません。"
+        ]
+      }
+    },
+    "DowneyRem/PixivSource": {
+      "category": "content-media",
+      "one_liner": "Pixiv 小说阅读书源",
+      "intro": {
+        "one_liner": "Pixiv 小说书源",
+        "what_it_is": "这是为开源阅读准备的 Pixiv 小说书源与订阅源集合，提供 JSON 和 JavaScript 书源，用于导入后阅读、搜索和管理小说。",
+        "problem_solved": "它补足官方应用阅读体验中的书架、离线阅读、繁简转换、进度记录、过滤与纯净阅读等需求，并简化书源导入。",
+        "who_should_care": "使用开源阅读并阅读 Pixiv、Linpx 或兽人小说站内容的用户。",
+        "use_cases": [
+          "导入书源后搜索小说",
+          "用书架管理单篇和系列",
+          "离线缓存并过滤内容"
+        ],
+        "alternatives": "与 Pixiv App 相比，提供书架、离线阅读、繁简通搜、阅读记录和免费过滤等功能。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "仅用于交流书源代码和学习分享 JavaScript 技术；使用损失由使用者自行承担；作品版权归原作者或站方所有。",
+        "evidence": [
+          "最好的 Pixiv 第三方小说阅读器——开源阅读 + Pixiv 书源 / Legado with Pixiv BookSource, the Best Third-Party Novel Reader for Pixiv",
+          "书源功能 `.JSON` || `.JS` 书源详见 [bookSourceJS](src/bookSourceJS)",
+          "本书源仅用于【交流书源代码】和【学习分享 JS 技术】"
+        ]
+      }
+    },
+    "FedericoBruzzone/tgt": {
+      "category": "desktop-system",
+      "one_liner": "Rust 终端版 Telegram",
+      "intro": {
+        "one_liner": "Rust 终端版 Telegram",
+        "what_it_is": "一个用 Rust 编写的 Telegram 终端界面客户端，可通过包管理器、源码、容器等方式安装，并提供配置与功能开关。",
+        "problem_solved": "让用户在终端里使用 Telegram，并提供可定制配置、语音消息播放和终端图片显示等可选能力。",
+        "who_should_care": "偏好终端操作、Rust 工具链或需要自定义配置的 Telegram 用户。",
+        "use_cases": [
+          "在终端里收发 Telegram 消息",
+          "用配置文件定制键位与行为",
+          "按需启用语音或图片显示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "默认语音功能需要 CMake；图片显示依赖 chafa；部分功能在 Windows ARM 不受支持。",
+        "evidence": [
+          "`tgt` is a terminal user interface for Telegram, written in Rust.",
+          "**From crates.io**\n\n```bash\ncargo install tgt\n```",
+          "`voice-message` | Play Telegram voice notes (OGG Opus) and other audio (e.g. MP3). **Requires CMake** to build the Opus dependency."
+        ]
+      }
+    },
+    "bhdicaire/visioStencils": {
+      "category": "content-media",
+      "one_liner": "IT 架构 Visio 图形库",
+      "intro": {
+        "one_liner": "Visio IT 图形素材库",
+        "what_it_is": "收集四千四百八十多件 Microsoft Visio 素材，包含模具、模板、文档、形状和图标，用于绘制信息技术基础设施图。",
+        "problem_solved": "把分散的厂商图形、网络设备和架构符号集中整理，减少自行搜集素材的成本，并提升 Visio 图示的一致性。",
+        "who_should_care": "用 Visio 画网络、系统和架构图的运维、架构师及文档人员。",
+        "use_cases": [
+          "绘制机房与网络拓扑",
+          "制作厂商设备架构图",
+          "复用统一模板与模具"
+        ],
+        "alternatives": "同类素材包也有 Azure 等专题；本项目覆盖多厂商、多类别 Visio 素材。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "素材来自互联网或合并请求，版权归属需自行核查；作者声明无意侵权，并保留按权利人要求移除的可能。",
+        "evidence": [
+          "This repository consolidate more than 4,480 Microsoft Visio artefacts that I have collected and used over the years.",
+          "We got documents, stencils, and templates from the internet or pull requests.",
+          "No copyright infringement is done on purpose. If you own the content and want it removed, just ask."
+        ]
+      }
+    },
+    "DravenALG/awesome-vla-wam": {
+      "category": "learning-resource",
+      "one_liner": "VLA 与 WAM 研究清单",
+      "intro": {
+        "one_liner": "机器人研究清单",
+        "what_it_is": "这是一个精选研究清单，系统整理 VLA、WAM、机器人智能体、策略、运动控制及相关资源。",
+        "problem_solved": "它把机器人基础模型相关论文、定义、数据集、基准、软件与硬件等资料集中归类，便于查阅研究脉络。",
+        "who_should_care": "机器人学习研究者、学生，以及想快速了解 VLA 与 WAM 方向的开发者。",
+        "use_cases": [
+          "查找 VLA 相关论文",
+          "梳理机器人策略分类",
+          "收集数据集与基准资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上日榜一天，但创建时间较新。",
+        "risk_notes": "仓库创建于 2026 年 2 月 6 日，内容称将持续更新；清单类项目成熟度与维护稳定性未知。",
+        "evidence": [
+          "A Curated List of Vision-Language-Action (VLA) and World Action Models (WAM) Research and Beyond",
+          "This repository provides a curated and systematically organized collection of research on Vision-Language-Action models (VLAs), World Action Models (WAMs), Robotic Agentics, and related approaches.",
+          "The repository will be continuously updated and refined as the field evolves."
+        ]
+      }
+    },
+    "microsoft/qdk": {
+      "category": "dev-tools",
+      "one_liner": "微软量子开发工具包",
+      "intro": {
+        "one_liner": "Q# 量子开发工具集",
+        "what_it_is": "这是 Microsoft Quantum Development Kit 仓库，包含 Q# 编译器、标准库、资源估算器、编辑器扩展、网页组件和教程示例。",
+        "problem_solved": "它把量子程序编写、编译、编辑支持、资源估算、网页体验和教学材料集中到一套工具链中。",
+        "who_should_care": "量子计算开发者、Q# 学习者，以及需要编辑器或资源估算工具的开发者。",
+        "use_cases": [
+          "编写和编译 Q# 程序",
+          "估算量子程序资源",
+          "通过教程和示例学习 Q#"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "构建依赖较多，需要 Python、Rust、Node.js、编译器及 WebAssembly 相关工具；贡献通常需要同意贡献者许可协议。",
+        "evidence": [
+          "Microsoft Quantum Development Kit, including the Q# programming language, resource estimator, and Quantum Katas",
+          "This repository contains tooling for the Q# language, specifically:",
+          "Code from this repository powers the Q# development experience on <https://quantum.microsoft.com>."
+        ]
+      }
+    },
+    "noraj/haiti": {
+      "category": "security",
+      "one_liner": "哈希类型识别工具",
+      "intro": {
+        "one_liner": "哈希类型识别工具",
+        "what_it_is": "一个用 Ruby 编写的命令行工具和库，用于识别哈希类型，支持大量算法及常见破解工具参考。",
+        "problem_solved": "帮助使用者根据哈希字符串判断可能类型，并关联 Hashcat、John the Ripper 的参考信息。",
+        "who_should_care": "安全从业者、夺旗赛参与者、需要分析哈希样本的开发者。",
+        "use_cases": [
+          "识别未知哈希类型",
+          "查询破解工具参考",
+          "集成到安全脚本"
+        ],
+        "alternatives": "提供命令行与库两种用法，支持 675 种以上类型，并附详细对比说明。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度信息。",
+        "risk_notes": "许可证信息未提供；成熟度缺少明确说明；仅有一天上日榜，热度持续性不明。",
+        "evidence": [
+          "A CLI tool (and library) to identify hash types (hash type identifier).",
+          "675+ hash types detected",
+          "Hashcat and John the Ripper references"
+        ]
+      }
+    },
+    "saitamasahil/Pixel-Launcher-Extended": {
+      "category": "mobile",
+      "one_liner": "Pixel 启动器增强模块",
+      "intro": {
+        "one_liner": "Pixel 启动器增强模块",
+        "what_it_is": "这是一个面向 Android 13 设备的 Magisk 模块，为 Pixel Launcher 增加主题图标、网格选项、隐藏开关和可选插件等功能。",
+        "problem_solved": "它解决原生 Pixel Launcher 可定制项有限的问题，让用户通过刷入模块选择图标、布局和部分增强设置。",
+        "who_should_care": "已 root、使用 Android 13 类原生或 Pixel 系统并爱折腾桌面的用户。",
+        "use_cases": [
+          "为桌面增加大量主题图标",
+          "调整应用网格与图标形状",
+          "启用隐藏开关和附加功能"
+        ],
+        "alternatives": "相比原版 Pixel Launcher，提供更多图标、网格、隐藏开关和可选插件。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时为一千星。",
+        "risk_notes": "需要 root 和 Magisk；部分功能依赖 LSPosed 与完整谷歌服务；厂商系统、平板和折叠屏兼容性不确定，且作者提示需自担设备风险。",
+        "evidence": [
+          "Pixel Launcher Extended is a Magisk module by TeamFiles with many cool features.",
+          "Extra themed icons. Total of 1250+ icons.",
+          "It may or may not work on stock roms provided by different OEMs. Try at your own risk."
+        ]
+      }
+    },
+    "Dadoum/Sideloader": {
+      "category": "mobile",
+      "one_liner": "跨平台 iOS 应用侧载器",
+      "intro": {
+        "one_liner": "开源跨平台 iOS 侧载工具",
+        "what_it_is": "Sideloader 用于给 iOS 设备安装第三方应用，提供跨平台命令行和 Linux 图形界面，也支持签名应用包。",
+        "problem_solved": "让用户不依赖 Mac、Windows 或 Apple 软件，也能获取开发证书、签名并安装第三方应用。",
+        "who_should_care": "需要在 Linux 等平台侧载应用、管理签名证书的 iOS 玩家和开发者。",
+        "use_cases": [
+          "用命令行安装应用包",
+          "为应用包签名",
+          "配置 SideStore 配对文件"
+        ],
+        "alternatives": "作为 Cydia Impactor 等工具的开源替代，强调跨平台和无需 Apple 软件。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千星时达到 1,000 星。",
+        "risk_notes": "首个正式版本尚未发布；图形界面仍以 Linux 为主，其他平台前端在制作中；iOS 版本范围未知。",
+        "evidence": [
+          "Sideloader is an application made to install third-party applications on iOS devices.",
+          "Currently, there is a cross-platform CLI, with most features working.",
+          "When it will get a first release, there will probably be an easier download"
+        ]
+      }
+    },
+    "longbridge/gpui-kit": {
+      "category": "desktop-system",
+      "one_liner": "GPUI 跨平台界面组件库",
+      "intro": {
+        "one_liner": "Rust 桌面组件框架",
+        "what_it_is": "基于 GPUI 的 Rust 桌面应用框架，提供完整样式组件、无样式基础层，以及可选的 JavaScript 扩展运行时。",
+        "problem_solved": "把桌面应用常见的界面组件、布局、数据展示、编辑、无障碍和测试能力集中到可复用基础中，减少从零搭建成本。",
+        "who_should_care": "用 Rust 开发跨平台桌面应用或设计系统的开发者。",
+        "use_cases": [
+          "构建跨平台桌面应用界面",
+          "搭建自有组件设计系统",
+          "为 Rust 应用加入脚本扩展"
+        ],
+        "alternatives": "分层提供样式组件、无样式行为基础和脚本扩展，并强调与 GPUI 版本绑定。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，破千时星数达 13,864，且本周上日榜一天。",
+        "risk_notes": "可选 JavaScript 扩展需单独引入运行时；部分能力依赖可选特性；资料未给出许可证信息。",
+        "evidence": [
+          "GPUI Kit is a comprehensive Rust desktop application framework.",
+          "**Production Ready**: Used to build Longbridge Pro from day one and continuously refined in a publicly shipped commercial desktop application.",
+          "破千时的 Star 数：13864"
+        ]
+      }
+    },
+    "qianjiachun/douyuEx": {
+      "category": "content-media",
+      "one_liner": "斗鱼直播间增强插件",
+      "intro": {
+        "one_liner": "斗鱼网页增强脚本",
+        "what_it_is": "一个基于原生 JavaScript 的 Tampermonkey 插件，用于增强斗鱼网页端直播间体验，提供功能条和一键操作。",
+        "problem_solved": "补足斗鱼网页端功能与体验，把复杂操作简化，并尽量不改变原网页结构、不影响原有功能。",
+        "who_should_care": "经常在网页端看斗鱼直播、愿意安装油猴脚本的用户。",
+        "use_cases": [
+          "网页端观看直播时增强体验",
+          "一键完成直播间复杂操作",
+          "参考油猴脚本实现方式"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾破千星且本周上过一天日榜。",
+        "risk_notes": "公告称将无限期停止更新与发布，并关闭所有下载渠道；声明代码质量请勿吐槽，引用需注明出处。",
+        "evidence": [
+          "因斗鱼要求，2026-8-7起，DouyuEx 插件将无限期停止更新与发布，并关闭所有下载渠道。",
+          "`DouyuEx` 是基于 `原生JavaScript` 开发的 `TamperMonkey` 插件，用于增强斗鱼Web端体验。",
+          "斗鱼直播间增强插件（Tampermonkey）"
+        ]
+      }
+    },
+    "Jakubantalik/Libraries.dev": {
+      "category": "web-frontend",
+      "one_liner": "智能体界面特效组件库",
+      "intro": {
+        "one_liner": "面向 AI 界面的 React 动效组件库合集",
+        "what_it_is": "Libraries.dev 是一个 TypeScript 编写的 React UI 动效库合集，包含 Border beam、Thinking orbs、Bot avatars、Gooey、Voice、Metal、Image 七个独立 npm 包，每个包都以单个组件的形式包裹现有元素。",
+        "problem_solved": "它把卡片边框流光、AI 等待动画、液态融合、语音光晕、金属反光、图片像素溶解等 WebGL 视觉效果封装成可直接安装的组件，让开发者不必手写 WebGL 就能为界面加入动效。",
+        "who_should_care": "正在开发 AI 产品前端、需要快速加入精致动效的 React 开发者与设计工程师",
+        "use_cases": [
+          "为 AI 聊天界面添加思考中、加载中的动效",
+          "为按钮、卡片、输入框添加边框流光或金属反光效果",
+          "为语音输入界面添加随音量起伏的光晕",
+          "为图片加载添加像素马赛克溶解过渡"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目围绕 AI agent 界面动效这一当下热门方向，但创建时间较新、生态尚在早期",
+        "risk_notes": "核心库为 MIT，但 Pro 内容（Studio 导出、预设）需付费授权；README 提到模型文件采用单独的 Libraries.dev Model License，商业应用需 Pro 或 Business；项目创建于 2026-04，维护时间较短",
+        "evidence": [
+          "High-crafted UI libraries for AI agents.",
+          "Each one installs from npm and drops into your app as a single component that wraps the element you already have.",
+          "The libraries are MIT — use them anywhere, including commercial work. Pro content (Studio exports, Pro presets and recipes) is licensed to you or your team under the plan you buy"
+        ]
+      }
+    },
+    "dimthink/PriceAI": {
+      "category": "data-finance",
+      "one_liner": "AI 订阅渠道比价工具",
+      "intro": {
+        "one_liner": "AI 订阅比价工具",
+        "what_it_is": "聚合 AI 订阅卡网、官方订阅、官方 API 与中转 API 报价，展示价格、库存、倍率、来源和原站链接。",
+        "problem_solved": "解决 AI 订阅与模型接口价格分散、命名混乱、库存不可靠、风险边界不清的问题，辅助购买前比较。",
+        "who_should_care": "购买 AI 订阅、比较卡网渠道或选择模型接口与中转站的开发者和重度用户。",
+        "use_cases": [
+          "比较 ChatGPT 等订阅低价渠道",
+          "查看官方订阅地区价",
+          "对比官方 API 与中转 API"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 176 星，并曾进入日榜一天。",
+        "risk_notes": "不卖货、不收款、不担保渠道；第三方卡网和中转接口存在售后、账号或真实性风险。检测报告也不构成担保。",
+        "evidence": [
+          "AI 订阅卡网渠道比价工具：聚合100+卡网渠道包含 ChatGPT、Claude、Gemini、Grok 等多渠道报价，展示有货最低价、库存状态和原站购买链接。",
+          "PriceAI 不卖货、不收款、不替任何渠道担保。它更像一个购买前决策工具",
+          "检测报告是用于辅助判断接口协议、模型能力、来源线路和计费口径的证据链，不代表 PriceAI 对任何中转站或商家做担保。"
+        ]
+      }
+    },
+    "devcelio/resume-template": {
+      "category": "learning-resource",
+      "one_liner": "LaTeX 简历模板",
+      "intro": {
+        "one_liner": "LaTeX 简历模板",
+        "what_it_is": "一个用 LaTeX 编写的专业简历模板，提供英文和葡萄牙语版本，可生成排版整洁的 PDF。",
+        "problem_solved": "帮助不懂编程或 LaTeX 的人快速制作专业简历，并借助人工智能辅助修改内容、生成 PDF。",
+        "who_should_care": "求职者，尤其是不熟悉 LaTeX、需要英文或巴西葡语简历的人。",
+        "use_cases": [
+          "制作国际岗位英文简历",
+          "制作巴西市场葡语简历",
+          "用人工智能改写经历要点"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时有一千六百四十一星且本周上日榜一天。",
+        "risk_notes": "创建于二〇二五年八月，项目较新；使用流程依赖外部编辑器；转成 Word 可能破坏排版。",
+        "evidence": [
+          "A professional, clean, and easy-to-use resume template built with LaTeX. **You don't need to be a programmer to use it!**",
+          "Use the **English version** (`/resumes/en/`) for international applications (US, Europe, Remote work).",
+          "This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details."
+        ]
+      }
+    },
+    "anthropics/commerce-agents": {
+      "category": "ai-agent",
+      "one_liner": "Claude 商业智能体蓝图",
+      "intro": {
+        "one_liner": "商务智能体参考蓝图",
+        "what_it_is": "这是一个用 Claude 构建购物与商家智能体的 Python 参考项目，包含零售、旅行、电信和娱乐示例，以及多种运行方式。",
+        "problem_solved": "它把购物助手和后台运营助手的提示、技能、工具契约、审批门槛与示例应用整理成可运行蓝图，便于接入业务系统。",
+        "who_should_care": "想用 Claude 搭建电商助手或商家后台智能体的开发者。",
+        "use_cases": [
+          "搭建商品搜索与购物车助手",
+          "演示库存、定价和营销审批流",
+          "对照示例接入自有业务系统"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 383 星，并曾登上日榜一天。",
+        "risk_notes": "示例不下单、不扣款、不直接改线上商品；商家写入需人工批准。示例无认证，业务规则、授权与合规由部署方补齐。",
+        "evidence": [
+          "Reference blueprint for building shopping and merchant agents with Claude. Examples in retail, commerce, telecom, and entertainment included.",
+          "Nothing places an order, charges a card, or changes a live listing: `checkout` renders the cart for the host to complete, and every merchant write is staged until a person approves it.",
+          "Business rules, authorization, and compliance are the deployment's."
+        ]
+      }
+    },
+    "omacom/try-omarchy": {
+      "category": "desktop-system",
+      "one_liner": "免配置在 macOS 运行 Omarchy",
+      "intro": {
+        "one_liner": "在 Mac 上试用 Omarchy",
+        "what_it_is": "这是一个 Swift 编写的 Mac 应用，可在 Apple Silicon Mac 的虚拟机中运行官方 Omarchy，并提供与 macOS 的集成。",
+        "problem_solved": "让 Mac 用户无需复杂配置即可体验 Omarchy，并降低迁移到原生安装前的试用门槛。",
+        "who_should_care": "使用 Apple Silicon Mac、想体验或日常使用 Omarchy 的开发者。",
+        "use_cases": [
+          "免配置试用 Omarchy",
+          "在 macOS 中日常使用",
+          "迁移到原生安装前评估"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 62 星，并曾进入日榜。",
+        "risk_notes": "目前使用 ARM 的 edge 通道；视频解码依赖 CPU，高分辨率多视频播放可能卡顿；不支持 Vulkan，嵌套虚拟化需主动开启。",
+        "evidence": [
+          "Run Omarchy on MacOS without any setup.",
+          "Try Omarchy is a Mac app that runs stock Omarchy in a fast virtual machine deeply integrated with macOS.",
+          "Edge channel for now. Omarchy publishes for ARM on `edge` only."
+        ]
+      }
+    },
+    "gfo-project/Gradient-Free-Optimizers": {
+      "category": "ai-model",
+      "one_liner": "轻量无梯度优化工具库",
+      "intro": {
+        "one_liner": "轻量无梯度优化库",
+        "what_it_is": "一个 Python 库，用统一接口提供 23 种无梯度优化算法，支持混合搜索空间。",
+        "problem_solved": "面向黑盒函数和梯度不可用的场景，简化参数搜索、约束处理与昂贵目标函数评估。",
+        "who_should_care": "做调参、仿真优化、特征选择和工程设计的 Python 开发者。",
+        "use_cases": [
+          "机器学习超参数调优",
+          "仿真与黑盒函数优化",
+          "特征选择与工程设计"
+        ],
+        "alternatives": "统一接口覆盖多种算法，依赖少，并支持混合搜索空间与约束。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时有一千二百七十四星，本周上日榜一天。",
+        "risk_notes": "资料未提供许可证、版本状态和生产案例；部分功能依赖可选组件。",
+        "evidence": [
+          "Lightweight optimization with local, global, population-based and sequential techniques across mixed search spaces",
+          "It provides a unified interface to 23 optimization algorithms, from simple hill climbing to Bayesian optimization",
+          "GFO only requires NumPy and pandas, making it suitable as an optimization backend or for minimal environments, containers, and embedded systems."
+        ]
+      }
+    },
+    "OpenPetsHQ/openpets": {
+      "category": "ai-agent",
+      "one_liner": "本地优先桌宠与编码智能体平台",
+      "intro": {
+        "one_liner": "桌面宠物插件平台",
+        "what_it_is": "这是一个本地优先的桌面伴侣平台，提供动画宠物、插件开发工具，以及可选的编程智能体集成。",
+        "problem_solved": "它把桌面宠物扩展成可定制的工作伴侣，用插件承载提醒、专注、启动器和小游戏，并让智能体触发本地反馈。",
+        "who_should_care": "桌面应用用户、插件开发者，以及使用编程智能体的开发者。",
+        "use_cases": [
+          "用官方插件做专注计时和提醒",
+          "开发自定义宠物行为插件",
+          "让编程智能体触发宠物反应"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾有一天登上日榜。",
+        "risk_notes": "创建时间较新；macOS 构建可能未签名并触发安全警告；智能体集成为可选配置。",
+        "evidence": [
+          "Local first, desktop companion platform with animated pets, plugin SDK and coding-agent integrations.",
+          "A desktop companion platform with pets, plugins, and optional local agent integrations.",
+          "Download the latest OpenPets desktop release and launch it. A pet appears immediately; no agent setup required."
+        ]
+      }
+    }
+  }
+}

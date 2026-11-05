@@ -1,1 +1,1042 @@
-{"date":"2026-10-14","headline":"AI Agent 与硬件玩法领跑","points":["AI Agent 最集中，共 9 个；onehumanbeing/esp32-iphone-agent 以 725 新增领跑，主打低成本操控真 iPhone。","NVIDIA-Omniverse/usd-brep 新增 579，把 NURBS 实体建模带入 C++ 库；trhhubsd/ARTEXX 新增 533，聚焦 AI 自主渗透测试。","Python 出现 9 次，TypeScript 5 次；游戏 6 个、AI 模型 5 个，桌面系统与内容媒体各有 4 个。"],"items":{"onehumanbeing/esp32-iphone-agent":{"category":"ai-agent","one_liner":"低成本操控真 iPhone 的智能体"},"NVIDIA-Omniverse/usd-brep":{"category":"dev-tools","one_liner":"NURBS 实体建模 C++ 库"},"trhhubsd/ARTEXX":{"category":"security","one_liner":"AI 自主渗透测试系统"},"jhaizhou-ops/d2r-mobile":{"category":"game","one_liner":"苹果设备运行暗黑2重制版"},"lgse/strata":{"category":"desktop-system","one_liner":"Linux 键盘优先文件管理器"},"darrenprx/lolPing":{"category":"game","one_liner":"Windows 桌面英雄联盟信号轮盘"},"shaongitbd/doory":{"category":"content-media","one_liner":"开源 Canva 替代设计工具"},"ant-research/AntOmniEvo":{"category":"ai-agent","one_liner":"自动优化万物的演进框架"},"academa-labs/manimgx":{"category":"content-media","one_liner":"智能体用数学三维动画引擎"},"wesbos/photo-frame-dashboard":{"category":"hardware-iot","one_liner":"解锁安卓相框装自定义应用"},"nano-muse/nanoMuse":{"category":"ai-agent","one_liner":"跨设备开源个人智能体"},"Dingo-Shenanigans/ReSkate":{"category":"other","one_liner":"信息不足的 C++ 项目"},"maddada/Ghostex":{"category":"ai-agent","one_liner":"原生多智能体工作空间"},"Lertaro/Lertaro":{"category":"desktop-system","one_liner":"Windows 本地极速文件搜索器"},"yksr-melt/Meltype":{"category":"desktop-system","one_liner":"消除全半角壁垒的日文输入"},"3641397194-wq/gpt6-Astra":{"category":"security","one_liner":"多模型越狱提示工作台"},"Kiterlin/anti-defensive-writing":{"category":"content-media","one_liner":"去除防御性文风的写作技能"},"ItsssssJack/SlopMonster":{"category":"content-media","one_liner":"清洗 AI 味文案的检查器"},"vladtrc/iw4L":{"category":"game","one_liner":"Rust 实验版使命召唤运行时"},"tarwin/tinyjsapp":{"category":"dev-tools","one_liner":"用 JS 构建微型原生应用"},"StayLameBro/backburner":{"category":"ai-model","one_liner":"iPhone 加速 Mac 本地大模型"},"itsPLK/ps5-webkit-autoloader":{"category":"game","one_liner":"PS5 破解载荷自动加载器"},"noctalia-dev/umbriel":{"category":"desktop-system","one_liner":"带动态布局的独立合成器"},"liliu-z/stashbase":{"category":"ai-agent","one_liner":"本地优先的智能体写作台"},"meursyphus/ssgoi":{"category":"web-frontend","one_liner":"主流 SSR 页面转场动画库"},"achrefelouafi/LinearAbiltyCastingThreeJS":{"category":"other","one_liner":"信息不足的 ThreeJS 项目"},"Soul-AILab/SoulX-Singer":{"category":"ai-model","one_liner":"零样本歌声合成推理代码"},"zeenie-ai/OpenCompany":{"category":"ai-agent","one_liner":"自我改进的 AI 员工系统"},"Moonholder/Wuwa_Mod_Fixer":{"category":"game","one_liner":"鸣潮模组修复工具"},"merovinh/best-of-algorithmic-trading":{"category":"learning-resource","one_liner":"算法交易开源资源榜单"},"microsoft/power-platform-skills":{"category":"ai-agent","one_liner":"Power Platform 智能体插件市场"},"Chimioo/InxLocker":{"category":"mobile","one_liner":"安卓安装器锁定模块"},"Jumpat/SegAnyGAussians":{"category":"ai-model","one_liner":"三维高斯分割官方实现"},"leavesCZY/Matisse":{"category":"mobile","one_liner":"Compose 图片视频选择框架"},"whylabs/langkit":{"category":"ai-model","one_liner":"大模型监控与安全工具包"},"slurm-personal/school-dev-k8s":{"category":"other","one_liner":"信息不足的校园开发项目"},"trailhq/Trail-Code":{"category":"ai-agent","one_liner":"增强编码智能体代码上下文"},"MaxMiksa/Autonomous-Company":{"category":"ai-agent","one_liner":"本机全天候自治公司系统"},"aklivity/zilla":{"category":"dev-tools","one_liner":"多协议事件与智能体网关"},"jiwoochris/artex-global":{"category":"security","one_liner":"韩文版 AI 自主渗透框架"},"itskonrad/tinymnist":{"category":"ai-model","one_liner":"极简 MNIST 实现"},"dashdogy/MFG-Unlocker":{"category":"game","one_liner":"解锁多帧生成控制"},"matthiasjost/dotnet-content-creators":{"category":"learning-resource","one_liner":".NET 创作者清单"}}}
+{
+  "date": "2026-10-14",
+  "headline": "AI Agent 与硬件玩法领跑",
+  "points": [
+    "AI Agent 最集中，共 9 个；onehumanbeing/esp32-iphone-agent 以 725 新增领跑，主打低成本操控真 iPhone。",
+    "NVIDIA-Omniverse/usd-brep 新增 579，把 NURBS 实体建模带入 C++ 库；trhhubsd/ARTEXX 新增 533，聚焦 AI 自主渗透测试。",
+    "Python 出现 9 次，TypeScript 5 次；游戏 6 个、AI 模型 5 个，桌面系统与内容媒体各有 4 个。"
+  ],
+  "items": {
+    "onehumanbeing/esp32-iphone-agent": {
+      "category": "ai-agent",
+      "one_liner": "低成本操控真 iPhone 的智能体",
+      "intro": {
+        "one_liner": "用7美元ESP32让AI操控真iPhone",
+        "what_it_is": "一个让AI模型直接操作真实iPhone的开源项目：ESP32-S3板卡充当AirPlay接收端（负责“看”屏幕）和USB HID鼠标键盘（负责“动手”），iPhone上的App负责解码画面、调用任意OpenAI兼容视觉模型并执行规划与操作。",
+        "problem_solved": "让AI agent在真实iPhone上完成点击、滑动、输入等操作，无需Mac电脑、无需越狱、无需开发者账号，也无需在手机上安装自动化框架。",
+        "who_should_care": "做computer-use/手机自动化agent的开发者、想低成本搭建真机GUI agent实验环境的研究者，以及关注ESP32硬件与LLM结合玩法的嵌入式爱好者。",
+        "use_cases": [
+          "让视觉模型自动完成设置闹钟、改Wi-Fi等系统操作任务",
+          "在真机上评测和调试手机GUI agent的规划与执行能力",
+          "导出运行轨迹（截图、动作、标注）供其他agent分析复盘"
+        ],
+        "alternatives": "README未与其他同类项目做直接对比，unknown；其差异点在于用ESP32硬件替代电脑承担AirPlay接收与HID注入，且不依赖越狱。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约1320星、登上日榜，属于硬件+手机GUI agent的新奇组合，但项目创建仅数周、路线图多项未完成。",
+        "risk_notes": "仅支持iOS 18+且AirPlay源必须是iPhone；BLE带宽约300-500kbps；一键加入热点需付费开发者账号，免费账号需每7天重签；横屏、非ASCII输入等尚未支持；README要求保留LICENSE与署名。",
+        "evidence": [
+          "Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
+          "The board opens its own Wi-Fi hotspot and appears in the phone's Screen Mirroring list as *ESP32 Agent*.",
+          "AirPlay source must be an iPhone. Screen Mirroring from macOS is not supported"
+        ]
+      }
+    },
+    "NVIDIA-Omniverse/usd-brep": {
+      "category": "dev-tools",
+      "one_liner": "NURBS 实体建模 C++ 库",
+      "intro": {
+        "one_liner": "OpenUSD 的 BRep 实体建模库",
+        "what_it_is": "USD BRep 是 NVIDIA 发布的独立 C++ 与 Python 库，用于创建和编辑基于 NURBS 的边界表示（BRep）实体，并以 BrepArray prim 的形式在 OpenUSD 中读写。",
+        "problem_solved": "它让 OpenUSD 能够承载完整的 BRep 拓扑与 NURBS 或解析几何，并提供导入导出、校验、修复、网格化与可视化工具，从而把 CAD 实体几何接入 USD 场景。",
+        "who_should_care": "需要在 OpenUSD 流程中处理 CAD 实体几何的图形与仿真工程师、USD 工具链开发者，以及做 CAD 与 USD 互操作（如 OpenCASCADE 转换）的团队。",
+        "use_cases": [
+          "在 USD 场景中存储、校验和修复 BRep 实体",
+          "将 OpenCASCADE 模型与 USD BRep 互相转换",
+          "在 usdview 或 PyVista 中查看 BRep，并网格化为 UsdGeomMesh"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：CAD 实体几何与 OpenUSD 生态的打通属于基础设施型需求，但项目明确暂不接受外部贡献。",
+        "risk_notes": "项目声明当前不接受贡献（This project is currently not accepting contributions）；Python 包仅支持 CPython 3.12 的 Linux 与 Windows；仓库创建时间与推送时间均为 2026 年，属新项目，成熟度有待观察。",
+        "evidence": [
+          "USD BRep is a standalone C++ and Python library for NURBS-based boundary representation (BRep) solid modeling",
+          "USD BRep creates and edits boundary-representation (BRep) solids and reads and writes them in USD as `BrepArray` prims.",
+          "This project is currently not accepting contributions."
+        ]
+      }
+    },
+    "trhhubsd/ARTEXX": {
+      "category": "security",
+      "one_liner": "AI 自主渗透测试系统",
+      "intro": {
+        "one_liner": "自主渗透测试系统",
+        "what_it_is": "这是一个用 Go 编写、与 AI 自主渗透测试相关的系统，作者描述中提到百度“agent+”攻防挑战赛冠军项目。",
+        "problem_solved": "从作者描述看，它面向渗透测试自动化，尝试让 AI 参与攻防测试流程；具体能力缺少资料说明。",
+        "who_should_care": "关注 AI 安全、渗透测试自动化的开发者。",
+        "use_cases": [
+          "了解 AI 渗透测试系统",
+          "研究攻防挑战赛项目"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但资料不足。",
+        "risk_notes": "缺少 README，功能、许可证、成熟度均无法确认；创建日期为未来时间，需谨慎判断。",
+        "evidence": [
+          "AI 自主渗透测试系统 | 百度“agent+”攻防挑战赛冠军项目 Autumn-27/ARTEX",
+          "破千时的 Star 数：1164",
+          "README：无"
+        ]
+      }
+    },
+    "jhaizhou-ops/d2r-mobile": {
+      "category": "game",
+      "one_liner": "苹果设备运行暗黑2重制版",
+      "intro": {
+        "one_liner": "暗黑2重制版 iOS/macOS 兼容层",
+        "what_it_is": "一个用 C 编写的开源兼容层，让玩家用自己购买的 Switch 版《暗黑破坏神 II：狱火重生》（含 Reign of the Warlock 资料片）在 iPhone、iPad、Mac 上原生运行，并扩展出 Android、HarmonyOS 社区移植版本。",
+        "problem_solved": "解决官方未提供移动端或 Mac 原生版本的问题：通过重写平台服务与图形 API，让游戏本体程序在 Apple 设备上直接执行，并配套完整的触屏操作方案。",
+        "who_should_care": "拥有 Switch 版游戏文件、希望在 iPhone、iPad 或 Apple silicon Mac 上随身游玩的暗黑2玩家，以及关注原生兼容层与图形 API 重实现技术的开发者。",
+        "use_cases": [
+          "在 iPhone、iPad 上用触屏刷暗黑2，含恐怖地带与终局玩法",
+          "在 Apple silicon Mac 上双击启动，用键鼠或手柄游玩",
+          "在 ARM64 Android 手机上通过 Vulkan 后端运行同一游戏程序"
+        ],
+        "alternatives": "README 明确说明它不是模拟器、云游戏或串流，而是让游戏自身的 aarch64 程序在设备上直接执行、图形 API 完全重写（Apple 端 Metal、Android 端 Vulkan），与依赖 CPU 模拟的方案路线不同。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 2385 星、登上日榜，但项目创建不足一个月，Android、HarmonyOS、Apple TV 版本仍标注为社区移植或开发者预览。",
+        "risk_notes": "项目不包含也不分发任何游戏内容，需自备游戏文件；Android、HarmonyOS、Apple TV 版本为社区移植或开发者预览，其中 HarmonyOS 需自行重签名未签名包；iOS 26、macOS 26 起为主要支持版本，旧系统需使用旧 API 构建；README 中的帧率、功耗等数据均为作者自测，未经独立验证。",
+        "evidence": [
+          "It contains none and distributes none. There is no game program, art, text, data table or shader in this repository",
+          "An emulator, cloud gaming, or streaming.",
+          "Apple TV 4K (3rd generation, A15) has a community port (developer preview) that has reached the character-selection screen only on its author's device"
+        ]
+      }
+    },
+    "lgse/strata": {
+      "category": "desktop-system",
+      "one_liner": "Linux 键盘优先文件管理器",
+      "intro": {
+        "one_liner": "面向 Linux 的键盘优先文件管理器",
+        "what_it_is": "Strata 是一个用 Rust 编写、基于 GTK4 的 Linux 文件管理器，提供 Miller 列、图标网格和列表三种浏览模式，并支持模糊搜索、富预览与桌面集成。",
+        "problem_solved": "为现代 Linux 桌面（尤其是 Omarchy 和 Wayland 环境）提供快速、键盘优先的文件浏览与操作体验，弥补传统文件管理器在键盘操作和预览能力上的不足。",
+        "who_should_care": "偏好键盘操作、使用 Arch Linux 或 Omarchy 以及 GTK4 或 Wayland 桌面的 Linux 用户，以及需要自定义脚本动作和主题的进阶用户。",
+        "use_cases": [
+          "用方向键和模糊搜索在多层目录中快速定位文件",
+          "预览 Markdown、PDF、图片、音视频及相机 RAW 元数据",
+          "通过自定义脚本动作扩展右键菜单，并集成外部文件提供者"
+        ],
+        "alternatives": "README 未与其他文件管理器做直接对比，仅提到可选 10xer 模式使用 Yazi 风格按键；具体差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建时间较新，一周内新增约 242 星，但功能面已较完整，长期价值仍需观察维护情况。",
+        "risk_notes": "项目创建于 2026-08-28，历史较短；open issues 47 个，需关注后续维护节奏；主要支持 Arch Linux 和 Omarchy，二进制要求 glibc 2.39 及以上；Nix 包默认不含非自由 UnRAR 支持。",
+        "evidence": [
+          "A fast, keyboard-first file manager for modern Linux desktops.",
+          "Strata combines spatial Miller-column navigation with familiar Icons and List views, instant fuzzy filename search, rich previews, and native Linux desktop integration.",
+          "Arch Linux and Omarchy are the primary supported environments. Current binaries require glibc 2.39 or newer"
+        ]
+      }
+    },
+    "darrenprx/lolPing": {
+      "category": "game",
+      "one_liner": "Windows 桌面英雄联盟信号轮盘",
+      "intro": {
+        "one_liner": "把 LoL 信号轮盘搬到桌面",
+        "what_it_is": "lolPing 是一个用 TypeScript/Electron 编写的桌面覆盖层工具，在 Windows（另有实验性 macOS 与 X11 Linux 移植）上按住 Alt 拖拽，即可在任意应用、任意显示器上播放《英雄联盟》风格的 ping 动画与音效，并支持表情轮盘。",
+        "problem_solved": "让玩家在游戏之外也能使用 LoL 的 ping 与表情表达，并让这些动画出现在全屏捕获中，使 Discord/OBS 观众也能看到。",
+        "who_should_care": "LoL 玩家、游戏主播与录屏创作者，以及喜欢桌面小玩具的 Windows 用户。",
+        "use_cases": [
+          "直播或录屏时用 ping 动画做节目效果",
+          "日常桌面沟通中用表情轮盘表达情绪",
+          "在任意应用上标记屏幕位置（如“Keep my last ping on screen”）"
+        ],
+        "alternatives": "README 未与其他同类项目做对比，unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：属于趣味桌面玩具类项目，周增约 500 星，但功能面窄、依赖特定游戏文化。",
+        "risk_notes": "仓库未声明 license（license 为 null）；安装包未做代码签名，Windows SmartScreen 与 macOS 会拦截，macOS 每次更新需重新授权辅助功能；macOS 版与 Linux 版均为实验性；创建于 2026-10-02、推送于 2026-10-26，维护历史很短。",
+        "evidence": [
+          "League of Legends ping wheel for your Windows desktop. Hold Alt, drag, and ping anywhere, with the original animations and sounds.",
+          "Pings and emotes show up in whole-screen capture, so friends watching your Discord or OBS stream see them too. lolPing is a desktop toy: it doesn't read, change or hook into League itself.",
+          "The installer isn't code-signed, so Windows SmartScreen may say \"Windows protected your PC\"."
+        ]
+      }
+    },
+    "shaongitbd/doory": {
+      "category": "content-media",
+      "one_liner": "开源 Canva 替代设计工具",
+      "intro": {
+        "one_liner": "开源在线设计编辑器",
+        "what_it_is": "Doory 是浏览器里的设计编辑器，可从模板或空白页制作海报、简历、幻灯片等，并导出多种格式。",
+        "problem_solved": "它让不想付费或注册账号的用户也能做视觉设计，并支持自建服务、协作与批量填充。",
+        "who_should_care": "需要轻量设计工具、私有部署或模板化批量出图的开发者与团队。",
+        "use_cases": [
+          "制作海报与社交图片",
+          "自建团队设计服务",
+          "批量生成品牌物料"
+        ],
+        "alternatives": "定位为开源 Canva 替代，强调无付费计划、无需账号和可自建服务。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 372 星并曾登上日榜。",
+        "risk_notes": "项目较年轻，模板库只有十个起始模板；许可证要求保留声明并在应用中显著署名；仍有未关闭问题。",
+        "evidence": [
+          "Open source canva alternative",
+          "It is a young project: the editor is complete, the template library is small (ten starter templates), and bug reports are very welcome.",
+          "you must credit the author"
+        ]
+      }
+    },
+    "ant-research/AntOmniEvo": {
+      "category": "ai-agent",
+      "one_liner": "自动优化万物的演进框架",
+      "intro": {
+        "one_liner": "AI 智能体自动进化优化框架",
+        "what_it_is": "AntOmniEvo 是一个自动进化框架：用户把系统的可调部分抽象为「tunable artifacts」（可调产物，即真实目录中的文件），由编码智能体 Proposer 读取失败轨迹并改写这些文件，框架负责调度、预算、选择与持久化，最终产出优化后的可调产物目录。",
+        "problem_solved": "把「优化系统」这件事转化为可重复的「文件编辑 + 评估」循环，让 AI 智能体代替人工反复定位失败原因、修改 skill、prompt、工作流配置或算法代码，并保留变更谱系。",
+        "who_should_care": "需要持续调优 AI agent 技能、prompt、工作流或单文件算法的算法工程师与 agent 开发者；希望把优化过程工程化、可复现、可断点续跑的团队。",
+        "use_cases": [
+          "优化 NL2SQL、编码 agent 的 skill、harness、memory 目录",
+          "优化检索 DAG 等 workflow 的 pipeline.json 与节点脚本",
+          "对单文件算法及其描述做迭代式自动改进"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：把 agent 自我改进（RSI）落到可评估、可 diff 的工程闭环上，而非单纯 prompt 调优；但论文实验资源尚未开源，生态仍早期。",
+        "risk_notes": "README 称论文实验脚本、进化前后产物与数据集「正在准备开源」，尚未发布；skills 目前仅含一个中文场景示例；项目创建于 2026-09，历史很短，长期维护情况未知。",
+        "evidence": [
+          "An auto-evolution framework that optimizes anything — your 7×24 team of algorithm engineers.",
+          "the changing itself is done by a coding-agent `Proposer`: it reads failure trajectories, locates which file to edit, and lands a structured change as a new candidate's tunable artifacts",
+          "The paper's experiment scripts, artifacts before and after evolution, and datasets are being prepared for open source and will be released in a separate repository"
+        ]
+      }
+    },
+    "academa-labs/manimgx": {
+      "category": "content-media",
+      "one_liner": "智能体用数学三维动画引擎",
+      "intro": {
+        "one_liner": "兼容 Manim API 的 Rust 3D 动画引擎",
+        "what_it_is": "ManimGX 是一个面向 agent 的 3D 动画引擎，兼容 Manim Community Edition 的 Python API，底层由 Rust 与 wgpu 实现渲染，可输出 MP4，也可在浏览器中运行。",
+        "problem_solved": "它试图解决 Manim 类数学动画渲染慢、3D 能力弱、依赖本地 LaTeX 环境的问题，并让 AI agent 能直接编写 Python 场景并快速得到视频。",
+        "who_should_care": "需要制作数学、科学类 3D 动画的创作者、教育内容作者，以及希望让 agent 自动生成动画视频的开发者。",
+        "use_cases": [
+          "用 Python 编写数学或物理 3D 动画并导出 1080p60 MP4",
+          "在网页中通过 npm 包与 WebGPU 嵌入可交互渲染的场景",
+          "让 Claude Code、Cursor 等 agent 按 llms.txt 指引自动搭建并生成动画"
+        ],
+        "alternatives": "README 自称兼容 Manim CE API，并给出与 ManimCE、ManimGL、Blender Workbench 的渲染耗时对比；这些性能数字均为项目自述，未经独立验证。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建不足一月即获千余星，主打 agent 生成动画这一当下热门方向，但生态与稳定性尚待观察。",
+        "risk_notes": "README 中的 90.6× 等加速数据为作者自测，需谨慎看待；项目创建于 2026-10-05，历史极短，尚无长期维护记录；要求 Python 3.13+，对运行环境有约束。",
+        "evidence": [
+          "The animation engine for agents: blazingly fast math and 3D videos with Manim's Python API, on a Rust GPU core.",
+          "36.2 seconds of video, rendered in 3.08 seconds. ... ManimGX is 90.6× faster than ManimCE",
+          "Install on macOS, Linux or Windows with Python 3.13+"
+        ]
+      }
+    },
+    "wesbos/photo-frame-dashboard": {
+      "category": "hardware-iot",
+      "one_liner": "解锁安卓相框装自定义应用",
+      "intro": {
+        "one_liner": "相框改家庭看板",
+        "what_it_is": "这是把受限 Android 相框改造成家庭看板的笔记、脚本和示例应用，包含调试、备份、获取 root、替换厂商应用及全屏网页展示。",
+        "problem_solved": "解决廉价相框被厂商应用锁死、难以自定义的问题，让设备能运行自己的启动器、浏览器或信息展示页面。",
+        "who_should_care": "喜欢折腾 Android 设备、想做家庭信息屏的开发者。",
+        "use_cases": [
+          "把相框改成家庭日历看板",
+          "备份固件并分析设备型号",
+          "运行全屏网页或自制应用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 187 星，且曾上日榜。",
+        "risk_notes": "同名设备可能有不同主板；写入前需验证备份；错误固件或备份可能导致不匹配，甚至锁死设备。",
+        "evidence": [
+          "Turn a cheap Android photo frame into a family dashboard: unlock it, root it, replace the vendor app, and run your own web page full screen.",
+          "These are records of the units their owners tested, not universal flashing guides.",
+          "Frames sold under the same name, even the same Amazon listing, can have different boards."
+        ]
+      }
+    },
+    "nano-muse/nanoMuse": {
+      "category": "ai-agent",
+      "one_liner": "跨设备开源个人智能体",
+      "intro": {
+        "one_liner": "跨设备个人智能体",
+        "what_it_is": "nanoMuse 是开源个人智能体，包含手机、桌面、网页控制台和自托管中继，可在多设备间执行任务并记住用户。",
+        "problem_solved": "让个人智能体不只停留在他人云端，可通过自选模型、自有设备和自托管中继完成跨设备操作。",
+        "who_should_care": "关注个人智能体、跨设备自动化和自托管方案的开发者。",
+        "use_cases": [
+          "在手机上派任务给电脑执行",
+          "让智能体定时检查目标与例行事务",
+          "通过屏幕操作没有接口的应用"
+        ],
+        "alternatives": "强调自有设备、自选模型、可自托管中继，以及撤销前先询问。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 243 星，且曾有一天进入日榜。",
+        "risk_notes": "浏览器版本是演示；苹果端为测试版；桌面安装包有未公证或需手动放行提示；未关闭议题较多。",
+        "evidence": [
+          "nanoMuse is an open-source personal agent for every device you own.",
+          "the phone app, the desktop app, the web console and the relay that joins them are all in this repository, under GPL-3.0-or-later",
+          "A demo; the apps below are the real thing"
+        ]
+      }
+    },
+    "Dingo-Shenanigans/ReSkate": {
+      "category": "other",
+      "one_liner": "信息不足的 C++ 项目",
+      "intro": {
+        "one_liner": "skate. 离线联机模组框架",
+        "what_it_is": "一个面向 skate. 的粉丝项目，包含启动器、加载进游戏的运行时和专用服务器，支持离线游玩、自建大厅、专用服务器与模组。",
+        "problem_solved": "让玩家不依赖 EA 服务器也能游玩，并把进度保存在本机；同时提供多人联机、服务器浏览、公园编辑和模组安装管理。",
+        "who_should_care": "拥有 skate. 且想离线玩、自建服务器或安装模组的玩家。",
+        "use_cases": [
+          "离线保存角色与进度",
+          " hosting 32 人大厅或专用服",
+          "安装地图、外观和脚本模组"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且仅一天登上日榜。",
+        "risk_notes": "需要自备 Steam 版 skate.，仅支持一个游戏构建；与 EA 和 Full Circle 无关联；Proton 新目录方案未测试，自定义地图切服可能黑屏。",
+        "evidence": [
+          "play it offline, host your own lobbies and dedicated servers, and mod it.",
+          "ReSkate is a fan project. It is not affiliated with or endorsed by Electronic Arts or Full Circle.",
+          "ReSkate supports one game build at a time (Steam build `25414733`)."
+        ]
+      }
+    },
+    "maddada/Ghostex": {
+      "category": "ai-agent",
+      "one_liner": "原生多智能体工作空间",
+      "intro": {
+        "one_liner": "原生智能体工作台",
+        "what_it_is": "Ghostex 是用 Rust 和 GPUI 构建的原生智能体工作台，提供桌面与移动端入口，可接入多种编码智能体。",
+        "problem_solved": "把多个编码智能体的聊天、命令行、编辑器、批注、会话检索和远程连接集中到一个可定制界面。",
+        "who_should_care": "同时使用多个编码智能体、需要跨设备查看和调度任务的开发者。",
+        "use_cases": [
+          "在统一界面切换不同智能体",
+          "给计划和原型加批注反馈",
+          "手机查看会话并继续追问"
+        ],
+        "alternatives": "相比 ChatGPT app 和 cmux，强调开源、多平台、多智能体切换与内置编辑器。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 143 星，曾有一天进入日榜。",
+        "risk_notes": "创建日期与最近提交日期异常靠后；iOS 测试需通过 Discord；未关闭问题有 18 个。",
+        "evidence": [
+          "The Best & Most Powerful Native Agents Workspace. Fully Rust & GPUI based. Mobile apps. 20+ agents. Ghostty.",
+          "Works with **any coding agent**. Bring the one you already use.",
+          "The iOS TestFlight runs through the [Discord](https://discord.gg/df7b3G92CS). Post in the iOS channel to get in."
+        ]
+      }
+    },
+    "Lertaro/Lertaro": {
+      "category": "desktop-system",
+      "one_liner": "Windows 本地极速文件搜索器",
+      "intro": {
+        "one_liner": "Windows 本地搜索启动器",
+        "what_it_is": "Lertaro 是基于 C# 与 WPF 的 Windows 本地文件搜索和效率启动工具，支持 NTFS 索引、实时变更监控与插件。",
+        "problem_solved": "它用于快速查找本地文件、跳转目录和启动操作，减少遍历磁盘与重复切换文件管理器的成本。",
+        "who_should_care": "重度使用 Windows 文件搜索、启动器和键盘操作的开发者与效率工具用户。",
+        "use_cases": [
+          "秒查本地文件与路径",
+          "在文件对话框中快速跳转",
+          "预览文件并查看磁盘占用"
+        ],
+        "alternatives": "定位为 Listary 和 Everything 的现代开源替代，强调模糊搜索、插件与窗口停靠。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 109 星，并有一天进入日榜。",
+        "risk_notes": "创建时间较晚，仍有 16 个未关闭问题；安装版涉及后台服务，需只从官方来源下载。",
+        "evidence": [
+          "A modern, high-performance local file search and productivity tool for Windows.",
+          "It's a modern, open-source alternative to Listary and Everything — indexing local drives via the NTFS USN Journal and $MFT for near-instant, low-resource search.",
+          "Security notice: download Lertaro only from official sources."
+        ]
+      }
+    },
+    "yksr-melt/Meltype": {
+      "category": "desktop-system",
+      "one_liner": "消除全半角壁垒的日文输入",
+      "intro": {
+        "one_liner": "自动切换日英输入法",
+        "what_it_is": "Meltype 是面向 Windows 的日语输入工具，用罗马字输入时自动判断日文或英文并切换，也提供预览版支持其他系统。",
+        "problem_solved": "它减少手动按半角或全角切换键的麻烦，让日文、英文单词、命令和文件名能按预期直接输入。",
+        "who_should_care": "频繁混写日文与英文的 Windows 用户，尤其是开发者。",
+        "use_cases": [
+          "在编辑器里混写日文注释和英文代码",
+          "输入命令、变量名而不被误转换",
+          "日常输入日文并保留英文单词"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 86 星，并曾进入日榜一天。",
+        "risk_notes": "采用 GPL-3.0，改造版需公开源码；Mac 版与 Linux 版为预览版；未关闭 Issue 有 322 个。",
+        "evidence": [
+          "ローマ字で打つだけ。日本語か英語かは Meltype が見分けて、その場で切り替えます！",
+          "Windows 10 / 11 に対応。Mac 版・Linux 版はプレビュー版です。",
+          "GNU GPL v3.0。個人でも会社でも無料。GPL v3 の条件 (改造版もソースを公開) で、改造・再配布も自由です。"
+        ]
+      }
+    },
+    "3641397194-wq/gpt6-Astra": {
+      "category": "security",
+      "one_liner": "多模型越狱提示工作台",
+      "intro": {
+        "one_liner": "多模型破甲工作台",
+        "what_it_is": "一个面向多款 AI 模型客户端的桌面工作台，提供勾选式安装、备份、核验、卸载，以及中转配置和插件接入。",
+        "problem_solved": "把多款 AI 客户端的提示词、技能与插件安装集中管理，并提供写入前备份和卸载恢复。",
+        "who_should_care": "关注提示词工程、安全研究和多模型客户端配置的开发者。",
+        "use_cases": [
+          "批量安装模型客户端技能",
+          "配置中转与模型接入",
+          "研究工作流与源码审计"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 90 星，曾有一天进入日榜。",
+        "risk_notes": "当前为预发布版；部分付费接口、真实研究调用和真实 REA 调用仍待实测；桌面成品仅在 Windows 实测。",
+        "evidence": [
+          "3.2.0-preview.6 已公开发布（预发布版），本工作台 Windows、macOS、Linux 的七个安装包均可下载。",
+          "勾选安装，写前备份，写后核验。十五个 AI 模型席位集中在一页，完整技能随包安装；随时检查安装状态，需要撤回时按备份恢复。",
+          "付费 API、真实研究成果与真实 REA 调用仍待实测。官方 Desktop 成品目前仅在 Windows 实测，详见插件说明。"
+        ]
+      }
+    },
+    "Kiterlin/anti-defensive-writing": {
+      "category": "content-media",
+      "one_liner": "去除防御性文风的写作技能",
+      "intro": {
+        "one_liner": "学术写作去防御化技能",
+        "what_it_is": "这是一个面向 Codex 的写作技能规范，用规则与流程识别并改写学术和技术文本中的防御性表达。",
+        "problem_solved": "它解决论文、技术报告和标准流程里过度道歉、免责声明、模糊限定和重复告诫削弱表达的问题，同时保留必要边界。",
+        "who_should_care": "写论文、技术报告、方案和标准流程，并使用 Codex 辅助润色的开发者与研究者。",
+        "use_cases": [
+          "改写论文摘要和结论",
+          "精简技术方案与报告",
+          "规范标准流程措辞"
+        ],
+        "alternatives": "相比一般润色，强调正向界定范围、校准不确定性，并保留方法与伦理边界。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 83 星且曾上日榜。",
+        "risk_notes": "创建于 2026 年，资料较新；有 4 个未关闭问题；主要语言为 PowerShell，集成方式需自行确认。",
+        "evidence": [
+          "Codex skill for removing defensive writing and strengthening prose.",
+          "Anti-Defensive Writing introduces an agentic skill specification that systematically diagnoses and eliminates defensive cognitive overhead while strictly preserving methodological validity, empirical scope, and ethical/legal boundaries.",
+          "Remove redundancy and admonitory tone while preserving technical meaning, applicability conditions, prohibitions, and operational purpose."
+        ]
+      }
+    },
+    "ItsssssJack/SlopMonster": {
+      "category": "content-media",
+      "one_liner": "清洗 AI 味文案的检查器",
+      "intro": {
+        "one_liner": "英文文案去 AI 味检查器",
+        "what_it_is": "一个 Python 工具，检查英文文案中的常见 AI 写作痕迹，按五类规则给出五分制评分，并提供改写流程。",
+        "problem_solved": "帮助发现模板化词汇、句式、标点和宣传式表达，提醒作者复核事实、受众与表达质量。",
+        "who_should_care": "写英文说明、落地页、邮件或脚本，并使用 AI 辅助起草的开发者。",
+        "use_cases": [
+          "检查 README 文案",
+          "检查落地页和邮件",
+          "在持续集成中拦截文案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周新增 56 星，仅一天进入日榜。",
+        "risk_notes": "只识别英文模式，可能误报或漏判；满分不代表文案质量；二次改写依赖外部命令行工具，且可能改变事实或丢失上下文。",
+        "evidence": [
+          "SlopMonster checks English writing for common AI writing patterns and provides instructions for editing the draft.",
+          "The checker uses English patterns and has no language detection.",
+          "A passing score alone doesn't establish writing quality."
+        ]
+      }
+    },
+    "vladtrc/iw4L": {
+      "category": "game",
+      "one_liner": "Rust 实验版使命召唤运行时",
+      "intro": {
+        "one_liner": "Rust 编写的 MW2 实验运行时",
+        "what_it_is": "IW4L 是用 Rust、Bevy 和 wgpu 构建的独立实验性 Call of Duty 运行时，可读取自有《现代战争 2》安装中的地图、模型、纹理和武器。",
+        "problem_solved": "它让玩家在自有游戏数据上探索地图、体验已实现的移动与战斗，并查看或修改这些系统的实现方式。",
+        "who_should_care": "对游戏引擎、资产读取、Rust 和老游戏模组实验感兴趣的开发者。",
+        "use_cases": [
+          "在多人地图探索与对战机器人",
+          "录制并回放演示",
+          "研究地图加载和模拟实现"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 46 星且曾上日榜，但玩法仍不完整。",
+        "risk_notes": "玩法不完整，可能有缺失行为、错误和不同步；接口、配置、缓存和通信协议会随提交变化；联机双方必须使用同一构建。",
+        "evidence": [
+          "Standalone experimental Call of Duty runtime in Rust, built on bevy and wgpu",
+          "Gameplay remains incomplete; expect missing behavior, bugs and desyncs.",
+          "APIs, configuration, caches and the wire protocol change between commits; multiplayer peers must run the same build."
+        ]
+      }
+    },
+    "tarwin/tinyjsapp": {
+      "category": "dev-tools",
+      "one_liner": "用 JS 构建微型原生应用",
+      "intro": {
+        "one_liner": "轻量桌面应用框架",
+        "what_it_is": "tinyjs 用 JavaScript 编写桌面应用后端，前端由系统 WebView 渲染，支持 macOS、Windows 和 Linux。",
+        "problem_solved": "它试图避免 Electron 式体积与内置浏览器依赖，用较小文件、系统 WebView 和本地通信构建桌面应用。",
+        "who_should_care": "想用 JavaScript 做轻量桌面工具、并需要系统能力的开发者。",
+        "use_cases": [
+          "制作托盘或菜单栏小工具",
+          "开发本地文件与进程工具",
+          "构建带原生菜单的桌面界面"
+        ],
+        "alternatives": "相比 Electron，强调不捆绑 Node 和 Chromium，改用 txiki.js 与系统 WebView。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 72 星，仅一天进入日榜。",
+        "risk_notes": "创建时间较新，仍有 11 个未关闭问题；Linux 音频与媒体播放存在系统依赖和限制。",
+        "evidence": [
+          "Build native apps in JS. Backend, frontend. ~5Mb.",
+          "Tiny desktop apps for macOS, Windows and Linux: a txiki.js backend + a native webview window.",
+          "No HTTP server, no ports — the page and the backend talk over a Unix domain socket in a private temp directory"
+        ]
+      }
+    },
+    "StayLameBro/backburner": {
+      "category": "ai-model",
+      "one_liner": "iPhone 加速 Mac 本地大模型",
+      "intro": {
+        "one_liner": "跨苹果设备本地推理",
+        "what_it_is": "Backburner 是一个用 Python 为主的本地大模型推理项目，通过 USB-C 让 iPhone 协助 Mac 运行 27B 模型，并扩展可用上下文。",
+        "problem_solved": "它试图缓解单台 Mac 读取长提示慢、上下文容量受限的问题，把部分模型层和较早上下文计算分给手机或平板。",
+        "who_should_care": "拥有 Mac 与较新 iPhone、关注本地大模型长上下文和推理实验的开发者。",
+        "use_cases": [
+          "本地代理读取长文件",
+          "扩展长会话上下文",
+          "测试多设备推理分工"
+        ],
+        "alternatives": "相比单机 llama.cpp，差异在于用手机分担层计算与旧上下文，并配有定制 Mac 内核。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 19 星，曾有一天进入日榜。",
+        "risk_notes": "设备支持范围有限，较旧或非 Pro 手机尚不支持；部分平台仍在规划；长预填充可能让手机发热，部分设备组合仍在调试。",
+        "evidence": [
+          "Your iPhone helps your Mac run a 27B model: faster prompt reading and more context over a USB-C cable",
+          "Plug your iPhone into your MacBook with a 10 Gb/s USB-C cable and it helps run Qwen3.8-27B locally",
+          "Older or non-Pro iPhones | Not yet | USB 2 port (too slow for split prefill); planned for roles that need little bandwidth"
+        ]
+      }
+    },
+    "itsPLK/ps5-webkit-autoloader": {
+      "category": "game",
+      "one_liner": "PS5 破解载荷自动加载器",
+      "intro": {
+        "one_liner": "PS5 离线载荷加载器",
+        "what_it_is": "这是面向已破解 PS5 的自动化载荷加载器，可自动运行 WebKit 漏洞利用，并按配置发送 ELF 或 BIN 载荷。",
+        "problem_solved": "它减少对第三方 DNS 和外部服务器的依赖，一次安装后可从主屏快捷方式离线启动，并自动加载常用载荷。",
+        "who_should_care": "已破解或正在研究 PS5 自制软件、载荷分发与漏洞利用流程的开发者。",
+        "use_cases": [
+          "离线启动 WebKit 漏洞链",
+          "通过网页界面管理载荷",
+          "按配置自动发送多个载荷"
+        ],
+        "alternatives": "相比依赖第三方 DNS 的常规方式，它强调本地缓存、离线运行和主屏快捷启动。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周新增 59 星，且曾登上日榜一天。",
+        "risk_notes": "仅声明用于研究与开发，需自担风险；涉及漏洞利用和载荷执行，使用不当可能造成数据丢失或后果。",
+        "evidence": [
+          "An automated payload loader for exploited PS5 consoles",
+          "Automatically loads the WebKit exploit and your elf payloads.",
+          "Fully offline, no third-party DNS. After a one-time install from your PC, everything is served straight from your PS5."
+        ]
+      }
+    },
+    "noctalia-dev/umbriel": {
+      "category": "desktop-system",
+      "one_liner": "带动态布局的独立合成器",
+      "intro": {
+        "one_liner": "独立 Wayland 合成器",
+        "what_it_is": "Umbriel 是面向日常使用的独立 Wayland 合成器，提供多种窗口布局、视觉效果和动画，并可与 Noctalia 桌面外壳搭配。",
+        "problem_solved": "它想用一个桌面兼顾生产力与游戏，提供灵活窗口组织、显示与输入配置，以及可实时重载的配置。",
+        "who_should_care": "关注 Wayland 桌面、平铺布局和游戏显示配置的开发者与高级用户。",
+        "use_cases": [
+          "搭建可定制的 Wayland 桌面",
+          "用多种布局整理工作窗口",
+          "配置游戏显示与串流输出"
+        ],
+        "alternatives": "强调独立运行、与 Noctalia 搭配，并覆盖布局、视觉效果和游戏显示配置。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 27 星且曾上日榜，但新增热度不高。",
+        "risk_notes": "项目年轻且持续演进，配置键、快捷键和行为可能随版本变化，仍有粗糙之处；未关闭议题较多。",
+        "evidence": [
+          "A Wayland compositor designed for daily use, with scrolling, dwindle, master, and stacking layouts, per-output workspaces, window rules, blur, shadows, and fluid animations.",
+          "The project is young and actively evolving. It is usable today, but configuration keys, keybinds, and behavior may change between releases, and rough edges remain.",
+          "An independent compositor with scrolling, dwindle and master layouts, blur, shadows, and fluid animations."
+        ]
+      }
+    },
+    "liliu-z/stashbase": {
+      "category": "ai-agent",
+      "one_liner": "本地优先的智能体写作台",
+      "intro": {
+        "one_liner": "本地优先的智能写作台",
+        "what_it_is": "StashBase 是开源本地知识库与写作工作台，可把笔记、文档和资料放在本机文件夹，并让智能体协助阅读、检索、起草和修订。",
+        "problem_solved": "它解决写作资料分散、智能体改动难审阅、文档与来源难关联的问题，让本地文件、对话和修订集中在同一项目里。",
+        "who_should_care": "重视资料留在本地、常用 Markdown 与智能体写作的开发者。",
+        "use_cases": [
+          "整理笔记与资料后起草文章",
+          "审阅智能体对文档的修改",
+          "让外部客户端检索项目文件"
+        ],
+        "alternatives": "差异是本地文件夹、文档审阅、来源关联与外部智能体连接放在同一写作台。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 41 星且曾有一天进入日榜。",
+        "risk_notes": "部分平台功能受系统版本限制；语义检索需自备密钥；默认会共享使用统计和错误诊断。",
+        "evidence": [
+          "StashBase is an open-source, local knowledge base for writing with AI agents.",
+          "Your notes, PDFs, and docs stay in a folder on your computer, and Claude, Codex, or Antigravity works inside it with you.",
+          "When your agent edits one, `Review` shows each change inside the prose, so you can undo or keep it."
+        ]
+      }
+    },
+    "meursyphus/ssgoi": {
+      "category": "web-frontend",
+      "one_liner": "主流 SSR 页面转场动画库",
+      "intro": {
+        "one_liner": "跨框架页面转场库",
+        "what_it_is": "SSGOI 是为移动网页、渐进式网页应用和内嵌网页应用提供类原生页面转场的 TypeScript 库，支持多种服务端渲染框架与浏览器。",
+        "problem_solved": "它让现有路由继续负责导航，同时补齐跨浏览器、服务端渲染场景下难以统一实现的页面动画与空间层级效果。",
+        "who_should_care": "做移动端网页、渐进式网页应用或内嵌网页应用的前端开发者。",
+        "use_cases": [
+          "为移动端页面切换加入转场",
+          "在现有路由上叠加动画",
+          "为渐进式网页应用做原生感"
+        ],
+        "alternatives": "强调不依赖视图转场接口，基于网页动画接口，并保留现有路由与服务端渲染结构。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注集中。",
+        "risk_notes": "部分旧路由子路径已弃用并将在 8.0.0 移除；React Native 与 Expo Router 集成仍为实验性。",
+        "evidence": [
+          "animated page transition for major ssr frameworks and browsers, including Safari",
+          "Native app-like page transitions for mobile web apps, PWAs, and WebView apps.",
+          "SSGOI depends on the broadly available Web Animations API instead of requiring the View Transition API."
+        ]
+      }
+    },
+    "achrefelouafi/LinearAbiltyCastingThreeJS": {
+      "category": "other",
+      "one_liner": "信息不足的 ThreeJS 项目",
+      "intro": {
+        "one_liner": "技能特效沙盒",
+        "what_it_is": "一个用 Three.js、Vite 和手写 GLSL 构建的技能命中特效沙盒，提供六种技能、两种瞄准方式和实时参数编辑。",
+        "problem_solved": "让开发者在暂停画面中调整技能特效的轮廓、配色和时序，并直观查看线性施法与地面范围施法的瞄准范围。",
+        "who_should_care": "游戏前端、图形开发者，以及需要调试技能视觉效果的开发者。",
+        "use_cases": [
+          "调试技能施法特效",
+          "实时调整视觉参数",
+          "预览范围指示效果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾登上日榜，但创建时间很新。",
+        "risk_notes": "项目创建时间很新；资料未提供许可证信息；资料被截断，完整实现细节不明。",
+        "evidence": [
+          "A skillshot VFX sandbox built with **Three.js**, **Vite** and hand-written **GLSL**.",
+          "Six abilities and two ways to aim them.",
+          "**Every parameter is a live slider** — 938 of them — and they stay live while the simulation is paused."
+        ]
+      }
+    },
+    "Soul-AILab/SoulX-Singer": {
+      "category": "ai-model",
+      "one_liner": "零样本歌声合成推理代码",
+      "intro": {
+        "one_liner": "零样本歌声合成工具",
+        "what_it_is": "SoulX-Singer 是高质量零样本歌声合成的官方推理代码，支持按旋律或乐谱控制音高、节奏与表现，也包含歌声转换模型。",
+        "problem_solved": "它让开发者为未见过的歌手生成歌声，并可在保留旋律、节奏和歌词内容的情况下转换音色，部分流程无需歌词或 MIDI 转写。",
+        "who_should_care": "关注歌声合成、歌声转换和音乐生成应用的研究者与开发者。",
+        "use_cases": [
+          "按 MIDI 生成指定音色歌声",
+          "修改歌词并保持自然韵律",
+          "把原唱音频转换为目标音色"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜。",
+        "risk_notes": "自动预处理生成的对齐可能不完美，建议人工校正；用途声明要求尊重授权、隐私与个人同意，禁止未授权冒充。",
+        "evidence": [
+          "Official inference code for SoulX-Singer: Towards High-Quality Zero-Shot Singing Voice Synthesis",
+          "**SoulX-Singer** is a high-fidelity, zero-shot singing voice synthesis model that enables users to generate realistic singing voices for unseen singers.",
+          "The metadata produced by the automatic preprocessing pipeline may not perfectly align the singing audio with the corresponding lyrics and musical notes."
+        ]
+      }
+    },
+    "zeenie-ai/OpenCompany": {
+      "category": "ai-agent",
+      "one_liner": "自我改进的 AI 员工系统",
+      "intro": {
+        "one_liner": "本地运行的 AI 员工系统",
+        "what_it_is": "一个开源的 AI 员工操作系统，可在本机创建、配置和管理能使用浏览器、应用、工具与文件的智能体团队。",
+        "problem_solved": "把日常工作描述成岗位并连接所需工具，让 AI 员工按规则执行、协作、接受反馈并沉淀技能与记忆。",
+        "who_should_care": "想用智能体处理软件、运营、客服、研究和日常事务的开发者与重度个人用户。",
+        "use_cases": [
+          "编写代码并处理拉取请求",
+          "整理邮件、日程和每日简报",
+          "浏览网页并汇总研究资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "安装包尚未代码签名，可能被系统拦截；后台任务需保持应用运行和电脑唤醒；云端模型与连接服务仍受其费用和限制影响。",
+        "evidence": [
+          "Self-improving AI employees, running on your own computer.",
+          "OpenCompany is an open-source operating system for AI employees. It gives employees browsers, apps, tools, integrations, and access to your computer to complete work.",
+          "The builds are not code-signed yet."
+        ]
+      }
+    },
+    "Moonholder/Wuwa_Mod_Fixer": {
+      "category": "game",
+      "one_liner": "鸣潮模组修复工具",
+      "intro": {
+        "one_liner": "游戏模组修复工具",
+        "what_it_is": "一个用 Rust 编写的工具，提供图形界面和命令行版本，用于修复游戏更新后模组失效等问题。",
+        "problem_solved": "自动识别资源哈希变动并替换，修复前创建备份，支持回滚到修改前状态。",
+        "who_should_care": "使用游戏模组、遇到更新后失效的玩家和自动化工具开发者。",
+        "use_cases": [
+          "一键修复指定模组文件夹",
+          "回滚最近一次修复",
+          "输出事件流供工具集成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天。",
+        "risk_notes": "项目创建于 2025 年 3 月 9 日；部分修复选项互斥；回滚仅撤销上一次操作。",
+        "evidence": [
+          "一个用于修复由于游戏更新导致的模组失效等问题的工具。",
+          "自动识别资源哈希变动并进行替换。",
+          "回滚最近一次修复（仅撤销上一次操作，与修复选项互斥）。"
+        ]
+      }
+    },
+    "merovinh/best-of-algorithmic-trading": {
+      "category": "learning-resource",
+      "one_liner": "算法交易开源资源榜单",
+      "intro": {
+        "one_liner": "算法交易开源清单",
+        "what_it_is": "按质量评分整理算法交易相关开源库、框架、机器人、工具、书籍、社区和学习资料，并每周更新。",
+        "problem_solved": "把分散的算法交易资源集中分类和排序，帮助开发者更快发现、比较和选择项目。",
+        "who_should_care": "量化交易开发者、交易机器人使用者和想系统了解相关生态的人。",
+        "use_cases": [
+          "查找交易机器人和框架",
+          "比较开源库与接口资源",
+          "按分类浏览学习资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天进入日榜。",
+        "risk_notes": "清单包含许可证风险提示，部分收录项目可能不活跃或已停止维护；评分依赖自动采集指标。",
+        "evidence": [
+          "A ranked list of algorithmic trading open-source libraries, frameworks, bots, tools, books, communities, education materials. Updated weekly.",
+          "This curated list contains 110 awesome open-source projects with a total of 360K stars grouped into 8 categories.",
+          "All projects are ranked by a project-quality score, which is calculated based on various metrics automatically collected from GitHub and different package managers."
+        ]
+      }
+    },
+    "microsoft/power-platform-skills": {
+      "category": "ai-agent",
+      "one_liner": "Power Platform 智能体插件市场",
+      "intro": {
+        "one_liner": "Power Platform 插件市场",
+        "what_it_is": "这是面向 Power Platform 开发的插件市场，提供可复用的技能、智能体和命令，供 GitHub Copilot 与 Claude Code 等工具安装使用。",
+        "problem_solved": "它把构建、部署、诊断和分析 Power Platform 解决方案的能力整理成插件，减少开发者自行配置工具与流程的工作。",
+        "who_should_care": "使用 Copilot、Claude Code 开发 Power Platform 的开发者。",
+        "use_cases": [
+          "创建并部署 Power Pages 站点",
+          "构建模型驱动应用与生成式页面",
+          "分析流程挖掘数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周内曾登上日榜，且已有 206 次复刻。",
+        "risk_notes": "部分插件标注为预览版；流程智能插件暂不支持部分云环境；安装脚本会启用自动更新。",
+        "evidence": [
+          "Official agent skills/plugins for Power Platform development by Microsoft.",
+          "This repository is a **plugin marketplace** containing GitHub Copilot/Claude Code plugins for Power Platform services.",
+          "**Status**: Preview — see [capabilities](plugins/pcf/docs/pcf-capabilities.md)"
+        ]
+      }
+    },
+    "Chimioo/InxLocker": {
+      "category": "mobile",
+      "one_liner": "安卓安装器锁定模块",
+      "intro": {
+        "one_liner": "安卓安装器重定向模块",
+        "what_it_is": "这是一个基于 Xposed 的安卓模块，用 Kotlin 编写，可拦截并转发应用安装、卸载请求到指定安装器。",
+        "problem_solved": "它解决深度定制系统中安装请求分发不符合需求、部分应用硬编码安装器，以及会话安装难以接管的问题。",
+        "who_should_care": "使用 Xposed 框架、需要定制安装卸载流程的安卓进阶用户。",
+        "use_cases": [
+          "把安装请求转到指定安装器",
+          "拦截卸载请求交给指定程序",
+          "处理会话安装确认界面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，星数破千且增长明显。",
+        "risk_notes": "依赖 Xposed 环境和系统框架作用域；权限修复为实验性；隐藏图标后需从管理器进入设置。",
+        "evidence": [
+          "Xposed-based Installer Locker for Android (Powered by YukiHookAPI)",
+          "InxLocker 是一 Xposed 模块，旨在拦截/转发 Android 系统的应用安装与卸载请求，并将其重定向至您指定的安装器应用。",
+          "本项目代码遵循 [GPLv3 License](./LICENSE) 。"
+        ]
+      }
+    },
+    "Jumpat/SegAnyGAussians": {
+      "category": "ai-model",
+      "one_liner": "三维高斯分割官方实现",
+      "intro": {
+        "one_liner": "三维高斯分割工具",
+        "what_it_is": "SAGA 的官方实现，用于分割三维高斯场景，提供交互式界面和笔记本示例。",
+        "problem_solved": "让开发者可用点选提示，从预训练三维高斯模型中分割目标、聚类并渲染结果。",
+        "who_should_care": "做三维视觉、三维分割或高斯泼溅研究的开发者。",
+        "use_cases": [
+          "点选提示分割三维目标",
+          "对场景做三维聚类",
+          "渲染分割后的对象或掩码"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "开放词汇分割暂只在笔记本中实现；二维预览可能与三维结果不一致；全场景聚类可能较慢。",
+        "evidence": [
+          "The official implementation of Segment Any 3D GAussians (AAAI-25)",
+          "Currently SAGA provides an interactive GUI (saga_gui.py) implemented with dearpygui and a jupyter-notebook (prompt_segmenting.ipynb).",
+          "Temporarily, open-vocabulary segmentation is only implemented in the jupyter notebook."
+        ]
+      }
+    },
+    "leavesCZY/Matisse": {
+      "category": "mobile",
+      "one_liner": "Compose 图片视频选择框架",
+      "intro": {
+        "one_liner": "安卓媒体选择框架",
+        "what_it_is": "这是一个基于 Jetpack Compose、使用 Kotlin 编写的 Android 图片和视频选择框架，提供媒体选择、拍照、主题定制和图片加载接入能力。",
+        "problem_solved": "它用于简化 Android 应用中的图片和视频选择，处理系统版本兼容、权限申请、拍照策略、媒体类型限制和界面定制等问题。",
+        "who_should_care": "使用 Kotlin 和 Jetpack Compose 开发 Android 应用、需要媒体选择能力的开发者。",
+        "use_cases": [
+          "在应用中选择图片或视频",
+          "自定义媒体选择界面主题",
+          "接入自定义拍照逻辑"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "资料未提供许可证、版本状态和稳定性说明，接入前需自行核验。",
+        "evidence": [
+          "An Android image and video picker framework built with Jetpack Compose.",
+          "一个基于 Jetpack Compose 实现的 Android 图片和视频选择框架",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "whylabs/langkit": {
+      "category": "ai-model",
+      "one_liner": "大模型监控与安全工具包",
+      "intro": {
+        "one_liner": "语言模型监控工具包",
+        "what_it_is": "LangKit 是开源文本指标工具包，用于监控语言模型，从输入和输出文本中提取信号，并兼容 whylogs 数据日志库。",
+        "problem_solved": "它解决语言模型上线后文本行为难观测的问题，帮助识别质量、相关性、安全隐私、情绪与毒性等风险。",
+        "who_should_care": "构建或运维语言模型应用的开发者与团队。",
+        "use_cases": [
+          "记录提示词与回复指标",
+          "检测注入与越狱风险",
+          "分析文本质量与情绪"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，语言模型可观测性与安全监控需求持续存在。",
+        "risk_notes": "主要语言为 Jupyter Notebook；部分指标依赖外部模型或平台，集成成本需评估。",
+        "evidence": [
+          "LangKit is an open-source text metrics toolkit for monitoring language models.",
+          "It offers an array of methods for extracting relevant signals from the input and/or output text, which are compatible with the open-source data logging library whylogs.",
+          "Productionizing language models, including LLMs, comes with a range of risks due to the infinite amount of input combinations, which can elicit an infinite amount of outputs."
+        ]
+      }
+    },
+    "slurm-personal/school-dev-k8s": {
+      "category": "other",
+      "one_liner": "信息不足的校园开发项目",
+      "intro": {
+        "one_liner": "Kubernetes 教学练习仓库",
+        "what_it_is": "一个用于课程练习的仓库，内容围绕在指定环境操作、派生项目并克隆代码。",
+        "problem_solved": "为学员提供统一的练习入口和操作步骤，便于完成课程中的仓库派生与克隆任务。",
+        "who_should_care": "参加相关课程、需要按步骤完成练习的开发者。",
+        "use_cases": [
+          "课程环境登录练习",
+          "派生指定练习仓库",
+          "克隆派生仓库到本地"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜。",
+        "risk_notes": "资料主要是课程操作说明，缺少安装、功能和维护状态描述；主要语言为 Mustache，但用途不明。",
+        "evidence": [
+          "Все работы проводим на sbox.slurm.io:",
+          "Форк проекта",
+          "Последним шагом клонируем получившийся форк к себе на админбокс."
+        ]
+      }
+    },
+    "trailhq/Trail-Code": {
+      "category": "ai-agent",
+      "one_liner": "增强编码智能体代码上下文",
+      "intro": {
+        "one_liner": "编码智能体上下文层",
+        "what_it_is": "一个本地命令行工具，为编码智能体建立代码图谱，并保存团队从会话中沉淀的经验。",
+        "problem_solved": "帮助智能体快速定位相关代码，复用团队已形成的决策与经验，减少重复探索。",
+        "who_should_care": "使用 Claude Code、Cursor、Codex 等智能体协作开发的代码团队。",
+        "use_cases": [
+          "让智能体快速找到相关文件",
+          "复用团队决策与排错经验",
+          "提交前检查冲突和既有约定"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 263 星，且本周上过一次日榜。",
+        "risk_notes": "未关闭 Issue 有 288 个；资料提到遥测说明，但具体收集范围 unknown。",
+        "evidence": [
+          "The self-learning context layer for coding agents.",
+          "Trail-code gives Claude Code, Cursor, Codex and other coding agents a map of your code, and what your team has learned about it.",
+          "Turbocharge Claude Code, Cursor, Codex, Gemini & every coding agent: faster, cheaper, with contextual understanding specific to your codebase."
+        ]
+      }
+    },
+    "MaxMiksa/Autonomous-Company": {
+      "category": "ai-agent",
+      "one_liner": "本机全天候自治公司系统",
+      "intro": {
+        "one_liner": "本地自治 AI 公司框架",
+        "what_it_is": "一个用 Python 编写、可在个人电脑持续运行的 AI 公司框架，提供 14 个 AI 角色定义和本地面板，围绕目标、权限与预算组织多智能体工作。",
+        "problem_solved": "把产品调研、决策、编码等工作放进可循环、可恢复的自治流程，并用共享工作摘要、权限和预算约束减少人工逐轮推动。",
+        "who_should_care": "想在本机试验多智能体协作、自动化产品探索和持续工作流的开发者。",
+        "use_cases": [
+          "让多个角色协作调研产品",
+          "按目标持续生成与改进代码",
+          "用本地面板查看工作记录"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，破千时已有 3,128 星。",
+        "risk_notes": "持续运行依赖服务、模型可用性和工具授权；部署、发布、营销也受可用工具与授权限制。旧安装需按一次性迁移指南处理。",
+        "evidence": [
+          "An autonomous company working 24/7 on your own PC - Windows/Linux/macOS.",
+          "Powered by **Agentic Workflows**, this project provides 14 **AI agent role definitions**, each drawing on an expert's approach to its domain.",
+          "The team can research products, make decisions, and write code autonomously within human-configured goals, permissions, and budgets."
+        ]
+      }
+    },
+    "aklivity/zilla": {
+      "category": "dev-tools",
+      "one_liner": "多协议事件与智能体网关",
+      "intro": {
+        "one_liner": "多协议实时数据网关",
+        "what_it_is": "Zilla 是面向人工智能、接口和实时数据的多协议网关，用声明式配置连接模型、工具、接口与事件流。",
+        "problem_solved": "它把协议转换、路由、安全和可观测性集中到网关，减少为不同后端编写桥接服务的工作。",
+        "who_should_care": "需要接入模型、智能体工具或 Kafka 实时数据的开发者与平台团队。",
+        "use_cases": [
+          "统一接入多家模型服务",
+          "为智能体治理 MCP 工具",
+          "把 Kafka 暴露为接口"
+        ],
+        "alternatives": "以单一运行时组合多种协议绑定，强调网关侧治理，减少应用侧包装服务。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时有一千零三十七星。",
+        "risk_notes": "部分能力标注为 Zilla Plus 扩展；示例依赖外部模型密钥和配套服务。",
+        "evidence": [
+          "Zilla is a streaming-native, multi-protocol gateway for AI, APIs, and real-time data.",
+          "Zilla handles protocol translation, routing, security, and observability at the edge, without requiring separate proxy services or custom integration code for supported backends.",
+          "🦎 A high-performance, multi-protocol gateway for Apache Kafka and AI. Securely connect applications, APIs, agents, and devices to real-time data through Kafka, HTTP, SSE, MQTT, gRPC, and MCP."
+        ]
+      }
+    },
+    "jiwoochris/artex-global": {
+      "category": "security",
+      "one_liner": "韩文版 AI 自主渗透框架",
+      "intro": {
+        "one_liner": "多语言自主渗透测试框架",
+        "what_it_is": "这是一个由多个大模型智能体驱动的自主渗透测试系统，包含 Go 后端和 Next.js 前端，支持多语言界面与报告输出。",
+        "problem_solved": "它把目标拆解、工具执行、资产与漏洞整理自动化，并让非中文用户能阅读发现、摘要、报告和对话结果。",
+        "who_should_care": "蓝队、检测工程人员，以及做授权环境安全研究的学习者。",
+        "use_cases": [
+          "本地隔离环境验证攻击链",
+          "生成检测特征与加固清单",
+          "团队共享多语言测试报告"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上过一次日榜，破千时星数较高。",
+        "risk_notes": "仅限自有或书面授权环境使用，误用风险高；上游仓库当前不可达；采用 AGPL-3.0，需留意使用限制与免责声明。",
+        "evidence": [
+          "An autonomous penetration-testing system driven by LLM multi-agents (Go backend + Next.js frontend)",
+          "This repository is published for use only within authorized environments, and only to build defensive and detection capabilities.",
+          "upstream repository currently unreachable, checked 2026-10"
+        ]
+      }
+    },
+    "itskonrad/tinymnist": {
+      "category": "ai-model",
+      "one_liner": "极简 MNIST 实现",
+      "intro": {
+        "one_liner": "极简 C 手写数字网络",
+        "what_it_is": "一个用纯 C 标准库实现的约 250 行神经网络，用于训练并分类手写数字。",
+        "problem_solved": "用无外部依赖的小代码展示手写数字分类训练流程，便于直接编译运行和改参数。",
+        "who_should_care": "想读小型神经网络实现、学习 C 与训练流程的开发者。",
+        "use_cases": [
+          "学习神经网络训练实现",
+          "快速跑通手写数字分类",
+          "修改参数做小型实验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜。",
+        "risk_notes": "训练集划分与结果来自自述；代码规模很小，适用范围有限。",
+        "evidence": [
+          "**tinymnist** is a minimal neural network in pure C that learns to classify handwritten [MNIST](https://huggingface.co/datasets/ylecun/mnist) digits. ~250 lines, no dependencies beyond the C standard library.",
+          "The MNIST training set is included in `data/`.",
+          "80% of the training set is used for training, the remaining 20% for testing."
+        ]
+      }
+    },
+    "dashdogy/MFG-Unlocker": {
+      "category": "game",
+      "one_liner": "解锁多帧生成控制",
+      "intro": {
+        "one_liner": "多帧生成控制工具",
+        "what_it_is": "这是一个面向 Windows x64 游戏的 C++ 修改工具，用一个动态链接库提供多帧生成控制菜单，涉及 DLSS 与 XeSS 相关功能。",
+        "problem_solved": "它让玩家在游戏已集成相关帧生成能力时，调整倍率、动态目标、预设、帧率上限等选项，并集中管理部分菜单控制。",
+        "who_should_care": "使用支持帧生成游戏的 Windows 玩家，以及关注显卡图形功能调校的开发者。",
+        "use_cases": [
+          "调整游戏多帧生成倍率",
+          "设置动态帧率目标",
+          "切换超分辨率预设"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 158 星，并曾有一天进入日榜。",
+        "risk_notes": "功能被描述为实验性；可用模式受显卡、运行时和逐游戏上限影响；安装需替换代理动态链接库文件名，可能影响游戏加载。",
+        "evidence": [
+          "Experimental DLSS Multi Frame Generation controls for any supported MFG title on RTX 40 series GPUs",
+          "Multi Frame Generation for Windows x64 games, in one DLL",
+          "Available modes depend on the GPU, the active runtime and NVIDIA's per game MFG override maximum."
+        ]
+      }
+    },
+    "matthiasjost/dotnet-content-creators": {
+      "category": "learning-resource",
+      "one_liner": ".NET 创作者清单",
+      "intro": {
+        "one_liner": ".NET 创作者清单",
+        "what_it_is": "这是一个按国家整理的 .NET 内容创作者清单，收录博客、视频、课程、书籍和教程平台等英文内容渠道。",
+        "problem_solved": "帮助开发者集中发现 .NET 相关创作者和频道，并按国家、标签与活跃渠道浏览。",
+        "who_should_care": "想系统关注 .NET 英文内容的开发者、学习者和社区运营者。",
+        "use_cases": [
+          "查找 .NET 技术博客",
+          "订阅视频和播客频道",
+          "按主题寻找教程作者"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "维护投入已减少，多数条目来自 2022 或 2023；只收录英文内容，非英语创作者覆盖有限。",
+        "evidence": [
+          "⚡A list of .NET content creators",
+          "The repo accepts new updates, but the amount of effort the maintainer puts into it has been reduced.",
+          "We only list creators and channels with English content."
+        ]
+      }
+    }
+  }
+}

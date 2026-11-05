@@ -1,1 +1,950 @@
-{"date":"2026-09-10","headline":"AI Agent 与形式化证明同日走热","points":["39 个破千项目中，AI Agent 有 13 个，开发工具 6 个，AI 模型 5 个。","openai/NavierStokesAndEuler 以 756 领跑，聚焦流体方程证明的 Lean 证书。","TypeScript 12 个、Python 11 个；交易与轨迹预测项目也进入涨幅前列。"],"items":{"openai/NavierStokesAndEuler":{"category":"learning-resource","one_liner":"流体方程证明的 Lean 证书"},"griddaimyorun/Metatraider-Traiding-Bot":{"category":"data-finance","one_liner":"MT5 算法交易机器人框架"},"VectorMareSpell21/AutoCad-Windows":{"category":"desktop-system","one_liner":"AutoCAD 激活与排障工具"},"alsk1992/CloddsBot":{"category":"ai-agent","one_liner":"跨市场自主 AI 交易智能体"},"Petrichor625/BATraj-Behavior-aware-Model":{"category":"ai-model","one_liner":"行为感知轨迹预测模型"},"OnyxConductorSnips/Discord-Raid-Tools":{"category":"automation","one_liner":"Discord 服务器自动化工具"},"aminkheddache-dotcom/Ptero":{"category":"ai-model","one_liner":"免费多模型 AI 聊天平台"},"coldteadotai/pr-lens":{"category":"dev-tools","one_liner":"PR 架构数据流可视化评审"},"brayonpi/hexstellar":{"category":"ai-agent","one_liner":"把智能体变计算研究员"},"NxcoreAI/EverRoom":{"category":"ai-agent","one_liner":"记住项目决策的工作台"},"Mininglamp-OSS/octo-web":{"category":"ai-agent","one_liner":"开放工作区网页桌面客户端"},"LodyAI/Lody":{"category":"ai-agent","one_liner":"团队共享编码智能体平台"},"boyang-hu/website-rebuild-skill":{"category":"ai-agent","one_liner":"复刻网站的智能体技能"},"HanyuanWang/LiveStream-Agent-Studio":{"category":"ai-agent","one_liner":"抖音直播电商智能体工作台"},"anthropics/fermats-last-theorem":{"category":"learning-resource","one_liner":"费马大定理形式化项目"},"YouMind-OpenLab/ai-image-prompts-skill":{"category":"content-media","one_liner":"万条 AI 绘图提示词库"},"Muuuun/luxas":{"category":"ai-agent","one_liner":"自主研究并成稿的同事"},"coji/natural-japanese":{"category":"ai-agent","one_liner":"商务日文润色智能体技能"},"ZihangDong/toolknit-desktop":{"category":"desktop-system","one_liner":"多媒体与 PDF 桌面工具箱"},"HmnDev-Tech/shevery":{"category":"mobile","one_liner":"现代化 Android 权限管理器"},"FutureisinPast/antigravity-conversation-fix":{"category":"dev-tools","one_liner":"修复会话历史缺失乱序"},"lishuangqiang/AI-Meeting":{"category":"ai-agent","one_liner":"Spring AI 会议面试后端"},"lillian039/ELF":{"category":"other","one_liner":"用途不明的 Python 项目"},"Gsync/jobsync":{"category":"ai-agent","one_liner":"自托管求职追踪 AI 助手"},"AlmanacCode/codealmanac":{"category":"dev-tools","one_liner":"给编码智能体的代码库维基"},"FullControlXYZ/fullcontrol":{"category":"hardware-iot","one_liner":"Python 工具路径设计库"},"jezweb/claude-skills":{"category":"ai-agent","one_liner":"Claude Code 全栈技能集"},"bytecodealliance/jco":{"category":"dev-tools","one_liner":"WebAssembly 组件 JS 工具链"},"nellimonix/warp-config-generator-vercel":{"category":"dev-tools","one_liner":"WARP 多平台配置生成器"},"ViewFaceCore/ViewFaceCore":{"category":"ai-model","one_liner":"C# 离线人脸识别库"},"Ozark-Connect/NetworkOptimizer":{"category":"security","one_liner":"UniFi 网络优化审计工具"},"oddlama/nix-topology":{"category":"dev-tools","one_liner":"NixOS 配置生成拓扑图"},"metainternal/llama-cookbook":{"category":"learning-resource","one_liner":"Llama 开发实战指南"},"supertone-oss-archive/supertonic":{"category":"ai-model","one_liner":"端上多语言极速语音合成"},"mnfst/llm-gateway":{"category":"ai-agent","one_liner":"连接智能体与模型供应商"},"AzizKpln/Gokboru_Intel":{"category":"security","one_liner":"手机号信息收集工具"},"Dryxio/reagent":{"category":"security","one_liner":"AI 重建验证编译代码"},"Minglink/dsh-infinite-gen-4":{"category":"security","one_liner":"DeepSeek 红队越狱测试集"},"FatihMakes/Mark-LIII":{"category":"ai-model","one_liner":"可操控电脑的新模型"}}}
+{
+  "date": "2026-09-10",
+  "headline": "AI Agent 与形式化证明同日走热",
+  "points": [
+    "39 个破千项目中，AI Agent 有 13 个，开发工具 6 个，AI 模型 5 个。",
+    "openai/NavierStokesAndEuler 以 756 领跑，聚焦流体方程证明的 Lean 证书。",
+    "TypeScript 12 个、Python 11 个；交易与轨迹预测项目也进入涨幅前列。"
+  ],
+  "items": {
+    "openai/NavierStokesAndEuler": {
+      "category": "learning-resource",
+      "one_liner": "流体方程证明的 Lean 证书",
+      "intro": {
+        "one_liner": "Navier–Stokes 与 Euler 方程有限时间爆破的 Lean 形式化证明",
+        "what_it_is": "OpenAI 发布的 Lean 4 形式化证明仓库，包含 Navier–Stokes 方程与 Euler 方程有限时间爆破结果的机器可验证证书，并附有对应论文与博客链接。",
+        "problem_solved": "为 Navier–Stokes 方程在 ℝ³ 与环面上的解爆破结果，以及 Euler 方程光滑紧支初值在有限时间内产生奇点的结果，提供可被独立检查的形式化证明。",
+        "who_should_care": "偏微分方程与流体力学研究者、形式化数学（Lean/Mathlib）社区，以及关注 Navier–Stokes 千禧年问题进展的读者。",
+        "use_cases": [
+          "用 Lean 4 与 Mathlib 独立复核论文中的爆破结论",
+          "作为形式化分析与 PDE 交叉研究的参考案例",
+          "通过 Comparator 对形式化证明进行独立检查"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：涉及 Navier–Stokes 千禧年问题，且以 Lean 形式化证书形式发布，短期内关注度集中。",
+        "risk_notes": "README 中的结论需以形式化构建与独立检查结果为准；仓库创建时间较新，长期维护情况未知。",
+        "evidence": [
+          "This repository contains Lean 4 formalizations of the results presented in “Finite time blowup for Navier–Stokes” and “Finite time blowup for the Euler equation” by OpenAI.",
+          "These are alternatives (C) “Breakdown of Navier–Stokes solutions on ℝ³” and (D) “Breakdown of Navier–Stokes Solutions on ℝ³/ℤ³” in the Clay Mathematics Institute’s official problem description",
+          "The project uses Lean 4.34.0-rc2, Mathlib, and Lake."
+        ]
+      }
+    },
+    "griddaimyorun/Metatraider-Traiding-Bot": {
+      "category": "data-finance",
+      "one_liner": "MT5 算法交易机器人框架",
+      "intro": {
+        "one_liner": "MT5 自动交易框架",
+        "what_it_is": "一个面向 MetaTrader 5 的算法交易机器人框架，提供自动执行、实时行情接入、风险管理和回测基础设施。",
+        "problem_solved": "帮助把系统化交易策略接入 MT5，集中处理自动下单、行情数据、风险控制与策略回测。",
+        "who_should_care": "使用 MT5 和 Python 做量化策略的开发者、交易系统维护者。",
+        "use_cases": [
+          "运行 MT5 自动交易策略",
+          "接入实时行情并执行下单",
+          "回测系统化交易策略"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜 1 天，破千时达 1,311 星。",
+        "risk_notes": "缺少 README，功能细节、部署要求、许可证和维护状态均无法确认；创建日期较新，结论置信度较低。",
+        "evidence": [
+          "Production-ready MetaTrader 5 (MT5) algorithmic trading bot framework.",
+          "Features automated execution, real-time market data integration via Python API, risk management, and backtesting infrastructure for systematic strategies.",
+          "破千时的 Star 数：1311"
+        ]
+      }
+    },
+    "VectorMareSpell21/AutoCad-Windows": {
+      "category": "desktop-system",
+      "one_liner": "AutoCAD 激活与排障工具",
+      "intro": {
+        "one_liner": "AutoCAD 激活排障资料",
+        "what_it_is": "仓库描述为 AutoCAD 激活指南与许可证排障工具，涉及安装错误、产品密钥注册和 Autodesk 许可管理器设置。",
+        "problem_solved": "面向 AutoCAD 安装、激活和许可配置中的常见报错，提供说明与处理方案。",
+        "who_should_care": "遇到 AutoCAD 安装或许可配置问题的 Windows 用户。",
+        "use_cases": [
+          "排查安装错误",
+          "处理产品密钥注册",
+          "配置许可管理器"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾上日榜，星数破千但缺少说明材料。",
+        "risk_notes": "标签含 crack、free、download 等词，用途与授权合规性需谨慎核实；无说明文档，成熟度难判断。",
+        "evidence": [
+          "AutoCAD Activation Guide & License Troubleshooting Tools. Solutions for installation errors, product key registration, and Autodesk license manager setup.",
+          "autocad-for-windows-crack、autocad-for-windows-download、autocad-for-windows-free",
+          "破千时的 Star 数：1225；本周上日榜天数：1"
+        ]
+      }
+    },
+    "alsk1992/CloddsBot": {
+      "category": "ai-agent",
+      "one_liner": "跨市场自主 AI 交易智能体",
+      "intro": {
+        "one_liner": "自托管 AI 交易终端，覆盖预测市场与加密资产",
+        "what_it_is": "CloddsBot 是一个基于 Claude 的开源 AI 交易代理，可在本机运行，通过 21 个消息平台以自然语言对话方式操作预测市场、加密现货、永续合约、Solana 与 EVM 链上 DEX 以及 Bittensor 挖矿。",
+        "problem_solved": "把分散在多个预测市场、期货交易所和链上 DEX 的行情扫描、套利检测、下单执行与风险管理整合到一个对话式终端中，减少人工跨平台操作。",
+        "who_should_care": "具备一定加密交易经验、愿意自行托管并配置 API 密钥的个人交易者，以及想研究 AI agent 与交易系统结合的开发者。",
+        "use_cases": [
+          "在 Polymarket、Kalshi 等预测市场扫描并执行 BTC/ETH 短期二元期权策略",
+          "跨交易所套利检测与自动下单",
+          "通过 Telegram、Discord 等聊天平台远程监控持仓与风险",
+          "使用内置回测与风险引擎验证交易策略"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：AI agent 与加密交易结合是当前热门叙事，但项目自述仅用 12 天开发，成熟度有待验证。",
+        "risk_notes": "涉及真实资金交易与高杠杆合约，风险极高；README 含代币合约地址与代币发行内容，需警惕；项目创建时间短、开发周期仅 12 天，长期维护情况未知；npm 旧包已停止维护，需从 GitHub Release 安装。",
+        "evidence": [
+          "Open Source AI trading agent that operates autonomously across 1000+ markets",
+          "Developed in 12 days as a fully-featured autonomous trading agent",
+          "The old `clodds` package on npmjs.com is no longer maintained"
+        ]
+      }
+    },
+    "Petrichor625/BATraj-Behavior-aware-Model": {
+      "category": "ai-model",
+      "one_liner": "行为感知轨迹预测模型",
+      "intro": {
+        "one_liner": "自动驾驶轨迹预测实现",
+        "what_it_is": "这是 AAAI 2024 论文 BAT 的官方实现，提供面向自动驾驶的行为感知、类人轨迹预测框架代码。",
+        "problem_solved": "用于训练和评估自动驾驶场景中的轨迹预测模型，帮助复现论文方法及相关实验流程。",
+        "who_should_care": "自动驾驶、轨迹预测研究者，以及复现 AAAI 2024 相关论文的开发者。",
+        "use_cases": [
+          "复现轨迹预测论文实验",
+          "训练行为感知预测模型",
+          "评估已有模型检查点"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时星数达 1,110。",
+        "risk_notes": "当前代码是重建版本，并非论文原始代码；实现和结果可能有细微差异。训练评估需手动改源码路径与检查点配置。",
+        "evidence": [
+          "Official implementation of **BAT: Behavior-Aware Human-Like Trajectory Prediction for Autonomous Driving**",
+          "Due to the loss of an earlier internal code version, this repository is a carefully reconstructed implementation of the original project.",
+          "Since this repository is a reconstructed version rather than the exact original code used in the paper, minor implementation and performance differences may exist."
+        ]
+      }
+    },
+    "OnyxConductorSnips/Discord-Raid-Tools": {
+      "category": "automation",
+      "one_liner": "Discord 服务器自动化工具",
+      "intro": {
+        "one_liner": "Discord 自动化工具",
+        "what_it_is": "这是一个面向 Discord 服务器的自动化框架与 webhook 管理工具，描述中称用于安全审计、压力测试和服务器管理。",
+        "problem_solved": "它声称解决服务器自动化管理、webhook 管理，以及安全审计和压力测试需求。",
+        "who_should_care": "关注 Discord 服务器管理与安全审计的开发者。",
+        "use_cases": [
+          "服务器自动化管理",
+          "webhook 管理",
+          "安全审计与压力测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜。",
+        "risk_notes": "话题包含 raid、nuke 等高风险词；无说明资料，成熟度与许可证不明；创建日期较新。",
+        "evidence": [
+          "Advanced Discord Server Automation Framework & Webhook Management Tool. Designed for security auditing, stress testing, and high-performance server administration.",
+          "破千时的 Star 数：1009",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "aminkheddache-dotcom/Ptero": {
+      "category": "ai-model",
+      "one_liner": "免费多模型 AI 聊天平台",
+      "intro": {
+        "one_liner": "免费多模型聊天平台",
+        "what_it_is": "Ptero 是一个开源 AI 聊天平台，提供统一界面访问多种语言模型，并支持项目整理、文件管理和 WordPress 集成。",
+        "problem_solved": "它让用户无需注册即可切换和比较多个模型，减少尝试不同 AI 聊天服务的门槛，并帮助按项目整理对话。",
+        "who_should_care": "想免费试用多模型、比较回答效果的开发者、学生和创作者。",
+        "use_cases": [
+          "切换模型比较回答",
+          "按项目整理对话",
+          "在 WordPress 页面嵌入聊天"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 102 星，并曾有一天登上日榜。",
+        "risk_notes": "许可证信息不一致：项目数据为 Apache-2.0，资料写 GPL v2 or later。资料称项目聊天会存到服务器，与隐私预期需留意。",
+        "evidence": [
+          "AI Chat with powerful models for free",
+          "No signup is required, and it is designed for developers, students, and creators who value privacy and simplicity.",
+          "Ptero is licensed under the **GPL v2 or later**."
+        ]
+      }
+    },
+    "coldteadotai/pr-lens": {
+      "category": "dev-tools",
+      "one_liner": "PR 架构数据流可视化评审",
+      "intro": {
+        "one_liner": "可视化理解代码变更",
+        "what_it_is": "PR Lens 把拉取请求画成动态架构图和数据流讲解，并以评论形式放回拉取请求中，也支持命令行和编码智能体技能。",
+        "problem_solved": "帮助开发者在读代码前快速理解变更影响范围、组件调用和数据流，降低大型或陌生代码库的阅读负担。",
+        "who_should_care": "需要评审大型拉取请求、维护复杂系统或使用编码智能体理解代码库的开发者。",
+        "use_cases": [
+          "在拉取请求里查看变更架构图",
+          "按步骤播放数据流讲解",
+          "让编码智能体结合画布解释代码"
+        ],
+        "alternatives": "自研渲染器，强调动态图、变更配色、数据流载荷和交互画布，而非静态图。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 58 星，曾有一天进入日榜。",
+        "risk_notes": "创建于 2026 年，时间较新；未关闭问题 5 个；README 提到多个托管平台和在线画布，实际稳定性未知。",
+        "evidence": [
+          "Review code 100X faster. Lens draws every PR as animated architecture and data-flow walkthroughs, inside the pull request itself. Use it as a GitHub App, GitHub Action, CLI, or a skill for your coding agent",
+          "PR Lens draws every pull request as animated architecture and data-flow diagrams, posted as a comment inside the pull request itself.",
+          "Not Mermaid, better We built a custom renderer from scratch. It draws rich animated visuals, reduces cognitive overload, represents code additions, removals and changes and still works for representing very large systems"
+        ]
+      }
+    },
+    "brayonpi/hexstellar": {
+      "category": "ai-agent",
+      "one_liner": "把智能体变计算研究员",
+      "intro": {
+        "one_liner": "智能体可验证计算平台",
+        "what_it_is": "HexStellar 是面向 AI 智能体的 Python 命令行与接口工具，把结构化优化、科学计算和决策问题交给 Cortex 执行，并返回结果、成本、确定性标签与验证凭据。",
+        "problem_solved": "它解决语言模型擅长理解意图却不擅长可靠执行大规模搜索的问题，让智能体把可验证的计算任务交给受支持的合约与托管服务。",
+        "who_should_care": "开发智能体、优化求解、科学计算或决策系统的 Python 开发者。",
+        "use_cases": [
+          "让智能体提交优化问题",
+          "验证结构化计算结果",
+          "通过命令行探索能力目录"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 102 星，曾有一天进入日榜。",
+        "risk_notes": "公开仓库与安装包发布状态不一致；企业运行时需许可和保密协议，且无公开下载；引擎封闭，能力边界需依赖命令查询。",
+        "evidence": [
+          "Turn any AI agent into a computational researcher. HexStellar Cortex delivers software-accelerated optimization, quantum computing, scientific computing, decision intelligence, and verifiable execution through a Python CLI and API—with certainty labels, verification receipts, examples, and a free sandbox.",
+          "The engine remains sealed. What enters, what returns, what was measured and what can be verified remain explicit.",
+          "Until [`pypi.org/project/hexstellar`](https://pypi.org/project/hexstellar/) reports a `1.x` release, install this source with `python -m pip install \"git+https://github.com/brayonpi/hexstellar.git\"`"
+        ]
+      }
+    },
+    "NxcoreAI/EverRoom": {
+      "category": "ai-agent",
+      "one_liner": "记住项目决策的工作台",
+      "intro": {
+        "one_liner": "本地优先上下文工作台",
+        "what_it_is": "一个本地优先的个人上下文工作台，把文件、对话、记忆和智能体连接在项目或主题空间里，支持写作、决策与任务推进。",
+        "problem_solved": "它解决智能体缺少可靠上下文的问题：把资料、来源、决策和记忆组织起来，让生成结果可追溯、可审阅、可修正。",
+        "who_should_care": "需要管理项目资料、长期记忆和智能体协作的开发者、研究者与知识工作者。",
+        "use_cases": [
+          "按项目整理资料与决策",
+          "让智能体基于上下文写作",
+          "追踪来源并审阅文档修改"
+        ],
+        "alternatives": "强调证据账本、上下文房间和可审阅的智能体操作，而非单纯聊天或检索界面。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 22 星，曾有一天进入日榜。",
+        "risk_notes": "仍在积极开发，接口、存储结构和智能体契约可能变化；当前开发目标为 macOS；部分功能需要可选本地服务或模型凭据。",
+        "evidence": [
+          "A local-first personal context workspace for your files, conversations, memory, and AI agents.",
+          "Everroom is under active development. macOS is the current development target. APIs, storage schemas, and agent contracts may change while the first complete local workflow is being finished.",
+          "Some features require optional local services or model credentials; the desktop can still start with the isolated development runtime."
+        ]
+      }
+    },
+    "Mininglamp-OSS/octo-web": {
+      "category": "ai-agent",
+      "one_liner": "开放工作区网页桌面客户端",
+      "intro": {
+        "one_liner": "OCTO 的网页与桌面客户端",
+        "what_it_is": "这是 OCTO 消息平台的 TypeScript、React 前端，同一套代码提供浏览器版和 Electron 桌面版，并内置面向智能体的会话界面。",
+        "problem_solved": "它让网页和桌面端共用同一套界面与交互，减少体验分叉，并为人与智能体的消息、工具调用和状态展示提供统一入口。",
+        "who_should_care": "关注即时通信、多端客户端和智能体交互的前端开发者。",
+        "use_cases": [
+          "搭建浏览器聊天界面",
+          "打包跨平台桌面客户端",
+          "展示智能体会话与工具调用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "创建日期较新；需依赖后端服务；桌面端涉及 Electron 打包与原生能力。",
+        "evidence": [
+          "Web & desktop (Electron) client for the OCTO open workplace — one React + TypeScript codebase shipping browser and PC surfaces, with first-class AI agent UX.",
+          "`octo-web` is the TypeScript / React front-end that talks to [`octo-server`](https://github.com/Mininglamp-OSS/octo-server) over REST + WebSocket.",
+          "The same codebase ships two ways: as a browser build (the canonical OCTO chat surface), and as an Electron-packaged desktop PC client."
+        ]
+      }
+    },
+    "LodyAI/Lody": {
+      "category": "ai-agent",
+      "one_liner": "团队共享编码智能体平台",
+      "intro": {
+        "one_liner": "团队共享编程智能体工作台",
+        "what_it_is": "Lody 是面向团队的共享工作区，可连接已有机器和兼容 ACP 的编程智能体，并从桌面、手机、网页或命令行分派工作。",
+        "problem_solved": "它让智能体会话、运行状态、文件和代码改动可被团队共同查看与接续，减少截图和日志转贴，也支持并行会话隔离。",
+        "who_should_care": "需要多人协作使用编程智能体、跨设备跟进任务的开发团队。",
+        "use_cases": [
+          "团队共同查看并接续智能体会话",
+          "从手机审批权限并跟进改动",
+          "让一个智能体协调多个并行任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅新增 23 星，且只上过一天日榜。",
+        "risk_notes": "完整本地优先支持仍在推进中；端到端加密库尚未接入产品；未关闭议题有 259 个。",
+        "evidence": [
+          "A shared workspace for the coding agents your team already uses.",
+          "Connect any machine and bring any coding agent through ACP. Share conversations with your team and dispatch work from desktop, mobile, web, or CLI.",
+          "Lody is still moving toward full local-first support."
+        ]
+      }
+    },
+    "boyang-hu/website-rebuild-skill": {
+      "category": "ai-agent",
+      "one_liner": "复刻网站的智能体技能",
+      "intro": {
+        "one_liner": "让 AI agent 逐行复刻网站并自动验收",
+        "what_it_is": "一个遵循 Agent Skills 开放规范的 skill 包，给 agent 一个网址后，它会将整站抓取为只读镜像，从压缩代码中逐行逆向还原，再通过控制台、网络、DOM、几何与逐像素五层自动比对来验证复刻结果。",
+        "problem_solved": "解决“复刻网站只能靠肉眼判断像不像、改完不知道有没有改坏”的问题，把源站实现当作规格书，用自动化验收门证明复刻侧与源站行为一致。",
+        "who_should_care": "需要研究或复刻前端实现的前端工程师、WebGL/创意开发学习者，以及使用 Claude Code、Codex 等支持 skills 的 agent 的开发者。",
+        "use_cases": [
+          "学习获奖 WebGL/GSAP 站点的实现细节并产出可读源码工程",
+          "对已消失但有 Wayback 存档的站点做抢救式镜像与复刻",
+          "在 agent 中把压缩混淆的前端产物还原为模块化、可维护的工程"
+        ],
+        "alternatives": "README 明确对比 wget、HTTrack、SingleFile 等扒站工具：那些工具回答“它长什么样”，本项目回答“它是怎么做到的”，产出模块树、可溯源行号与自动验收报告。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：项目创建于 2026-08，依赖 agent skills 生态热度，README 中大量实测数据为作者自述、尚无第三方验证。",
+        "risk_notes": "许可证为 MIT；但复刻他人网站涉及版权，README 自述产出默认私有、noindex、不部署，法务决定权归用户；项目创建时间很短（2026-08-11），维护历史有限；README 中的性能与一致性数字均为作者自述，未经独立核实。",
+        "evidence": [
+          "给一个网址，让你的 AI agent 把那个网站逐行复刻出来，并且能证明复刻得对。",
+          "它不是\"做一个看起来很像的页面\"。它把源站的实现当作规格书：先把整站抓成只读证据，再从压缩过的代码里逐行还原逻辑，最后用一整套自动验收门证明\"复刻侧和源站在做同一件事\"——包括逐像素比对。",
+          "区别在于：扒站回答\"它长什么样\"，复刻回答\"它是怎么做到的\"。"
+        ]
+      }
+    },
+    "HanyuanWang/LiveStream-Agent-Studio": {
+      "category": "ai-agent",
+      "one_liner": "抖音直播电商智能体工作台",
+      "intro": {
+        "one_liner": "直播电商本地智能工作台",
+        "what_it_is": "这是面向直播电商团队的 Windows 本地优先 AI 工作台，把主播发现、直播拆解、复盘和短视频编导整合到统一入口。",
+        "problem_solved": "它把榜单、录屏、逐字稿、流量数据和脚本资产串成可追踪、可复用的工作流，减少多工具切换。",
+        "who_should_care": "直播运营、投放、内容和复盘团队，以及做内部研究的开发者。",
+        "use_cases": [
+          "整理候选主播并生成达人拆解",
+          "把直播录屏转成带时间戳逐字稿",
+          "对齐话术与流量数据生成复盘报告"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但仍是首个公开版本。",
+        "risk_notes": "首个公开版本仅适合体验、测试和内部研究；Beta 启动器未使用商业代码签名证书；云端转写需自备账号并产生费用。",
+        "evidence": [
+          "这是项目的首个公开版本，适合体验、测试和内部研究使用。",
+          "当前 Beta 启动器尚未使用商业代码签名证书，Windows 可能显示 SmartScreen 提示；请只运行从本仓库 Releases 下载且校验一致的文件。",
+          "云端转写会使用用户自己的阿里云账号并产生相应费用。"
+        ]
+      }
+    },
+    "anthropics/fermats-last-theorem": {
+      "category": "learning-resource",
+      "one_liner": "费马大定理形式化项目",
+      "intro": {
+        "one_liner": "费马大定理形式化证明",
+        "what_it_is": "一个用 Lean 4 和 Mathlib 编写、可由机器检查的费马大定理完整证明，并附离线网页与复核脚本。",
+        "problem_solved": "把费马大定理写成可由 Lean 内核检查的形式化命题，并提供构建、对照器和第二内核的验证路径。",
+        "who_should_care": "关注形式化数学、定理证明、Lean 与 Mathlib 的开发者和研究者。",
+        "use_cases": [
+          "复核费马大定理证明",
+          "浏览定理依赖网页",
+          "研究大型 Lean 工程"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但定位为研究产物。",
+        "risk_notes": "明确不维护、不接受贡献；复核构建对系统、内存和磁盘要求很高；网页仅在 Chromium 系浏览器测试。",
+        "evidence": [
+          "A complete, machine-checked proof of Fermat's Last Theorem in Lean 4, built on Mathlib",
+          "Research artifact. Not maintained and not accepting contributions.",
+          "The pages were machine-tested in a Chromium-based browser only"
+        ]
+      }
+    },
+    "YouMind-OpenLab/ai-image-prompts-skill": {
+      "category": "content-media",
+      "one_liner": "万条 AI 绘图提示词库",
+      "intro": {
+        "one_liner": "图像提示词检索技能",
+        "what_it_is": "这是一个给 Claude、Cursor 等助手使用的技能，可从一万多条精选图像提示词中检索、推荐并按内容改写。",
+        "problem_solved": "它减少人工翻找图像提示词的时间，用一句话描述需求即可获得匹配提示词、示例图和定制选项。",
+        "who_should_care": "常用图像生成模型、需要配图或营销视觉的开发者与内容创作者。",
+        "use_cases": [
+          "为文章寻找封面图提示词",
+          "生成社媒配图或头像提示词",
+          "按视频脚本定制缩略图提示词"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "创建日期为 2026 年 3 月 3 日，项目较新；提示词来自社区，质量与授权边界需自行核验。",
+        "evidence": [
+          "AI Image Prompts — 10,000+ curated prompts for any model. Works with Nano Banana Pro, Nano Banana 2, Seedream 5.0, GPT Image 1.5, Midjourney, DALL-E, Flux, Stable Diffusion, and more.",
+          "An AI agent skill that gives Claude, OpenClaw, Cursor, and other AI assistants the ability to intelligently search a curated library of 10,000+ image generation prompts, recommend the best matches for your use case, and even customize prompts based on your content.",
+          "MIT — prompts are community-sourced and free to use."
+        ]
+      }
+    },
+    "Muuuun/luxas": {
+      "category": "ai-agent",
+      "one_liner": "自主研究并成稿的同事",
+      "intro": {
+        "one_liner": "自主科研报告智能体",
+        "what_it_is": "Luxas 是一个用 TypeScript 编写的自主研究智能体，从研究问题出发，完成文献调研、实验、绘图、审阅并编译成 LaTeX 报告。",
+        "problem_solved": "它把长时无人值守的科研流程串成可恢复的文件流水线，并用复核、争议数字校验和完成门槛减少报告中的不可靠结论。",
+        "who_should_care": "关注智能体编排、自动实验与可追溯报告生成的开发者和研究人员。",
+        "use_cases": [
+          "从一句话生成研究报告",
+          "自动设计并运行实验",
+          "审阅图表与数字来源"
+        ],
+        "alternatives": "它是调度框架而非模型，强调文件状态、代码门槛和内置反对审阅；具体同类对比未提供。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 20 星，仅一天进入日榜。",
+        "risk_notes": "会无人值守执行 shell、Python 和 pip install，文档明确称不是沙箱；运行依赖多个模型密钥、LaTeX、Python 和 tmux，且有成本上限。",
+        "evidence": [
+          "An autonomous research agent: from a one-line question to a compiled, reviewed LaTeX report.",
+          "Luxas is a harness, not a model. Claude, DeepSeek, GLM and OpenAI models sit behind one routing layer, and the agent loop comes from [pi-mono](https://github.com/badlogic/pi-mono).",
+          "Luxas runs shell commands, Python and `pip install` unattended inside the project directory. Tool wrappers block reads of credential files and key variables, but that is defence in depth, not a sandbox."
+        ]
+      }
+    },
+    "coji/natural-japanese": {
+      "category": "ai-agent",
+      "one_liner": "商务日文润色智能体技能",
+      "intro": {
+        "one_liner": "日文工作文书润色技能",
+        "what_it_is": "这是一个面向智能体技能的日文写作与改写工具，用形态素解析找出可疑表达，再由智能体结合上下文判断是否修改。",
+        "problem_solved": "它用于改善人工智能生成的日文工作文书，让表达更自然易读，同时避免添加原文没有的事实、意见或确定性。",
+        "who_should_care": "用智能体撰写日文会议记录、报告、技术文章和说明的开发者。",
+        "use_cases": [
+          "润色日文会议记录和报告",
+          "改写技术文章与说明文",
+          "只评分自然度并给出理由"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周新增二十星，仅一天进入日榜。",
+        "risk_notes": "部分直译熟语和名词化表达约有一半会漏检；降低推理投入会增加漏检；部分安装方式仍在审核。",
+        "evidence": [
+          "仕事の日本語を、読みやすくわかりやすく書く・直すための Agent Skill です。",
+          "元の文書にない事実・数値・意見・方針は足しません。確信の度合いも変えません。",
+          "英語の言い方を1語ずつ訳した熟語や、動作を名詞にまとめた言い回しは、半分ほど見逃します。"
+        ]
+      }
+    },
+    "ZihangDong/toolknit-desktop": {
+      "category": "desktop-system",
+      "one_liner": "多媒体与 PDF 桌面工具箱",
+      "intro": {
+        "one_liner": "桌面多功能工具箱",
+        "what_it_is": "一个以 JavaScript 为主的桌面端开源工具箱，汇集音视频、图片、PDF、AI 等一站式处理能力。",
+        "problem_solved": "把 PDF、图片、音视频、文本、截图、剪贴板等零散桌面任务集中处理，减少在多个软件间切换。",
+        "who_should_care": "常处理本地文件、截图和剪贴板内容的 Windows 用户，以及需要批处理接口的开发者。",
+        "use_cases": [
+          "合并拆分或编辑 PDF",
+          "截图后标注、识别和翻译",
+          "用命令行批量处理文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周新增 11 星，仅一天进入日榜。",
+        "risk_notes": "PDF 转 Word 引擎有独立源码许可，商业与非商业复用均需书面授权；部分能力依赖按需安装的组件或模型；未关闭问题有 24 个。",
+        "evidence": [
+          "多功能工具箱 · 桌面端开源版 | 音视频/图片/PDF/AI 一站式处理",
+          "73 项桌面工具 · 12 个分类 · 77 项 CLI / MCP 能力 · 本地优先",
+          "该自研引擎有独立源码许可，商业与非商业复用均需书面授权。"
+        ]
+      }
+    },
+    "HmnDev-Tech/shevery": {
+      "category": "mobile",
+      "one_liner": "现代化 Android 权限管理器",
+      "intro": {
+        "one_liner": "现代化安卓权限管理器",
+        "what_it_is": "Shevery 是一个基于 Shizuku 的安卓权限管理分支，使用 Kotlin、Jetpack Compose 和 Material 3，并加入设备所有者、模块与兼容增强。",
+        "problem_solved": "让应用在无需传统 root shell 的情况下，以更高权限调用系统接口，并减少命令文本处理、进程创建和权限受限带来的麻烦。",
+        "who_should_care": "安卓开发者、需要 ADB 或高权限能力的进阶用户、设备所有者功能使用者。",
+        "use_cases": [
+          "为应用提供高权限系统接口调用",
+          "管理设备所有者与权限委派",
+          "安装和管理 ADB 模块"
+        ],
+        "alternatives": "相比上游 Shizuku，加入 Compose 界面、设备所有者管理、生物识别保护、实验性 Dhizuku 支持和模块目录。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 19 星且曾上日榜，但新增热度不高。",
+        "risk_notes": "属于分支项目，含实验性功能；ADB 权限受系统版本限制；隐藏接口和不同安卓版本存在兼容注意事项。",
+        "evidence": [
+          "Fork status",
+          "Dhizuku Experimental Support: Dedicated Device-Owner bridging system available inside Laboratory features.",
+          "ADB permissions are limited"
+        ]
+      }
+    },
+    "FutureisinPast/antigravity-conversation-fix": {
+      "category": "dev-tools",
+      "one_liner": "修复会话历史缺失乱序",
+      "intro": {
+        "one_liner": "修复会话索引工具",
+        "what_it_is": "一个用 Python 编写的工具，用于修复 Google Antigravity 中缺失、乱序、标题异常和工作区丢失的会话历史。",
+        "problem_solved": "当侧边栏索引损坏时，会话文件仍在磁盘但无法正常显示；它扫描会话文件并重建干净的索引。",
+        "who_should_care": "遇到会话消失、排序错乱或标题异常的 Antigravity 用户。",
+        "use_cases": [
+          "恢复侧边栏缺失会话",
+          "按日期重排会话",
+          "恢复标题与工作区"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜。",
+        "risk_notes": "需完全关闭 Antigravity 后运行；会写入应用数据库索引；创建日期较新。",
+        "evidence": [
+          "Fixes missing and unordered conversation history in Google Antigravity",
+          "When the index gets corrupted, conversations still exist on disk but don't show up in the sidebar.",
+          "This tool scans your conversation files, sorts them by date, pulls titles from brain artifacts, or creates concise titles from readable user requests, and writes a clean index back to the database."
+        ]
+      }
+    },
+    "lishuangqiang/AI-Meeting": {
+      "category": "ai-agent",
+      "one_liner": "Spring AI 会议面试后端",
+      "intro": {
+        "one_liner": "Java AI 面试后端",
+        "what_it_is": "这是基于 Spring Boot 3、Java 17 和 Spring AI 的 AI 助手后端，覆盖对话、智能体、模拟面试、语音转写与合成。",
+        "problem_solved": "它把简历出题、多轮追问、评分复盘、长会话恢复和实时语音链路整合到可本地运行、可容器部署的后端中。",
+        "who_should_care": "学习 Spring Boot AI 应用、智能体后端和面试业务实现的 Java 开发者。",
+        "use_cases": [
+          "搭建简历驱动的模拟面试服务",
+          "学习多模型对话与流式响应",
+          "研究实时语音转写后端"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾登上日榜，星数破千且有一百多次复刻。",
+        "risk_notes": "发布说明称仍保留开发期配置结构，真实密钥脱敏和公开发布前安全清理将在后续处理；商业版源码不适用开源仓库的 MIT 许可。",
+        "evidence": [
+          "基于 Spring Boot 3 + Java 17 + Spring AI + MySQL + MongoDB + Redis + SSE/WebSocket，实现 AI 对话、智能体会话、AI 模拟面试、实时语音转写、长文本语音合成等核心功能。",
+          "本仓库的代码与配套学习文档继续免费开放，代码遵循 [MIT 许可证](LICENSE)。",
+          "当前仓库仍保留开发期配置结构，真实密钥脱敏和最终公开发布前的安全清理将在后续阶段单独处理。"
+        ]
+      }
+    },
+    "lillian039/ELF": {
+      "category": "other",
+      "one_liner": "用途不明的 Python 项目",
+      "intro": {
+        "one_liner": "连续扩散语言模型实现",
+        "what_it_is": "ELF 是基于连续时间流匹配的连续扩散语言模型实现，主要提供 JAX 与 TPU 代码，也提供 PyTorch 分支。",
+        "problem_solved": "它让语言生成主要在连续嵌入空间中完成，只在最后一步映射为离散词元，便于复用图像扩散模型技术。",
+        "who_should_care": "研究扩散语言模型、文本生成与模型蒸馏的开发者和研究者。",
+        "use_cases": [
+          "复现无条件文本生成评估",
+          "测试翻译与摘要生成",
+          "研究少步蒸馏与数学推理"
+        ],
+        "alternatives": "与现有离散和连续扩散语言模型相比，它主要在连续嵌入空间中去噪，最后才离散化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾有一天登上日榜。",
+        "risk_notes": "代码写明在 TPU 上编写和测试，依赖 JAX 与 TPU；部分能力位于不同分支，且需使用预训练检查点。",
+        "evidence": [
+          "This is the official JAX implementation for the paper *ELF: Embedded Language Flows*. This code is written and tested on TPUs.",
+          "ELF is a class of continuous diffusion language models based on continuous-time Flow Matching.",
+          "ELF predominantly stays within the continuous embedding space until the final time step, where it maps to discrete tokens using a shared-weight network."
+        ]
+      }
+    },
+    "Gsync/jobsync": {
+      "category": "ai-agent",
+      "one_liner": "自托管求职追踪 AI 助手",
+      "intro": {
+        "one_liner": "自托管求职追踪助手",
+        "what_it_is": "一个自托管的开源求职申请追踪与 AI 职业助手，用 TypeScript 开发，可管理申请、简历、面试、任务和联系人，并提供 AI 简历评审与岗位匹配。",
+        "problem_solved": "把分散在表格、笔记和标签页里的求职信息集中管理，同时让简历、申请记录和 AI 分析留在自己的服务器上。",
+        "who_should_care": "重视数据隐私、正在集中投递岗位并愿意自托管的求职者。",
+        "use_cases": [
+          "记录投递状态与面试时间线",
+          "用 AI 评审简历和匹配岗位",
+          "自动发现职位并生成求职信"
+        ],
+        "alternatives": "相比普通申请追踪工具，强调自托管、本地 AI、自动职位发现与智能体接入。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，并达到一千星。",
+        "risk_notes": "从 SQLite 版本升级到 Postgres 是单向操作；自管数据库未来需支持 pgvector；加密密钥更换会导致已存密钥不可恢复。",
+        "evidence": [
+          "Self-hosted, open-source job application tracker and AI-powered career assistant.",
+          "Track every application, get AI resume reviews and job matches, and discover new openings automatically — **free, open source, and your data never leaves your server.**",
+          "**Upgrading from a SQLite release?** Read [Upgrading to Postgres](https://github.com/Gsync/jobsync/wiki/Upgrading-To-Postgres) first — the upgrade is one-way."
+        ]
+      }
+    },
+    "AlmanacCode/codealmanac": {
+      "category": "dev-tools",
+      "one_liner": "给编码智能体的代码库维基",
+      "intro": {
+        "one_liner": "代码库活文档工具",
+        "what_it_is": "CodeAlmanac 是给 AI 编码代理使用的代码库维基，用仓库内的 Markdown 记录决策、流程、约束和踩坑，并在本地索引、通过 Git 审阅。",
+        "problem_solved": "它补足代码本身难以表达的上下文，让代理和人能查询系统为何这样设计、哪些约束重要、工作流如何跨文件与服务。",
+        "who_should_care": "使用 Codex 或 Claude Code 的 macOS 开发者，以及维护复杂代码库知识的团队。",
+        "use_cases": [
+          "查询代码库背景知识",
+          "整理代理会话中的经验",
+          "维护本地维基页面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但创建时间很新。",
+        "risk_notes": "目前仅支持 macOS 与 Codex 或 Claude Code，并要求 Python 3.12+；自动任务依赖本地后台作业，生命周期代理拥有较宽的文件系统权限，需审阅改动。",
+        "evidence": [
+          "A living wiki for your codebase, maintained by AI coding agents.",
+          "The wiki is plain markdown in your repo, indexed locally, and reviewed in Git like any other code change.",
+          "Supported today: macOS with Codex or Claude Code. Requires Python 3.12+."
+        ]
+      }
+    },
+    "FullControlXYZ/fullcontrol": {
+      "category": "hardware-iot",
+      "one_liner": "Python 工具路径设计库",
+      "intro": {
+        "one_liner": "显式设计打印路径",
+        "what_it_is": "这是一个用 Python 设计、预览并导出三维打印路径与机器指令的工具，设计可写成脚本或 Jupyter notebook。",
+        "problem_solved": "它绕开传统建模、导出、切片流程，让用户直接控制打印路径及速度、温度、风扇等状态变化。",
+        "who_should_care": "适合需要自定义打印路径的研究者、三维打印实验者和数控设备玩家。",
+        "use_cases": [
+          "设计非传统三维打印路径",
+          "用在线教程快速生成指令",
+          "实验性控制打印状态变化"
+        ],
+        "alternatives": "相比传统建模切片流程，它强调显式设计路径，而非从模型自动生成每层路径。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且有一百二十四个复刻。",
+        "risk_notes": "初始版本聚焦挤出式三维打印；当前版本不面向开发者，仓库结构可能变化，代码结构说明仍待补充。",
+        "evidence": [
+          "Python version of FullControl for toolpath design (and more) - the readme below is best source of information",
+          "FullControl offers a different approach where the print path is explicitly designed.",
+          "note that this version of FullControl is not targeted at developers - the structure of the repo may change and more information about the code structure will be provided at a later date to accommodate contribution more readily"
+        ]
+      }
+    },
+    "jezweb/claude-skills": {
+      "category": "ai-agent",
+      "one_liner": "Claude Code 全栈技能集",
+      "intro": {
+        "one_liner": "Claude Code 工作流技能集",
+        "what_it_is": "一组面向 Claude Code 的插件与技能，用自然语言触发，引导生成项目脚手架、素材、文档和部署服务。",
+        "problem_solved": "把常见开发、设计、写作和集成任务整理成可复用流程，让 Claude Code 直接产出文件或配置。",
+        "who_should_care": "使用 Claude Code 的开发者、独立开发者和需要自动化交付内容的技术团队。",
+        "use_cases": [
+          "搭建并部署全栈应用",
+          "生成前端页面与设计素材",
+          "编写文档、提案和测试配置"
+        ],
+        "alternatives": "强调每个技能都产出实际文件、项目或配置，而非仅提供参考知识。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注度快速上升。",
+        "risk_notes": "创建于 2025 年 10 月 20 日，项目较新；README 自称面向生产流程，但未提供生产可用证明。",
+        "evidence": [
+          "Production workflow skills for [Claude Code](https://claude.com/claude-code). Each skill guides Claude through a recipe to produce tangible output — scaffolded projects, generated assets, professional documents, deployed services.",
+          "Ten plugins of practical, production-oriented skills. Every one produces something.",
+          "**Every skill must produce something.** No knowledge dumps — only workflow recipes that create files, projects, or configurations."
+        ]
+      }
+    },
+    "bytecodealliance/jco": {
+      "category": "dev-tools",
+      "one_liner": "WebAssembly 组件 JS 工具链",
+      "intro": {
+        "one_liner": "WebAssembly 组件工具链",
+        "what_it_is": "jco 是面向 JavaScript 和 TypeScript 的 WebAssembly Components 工具链，可作为命令行或库使用。",
+        "problem_solved": "它把组件脚手架、构建、转译为 ES 模块、运行和复用工作流集中起来，降低在 Node.js 与浏览器中使用组件的门槛。",
+        "who_should_care": "用 JavaScript 或 TypeScript 开发、集成 WebAssembly 组件的开发者。",
+        "use_cases": [
+          "从 WIT 世界生成组件项目",
+          "把组件转译为 ES 模块",
+          "运行命令或 Web 服务组件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "包含实验性后端；Node 18.x 安装可能需手动处理依赖；部分能力依赖预览版接口。",
+        "evidence": [
+          "JavaScript toolchain for working with WebAssembly Components",
+          "Jco (`jco`) provides a [Javascript][js]-native toolchain for working with [WebAssembly Components][cm-book].",
+          "the experimental [project-installed Perry backend](docs/src/perry.md) for WASI P2 commands"
+        ]
+      }
+    },
+    "nellimonix/warp-config-generator-vercel": {
+      "category": "dev-tools",
+      "one_liner": "WARP 多平台配置生成器",
+      "intro": {
+        "one_liner": "WARP 配置生成器",
+        "what_it_is": "一个用 TypeScript 编写的 Cloudflare WARP 配置生成器，支持多种配置格式，可部署到 Docker、Vercel、Netlify 和 Cloudflare。",
+        "problem_solved": "把 WARP 配置的生成、二维码输出和参数调整集中到网页界面与接口，降低多平台部署和自托管的配置成本。",
+        "who_should_care": "需要自托管生成 WARP 配置、或维护多平台部署的开发者。",
+        "use_cases": [
+          "用 Docker 本地生成配置",
+          "部署到 Vercel 或 Netlify",
+          "通过接口批量生成配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，并达到一千星。",
+        "risk_notes": "创建于 2025 年 4 月，项目较新；公开分支强调无验证码、无分析和无推广块，但生产可用性未明确。",
+        "evidence": [
+          "Открытый генератор конфигов Cloudflare WARP (WireGuard / AmneziaWG / Clash / Throne / Nekoray / Husi / Karing / WireSock).",
+          "Это **публичная** ветка — без капчи, без аналитики, без промо-блоков. Self-host friendly.",
+          "WARP configuration generator with support for various deployment platforms (Vercel, Netlify, Cloudflare)"
+        ]
+      }
+    },
+    "ViewFaceCore/ViewFaceCore": {
+      "category": "ai-model",
+      "one_liner": "C# 离线人脸识别库",
+      "intro": {
+        "one_liner": "离线人脸识别库",
+        "what_it_is": "ViewFaceCore 是基于 SeetaFace6 的 .NET 人脸识别解决方案，提供 C# 接口、模型包和运行时包。",
+        "problem_solved": "让 .NET 开发者能通过 Nuget 包快速集成离线人脸检测与识别能力，并支持多框架和多系统。",
+        "who_should_care": "需要在 C# 或 .NET 应用中加入本地人脸识别能力的开发者。",
+        "use_cases": [
+          "控制台程序检测图片人脸",
+          "Windows 应用集成人脸检测",
+          "Linux 服务接入识别能力"
+        ],
+        "alternatives": "受 SeetaFaceEngine.Net 启发，提供基于 SeetaFace6 的 .NET 封装与 Nuget 包。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且已突破千星。",
+        "risk_notes": "底层依赖 SeetaFace6 开源版许可；商业支持需另行联系；不同框架对应版本和平台支持有限制。",
+        "evidence": [
+          "一个基于 [SeetaFace6](https://github.com/SeetaFace6Open/index) 的 .NET 人脸识别解决方案",
+          "开源、免费、跨平台",
+          "*[SeetaFace 开源版](https://github.com/SeetaFace6Open/index#%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC) 可以免费用于商业和个人用途。如果需要更多的商业支持，请联系商务邮件 bd@seetatech.com*",
+          "作者填写的描述：C# 超简单的离线人脸识别库。( 基于 SeetaFace6 )"
+        ]
+      }
+    },
+    "Ozark-Connect/NetworkOptimizer": {
+      "category": "security",
+      "one_liner": "UniFi 网络优化审计工具",
+      "intro": {
+        "one_liner": "UniFi 网络优化审计工具",
+        "what_it_is": "一个自托管的 UniFi 网络优化、监控与安全审计工具，覆盖无线健康评分、信道优化、配置建议、测速和设备状态统计。",
+        "problem_solved": "把 UniFi 网络的无线、域名系统、虚拟局域网、防火墙、广域网与局域网健康检查集中起来，并给出优化和安全审计建议。",
+        "who_should_care": "自托管爱好者、家庭实验室用户，以及管理多个 UniFi 站点的网络管理员。",
+        "use_cases": [
+          "评估无线健康并优化信道",
+          "审计防火墙与网段配置",
+          "集中查看广域网和局域网测速"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，且星数达到一千。",
+        "risk_notes": "个人非商业使用最多三个站点免费，商业用途或更多站点需要许可证；部分新功能标注为即将推出或预览版。",
+        "evidence": [
+          "Self-hosted optimization, monitoring (NMS), and security audit tool for UniFi Networks.",
+          "Personal, non-commercial use on up to 3 sites is free - no key, nothing phones home. Commercial use or more than 3 sites requires a license key",
+          "Coming Soon: Change Control"
+        ]
+      }
+    },
+    "oddlama/nix-topology": {
+      "category": "dev-tools",
+      "one_liner": "NixOS 配置生成拓扑图",
+      "intro": {
+        "one_liner": "NixOS 拓扑图生成器",
+        "what_it_is": "它从 NixOS 配置自动提取主机、接口、服务和网络信息，生成基础设施与网络拓扑的 SVG 图。",
+        "problem_solved": "减少手工绘制和维护基础设施图的成本，让拓扑信息随 NixOS 配置一起定义与生成。",
+        "who_should_care": "使用 NixOS、flake 管理多台主机或家庭实验室的开发者与运维人员。",
+        "use_cases": [
+          "自动生成主机连接图",
+          "展示网络与接口关系",
+          "补充交换机等外部设备"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注集中。",
+        "risk_notes": "仍有不少待办功能；物理连接等信息需手工补充；渲染较多主机时可能较慢。",
+        "evidence": [
+          "Generate infrastructure and network diagrams directly from your NixOS configurations",
+          "Most of the work is done by the included NixOS module which automatically collects all the information from your hosts.",
+          "Yep, there's still a lot that could be added or improved."
+        ]
+      }
+    },
+    "metainternal/llama-cookbook": {
+      "category": "learning-resource",
+      "one_liner": "Llama 开发实战指南",
+      "intro": {
+        "one_liner": "Llama 开发示例集",
+        "what_it_is": "这是围绕 Llama 模型族的官方示例仓库，主要提供推理、微调、检索增强生成和端到端应用的 Jupyter Notebook 配方。",
+        "problem_solved": "帮助开发者快速上手 Llama 模型，减少查找推理、微调、集成和应用场景示例的成本。",
+        "who_should_care": "想用 Llama 做推理、微调或应用原型的开发者。",
+        "use_cases": [
+          "学习 Llama 推理入门",
+          "参考微调与检索增强生成示例",
+          "搭建端到端 Llama 应用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时星数一万八千五百六十，本周曾一日上榜。",
+        "risk_notes": "近期重构过仓库，部分链接或目录可能失效；模型使用受各版本许可证和可接受使用政策约束。",
+        "evidence": [
+          "Welcome to the official repository for helping you get started with [inference](https://github.com/meta-llama/llama-cookbook/tree/main/getting-started/inference/), [fine-tuning](https://github.com/meta-llama/llama-cookbook/tree/main/getting-started/finetuning) and [end-to-end use-cases](https://github.com/meta-llama/llama-cookbook/tree/main/end-to-end-use-cases) of building with the Llama Model family.",
+          "This repository covers the most popular community approaches, use-cases and the latest recipes for Llama Text and Vision models.",
+          "Some links are broken/folders are missing: We recently did a refactor of the repo"
+        ]
+      }
+    },
+    "supertone-oss-archive/supertonic": {
+      "category": "ai-model",
+      "one_liner": "端上多语言极速语音合成",
+      "intro": {
+        "one_liner": "端侧多语言语音合成",
+        "what_it_is": "Supertonic 是基于 ONNX Runtime 的端侧多语言文本转语音系统，支持本地推理和多语言示例。",
+        "problem_solved": "让文本转语音无需云端接口即可在本地完成，降低网络依赖，并覆盖多语言与多运行环境。",
+        "who_should_care": "需要本地语音合成、隐私离线处理或跨端集成的开发者。",
+        "use_cases": [
+          "离线朗读网页内容",
+          "移动端生成语音",
+          "嵌入式设备播报"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一万三千七百七十六星，本周上日榜一天。",
+        "risk_notes": "仓库已归档，开发与支持结束；不再提供更新、修复、安全补丁或支持，问题和合并请求也不再监控。",
+        "evidence": [
+          "This repository is archived. Development and support have ended.",
+          "No updates, bug fixes, security patches, or support will be provided, and issues and pull requests are no longer monitored.",
+          "Powered by ONNX Runtime, it runs entirely on your device—no cloud, no API calls, no privacy concerns."
+        ]
+      }
+    },
+    "mnfst/llm-gateway": {
+      "category": "ai-agent",
+      "one_liner": "连接智能体与模型供应商",
+      "intro": {
+        "one_liner": "多模型智能体网关",
+        "what_it_is": "一个开源的大模型网关，把密钥、订阅和本地模型接到统一的 OpenAI 兼容端点，并按路由选择模型。",
+        "problem_solved": "它用于减少单一供应商绑定，集中处理模型路由、请求日志、费用追踪、限额通知和失败回退。",
+        "who_should_care": "需要接入多家模型服务并管理成本与故障回退的智能体开发者。",
+        "use_cases": [
+          "统一接入多家模型服务",
+          "记录请求并追踪花费",
+          "查询失败时切换模型"
+        ],
+        "alternatives": "相比单一供应商接口，强调统一端点、自定义路由、日志和费用管理。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 7,514 星且本周上过日榜。",
+        "risk_notes": "云版本每月收费；旧的 npm 自托管方式不再支持；部分部署模板为单实例，横向扩展前需配置兼容存储。",
+        "evidence": [
+          "Manifest LLM Gateway is an open-source LLM gateway for AI agents and apps. Connect your API keys, subscriptions, and local models to one OpenAI-compatible endpoint, and each query goes to the right model. No single-provider lock-in.",
+          "📊 Track every single dollar, setup notifications and limits",
+          "The old npm-based self-hosting path is no longer supported. Use the Docker image or one of the deployment guides above."
+        ]
+      }
+    },
+    "AzizKpln/Gokboru_Intel": {
+      "category": "security",
+      "one_liner": "手机号信息收集工具",
+      "intro": {
+        "one_liner": "手机号与用户名调查工具",
+        "what_it_is": "这是一个用 Python 编写的信息收集工具，提供网页界面和命令行控制台，用于查询电话号码和用户名。",
+        "problem_solved": "它把电话号码、用户名相关来源的查询集中到一套流程中，并提供结果详情、分类浏览和报告查看。",
+        "who_should_care": "需要合规开展授权信息收集、开源情报调查的开发者或安全人员。",
+        "use_cases": [
+          "授权查询电话号码信息",
+          "授权查询用户名关联资料",
+          "在网页界面浏览分类结果",
+          "用命令行生成查询报告"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且星数已破千。",
+        "risk_notes": "需要配置微软账户、Telegram 接口信息和多个服务密钥；未配置的服务不可用；仅限授权查询。",
+        "evidence": [
+          "This tool gives information about the phone number that you entered.",
+          "Phone and username investigations · Web GUI & CLI",
+          "Use only for queries you are authorized to perform."
+        ]
+      }
+    },
+    "Dryxio/reagent": {
+      "category": "security",
+      "one_liner": "AI 重建验证编译代码",
+      "intro": {
+        "one_liner": "AI 二进制逆向代理",
+        "what_it_is": "ReAgent 是开源 AI 逆向工程代理，结合 Ghidra 与多种大模型，从编译后的二进制重建并验证 C/C++ 函数。",
+        "problem_solved": "它把反编译上下文收集、候选代码生成、构建测试、结构验证和一致性检查串成自动流程，降低人工还原函数的负担。",
+        "who_should_care": "做二进制分析、逆向工程、C/C++ 代码重建和安全研究的开发者。",
+        "use_cases": [
+          "从二进制重建单个函数",
+          "按类批量还原函数",
+          "验证候选实现一致性"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 162 星，并曾有一天进入日榜。",
+        "risk_notes": "验证被明确说明不是语义等价证明；需要 Ghidra、桥接工具和已配置的大模型服务，使用门槛较高。",
+        "evidence": [
+          "Reconstruct and validate C/C++ code from compiled programs with AI.",
+          "ReAgent is an open-source AI reverse-engineering agent that uses Ghidra\nand LLMs—including Claude, Codex, and OpenAI-compatible models—to reconstruct\nand validate C/C++ functions from compiled binaries.",
+          "This is conservative verification, not a proof of semantic equivalence."
+        ]
+      }
+    },
+    "Minglink/dsh-infinite-gen-4": {
+      "category": "security",
+      "one_liner": "DeepSeek 红队越狱测试集",
+      "intro": {
+        "one_liner": "DeepSeek 红队测试集",
+        "what_it_is": "仓库描述为面向 DeepSeek 的网络安全红队工具，包含越狱提示词和测试套件，主要语言是 JavaScript。",
+        "problem_solved": "用于整理 DeepSeek 相关越狱提示词与测试套件，支持红队测试场景。",
+        "who_should_care": "关注 DeepSeek 安全测试、提示词攻防和红队评测的开发者。",
+        "use_cases": [
+          "整理越狱提示词样本",
+          "运行红队测试套件",
+          "研究模型安全边界"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 147 星，曾有一天进入日榜。",
+        "risk_notes": "描述含求收藏；未关闭问题 28 个；资料中的版本名与仓库名不一致，成熟度难以判断。",
+        "evidence": [
+          "DeepSeek v4.1 flash 网络安全红队工具（无限四代） — jailbreak prompts and test suite for DeepSeek    求 Star 收藏 ⭐",
+          "一周新增 Star：147",
+          "未关闭 Issue 数：28"
+        ]
+      }
+    },
+    "FatihMakes/Mark-LIII": {
+      "category": "ai-model",
+      "one_liner": "可操控电脑的新模型",
+      "intro": {
+        "one_liner": "跨平台语音电脑助手",
+        "what_it_is": "一个用 Python 编写的跨平台个人语音助手，可听、看、说并控制电脑，支持选择 Gemini Live 或本地及第三方模型组合。",
+        "problem_solved": "让语音助手不依赖单一模型或网络配额，并让应用操作结果按实际观察反馈，减少把未确认动作说成已完成。",
+        "who_should_care": "想用语音控制电脑、关注本地模型接入和隐私的开发者。",
+        "use_cases": [
+          "语音唤醒并控制桌面应用",
+          "切换本地或第三方模型",
+          "查看、删除助手记忆内容"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,093 星且曾上日榜。",
+        "risk_notes": "资料自称持续迭代，成熟度与稳定性未给出；创建日期为未来时间，需留意数据异常。",
+        "evidence": [
+          "Newest, latest and most advanced model that is able to control computers and even more. We're improving that model day by day, so follow up to know and see new models.",
+          "A real-time voice AI that can hear, see, speak, and control your computer — on any OS. Supports Windows, macOS, and Linux.",
+          "Mark LVI adds a second way to hold the conversation — speech recognition, a language model and a voice, assembled from parts you pick in ⚙ → ENGINE & PROVIDERS"
+        ]
+      }
+    }
+  }
+}

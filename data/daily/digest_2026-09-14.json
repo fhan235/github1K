@@ -1,1 +1,372 @@
-{"date":"2026-09-14","headline":"AI Agent 与桌面工具同日走热","points":["桌面系统类有 4 个项目，AI Agent 和学习资源各有 3 个，今日热点更偏实用工具。","Kuddev/pebrel 以 226 领跑，主打 AI 优先的 GPU 终端；Git-Agni/prod-FARM-IOS-Core 获 137。","ZJU-REAL/Easel 获 123，jtydhr88/screenwriting-skills 获 117，社媒运营与编剧技能受关注。"],"items":{"Kuddev/pebrel":{"category":"dev-tools","one_liner":"AI 优先的 GPU 终端"},"Git-Agni/prod-FARM-IOS-Core":{"category":"automation","one_liner":"Mac 控制的真机群"},"ZJU-REAL/Easel":{"category":"ai-agent","one_liner":"社媒运营 AI 智能体"},"jtydhr88/screenwriting-skills":{"category":"ai-agent","one_liner":"专业编剧智能体技能"},"sonicloudco/recorder":{"category":"hardware-iot","one_liner":"智能录音卡接入方案"},"jc2744-fintech/taxguard-xai":{"category":"data-finance","one_liner":"可解释税务风控框架"},"piratuks/invoice-builder":{"category":"desktop-system","one_liner":"本地发票报价生成器"},"gry67673905/-AI-":{"category":"learning-resource","one_liner":"软件实习项目作业"},"wmpeng/codingplan":{"category":"learning-resource","one_liner":"国内 AI 编程套餐对比"},"mapleafgo/singcast":{"category":"desktop-system","one_liner":"多平台代理客户端"},"badges/awesome-badges":{"category":"learning-resource","one_liner":"状态徽章资源合集"},"tanishqkumar/ssd":{"category":"ai-model","one_liner":"轻量投机解码引擎"},"Milkshiift/GoofCord":{"category":"desktop-system","one_liner":"隐私可配 Discord 客户端"},"godbout/kindaVim.blahblah":{"category":"desktop-system","one_liner":"macOS 全局 Vim 模式"},"Tiger3807861189/J-Space-Cognition-Suite":{"category":"ai-agent","one_liner":"认知增强智能体技能"}}}
+{
+  "date": "2026-09-14",
+  "headline": "AI Agent 与桌面工具同日走热",
+  "points": [
+    "桌面系统类有 4 个项目，AI Agent 和学习资源各有 3 个，今日热点更偏实用工具。",
+    "Kuddev/pebrel 以 226 领跑，主打 AI 优先的 GPU 终端；Git-Agni/prod-FARM-IOS-Core 获 137。",
+    "ZJU-REAL/Easel 获 123，jtydhr88/screenwriting-skills 获 117，社媒运营与编剧技能受关注。"
+  ],
+  "items": {
+    "Kuddev/pebrel": {
+      "category": "dev-tools",
+      "one_liner": "AI 优先的 GPU 终端",
+      "intro": {
+        "one_liner": "面向 AI 命令行的终端工作台",
+        "what_it_is": "Pebrel 是用 Rust 编写的图形加速终端，集成本地终端、远程主机、文件浏览与 AI 命令行会话，支持分屏和持久会话。",
+        "problem_solved": "把本地 shell、SSH、文件操作和 AI 命令行工具集中到一个桌面工作区，减少多窗口切换，并方便跟踪会话输出。",
+        "who_should_care": "常用 SSH、分屏终端和 AI 命令行工具的桌面开发者。",
+        "use_cases": [
+          "分屏管理本地与远程终端",
+          "浏览并传输 SSH 主机文件",
+          "集中查看 AI 命令行会话"
+        ],
+        "alternatives": "相比普通终端，更强调 SSH 工作区、文件管理与 AI 命令行会话整合。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 685 星，但仅一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0；未关闭 Issue 有 195 个；项目创建时间较新，稳定性仍需观察。",
+        "evidence": [
+          "AI-native, GPU-accelerated terminal emulator for Windows with SSH, persistent sessions, split panes, and first-class AI CLI workflows.",
+          "A GPU-accelerated terminal, SSH workspace, and home for your AI CLI sessions.",
+          "Built with Rust and GPUI for Windows, macOS, and Linux."
+        ]
+      }
+    },
+    "Git-Agni/prod-FARM-IOS-Core": {
+      "category": "automation",
+      "one_liner": "Mac 控制的真机群",
+      "intro": {
+        "one_liner": "Mac 上操控真机 iPhone 集群的自动化平台",
+        "what_it_is": "一个开源的独立应用，用于操作物理 iOS 设备并运行定时 TikTok 工作流，包含设备注册引导、WDA/Appium 进程守护、实时画面与远程输入、基于 PostgreSQL 的调度与执行历史，以及内置 TikTok 自动化插件。",
+        "problem_solved": "把多台真实 iPhone 的注册、连接守护、定时任务编排和远程操作集中到一套自托管系统里，免去手工逐台操作与自建调度。",
+        "who_should_care": "需要在真机上做 iOS 自动化或批量社媒工作流的小团队、自动化工程师、自托管偏好者",
+        "use_cases": [
+          "多台真机 iPhone 的集中注册与实时远程操控",
+          "定时执行 TikTok 上传等重复性工作流并留存执行历史",
+          "基于插件机制扩展自有 App 的自动化任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 430 star，但项目创建不足一月、仅 1 天上榜，热度尚待观察",
+        "risk_notes": "README 明确说明默认仅回环绑定可免认证，暴露到共享网络前必须自行提供 AuthProvider 与进程守护；运行依赖 Node 22+、PostgreSQL、Xcode 及签名的真机 WebDriverAgent，环境门槛较高；项目创建于 2026-08-27，维护历史很短。",
+        "evidence": [
+          "A farm of real iPhones, run from your Mac. Open-source iOS device automation with live control, a Postgres-backed scheduler, and TikTok workflows.",
+          "It runs locally as-is; authentication is optional on a loopback bind. Harden it for a shared or exposed deployment by supplying your own `AuthProvider`",
+          "Requirements are Node 22+, PostgreSQL, Xcode, a signed real-device WebDriverAgent, and Appium's XCUITest driver."
+        ]
+      }
+    },
+    "ZJU-REAL/Easel": {
+      "category": "ai-agent",
+      "one_liner": "社媒运营 AI 智能体",
+      "intro": {
+        "one_liner": "开源 AI 社媒内容运营智能体",
+        "what_it_is": "Easel 是一个面向社交媒体创作者的开源内容工作台，把 OpenClaw Agent、账号画像、内容技能与媒体工具串联起来，覆盖热点发现、策划、创作、发布与归因的完整链路。",
+        "problem_solved": "解决社媒创作者在选题、跨平台内容改写、素材制作与多平台发布之间反复切换工具、经验难以沉淀的问题，让 Agent 直接产出成品并按项目归档。",
+        "who_should_care": "需要持续产出多平台内容的个人创作者、社媒运营团队，以及研究 AI 在社媒创作场景落地的研究者。",
+        "use_cases": [
+          "聚合热榜与竞品动态，筛选适合账号定位的选题并写入内容日历",
+          "把一份母版内容改写为小红书卡片、短视频脚本、知乎长文等多平台版本并发布",
+          "生成论文解读、知识卡片、配音与视频成片，并回收播放互动数据做复盘"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 理由：README 显示项目创建于 2026-08-28、近期周增约 183 星，功能面铺得很宽但 Windows 全链路兼容仍在完善，热度集中在 AI Agent 做社媒内容这一波。",
+        "risk_notes": "README 明确提示小红书平台可能检测自动化操作，存在验证、限流或账号风控风险，建议预览后由用户确认手动发布；项目创建时间很短，长期维护情况未知。",
+        "evidence": [
+          "Easel 是一个面向社交媒体创作者的开源内容工作台。它把 OpenClaw Agent、账号画像、内容技能和真实的媒体工具接在一起",
+          "谨慎自动发布到小红书：小红书平台可能检测自动化操作，存在验证、限流或账号风控风险",
+          "目前支持小红书、抖音、快手、知乎、B 站、微信视频号、微信公众号七个平台的登录、适配和发布"
+        ]
+      }
+    },
+    "jtydhr88/screenwriting-skills": {
+      "category": "ai-agent",
+      "one_liner": "专业编剧智能体技能",
+      "intro": {
+        "one_liner": "面向编剧的 AI agent 技能包",
+        "what_it_is": "一套包含 26 个 agent skills 的集合，面向 Claude Code 与 OpenAI Codex，覆盖电影、电视剧与戏剧编剧，内容提炼自 47 本编剧技法书与 23 卷已发表剧本、乐谱和戏剧。",
+        "problem_solved": "把分散在编剧理论书籍与剧本中的方法论整理成 agent 可直接调用的结构化技能，让 AI 助手在结构、人物、对白、场景等环节给出专业级写作支持。",
+        "who_should_care": "使用 Claude Code 或 Codex 的编剧、剧集策划、小说改编从业者，以及需要结构化写作流程的影视内容团队。",
+        "use_cases": [
+          "把 12 集剧集拆幕并安排幕末钩子",
+          "诊断并改写“太直白”的对白场景",
+          "将长篇小说改编为剧集大纲",
+          "按阶段管理剧本项目进度与故事圣经"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：agent skills 生态刚起步，项目上线不足一月即获千星，热度更多来自工具形态而非长期验证。",
+        "risk_notes": "技能正文仅以中文撰写，非中文读者无法直接审阅指令文件，只能依赖 agent 转述；项目创建于 2026-09，维护历史很短。",
+        "evidence": [
+          "26 agent skills (for Claude Code and OpenAI Codex) for screenwriting, television writing and dramaturgy",
+          "The skill files follow the open agentskills.io standard and are shared by both agents: install once and it works in both.",
+          "What this trades away is auditability: you cannot read the instruction file itself unless you read Chinese"
+        ]
+      }
+    },
+    "sonicloudco/recorder": {
+      "category": "hardware-iot",
+      "one_liner": "智能录音卡接入方案",
+      "intro": {
+        "one_liner": "录音硬件接入参考",
+        "what_it_is": "面向录音卡硬件的开源接入参考，包含蓝牙协议、多平台接入示例、桌面演示和离线语音模块。",
+        "problem_solved": "降低录音卡接入应用和行业系统的门槛，统一设备连接、录音控制、音频流、文件传输、升级和转写流程。",
+        "who_should_care": "做录音硬件集成的移动、桌面、鸿蒙和 Flutter 开发者，以及系统方案商。",
+        "use_cases": [
+          "把录音卡接入移动应用",
+          "开发桌面录音管理工具",
+          "验证蓝牙协议与文件下载"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但创建时间较新。",
+        "risk_notes": "完整协议、硬件规格和样机需联系获取；桌面演示依赖可用蓝牙适配器和录音卡；鸿蒙包要求较新接口版本。",
+        "evidence": [
+          "开放 BLE 协议 SDK 及 Android、iOS、鸿蒙、Flutter 接入示例，同时提供 Windows/macOS 桌面端 Demo",
+          "SoniCloud Recorder is an open-source reference project for hardware vendors, software developers, and system integrators.",
+          "Requirements: Python 3.10 or later, a working BLE adapter, and a recorder card that is ready to connect."
+        ]
+      }
+    },
+    "jc2744-fintech/taxguard-xai": {
+      "category": "data-finance",
+      "one_liner": "可解释税务风控框架",
+      "intro": {
+        "one_liner": "可解释的 990 表风险筛查框架",
+        "what_it_is": "这是一个面向美国国税局 990 表公开申报数据的 Python 研究框架，用结构化特征、文本、关系图和时序模型生成可解释的人工复核优先级。",
+        "problem_solved": "它帮助从大量申报材料中筛出值得人工核验的记录，并把事实、派生特征、弱信号、评分、解释和复核决定分开管理。",
+        "who_should_care": "合规审查、非营利数据研究、审计科技和可解释机器学习实践者。",
+        "use_cases": [
+          "生成申报材料人工复核队列",
+          "复现公开快照的冒烟测试",
+          "研究弱监督与异常发现流程"
+        ],
+        "alternatives": "强调审计优先、真实公开数据、来源清单、无标签模式和解释输出，并明确不宣称欺诈判定。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且仅一天上日榜。",
+        "risk_notes": "评分只表示需人工核验，不构成违规或法律责任结论；真实快照无裁定标签，不宣称预测性能；创建于 2025 年 10 月 22 日，项目较新。",
+        "evidence": [
+          "A research-grade, audit-first framework for **interpretable review prioritization** on public IRS Form 990 filings.",
+          "scores and signals identify records that may deserve human verification. They are not findings of fraud, tax noncompliance, intent, or legal liability.",
+          "No fabricated benchmark: the real snapshot has no adjudicated labels, so the repository does not claim predictive performance from it."
+        ]
+      }
+    },
+    "piratuks/invoice-builder": {
+      "category": "desktop-system",
+      "one_liner": "本地发票报价生成器",
+      "intro": {
+        "one_liner": "离线发票报价桌面工具",
+        "what_it_is": "一个用 TypeScript 开发的 Electron 桌面应用，可创建、管理并导出发票和报价单，数据保存在本地数据库，也支持自托管网页模式。",
+        "problem_solved": "让自由职业者和小企业无需账号、云端或订阅，也能在本机管理票据、客户资料并生成 PDF 与电子发票文件。",
+        "who_should_care": "重视数据本地掌控、需要开票和报价的小企业、自由职业者及自托管用户。",
+        "use_cases": [
+          "制作并导出发票 PDF",
+          "管理客户、商品和银行信息",
+          "生成合规电子发票文件"
+        ],
+        "alternatives": "强调离线优先、本地数据库、无账号订阅，并提供桌面与自托管两种运行方式。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 171 星，曾有一天进入日榜。",
+        "risk_notes": "版本 3.0.2 升级前需备份并确认历史迁移完成；公开演示仅供虚构数据；项目由单人维护。",
+        "evidence": [
+          "Invoice Builder is an **offline-first, open-source invoicing and quoting application** for freelancers and small businesses.",
+          "No accounts, no cloud, no subscriptions - your data stays on your machine in a database file you own, with an optional self-hosted web/Docker mode for multi-device access.",
+          "Invoice Builder is maintained by a single developer."
+        ]
+      }
+    },
+    "gry67673905/-AI-": {
+      "category": "learning-resource",
+      "one_liner": "软件实习项目作业",
+      "intro": {
+        "one_liner": "政务办事演示系统",
+        "what_it_is": "一套可运行的智慧政务全栈演示，包含后端、安卓门户、只读服务和模拟政务接口。",
+        "problem_solved": "用合成数据演示事项查询、材料提交、审核、咨询、预约和模拟缴费等办事流程。",
+        "who_should_care": "需要了解政务流程原型、全栈分层和演示验收的开发者。",
+        "use_cases": [
+          "演示群众在线办事流程",
+          "演示工作人员审核办件",
+          "验证本地全栈启动与测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千时星数为一千零二。",
+        "risk_notes": "仅为演示环境，未接入真实政务、支付、人脸、银行或快递平台；正式上线前仍需完成身份隔离、密钥托管、病毒扫描、授权审计、隐私和合规评估。",
+        "evidence": [
+          "本仓库是一套可运行的全栈业务演示：群众（个人/企业）、工作人员和管理员可在 Android 本地资产门户中完成事项查询、资格预检、材料与表单、办件审核、预约、模拟核验/缴费/邮寄、咨询转人工、知识维护和审计。",
+          "所有账号、身份、企业、材料、政策、审核、缴费和邮寄结果均为合成演示数据。本项目没有接入真实政务、短信、支付、人脸、银行或快递平台，不能作为真实办事依据。",
+          "这仍是演示环境：Mock API 和 Demo Provider 不是正式政务能力；正式上线前还必须完成真实身份/租户隔离、密钥托管、病毒扫描、授权审计、隐私和合规评估。"
+        ]
+      }
+    },
+    "wmpeng/codingplan": {
+      "category": "learning-resource",
+      "one_liner": "国内 AI 编程套餐对比",
+      "intro": {
+        "one_liner": "AI 编程套餐对比站",
+        "what_it_is": "一个用 HTML 维护的 AI 编程平台套餐、模型、价格与额度对比资料站，覆盖多家平台订阅方案。",
+        "problem_solved": "把分散的编程套餐、模型支持、价格与额度信息集中整理，方便选型时横向比较。",
+        "who_should_care": "准备购买 AI 编程订阅或比较模型额度的开发者。",
+        "use_cases": [
+          "比较不同平台套餐价格",
+          "查看模型可用额度",
+          "筛选适合自己的方案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 47 星，曾有一天进入日榜。",
+        "risk_notes": "部分模型额度为估算值；未关闭 Issue 有 50 个，数据维护压力可能较大。",
+        "evidence": [
+          "国内主流 AI 平台的 Coding Plan对比，智谱、Kimi、MiniMax、阿里云百炼、字节火山方舟、百度千帆",
+          "当前展示 **42 个平台、143 个在售订阅套餐、2 个按量 API、167 个模型和 2497 条套餐模型关系**。",
+          "支持多模型与 Auto 接入；部分模型额度为估算值。"
+        ]
+      }
+    },
+    "mapleafgo/singcast": {
+      "category": "desktop-system",
+      "one_liner": "多平台代理客户端",
+      "intro": {
+        "one_liner": "多平台代理客户端",
+        "what_it_is": "Singcast 是基于 Flutter 和定制 sing-box 内核的开源多平台代理客户端，支持 Windows、Linux、macOS 和 Android。",
+        "problem_solved": "它把 Clash、sing-box 和 v2ray 的订阅与配置统一转换为 sing-box 配置，减少导入和切换配置的麻烦。",
+        "who_should_care": "需要跨桌面和安卓管理多种订阅、节点与透明代理的普通开发者。",
+        "use_cases": [
+          "导入并更新多种订阅",
+          "选择节点并测试延迟",
+          "使用透明代理模式"
+        ],
+        "alternatives": "差异在于导入时统一转换为 sing-box 配置，并覆盖桌面与安卓平台。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，星数破千。",
+        "risk_notes": "不支持 iOS；Linux 使用前需安装额外依赖；构建还需单独下载内核。",
+        "evidence": [
+          "Multi-platform proxy client powered by sing-box, with full Clash, sing-box & v2ray subscription support",
+          "Available on **Windows**, **Linux**, **macOS**, and **Android**. **iOS** is not supported.",
+          "Make sure to install the following dependencies before using"
+        ]
+      }
+    },
+    "badges/awesome-badges": {
+      "category": "learning-resource",
+      "one_liner": "状态徽章资源合集",
+      "intro": {
+        "one_liner": "状态徽章资源清单",
+        "what_it_is": "这是一个用 Markdown 维护的精选清单，汇总状态徽章相关服务、工具、图标、静态徽章集合、渲染软件和学术文章。",
+        "problem_solved": "把分散的徽章生成服务、制作工具、数据接口和参考资料集中整理，方便查找适合项目展示页的资源。",
+        "who_should_care": "维护开源项目说明文档、需要挑选徽章工具或研究徽章用法的开发者。",
+        "use_cases": [
+          "为项目说明页挑选徽章服务",
+          "查找徽章生成与渲染工具",
+          "了解徽章图标和静态集合"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，但缺少持续热度信息。",
+        "risk_notes": "清单包含第三方链接，资源可用性和维护状态需自行核验；内容以资料汇总为主，不是可直接部署的软件。",
+        "evidence": [
+          "A curated collection of awesome things related to status badges",
+          "While this list is maintained by members of the Shields core team, it includes Shields-related and non-Shields-related resources.",
+          "主要语言：Markdown"
+        ]
+      }
+    },
+    "tanishqkumar/ssd": {
+      "category": "ai-model",
+      "one_liner": "轻量投机解码引擎",
+      "intro": {
+        "one_liner": "并行推测解码引擎",
+        "what_it_is": "一个用 Python 编写的轻量推理引擎，实现精确输出的 SSD 算法，并提供推测解码、自回归基线与评测脚本。",
+        "problem_solved": "让小模型与大模型在不同硬件上并行完成草拟和验证，减少传统推测解码的串行草拟开销。",
+        "who_should_care": "关注大模型推理加速、推测解码和多卡部署的开发者与研究者。",
+        "use_cases": [
+          "对比 SSD、同步推测解码和自回归",
+          "运行 Qwen3 与 Llama3 推理评测",
+          "体验多卡交互式流式聊天"
+        ],
+        "alternatives": "内置 SGLang 和 vLLM 后端用于比较；SSD 强调草拟与验证并行。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾有一天登上日榜。",
+        "risk_notes": "要求 Python 3.11+、CUDA 12.8+，并在 H100 上测试；部分能力仍在路线图中，交互聊天仅支持 Llama-3.1 70B。",
+        "evidence": [
+          "A lightweight inference engine supporting speculative speculative decoding (SSD).",
+          "In SSD, they happen in parallel, on distinct hardware.",
+          "Requirements: Python 3.11+, CUDA >= 12.8. This code was written and tested on H100s."
+        ]
+      }
+    },
+    "Milkshiift/GoofCord": {
+      "category": "desktop-system",
+      "one_liner": "隐私可配 Discord 客户端",
+      "intro": {
+        "one_liner": "可配置隐私 Discord 客户端",
+        "what_it_is": "GoofCord 是基于 Legcord 的独立 Discord 客户端，主打隐私、可配置，并支持插件、主题和全局快捷键。",
+        "problem_solved": "它面向希望减少追踪、定制界面与功能，并在 Linux 上获得音频共享和原生 Wayland 支持的用户。",
+        "who_should_care": "重视隐私、插件主题和桌面端定制的 Discord 用户。",
+        "use_cases": [
+          "用插件和主题定制客户端",
+          "减少 Discord 使用中的追踪",
+          "在 Linux 上共享屏幕音频"
+        ],
+        "alternatives": "强调隐私、独立运行，并兼容多种客户端修改与主题方案。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天登上日榜。",
+        "risk_notes": "使用第三方客户端可能违反 Discord 服务条款；macOS 支持有限；部分安装包非开发者维护。",
+        "evidence": [
+          "Take control of your Discord experience with GoofCord – the highly configurable and privacy-focused Discord client.",
+          "GoofCord is a standalone application, not reliant on the original Discord client in any way.",
+          "While using GoofCord goes against the Discord ToS, there are no known bans from using it or any client mods."
+        ]
+      }
+    },
+    "godbout/kindaVim.blahblah": {
+      "category": "desktop-system",
+      "one_liner": "macOS 全局 Vim 模式",
+      "intro": {
+        "one_liner": "macOS 全局 Vim 模式",
+        "what_it_is": "一个面向 macOS 的应用，把 Vim 操作带到文本框、下拉菜单、列表和菜单等输入界面。",
+        "problem_solved": "让习惯 Vim 操作的人在更多系统界面里用相近方式移动和编辑，减少反复切换输入习惯。",
+        "who_should_care": "常用 macOS、依赖键盘操作并熟悉 Vim 的开发者和重度文字工作者。",
+        "use_cases": [
+          "在文本框中使用 Vim 移动",
+          "在列表和菜单中键盘导航",
+          "测试辅助功能下的按键行为"
+        ],
+        "alternatives": "资料列出多个开源免费替代，部分面向通用输入，部分限定 Xcode；差异细节 unknown。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "许可方式限制早晨完整使用；文档仍在更新；路线图包含待加入的动作、应用和插件系统。",
+        "evidence": [
+          "kindaVim brings Vim motions to macOS Text Fields, Text Areas, Dropdowns, Lists, Menus... 🥱️ basically everywhere.",
+          "Without a coffee a month kindaVim sleeps in the mornings. (It will scold you from the Menu Bar when you'll try to use it.)",
+          "The Docs have been moved [here](https://docs.kindavim.app). Updates ongoing!"
+        ]
+      }
+    },
+    "Tiger3807861189/J-Space-Cognition-Suite": {
+      "category": "ai-agent",
+      "one_liner": "认知增强智能体技能",
+      "intro": {
+        "one_liner": "智能体推理工作区套件",
+        "what_it_is": "这是一套以 Python 脚本和技能文件组成的智能体工作区，围绕十三个模块管理长任务状态、源码证据、仓库地图和交付检查。",
+        "problem_solved": "它试图解决复杂推理、仓库工程和多智能体协作中决策与证据脱节、地图过期、交付前条件缺失的问题。",
+        "who_should_care": "使用可加载本地技能文件的智能体宿主、做仓库改造的开发者。",
+        "use_cases": [
+          "检查配置改动是否保持约束",
+          "按源码核对接口示例",
+          "多文件仓库修复与验收"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾上日榜但一周新增为零。",
+        "risk_notes": "资料明确称严肃工作适配性不是生产就绪保证；安装不会自动注册钩子、启动智能体或授予工具权限；未关闭问题仍有两项。",
+        "evidence": [
+          "J-Space is an inference-time workspace and control suite for complex reasoning, repository engineering, coordinated agents, and authorized security analysis.",
+          "Its suitability for serious work is a design focus, not a guarantee that any untested deployment is production-ready.",
+          "Installing the files does not automatically register hooks, launch agents, or grant tool access."
+        ]
+      }
+    }
+  }
+}

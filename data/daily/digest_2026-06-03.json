@@ -1,1 +1,1092 @@
-{"date":"2026-06-03","headline":"AI Agent与开发工具领跑","points":["45个破千项目中，AI Agent 8个、开发工具 7个、学习资源 7个，热度集中在智能体与工程效率。","asz798838958/aBaiAutoplus 增加 376，husu/loom 增加 301，账号自动化与接口文档助手受关注。","alibaba/open-code-review 增加 157，NVIDIA/SkillSpector 增加 108，代码审查与AI技能安全走热。"],"items":{"asz798838958/aBaiAutoplus":{"category":"automation","one_liner":"AI账号注册与开通工具"},"husu/loom":{"category":"ai-agent","one_liner":"编写接口文档的AI助手"},"github/app":{"category":"dev-tools","one_liner":"Copilot应用发布反馈页"},"alibaba/open-code-review":{"category":"dev-tools","one_liner":"混合架构智能代码审查工具"},"NVIDIA/SkillSpector":{"category":"security","one_liner":"AI技能安全扫描器"},"skyllwt/AutoSci":{"category":"ai-agent","one_liner":"维基驱动科研AI平台"},"pixel-point/media-downloader":{"category":"desktop-system","one_liner":"macOS视频下载剪辑器"},"Picrew/awesome-agent-harness":{"category":"learning-resource","one_liner":"智能体工程资源精选"},"RefoundAI/lenny-skills":{"category":"ai-agent","one_liner":"产品管理智能体技能集"},"zjunlp/SkillNet":{"category":"ai-agent","one_liner":"创建评估连接AI技能"},"sapientinc/HRM-Text":{"category":"ai-model","one_liner":"十亿参数文本生成模型"},"spike0en/nothing_archive":{"category":"mobile","one_liner":"Nothing设备固件资源库"},"zhouxiyu1997/friendmaker":{"category":"game","one_liner":"Switch自动绘图工具箱"},"dkorunic/betteralign":{"category":"dev-tools","one_liner":"Go结构体内存对齐优化器"},"monoscope-tech/monoscope":{"category":"dev-tools","one_liner":"自然语言可观测性平台"},"freqtrade/frequi":{"category":"web-frontend","one_liner":"交易机器人前端界面"},"kellyvv/PhoneClaw":{"category":"mobile","one_liner":"端侧手机AI智能体"},"bootmortis/iran-hosted-domains":{"category":"other","one_liner":"伊朗托管域名清单"},"DanielGavin/ols":{"category":"dev-tools","one_liner":"Odin语言服务器"},"autonomousvision/navsim":{"category":"ai-model","one_liner":"自动驾驶仿真基准框架"},"binwiederhier/ntfy-android":{"category":"mobile","one_liner":"ntfy.sh安卓客户端"},"awslabs/shuttle":{"category":"dev-tools","one_liner":"Rust并发代码测试库"},"MrEliptik/godot_experiments":{"category":"game","one_liner":"Godot实验与教程集"},"thirtythreeforty/neolink":{"category":"hardware-iot","one_liner":"Reolink摄像头RTSP桥"},"asgeirtj/system_prompts_leaks":{"category":"ai-model","one_liner":"主流模型系统提示词集"},"enescingoz/awesome-n8n-templates":{"category":"automation","one_liner":"n8n自动化模板精选"},"freshframework/fresh":{"category":"web-frontend","one_liner":"极简Deno网页框架"},"snarktank/ai-dev-tasks":{"category":"ai-agent","one_liner":"AI开发智能体任务管理"},"yzfly/Awesome-MCP-ZH":{"category":"learning-resource","one_liner":"中文MCP资源精选"},"Lake1059/FFmpegFreeUI":{"category":"content-media","one_liner":"Windows视频压制图形界面"},"EdoStra/Marketing-for-Founders":{"category":"learning-resource","one_liner":"初创获客营销资源集"},"strands-agents/harness-sdk":{"category":"ai-agent","one_liner":"模型驱动智能体开发包"},"wassupjay/n8n-free-templates":{"category":"automation","one_liner":"即插即用n8n工作流集"},"ashishps1/learn-ai-engineering":{"category":"learning-resource","one_liner":"免费AI工程学习路线"},"TencentCloud/TencentDB-Agent-Memory":{"category":"ai-agent","one_liner":"本地智能体长期记忆库"},"afshinea/stanford-cme-295-transformers-large-language-models":{"category":"learning-resource","one_liner":"斯坦福大模型速查表"},"xai-org/grok-prompts":{"category":"ai-model","one_liner":"Grok助手提示词集合"},"shiaho777/web-to-app":{"category":"mobile","one_liner":"网址转安卓应用工具"},"iam-veeramalla/ultimate-linux-guide":{"category":"learning-resource","one_liner":"从零学习Linux指南"},"collabs-inc/collab-public":{"category":"ai-agent","one_liner":"与智能体协作创作平台"},"SamurAIGPT/awesome-hermes-agent":{"category":"learning-resource","one_liner":"Hermes Agent 资源精选"},"Gloridust/WechatOnCloud":{"category":"automation","one_liner":"云端微信自由连接工具"},"butterbase-ai/butterbase":{"category":"dev-tools","one_liner":"开源后端即服务平台"},"LauZzL/doubao-downloader":{"category":"content-media","one_liner":"豆包无水印图批量下载器"},"BabitMF/bmf":{"category":"content-media","one_liner":"跨平台多媒体处理框架"}}}
+{
+  "date": "2026-06-03",
+  "headline": "AI Agent与开发工具领跑",
+  "points": [
+    "45个破千项目中，AI Agent 8个、开发工具 7个、学习资源 7个，热度集中在智能体与工程效率。",
+    "asz798838958/aBaiAutoplus 增加 376，husu/loom 增加 301，账号自动化与接口文档助手受关注。",
+    "alibaba/open-code-review 增加 157，NVIDIA/SkillSpector 增加 108，代码审查与AI技能安全走热。"
+  ],
+  "items": {
+    "asz798838958/aBaiAutoplus": {
+      "category": "automation",
+      "one_liner": "AI账号注册与开通工具",
+      "intro": {
+        "one_liner": "AI 账号自动化工具",
+        "what_it_is": "一个用 Python 编写的工具，面向多平台 AI 账号自动注册与管理，并提到协议化付款一键开通 ChatGPT Plus。",
+        "problem_solved": "它试图减少多平台 AI 账号注册、管理和开通服务时的重复操作。",
+        "who_should_care": "需要批量管理 AI 账号或关注自动化开通流程的开发者。",
+        "use_cases": [
+          "批量注册 AI 账号",
+          "集中管理多平台账号",
+          "一键开通订阅服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 530 星，但仅上过一天日榜。",
+        "risk_notes": "缺少说明材料，功能、成熟度与合规性均无法确认；涉及账号注册和付款，需谨慎评估。",
+        "evidence": [
+          "多平台 AI 账号自动注册与管理 · 协议化付款一键开通 ChatGPT Plus",
+          "主要语言：Python",
+          "一周新增 Star：530"
+        ]
+      }
+    },
+    "husu/loom": {
+      "category": "ai-agent",
+      "one_liner": "编写接口文档的AI助手",
+      "intro": {
+        "one_liner": "AI 接口文档生成器",
+        "what_it_is": "Loom 是用对话生成和维护接口文档的工具，集成终端交互、网页浏览和接口模拟服务。",
+        "problem_solved": "它把接口描述、实体复用、文档查看和模拟数据生成串起来，减少手工维护接口文档的成本。",
+        "who_should_care": "需要快速编写、浏览和模拟接口文档的开发者与团队。",
+        "use_cases": [
+          "用自然语言生成接口文档",
+          "浏览模块、接口和实体",
+          "按文档启动模拟接口"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "需要 DeepSeek API Key；文档使用自定义接口文档格式；含静默使用埋点。",
+        "evidence": [
+          "基于 AI 的 JSON Schema 文档生成器，集成 TUI 交互、Web 浏览器与 Mock 服务",
+          "DeepSeek API Key（必需）",
+          "Loom 使用一套为 API 文档优化的自定义 JSON Schema 格式"
+        ]
+      }
+    },
+    "github/app": {
+      "category": "dev-tools",
+      "one_liner": "Copilot应用发布反馈页",
+      "intro": {
+        "one_liner": "Copilot 桌面工作台",
+        "what_it_is": "这是 GitHub Copilot app 的发布与问题反馈仓库，介绍一款面向仓库软件工作的桌面应用，可集中查找、启动、引导并交付任务。",
+        "problem_solved": "它解决多仓库、多代理并行开发时频繁切换终端、编辑器、浏览器和页面的问题，用隔离工作区、可视化画布和任务汇总减少上下文切换。",
+        "who_should_care": "使用 GitHub 仓库、并行调度 Copilot 代理的开发者和团队。",
+        "use_cases": [
+          "并行排查缺陷和实现问题",
+          "集中查看会话、议题与合并请求",
+          "把重复提示设为后台自动化"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 264 星，仅一天进入日榜。",
+        "risk_notes": "权利保留，未给出开源许可证；未关闭议题有 2252 个；使用账号时可能收集使用与会话数据。",
+        "evidence": [
+          "This is the home for releases and issues for the GitHub Copilot app",
+          "The GitHub Copilot app is an agent-native desktop experience for managing software work from idea to pull request.",
+          "© GitHub, Inc. All rights reserved."
+        ]
+      }
+    },
+    "alibaba/open-code-review": {
+      "category": "dev-tools",
+      "one_liner": "混合架构智能代码审查工具",
+      "intro": {
+        "one_liner": "混合式代码审查工具",
+        "what_it_is": "一个用 Go 编写的代码审查命令行工具，结合确定性流程与大模型代理，生成精确到代码行的审查意见。",
+        "problem_solved": "它针对通用代理审查大改动时漏看文件、定位漂移和质量波动的问题，用工程约束保证覆盖与位置准确。",
+        "who_should_care": "需要在本地或流水线中做代码审查的开发者与团队。",
+        "use_cases": [
+          "审查工作区改动",
+          "审查分支或提交范围",
+          "扫描整仓或指定目录"
+        ],
+        "alternatives": "相比通用代理，强调确定性文件选择、规则匹配和评论定位。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,746 星且曾登上日榜。",
+        "risk_notes": "创建于 2026 年，未关闭议题 347 个；需配置大模型端点，审查效果依赖所选模型。",
+        "evidence": [
+          "Battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "It reads Git diffs, sends changed files to a configurable LLM via an agent with tool-use capabilities, and generates structured review comments with line-level precision.",
+          "The root cause: a purely language-driven architecture lacks hard constraints on the review process."
+        ]
+      }
+    },
+    "NVIDIA/SkillSpector": {
+      "category": "security",
+      "one_liner": "AI技能安全扫描器",
+      "intro": {
+        "one_liner": "智能体技能安全扫描器",
+        "what_it_is": "这是一个用 Python 编写的安全扫描器，用于在安装智能体技能前检测漏洞、恶意模式和安全风险。",
+        "problem_solved": "它帮助判断技能是否安全可安装，降低提示注入、数据外泄、权限提升等风险。",
+        "who_should_care": "使用或发布智能体技能的开发者、平台维护者和安全审查人员。",
+        "use_cases": [
+          "安装前扫描第三方技能",
+          "在流水线中生成安全报告",
+          "批量检查技能目录"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 130 星且曾上日榜。",
+        "risk_notes": "安装会下载额外第三方开源软件，需审阅其许可条款；未关闭 Issue 有 148 个；部分扫描需配置模型服务凭据。",
+        "evidence": [
+          "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks before installing agent skills.",
+          "SkillSpector helps you answer: **\"Is this skill safe to install?\"**",
+          "Open-source software notice:** This project will download and install additional third-party open source software projects. Review the license terms of these open source projects before use."
+        ]
+      }
+    },
+    "skyllwt/AutoSci": {
+      "category": "ai-agent",
+      "one_liner": "维基驱动科研AI平台",
+      "intro": {
+        "one_liner": "以 wiki 为中心的全生命周期 AI 科研平台",
+        "what_it_is": "AutoSci 是一个基于 Claude Code 的、以 wiki 为中心的 AI 科研智能体平台，覆盖阅读、思考、实验、写作与迭代的完整科研流程，并带有可跨项目累积的记忆机制。",
+        "problem_solved": "试图解决科研流程分散、实验与文献知识难以沉淀复用的问题，通过 wiki 与记忆机制把文献阅读、实验设计、方法迭代和写作串联起来。",
+        "who_should_care": "使用 Claude Code 或 Codex 开展 AI 辅助科研的研究者、需要管理多轮实验与方法迭代的科研工程人员。",
+        "use_cases": [
+          "围绕研究主题初始化 wiki 并管理文献与实验记录",
+          "对已有实验做方法候选的提出、对比与选择（hiera-experiment）",
+          "按实验设计、运行、评估的流程做可复核的自动化实验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：README 自述仍在活跃测试与迭代新功能，并存在多个 Preview 分支，尚未宣称稳定生产形态。",
+        "risk_notes": "README 明确说明项目处于持续测试迭代阶段，Codex/OpenCode 分支为 Preview；功能边界与稳定性需自行验证。",
+        "evidence": [
+          "Read, think, experiment, write, evolve — the AI research agent with memory that compounds across every project.",
+          "We're actively testing and iterating on new features, and more capabilities are on the way.",
+          "main remains the stable Claude Code version. autosci-codex is the official Codex Preview, and autosci-opencode is the official OpenCode Preview."
+        ]
+      }
+    },
+    "pixel-point/media-downloader": {
+      "category": "desktop-system",
+      "one_liner": "macOS视频下载剪辑器",
+      "intro": {
+        "one_liner": "macOS 视频下载剪辑器",
+        "what_it_is": "一个用 Swift 编写的原生 macOS 应用，借助 yt-dlp 下载多站点视频，并用 ffmpeg 合并、转换、裁剪为 MP4。",
+        "problem_solved": "把粘贴链接下载视频、复制文件、查找历史记录和裁剪片段集中到一个应用里，减少命令行和多个工具间的切换。",
+        "who_should_care": "常从视频平台保存、转发或裁剪片段的 macOS 用户。",
+        "use_cases": [
+          "粘贴链接下载 MP4",
+          "裁剪并复制视频片段",
+          "从历史记录快速找回文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 29 星且曾上日榜。",
+        "risk_notes": "创建时间很短，仅有两次提交记录；站点支持依赖本机 yt-dlp 版本；本地构建还需 macOS 14、Swift 5.9+、yt-dlp 和 ffmpeg。",
+        "evidence": [
+          "Beautiful native macOS video downloader with support for thousands of sites through yt-dlp",
+          "Media Downloader lets you download, quickly copy, reveal, and trim videos from social media and video platforms in one focused app.",
+          "Site support depends on the installed `yt-dlp` version."
+        ]
+      }
+    },
+    "Picrew/awesome-agent-harness": {
+      "category": "learning-resource",
+      "one_liner": "智能体工程资源精选",
+      "intro": {
+        "one_liner": "智能体工程资源清单",
+        "what_it_is": "这是一个按实现导向整理的智能体运行环境工程资源清单，重点收录开源项目、工具、评测和实践指南。",
+        "problem_solved": "它把架构编排、上下文状态、沙箱、工具协议、评测、可观测性、安全治理等资料集中分类，降低检索成本。",
+        "who_should_care": "构建、评测或运维智能体系统的开发者与团队。",
+        "use_cases": [
+          "查找智能体编排项目",
+          "对比沙箱与执行方案",
+          "收集评测和治理资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "创建日期晚于核验日期，时间信息存在疑点；清单规模大，条目质量与时效需自行核对。",
+        "evidence": [
+          "An awesome list of Agent Harness engineering resources, including GitHub projects, tools, benchmarks, and practical guides.",
+          "A curated, implementation-first list of **agent harness engineering** resources, with GitHub projects as the primary focus.",
+          "Total entries: **375**"
+        ]
+      }
+    },
+    "RefoundAI/lenny-skills": {
+      "category": "ai-agent",
+      "one_liner": "产品管理智能体技能集",
+      "intro": {
+        "one_liner": "产品管理技能库",
+        "what_it_is": "这是面向 Claude Code 和 AI agents 的产品管理技能集合，以 Markdown 文件提供框架、清单和模板。",
+        "problem_solved": "让 AI 在产品策略、用户研究、规划、发布和增长等任务中调用对应工作流与知识。",
+        "who_should_care": "产品经理、产品团队，以及用 AI agents 辅助产品工作的开发者。",
+        "use_cases": [
+          "用 AI 辅助撰写需求文档",
+          "整理路线图与优先级",
+          "准备用户访谈和发布计划"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 18 星，仅一天进入日榜。",
+        "risk_notes": "描述称 86 项技能，正文称 76 项，数量口径不一致；README 为 2.0 版本内容。",
+        "evidence": [
+          "86 product management skills from Lenny's Podcast for Claude Code and AI agents. Hiring, user research, strategy, shipping, and more.",
+          "**76 product management and engineering skills**, distilled from the full archive of [Lenny's Podcast](https://www.lennyspodcast.com/) and [Lenny's Newsletter](https://www.lennysnewsletter.com/): 597 episodes and posts, 4,019 sourced insights, every quote verified verbatim against its source.",
+          "Skills are markdown files that give AI agents specialized knowledge and workflows. Add them to your project and Claude Code (or any agent that reads `SKILL.md` files) applies the right frameworks when you work on a matching task."
+        ]
+      }
+    },
+    "zjunlp/SkillNet": {
+      "category": "ai-agent",
+      "one_liner": "创建评估连接AI技能",
+      "intro": {
+        "one_liner": "智能体技能基础设施",
+        "what_it_is": "面向可复用智能体技能的开放基础设施，提供发现、安装、创建、评估、分析和路由能力，并配有 Python 开发包与本地浏览界面。",
+        "problem_solved": "把分散的技能资源整理成可检索、可评估、可复用、可按任务选择的技能库，降低智能体能力复用和组合的门槛。",
+        "who_should_care": "构建智能体、维护技能库或研究技能检索与组合的开发者。",
+        "use_cases": [
+          "按语义检索并下载技能",
+          "从仓库或文档生成技能",
+          "评估本地技能质量",
+          "为任务路由合适技能"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 20 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间较新；部分分析和路由依赖可选组件；未关闭议题为零，但不足以判断生产稳定性。",
+        "evidence": [
+          "Open infrastructure for discovering, evaluating, analyzing, and routing reusable AI agent skills.",
+          "SkillNet provides unified infrastructure for the agent skill lifecycle",
+          "一周新增 Star：20"
+        ]
+      }
+    },
+    "sapientinc/HRM-Text": {
+      "category": "ai-model",
+      "one_liner": "十亿参数文本生成模型",
+      "intro": {
+        "one_liner": "低成本从零预训练 1B 文本模型框架",
+        "what_it_is": "HRM-Text 是基于 HRM 分层循环架构的 1B 文本生成模型，附带完整的预训练框架，包括数据采样、FSDP2 训练、评测与 checkpoint 转换工具。",
+        "problem_solved": "它试图降低从零预训练基础模型的门槛，README 声称可用 130-600 倍更少算力、150-900 倍更少数据完成预训练，并给出约 1000 美元级别的参考成本。",
+        "who_should_care": "想亲手跑通基础模型预训练流程的研究者、小团队，以及关注 HRM 分层推理架构与高效预训练方案的人。",
+        "use_cases": [
+          "在 8 张或 16 张 H100 上复现 0.6B 或 1B 规模的预训练参考实验",
+          "在自有语料上做继续预训练或全参数 SFT",
+          "把 checkpoint 导出为 Transformers 格式，用于下游评测与部署"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：以极低算力成本预训练基础模型是当前关注点，但项目较新，生态支持仍在补齐。",
+        "risk_notes": "训练依赖 Hopper 级 GPU 与 FlashAttention 3；原生 Transformers 支持尚未发布，vLLM 支持仍在开发中；README 中的算力与数据节省倍数、benchmark 数字均为作者自述，未独立验证。",
+        "evidence": [
+          "HRM-Text is a 1B text generation model based on the HRM architecture, strengthened by task completion and latent space reasoning.",
+          "It offers a full pretraining framework, making foundation model pretraining accessible with 130-600x less compute and 150-900x less data.",
+          "Native vLLM support for HRM-Text checkpoints is in progress."
+        ]
+      }
+    },
+    "spike0en/nothing_archive": {
+      "category": "mobile",
+      "one_liner": "Nothing设备固件资源库",
+      "intro": {
+        "one_liner": "Nothing 设备资源索引库",
+        "what_it_is": "这是面向 Nothing 与 CMF 设备的开源社区索引与归档站，汇总固件、增量和完整 OTA、原厂镜像、更新日志、官方资源、社区应用、项目、相机配置及技术指南。",
+        "problem_solved": "把分散的设备资料、官方下载、社区工具和操作教程集中起来，方便查找固件、绕过分批推送、做刷机、备份、解锁、恢复和相机配置。",
+        "who_should_care": "Nothing 与 CMF 设备用户、刷机爱好者、社区开发者和设备维护者。",
+        "use_cases": [
+          "查找并下载官方固件",
+          "查阅解锁与刷机指南",
+          "寻找社区应用和相机配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时星标数为 1003。",
+        "risk_notes": "数据库与指南采用 CC BY-NC 4.0，禁止商业使用；品牌资产不允许再分发；固件和官方资源仍属专有内容，使用边界需留意。",
+        "evidence": [
+          "The largest open-source, community-driven index and archive for the Nothing and CMF ecosystem, featuring Nothing OS firmware, OTA updates, community-built apps and projects, hardware customization tools, official developer resources, and detailed guides.",
+          "Direct download links for sideloading incremental and full OTA updates sourced from official OEM servers, bypassing staggered regional rollouts.",
+          "The project effort and database compilation are licensed under [CC BY-NC 4.0](LICENSE) (Creative Commons Attribution-NonCommercial 4.0 International)."
+        ]
+      }
+    },
+    "zhouxiyu1997/friendmaker": {
+      "category": "game",
+      "one_liner": "Switch自动绘图工具箱",
+      "intro": {
+        "one_liner": "Switch 自动绘制工作台",
+        "what_it_is": "这是面向 Nintendo Switch《朋友收集：梦想生活》的本地自动绘制工作台，把图片转换、固件刷写、手柄测试和绘制脚本串成桌面端流程。",
+        "problem_solved": "它把图片转像素预览与动作脚本，并通过 ESP32 模拟手柄输入完成自动绘制，减少手工维护串口脚本和调试时序的负担。",
+        "who_should_care": "已有 Switch 和指定 ESP32 开发板，且愿意调试固件、串口与时序的玩家或开发者。",
+        "use_cases": [
+          "把图片转成像素绘制脚本",
+          "在桌面端刷写并测试手柄链路",
+          "暂停后从恢复点继续绘制"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 18 星，曾有一天进入日榜。",
+        "risk_notes": "并非零门槛工具，首次使用需刷写、驱动识别、配对和时序调整；部分兼容板连接稳定性有差异；GPL-3.0 有开源义务。",
+        "evidence": [
+          "Friend Maker is a macOS/Windows toolkit for turning images into pixel grids and ESP32 controller scripts, enabling automatic drawing on Nintendo Switch in Tomodachi Life and related workflows.",
+          "这不是 `零门槛`、`即装即用` 的纯消费级工具",
+          "本仓库采用 **GPL-3.0-or-later** 开源协议。"
+        ]
+      }
+    },
+    "dkorunic/betteralign": {
+      "category": "dev-tools",
+      "one_liner": "Go结构体内存对齐优化器",
+      "intro": {
+        "one_liner": "Go 结构体内存对齐优化工具",
+        "what_it_is": "betteralign 是 Go 结构体字段布局检测与修复工具，可减少填充和垃圾回收指针字节，并在改写时保留注释。",
+        "problem_solved": "它解决结构体字段顺序不佳导致内存占用偏高的问题，也避免原工具改写时丢注释、位置字面量被静默改义等风险。",
+        "who_should_care": "关注 Go 程序内存占用、结构体布局与静态分析的开发者。",
+        "use_cases": [
+          "检查结构体可节省的字节数",
+          "批量重排字段并保留注释",
+          "在代码检查中排除生成文件"
+        ],
+        "alternatives": "它是 fieldalignment 的替代工具，保留注释，并增加安全检查、跳过规则与稳定排序。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，星数破千。",
+        "risk_notes": "单遍处理可能需多次运行才能达到更优布局；原子写入在 Windows 不适用；不支持 golangci-lint 自动修复集成。",
+        "evidence": [
+          "Detect and fix struct field alignment to reduce memory usage in Go programs",
+          "It is a drop-in replacement for `fieldalignment`.",
+          "This is a single-pass tool. Achieving a fully optimal layout may require running it **more than once**."
+        ]
+      }
+    },
+    "monoscope-tech/monoscope": {
+      "category": "dev-tools",
+      "one_liner": "自然语言可观测性平台",
+      "intro": {
+        "one_liner": "开源可观测性平台",
+        "what_it_is": "Monoscope 是开源可观测性平台，用兼容 S3 的存储保存日志、追踪和指标，并支持自然语言查询。",
+        "problem_solved": "把遥测数据留在自有 S3 桶中，统一检索、关联和排查，还能用智能体发现异常并生成报告。",
+        "who_should_care": "需要自建可观测性、控制数据归属并关注 OpenTelemetry 的开发者与运维团队。",
+        "use_cases": [
+          "自建日志、指标与追踪检索",
+          "用自然语言查询遥测数据",
+          "定时检测异常并邮件汇报"
+        ],
+        "alternatives": "差异是数据存入自有兼容 S3 的桶，并提供自然语言查询、智能体报告和实时查看。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但缺少持续热度依据。",
+        "risk_notes": "自托管版采用 AGPL-3.0；云免费版仅项目所有者一人可用；自建认证与单点登录需自行处理。",
+        "evidence": [
+          "Monoscope lets you ingest and explore your logs, traces and metrics. We store these in S3 compatible buckets. Query in natural language via LLMs.",
+          "Monoscope is an open-source observability platform that stores your telemetry data in S3-compatible storage. Self-host it or use our [cloud offering](https://monoscope.tech).",
+          "| **Pricing** | [Usage-based](https://monoscope.tech/pricing) | Free (AGPL-3.0) |"
+        ]
+      }
+    },
+    "freqtrade/frequi": {
+      "category": "web-frontend",
+      "one_liner": "交易机器人前端界面",
+      "intro": {
+        "one_liner": "Freqtrade 的前端界面",
+        "what_it_is": "这是一个用 Vue 构建的 Freqtrade 界面，可连接已启用接口的交易机器人，也支持独立容器运行。",
+        "problem_solved": "为 Freqtrade 提供可视化操作入口，减少直接面对接口和命令行配置的麻烦。",
+        "who_should_care": "使用 Freqtrade 的交易机器人用户，以及想修改界面的前端开发者。",
+        "use_cases": [
+          "连接运行中的 Freqtrade 接口",
+          "用容器启动独立界面",
+          "本地开发和定制界面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势，界面已内置于较新版本，且项目创建于 2020 年。",
+        "risk_notes": "独立运行仍需正确配置机器人和跨域访问；手动部署主要用于修改界面。",
+        "evidence": [
+          "Freqtrade UI - Frontend for Freqtrade",
+          "Using FreqUI requires [freqtrade](https://github.com/freqtrade/freqtrade) to be set up and running.",
+          "In newer versions (2021.2 and newer), freqUI is built into freqtrade, so manual setup of freqUI will no longer be necessary unless you want to modify freqUI."
+        ]
+      }
+    },
+    "kellyvv/PhoneClaw": {
+      "category": "mobile",
+      "one_liner": "端侧手机AI智能体",
+      "intro": {
+        "one_liner": "手机端本地智能体框架",
+        "what_it_is": "这是一个用 Swift 编写的手机端本地智能体框架，可在设备端运行模型，并调用日历、提醒、联系人、健康数据等原生能力。",
+        "problem_solved": "它让手机上的智能体任务尽量在本地完成，减少把个人数据和日常操作交给云端的需要，也支持按需选择网页搜索或局域网内的远程推理。",
+        "who_should_care": "关注端侧模型、移动智能体、隐私和 iOS 原生能力集成的开发者。",
+        "use_cases": [
+          "用自然语言查询健康数据",
+          "创建提醒或安排日历事件",
+          "通过语音和摄像头实时交互"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 11 星且仅一天进入日榜。",
+        "risk_notes": "处于 TestFlight 阶段；侧载签名下 E4B 模型只能用 CPU，GPU 会失败；远程推理的数据处理取决于所选上游服务。",
+        "evidence": [
+          "PhoneClaw is a local AI agent framework for phones and edge devices.",
+          "PhoneClaw is live on TestFlight — [Join TestFlight](https://testflight.apple.com/join/YuUSwq78)",
+          "⚠️ **Sideloadly-signed IPA usage note**: due to the memory cap of sideload-signing, **the E4B model only works on CPU** (GPU will fail)."
+        ]
+      }
+    },
+    "bootmortis/iran-hosted-domains": {
+      "category": "other",
+      "one_liner": "伊朗托管域名清单",
+      "intro": {
+        "one_liner": "伊朗域名分流清单",
+        "what_it_is": "这是汇总伊朗境内托管域名与服务的清单，并生成多种代理客户端可用的规则文件。",
+        "problem_solved": "帮助在代理环境下区分伊朗本地服务与境外服务，减少本地网站不可用和规则配置成本。",
+        "who_should_care": "需要访问伊朗本地服务、维护代理分流规则的开发者与用户。",
+        "use_cases": [
+          "配置代理客户端直连规则",
+          "屏蔽伊朗相关广告域名",
+          "生成多客户端规则文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千星且有一百二十六个复刻。",
+        "risk_notes": "内容按原样提供，不保证完整性、准确性、可靠性、适用性或可用性；仅用于信息参考，不提供连接或管理虚拟专用网络的指导。",
+        "evidence": [
+          "\"Iran Hosted Domains\" is a comprehensive list of Iranian domains and services that are hosted within the country.",
+          "A Python script is executed by Github Action and generates files that are on the release page.",
+          "The content in this repository is provided as-is and we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability of the information contained in this repository."
+        ]
+      }
+    },
+    "DanielGavin/ols": {
+      "category": "dev-tools",
+      "one_liner": "Odin语言服务器",
+      "intro": {
+        "one_liner": "Odin 语言服务器",
+        "what_it_is": "ols 是面向 Odin 的语言服务器，提供补全、悬停、诊断、格式化、引用查找等编辑器能力。",
+        "problem_solved": "让 Odin 开发者在常用编辑器中获得代码导航、检查、补全和格式化等语言服务支持。",
+        "who_should_care": "使用 Odin 开发，并依赖编辑器语言服务提升效率的开发者。",
+        "use_cases": [
+          "在编辑器中补全 Odin 代码",
+          "跳转到定义并查找引用",
+          "配置工作区检查与格式化"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，且已破千星。",
+        "risk_notes": "仍处早期开发；需跟随 Odin 主分支；部分语义、布局和工作区诊断功能为实验性。",
+        "evidence": [
+          "Language server for Odin. This project is still in early development.",
+          "Note: This project is made to be up to date with the master branch of Odin.",
+          "This feature is experimental and the reported layout may not always match the compiler."
+        ]
+      }
+    },
+    "autonomousvision/navsim": {
+      "category": "ai-model",
+      "one_liner": "自动驾驶仿真基准框架",
+      "intro": {
+        "one_liner": "自动驾驶评测框架",
+        "what_it_is": "NAVSIM 是面向自动驾驶规划的数据驱动非反应式仿真与基准项目，主分支提供用于 2025 挑战赛的第二版代码。",
+        "problem_solved": "它试图弥合开环评测与闭环仿真的取舍：前者忽略误差恢复和偏离专家路径，后者资源密集且需要模型访问。",
+        "who_should_care": "自动驾驶规划、端到端驾驶和评测基准研究者与参赛开发者。",
+        "use_cases": [
+          "评估自动驾驶规划模型",
+          "参与端到端驾驶挑战赛",
+          "理解数据格式与指标"
+        ],
+        "alternatives": "伪仿真结合开环效率与闭环稳健性，可非顺序、非交互地计算排行榜指标。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜，并用于 2025 挑战赛。",
+        "risk_notes": "主分支为第二版，第一版需切换到指定分支；挑战赛数据划分有使用限制，提交还受每日次数约束。",
+        "evidence": [
+          "The main branch contains the code for NAVSIM v2, used in the 2025 NAVSIM challenge.",
+          "We introduce Pseudo-Simulation, a novel AV evaluation methodology that combines the efficiency of open-loop evaluation with the robustness of closed-loop evaluation.",
+          "Current AV evaluation methods face critical trade-offs: closed-loop simulation is resource-intensive and requires model access rather than just model predictions, while open-loop evaluation overlooks important factors such as error recovery and behavior deviation from the expert path."
+        ]
+      }
+    },
+    "binwiederhier/ntfy-android": {
+      "category": "mobile",
+      "one_liner": "ntfy.sh安卓客户端",
+      "intro": {
+        "one_liner": "ntfy 的 Android 客户端",
+        "what_it_is": "这是 ntfy 的 Android 应用，使用 Kotlin 编写，可从 F-Droid、Play Store 或发布页获取安装包。",
+        "problem_solved": "让 Android 用户安装并使用 ntfy 客户端，也提供安装包签名校验信息和构建文档入口。",
+        "who_should_care": "需要在 Android 上使用 ntfy 的用户，以及参与翻译或构建客户端的开发者。",
+        "use_cases": [
+          "从应用商店安装客户端",
+          "下载发布页安装包",
+          "参与应用界面翻译"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天进入日榜，破千时星数为 1001。",
+        "risk_notes": "从发布页下载安装包时需核对签名指纹；构建说明需查阅外部文档。",
+        "evidence": [
+          "Android app for ntfy.sh",
+          "This is the Android app for [ntfy](https://github.com/binwiederhier/ntfy) ([ntfy.sh](https://ntfy.sh)).",
+          "You can find the app in [F-Droid](https://f-droid.org/packages/io.heckel.ntfy/) or the [Play Store](https://play.google.com/store/apps/details?id=io.heckel.ntfy), \nor as .apk files on the [GitHub releases page](https://github.com/binwiederhier/ntfy-android/releases)."
+        ]
+      }
+    },
+    "awslabs/shuttle": {
+      "category": "dev-tools",
+      "one_liner": "Rust并发代码测试库",
+      "intro": {
+        "one_liner": "Rust 并发测试库",
+        "what_it_is": "Shuttle 是用于测试并发 Rust 代码的库，采用随机化并发测试技术，并提供常用并发原语和库的包装实现。",
+        "problem_solved": "它解决并发缺陷难复现、难调试的问题：通过控制并随机调度线程，让失败测试可确定性复现。",
+        "who_should_care": "编写 Rust 并发程序、需要测试竞态和线程调度问题的开发者。",
+        "use_cases": [
+          "为并发代码编写可复现测试",
+          "排查锁与线程竞态问题",
+          "测试使用 tokio 的代码"
+        ],
+        "alternatives": "受 Loom 启发；相比 Loom 的穷举测试，Shuttle 侧重随机测试，可覆盖更大规模用例，但通过测试不证明正确。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，星数达到一千。",
+        "risk_notes": "随机测试不具备完备性，通过测试不能证明代码正确；包装实现可能需要替换标准库并发相关导入。",
+        "evidence": [
+          "Shuttle is a library for testing concurrent Rust code.",
+          "By controlling the scheduling, Shuttle allows us to reproduce failing tests deterministically.",
+          "Shuttle is not sound (a passing Shuttle test does not prove the code is correct), but it scales to much larger test cases than Loom."
+        ]
+      }
+    },
+    "MrEliptik/godot_experiments": {
+      "category": "game",
+      "one_liner": "Godot实验与教程集",
+      "intro": {
+        "one_liner": "Godot 实验合集",
+        "what_it_is": "收录用 GDScript 编写的 Godot 3 与 4 的二维、三维、虚拟现实和界面实验，也关联教程内容。",
+        "problem_solved": "为常见玩法机制、物理效果、界面和视觉表现提供可参考的小示例，便于快速理解实现方式。",
+        "who_should_care": "Godot 初学者、游戏原型开发者和需要查找效果示例的开发者。",
+        "use_cases": [
+          "学习二维物理与动画效果",
+          "参考三维玩法机制实现",
+          "查找界面与交互示例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续增长信息。",
+        "risk_notes": "部分实验标记为进行中；新实验面向 Godot 4.0，旧版项目需切换到 3.x 分支。",
+        "evidence": [
+          "2D, 3D & VR experiments and tutorials in Godot 3 & 4",
+          "Some of my 2D/3D/VR/UI experiments in Godot.",
+          "All the new experiments starting from march 2023 will target Godot 4.0."
+        ]
+      }
+    },
+    "thirtythreeforty/neolink": {
+      "category": "hardware-iot",
+      "one_liner": "Reolink摄像头RTSP桥",
+      "intro": {
+        "one_liner": "Reolink 摄像头 RTSP 桥接器",
+        "what_it_is": "Neolink 是一个用 Rust 编写的小型代理程序，把部分 Reolink IP 摄像头的私有视频流转发为普通 RTSP 客户端可接入的视频流。",
+        "problem_solved": "部分 Reolink 摄像头不提供 ONVIF 或原生 RTSP，只能配合自家应用和录像机使用；它让 Shinobi、Blue Iris 等录像软件也能接收这些摄像头画面。",
+        "who_should_care": "使用无原生 RTSP 的 Reolink 摄像头，并接入第三方录像软件或自建监控系统的开发者。",
+        "use_cases": [
+          "把 B800 摄像头接入 Blue Iris",
+          "让 Shinobi 接收私有协议视频流",
+          "用命令行控制摄像头状态灯和重启"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，但维护已迁移到新仓库。",
+        "risk_notes": "当前仓库说明开发已迁移，问题反馈应转向新维护地址；功能基于逆向工程，且仅面向不提供原生 RTSP 的部分型号。",
+        "evidence": [
+          "An RTSP bridge to Reolink IP cameras",
+          "Neolink is a small program that acts as a proxy between Reolink IP cameras and\nnormal RTSP clients.",
+          "Development has moved"
+        ]
+      }
+    },
+    "asgeirtj/system_prompts_leaks": {
+      "category": "ai-model",
+      "one_liner": "主流模型系统提示词集",
+      "intro": {
+        "one_liner": "聊天机器人系统提示词合集",
+        "what_it_is": "收录多家主流聊天机器人、编程助手与模型产品的系统提示词、工具说明和相关技能文件，并持续更新。",
+        "problem_solved": "把分散、不易观察的产品内部指令集中整理，方便开发者查阅不同助手的行为约束与功能组织方式。",
+        "who_should_care": "提示词研究者、智能体开发者，以及关注主流助手行为规则的开发者。",
+        "use_cases": [
+          "对比不同助手的系统提示词",
+          "研究工具与技能提示写法",
+          "查阅特定产品的提示文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有四万一千一百六十二星，且本周曾上日榜。",
+        "risk_notes": "内容以泄露提示词为主，来源、准确性和授权状态需自行核验；未见许可证信息。",
+        "evidence": [
+          "The full verbatim system prompts behind the most popular chatbots in the world. Carefully curated and complete.",
+          "Extracted system prompts from Anthropic - Opus 4.7, Opus 4.6, Sonnet 4.6. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google Gemini - 3.5 Flash, 3.1 Pro, 3 Flash, Antigravity. xAI - Grok. Github Copilot. Perplexity, and more. Updated regularly.",
+          "破千时的 Star 数：41162"
+        ]
+      }
+    },
+    "enescingoz/awesome-n8n-templates": {
+      "category": "automation",
+      "one_liner": "n8n自动化模板精选",
+      "intro": {
+        "one_liner": "n8n 模板合集",
+        "what_it_is": "收录 280 多个可导入 n8n 的工作流模板，覆盖邮件、聊天、表格、文档、智能体和检索增强聊天机器人等场景。",
+        "problem_solved": "把分散的自动化流程整理成可下载的配置文件，减少从零搭建常见集成与人工智能流程的成本。",
+        "who_should_care": "使用 n8n 的自动化开发者、运维人员和低代码实践者。",
+        "use_cases": [
+          "自动分类和回复邮件",
+          "搭建聊天机器人",
+          "处理文档与表格"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 22,660 星且本周上过日榜。",
+        "risk_notes": "模板来自网络且非作者创建或拥有；使用前需自行检查、配置和测试；作者声明不承担使用问题责任。",
+        "evidence": [
+          "280+ free n8n automation templates — ready-to-use workflows for Gmail, Telegram, Slack, Discord, WhatsApp, Google Drive, Notion, OpenAI, and more.",
+          "A curated collection of 280+ n8n workflow template files for Gmail, Telegram, OpenAI, WhatsApp, Slack, Discord, WordPress, Google Sheets, and dozens of other platforms. Review, configure, and test each workflow before use.",
+          "All automation templates in this repository were found online and are uploaded here solely for easy access and sharing. None of the templates are created or owned by the repository author."
+        ]
+      }
+    },
+    "freshframework/fresh": {
+      "category": "web-frontend",
+      "one_liner": "极简Deno网页框架",
+      "intro": {
+        "one_liner": "Deno 全栈网页框架",
+        "what_it_is": "Fresh 是面向 Deno 的下一代网页框架，主打简单、可靠与速度，内置 TypeScript 支持、文件系统路由和岛屿式客户端激活。",
+        "problem_solved": "它让开发者无需配置即可搭建网页项目，并默认不向客户端发送 JavaScript，以减少运行时负担并按需提供交互能力。",
+        "who_should_care": "使用 Deno、TypeScript 或 Preact 开发网页应用的开发者。",
+        "use_cases": [
+          "快速搭建 Deno 网页项目",
+          "构建默认少发脚本的站点",
+          "为页面局部添加交互"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千时已有一万三千七百五十八星。",
+        "risk_notes": "资料未提供许可证、版本状态和生产可用性信息；成熟度无法判断。",
+        "evidence": [
+          "**Fresh** is a next generation web framework, built for speed, reliability, and simplicity.",
+          "Zero runtime overhead: no JS is shipped to the client by default.",
+          "破千时的 Star 数：13758"
+        ]
+      }
+    },
+    "snarktank/ai-dev-tasks": {
+      "category": "ai-agent",
+      "one_liner": "AI开发智能体任务管理",
+      "intro": {
+        "one_liner": "AI 开发任务提示词集",
+        "what_it_is": "这是一组用于 AI 编程助手的 Markdown 提示词文件，通过需求文档、任务清单和逐步实现来组织功能开发。",
+        "problem_solved": "它把大型、笼统的 AI 编码请求拆成可审阅的小任务，降低过程失控和生成复杂错误代码的机会。",
+        "who_should_care": "使用 AI 编程助手开发较大功能的开发者与团队。",
+        "use_cases": [
+          "先生成功能需求文档",
+          "把需求拆成实施任务",
+          "逐项实现并人工复核"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 7,741 星，且本周上过日榜。",
+        "risk_notes": "内容主要是提示词文件，效果依赖所用 AI 工具；文中也提醒过程并非总是完美，需要人工引导、纠正和迭代。",
+        "evidence": [
+          "A simple task management system for managing AI dev agents",
+          "This repository provides a collection of markdown files designed to supercharge your feature development workflow with AI-powered IDEs and CLIs.",
+          "While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance."
+        ]
+      }
+    },
+    "yzfly/Awesome-MCP-ZH": {
+      "category": "learning-resource",
+      "one_liner": "中文MCP资源精选",
+      "intro": {
+        "one_liner": "中文 MCP 资源精选",
+        "what_it_is": "面向中文用户的 MCP 资源合集，整理基础介绍、玩法、客户端、服务器、开发资料和社区资源。",
+        "problem_solved": "帮助中文用户理解模型上下文协议，并快速查找可接入的客户端、服务器和上手教程。",
+        "who_should_care": "想入门或选型 MCP 工具的中文开发者、AI 应用使用者。",
+        "use_cases": [
+          "查找 MCP 客户端与服务器",
+          "学习 MCP 基础与玩法",
+          "按场景筛选工具资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 7,211 星，且本周上过一次日榜。",
+        "risk_notes": "内容以资源链接和教程为主，部分客户端被标注为开发中；仓库创建于 2025 年 4 月 3 日。",
+        "evidence": [
+          "欢迎来到 `Awesome-MCP-ZH`，一个专为中文用户打造的 MCP（模型上下文协议）资源合集！",
+          "这里有 MCP 的基础介绍、玩法、客户端、服务器和社区资源，帮你快速上手这个 AI 界的“万能插头”。",
+          "MCP 资源精选， MCP指南，Claude MCP，MCP Servers, MCP Clients"
+        ]
+      }
+    },
+    "Lake1059/FFmpegFreeUI": {
+      "category": "content-media",
+      "one_liner": "Windows视频压制图形界面",
+      "intro": {
+        "one_liner": "Windows 上的 FFmpeg 图形外壳",
+        "what_it_is": "3FUI 是运行在 Windows 的 FFmpeg 专业交互外壳，用 Visual Basic .NET 编写，提供参数面板、批量任务、预设、插件和智能体能力。",
+        "problem_solved": "它把 FFmpeg 的复杂命令行参数整理成可视化交互，方便压制视频、转换格式、分享预设和批量处理任务。",
+        "who_should_care": "懂基本视频参数的进阶编码人员，以及需要批量压制和转换的 Windows 用户。",
+        "use_cases": [
+          "用预设批量压制视频",
+          "自由组合 FFmpeg 参数",
+          "通过插件扩展功能"
+        ],
+        "alternatives": "只调用外部 FFmpeg，不内置编解码器；强调自由参数、批量处理、预设、插件和中文界面。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 7,021 星，且本周上过一天日榜。",
+        "risk_notes": "仅支持 Windows 10 1609 以上的 x64 或 arm64；需自行安装 .NET 10 与 FFmpeg；界面主框架按 GPL-3.0-only 授权，个性化功能收费。",
+        "evidence": [
+          "3FUI 是 ffmpeg 在 Windows 上的轻度专业交互外壳，收录大量参数，界面美观，交互友好。此项目面向国内使用环境，让普通人也能够轻松压制视频和转换格式。",
+          "系统要求：Windows 10 1609+ 仅限 x64 / arm64",
+          "3FUI 使用 MIT 开源许可，可以自由地使用和分发此软件"
+        ]
+      }
+    },
+    "EdoStra/Marketing-for-Founders": {
+      "category": "learning-resource",
+      "one_liner": "初创获客营销资源集",
+      "intro": {
+        "one_liner": "创始人营销资源清单",
+        "what_it_is": "面向软件产品、应用和初创团队的实用营销资源合集，按发布平台、社交媒体、搜索引擎优化、冷启动外联等主题整理链接、技巧和工具。",
+        "problem_solved": "帮助技术背景创始人找到早期用户，解决缺少预算、缺少可执行营销路径、建议多偏向大规模扩张而不适合起步阶段的问题。",
+        "who_should_care": "准备为软件产品、应用或初创项目寻找首批用户的技术创始人。",
+        "use_cases": [
+          "查找产品首发平台",
+          "规划无预算推广",
+          "制定早期市场进入策略"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有六千三百一十七星且本周上过一次日榜。",
+        "risk_notes": "仓库创建于二零二五年五月，内容以外部链接清单为主，链接有效性和维护持续性需自行核验。",
+        "evidence": [
+          "Practical marketing resources to get the first 10 / 100 / 1000 users for your SaaS / App / Startup",
+          "This is a collection of practical marketing resources to get the first 10 / 100 / 1000 users for your SaaS / App / Startup.",
+          "a practical collection of startup resources, tips, and some tools"
+        ]
+      }
+    },
+    "strands-agents/harness-sdk": {
+      "category": "ai-agent",
+      "one_liner": "模型驱动智能体开发包",
+      "intro": {
+        "one_liner": "模型驱动的智能体开发套件",
+        "what_it_is": "这是用于构建和运行人工智能智能体的开源工具包，提供 Python 和 TypeScript 能力，并包含命令行工具、文档站点和配套包。",
+        "problem_solved": "它面向原本需要自行编写智能体循环的场景，把生命周期控制、工具、结构化输出、记忆、会话、追踪和评估等能力集中到一套工具中。",
+        "who_should_care": "需要在自有进程内搭建、控制并扩展智能体的开发者。",
+        "use_cases": [
+          "用少量代码创建完整智能体",
+          "为智能体接入工具和模型服务",
+          "管理多智能体、记忆与会话"
+        ],
+        "alternatives": "相比手写智能体循环，它提供无托管控制平面的进程内运行，并覆盖更多内建能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 35 星且仅一天登上日榜。",
+        "risk_notes": "未关闭议题有 1122 个；仓库创建于 2025 年，仍较新；包含多个子包，选型需确认所需组件。",
+        "evidence": [
+          "A model-driven approach to building AI agents in just a few lines of code.",
+          "Strands Agents is an open-source SDK for building and running AI agents in Python and TypeScript.",
+          "Choose Strands when you would otherwise write your own agent loop: it runs in your process with no hosted control plane, and it covers the jobs a hand-rolled loop grows into."
+        ]
+      }
+    },
+    "wassupjay/n8n-free-templates": {
+      "category": "automation",
+      "one_liner": "即插即用n8n工作流集",
+      "intro": {
+        "one_liner": "n8n 工作流模板集",
+        "what_it_is": "收录 200 多个可导入 n8n 的 JSON 工作流，覆盖自动化、人工智能、向量库、大模型等场景。",
+        "problem_solved": "减少从零搭建自动化流程的工作，导入模板、配置凭据并激活即可演示、原型或投入生产。",
+        "who_should_care": "使用 n8n 的开发者、自动化实践者和低代码人工智能应用搭建者。",
+        "use_cases": [
+          "快速搭建人工智能自动化流程",
+          "导入现成工作流做原型验证",
+          "参考模板补齐集成与告警"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 5,838 星且本周上过一次日榜。",
+        "risk_notes": "部分模板不完整；导入后需自行配置凭据；README 宣称可直接用于生产，但未提供验证依据。",
+        "evidence": [
+          "A curated set of 200+ plug-and-play n8n workflows that fuse classic automation with today’s AI stack—vector DBs, embeddings, and LLMs.",
+          "Import any JSON, add your creds, hit Activate, and you’re live. Built to demo, prototype, or drop straight into production.",
+          "!!! Some of the templates are incomplete, you can be a contributor by completing it."
+        ]
+      }
+    },
+    "ashishps1/learn-ai-engineering": {
+      "category": "learning-resource",
+      "one_liner": "免费AI工程学习路线",
+      "intro": {
+        "one_liner": "免费 AI 工程学习清单",
+        "what_it_is": "这是一个汇总免费学习资源的仓库，覆盖数学、Python、机器学习、深度学习、大语言模型、智能体、提示工程、检索增强生成与部署等主题。",
+        "problem_solved": "它把分散的课程、教程、工具、框架和书籍按学习路径整理起来，帮助初学者减少搜集资料和规划路线的成本。",
+        "who_should_care": "想系统入门 AI、大语言模型与智能体开发的开发者和学生。",
+        "use_cases": [
+          "按主题规划自学路线",
+          "查找课程与教程入口",
+          "了解常用框架和工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 5,665 星，本周曾有一天登上日榜。",
+        "risk_notes": "资料以外部链接为主，质量、可用性和更新状态需自行核验；未见许可证与维护承诺说明。",
+        "evidence": [
+          "Learn AI and LLMs from scratch using free resources",
+          "A comprehensive collection of free resources to learn everything about AI/ML, LLMs and Agents.",
+          "破千时的 Star 数：5665"
+        ]
+      }
+    },
+    "TencentCloud/TencentDB-Agent-Memory": {
+      "category": "ai-agent",
+      "one_liner": "本地智能体长期记忆库",
+      "intro": {
+        "one_liner": "本地智能体长期记忆库",
+        "what_it_is": "一个用 TypeScript 写的智能体长期记忆系统，通过四层渐进流程沉淀对话、技能、文档和代码信息，并强调本地运行、无外部接口依赖。",
+        "problem_solved": "减少智能体在新会话中重复解释项目背景、重读文档和重新摸索流程的成本，让经验能整理、复用并在团队内共享。",
+        "who_should_care": "使用多个智能体协作、希望沉淀项目上下文和复用技能的开发者与团队。",
+        "use_cases": [
+          "跨会话保留项目背景和决策",
+          "把复杂任务沉淀为可复用技能",
+          "导入代码库生成知识图谱"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 364 星，但仅一天进入日榜。",
+        "risk_notes": "团队记忆处于测试阶段；MongoDB 存储后端为实验性且默认关闭；未关闭议题有 893 个。",
+        "evidence": [
+          "TencentDB Agent Memory delivers fully local long-term memory for AI Agents via a 4-tier progressive pipeline, with zero external API dependencies.",
+          "Latest: Team Memory Beta is evolving quickly — install it and start exploring in minutes.",
+          "The MongoDB storage backend is experimental (off by default); see"
+        ]
+      }
+    },
+    "afshinea/stanford-cme-295-transformers-large-language-models": {
+      "category": "learning-resource",
+      "one_liner": "斯坦福大模型速查表",
+      "intro": {
+        "one_liner": "大模型课程速查表",
+        "what_it_is": "这是斯坦福 CME 295 课程的 Transformers 与大语言模型速查资料，汇总课程重要概念，并提供多种语言版本。",
+        "problem_solved": "把 Transformer、大模型训练与优化、应用等分散知识点集中到一处，便于复习和快速查阅。",
+        "who_should_care": "学习大模型课程、准备面试或需要知识梳理的开发者与学生。",
+        "use_cases": [
+          "课程复习与知识点速查",
+          "整理大模型概念脉络",
+          "按语言版本阅读资料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有四千四百七十星，且本周上过日榜。",
+        "risk_notes": "资料以速查表为主，深度内容指向外部书籍；成熟度与许可证信息未提供。",
+        "evidence": [
+          "VIP cheatsheet for Stanford's CME 295 Transformers and Large Language Models",
+          "This repository aims at summing up in the same place all the important concepts that are covered in Stanford's CME 295 Transformers & Large Language Models course.",
+          "Available in [العربية](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/ar) - [Čeština](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/cs) - [English](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/en) - [Español](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/es) - [فارسی](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/fa) - [Français](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/fr) - [Italiano](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/it) - [日本語](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/ja) - [한국어](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/ko) - [Português](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/pt) - [Русский](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/ru) - [Српски](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/sr) - [ไทย](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/th) - [Türkçe](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/tr) - [中文](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/tree/main/zh)"
+        ]
+      }
+    },
+    "xai-org/grok-prompts": {
+      "category": "ai-model",
+      "one_liner": "Grok助手提示词集合",
+      "intro": {
+        "one_liner": "公开 Grok 系统提示词",
+        "what_it_is": "这是存放 Grok 聊天助手、X 上 @grok 机器人及部分产品功能所用系统提示词的仓库，主要文件为 Jinja 模板。",
+        "problem_solved": "把 Grok 不同版本、功能和接口模型使用的系统提示词集中公开，便于开发者查看、引用和比较。",
+        "who_should_care": "关注提示词设计、Grok 行为边界和 X 上相关功能的开发者。",
+        "use_cases": [
+          "研究 Grok 系统提示词",
+          "对比不同版本提示词",
+          "参考功能提示词写法"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 4,138 星，且一周上过一次日榜。",
+        "risk_notes": "内容会定期更新，提示词可能变化；采用 GNU Affero General Public License v3.0，复用需留意协议要求。",
+        "evidence": [
+          "Prompts for our Grok chat assistant and the `@grok` bot on X.",
+          "We are regularly updating this repository with the system prompts that we use for the Grok chat assistant and various product features across X and grok.com.",
+          "This project is licensed under the GNU Affero General Public License v3.0 - see the [LICENSE](LICENSE) file for details."
+        ]
+      }
+    },
+    "shiaho777/web-to-app": {
+      "category": "mobile",
+      "one_liner": "网址转安卓应用工具",
+      "intro": {
+        "one_liner": "手机端网页转安卓应用工具",
+        "what_it_is": "这是一个用 Kotlin 开发的安卓应用，可把网站地址或网页项目打包成独立安卓应用，并支持在设备上构建安装包。",
+        "problem_solved": "它让开发者无需电脑或远程构建服务，也能把网页、静态前端或本地服务端项目做成可安装、可分享的安卓应用。",
+        "who_should_care": "需要在手机上快速打包网页应用、做原型或离线演示的安卓与前端开发者。",
+        "use_cases": [
+          "把网站地址打包成安装包",
+          "把静态前端做成离线应用",
+          "在设备上预览并导出应用"
+        ],
+        "alternatives": "相比只做网址封装的工具，它强调本地运行时、签名、扩展和多语言配置。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 14 星，仅一天进入日榜。",
+        "risk_notes": "创建日期晚于最近一次提交，数据存在异常；部分高级功能默认关闭；未关闭问题还有 3 个。",
+        "evidence": [
+          "A native Android application that converts any website URL into a standalone Android App.",
+          "Build Android APKs from web projects, directly on your phone.",
+          "The whole build is self-contained. Binary AXML/ARSC patching, permission pruning, V1/V2/V3 signing, and Google Play-ready AAB export all happen inside the app via `apksig` — no remote build queue, no PC."
+        ]
+      }
+    },
+    "iam-veeramalla/ultimate-linux-guide": {
+      "category": "learning-resource",
+      "one_liner": "从零学习Linux指南",
+      "intro": {
+        "one_liner": "Linux 入门复习笔记",
+        "what_it_is": "一个从零学习 Linux 的指南仓库，配套视频课程，以根目录文件夹组织复习文档。",
+        "problem_solved": "把 Linux 基础、常用命令、权限、进程、网络和存储等知识点整理成可查阅的复习资料。",
+        "who_should_care": "Linux 初学者，以及需要快速复习基础概念的开发者。",
+        "use_cases": [
+          "从零学习 Linux 基础",
+          "按主题查阅复习笔记",
+          "配合视频课程做练习"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上过一次日榜，破千时已有三千三百多星。",
+        "risk_notes": "定位为复习笔记，内容深度和完整度未说明；分叉数高于星数，需留意仓库实际使用方式。",
+        "evidence": [
+          "Ultimate guide to learn Linux from scratch.",
+          "This repository is created to serve as a revision notes for the YouTube course",
+          "Please refer to the folders at the root level of this repository to go through the documentation."
+        ]
+      }
+    },
+    "collabs-inc/collab-public": {
+      "category": "ai-agent",
+      "one_liner": "与智能体协作创作平台",
+      "intro": {
+        "one_liner": "面向智能体的桌面开发环境",
+        "what_it_is": "Collaborator 是一款本地优先的桌面应用，把终端、上下文文件、代码编辑和运行内容放在无限画布上，便于与智能体协作开发。",
+        "problem_solved": "它试图减少智能体开发时在终端、文件树、编辑器和标签页之间反复切换，让工作区、文件和会话集中呈现。",
+        "who_should_care": "使用命令行智能体、需要同时管理多个终端和本地文件的开发者。",
+        "use_cases": [
+          "在画布上并排运行多个智能体终端",
+          "把本地文件拖到画布上查看编辑",
+          "切换多个本地工作区整理任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨了 3 星，且只上过一天日榜。",
+        "risk_notes": "应用处于早期活跃开发阶段；未关闭 Issue 有 80 个；会收集匿名、非识别性使用分析。",
+        "evidence": [
+          "Collaborator is a place to build with agents.",
+          "Collaborator is an end-to-end environment for agentic development. Terminals, context files, and running code — all arranged on an infinite canvas in one place.",
+          "The app is early-stage and in active development, with native desktop targets for macOS, Windows, and Linux."
+        ]
+      }
+    },
+    "SamurAIGPT/awesome-hermes-agent": {
+      "category": "learning-resource",
+      "one_liner": "Hermes Agent 资源精选",
+      "intro": {
+        "one_liner": "Hermes Agent 资源清单",
+        "what_it_is": "这是为 Hermes Agent 整理的精选资源列表，收录技能、插件、工具、集成和相关资料。",
+        "problem_solved": "把 Hermes Agent 相关能力、扩展和资源集中整理，方便开发者查找与选用。",
+        "who_should_care": "使用或研究 Hermes Agent、智能体工具链的开发者。",
+        "use_cases": [
+          "查找 Hermes Agent 插件",
+          "挑选智能体工具",
+          "了解部署相关资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时有一千六百五十四星，且本周一天登上日榜。",
+        "risk_notes": "仓库描述与所附资料内容不一致，资料标题为 Open Agent Email；成熟度与许可证信息未提供。",
+        "evidence": [
+          "A curated list of skills, plugins, tools, integrations, and resources for Hermes Agent by Nous Research",
+          "# Open Agent Email",
+          "破千时的 Star 数：1654"
+        ]
+      }
+    },
+    "Gloridust/WechatOnCloud": {
+      "category": "automation",
+      "one_liner": "云端微信自由连接工具",
+      "intro": {
+        "one_liner": "云端共享微信会话",
+        "what_it_is": "在自有 NAS 或 Docker 主机上运行服务端微信、QQ 和 Chromium 实例，通过面板让多个浏览器共享同一会话。",
+        "problem_solved": "把已登录应用常驻在云端，解决多设备切换、会话同步、统一权限分配和实例管理问题。",
+        "who_should_care": "有 NAS 或服务器、需要多设备共享微信或网页应用会话的开发者。",
+        "use_cases": [
+          "在 NAS 上常驻微信会话",
+          "多设备接力操作同一实例",
+          "云端共享网页版社媒登录态"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 748 星，且本周上日榜 1 天。",
+        "risk_notes": "面板挂载 docker.sock，等同宿主 root 权限；默认管理员密码需修改；文档明确要求切勿把面板裸暴露公网。",
+        "evidence": [
+          "在自己的 NAS / 服务器上运行「服务端微信」，多端浏览器共享同一会话",
+          "面板还挂载了宿主的 `docker.sock`**（创建/销毁实例所需），它等同宿主 root 权限",
+          "一周新增 Star：748"
+        ]
+      }
+    },
+    "butterbase-ai/butterbase": {
+      "category": "dev-tools",
+      "one_liner": "开源后端即服务平台",
+      "intro": {
+        "one_liner": "开源 AI 原生后端服务",
+        "what_it_is": "Butterbase 是开源后端即服务，基于 Postgres 提供认证、存储、函数、实时订阅、AI 网关、RAG 和 MCP server，支持自托管。",
+        "problem_solved": "它把数据库、后端接口、身份、文件、函数与 AI 能力整合到一套可自托管栈中，减少 AI 应用搭建时的胶水代码和平台锁定。",
+        "who_should_care": "想自托管后端、构建 AI 应用，或让智能体通过 MCP 操作后端的开发者。",
+        "use_cases": [
+          "自托管应用后端",
+          "搭建 AI 代理工作流",
+          "用 MCP 管理后端能力"
+        ],
+        "alternatives": "标签称其为 Supabase alternative，并强调 Apache 2.0、自托管、每应用独立 Postgres 与内置 MCP server。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 220 星，并有一天进入日榜。",
+        "risk_notes": "创建时间较新，仍有 22 个未关闭 Issue；托管云与部分模板能力依赖账号和外部服务。",
+        "evidence": [
+          "Open-source backend-as-a-service. Postgres, auth, storage, functions, AI gateway, MCP.",
+          "AI-native, open-source backend-as-a-service.",
+          "Apache 2.0 · Self-hostable with Docker Compose · A Postgres database per app"
+        ]
+      }
+    },
+    "LauZzL/doubao-downloader": {
+      "category": "content-media",
+      "one_liner": "豆包无水印图批量下载器",
+      "intro": {
+        "one_liner": "豆包无水印资源下载器",
+        "what_it_is": "这是一个用于批量下载豆包 AI 无水印图片和视频资源的浏览器扩展，也可作为油猴脚本使用。",
+        "problem_solved": "它解决豆包生成资源保存不便、部分图片带水印，以及对话删除后创作资源难以找回的问题。",
+        "who_should_care": "经常批量保存豆包生成图片或视频的普通用户和浏览器扩展使用者。",
+        "use_cases": [
+          "批量下载无水印图片",
+          "下载无水印视频",
+          "找回 AI创作 中的资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,059 星且曾上日榜。",
+        "risk_notes": "2.0 版本重构后可能仍有未发现的问题；部分账号或功能无法获取无水印图片；项目声明仅供学习交流，请勿用于商业、非法用途。",
+        "evidence": [
+          "一键批量下载豆包AI无水印图片资源的浏览器扩展/油猴脚本。",
+          "2.0版本已完成重构，可能仍存在一些未被发现的BUG，如果你追求稳定性请选择1.x版本，但在1.x版本中视频提取未被支持。",
+          "本项目仅供学习交流，请勿用于商业、非法用途。"
+        ]
+      }
+    },
+    "BabitMF/bmf": {
+      "category": "content-media",
+      "one_liner": "跨平台多媒体处理框架",
+      "intro": {
+        "one_liner": "多媒体处理框架",
+        "what_it_is": "BMF 是跨平台、可定制的多媒体与视频处理框架，提供多语言接口、异构硬件加速和模块扩展能力。",
+        "problem_solved": "它用于把转码、编辑、直播、GPU 加速和 AI 推理等音视频能力组合成可调整的处理流程。",
+        "who_should_care": "音视频开发、AI 推理集成、直播转码和云编辑相关开发者。",
+        "use_cases": [
+          "音视频转码与格式转换",
+          "复杂音视频编辑流水线",
+          "GPU 转码与 AI 推理"
+        ],
+        "alternatives": "强调跨平台、多语言、自定义模块及 FFmpeg、Numpy、PyTorch、OpenCV、TensorRT 间数据转换。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星时有一千零十八星。",
+        "risk_notes": "README 含大量外部链接和演示入口，需自行核验；部分能力以演示形式呈现。",
+        "evidence": [
+          "Cross-platform, customizable multimedia/video processing framework.  With strong GPU acceleration, heterogeneous design, multi-language support, easy to use, multi-framework compatible and high performance, the framework is ideal for transcoding, AI inference, algorithm integration, live video streaming, and more.",
+          "BMF (Babit Multimedia Framework) is a cross-platform, multi-language, customizable multimedia processing framework developed by ByteDance.",
+          "It is currently widely used in ByteDance's video streaming, live transcoding, cloud editing and mobile pre/post processing scenarios."
+        ]
+      }
+    }
+  }
+}

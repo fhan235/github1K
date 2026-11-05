@@ -1,1 +1,781 @@
-{"date":"2026-10-18","headline":"AI Agent 项目领跑今日热度","points":["32 个破千项目中，AI Agent 有 10 个，成为最集中的方向。","google-research/harness2 单日新增 720，谷歌研究实验框架最受关注。","croffasia/itsaplan 与 OpenSparX/MasterAgent 分别聚焦人机协作和端侧智能体。"],"items":{"google-research/harness2":{"category":"other","one_liner":"谷歌研究实验框架"},"croffasia/itsaplan":{"category":"ai-agent","one_liner":"人机协作的项目管理平台"},"OpenSparX/MasterAgent":{"category":"ai-agent","one_liner":"端侧低延迟智能体框架"},"chenwei810/Semiconductor_Manufacturing_Introduction":{"category":"learning-resource","one_liner":"半导体制造入门资料"},"Clearailhc/clearai-dsh":{"category":"ai-agent","one_liner":"证据核验生成本体插件"},"yasewang1337-svg/winutil-cn":{"category":"desktop-system","one_liner":"中文 Windows 维护工具"},"Ryder-Sun/Meldwork":{"category":"ai-agent","one_liner":"本地多智能体协作台"},"mw00/project-maya":{"category":"ai-model","one_liner":"私有部署大模型推理引擎"},"goodnight000/api-anything":{"category":"ai-agent","one_liner":"网站转智能体可调用接口"},"jo-duchan/tapflow":{"category":"mobile","one_liner":"自托管移动端模拟器串流"},"Ice1187/TW-Security-and-CTF-Resource":{"category":"learning-resource","one_liner":"台湾资安与 CTF 资源"},"gzxx-2025/aid-studio":{"category":"content-media","one_liner":"AI 漫剧短剧创作平台"},"ovobrowsersupport/ovobrowser":{"category":"security","one_liner":"源码级 Chromium 指纹内核"},"GoogleCloudPlatform/open-knowledge-format":{"category":"other","one_liner":"开放知识格式规范"},"ESPARGOS/esp-sdr":{"category":"hardware-iot","one_liner":"ESP32 软件定义无线电"},"taoufik123-collab/claude-watch":{"category":"ai-agent","one_liner":"让 Claude 解析视频内容"},"myikuns/jichangtz-tuijian":{"category":"other","one_liner":"代理节点推荐清单"},"0xpili/simplified-technical-english":{"category":"ai-agent","one_liner":"简化技术英语写作技能"},"tehtbl/awesome-note-taking":{"category":"learning-resource","one_liner":"笔记与知识管理工具清单"},"vercel-labs/web-interface-guidelines":{"category":"web-frontend","one_liner":"网页界面构建指南"},"sophgo/tpu-mlir":{"category":"ai-model","one_liner":"面向 TPU 的机器学习编译器"},"am32-firmware/AM32":{"category":"hardware-iot","one_liner":"AM32 电调固件"},"facebookresearch/EdgeTAM":{"category":"ai-model","one_liner":"端侧目标跟踪分割模型"},"AhmedBafkir/DLiPA":{"category":"mobile","one_liner":"iOS 应用包下载工具"},"kr8s-org/kr8s":{"category":"dev-tools","one_liner":"类 kubectl 的 Kubernetes 客户端"},"RUB-NDS/Terrapin-Scanner":{"category":"security","one_liner":"SSH Terrapin 漏洞扫描器"},"sedyh/awesome-ebitengine":{"category":"game","one_liner":"Ebitengine 游戏开发资源清单"},"iFurySt/open-computer-use":{"category":"ai-agent","one_liner":"开源电脑操作智能体"},"HKUDS/AutoSwarm":{"category":"ai-agent","one_liner":"自构建自运行智能体群"},"FatihMakes/Mark-LVI":{"category":"ai-model","one_liner":"电脑控制多模态模型"},"ooboqoo/shiping":{"category":"ai-agent","one_liner":"面试考试实时解题助手"},"Downvid/downvid":{"category":"content-media","one_liner":"跨平台高清视频下载器"}}}
+{
+  "date": "2026-10-18",
+  "headline": "AI Agent 项目领跑今日热度",
+  "points": [
+    "32 个破千项目中，AI Agent 有 10 个，成为最集中的方向。",
+    "google-research/harness2 单日新增 720，谷歌研究实验框架最受关注。",
+    "croffasia/itsaplan 与 OpenSparX/MasterAgent 分别聚焦人机协作和端侧智能体。"
+  ],
+  "items": {
+    "google-research/harness2": {
+      "category": "other",
+      "one_liner": "谷歌研究实验框架",
+      "intro": {
+        "one_liner": "递归式 agent harness 优化框架",
+        "what_it_is": "Harness² 是一个即插即用的框架，用于在开放世界中递归优化 agent harness（围绕模型的 prompt、工具、记忆、技能、编排等系统），并在优化过程中保持模型权重不变。",
+        "problem_solved": "解决 agent 在遇到设计阶段未见过的任务时，如何在不训练模型的前提下自动改进执行 harness 的问题；它通过任务级与 harnessing 级两层递归，利用对比式 Propose–Probe–Compose 在无 ground-truth 反馈下精炼 harness。",
+        "who_should_care": "研究 agent 系统、prompt/工具编排与 harness 自动优化的研究者与工程师，以及需要在 JobBench、LAB、WorkBuddy-Bench 等专业基准上评测 agent 的团队。",
+        "use_cases": [
+          "在专业工作、法律、办公/网页/代码等基准上自动精炼 agent harness 并评测",
+          "对比并行递归与顺序递归两种 harness 搜索策略的效果",
+          "以 OpenCode 或 Codex 作为执行器运行可复现的 agent 实验"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 一周内 star 从 1363 涨至 17228，且属于 agent harness 自动优化这一当下热门方向",
+        "risk_notes": "README 声明该项目并非 Google 官方支持的产品，也不在 Google 开源漏洞奖励计划范围内；执行器网络访问不受限，Codex 运行时沙箱被禁用，评测前需自行配置网络限制，以防访问基准答案与评分标准；第三方代码、基准与数据集沿用各自上游许可证；模型驱动的基准运行会产生 API 费用。",
+        "evidence": [
+          "Harness² is a plug-and-play framework for recursive agent harnessing in an open world",
+          "Task-level recursion refines the execution harness for the current task through a contrastive Propose–Probe–Compose step",
+          "This is not an officially supported Google product."
+        ]
+      }
+    },
+    "croffasia/itsaplan": {
+      "category": "ai-agent",
+      "one_liner": "人机协作的项目管理平台",
+      "intro": {
+        "one_liner": "可自托管的 Linear 替代品，AI agent 当队友",
+        "what_it_is": "It's a Plan 是一个开源、可自托管的项目管理与 issue 跟踪平台，用 TypeScript 编写，定位为 Linear 和 Plane 的替代品。它把 AI agent 作为项目成员，与人类成员在同一块看板上协作处理 issue。",
+        "problem_solved": "解决 SaaS 项目管理工具按席位收费、数据锁定在第三方的问题，同时让 AI agent 以成员身份参与 issue 分配与执行，而不是外挂式助手。",
+        "who_should_care": "需要自托管、在意数据主权与按席位成本的中小研发团队；希望把 AI agent 纳入日常 issue 流程的工程团队与技术负责人。",
+        "use_cases": [
+          "团队自建 issue 跟踪与 Kanban、时间线、日历视图管理",
+          "让 AI agent 通过 @mention、指派或定时任务自动处理 issue",
+          "通过 REST API、MCP server 与 webhook 把外部工具和编码 CLI 接入工作流"
+        ],
+        "alternatives": "README 自称可替代 Linear、Jira、Asana、Trello、Plane 和 Miro，差异点在于自托管、无按席位费用，以及 agent 作为项目成员参与同一看板；具体对比数据未提供。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：AI agent 协作是当前热点，但项目自述仍处于活跃开发、首个稳定版前会有破坏性变更。",
+        "risk_notes": "许可证为 AGPL-3.0，商用与二次分发需注意开源义务；Pro 版为商业授权，部分功能（SSO/SCIM、审计日志、AI 预算等）需付费；README 明确首个稳定版前会有 breaking changes，不建议直接用于关键生产环境。",
+        "evidence": [
+          "Open-source, self-hosted alternative to Linear and Plane.",
+          "Agents take issues on the same board as your people.",
+          "It's a Plan is under active development. Expect breaking changes before the first stable release."
+        ]
+      }
+    },
+    "OpenSparX/MasterAgent": {
+      "category": "ai-agent",
+      "one_liner": "端侧低延迟智能体框架",
+      "intro": {
+        "one_liner": "可嵌入的本地优先 C++ Agent 运行时",
+        "what_it_is": "MasterAgent（OAK）是一个用 C++17 编写的可嵌入、本地优先的 agent 运行时，它先把输入匹配到确定性技能，再按需调用本地模型，并对工具名称与参数做校验。项目提供可构建的 sparx CLI 和可安装的 C++ SDK。",
+        "problem_solved": "它解决的是在设备端把自然语言输入可靠地转换为经过校验的工具调用的问题：优先使用确定性技能，避免模型随意猜测工具调用；同时通过可选的 SQLite 持久化，支持请求去重、历史恢复和 UNKNOWN 故障对账。",
+        "who_should_care": "嵌入式、IoT、车载与边缘 AI 方向的 C++ 开发者，以及需要在无云依赖环境下集成 agent 能力的 SDK 使用者。",
+        "use_cases": [
+          "车载或 IoT 设备上的本地语音/文本指令控制（如空调温度设置）",
+          "将 agent 运行时作为 C++ SDK 嵌入自有应用，并注册业务工具",
+          "需要跨重启请求去重与中断恢复的业务工具集成（如库存扣减对账）"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目处于 0.4.0-alpha 阶段，周增约 623 star，但 README 明确说明多项能力仍为实验性，且未经真实模型或 NPU 性能验证。",
+        "risk_notes": "版本为 0.4.0-alpha.3，README 自述为小型同步运行时，并非旧接口描述的专有持久内核；Qualcomm QNN/Genie 集成需平台适配且本版本未验证；无跨设备与 SQLite 的分布式 exactly-once 保证；存储未加密；推测、mesh、学习等模块为实验性且未接入 CLI；评测使用合成负载，非真实模型延迟或 NPU 性能证据。",
+        "evidence": [
+          "An embeddable, local-first C++17 agent runtime: turn input into validated tool execution, with deterministic skills before model inference.",
+          "This is a small synchronous runtime, not the proprietary durable kernel described by the legacy interfaces.",
+          "Evaluations use synthetic workloads (learning includes a simulated model), not end-to-end evidence for real-model latency, personalization, or NPU performance."
+        ]
+      }
+    },
+    "chenwei810/Semiconductor_Manufacturing_Introduction": {
+      "category": "learning-resource",
+      "one_liner": "半导体制造入门资料",
+      "intro": {
+        "one_liner": "半导体制造入门书",
+        "what_it_is": "一本开放、面向初学者的半导体制造入门书，按晶圆从沙子到芯片的流程讲解工艺、术语和产线经验。",
+        "problem_solved": "帮助没有半导体物理背景的读者理解晶圆厂运作、工艺模块、良率、测试与封装等完整流程。",
+        "who_should_care": "想入门半导体制造流程的开发者、学生和跨领域工程师。",
+        "use_cases": [
+          "自学晶圆制造全流程",
+          "查阅工艺模块术语",
+          "了解测试封装与良率"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 190 星，且本周上过一次日榜。",
+        "risk_notes": "创建于 2026 年 10 月 11 日，内容较新；未关闭问题数为 1；成熟度信息不足。",
+        "evidence": [
+          "An open, beginner-friendly book that follows one silicon wafer from sand, through the fab, test and packaging, until it becomes a chip.",
+          "It skips heavy physics and focuses on process flow, terminology and know-how from the fab floor, with term boxes and know-how boxes in every chapter. No background in semiconductor physics is needed.",
+          "一周新增 Star：190；本周上日榜天数：1"
+        ]
+      }
+    },
+    "Clearailhc/clearai-dsh": {
+      "category": "ai-agent",
+      "one_liner": "证据核验生成本体插件",
+      "intro": {
+        "one_liner": "为 DeepSeek Harness 引入认知循环的 DSH 插件",
+        "what_it_is": "ClearAI 是一个原生 DSH（DeepSeek Harness）插件，把「Epistemic Loop（认知循环）」引入宿主环境，并在研究过程中逐步构建领域本体（domain ontology）。它由 JavaScript 编写，以 npm 包形式分发。",
+        "problem_solved": "它试图解决 Agent 循环只追踪「任务是否完成」、不追踪「结论凭什么可信」的问题：通过预注册阈值、候选假设与预测、可失败的检验、证据链和独立评估，让每条知识边都由证据支撑，而不是靠抽取或断言堆叠。",
+        "who_should_care": "使用 DeepSeek Harness 的 Agent 开发者、需要可追溯证据链的研究型工作流用户，以及对知识图谱、本体构建和科学发现流程感兴趣的人。",
+        "use_cases": [
+          "在 DSH 会话中以 ClearAI 预设开展研究，逐轮积累可检索的领域本体",
+          "为假设生成可证伪的预测并记录证据，保留被否证的假设作为结果",
+          "自动暴露相互矛盾的结论读数，交由人工决定撤回或保留"
+        ],
+        "alternatives": "README 称其他知识图谱靠抽取与断言堆积边，而本项目要求每条边都通过认知循环「挣得」；具体同类项目未列出。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 依托 DeepSeek Harness 插件生态与 agent 记忆、本体话题，但概念较新、依赖特定宿主版本",
+        "risk_notes": "强依赖 DSH ≥ 0.2.0-rc.2，旧宿主不再支持；README 提示 pnpm ≥ 11 的 minimumReleaseAge 会导致安装静默降级，需固定版本；项目创建时间与当前时间接近，长期维护情况未知。",
+        "evidence": [
+          "ClearAI is a native DSH plugin that brings the Epistemic Loop to DeepSeek Harness.",
+          "Other knowledge graphs pile up edges by extraction and assertion; here every edge has to be earned through the loop.",
+          "Requirements: DSH ≥ 0.2.0-rc.2 (the current latest)."
+        ]
+      }
+    },
+    "yasewang1337-svg/winutil-cn": {
+      "category": "desktop-system",
+      "one_liner": "中文 Windows 维护工具",
+      "intro": {
+        "one_liner": "中文 Windows 维护工具",
+        "what_it_is": "这是基于 Chris Titus Tech Windows Utility 的中文本地化分支，用 PowerShell 提供软件管理、系统优化、更新配置和镜像制作。",
+        "problem_solved": "它把 Windows 软件安装、设置调整、更新策略和安装介质制作集中到中文界面，并提供清单、历史与只读 MCP 查询。",
+        "who_should_care": "使用 Windows 11、需要中文界面批量维护系统或制作安装介质的开发者与运维人员。",
+        "use_cases": [
+          "批量安装或升级常用软件",
+          "核对并恢复部分系统设置",
+          "制作 Windows 安装介质"
+        ],
+        "alternatives": "相比上游工具，它提供中文界面、清单历史、镜像制作入口和默认只读 MCP 接口。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周内曾上日榜，但创建时间较新。",
+        "risk_notes": "运行环境限定 Windows 11；镜像制作不代表完成所有目标系统启动与安装验证；写入 U 盘会擦除所选磁盘；恢复范围有限，不能替代个人文件备份。",
+        "evidence": [
+          "Windows 11 上的软件管理与系统维护工具，提供中文界面、软件操作清单、设置历史，以及 Windows 10 / 11 安装镜像制作。",
+          "基于 Chris Titus Tech Windows Utility，由 yesewang1337 汉化与维护。",
+          "MCP 服务器供支持 MCP 的客户端查询软件、组合、系统设置和 DNS。默认只读；显式启用修改后，仍须先预览，再用同一参数与一次性计划确认。"
+        ]
+      }
+    },
+    "Ryder-Sun/Meldwork": {
+      "category": "ai-agent",
+      "one_liner": "本地多智能体协作台",
+      "intro": {
+        "one_liner": "本地优先的多 Agent 协作工作台",
+        "what_it_is": "Meldwork 是一个本地优先（local-first）的多 Agent 协作工作区，运行在 macOS 上，可以把用户已有的本地 Agent CLI 组织成同一个工作组，让它们共享上下文、互相讨论、执行任务并检查彼此的结果。",
+        "problem_solved": "解决多个 Agent 协作时，用户需要反复转述上下文、手动串联各 Agent 输出、逐轮指挥的问题；它让 Agent 在授权范围内自行推进任务，用户只负责设定目标、授予权限和做关键决策。",
+        "who_should_care": "已经在本地安装并使用多个 Agent CLI（如 Claude Code、Codex、Gemini CLI 等）的 macOS 用户，以及需要多 Agent 协同完成研究、分析、写作、评审和实现任务的开发者与知识工作者。",
+        "use_cases": [
+          "跨本地 Agent 与选定知识源的研究与信息综合",
+          "产品、市场、运营与技术分析",
+          "写作、规划、评审与结构化文档工作",
+          "在授权工作区内实现代码，并由其他 Agent 检查交付物、提出修改"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：多 Agent 协作与编排是 Agent 工具链的持续演进方向，但该项目目前仍是 preview 阶段，仅提供 Apple silicon macOS 预发布包。",
+        "risk_notes": "当前为 preview 版本，安装包仅做 ad-hoc 签名、未经 Apple Developer ID 公证，首次启动需在系统设置中手动放行；仅支持 Apple silicon macOS；README 明确说明协作记录与同行评审不保证事实正确性，重要交付物仍需自行验收；本地优先仅指存储与协调在本地，Agent 仍会把内容发送给各自配置的模型提供商。",
+        "evidence": [
+          "Meldwork is a local-first multi-Agent collaboration workspace for the Agent tools you already use on your Mac.",
+          "Workspace writes are opt-in; collaboration history, run state, and deliverables stay local so you can revisit the work and continue it.",
+          "The preview artifacts are ad-hoc signed and notarized with an Apple Developer ID."
+        ]
+      }
+    },
+    "mw00/project-maya": {
+      "category": "ai-model",
+      "one_liner": "私有部署大模型推理引擎",
+      "intro": {
+        "one_liner": "本地私有运行超大 MoE 模型的推理引擎",
+        "what_it_is": "Project Maya 是一个用 C++ 编写的本地 LLM 推理引擎与配套服务，包含引擎、服务器、浏览器仪表盘、兼容 OpenAI 与 Anthropic 的 API 以及量化工具，主打在自有 GPU 上运行 GLM-5.3-Flash（321B MoE）与 DeepSeek-V4.1-Flash-1017（748B）。",
+        "problem_solved": "这类数百 B 参数的 MoE 模型通常需要数据中心级硬件；Maya 通过专家分层放置（GPU、RAM、NVMe SSD）与自动硬件调优，让用户从单卡到 16 卡、NVIDIA 或 AMD、Linux 或 Windows 的机器上也能私有运行，数据不出本机。",
+        "who_should_care": "拥有多卡或大显存/大内存工作站、重视数据隐私、希望本地跑大模型并接入编码 agent 的开发者与小型团队。",
+        "use_cases": [
+          "在本地工作站私有部署 GLM-5.3-Flash 或 DeepSeek-V4.1-Flash-1017 做对话与推理",
+          "通过 OpenAI/Anthropic 兼容 API 接入编码 agent 等现有工具链",
+          "多人共用一台机器或并行多会话（README 称最多同时处理 8 个请求）",
+          "使用自带量化版本（Maya-S/S24/M/L）在有限显存下权衡精度与速度"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕新发布的大 MoE 模型（GLM-5.3-Flash、DeepSeek-V4.1-Flash-1017）快速提供本地运行方案，一周涨星 400，但项目创建仅约两周、open issues 77 个，长期稳定性待观察。",
+        "risk_notes": "项目创建于 2026-10-06、推送于 2026-10-21，历史极短；open issues 达 77 个；AMD 与 Windows 支持在 README 中标注为 experimental；部分量化（Maya-M-Derisked）精度未测量；README 含捐赠引导，需自行甄别。",
+        "evidence": [
+          "Models this size usually need a datacenter. Maya runs GLM-5.3-Flash ... and DeepSeek-V4.1-Flash-1017 ... on the hardware you already have.",
+          "It keeps the experts your conversation uses most on the GPU, the next ones in RAM and the rest on your NVMe SSD, and moves them as you chat.",
+          "OpenAI- and Anthropic-compatible API with tool calls, ready for coding agents."
+        ]
+      }
+    },
+    "goodnight000/api-anything": {
+      "category": "ai-agent",
+      "one_liner": "网站转智能体可调用接口",
+      "intro": {
+        "one_liner": "把任意网站学成可调用的 API",
+        "what_it_is": "API Anything 是一个 TypeScript 工具，它通过无头浏览器观察网站自身前端发出的请求，把其中随输入变化的部分抽成参数、其余存为模板，从而把网站封装成可被 agent 通过 MCP、CLI 或 TypeScript 调用的 operation，并返回 JSON。",
+        "problem_solved": "让 agent 不必每次都驱动浏览器操作网页，而是像调用 API 一样直接请求网站；当网站结构变化导致请求失效时，可以重新学习并修复。",
+        "who_should_care": "需要让 AI agent 稳定获取网页数据的开发者，以及为没有公开 API 的站点构建自动化流程的团队。",
+        "use_cases": [
+          "让 agent 查询 Google Flights 航班与价格日历",
+          "抓取 Goodreads 书籍、作者与评论（该站自 2020 年起无公开 API）",
+          "通过 MCP 让 Claude Code、Codex 等编码 agent 直接调用网站数据"
+        ],
+        "alternatives": "README 中与 Playwright MCP 驱动无头 Chrome 的方式做了对比，称使用 API Anything 的 agent 回答更快、消耗 token 更少；未提及其他同类项目。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：把网站转成 agent 可调用接口是当前 agent 工具链的热门方向，但项目创建时间很短、内置 operation 仅覆盖 9 个站点的部分功能。",
+        "risk_notes": "项目创建于 2026-09-27，距今不足一个月，成熟度有限；包尚未发布到 npm，需手动 clone 构建；内置 operation 只覆盖部分站点功能；抓取第三方站点可能涉及各站服务条款与登录态使用风险。",
+        "evidence": [
+          "Turn any website into an API your agent can call. Learns from the site's own frontend, heals itself when the site changes.",
+          "The package isn't on npm yet. Don't use `npm install -g github:...`, because it fails under npm 11.",
+          "22 read operations across 9 sites ... They cover selected features, not whole sites."
+        ]
+      }
+    },
+    "jo-duchan/tapflow": {
+      "category": "mobile",
+      "one_liner": "自托管移动端模拟器串流",
+      "intro": {
+        "one_liner": "团队自托管移动模拟器串流",
+        "what_it_is": "这是一个自托管的移动应用测试工具，让团队通过浏览器实时操作运行在自有 Mac 上的 iOS 模拟器和 Android 模拟器。",
+        "problem_solved": "它解决团队访问模拟器不均衡、本地工具链安装繁琐，以及把内部构建上传到第三方云服务的问题。",
+        "who_should_care": "移动质量保障团队、后端开发、产品经理和设计师。",
+        "use_cases": [
+          "浏览器里检查沙箱构建",
+          "多人对比不同版本行为",
+          "跨屏幕尺寸检查布局"
+        ],
+        "alternatives": "相比云端模拟器服务，强调复用自有 Mac、构建和录制留在自控基础设施。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 183 星且曾上日榜。",
+        "risk_notes": "仍处于 v0.x 且积极开发；代理仅支持 macOS；未关闭 Issue 有 44 个。",
+        "evidence": [
+          "Self-hosted iOS & Android simulator streaming for the whole team",
+          "A self-hosted Appetize / BrowserStack alternative for mobile QA teams",
+          "v0.x, actively developed"
+        ]
+      }
+    },
+    "Ice1187/TW-Security-and-CTF-Resource": {
+      "category": "learning-resource",
+      "one_liner": "台湾资安与 CTF 资源",
+      "intro": {
+        "one_liner": "台湾资安学习资源清单",
+        "what_it_is": "整理台湾资安与 CTF 学习资源的仓库，按主题收录课程、文章、比赛、社群、活动与实习等信息。",
+        "problem_solved": "把分散的中文资安教材、经验分享、竞赛和培训信息集中成目录，降低入门者找资料的成本。",
+        "who_should_care": "资安与 CTF 初学者、学生社团成员，以及寻找中文课程和赛事信息的人。",
+        "use_cases": [
+          "按方向查找入门教材",
+          "寻找 CTF 与练习平台",
+          "了解社群、营队和培训"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周一天登上日榜，但Fork数较少。",
+        "risk_notes": "内容以链接清单为主，部分资源可能失效；仍列有威胁情资运用、iOS Security 等待补主题。",
+        "evidence": [
+          "台灣資安 / CTF 學習資源整理",
+          "如果你有看到什麼優質的學習資源，歡迎發 PR！",
+          "破千时的 Star 数：1021；本周上日榜天数：1；Fork 数：45"
+        ]
+      }
+    },
+    "gzxx-2025/aid-studio": {
+      "category": "content-media",
+      "one_liner": "AI 漫剧短剧创作平台",
+      "intro": {
+        "one_liner": "开源 AI 漫剧创作平台",
+        "what_it_is": "AID Studio 是可自行部署的开源创作平台，覆盖剧本、角色场景、分镜、图片视频生成、配音和成片预览。",
+        "problem_solved": "把 AI 漫剧、短剧、电影和漫画制作流程集中到一个项目里，并支持按需配置多种生成模型。",
+        "who_should_care": "AI 内容创作者、短剧团队，以及想自托管创作平台的开发者。",
+        "use_cases": [
+          "制作分集 AI 漫剧",
+          "生成短片镜头与配音",
+          "管理静态漫画素材"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周涨了 44 星，曾有一天进入日榜。",
+        "risk_notes": "生成能力依赖所选模型和服务商凭证；模型调用、服务器与存储可能产生费用；仍有 12 个未关闭问题。",
+        "evidence": [
+          "AID Studio is an open-source AI motion comic creation platform for AI short dramas, films and comics, with an end-to-end workflow from scripts and storyboards to video and voiceovers.",
+          "Multiple models: Configure text, image, video and speech models as needed; available capabilities depend on the selected model.",
+          "The source code is available under the MIT License. AI generation requires API credentials for the relevant providers. Model calls, servers and storage may incur costs; generation quality depends on the models and input assets."
+        ]
+      }
+    },
+    "ovobrowsersupport/ovobrowser": {
+      "category": "security",
+      "one_liner": "源码级 Chromium 指纹内核",
+      "intro": {
+        "one_liner": "源码级 Chromium 指纹内核",
+        "what_it_is": "一个在 Chromium C++ 源码层面修改指纹、再编译进二进制的浏览器内核，以 Windows x64 便携包形式分发（内核 138/144/150），产品名 ovobrowser，但 UA 与 Client Hints 仍上报 Chrome。",
+        "problem_solved": "解决 JS 注入式反检测方案（如 playwright-stealth、puppeteer-extra）容易被检测站识别出补丁痕迹、CDP 特征和 Function.toString 异常的问题，让检测方看到的是普通 Chrome。",
+        "who_should_care": "需要多账号环境隔离与浏览器指纹管理的跨境电商、广告投放、自动化测试与爬虫工程团队，以及需要绕过 bot 检测的浏览器自动化开发者。",
+        "use_cases": [
+          "跨境电商多店铺账号环境隔离与防关联",
+          "浏览器自动化/爬虫中规避 bot 检测与验证码",
+          "在 FingerprintJS、BrowserScan、CreepJS 等检测站做指纹一致性验证"
+        ],
+        "alternatives": "README 自述差异在于修改位置：注入式工具走 JS/CDP/启动参数拼装，本项目在 Chromium C++ 源码层修改并编入二进制；未提供与其他指纹浏览器的横向对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：反检测与 AI agent 浏览器自动化需求旺盛，但项目创建于 2026-08-23、仅发布 v1.0.0，长期稳定性尚未验证。",
+        "risk_notes": "用途涉及规避 bot 检测与验证码，存在平台服务条款与合规风险；仅提供 Windows x64 便携包，跨平台支持未知；项目创建时间短、版本仅 v1.0.0，维护持续性待观察；README 中检测通过结论为作者自述，未独立验证。",
+        "evidence": [
+          "源码级修改的 Chromium 指纹内核。不是 JS 注入，不是 `playwright-stealth` 那套运行时补丁——指纹在 C++ 里改完再编译进二进制。",
+          "当前便携包：**Windows x64** · 内核 **138 / 144 / 150** · 产品名 **ovobrowser**（UA / Client Hints 仍报 Chrome，避免被判未知浏览器）",
+          "| 改指纹的位置 | JS / CDP / 启动参数拼装 | Chromium **C++ 源码**，编进二进制 |"
+        ]
+      }
+    },
+    "GoogleCloudPlatform/open-knowledge-format": {
+      "category": "other",
+      "one_liner": "开放知识格式规范",
+      "intro": {
+        "one_liner": "开放知识格式规范",
+        "what_it_is": "它提出一种用带 YAML 前置信息的 Markdown 文件表示知识的通用格式，并附带生成与浏览示例。",
+        "problem_solved": "让目录知识可被人、智能体和现有工具直接读写，便于版本管理、迁移、追溯来源与判断新鲜度。",
+        "who_should_care": "维护数据目录、知识库或给大模型准备上下文的开发者。",
+        "use_cases": [
+          "把数据目录导出为可审阅文件",
+          "用 Git 协作维护知识条目",
+          "生成可浏览的知识关系图"
+        ],
+        "alternatives": "相比服务自有元数据存储，强调纯文件、可移植、无专有接口，并兼容 Markdown 工具。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且仅一天上日榜，关注集中。",
+        "risk_notes": "规范为 v0.2；生成智能体和可视化器均被标为概念验证；示例依赖 BigQuery 与 Gemini 凭据。",
+        "evidence": [
+          "OKF is a **universal, vendor-neutral format** for representing knowledge as plain markdown files with YAML frontmatter.",
+          "The agent below is a **proof of concept** demonstrating *one* way to produce OKF bundles automatically.",
+          "破千时的 Star 数：1006；本周上日榜天数：1"
+        ]
+      }
+    },
+    "ESPARGOS/esp-sdr": {
+      "category": "hardware-iot",
+      "one_liner": "ESP32 软件定义无线电",
+      "intro": {
+        "one_liner": "ESP32 软件无线电固件",
+        "what_it_is": "把普通 ESP32 的无线接收器变成仅接收的软件定义无线电，采集原始 I/Q 样本并通过 USB 或 UART 发给电脑。",
+        "problem_solved": "让开发者无需额外 SDR 硬件，也能用 ESP32 板卡做突发 I/Q 采集、片上频谱和部分芯片的连续采样。",
+        "who_should_care": "玩 ESP32、无线电实验、频谱观察和 GNU Radio 的开发者。",
+        "use_cases": [
+          "浏览器查看频谱和 I/Q",
+          "低成本无线信号实验",
+          "接入 GNU Radio 等工具"
+        ],
+        "alternatives": "相比外接 SDR 设备，它复用 ESP32 自带射频，但仅接收且有采样间隙。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 63 星并上过一天日榜。",
+        "risk_notes": "依赖未公开的调试路径；部分芯片尚不支持；连续采集和 S31 流式固件仍有限制或实验性；GPL-3.0 要求分发修改版时开放源码。",
+        "evidence": [
+          "ESP-SDR uses the undocumented raw I/Q capture functionality of ESP32 family chips to turn them into (low-duty-cycle) Software Defined Radios",
+          "ESP-SDR turns the Wi-Fi/Bluetooth radio of an ordinary ESP32 board into a receive-only software-defined radio.",
+          "Snapshots are bursts of up to 16,380 samples (8,190 on the C2 and 12,284 on the S2), so there are gaps between them."
+        ]
+      }
+    },
+    "taoufik123-collab/claude-watch": {
+      "category": "ai-agent",
+      "one_liner": "让 Claude 解析视频内容",
+      "intro": {
+        "one_liner": "让 Claude 看懂视频",
+        "what_it_is": "一个 Python 技能项目，把视频链接或本地文件转成场景切换帧、带时间戳的文字稿和结构化报告，供 Claude 分析。",
+        "problem_solved": "弥补 Claude 不能直接观看视频的缺口，避免只靠标题或字幕猜测，让回答能结合画面与音频。",
+        "who_should_care": "用 Claude 分析视频内容、复盘开头钩子或整理资料的人。",
+        "use_cases": [
+          "拆解爆款视频开头钩子",
+          "从录屏中定位问题画面",
+          "总结长视频并生成笔记"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千后一周涨了 31 星，仅一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 23 个；无字幕视频需要 Whisper API key；部分安装与保存步骤依赖外部工具和本地环境。",
+        "evidence": [
+          "Give Claude the ability to watch any video — scene-change frames + transcript + a structured report, with a 0-10s hook microscope and optional Obsidian auto-save.",
+          "Paste a URL or a local file and Claude *watches* it — **scene-change frame extraction** (one frame per cut instead of every-N-seconds), a **0-10s hook microscope** (dense frames + word-level Whisper on the opening, where every video earns or loses your attention), and **optional Obsidian auto-save** so a watched video becomes a connected wiki entry without copy-paste.",
+          "Whisper API key is only needed when a video has no captions."
+        ]
+      }
+    },
+    "myikuns/jichangtz-tuijian": {
+      "category": "other",
+      "one_liner": "代理节点推荐清单",
+      "intro": {
+        "one_liner": "代理机场推荐清单",
+        "what_it_is": "一个汇总代理机场、节点订阅、套餐价格与测评信息的推荐清单，面向 Clash、V2ray 等代理软件用户。",
+        "problem_solved": "集中整理多家机场的套餐、线路、节点和价格信息，减少用户逐个查找与对比的成本。",
+        "who_should_care": "关注代理节点订阅、价格对比和备用线路配置的普通用户。",
+        "use_cases": [
+          "对比不同机场套餐价格",
+          "查找适配代理软件的节点",
+          "按预算挑选备用线路"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，创建于二〇二六年三月四日，曾有一天登上日榜。",
+        "risk_notes": "内容含大量推广链接与邀请码；自述节点波动、频繁拔线；创建时间较新，成熟度不明。",
+        "evidence": [
+          "作者填写的描述：2026最新机场推荐、机场推荐，梯子推荐，翻墙推荐，低价机场，专线机场，平价机场，性价比机场，高速机场，便宜机场，稳定机场，翻墙机场，付费机场，收费机场，冷门机场，优质机场，廉价机场。机场评测，中国翻墙，科学上网，梯子。永久VPN，永久梯子，翻墙梯子，翻墙APP，VPN。按量计费机场，按量付费机场，不限时机场。机场节点订阅，节点分享，Clash节点，V2ray节点，非免费节点。适用ClashForWindows，V2rayN，ClashVerge，Clashparty，karing，singbox，nekobox，shadowrocket小火箭，Loon等代理软件",
+          "目前属于特殊时期，节点多少都会有波动，建议多备几个做备用!",
+          "目前专线、中转时长波动不稳定，最近频繁拔线且用且珍惜吧！"
+        ]
+      }
+    },
+    "0xpili/simplified-technical-english": {
+      "category": "ai-agent",
+      "one_liner": "简化技术英语写作技能",
+      "intro": {
+        "one_liner": "简化技术英语写作技能",
+        "what_it_is": "这是一个让大语言模型按 ASD-STE100 简化技术英语写作的技能，包含规则、批准词表和检查工具。",
+        "problem_solved": "它帮助把技术文档改得更清晰、简短、易翻译，并检查部分不符合受控语言规则的写法。",
+        "who_should_care": "技术文档作者、航空航天与国防手册编写者，以及使用 Claude 技能的开发者。",
+        "use_cases": [
+          "改写技术文档为简化技术英语",
+          "检查句子长度和未批准词",
+          "为不同模型配置写作提示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 7 星，曾有一天进入日榜。",
+        "risk_notes": "检查工具不能发现全部错误，也不能判断词义；重要文本仍需熟悉规范的人复核。该技能不是官方 ASD 文档，词典版权归 ASD 所有。",
+        "evidence": [
+          "An Agent Skill that makes an LLM write in ASD-STE100 Simplified Technical English. Rules, approved word list, and a check tool.",
+          "The tool cannot find all the errors. The tool cannot know if a word has its approved meaning.",
+          "This skill is not an official ASD document. This skill cannot make sure that your text obeys the official specification fully."
+        ]
+      }
+    },
+    "tehtbl/awesome-note-taking": {
+      "category": "learning-resource",
+      "one_liner": "笔记与知识管理工具清单",
+      "intro": {
+        "one_liner": "笔记工具精选清单",
+        "what_it_is": "这是一个收录一百多款笔记应用、个人知识管理工具和知识管理软件的精选清单，包含开源与专有工具，并按形态分类。",
+        "problem_solved": "它把分散的笔记工具集中整理，并用图标标注纯文本、数据库格式、平台支持、同步、加密和维护状态，便于选型。",
+        "who_should_care": "想挑选笔记、知识库或个人知识管理工具的开发者、学生、写作者和研究人员。",
+        "use_cases": [
+          "比较开源与专有笔记工具",
+          "查找支持纯文本的工具",
+          "筛选带同步或加密支持的应用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且已突破千星。",
+        "risk_notes": "清单包含已归档或停止维护的工具；部分条目标注为源码可得或专有，使用前需自行核对许可。",
+        "evidence": [
+          "A curated list of 100+ awesome note-taking apps, PKM tools & knowledge management software — open source and proprietary. Updated regularly.",
+          "A hand-picked directory of 100+ note-taking apps, PKM tools, and knowledge management software — from simple markdown editors to full knowledge graphs.",
+          "⚠️ | **Archived / abandoned** — kept for reference but no longer maintained |"
+        ]
+      }
+    },
+    "vercel-labs/web-interface-guidelines": {
+      "category": "web-frontend",
+      "one_liner": "网页界面构建指南",
+      "intro": {
+        "one_liner": "网页界面设计指南",
+        "what_it_is": "一份持续维护、并不穷尽的网页界面构建指南，覆盖交互、动画、布局和内容等细节，多数规则不绑定框架，也有部分针对 React/Next.js。",
+        "problem_solved": "把界面质量拆成可检查的细节，帮助开发者减少键盘、焦点、加载、动画、响应式和内容稳定性上的常见疏漏。",
+        "who_should_care": "前端开发者、设计工程师、组件库维护者和做界面评审的人。",
+        "use_cases": [
+          "开发前查阅界面细节清单",
+          "评审交互与可访问性",
+          "制定团队界面规范"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注度集中。",
+        "risk_notes": "指南自称并不穷尽；创建于 2025 年 9 月，内容仍在持续维护；主要语言为 Shell，但正文以规则清单为主。",
+        "evidence": [
+          "Guidelines for building interfaces on the Web.",
+          "This is a living, non-exhaustive list of those decisions. Most guidelines are framework-agnostic, some specific to React/Next.js.",
+          "创建日期：2025-09-10"
+        ]
+      }
+    },
+    "sophgo/tpu-mlir": {
+      "category": "ai-model",
+      "one_liner": "面向 TPU 的机器学习编译器",
+      "intro": {
+        "one_liner": "面向 TPU 的机器学习编译器",
+        "what_it_is": "这是一个基于 MLIR 的开源机器学习编译器，用 C++ 编写，把主流框架的预训练神经网络转换成可在 TPU 上运行的 bmodel 文件。",
+        "problem_solved": "它解决模型从训练框架迁移到 TPU 部署时的转换、量化、校准、验证和运行工具链问题，也提供大语言模型转换流程。",
+        "who_should_care": "在 TPU 上部署视觉模型或大语言模型的开发者，以及关注编译工具链的人。",
+        "use_cases": [
+          "把 ONNX 模型编译成 bmodel",
+          "转换 HuggingFace 大语言模型",
+          "量化、校准并验证模型"
+        ],
+        "alternatives": "相比通用编译器，它面向 TPU，提供 Top 与 Tpu 方言、量化工具链和部署工具。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天登上日榜。",
+        "risk_notes": "安装依赖预构建 Docker 镜像；快速上手涉及特定芯片、模型和设备端示例，迁移成本需留意。",
+        "evidence": [
+          "Machine learning compiler based on MLIR for Sophgo TPU.",
+          "An open-source, MLIR-based machine-learning compiler for TPUs.",
+          "TPU-MLIR converts pre-trained neural networks from mainstream frameworks into `bmodel` files that run efficiently on TPUs."
+        ]
+      }
+    },
+    "am32-firmware/AM32": {
+      "category": "hardware-iot",
+      "one_liner": "AM32 电调固件",
+      "intro": {
+        "one_liner": "无刷电调固件",
+        "what_it_is": "AM32 是面向 STM32 等 ARM 处理器的无刷电机电调固件，用于多旋翼、爬行器等设备，并配合飞控使用。",
+        "problem_solved": "为电调提供可升级固件、平滑快速启动、线性油门，以及多种电机协议和遥测支持。",
+        "who_should_care": "多旋翼、爬行器和无刷电调开发者，以及需要刷写或配置电调的用户。",
+        "use_cases": [
+          "为多旋翼电调刷写固件",
+          "配置电调协议与参数",
+          "为爬行器构建固件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注度近期上升。",
+        "risk_notes": "空白电调需先安装引导程序；部分芯片不推荐使用；构建依赖 Keil 环境。",
+        "evidence": [
+          "Firmware for ARM based speed controllers",
+          "The AM32 firmware is designed for STM32 ARM processors to control a brushless motor (BLDC).",
+          "To use AM32 firmware on a blank ESC, a bootloader must first be installed using an ST-LINK, GD-LINK , CMIS-DAP or AT-LINK."
+        ]
+      }
+    },
+    "facebookresearch/EdgeTAM": {
+      "category": "ai-model",
+      "one_liner": "端侧目标跟踪分割模型",
+      "intro": {
+        "one_liner": "端侧视频分割跟踪模型",
+        "what_it_is": "EdgeTAM 是可在设备端运行的 SAM 2 变体，提供图像与视频的可提示分割、跟踪能力，并支持导出到 CoreML。",
+        "problem_solved": "让视频目标分割与跟踪能在端侧设备运行，降低对云端或大型算力环境的依赖，同时保留提示式交互。",
+        "who_should_care": "做移动端视觉、视频编辑、交互分割和端侧推理的开发者。",
+        "use_cases": [
+          "手机端视频目标跟踪",
+          "点击或框选图像分割",
+          "导出模型到苹果设备"
+        ],
+        "alternatives": "相比 SAM 2，强调设备端可执行与 CoreML 部署；其他同类差异 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜并突破千星。",
+        "risk_notes": "安装需编译自定义 CUDA 内核；编译失败虽可忽略，但部分后处理功能可能受限。",
+        "evidence": [
+          "**EdgeTAM** is an on-device executable variant of the SAM 2 for promptable segmentation and tracking in videos.",
+          "For CoreML export to deploy EdgeTAM on iOS/macOS devices, install the CoreML dependencies:",
+          "The step above requires compiling a custom CUDA kernel with the `nvcc` compiler."
+        ]
+      }
+    },
+    "AhmedBafkir/DLiPA": {
+      "category": "mobile",
+      "one_liner": "iOS 应用包下载工具",
+      "intro": {
+        "one_liner": "iOS 应用旧版下载安装工具",
+        "what_it_is": "DLiPA 是一款受 ipatool 启发的 iOS 应用，可用 Apple ID 下载、安装和分享 App Store 应用，并支持获取旧版本。",
+        "problem_solved": "它解决非越狱设备获取应用安装包、指定旧版本，以及按账号分别管理下载的问题。",
+        "who_should_care": "需要安装或保存应用旧版本的 iOS 用户，以及使用多 Apple ID 的开发者。",
+        "use_cases": [
+          "下载应用旧版本",
+          "导出并分享安装包",
+          "在非越狱设备安装应用"
+        ],
+        "alternatives": "相比 ipatool，它提供 iOS 端应用，并支持安装、分享和多账号下载。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾有一天登上日榜。",
+        "risk_notes": "应用内直接安装可能导致缺少自动更新；仅支持购买免费应用；需要用户提供 Apple ID。",
+        "evidence": [
+          "An iOS app inspired by the ipatool project. It allows users to download, install, and share App Store applications using their Apple ID, with support for downloading older versions — no jailbreak required.",
+          "Installing apps directly from within the app may cause issues such as missing automatic updates.",
+          "Purchase only free apps."
+        ]
+      }
+    },
+    "kr8s-org/kr8s": {
+      "category": "dev-tools",
+      "one_liner": "类 kubectl 的 Kubernetes 客户端",
+      "intro": {
+        "one_liner": "Python 版 Kubernetes 客户端",
+        "what_it_is": "kr8s 是一个简单、可扩展的 Python Kubernetes 客户端库，提供接近 kubectl 使用习惯的接口，并包含同步和异步接口。",
+        "problem_solved": "它降低用 Python 操作 Kubernetes 的学习成本，减少认证、对象传递和常见运维操作中的样板代码。",
+        "who_should_care": "熟悉 kubectl、需要用 Python 编写 Kubernetes 脚本或工具的开发者。",
+        "use_cases": [
+          "列出集群节点和 Pod",
+          "创建、打标签和扩缩容资源",
+          "在 Pod 中执行命令或端口转发"
+        ],
+        "alternatives": "相比同类项目，强调 kubectl 风格接口、无自动生成代码、可读源码和内置实用方法。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "成熟度、许可证和生产可用性未提供；项目创建于 2023 年，需自行评估维护与兼容性。",
+        "evidence": [
+          "A simple, extensible Python client library for Kubernetes that feels familiar for folks who already know how to use `kubectl`.",
+          "API inspired by `kubectl` for a shallow learning curve.",
+          "Has both a standard and an [async API](https://docs.kr8s.org/en/stable/asyncio.html) that can be used with `asyncio` and `trio`."
+        ]
+      }
+    },
+    "RUB-NDS/Terrapin-Scanner": {
+      "category": "security",
+      "one_liner": "SSH Terrapin 漏洞扫描器",
+      "intro": {
+        "one_liner": "SSH 漏洞扫描器",
+        "what_it_is": "一个用 Go 编写的小型工具，用于判断 SSH 客户端或服务端是否受 Terrapin Attack 影响。",
+        "problem_solved": "通过一次连接收集算法与严格密钥交换支持情况，帮助检查 SSH 实现是否存在相关风险。",
+        "who_should_care": "运维、安全人员，以及维护或使用 SSH 服务的开发者。",
+        "use_cases": [
+          "扫描 SSH 服务端风险",
+          "检查 SSH 客户端风险",
+          "输出 JSON 扫描结果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天进入日榜。",
+        "risk_notes": "工具不执行完整密钥交换，也不实际发起攻击；若对端采用工具未知的防护措施，可能误报为存在漏洞。",
+        "evidence": [
+          "This repository contains a simple vulnerability scanner for the Terrapin attack present in the paper \"Terrapin Attack: Breaking SSH Channel Integrity By Sequence Number Manipulation\".",
+          "The Terrapin Vulnerability Scanner is a small utility program written in Go, which can be used to determine the vulnerability of an SSH client or server against the [Terrapin Attack](https://terrapin-attack.com).",
+          "This may falsely claim vulnerability in case the peer supports countermeasures unknown to this tool."
+        ]
+      }
+    },
+    "sedyh/awesome-ebitengine": {
+      "category": "game",
+      "one_liner": "Ebitengine 游戏开发资源清单",
+      "intro": {
+        "one_liner": "Ebitengine 资源精选清单",
+        "what_it_is": "这是一个围绕 Ebitengine 的精选资源清单，收录框架、库、软件、文章和游戏等条目，并按图形、音频、物理、网络等主题分类。",
+        "problem_solved": "它把分散的 Ebitengine 生态资源集中整理，帮助开发者查找适合二维游戏开发的框架、工具、组件和示例。",
+        "who_should_care": "使用 Go 和 Ebitengine 开发二维游戏的开发者，以及想了解相关生态的人。",
+        "use_cases": [
+          "查找游戏框架和场景管理库",
+          "挑选图形、音频、物理等组件",
+          "浏览游戏、应用和文章案例"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，但缺少持续热度信息。",
+        "risk_notes": "清单依赖社区维护，部分收录项目可能停止维护或不再适合；资料中未提供许可证信息。",
+        "evidence": [
+          "A curated list of awesome Ebitengine frameworks, libraries and software",
+          "Ebitengine is an open source game library for the Go programming language. Ebitengine's simple API allows you to quickly and easily develop 2D games that can be deployed across multiple platforms.",
+          "If you see a package or project here that is no longer maintained or is not a good fit, please submit a pull request to improve this file."
+        ]
+      }
+    },
+    "iFurySt/open-computer-use": {
+      "category": "ai-agent",
+      "one_liner": "开源电脑操作智能体",
+      "intro": {
+        "one_liner": "开源电脑操作服务",
+        "what_it_is": "一个封装为 MCP 的开源 Computer Use 服务，让智能体或 MCP 客户端在 macOS、Linux 和 Windows 上操作电脑。",
+        "problem_solved": "为各类智能体提供可接入的电脑操作能力，并基于辅助功能实现非侵入式操作。",
+        "who_should_care": "使用 Codex、Claude Code、Gemini CLI 等客户端的开发者。",
+        "use_cases": [
+          "为智能体接入电脑操作",
+          "在命令行调用界面工具",
+          "跨系统运行自动化操作"
+        ],
+        "alternatives": "定位为 Codex Computer Use 的开源替代，并支持多系统。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 133 星，并曾登上日榜。",
+        "risk_notes": "macOS 运行时要求 14.0 或更高版本，且需授予辅助功能和录屏权限；锁屏使用需额外配置与权限。",
+        "evidence": [
+          "`open-computer-use` is an open-source `Computer Use` service wrapped as `MCP`. Any AI agent or MCP client can use it to run Computer Use on macOS, Linux, and Windows.",
+          "The macOS runtime requires macOS 14.0 or later.",
+          "**On macOS, run it once and grant `Accessibility` and `Screen Recording`. Windows and Linux do not need this step.**"
+        ]
+      }
+    },
+    "HKUDS/AutoSwarm": {
+      "category": "ai-agent",
+      "one_liner": "自构建自运行智能体群",
+      "intro": {
+        "one_liner": "多智能体协同编排工具",
+        "what_it_is": "AutoSwarm 是把多个本地智能体连接成协作团队的 Python 工具，可统一上下文、分配任务并汇总结果。",
+        "problem_solved": "它解决不同智能体能力、记忆、工具和数据彼此割裂的问题，减少切换界面、重复说明和手工拼接结果。",
+        "who_should_care": "同时使用多个编码或研究智能体、希望统一调度它们的开发者。",
+        "use_cases": [
+          "批量阅读文档并归纳分歧",
+          "按能力选择智能体协作",
+          "跨工具并行执行任务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千后一周仅涨了 14 星，且只上过一天日榜。",
+        "risk_notes": "创建日期与最近提交日期均晚于当前时间；路线图仍计划扩展集成、改进协同与可靠性；有 29 个未关闭问题。",
+        "evidence": [
+          "AutoSwarm turns fragmented agents into one coordinated team.",
+          "Give AutoSwarm a task once. It unifies all your agents into one coordinated team",
+          "Expand Integrations — Support more agent products, models, tools, and native capabilities."
+        ]
+      }
+    },
+    "FatihMakes/Mark-LVI": {
+      "category": "ai-model",
+      "one_liner": "电脑控制多模态模型",
+      "intro": {
+        "one_liner": "跨平台语音电脑助手",
+        "what_it_is": "一个用 Python 编写的个人语音助手，可听、看、说并控制电脑，支持 Windows、macOS 和 Linux，也允许选择本地或第三方模型与语音组件。",
+        "problem_solved": "让用户在没有 Gemini 配额、网络受限或麦克风数据不能外传时，仍能使用语音助手；同时让工具执行结果按实际观察回报，减少把未确认操作说成完成。",
+        "who_should_care": "想用语音控制电脑、关心本地模型接入和隐私边界的开发者。",
+        "use_cases": [
+          "语音打开或关闭应用",
+          "切换本地或第三方模型",
+          "查看并删除助手记忆"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千时达 1,775 星且曾上日榜 1 天。",
+        "risk_notes": "创建日期为 2026 年 3 月 2 日，资料自称仍在逐日改进；Fork 数 749 与星数比例较高，需留意关注来源。README 含外部视频引导，但未提供许可证信息。",
+        "evidence": [
+          "A real-time voice AI that can hear, see, speak, and control your computer — on any OS. Supports Windows, macOS, and Linux.",
+          "Mark LVI adds a second way to hold the conversation — speech recognition, a language model and a voice, assembled from parts you pick in ⚙ → ENGINE & PROVIDERS",
+          "Every tool that drives an application now answers with what it observed rather than with what it attempted: `done` means it was checked, `unverified` means the request went out and could not be confirmed"
+        ]
+      }
+    },
+    "ooboqoo/shiping": {
+      "category": "ai-agent",
+      "one_liner": "面试考试实时解题助手",
+      "intro": {
+        "one_liner": "屏幕内容 AI 解题助手",
+        "what_it_is": "识屏是一款开源桌面助手，可截图、框选或监听对话，调用自备 AI 平台实时给出解答、解释和提示。",
+        "problem_solved": "它把屏幕上的题目、代码、报错、图表、外文资料和会议语音快速转成 AI 解答，减少手动复制与切换窗口。",
+        "who_should_care": "准备技术面试、算法笔试、在线考试，或需要即时解释屏幕内容的人。",
+        "use_cases": [
+          "截图获取算法题思路和代码",
+          "框选解释代码、报错或外文",
+          "面试对话中实时生成回答提示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾上日榜一天，话题集中在面试与考试助手。",
+        "risk_notes": "许可协议禁止商业用途；隐身模式不保证在所有电脑和会议软件中生效；用于面试或考试需自行遵守场合规则并承担后果。",
+        "evidence": [
+          "面试助手，考试助手，在「面试」或「在线考试」时，借助AI实时提供解题思路",
+          "屏幕上的内容，截一下、框一下，AI 就看懂：题目、代码、报错、图表、外文资料，按下快捷键就有解答。",
+          "CC BY-NC 4.0：可以自由使用、修改和分发，注明出处即可，但不得用于商业用途"
+        ]
+      }
+    },
+    "Downvid/downvid": {
+      "category": "content-media",
+      "one_liner": "跨平台高清视频下载器",
+      "intro": {
+        "one_liner": "跨平台视频下载桌面工具",
+        "what_it_is": "DownVid 是开源的跨平台桌面视频下载工具，作为 yt-dlp 与 FFmpeg 的图形界面前端，提供下载管理、依赖管理和自动更新。",
+        "problem_solved": "它降低命令行下载工具的使用门槛，让用户通过界面保存视频、音频、字幕，并管理清晰度、队列和运行依赖。",
+        "who_should_care": "需要批量或跨平台保存公开视频、又不想配置命令行的普通用户和开发者。",
+        "use_cases": [
+          "保存公开视频到本地",
+          "下载音频或字幕",
+          "管理下载队列与历史"
+        ],
+        "alternatives": "相比命令行工具，它提供图形界面、依赖管理、下载队列和自动更新。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 64 星，且曾有一天进入日榜。",
+        "risk_notes": "项目仍在持续演进；平台可用性可能随网站规则变化；需遵守法律法规、平台规则及内容版权要求。",
+        "evidence": [
+          "现代化的开源跨平台视频下载工具 — 一键保存全网无水印高清视频 / A modern, cross-platform open-source video downloader GUI for yt-dlp & FFmpeg",
+          "本项目作为 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 与 [FFmpeg](https://ffmpeg.org/) 的图形界面前端，抹平了复杂的命令行参数门槛，带来开箱即用、简洁无干扰的下载体验。",
+          "平台可用性可能随网站规则变化而变化。"
+        ]
+      }
+    }
+  }
+}

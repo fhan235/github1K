@@ -1,1 +1,830 @@
-{"date":"2026-08-15","headline":"AI Agent 热度领跑今日榜单","points":["今日 34 个破千项目中，AI Agent 有 10 个，Python 有 11 个，智能体技能与工具密集出现。","zhu1090093659/dsh-web-ui 单日新增 1399，主打 DSH 网页界面插件皮肤集。","liustack/modlens 给编码智能体加视觉证据，MakazhanAlpamys/Soup 用一份配置微调大模型。"],"items":{"zhu1090093659/dsh-web-ui":{"category":"web-frontend","one_liner":"DSH 网页界面插件皮肤集"},"cordiverse/paper":{"category":"dev-tools","one_liner":"时空组合编程范式"},"xoreaxeaxeax/skitter-creek-bath-salts":{"category":"security","one_liner":"用内存加扰解锁 CPU"},"liustack/modlens":{"category":"ai-agent","one_liner":"给编码智能体加视觉证据"},"MakazhanAlpamys/Soup":{"category":"ai-model","one_liner":"一份配置微调大模型"},"arvin341az-glitch/RVG":{"category":"dev-tools","one_liner":"多协议代理管理面板"},"gvzdv/claudish-to-english":{"category":"other","one_liner":"Claude 术语转白话工具"},"imxv/Pretty-mermaid-skills":{"category":"ai-agent","one_liner":"让 AI 渲染 Mermaid 图表"},"danyuchn/asd-ste100-skill":{"category":"ai-agent","one_liner":"改写技术英语的智能体技能"},"larashero3-dotcom/lieflat-charts":{"category":"ai-agent","one_liner":"智能体生成交互图表技能"},"MatrAIx-ai/MatrAIx-Persona-8B":{"category":"ai-model","one_liner":"现实前模拟的人格模型"},"questflowai/investorskills":{"category":"data-finance","one_liner":"结构化投资判断技能库"},"CSCB/vibe-mouse":{"category":"hardware-iot","one_liner":"开源交互式智能鼠标"},"ggbond268/MacTools":{"category":"desktop-system","one_liner":"macOS 菜单栏工具合集"},"abubakarsiddik31/claude-skills-collection":{"category":"ai-agent","one_liner":"Claude 技能精选合集"},"agentplugins/agent-plugins-spec":{"category":"ai-agent","one_liner":"智能体插件打包规范"},"kuestcom/prediction-market":{"category":"data-finance","one_liner":"快速搭建去中心化预测市场"},"zenbu-labs/terminal-browser":{"category":"dev-tools","one_liner":"终端内运行的浏览器"},"Mekotofeuka/MTPROTO_FIX_By_MEKO":{"category":"automation","one_liner":"一键安装修复代理工具"},"Kieirra/murmure":{"category":"ai-model","one_liner":"本地私密语音转文字"},"Goekdeniz-Guelmez/Local-NotebookLM":{"category":"ai-model","one_liner":"本地版 NotebookLM"},"tmwgsicp/wechat-download-api":{"category":"content-media","one_liner":"公众号文章导出订阅接口"},"GanyuanRan/Aegis":{"category":"ai-agent","one_liner":"让编码智能体懂架构"},"orailnoor/cross-platform-llm-client":{"category":"ai-model","one_liner":"跨平台统一大模型客户端"},"techchipnet/hound":{"category":"security","one_liner":"轻量信息收集定位工具"},"170-carry/codex-tools":{"category":"dev-tools","one_liner":"Codex 账号用量管理工具"},"johnhuang316/code-index-mcp":{"category":"dev-tools","one_liner":"代码仓库索引搜索服务"},"ghik/kubernetes-the-harder-way":{"category":"learning-resource","one_liner":"本地搭建类生产集群指南"},"anywhere-labs/deepseek-harness-desktop":{"category":"desktop-system","one_liner":"DSH 生态现代桌面端"},"PhyAgentOS-dev/PhyAgentOS":{"category":"ai-agent","one_liner":"自演进具身智能系统"},"tinyfish-io/bigset-oss":{"category":"ai-agent","one_liner":"自托管实时数据集平台"},"alex-hyperagent/hyperagent-public-skills":{"category":"ai-agent","one_liner":"免费智能体技能包"},"awesome-dsh-plugin/awesome-dsh-plugin":{"category":"learning-resource","one_liner":"DSH 插件精选列表"},"rogue-security/rogue":{"category":"security","one_liner":"智能体评测红队平台"}}}
+{
+  "date": "2026-08-15",
+  "headline": "AI Agent 热度领跑今日榜单",
+  "points": [
+    "今日 34 个破千项目中，AI Agent 有 10 个，Python 有 11 个，智能体技能与工具密集出现。",
+    "zhu1090093659/dsh-web-ui 单日新增 1399，主打 DSH 网页界面插件皮肤集。",
+    "liustack/modlens 给编码智能体加视觉证据，MakazhanAlpamys/Soup 用一份配置微调大模型。"
+  ],
+  "items": {
+    "zhu1090093659/dsh-web-ui": {
+      "category": "web-frontend",
+      "one_liner": "DSH 网页界面插件皮肤集",
+      "intro": {
+        "one_liner": "DeepSeek Harness Web UI 插件与皮肤合集",
+        "what_it_is": "dsh-web 是面向 DeepSeek Harness（DSH）Web GUI、DeepSeek 网页版与官方桌面客户端的模块化插件生态与主题皮肤合集，以 TypeScript 编写，通过官方 profile 机制挂载，无需修改官方源码。",
+        "problem_solved": "原生 DSH Web 只提供核心对话与工具调用能力，在多任务并发调度、长程后台执行、移动端协同、远程运维、Token 成本监控与界面个性化方面存在扩展空间，本项目以插件方式补齐这些能力。",
+        "who_should_care": "重度使用 DeepSeek Harness 的开发者、需要多 Agent 并行开发与自动化流水线的工程团队，以及希望定制界面外观的个人用户。",
+        "use_cases": [
+          "用任务看板配合 Cron 定时与多 Agent 级联，搭建无人值守的自动化研发流水线",
+          "通过手机 App 远程访问并控制 DSH 会话",
+          "在 Web 界面内使用 SSH 终端、SFTP 传输与集群批量命令运维 Linux 服务器",
+          "用 Git 图谱与 Worktree 隔离多个 Agent 的并行编码工作区",
+          "监控 Token 用量与成本，并安装主题皮肤与桌面宠物"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建于 2026-08-12，一周内新增约 3494 stars，热度集中在 DeepSeek 生态与多 Agent 工作台话题上，长期价值仍待观察。",
+        "risk_notes": "README 含大量营销式表述与外部站点（dsh-market.com）引导，功能描述未提供独立验证；项目创建时间很短，长期维护情况未知；插件需挂载到官方 DSH 环境，存在与官方版本兼容性风险。",
+        "evidence": [
+          "dsh-web 是面向 DeepSeek Harness（DSH）Web GUI、DeepSeek 网页版与官方桌面客户端（DeepSeek Desktop）的模块化插件生态与 AI 智能体开发工作台。",
+          "dsh-web 通过官方 profile 机制挂载到 `dsh web`，零修改侵入官方源码，为用户提供完整的模块化扩展体系",
+          "原生 DeepSeek Harness Web 提供了核心的对话交互与工具调用能力，但在多任务并发调度、长程后台执行、移动端协同以及工程化开发运维方面仍有扩展空间。"
+        ]
+      }
+    },
+    "cordiverse/paper": {
+      "category": "dev-tools",
+      "one_liner": "时空组合编程范式",
+      "intro": {
+        "one_liner": "面向时空可组合性的编程范式论文",
+        "what_it_is": "这是 cordiverse/paper 仓库，存放一篇 arXiv 预印本论文《A Programming Paradigm for Spatiotemporal Composability》，提出 context paradigm 与可逆 effect、响应式 coeffect 的形式化，并说明在元框架 Cordis 中的实现。",
+        "problem_solved": "针对插件系统、自演化 agent harness 等场景所需的动态组合缺乏形式化基础的问题，论文从时间可组合性（组件移除时完全回滚副作用）与空间可组合性（声明并响应式管理组件间依赖）两个维度给出理论机制。",
+        "who_should_care": "编程语言与形式化方法研究者、插件或扩展系统架构师，以及关注 agent harness 动态组合机制的设计者。",
+        "use_cases": [
+          "为插件系统的热插拔与副作用回滚提供理论依据",
+          "为自演化 agent harness 的组件依赖管理提供形式化参考",
+          "作为 effect/coeffect 系统在运行时机制上的研究材料"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点：仓库创建不足一月即获约 2600 stars、单周增约 1300，但内容为仍在修订的预印本论文，热度与内容成熟度不匹配。",
+        "risk_notes": "仓库无 license 信息；README 自述为 actively revision 的预印本，结论可能变动；星数短期暴涨且无代码实现细节，需警惕热度与实际可用性不符。",
+        "evidence": [
+          "This is a preprint under active revision.",
+          "We formalize _revertible effects_, in which every context transformation carries an inverse that the runtime holds",
+          "We implement these ideas in _Cordis_, a meta-framework of spatiotemporal composability"
+        ]
+      }
+    },
+    "xoreaxeaxeax/skitter-creek-bath-salts": {
+      "category": "security",
+      "one_liner": "用内存加扰解锁 CPU",
+      "intro": {
+        "one_liner": "通过 DRAM 地址重映射突破 CPU 内存隔离",
+        "what_it_is": "一个用 C 编写的底层研究工具，通过修改 AMD Family 16h CPU 的 DRAM 控制器地址转换寄存器，重新映射物理地址到 DRAM 坐标，从而访问内核不可见的受保护内存区域。",
+        "problem_solved": "CPU 与固件的安全隔离机制（PSP、SMM、C6 DRAM、微码保护等）都建立在物理地址转换之上；该项目通过篡改内存控制器底层的地址映射，使这些上层保护机制失效。",
+        "who_should_care": "硬件安全研究者、固件与内核安全工程师、从事 CPU 微架构与内存控制器逆向分析的人员。",
+        "use_cases": [
+          "研究 AMD Family 16h 平台的内存控制器地址转换机制",
+          "验证 DRAM 地址重映射对 PSP、SMM 等隔离边界的破坏效果",
+          "作为硬件安全教学与 CTF 类研究的实验素材"
+        ],
+        "alternatives": "unknown",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，因为项目仅针对已停止演进的老旧 AMD 16h 平台做概念验证，话题性强但适用范围窄。",
+        "risk_notes": "仅针对 AMD Family 16h 开发测试，17h 及以后世代未公开相关寄存器信息；直接改写 DRAM 控制器寄存器可能导致系统不稳定或数据损坏，仅适合在隔离的实验硬件上使用。",
+        "evidence": [
+          "Developed and tested on **AMD Family 16h CPUs**, the last generation whose datasheets document the DRAM controller's translation registers",
+          "One bit-flip in the DRAM controller rewires the bottom of the `*p` pipeline, and the data that was at `&x` is now somewhere else mid-flight.",
+          "17h and beyond simply leave this information out."
+        ]
+      }
+    },
+    "liustack/modlens": {
+      "category": "ai-agent",
+      "one_liner": "给编码智能体加视觉证据",
+      "intro": {
+        "one_liner": "为纯文本模型外挂视觉能力的插件",
+        "what_it_is": "ModLens 是一个 TypeScript 编写的视觉插件，为 DeepSeek Harness 以及 Claude Code、Codex、OpenCode、Pi 等纯文本编码 agent 提供读图能力，粘贴图片即可得到结构化 JSON 证据（OCR、版面、语义）。",
+        "problem_solved": "解决 DeepSeek、GLM 等纯文本模型无法读图的问题，用户无需先保存图片再传路径，直接粘贴图片即可让模型基于图像内容作答。",
+        "who_should_care": "使用 DeepSeek Harness 或 Claude Code、Codex、OpenCode、Pi 等纯文本编码 agent、需要读图能力的开发者。",
+        "use_cases": [
+          "在纯文本编码 agent 中粘贴截图，让模型读取界面或报错信息",
+          "对图片做 OCR 与版面结构提取，输出结构化 JSON 供下游使用",
+          "复用本机已有的 Claude Code、Codex 等登录作为视觉引擎，避免额外配置"
+        ],
+        "alternatives": "README 自称是 DeepSeek Harness 上能力最强的视觉插件，强调无需 hooks、wrapper 或本地代理守护进程，卸载即删一个文件夹；但未提供与其他同类项目的直接对比数据。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建于 2026-02-22，一周新增约 2210 stars，属于围绕 DeepSeek 生态的短期关注度爆发。",
+        "risk_notes": "README 含大量营销式表述（如“全网第一个”“能力最强”），缺少独立验证；项目创建时间较短，长期维护情况未知；复用本机 CLI 登录凭证涉及账号与配额使用，需留意安全与合规。",
+        "evidence": [
+          "The first vision plugin for DeepSeek Harness, and the vision bridge for every text-only coding agent.",
+          "DeepSeek's flagship chat models, and GLM-5.3 itself, are text-only and cannot read images.",
+          "No hooks, no wrappers, no local proxy daemon, not a single line changed in any harness config"
+        ]
+      }
+    },
+    "MakazhanAlpamys/Soup": {
+      "category": "ai-model",
+      "one_liner": "一份配置微调大模型",
+      "intro": {
+        "one_liner": "用一份 YAML 微调 LLM 的 CLI 工具",
+        "what_it_is": "Soup 是一个 Python 命令行工具，用一份 YAML 配置和一条命令完成 LLM 微调与后训练，内置 Web UI，并支持 QLoRA、DPO、GRPO 等训练方式。",
+        "problem_solved": "它降低了 LLM 微调的门槛：用户不必再通过 SSH 登录 GPU 机器，也不必手动配置批量大小、量化、GPU 检测等基础设施细节，在本地消费级 GPU 上就能完成训练。",
+        "who_should_care": "想在单卡消费级 GPU 或笔记本上做 LLM 微调的个人开发者、小团队，以及希望减少训练基础设施配置工作的算法工程师。",
+        "use_cases": [
+          "在 4 GB 显存的笔记本 GPU 上对 8B 模型做 LoRA/QLoRA 微调",
+          "用 YAML 配置批量执行数据清洗、去重、PII 过滤等数据准备命令",
+          "通过内置 Web UI 或 CLI 完成 DPO/GRPO 等偏好后训练"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由是周增约 1378 星、单日登上日榜，且 README 中 layer streaming 仍标注为 BETA、版本迭代频繁（v0.77.1 仍在修复正确性问题）。",
+        "risk_notes": "layer streaming 为 BETA 且经历过正确性修复，性能数字前后不可直接比较；v0.77.0 起部分旧配置会被拒绝加载，升级需先运行 soup doctor；open issues 达 225 个，维护压力较大。",
+        "evidence": [
+          "Fine-tune and post-train LLMs in one command. No SSH, no config hell.",
+          "Layer streaming keeps the frozen base out of VRAM and feeds it to the GPU one decoder layer at a time.",
+          "Opt-in (`stream_layers: true`) and still BETA"
+        ]
+      }
+    },
+    "arvin341az-glitch/RVG": {
+      "category": "dev-tools",
+      "one_liner": "多协议代理管理面板",
+      "intro": {
+        "one_liner": "基于 FastAPI 的多协议代理管理面板",
+        "what_it_is": "RVG 是一个用 Python 和 FastAPI 构建的自托管多协议代理管理面板，提供管理后台，用于创建、监控和管理代理链接，并支持一键部署到 Railway。",
+        "problem_solved": "把 VLESS、Trojan、Shadowsocks、MTProto 等多种代理协议的链接创建、流量配额、连接监控和二维码导出集中到一个轻量服务中管理。",
+        "who_should_care": "需要自建多协议代理网关并希望有可视化面板的个人用户或小团队运维者。",
+        "use_cases": [
+          "在 Railway 上一键部署个人代理网关并生成客户端订阅链接",
+          "为不同用户分配带流量配额的独立代理链接",
+          "通过 Telegram bot 自动化管理域名与 TCP 代理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由是周增约 2200 星、单日上榜，但项目创建仅约三个月且路线图中持久化存储与多节点仍为未完成项。",
+        "risk_notes": "采用自定义许可证，禁止修改后分发；README 提到当前使用内存存储，重启可能丢失链接与配额数据；fork 数（13462）远高于 star 数，数据异常需谨慎看待。",
+        "evidence": [
+          "RVG Gateway is a fast, modern, self-hosted multi-protocol proxy management panel, built with Python + FastAPI",
+          "❌ Modifying and redistributing a modified version is not permitted",
+          "B --> G[(In-Memory<br/>Link & Quota Store)]"
+        ]
+      }
+    },
+    "gvzdv/claudish-to-english": {
+      "category": "other",
+      "one_liner": "Claude 术语转白话工具",
+      "intro": {
+        "one_liner": "改写助手回复的插件",
+        "what_it_is": "这是 Claude Code 插件，把助手消息显示为更通俗的改写文本，可调用本地模型、命令行工具或兼容接口。",
+        "problem_solved": "让难懂的助手回复更易读，同时保持推理过程和保存记录中的原文不变。",
+        "who_should_care": "经常使用 Claude Code、希望阅读更直白回复的开发者。",
+        "use_cases": [
+          "把会话回复改写成通俗表达",
+          "按需改写文件、网址或文本",
+          "可选改写写入的文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 943 星，并曾进入日榜。",
+        "risk_notes": "自称可用原型；依赖本地模型、命令行工具或接口密钥，配置不当会跳过改写；默认模型仅适用于 macOS。",
+        "evidence": [
+          "A Claude Code plugin that shows a **plain-English rewrite** of each assistant\nmessage, produced by a **local LLM via ollama** (default), the **codex CLI**,\nthe **Anthropic API**, or any **OpenAI-compatible API**.",
+          "It is **display-only**:\nClaude's own reasoning and the saved transcript keep the original text — only\nwhat you read on screen changes.",
+          "Status: working prototype. Every hook fails **open** — if anything goes wrong\n> (provider down, timeout, missing key or dependency), you simply see Claude's\n> original text.",
+          "一周新增 Star：943"
+        ]
+      }
+    },
+    "imxv/Pretty-mermaid-skills": {
+      "category": "ai-agent",
+      "one_liner": "让 AI 渲染 Mermaid 图表",
+      "intro": {
+        "one_liner": "AI 图表渲染技能",
+        "what_it_is": "一个面向 AI 助手的 Mermaid 渲染技能，可把 Mermaid 源码输出为 SVG、PNG 和终端 ASCII 图。",
+        "problem_solved": "让 AI 助手在本地生成美观图表，避免依赖浏览器、Chromium、Puppeteer 或 DOM。",
+        "who_should_care": "使用 AI 编程助手、需要生成文档图表或终端图示的开发者。",
+        "use_cases": [
+          "为文档生成主题化图表",
+          "批量渲染多种 Mermaid 图",
+          "在终端输出 ASCII 图示"
+        ],
+        "alternatives": "无需浏览器，支持三种输出、十五种主题和六类图表。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 98 星，并曾进入日榜一天。",
+        "risk_notes": "创建时间较新，仍有 3 个未关闭问题；README 提到基于另一个项目。",
+        "evidence": [
+          "To provide AI with Mermaid chart rendering capability, supporting both SVG and ASCII output formats",
+          "**No browser required**: renders locally without Chromium, Puppeteer, or a DOM",
+          "**Six Diagram Types**: Flowchart, Sequence, State, Class, ER, and XY charts"
+        ]
+      }
+    },
+    "danyuchn/asd-ste100-skill": {
+      "category": "ai-agent",
+      "one_liner": "改写技术英语的智能体技能",
+      "intro": {
+        "one_liner": "把航空级简化英语规则用于 Agent 输出改写",
+        "what_it_is": "一个 Claude Code skill，把 ASD-STE100 Simplified Technical English 的写作规则用于改写面向 AI agent 的英文文本，并附带一个只检查结构性规则的确定性 linter 脚本。",
+        "problem_solved": "解决 agent 之间或工具描述、错误信息中英文表述含糊、冗长、一词多义，导致下游 agent 无法追问澄清而误读的问题。",
+        "who_should_care": "构建多 agent 系统、编写工具描述与错误信息的开发者，以及需要让机器可读英文更精确的提示词与文档维护者。",
+        "use_cases": [
+          "改写 tool description、错误信息与 agent 间指令",
+          "精简 README、PR 描述等说明性文字",
+          "用 ste-lint.py 对文本做结构性规则检查"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Claude Code skill 生态与 agent 互操作话题获得关注，但核心是规则应用而非新模型能力。",
+        "risk_notes": "不包含 ASD 官方约 900 词受控词典，因标准允许获取但不允许再分发，因此无法保证通过官方 STE 认证；linter 只检查结构模式，不校验改写是否保留原意；README 自述仓库自身文本也未通过 lint。",
+        "evidence": [
+          "A Claude Code skill that rewrites dense, ambiguous English into ASD-STE100 Simplified Technical English (STE)",
+          "It does **not** reproduce ASD's official ~900-word approved dictionary. The standard is free to obtain but not free to redistribute",
+          "The linter checks structural patterns only. It does not compare an original text with a rewrite, verify that requirement strength stayed the same, or prove that the rewrite preserved meaning."
+        ]
+      }
+    },
+    "larashero3-dotcom/lieflat-charts": {
+      "category": "ai-agent",
+      "one_liner": "智能体生成交互图表技能",
+      "intro": {
+        "one_liner": "面向 AI Agent 的 HTML 图表生成 Skill",
+        "what_it_is": "Lieflat Charts 是一套遵循 Agent Skills 格式的数据可视化 skill，可被 moxt、Claude Code、Codex 等兼容 SKILL.md 的 AI agent 调用，把数据生成为精致、可交互的单文件 HTML 图表，并附带 PPT 演示模式与整页报告模式。",
+        "problem_solved": "解决 AI agent 生成图表时缺乏统一视觉规范与模板体系的问题：它通过 Lupi、Glance、Basics 等风格模板、Mono 与三套彩色预设，以及 catalog 选型规则，让 agent 稳定产出排版统一、保留真实数据单位的图表。",
+        "who_should_care": "使用 Claude Code、Codex 等 AI agent 做数据汇报的人，以及需要快速产出公众号长图、周报 dashboard、年报或白皮书的分析师、运营与内容创作者。",
+        "use_cases": [
+          "把 CSV 或调研数据交给 agent，生成适合汇报的 Glance 快速判断型图表",
+          "读论文或长文后生成 4–6 张 Lupi Editorial 编辑叙事型中文图表",
+          "根据周报数据生成 16:9 可翻页、带入场动效的单文件 HTML 演示",
+          "从 12 套整页报告模板生成调研报告、月报或 dashboard 页面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：它依托 agent-skills 与 Claude Code 生态，一周内新增约 595 星，但项目创建于 2026-07，仍处于快速迭代期。",
+        "risk_notes": "仓库未声明 license（license 为 null），商用或二次分发前需确认授权；README 大量引导至 moxt.ai 平台，并含作者社交账号推广；项目创建时间短、迭代频繁，模板与目录结构可能变动。",
+        "evidence": [
+          "Lieflat Charts 是一套遵循 Agent Skills 格式的数据可视化、PPT 演示与整页报告生成 skill，可供 moxt、Claude Code、Codex 及其他兼容 `SKILL.md` 的 AI agent 使用。",
+          "它以统一的字体、留白、线条和动效建立自己的视觉语法",
+          "npx skills add https://github.com/larashero3-dotcom/lieflat-charts --skill lieflat-charts"
+        ]
+      }
+    },
+    "MatrAIx-ai/MatrAIx-Persona-8B": {
+      "category": "ai-model",
+      "one_liner": "现实前模拟的人格模型",
+      "intro": {
+        "one_liner": "用百万级 persona 模拟用户评测 AI 产品",
+        "what_it_is": "MatrAIx 是一个面向人群规模、由 persona 驱动的评测基础设施，它把采样得到的人物画像实例化为 LLM agent，并在 Survey、AI Chatbot、Web、App 四类环境中运行可复现任务，以评测 AI 系统与交互产品。",
+        "problem_solved": "它解决的是评测时只能依赖单一或可互换的通用用户这一问题：通过异构模拟用户、共享遥测与任务自有验证，把个体回答和轨迹汇总为子群与人群层面的结论。",
+        "who_should_care": "AI 产品评测与用户研究团队、做交互产品压力测试的工程团队，以及研究 persona 模拟与合成用户的研究者。",
+        "use_cases": [
+          "在发布前用异构模拟用户对 AI Chatbot 做人群级压力测试",
+          "对 Web 与桌面、移动 App 做可复现的交互任务评测",
+          "基于 Persona 1M 数据集做子群差异分析与假设生成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目在 2026 年 7 月底开源，随后获得 arXiv 技术报告、Hugging Face Papers 收录与多家媒体报道，周增约 400 star，热度集中且时间较短。",
+        "risk_notes": "README 明确说明模拟世界“不是真实人群证据的替代品”，结论外推需谨慎；Web 与 OS-app 任务依赖 Docker，Windows 需在 WSL2 内运行；真实 persona 运行需要模型 API key。",
+        "evidence": [
+          "Instead of testing against a generic or interchangeable user, MatrAIx instantiates sampled persona records as LLM agents",
+          "a simulated world useful for exploration, stress testing, and hypothesis generation, not a replacement for evidence from real people",
+          "a deterministic, quality-filtered coreset of one million personas is released for research on Hugging Face"
+        ]
+      }
+    },
+    "questflowai/investorskills": {
+      "category": "data-finance",
+      "one_liner": "结构化投资判断技能库",
+      "intro": {
+        "one_liner": "投资判断技能库",
+        "what_it_is": "一个把投资判断整理成可移植结构化格式的开源库，包含技能包、模板、模式和示例，供人学习与智能体调用。",
+        "problem_solved": "把优秀投资者的思考、筛选、风险衡量和不确定情境下的行动方式沉淀为可复用规则，便于研究和智能体应用。",
+        "who_should_care": "投资研究者、智能体开发者，以及想结构化整理投资方法的人。",
+        "use_cases": [
+          "研究不同投资判断框架",
+          "为金融智能体添加技能包",
+          "用模板编写投资规则"
+        ],
+        "alternatives": "以纯文本技能包、模板和模式组织投资判断，并兼顾 Questflow 与多种智能体环境。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 448 星，并曾有一天进入日榜。",
+        "risk_notes": "模式示例标注为 alpha；部分技能为闭源且仅付费成员可用；创建时间较新。",
+        "evidence": [
+          "Investor Skills is an open-source library that turns durable investing judgment into portable, structured formats.",
+          "Investor Skills are plain-text skill packages. You can use them in Claude Code, Codex, Cursor, OpenCode, or any other agent harness that can read `SKILL.md` instructions.",
+          "version: alpha"
+        ]
+      }
+    },
+    "CSCB/vibe-mouse": {
+      "category": "hardware-iot",
+      "one_liner": "开源交互式智能鼠标",
+      "intro": {
+        "one_liner": "可编程交互鼠标工具",
+        "what_it_is": "这是一个用 Python 编写的可编程交互鼠标项目，把多设备输入映射为快捷键、语音指令和技能配置，并提供图形界面与反馈机制。",
+        "problem_solved": "它试图解决传统鼠标操作逻辑固定、不同开发工具快捷键切换繁琐的问题，让输入设备、提示词和反馈方式可自定义组合。",
+        "who_should_care": "关注自定义输入、语音编程和桌面自动化配置的开发者。",
+        "use_cases": [
+          "为鼠标侧键绑定编程工具操作",
+          "用语音生成提示词并调用模型",
+          "按当前编辑器自动切换快捷键"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 85 星且曾上日榜。",
+        "risk_notes": "处于预览版，功能和接口可能变化；采用 AGPL-3.0，衍生作品需按许可证保持开源；分叉数为零，社区协作迹象有限。",
+        "evidence": [
+          "Beta / 预览版 — This project is under active development. Features, APIs, and configurations may change.",
+          "A brand-new coding-based human-computer interaction paradigm that breaks the operational limitations of traditional mice, supporting refined and fully customizable interaction logic.",
+          "All derivative works must remain open-source in compliance with the specified license."
+        ]
+      }
+    },
+    "ggbond268/MacTools": {
+      "category": "desktop-system",
+      "one_liner": "macOS 菜单栏工具合集",
+      "intro": {
+        "one_liner": "macOS 菜单栏工具集",
+        "what_it_is": "MacTools 是免费开源的原生 macOS 菜单栏工具集，使用 Swift 开发，提供可定制面板、主题、插件和工作流。",
+        "problem_solved": "把系统状态、快捷控制、窗口管理、剪贴板、清理和监控等常用功能集中到菜单栏，减少切换应用的成本。",
+        "who_should_care": "重度使用 macOS、希望自定义菜单栏和自动化工作流的开发者与效率用户。",
+        "use_cases": [
+          "定制系统状态菜单栏面板",
+          "用插件扩展日常工具",
+          "串联动作做自动化工作流"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 93 星且曾上日榜。",
+        "risk_notes": "采用 GPL-3.0；要求 macOS 14 或更高版本，部分插件还需更新系统或兼容硬件；Nightly 仅供测试，硬件控制仍会影响同一台 Mac。",
+        "evidence": [
+          "A free and open-source collection of native macOS menu bar tools.",
+          "Free, open source, and native to macOS. Build your own panels, connect actions, and add the tools you need.",
+          "Requires **macOS 14 or later**; some plugins need newer macOS versions or compatible hardware."
+        ]
+      }
+    },
+    "abubakarsiddik31/claude-skills-collection": {
+      "category": "ai-agent",
+      "one_liner": "Claude 技能精选合集",
+      "intro": {
+        "one_liner": "Claude Skills 合集",
+        "what_it_is": "这是整理官方与社区 Claude Skills 的仓库，按类别收录可用于编码、写作、研究、设计和自动化的模块化能力。",
+        "problem_solved": "它把分散的 Claude Skills 集中分类，方便查找现成工作流，并为自建技能提供入口和质量模板。",
+        "who_should_care": "使用 Claude Skills 的开发者、写作与研究人员，以及想扩展智能体工作流的人。",
+        "use_cases": [
+          "查找编码调试技能",
+          "按类别浏览文档技能",
+          "参考模板创建新技能"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜，关注集中在技能合集。",
+        "risk_notes": "技能需要特定订阅权限并启用代码执行；仓库创建较新，成熟度未说明；收录来源较多，质量可能不一。",
+        "evidence": [
+          "A curated collection of official and community-built Claude Skills.",
+          "252 skills across 13 categories",
+          "Skills require Claude Pro, Max, Team, or Enterprise access with code execution enabled."
+        ]
+      }
+    },
+    "agentplugins/agent-plugins-spec": {
+      "category": "ai-agent",
+      "one_liner": "智能体插件打包规范",
+      "intro": {
+        "one_liner": "智能体插件打包规范",
+        "what_it_is": "这是一套开放、厂商中立的规范，用于把扩展智能体的可复用组件打包成可分发插件，定义技能与服务器的便携包格式。",
+        "problem_solved": "它解决智能体扩展组件缺少统一打包与发现方式的问题，让客户端能按约定读取插件清单并发现技能。",
+        "who_should_care": "开发智能体客户端、技能包、插件分发工具的开发者。",
+        "use_cases": [
+          "打包可复用的智能体技能",
+          "分发包含服务器的插件",
+          "实现插件清单与技能发现"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 96 星且曾上日榜。",
+        "risk_notes": "1.1.0 仍是工作草案；未关闭议题有 22 个；规范不约束客户端如何向用户或模型暴露技能。",
+        "evidence": [
+          "Agent Plugins Specification 1.0.0 is the current published release. Agent Plugins Specification 1.1.0 is a working draft.",
+          "It defines a portable package format for Agent Skills and MCP servers.",
+          "How the client exposes the skill to users or models is outside the Agent Plugins specification."
+        ]
+      }
+    },
+    "kuestcom/prediction-market": {
+      "category": "data-finance",
+      "one_liner": "快速搭建去中心化预测市场",
+      "intro": {
+        "one_liner": "开源预测市场建站工具",
+        "what_it_is": "这是一个基于 Polygon 的白标预测市场基础设施，提供品牌化前端、共享流动性、手续费配置和多种部署方式。",
+        "problem_solved": "让运营方无需从零搭建交易系统，也能快速推出自有品牌的预测市场，并获得交易费分成。",
+        "who_should_care": "券商、金融媒体、加密项目、社区运营者和技术部署团队。",
+        "use_cases": [
+          "搭建自有品牌预测市场",
+          "为媒体嵌入事件市场",
+          "为社区创建链上预测"
+        ],
+        "alternatives": "强调共享流动性、多运营方前端和品牌化部署，差异点来自其自述能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但创建时间很短。",
+        "risk_notes": "许可证要求生产部署使用 Kuest 基础设施，独立交易栈需商业协议；最小可行产品仍在压力测试、安全和财务一致性检查中。",
+        "evidence": [
+          "White-label prediction market infrastructure built on Polygon.",
+          "Deploy it, brand it, and earn trading fees — in under 15 minutes.",
+          "MVP — stress tests, security, and financial consistency checks"
+        ]
+      }
+    },
+    "zenbu-labs/terminal-browser": {
+      "category": "dev-tools",
+      "one_liner": "终端内运行的浏览器",
+      "intro": {
+        "one_liner": "在终端里运行的 Chromium 浏览器",
+        "what_it_is": "terminal-browser 是一个用 Rust 编写的浏览器，它借助终端对 kitty graphics protocol 的支持，把 Chromium 渲染出的像素直接显示在现有终端中。",
+        "problem_solved": "它让编码 agent 和网页处在同一个终端标签页内，使 agent 能直接操作浏览器、使用 Web，并方便地预览远程机器上的网站。",
+        "who_should_care": "重度使用终端与编码 agent（如 Claude Code、Codex）的开发者，以及需要 SSH 远程预览网页的工程师。",
+        "use_cases": [
+          "编码 agent 与网页同处一个终端标签页，agent 可直接操作浏览器",
+          "让 agent 生成 HTML 计划并在分屏中打开预览",
+          "通过 SSH 在本地预览远程机器 localhost 上的网站"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由是与编码 agent 结合的使用场景正受关注，且周增星约 892、项目仍处早期（open issues 112）。",
+        "risk_notes": "依赖支持 kitty graphics protocol 的终端，Windows 需 WSL 且终端支持有限；默认收集伪匿名使用与崩溃遥测（可关闭）；项目创建于 2026-07，较为年轻。",
+        "evidence": [
+          "A real browser that runs inside your terminal",
+          "We use this capability to display pixels generated by chromium.",
+          "terminal-browser collects psuedo-anonymous usage events"
+        ]
+      }
+    },
+    "Mekotofeuka/MTPROTO_FIX_By_MEKO": {
+      "category": "automation",
+      "one_liner": "一键安装修复代理工具",
+      "intro": {
+        "one_liner": "MTProto 代理修复工具",
+        "what_it_is": "这是一个用 Shell 编写的 VPN 与 MTProto 代理安装、修复和管理脚本，提供菜单式操作、配置编辑、日志查看和面板安装。",
+        "problem_solved": "主要解决 Telegram 客户端连接 MTProto 代理缓慢、失败、媒体无法加载及多设备连接异常，并提供一键安装与修复流程。",
+        "who_should_care": "自建 MTProto 代理、维护 Telegram 代理服务器的运维和开发者。",
+        "use_cases": [
+          "一键安装或更新代理",
+          "修复客户端连接异常",
+          "检查 SNI 与编辑配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 47 星，曾有一天进入日榜。",
+        "risk_notes": "安装方式要求直接以管理员权限执行远程脚本；资料称脚本需给仓库点星作为使用条件；未关闭问题为零但不足以判断稳定性。",
+        "evidence": [
+          "Universal VPN and MTProto proxy installer & fix – one‑click setup of Telemt, MTG, Erlang and MTProtoZig.",
+          "Чинит telegram Mtproto прокси и **Позволяет удобно** работать с **TELEMT, MTG, MTPROTO.ZIG, MTPRoxyL**",
+          "**Скрипт помогает решить в 1 клик проблему**, которая появилась с 4 июня, **когда telegram клиент не может подключиться к mtproto прокси-серверу**."
+        ]
+      }
+    },
+    "Kieirra/murmure": {
+      "category": "ai-model",
+      "one_liner": "本地私密语音转文字",
+      "intro": {
+        "one_liner": "本地私密语音转文字工具",
+        "what_it_is": "Murmure 是跨平台语音转文字应用，语音在本机完成识别，并可用本地大模型做后处理。",
+        "problem_solved": "它让用户在无需联网、不上传语音的情况下听写文字，减少隐私数据外泄和遥测追踪。",
+        "who_should_care": "重视隐私的听写用户、多语办公者、需要本地转写的开发者。",
+        "use_cases": [
+          "给人工智能提示词口述输入",
+          "免手动写笔记或记录灵感",
+          "本地翻译、润色或修正语法"
+        ],
+        "alternatives": "强调完全本地、无遥测、跨平台安装，并支持本地大模型后处理。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增十星且仅一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0，集成使用需注意许可证义务；Windows 需较新系统和运行库，部分杀毒软件可能拦截；Linux 与 macOS 有快捷键和权限配置要求。",
+        "evidence": [
+          "Fully local, private and cross platform Speech-to-Text with LLM Post-processing",
+          "All processing happens locally on your device. No data ever leaves your computer.",
+          "Murmure is free and open source, released under the GNU AGPL v3 License."
+        ]
+      }
+    },
+    "Goekdeniz-Guelmez/Local-NotebookLM": {
+      "category": "ai-model",
+      "one_liner": "本地版 NotebookLM",
+      "intro": {
+        "one_liner": "本地文档转音频工具",
+        "what_it_is": "这是一个用 Python 编写的工具，可从 PDF 提取文本，并借助语言模型与语音合成生成播客、摘要、访谈等音频内容。",
+        "problem_solved": "它解决把 PDF 文档快速改造成可听内容的问题，并提供命令行、网页界面、接口服务和程序调用方式。",
+        "who_should_care": "想把论文或资料转成音频、并希望本地运行的开发者。",
+        "use_cases": [
+          "把论文 PDF 生成播客",
+          "制作摘要或访谈音频",
+          "通过接口集成音频生成"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一天日榜。",
+        "risk_notes": "需要本地模型服务、至少 8GB 内存和 10GB 以上磁盘；也支持多种外部模型服务，部署依赖较多。",
+        "evidence": [
+          "A local AI-powered tool that converts PDF documents into engaging audio—such as podcasts or custom audio content—using local LLMs and TTS models.",
+          "Support for various LLM providers (OpenAI, Groq, LMStudio, Ollama, Azure)",
+          "At least 8GB RAM (32GB+ recommended for local models)"
+        ]
+      }
+    },
+    "tmwgsicp/wechat-download-api": {
+      "category": "content-media",
+      "one_liner": "公众号文章导出订阅接口",
+      "intro": {
+        "one_liner": "公众号文章订阅导出服务",
+        "what_it_is": "一个用 Python 编写的开源接口服务，可获取微信公众号文章、生成订阅源，并导出多种格式，也支持接入智能体客户端。",
+        "problem_solved": "把公众号文章获取、订阅、搜索、归档和导出集中到自托管服务里，便于阅读、备份和二次处理。",
+        "who_should_care": "需要订阅、归档公众号内容或接入智能体工具的开发者。",
+        "use_cases": [
+          "把公众号转成订阅源",
+          "整号文章打包归档",
+          "让智能体读取公众号文章"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 25 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0 许可证；使用前需拥有公众号并扫码登录，凭证有效期约 4 天；普通接口无需鉴权，部署到公网需谨慎。",
+        "evidence": [
+          "一款完全开源的微信公众号文章获取、RSS 订阅 API 服务，支持整号文章一键导出 7 种格式（Markdown/HTML/Word/PDF/EPUB/Excel/JSON）、IP 代理池反风控、MCP 接入各种 AI Agent 工具。",
+          "本工具需要通过微信公众平台后台的登录凭证来调用接口，因此使用前需要：",
+          "以下 HTTP 接口**无需鉴权**：调用方不用传任何 Token 或 `Authorization` 头。"
+        ]
+      }
+    },
+    "GanyuanRan/Aegis": {
+      "category": "ai-agent",
+      "one_liner": "让编码智能体懂架构",
+      "intro": {
+        "one_liner": "面向编码智能体的方法包",
+        "what_it_is": "Aegis 是一套让编码智能体按项目基线规划、验证完成证据并检查偏差的方法包，主要用 Python 编写。",
+        "problem_solved": "它试图减少智能体改代码时的猜测、返工和不安全变更，让完成声明附带验证依据。",
+        "who_should_care": "使用 Codex、Claude Code 等编码智能体并关注交付可控性的开发者。",
+        "use_cases": [
+          "改动前核对项目基线",
+          "交付前整理验证证据",
+          "长任务中检查架构偏差"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 92 星且曾上日榜。",
+        "risk_notes": "当前只是运行时方法包，不是完整平台或最终完成裁决；部分基准数据被明确限定为旧版本的有界参考。",
+        "evidence": [
+          "Make AI coding agents architecture-aware: baseline-first, evidence-verified, drift-checked, and safe across long tasks.",
+          "Aegis is a method pack that makes AI coding agents work like disciplined engineers — so you don't have to watch them.",
+          "It is **not** the full Aegis Platform, a daemon, a background runner, a runtime core, an authoritative `GateDecision`, an authoritative `PolicySnapshot`, or final completion authority."
+        ]
+      }
+    },
+    "orailnoor/cross-platform-llm-client": {
+      "category": "ai-model",
+      "one_liner": "跨平台统一大模型客户端",
+      "intro": {
+        "one_liner": "跨平台本地与云端聊天客户端",
+        "what_it_is": "这是一个跨平台 AI 聊天客户端，支持在 Android 本地运行 GGUF 模型，也可切换到多家云端模型接口。",
+        "problem_solved": "它把本地离线推理与云端接口放进同一客户端，让用户按设备和需求选择模型运行方式。",
+        "who_should_care": "关注端侧模型、隐私聊天和多平台模型切换的开发者。",
+        "use_cases": [
+          "手机离线运行 GGUF 模型",
+          "本地与云端模型切换",
+          "发送文字和图片聊天"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 27 星，仅一天进入日榜。",
+        "risk_notes": "任务管理仍在开发中；网页端本地推理尚未提供；iOS 需侧载且应用会过期。",
+        "evidence": [
+          "A production-ready, cross-platform AI chat client built with Flutter.",
+          "Local Inference on Android — Download and run GGUF models directly on your phone using GPU-accelerated inference (Vulkan). No internet required after download.",
+          "Task Management (in development) — A task view for structured, multi-step AI workflows is being built. It is not available in the app yet."
+        ]
+      }
+    },
+    "techchipnet/hound": {
+      "category": "security",
+      "one_liner": "轻量信息收集定位工具",
+      "intro": {
+        "one_liner": "定位信息收集工具",
+        "what_it_is": "Hound 是一个轻量工具，借助 PHP 服务远程获取目标设备的精确 GPS 坐标，并收集系统与网络基础信息。",
+        "problem_solved": "它用于渗透测试中的信息收集，把设备位置、浏览器、系统、公网地址和运营商信息集中获取。",
+        "who_should_care": "关注定位信息收集与渗透测试的开发者、安全学习者。",
+        "use_cases": [
+          "收集目标设备经纬度",
+          "记录设备与浏览器信息",
+          "辅助渗透测试信息收集"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时有一千零二星。",
+        "risk_notes": "涉及远程获取目标设备位置，存在隐私与滥用风险；资料声明仅用于渗透测试，不对非法用途负责。",
+        "evidence": [
+          "Hound is a simple and light tool for information gathering and capture exact GPS coordinates",
+          "Hound is a tool that can remotely capture the exact GPS coordinates of a target device using a PHP server, and can also grab basic information about the system and ISP.",
+          "Hound is created to help in penetration testing and it's not responsible for any misuse or illegal purposes."
+        ]
+      }
+    },
+    "170-carry/codex-tools": {
+      "category": "dev-tools",
+      "one_liner": "Codex 账号用量管理工具",
+      "intro": {
+        "one_liner": "Codex 多账号管理工具",
+        "what_it_is": "面向多个 Codex 账号的桌面应用与命令行工具，支持账号导入、用量查看、登录态切换，并提供本地 OpenAI 兼容接口反代。",
+        "problem_solved": "集中管理多个 Codex 账号，减少手动切换登录态和查看用量的麻烦，并让本地客户端通过账号池调用兼容接口。",
+        "who_should_care": "同时使用多个 Codex 账号、需要切换账号或本地反代的开发者。",
+        "use_cases": [
+          "导入并切换多个账号",
+          "查看用量与重置时间",
+          "为本地客户端提供兼容接口"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 15 星且仅一天进入日榜。",
+        "risk_notes": "创建时间较新；仍有 6 个未关闭问题；自动预热会真实消耗少量额度，公网访问依赖隧道配置。",
+        "evidence": [
+          "Codex Tools 面向同时使用多个 Codex 账号的场景，提供桌面 GUI、命令行入口和本地 `/v1` 反代能力。",
+          "多账号管理：OAuth 登录导入、JSON 批量导入、账号备份回导入。",
+          "一周新增 Star：15"
+        ]
+      }
+    },
+    "johnhuang316/code-index-mcp": {
+      "category": "dev-tools",
+      "one_liner": "代码仓库索引搜索服务",
+      "intro": {
+        "one_liner": "代码库索引 MCP 服务",
+        "what_it_is": "这是一个用 Python 编写的 MCP 服务，帮助大模型索引、搜索和分析代码仓库，并提供文件监听、缓存与深度索引能力。",
+        "problem_solved": "它让 AI 助手更容易理解复杂代码库，减少手动查找文件、符号、调用关系和项目结构的成本。",
+        "who_should_care": "使用 MCP 兼容工具做代码审查、重构和调试的开发者。",
+        "use_cases": [
+          "查找旧接口调用位置",
+          "辅助重构与调用分析",
+          "搜索错误处理相关代码"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "创建于 2025 年 3 月，项目较新；深度索引需手动重建，浅层刷新只保持文件列表。",
+        "evidence": [
+          "A Model Context Protocol (MCP) server that helps large language models index, search, and analyze code repositories with minimal setup",
+          "Perfect for: Code review, refactoring, documentation generation, debugging assistance, and architectural analysis.",
+          "Shallow Index Refresh: Watches file changes and keeps the file list current; run a deep rebuild when you need symbol metadata"
+        ]
+      }
+    },
+    "ghik/kubernetes-the-harder-way": {
+      "category": "learning-resource",
+      "one_liner": "本地搭建类生产集群指南",
+      "intro": {
+        "one_liner": "本地搭建类生产集群指南",
+        "what_it_is": "这是一份在本地机器搭建类生产 Kubernetes 集群的指南，包含脚本和配置文件，提供 macOS/ARM64 与 Linux/AMD64 两个版本。",
+        "problem_solved": "它帮助开发者通过虚拟机、安全、控制平面、工作节点和集群服务等步骤，系统学习并实践 Kubernetes 集群搭建。",
+        "who_should_care": "想深入理解 Kubernetes 部署细节，并在本地动手实验的开发者。",
+        "use_cases": [
+          "学习本地虚拟机集群搭建",
+          "练习 Kubernetes 安全配置",
+          "部署控制平面与工作节点"
+        ],
+        "alternatives": "受 Kubernetes the Hard Way 启发，是更长的扩展版，并针对本地部署优化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "采用非商业、相同方式共享的署名许可，商业使用受限；指南面向本地部署，不等同于真实生产环境。",
+        "evidence": [
+          "A guide to setting up a production-like Kubernetes cluster on a local machine.",
+          "may be considered its lengthier, extended version, optimized for a local deployment.",
+          "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
+        ]
+      }
+    },
+    "anywhere-labs/deepseek-harness-desktop": {
+      "category": "desktop-system",
+      "one_liner": "DSH 生态现代桌面端",
+      "intro": {
+        "one_liner": "DSH 桌面客户端",
+        "what_it_is": "这是为 DeepSeek Harness 生态打造的开源桌面客户端，把本地界面、服务和插件系统封装到 Windows、macOS 与 Linux 应用中。",
+        "problem_solved": "它让普通用户无需额外环境或命令即可启动和管理本地 Harness 服务，并在桌面窗口、托盘、更新和插件市场中统一使用。",
+        "who_should_care": "想以桌面方式使用 DSH、管理插件，或开发桌面插件的开发者。",
+        "use_cases": [
+          "一键安装并使用 DSH",
+          "在桌面管理插件与配置",
+          "用手机远程查看任务进度"
+        ],
+        "alternatives": "相比命令行使用上游，它提供原生桌面封装、安装包、托盘、更新向导和插件市场。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 15,774 星且曾登上日榜。",
+        "risk_notes": "独立社区项目，与深度求索无隶属、合作、授权或背书关系；固定并原样运行特定上游版本；局域网开放不提供鉴权；未关闭 Issue 有 395 个。",
+        "evidence": [
+          "基于 DeepSeek Harness 构建的 Windows、macOS 和 Linux 开源桌面客户端。",
+          "项目固定并原样运行特定上游版本；DSH Desktop 提供窗口、托盘、终端、更新和工作配置，并通过 DeepSeek Harness 提供的插件机制与上游能力组合。",
+          "独立的社区开源项目，与深度求索不存在隶属、合作、授权或背书关系。"
+        ]
+      }
+    },
+    "PhyAgentOS-dev/PhyAgentOS": {
+      "category": "ai-agent",
+      "one_liner": "自演进具身智能系统",
+      "intro": {
+        "one_liner": "具身智能自改进框架",
+        "what_it_is": "这是一个面向具身智能体的递归自改进框架，用 Python 编写，连接认知规划、物理执行和任务验证，并从已验证经验中改进技能与经验规则。",
+        "problem_solved": "它解决物理任务中规划、执行和结果验证割裂的问题，让失败恢复、经验沉淀和可复用能力封装形成闭环。",
+        "who_should_care": "做机器人控制、仿真验证和具身智能体工作流的开发者。",
+        "use_cases": [
+          "在仿真中控制机械臂",
+          "封装可复用的机器人技能",
+          "验证任务结果并有限重规划"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 67 星，曾有一天进入日榜。",
+        "risk_notes": "创建日期与最近提交日期均晚于常见当前时间，需核对时间信息；仍有 10 个未关闭问题；本地技能开发会带警告运行。",
+        "evidence": [
+          "PhyAgentOS is a self-evolving embodied AI operating system built on agentic workflows.",
+          "**PhyAgentOS is a Recursive Self-Improvement (RSI) framework for embodied agents.** It connects cognitive planning, Physical Execution, and task verification in a runtime-wide feedback loop, improving Skills and Lessons from verified experience for future tasks.",
+          "**Prerequisites:** Python 3.11 or 3.12, Git, and an API key for your model provider."
+        ]
+      }
+    },
+    "tinyfish-io/bigset-oss": {
+      "category": "ai-agent",
+      "one_liner": "自托管实时数据集平台",
+      "intro": {
+        "one_liner": "实时网页数据集生成器",
+        "what_it_is": "BigSet 是可自托管的开源工具，用一句话描述需求，让网页智能体搜索、核验、去重并生成结构化数据集，支持定时刷新和导出。",
+        "problem_solved": "它把分散在实时网页中的信息整理成可用表格，减少手工拼接搜索、抽取、字段设计、核验、去重和定时更新的工作。",
+        "who_should_care": "需要持续获取公开网页数据、做调研或给智能体提供实时表格的开发者。",
+        "use_cases": [
+          "生成招聘公司清单",
+          "跟踪价格与库存",
+          "为智能体准备实时数据"
+        ],
+        "alternatives": "相比只做抓取、搜索或固定站点清单的工具，它覆盖从描述到核验、去重和定时刷新的整套流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 1,688 星，本周上日榜 1 天。",
+        "risk_notes": "明确标注为实验性，可能有粗糙处、故障和变更；字段推断不总准确；登录或付费墙后的数据暂不可达；数据集目前只能浏览和导出，查询支持仍在规划中。",
+        "evidence": [
+          "Open-source BigSet — self-hostable live datasets populated by TinyFish web agents",
+          "BigSet is experimental.",
+          "Datasets are downloadable, not queryable."
+        ]
+      }
+    },
+    "alex-hyperagent/hyperagent-public-skills": {
+      "category": "ai-agent",
+      "one_liner": "免费智能体技能包",
+      "intro": {
+        "one_liner": "免费技能集合",
+        "what_it_is": "一个由 Hyperagent 团队提供的免费 skills 仓库。",
+        "problem_solved": "为使用者集中提供可获取的技能资源；具体用途 unknown。",
+        "who_should_care": "关注 Hyperagent 技能资源的开发者。",
+        "use_cases": [
+          "获取免费技能资源",
+          "浏览团队公开技能"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，星数破千。",
+        "risk_notes": "没有说明文档，功能、许可证、稳定性与维护状态均 unknown；创建时间较新，结论置信度较低。",
+        "evidence": [
+          "Free skills from the Hyperagent team",
+          "破千时的 Star 数：1102",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "awesome-dsh-plugin/awesome-dsh-plugin": {
+      "category": "learning-resource",
+      "one_liner": "DSH 插件精选列表",
+      "intro": {
+        "one_liner": "DSH 插件精选列表",
+        "what_it_is": "这是面向 DeepSeek Harness 的社区插件精选列表，收录可通过 dsh plugin add 安装、声明 dsh.bundle 清单的插件，并提供插件市场索引。",
+        "problem_solved": "它把分散的 DSH 插件按类别整理起来，帮助开发者发现、安装和升级插件，也说明收录标准与第三方代码风险。",
+        "who_should_care": "使用 DeepSeek Harness、想扩展编码代理或寻找插件的开发者。",
+        "use_cases": [
+          "按类别查找 DSH 插件",
+          "通过命令安装社区插件",
+          "为插件市场添加索引源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星 1,072 个，本周上日榜 1 天。",
+        "risk_notes": "安装插件会运行第三方代码，列表不代表安全审查；收录不排名、不评判质量，且条目可能因失效或停止维护被移除。",
+        "evidence": [
+          "A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表",
+          "This list collects community plugins that are installable via `dsh plugin add` (each declares a `dsh.bundle` manifest).",
+          "Installing a plugin runs third-party code on your machine with your own permissions — it can read your files, use your credentials, and reach the network."
+        ]
+      }
+    },
+    "rogue-security/rogue": {
+      "category": "security",
+      "one_liner": "智能体评测红队平台",
+      "intro": {
+        "one_liner": "智能体评测红队平台",
+        "what_it_is": "Rogue 是面向智能体的评测与红队平台，提供服务端、终端界面和命令行，可测试业务规则并模拟对抗攻击。",
+        "problem_solved": "它帮助在攻击者之前发现智能体的行为偏差、策略违规和安全漏洞，并生成带理由的通过或失败报告。",
+        "who_should_care": "开发智能体、做回归测试、安全审计或合规检查的团队。",
+        "use_cases": [
+          "验证智能体是否符合业务策略",
+          "在流水线中做回归测试",
+          "模拟攻击并输出风险报告"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "创建于 2025 年 6 月，项目较新；使用评测模型需要配置接口密钥；文档中有实现状态页面，功能可能仍在完善。",
+        "evidence": [
+          "AI Agent Evaluator & Red Team Platform",
+          "Stress-test your AI agents before attackers do.",
+          "Best for: Regression testing, behavior validation, policy compliance"
+        ]
+      }
+    }
+  }
+}

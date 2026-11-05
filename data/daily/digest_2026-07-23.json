@@ -1,1 +1,515 @@
-{"date":"2026-07-23","headline":"OpenMMO领跑，桌面系统项目扎堆","points":["Julian-adv/OpenMMO 单日新增 377，Rust 开源大型多人在线框架最受关注。","桌面系统有 5 个、内容媒体有 4 个，跨平台客户端与主题资源集中冒头。","citrolabs/ego-lite 新增 256，AI Agent 与终端工具如 mpiorowski/late-sh 同热。"],"items":{"Julian-adv/OpenMMO":{"category":"game","one_liner":"Rust 开源大型多人在线框架"},"citrolabs/ego-lite":{"category":"ai-agent","one_liner":"人机并行协作的智能浏览器"},"mpiorowski/late-sh":{"category":"desktop-system","one_liner":"SSH 接入的开发者终端俱乐部"},"pablostanley/yoinks":{"category":"content-media","one_liner":"终端无广告视频下载工具"},"huang-sir1/radiology-skills":{"category":"learning-resource","one_liner":"放射科相关技能资料"},"Kindness-Kismet/stelliberty":{"category":"desktop-system","one_liner":"美观高性能跨平台网络客户端"},"John19187/The-40-Best-VPNs":{"category":"security","one_liner":"四十款 VPN 推荐指南"},"joeseesun/qiaomu-mondo-poster-design":{"category":"content-media","one_liner":"一句话生成大师级海报"},"sahaj-b/ghostty-cursor-shaders":{"category":"desktop-system","one_liner":"Ghostty 光标特效着色器"},"peteonrails/voxtype":{"category":"desktop-system","one_liner":"Wayland 按键说话转文字"},"yangqy1110/Diffusion-Models":{"category":"learning-resource","one_liner":"扩散模型原理与代码入门"},"maester365/maester":{"category":"security","one_liner":"微软安全配置自动化测试框架"},"Quorinex/Kiro-Go":{"category":"dev-tools","one_liner":"Kiro 账号转模型 API 服务"},"am-will/codex-skills":{"category":"ai-agent","one_liner":"Codex 技能脚本集合"},"tianxingleo/ACGTI":{"category":"game","one_liner":"动漫人格类型测试小游戏"},"KhronosGroup/glTF-Sample-Assets":{"category":"content-media","one_liner":"glTF 格式示例资源集"},"catppuccin/kde":{"category":"desktop-system","one_liner":"KDE 柔和粉彩主题"},"fiso64/sockseek":{"category":"content-media","one_liner":"Soulseek 高级下载工具"},"piotrkulpinski/open-source-alternatives":{"category":"learning-resource","one_liner":"开源替代软件精选清单"},"marcelroed/gigatoken":{"category":"ai-model","one_liner":"GB 级高速模型分词器"},"lennybase/browsernode":{"category":"ai-agent","one_liner":"让 AI 智能体操作网站"}}}
+{
+  "date": "2026-07-23",
+  "headline": "OpenMMO领跑，桌面系统项目扎堆",
+  "points": [
+    "Julian-adv/OpenMMO 单日新增 377，Rust 开源大型多人在线框架最受关注。",
+    "桌面系统有 5 个、内容媒体有 4 个，跨平台客户端与主题资源集中冒头。",
+    "citrolabs/ego-lite 新增 256，AI Agent 与终端工具如 mpiorowski/late-sh 同热。"
+  ],
+  "items": {
+    "Julian-adv/OpenMMO": {
+      "category": "game",
+      "one_liner": "Rust 开源大型多人在线框架",
+      "intro": {
+        "one_liner": "人机平等的多人在线角色扮演游戏",
+        "what_it_is": "一个用 Rust 服务端和网页三维客户端实现的 MMORPG，让智能体与人类玩家通过同一套 WebSocket 协议进入同一个世界。",
+        "problem_solved": "它让智能体不依赖特权接口，而是按人类玩家的规则行动、聊天、建造和战斗，便于观察人机共处。",
+        "who_should_care": "关注智能体、多人游戏和程序化世界的开发者与玩家。",
+        "use_cases": [
+          "体验人机同服互动",
+          "研究智能体客户端接入",
+          "搭建程序化三维世界"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,093 星且曾上日榜。",
+        "risk_notes": "资料称项目为单人开发且氛围式编码，素材来源混合；本地直连服务端口默认无传输层安全保护。",
+        "evidence": [
+          "An MMORPG where AI agents and human players are treated as equals.",
+          "Agents and human players speak the exact same WebSocket protocol — no privileged API, no separate endpoints.",
+          "Solo-developed and vibe-coded. Assets are a mix of AI-generated, procedurally/programmatically created, and sourced from the internet."
+        ]
+      }
+    },
+    "citrolabs/ego-lite": {
+      "category": "ai-agent",
+      "one_liner": "人机并行协作的智能浏览器",
+      "intro": {
+        "one_liner": "人机并行浏览器",
+        "what_it_is": "ego lite 是让用户与 AI agents 并行工作的浏览器，主要用 JavaScript 编写，通过独立 Space 隔离代理任务。",
+        "problem_solved": "它解决代理自动化时抢占浏览器、登录状态难复用、连接不稳定，以及人与代理无法同时浏览的问题。",
+        "who_should_care": "常用代理执行网页任务、又希望保留日常浏览的开发者。",
+        "use_cases": [
+          "代理后台处理网页任务",
+          "多个代理并行采集网页",
+          "复用登录态完成自动化"
+        ],
+        "alternatives": "相比浏览器扩展、云端浏览器和命令行工具，它本身是浏览器，强调并行 Space、复用登录态与本地数据。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,454 星，但仅一天进入日榜。",
+        "risk_notes": "创建时间较新，未关闭 Issue 有 243 个；Linux 仍在路线图中，部分能力标注为即将推出。",
+        "evidence": [
+          "The best browser for both you and your AI agents work in parallel.",
+          "ego (lite) is a browser where you and your AI agents work in parallel. Your agents run their browser tasks in their own Spaces, isolated workspaces inside the same browser, while you keep browsing in yours, so no agent ever takes the browser away from you.",
+          "ego lite runs on macOS and Windows, and Linux is on the [roadmap](https://lite.ego.app/roadmap)."
+        ]
+      }
+    },
+    "mpiorowski/late-sh": {
+      "category": "desktop-system",
+      "one_liner": "SSH 接入的开发者终端俱乐部",
+      "intro": {
+        "one_liner": "SSH 终端社交俱乐部",
+        "what_it_is": "这是一个用 Rust 编写的终端优先社交应用，用户通过 SSH 客户端进入共享空间，使用聊天、音乐、游戏、资讯、个人资料和 IRC 等功能。",
+        "problem_solved": "它把实时聊天、音频、街机游戏、活动板和科技资讯集中到终端界面，让开发者无需离开命令行即可参与社区互动。",
+        "who_should_care": "喜欢终端界面、SSH、IRC 和命令行社交的开发者。",
+        "use_cases": [
+          "用 SSH 加入实时聊天",
+          "在终端里玩小游戏",
+          "收听音频与查看资讯"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 93 星且上过一次日榜。",
+        "risk_notes": "代码在保护期内为源码可读但非开源许可；分发分支不得冒充官方服务或使用项目品牌；本地运行依赖 Docker。",
+        "evidence": [
+          "A cozy command-line clubhouse for computer people. Chat, music, games, art, coding, and tech news. Connect with any SSH client!",
+          "The code is source-available, not OSI open source, during the FSL protection period.",
+          "Run it yourself (requires Docker):"
+        ]
+      }
+    },
+    "pablostanley/yoinks": {
+      "category": "content-media",
+      "one_liner": "终端无广告视频下载工具",
+      "intro": {
+        "one_liner": "终端视频下载工具",
+        "what_it_is": "yoinks 是一个用 TypeScript 写的终端工具，粘贴视频链接后选择清晰度或仅音频格式，即可下载文件。",
+        "problem_solved": "它把网页视频下载搬到终端里，避开弹窗、假下载按钮和可疑跳转，并简化格式选择与保存流程。",
+        "who_should_care": "习惯命令行、需要保存有权限视频或音频的开发者。",
+        "use_cases": [
+          "在终端粘贴链接下载视频",
+          "选择分辨率或提取音频",
+          "用临时命令免安装试用"
+        ],
+        "alternatives": "相比直接使用 yt-dlp，它提供全屏终端界面、格式选择、主题和自动获取依赖。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 57 星，曾有一天进入日榜。",
+        "risk_notes": "创建时间很新，最近提交也很近；未关闭 Issue 有 36 个。下载内容可能违反平台条款，需自行确认保存权限。",
+        "evidence": [
+          "yoink any video from your terminal. no shady ads.",
+          "Download videos from YouTube, X/Twitter, Instagram, Threads, TikTok and\n1,800+ other sites — right from your terminal.",
+          "Downloading content may violate a\nplatform's terms of service — only download what you have the right to\nkeep, and be excellent to creators."
+        ]
+      }
+    },
+    "huang-sir1/radiology-skills": {
+      "category": "learning-resource",
+      "one_liner": "放射科相关技能资料",
+      "intro": {
+        "one_liner": "影像科研技能包",
+        "what_it_is": "面向医学影像科研的 Claude / Codex 技能包，把研究设计、分析、审阅、写作与投稿拆成 40 个可调用模块。",
+        "problem_solved": "帮助团队判断课题可行性、核验方法规范、排查数据泄漏与证据短板，并把材料整理成投稿、标书和汇报产物。",
+        "who_should_care": "医学影像科研团队、影像 AI 与放射组学研究者、投稿作者、基金申请者和科研管理人员。",
+        "use_cases": [
+          "评估影像数据能做什么课题",
+          "投稿前做方法学和规范审阅",
+          "整理标书、论文和汇报材料"
+        ],
+        "alternatives": "强调按研究类型选规范、证据状态记录和全链路交接，不定位为通用论文提示词合集。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星并曾上日榜，但创建时间很短。",
+        "risk_notes": "总控与部分模块标为实验性；结构及契约检查通过不等于真实模型表现已独立评估，也不承诺论文录用或基金获批。",
+        "evidence": [
+          "面向中国高水平医学影像科研团队的 Claude / Codex 技能包",
+          "结构及契约检查通过，不代表已完成真实模型表现的独立评估，也不承诺论文录用或基金获批。",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "Kindness-Kismet/stelliberty": {
+      "category": "desktop-system",
+      "one_liner": "美观高性能跨平台网络客户端",
+      "intro": {
+        "one_liner": "跨平台桌面代理客户端",
+        "what_it_is": "Stelliberty Remake 是面向 Windows、Linux 和 macOS 的跨平台桌面代理客户端，使用 C# 与 Avalonia，并包含 Rust 原生层。",
+        "problem_solved": "它用于导入 Clash 标准和 Base64 订阅，选择节点与出站模式，并通过系统代理或虚拟网络覆盖设备流量。",
+        "who_should_care": "需要在多桌面系统管理订阅、节点和代理模式的普通用户与桌面开发者。",
+        "use_cases": [
+          "导入订阅后选择节点",
+          "切换规则、全局或直连模式",
+          "开启系统代理或虚拟网络"
+        ],
+        "alternatives": "提供浅色深色界面、平台级磨砂效果，并分离托盘与界面进程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周涨了 19 星，仅一天进入日榜。",
+        "risk_notes": "依赖 .NET 11 Runtime；虚拟网络模式需要管理员权限并安装服务模式；创建时间较新。",
+        "evidence": [
+          "Stelliberty is a cross-platform desktop proxy client for Windows, Linux, and macOS.",
+          "Import Clash-standard and Base64 subscriptions. It starts quickly and uses little resources.",
+          "Install the .NET 11 Runtime, then start Stelliberty again"
+        ]
+      }
+    },
+    "John19187/The-40-Best-VPNs": {
+      "category": "security",
+      "one_liner": "四十款 VPN 推荐指南",
+      "intro": {
+        "one_liner": "代理服务选购指南",
+        "what_it_is": "这是一个整理四十余款代理与 VPN 服务资料的清单，包含套餐、客户端、付款周期和用途对比，并配有结构化登记表与维护方法。",
+        "problem_solved": "它把商业 VPN 与机场订阅的差异、选购标准、设备兼容和预算考量集中说明，帮助用户按场景比较服务。",
+        "who_should_care": "需要比较代理服务套餐、客户端和用途的普通用户。",
+        "use_cases": [
+          "比较套餐价格与流量",
+          "选择电脑或手机客户端",
+          "核对流媒体与工具支持"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周一天上日榜。",
+        "risk_notes": "内容涉及第三方服务推荐与购买入口，服务状态、价格和可用性需自行核验；README 中部分资料日期晚于创建日期。",
+        "evidence": [
+          "下面整理40余款服务的套餐与使用资料，帮助你比较预算、客户端、付款周期和用途；可按自己的使用场景对照选择。",
+          "项目通过 GitHub Actions 定期检查数据格式和服务商链接，并持续接受社区纠错。",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "joeseesun/qiaomu-mondo-poster-design": {
+      "category": "content-media",
+      "one_liner": "一句话生成大师级海报",
+      "intro": {
+        "one_liner": "一句话生成海报设计",
+        "what_it_is": "这是一个用一句话生成海报、书籍封面、专辑封面和社交媒体配图的设计工具，主打自动匹配风格、配色和平台比例。",
+        "problem_solved": "它面向不会图像处理、配色和排版的人，把题材描述转成设计提示，并适配公众号、小红书、文章配图等尺寸。",
+        "who_should_care": "内容创作者、读书和影音分享者，以及需要快速做封面配图的新手。",
+        "use_cases": [
+          "生成公众号文章封面",
+          "制作读书笔记配图",
+          "设计电影或活动海报"
+        ],
+        "alternatives": "相比普通生图和在线模板，强调一句话输入、自动选风格与多平台比例适配。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜，但创建时间较新。",
+        "risk_notes": "创建日期为 2026 年 3 月 8 日，项目较新；资料未给出许可证、稳定性或生产案例。",
+        "evidence": [
+          "一句话，生成大师级设计",
+          "你只需要描述内容，AI会自动：",
+          "破千时的 Star 数：1001"
+        ]
+      }
+    },
+    "sahaj-b/ghostty-cursor-shaders": {
+      "category": "desktop-system",
+      "one_liner": "Ghostty 光标特效着色器",
+      "intro": {
+        "one_liner": "终端光标特效着色器",
+        "what_it_is": "一组用于 Ghostty 的自定义光标着色器，也包含部分适用于 Kitty 的拖尾效果，主要提供拖尾、涟漪和脉冲动画。",
+        "problem_solved": "让终端光标移动或形态切换时呈现更丰富的动画效果，并允许调整颜色、时长、尺寸、厚度和缓动曲线。",
+        "who_should_care": "喜欢定制终端视觉效果的 Ghostty 或 Kitty 用户，尤其是使用 Vim 模式切换的人。",
+        "use_cases": [
+          "为光标添加拖尾动画",
+          "切换光标形态时显示涟漪",
+          "调整颜色、尺寸和缓动曲线"
+        ],
+        "alternatives": "相比通用终端着色器，它聚焦光标动画，并提供 Ghostty 与部分 Kitty 移植。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "Kitty 仅支持拖尾效果且要求版本不低于 0.49；默认线形光标在失焦时可能触发并冻结效果，需要额外配置。",
+        "evidence": [
+          "Custom cursor shaders for ghostty (trails and ripple/pulse effects)",
+          "All shaders has customizable parameters (like color, duration, size, thickness, etc) etc at the top of each file. You can adjust",
+          "Kitty (trails only, needs kitty >= 0.49)"
+        ]
+      }
+    },
+    "peteonrails/voxtype": {
+      "category": "desktop-system",
+      "one_liner": "Wayland 按键说话转文字",
+      "intro": {
+        "one_liner": "Linux 本地语音转文字工具",
+        "what_it_is": "Voxtype 是面向 Linux 的语音转文字工具，支持按键说话，并把识别结果输入到光标位置。",
+        "problem_solved": "它让用户在 Wayland 等桌面环境中离线口述输入，减少手动打字，并兼顾隐私与本地处理。",
+        "who_should_care": "Linux 桌面用户、Wayland 用户、需要听写或无障碍输入的人。",
+        "use_cases": [
+          "按住热键口述并输入文字",
+          "会议连续转写与导出",
+          "离线听写和术语替换"
+        ],
+        "alternatives": "强调本地默认、无云端订阅、无遥测，并提供多种识别引擎与桌面集成。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 11 星且上过一次日榜。",
+        "risk_notes": "未关闭 Issue 有 362 个；Fork 数 205 与星数相比偏高；创建日期与最近提交日期相隔较久，需留意数据异常。",
+        "evidence": [
+          "Voice-to-text with push-to-talk for Wayland compositors",
+          "Hold a hotkey (default: ScrollLock) while speaking, release to transcribe and output the text at your cursor position.",
+          "Local by default. No cloud. No subscription. No telemetry."
+        ]
+      }
+    },
+    "yangqy1110/Diffusion-Models": {
+      "category": "learning-resource",
+      "one_liner": "扩散模型原理与代码入门",
+      "intro": {
+        "one_liner": "扩散模型入门资料库",
+        "what_it_is": "汇总扩散模型原理、经典论文、博客、视频和 PyTorch 代码注释的初学资料，主要用 Jupyter Notebook 承载。",
+        "problem_solved": "把分散的扩散模型理论、论文和实现资料集中起来，并为部分代码补充注释，降低初学检索和理解成本。",
+        "who_should_care": "想入门扩散模型、阅读论文并对照 PyTorch 实现的开发者。",
+        "use_cases": [
+          "按论文和博客梳理学习路径",
+          "对照注释理解扩散模型代码",
+          "补充变分自编码器等基础"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "资料包含外部链接，作者提示如有侵权会删除；内容以汇总和注释为主，未见生产可用性说明。",
+        "evidence": [
+          "扩散模型原理和pytorch代码实现初学资料汇总",
+          "有侵权的资料联系我删除哈，如果能帮得上忙的话荣幸之至，一个Star是对我的最大支持，感谢！",
+          "代码我进行理解加了注释与理论对应，方便大家理解"
+        ]
+      }
+    },
+    "maester365/maester": {
+      "category": "security",
+      "one_liner": "微软安全配置自动化测试框架",
+      "intro": {
+        "one_liner": "微软 365 安全配置测试框架",
+        "what_it_is": "Maester 是开源的 PowerShell 测试自动化框架，用于监控和维护 Microsoft 365 环境的安全配置。",
+        "problem_solved": "它把安全配置检查自动化，支持自定义测试、结果导出、通知和流水线运行，帮助持续发现配置偏差。",
+        "who_should_care": "管理 Microsoft 365 租户的安全、运维和 DevOps 团队。",
+        "use_cases": [
+          "定期检查租户安全配置",
+          "在流水线中运行安全检查",
+          "导出报告并发送结果通知"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但缺少更多趋势依据。",
+        "risk_notes": "3.0 为预览版且有破坏性变更，要求 PowerShell 7.4 或更高版本；建议暂不使用 ExchangeOnlineManagement 3.9.2。",
+        "evidence": [
+          "Maester is a test automation framework to help you stay in control of your Microsoft security configuration.",
+          "Maester is an open source **PowerShell-based test automation framework** designed to help you monitor and maintain the security configuration of your Microsoft 365 environment.",
+          "**Maester 3.0 is now the preview build**"
+        ]
+      }
+    },
+    "Quorinex/Kiro-Go": {
+      "category": "dev-tools",
+      "one_liner": "Kiro 账号转模型 API 服务",
+      "intro": {
+        "one_liner": "Kiro 账号转兼容接口",
+        "what_it_is": "一个用 Go 编写的服务，把 Kiro 账号转换为兼容 OpenAI 与 Anthropic 的接口，并提供多账号池、令牌刷新和网页管理面板。",
+        "problem_solved": "让已有 Kiro 账号能通过常见接口格式被调用，并集中处理账号轮询、认证方式、流式输出、用量记录和代理配置。",
+        "who_should_care": "需要自建兼容接口网关、管理多个 Kiro 账号的开发者。",
+        "use_cases": [
+          "用兼容接口调用模型",
+          "轮询管理多个账号",
+          "通过网页面板导入账号"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜。",
+        "risk_notes": "声明仅供教育研究，要求用户自行遵守服务条款和法律；默认管理密码需修改；部署时需持久化数据目录。",
+        "evidence": [
+          "Convert Kiro accounts to OpenAI / Anthropic compatible API service.",
+          "Multi-account pool with round-robin load balancing",
+          "For educational and research purposes only. Not affiliated with Amazon, AWS, or Kiro. Users are responsible for complying with applicable terms of service and laws. Use at your own risk."
+        ]
+      }
+    },
+    "am-will/codex-skills": {
+      "category": "ai-agent",
+      "one_liner": "Codex 技能脚本集合",
+      "intro": {
+        "one_liner": "Codex 技能合集",
+        "what_it_is": "一组面向 Codex 与智能体的 Shell 技能，覆盖规划、文档访问、前端设计、钩子、浏览器自动化和自定义智能体配置。",
+        "problem_solved": "把常见的智能体工作流、文档查询、提示词构建和自动化配置整理成可安装技能，减少重复搭建。",
+        "who_should_care": "使用 Codex 或类似智能体做开发、规划和自动化的开发者。",
+        "use_cases": [
+          "生成分阶段实施计划",
+          "查询库与仓库文档",
+          "安装 Codex 钩子包"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "部分技能依赖多个服务商密钥或订阅；浏览器工具二选一；文档技能需要额外接口密钥。",
+        "evidence": [
+          "A collection of Codex/agent skills for planning, documentation access, frontend development, and browser automation.",
+          "The `ctx7old` skill requires a Context7 API key in `CONTEXT7_API_KEY`.",
+          "This skill requires API keys or Active Subscriptions for multiple providers (Claude/Anthropic, OpenAI for Codex, Google for Gemini)."
+        ]
+      }
+    },
+    "tianxingleo/ACGTI": {
+      "category": "game",
+      "one_liner": "动漫人格类型测试小游戏",
+      "intro": {
+        "one_liner": "二次元人格测试网站",
+        "what_it_is": "ACGTI 是以 MBTI 为灵感的二次元角色原型测试网站，用户回答情境题后获得角色代码、原型描述与结果海报。",
+        "problem_solved": "把人格倾向测试包装成二次元角色匹配体验，并提供可视化结果、分享图和匿名统计反馈。",
+        "who_should_care": "喜欢动漫角色、人格测试和分享海报的普通用户，以及关注 Vue 全栈实践的开发者。",
+        "use_cases": [
+          "测出自己的二次元角色原型",
+          "生成并分享结果海报",
+          "查看角色与原型统计排行"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天上日榜，但一周只涨了 7 星。",
+        "risk_notes": "仅作娱乐用途，不能替代心理诊断；项目自称仍处早期阶段；会匿名上报结果，并抽样保留少量逐题答案。",
+        "evidence": [
+          "ACG Type Indicator - MBTI inspired anime persona quiz",
+          "回答情境式问题 · 测出属于你的角色代码 · 解锁你的二次元人格原型",
+          "⚠️ 本工具仅作娱乐用途，不能替代心理诊断、医学评估，也不要拿它对现实中的人下人格结论。"
+        ]
+      }
+    },
+    "KhronosGroup/glTF-Sample-Assets": {
+      "category": "content-media",
+      "one_liner": "glTF 格式示例资源集",
+      "intro": {
+        "one_liner": "glTF 示例模型库",
+        "what_it_is": "这是精选的 glTF 2.0 模型集合，用来展示格式特性与能力，并提供多种文件形式和分类清单。",
+        "problem_solved": "为浏览、预览、测试和教学提供可检索的示例资产，帮助验证查看器、转换器等软件对 glTF 特性的支持。",
+        "who_should_care": "三维引擎、查看器、转换器和 glTF 教学相关开发者。",
+        "use_cases": [
+          "测试查看器兼容性",
+          "查找特性示例模型",
+          "制作 glTF 教程素材"
+        ],
+        "alternatives": "相比资产生成器，它侧重精选示例、展示与分类浏览。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星时为一千星。",
+        "risk_notes": "部分模型可能移除；各模型许可不同，需查看目录内说明；部分清单专门列出待解决问题。",
+        "evidence": [
+          "An assortment of assets that demonstrate features and capabilities of the glTF format",
+          "This Repository is a curated collection of glTF models that illustrate one or more features or capabilities of glTF.",
+          "Testing (./Models/Models-testing.md) (#testing) for models intended to be used for testing of viewers, converts, and other software systems."
+        ]
+      }
+    },
+    "catppuccin/kde": {
+      "category": "desktop-system",
+      "one_liner": "KDE 柔和粉彩主题",
+      "intro": {
+        "one_liner": "KDE 柔和配色主题",
+        "what_it_is": "这是面向 KDE 的 Catppuccin 主题，提供多种风味、强调色、窗口装饰和光标配置，也包含 Krita 配色方案。",
+        "problem_solved": "让 KDE Plasma 桌面和 Krita 能统一应用柔和的粉彩配色，并通过安装脚本减少手动配置。",
+        "who_should_care": "使用 KDE Plasma 或 Krita、喜欢统一桌面配色的开发者。",
+        "use_cases": [
+          "为 KDE Plasma 安装整套主题",
+          "用脚本自动选择风味和强调色",
+          "为 Krita 添加配色方案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千星数为一千。",
+        "risk_notes": "KDE 5.27 或更低版本需切换到旧版本以避免兼容问题；安装可能受商店服务或网络影响；安装器会修改窗口边框设置。",
+        "evidence": [
+          "🌻 Soothing pastel theme for KDE",
+          "Catppuccin for KDE",
+          "If you are using KDE 5.27 or below, you might want to run `git checkout v0.2.5`  before running the install script to avoid running into compatibility issues."
+        ]
+      }
+    },
+    "fiso64/sockseek": {
+      "category": "content-media",
+      "one_liner": "Soulseek 高级下载工具",
+      "intro": {
+        "one_liner": "Soulseek 命令行下载器",
+        "what_it_is": "Sockseek 是面向 Soulseek 网络的命令行下载工具，可按搜索词、播放列表或本地清单查找文件，并按偏好排序下载。",
+        "problem_solved": "它把批量找歌、筛选候选文件、跳过已下载内容和交互式选择专辑等流程自动化，减少手工在客户端里逐项搜索下载。",
+        "who_should_care": "需要批量整理音乐、熟悉命令行并使用 Soulseek 的开发者或重度用户。",
+        "use_cases": [
+          "按歌名或专辑名下载",
+          "导入播放列表批量下载",
+          "交互式挑选专辑版本"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，破千星且已有 65 次分叉。",
+        "risk_notes": "目前还不能分享音乐文件夹；完整客户端、分享和界面属于即将到来的 4.0 版本。部分输入源需要用户自备接口凭据或订阅条件。",
+        "evidence": [
+          "Sockseek is a command-line downloader for Soulseek.",
+          "Sockseek does not share your music folders yet.",
+          "the upcoming version 4.0 implements a full Soulseek client, including sharing and a UI."
+        ]
+      }
+    },
+    "piotrkulpinski/open-source-alternatives": {
+      "category": "learning-resource",
+      "one_liner": "开源替代软件精选清单",
+      "intro": {
+        "one_liner": "开源替代清单",
+        "what_it_is": "这是一个按领域整理的开源软件替代清单，收录专有软件可对应的开源方案。",
+        "problem_solved": "帮助开发者集中查找商业或专有软件的开源替代，减少分散搜索成本。",
+        "who_should_care": "想降低授权依赖、寻找自托管或开源工具的开发者和技术选型者。",
+        "use_cases": [
+          "为商业软件寻找开源替代",
+          "按技术分类浏览工具清单",
+          "做自托管方案初步调研"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有六千四百九十一星且本周上过日榜。",
+        "risk_notes": "仓库已改为精选清单，原目录站模板已迁出；内容含较多赞助与推广链接。",
+        "evidence": [
+          "Curated list of open source alternatives to proprietary software.",
+          "An awesome list of open source alternatives to proprietary software, maintained by [OpenAlternative](https://openalternative.co).",
+          "**Note:** This repository has been repurposed as a curated awesome-list."
+        ]
+      }
+    },
+    "marcelroed/gigatoken": {
+      "category": "ai-model",
+      "one_liner": "GB 级高速模型分词器",
+      "intro": {
+        "one_liner": "高速语言模型分词器",
+        "what_it_is": "Gigatoken 是用 Rust 编写的语言模型分词器，提供自有接口，也兼容 HuggingFace Tokenizers 和 Tiktoken。",
+        "problem_solved": "面向大规模文本训练数据，减少分词耗时；兼容模式可让现有代码较少改动地替换分词器。",
+        "who_should_care": "处理大规模语料、训练或预处理语言模型数据的开发者。",
+        "use_cases": [
+          "批量编码训练语料文件",
+          "替换现有分词流程",
+          "评测多种模型分词器"
+        ],
+        "alternatives": "强调高速文件编码，并提供兼容模式；部分分词器优化较弱。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,654 星，曾有一天进入日榜。",
+        "risk_notes": "兼容模式为保证输出完全一致会有性能损失；基于 SentencePiece 的分词器优化不足；仍有二十个未关闭问题。",
+        "evidence": [
+          "Language model tokenization at GB/s",
+          "Gigatoken can be used with its own API, or in compatibility mode with HuggingFace Tokenizers or Tiktoken.",
+          "A substantial amount of effort has been put into making sure the outputs match exactly with what you would get with HuggingFace Tokenizers in this setting, but this is at a non-negligible cost to performance."
+        ]
+      }
+    },
+    "lennybase/browsernode": {
+      "category": "ai-agent",
+      "one_liner": "让 AI 智能体操作网站",
+      "intro": {
+        "one_liner": "浏览器智能体框架",
+        "what_it_is": "Browsernode 是用 TypeScript 实现的 Browser-use，让 AI 智能体连接并控制浏览器，兼容其接口与功能。",
+        "problem_solved": "它解决 AI 智能体难以操作网页的问题，把搜索、点击、填写和保存等在线任务交给浏览器自动完成。",
+        "who_should_care": "用 TypeScript 或 Node.js 开发 AI 智能体、网页自动化的人。",
+        "use_cases": [
+          "查询股价等网页信息",
+          "整理搜索结果并保存文件",
+          "在网页文档中写作导出"
+        ],
+        "alternatives": "与 Browser-use 相比，它提供 TypeScript 实现，并称兼容其接口与功能。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，创建于 2025 年 6 月，破千星且本周上过一次日榜。",
+        "risk_notes": "项目较新；要求 Node.js 20.19.4 或更高；Bun 环境存在 Playwright 问题；示例中有任务未成功完成。",
+        "evidence": [
+          "🌐 Browsernode is the easiest way to connect your AI agents with the browser.",
+          "✅ Browsernode is compatible with all of Browser-use APIs and features.",
+          "❌ Bun environment , has a Playwright bug."
+        ]
+      }
+    }
+  }
+}

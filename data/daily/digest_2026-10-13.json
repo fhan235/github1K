@@ -1,1 +1,950 @@
-{"date":"2026-10-13","headline":"Rust CAD 领跑今日热度","points":["bherbruck/solidcraft 以纯 Rust 参数化三维 CAD 获 525 新增关注，居当日涨势首位。","安全、桌面系统、内容媒体、AI Agent、开发工具各有 5 个项目，方向分布较分散。","Python 有 11 个项目，Rust 与 TypeScript 各 5 个；离线音频、长上下文工具也受关注。"],"items":{"bherbruck/solidcraft":{"category":"desktop-system","one_liner":"纯 Rust 参数化三维 CAD"},"yisubox/gamge":{"category":"content-media","one_liner":"成人游戏网址整理"},"krishhgg/Insomnia":{"category":"desktop-system","one_liner":"合盖定时防休眠工具"},"leemysw/yovoice":{"category":"content-media","one_liner":"离线本地 AI 音频工作室"},"ranxianglei/billion-context":{"category":"ai-agent","one_liner":"长会话上下文压缩插件"},"Swordpdf/PS5SX2":{"category":"game","one_liner":"PS5 上的 PCSX2 移植"},"amontlabs/lcu":{"category":"ai-agent","one_liner":"可嵌入的电脑操作能力"},"ardeyouxipianyi/workbuddy2api-hub":{"category":"dev-tools","one_liner":"多账号反代 API 网关"},"dofastted/vm2api":{"category":"dev-tools","one_liner":"虚拟机拟真订阅转 API"},"pch/rawmakase":{"category":"content-media","one_liner":"跨平台 RAW 照片编辑器"},"Jakeschincariol/instagram-agent-skill":{"category":"ai-agent","one_liner":"Instagram 运营技能集"},"ithtelab/workbuddy-manager":{"category":"dev-tools","one_liner":"账号池管理与反代控制台"},"HexRaysSA/ida-mcp":{"category":"security","one_liner":"IDA 官方 MCP 服务"},"google/agentmesh":{"category":"ai-agent","one_liner":"智能体协作网格框架"},"dmoshehun-prog/learn-from-materials":{"category":"learning-resource","one_liner":"材料转互动学习网页"},"FrizzleM/SideInstaller":{"category":"mobile","one_liner":"设备端安装 SideStore"},"SimoHypers/limusic":{"category":"desktop-system","one_liner":"原生桌面音乐客户端"},"uint23/sxwm":{"category":"desktop-system","one_liner":"简洁动态平铺窗管"},"Maelic/RelateAnything":{"category":"ai-model","one_liner":"实时开放词汇关系预测"},"MengMengCode/VoCat":{"category":"hardware-iot","one_liner":"蜂窝模组网页控制台"},"Lucas0623z/NoteLite":{"category":"content-media","one_liner":"乐谱识别与练习工具"},"iangcarroll/cookiemonster":{"category":"security","one_liner":"无状态会话漏洞检测"},"abrignoni/ALEAPP":{"category":"security","one_liner":"安卓日志事件解析器"},"ciddwd/overlay-translator":{"category":"mobile","one_liner":"免 ROOT 屏幕实时翻译"},"LeoKemp223/embed-ai-tool":{"category":"hardware-iot","one_liner":"嵌入式开发 AI 技能集"},"Stevoisiak/Stevos-AI-Blocklist":{"category":"content-media","one_liner":"屏蔽生成式 AI 内容"},"H-mmer/pentest-agents":{"category":"security","one_liner":"漏洞赏金智能体框架"},"DataWithBaraa/sql-data-warehouse-project":{"category":"learning-resource","one_liner":"SQL 数仓构建指南"},"ChaozhongLiu/DyberPet":{"category":"desktop-system","one_liner":"桌面赛博宠物框架"},"tweedegolf/mailcrab":{"category":"dev-tools","one_liner":"开发用邮件测试服务器"},"KenneyNL/Starter-Kit-FPS":{"category":"game","one_liner":"第一人称射击起步套件"},"cosscom/ui":{"category":"web-frontend","one_liner":"Cal.com 官方设计系统"},"Anil-matcha/awesome-open-source-saas-alternatives":{"category":"learning-resource","one_liner":"开源 SaaS 替代品清单"},"shadcn-labs/form-builder":{"category":"web-frontend","one_liner":"动态表单构建工具"},"OSINTVerseHQ/Social-Media-OSINT-Tools-Collection":{"category":"security","one_liner":"社交媒体情报工具合集"},"1lck/Lithe-IDEA":{"category":"dev-tools","one_liner":"轻量跨平台 AI IDE"},"liseami/CCBaga":{"category":"other","one_liner":"用途不明的 Rust 项目"},"Fei2411/DeepSeek-Bot":{"category":"ai-agent","one_liner":"长驻多机器人协作框架"},"yashab-cyber/hackpilot":{"category":"security","one_liner":"企业级 AI 渗透测试平台"}}}
+{
+  "date": "2026-10-13",
+  "headline": "Rust CAD 领跑今日热度",
+  "points": [
+    "bherbruck/solidcraft 以纯 Rust 参数化三维 CAD 获 525 新增关注，居当日涨势首位。",
+    "安全、桌面系统、内容媒体、AI Agent、开发工具各有 5 个项目，方向分布较分散。",
+    "Python 有 11 个项目，Rust 与 TypeScript 各 5 个；离线音频、长上下文工具也受关注。"
+  ],
+  "items": {
+    "bherbruck/solidcraft": {
+      "category": "desktop-system",
+      "one_liner": "纯 Rust 参数化三维 CAD",
+      "intro": {
+        "one_liner": "纯 Rust 参数化三维 CAD",
+        "what_it_is": "SolidCraft 是开源参数化三维 CAD 应用，使用 Rust 编写，提供桌面端、浏览器端、命令行和 MCP 服务。",
+        "problem_solved": "它让建模者通过草图、约束、参数和特征时间线创建实体，修改尺寸后可重建模型，也支持脚本与智能体自动化。",
+        "who_should_care": "关注 Rust、三维建模、参数化 CAD 与自动化建模的开发者。",
+        "use_cases": [
+          "参数化零件建模",
+          "浏览器里试用建模",
+          "通过 MCP 自动建模"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,600 星且曾上日榜。",
+        "risk_notes": "仍属早期，仅称可用于简单零件；未关闭 Issue 较多；许可证信息在项目数据与说明中不一致。",
+        "evidence": [
+          "SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP.",
+          "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box",
+          "MIT OR Apache-2.0, at your option."
+        ]
+      }
+    },
+    "yisubox/gamge": {
+      "category": "content-media",
+      "one_liner": "成人游戏网址整理",
+      "intro": {
+        "one_liner": "黄油网址清单",
+        "what_it_is": "这是一个整理成人向游戏及相关资源网站链接的仓库，内容以表格列出站名、网址、简介和部分解压码。",
+        "problem_solved": "把分散的成人向游戏资源站、论坛、网盘和导航站集中成清单，减少查找入口的成本。",
+        "who_should_care": "关注成人向游戏资源入口的成年用户，以及整理这类网址清单的人。",
+        "use_cases": [
+          "查找资源站入口",
+          "查阅解压码说明",
+          "补充网址清单"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时有一千二百三十八星。",
+        "risk_notes": "内容涉及成人向资源与第三方链接，存在合规、失效和安全风险；清单含重复条目与访问提示，维护状态不明。",
+        "evidence": [
+          "黄油网址整理",
+          "# 黄油免费网址分享",
+          "#接下来的网站，应该是有重叠||"
+        ]
+      }
+    },
+    "krishhgg/Insomnia": {
+      "category": "desktop-system",
+      "one_liner": "合盖定时防休眠工具",
+      "intro": {
+        "one_liner": "定时保持 Mac 唤醒",
+        "what_it_is": "Insomnia 是 macOS 菜单栏应用，用倒计时管理合盖不休眠会话，并记录、恢复会话期间的系统改动。",
+        "problem_solved": "让需要限时运行的智能体任务在合盖后继续，同时提供结束时间、恢复机制，以及电量、温度等保护规则。",
+        "who_should_care": "在 MacBook 上跑限时智能体会话、需要合盖保持唤醒的开发者。",
+        "use_cases": [
+          "合盖运行限时编码智能体",
+          "定时保持远程会话不中断",
+          "断网后切换到手机热点"
+        ],
+        "alternatives": "标签称其为 Amphetamine alternative；提供限时会话、合盖动作和恢复日志。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 284 星，并曾登上日榜。",
+        "risk_notes": "资料称其仍属实验性，恢复可能失败；安装会加入免密 sudoers 规则，且要求 macOS 26 或更高版本与 Apple Silicon Mac。",
+        "evidence": [
+          "A macOS menu bar app for timed awake sessions.",
+          "Insomnia is experimental. Recovery can fail, and a running timer is not a safety guarantee.",
+          "Requires macOS 26 or later on an Apple Silicon Mac."
+        ]
+      }
+    },
+    "leemysw/yovoice": {
+      "category": "content-media",
+      "one_liner": "离线本地 AI 音频工作室",
+      "intro": {
+        "one_liner": "本地离线 AI 语音与音乐创作工作站",
+        "what_it_is": "yovoice 是一个开源、本地优先的音频与音乐创作桌面应用，支持 macOS、Windows 和 Linux，用 TypeScript 编写，采用 Apache-2.0 许可证。它把语音合成、零样本声音克隆、带歌词的 AI 歌曲生成和 General MIDI 多轨编曲整合在同一个工作站里。",
+        "problem_solved": "它解决云端语音和音乐服务按字符或时长计费、隐私数据需要上传、Python 环境依赖复杂等问题；README 强调全部推理在本地 GPU/CPU 上完成，没有云 API 调用，也没有按字符收费。",
+        "who_should_care": "需要本地处理敏感文本或声音素材的创作者、播客与有声书制作者、独立音乐人，以及希望用 MCP 或 CLI 把语音生成接入 AI Agent 工作流的开发者。",
+        "use_cases": [
+          "把小说或字幕按角色分配声音，逐行生成有声书或故事配音",
+          "用参考音频克隆音色，并调整情绪和语气来生成旁白",
+          "输入风格与带段落标记的歌词，生成完整人声歌曲或纯伴奏",
+          "按小节和拍子编写声部，导入或导出 MIDI，并用 GM 音源渲染",
+          "通过 MCP 服务让 Cursor、Claude Code 等 Agent 调用本地语音推理"
+        ],
+        "alternatives": "README 未与其他同类项目做直接对比；其自述差异点在于本地离线运行、内置 C++ 推理引擎（audio.cpp）以避免 Python 环境冲突，并同时覆盖语音克隆、歌曲生成与 MIDI 编曲。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周新增约 463 星，并登上日榜，但项目创建于 2026-09-15，仍处于早期阶段。",
+        "risk_notes": "部分模型权重有使用限制：OmniVoice、YuE2、Breeze TTS 2 仅限非商业用途，Stable Audio 3 受 Stability AI Community License 约束（年收入低于 100 万美元可免费使用）；Linux 版暂不支持自动更新，且默认使用 CPU 运行。",
+        "evidence": [
+          "Open-source local AI audio & music studio for macOS & Windows. Voice cloning, songs with lyrics, and multi-track scores — 100% offline, zero API fees.",
+          "OmniVoice, YuE2 and Breeze TTS 2 weights are restricted to non-commercial use; Stable Audio 3 is free below USD 1M annual revenue under the Stability AI Community License.",
+          "The Linux app doesn't update itself yet; download new versions from Releases."
+        ]
+      }
+    },
+    "ranxianglei/billion-context": {
+      "category": "ai-agent",
+      "one_liner": "长会话上下文压缩插件",
+      "intro": {
+        "one_liner": "上下文压缩插件",
+        "what_it_is": "这是一个用 TypeScript 编写的上下文压缩插件，位于编码代理与模型接口之间，通过分层摘要管理长会话。",
+        "problem_solved": "它用于缓解长编码会话撑爆上下文窗口、消耗大量 token 以及会话中断的问题，支持按需压缩和恢复历史内容。",
+        "who_should_care": "长期运行编码代理、受上下文窗口和 token 成本困扰的开发者。",
+        "use_cases": [
+          "数月级单会话编码",
+          "压缩并检索历史对话",
+          "适配多种编码代理"
+        ],
+        "alternatives": "相比内置摘要，强调增量、可逆和前缀缓存友好；其他同类差异 unknown。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 443 星，且曾有一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 805 个；创建于 2026 年 8 月 6 日，项目较新；许可证信息 unknown。",
+        "evidence": [
+          "A context-compression plugin for small context windows (a 100K context is enough), token savings (5x fewer tokens), and month-long single sessions (billions of tokens).",
+          "compression here is **incremental, reversible, and prefix-cache friendly**",
+          "The proxy injects four context-management tools into the conversation"
+        ]
+      }
+    },
+    "Swordpdf/PS5SX2": {
+      "category": "game",
+      "one_liner": "PS5 上的 PCSX2 移植",
+      "intro": {
+        "one_liner": "PS5 原生 PS2 模拟器",
+        "what_it_is": "这是把 PCSX2 移植到已破解 PS5 的原生应用，用 C++ 编写，提供游戏封面架、手机端设置页和多种模拟器功能。",
+        "problem_solved": "让 PS2 游戏备份能在 PS5 本机运行，并集中处理画质、补丁、存档、纹理包、成就和手柄等配置。",
+        "who_should_care": "拥有已破解 PS5、想在主机上玩 PS2 游戏备份的玩家和模拟器爱好者。",
+        "use_cases": [
+          "在 4K 电视上玩 PS2 备份",
+          "用手机调整分辨率和补丁",
+          "使用纹理包与宽屏补丁"
+        ],
+        "alternatives": "相比串流方案，它强调本机运行；相比通用 PCSX2，增加了 PS5 原生渲染、封面架和手机设置页。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 197 星且曾上日榜，但项目创建较新、未关闭问题较多。",
+        "risk_notes": "需要已破解 PS5、辅助载荷、用户自备 BIOS 与游戏；自述有粗糙边缘，部分功能仍为实验性，且未关闭问题有 85 个。",
+        "evidence": [
+          "A port of PCSX2 for PS5",
+          "PCSX2, the PS2 emulator, running natively on a jailbroken PS5.",
+          "Expect rough edges. Bug reports with logs are very welcome, and so is patience."
+        ]
+      }
+    },
+    "amontlabs/lcu": {
+      "category": "ai-agent",
+      "one_liner": "可嵌入的电脑操作能力",
+      "intro": {
+        "one_liner": "解耦桌面控制运行时",
+        "what_it_is": "LCU 把 Codex 的桌面控制运行时从应用中解耦，接入 Pi、Codex CLI、Claude Code 等代理环境，并提供应用授权管理。",
+        "problem_solved": "让不同代理环境复用桌面窗口读取、点击、输入、截图和浏览器控制能力，同时处理应用审批、跨轮次可用性和安装配置。",
+        "who_should_care": "使用代理工具做桌面自动化、需要细粒度应用授权的开发者。",
+        "use_cases": [
+          "在代理中操作桌面应用",
+          "读取窗口并截图输入",
+          "按授权控制浏览器标签"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 109 星，曾有一天进入日榜。",
+        "risk_notes": "依赖本地官方桌面应用；Windows 11 仍为候选，Intel Mac、原生 Wayland 和 musl Linux 不支持；部分集成为实验性。",
+        "evidence": [
+          "LCU exposes Codex's original computer-use runtime to your harness without requiring Codex authentication.",
+          "The official ChatGPT desktop app must still be installed locally: it supplies the runtime and instructions, while LCU handles setup and harness integration.",
+          "Windows 11 x64 remains a candidate. Intel Macs, native Wayland, and musl Linux are unsupported."
+        ]
+      }
+    },
+    "ardeyouxipianyi/workbuddy2api-hub": {
+      "category": "dev-tools",
+      "one_liner": "多账号反代 API 网关",
+      "intro": {
+        "one_liner": "WorkBuddy 多账号转 OpenAI 兼容网关",
+        "what_it_is": "一个用 Python 编写的反向代理网关，把腾讯 WorkBuddy 国际版（workbuddy.ai）与国内版（codebuddy.cn）的原生服务封装成标准 OpenAI 兼容接口（Chat Completions / Responses），并提供默认关闭的实验性 Anthropic Messages 适配，同时附带多账号调度、Web 看板与运维能力。",
+        "problem_solved": "让 Codex、Claude Code、DSH 及标准 OpenAI 客户端能够复用 WorkBuddy 账号额度；通过多账号调度、设备指纹隔离与账号级限额护栏，缓解单账号的限流与风控问题。",
+        "who_should_care": "需要在本机或局域网内把 WorkBuddy 账号接入 OpenAI 兼容客户端的个人开发者、协议研究与自用折腾者。",
+        "use_cases": [
+          "把 Codex / Claude Code 等客户端指向本地 8788 端口的 /v1 接口使用",
+          "多账号轮换调度并做每日 Token / 积分限额护栏",
+          "通过 Docker 部署到 NAS 或局域网共享给多客户端使用"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依赖上游非官方接口，README 明确上游自 2026-10-23 起收紧识别与拦截，且项目已转入低频维护，可持续性存疑。",
+        "risk_notes": "README 自述仅用于协议学习与个人自用，使用非官方客户端导致的限流、风控或封禁由使用者承担；上游可能随时收紧导致不可用；项目已于 2026-10-23 进入低频维护，Issue/PR 响应变慢；默认面板密码为 admin，需首次登录后立即修改；公网暴露需自行加 TLS 反代。",
+        "evidence": [
+          "WorkBuddy 国际国内多账号反代网关，支持 Codex / Claude Code / DSH与标准 OpenAI 客户端。",
+          "项目进入低频维护（2026-10-23）",
+          "WorkBuddy 上游正在收紧对非官方客户端的识别与拦截。"
+        ]
+      }
+    },
+    "dofastted/vm2api": {
+      "category": "dev-tools",
+      "one_liner": "虚拟机拟真订阅转 API",
+      "intro": {
+        "one_liner": "订阅转标准接口网关",
+        "what_it_is": "vm2api 是用 JavaScript 编写的网关，主打用隔离虚拟机或容器运行官方客户端进程，把订阅能力转成兼容接口。",
+        "problem_solved": "它试图减少简单逆向脚本、共享代理和提示词注入带来的风控、关联与接入不统一问题，并提供密钥、配额和集群管理。",
+        "who_should_care": "需要自建订阅转接口、管理多账号槽位与隔离网络的开发者或团队。",
+        "use_cases": [
+          "把订阅接入标准接口应用",
+          "管理多槽位与独立出口",
+          "统一密钥、配额和审计"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 187 星，且本周上日榜一天。",
+        "risk_notes": "创建于 2026 年 9 月 16 日，时间较短；有 16 个未关闭问题；文档含赞助与优惠引导，需自行辨别。",
+        "evidence": [
+          "vm2api 使用虚拟机完全拟真方案的订阅转api",
+          "摒弃传统的简单 HTTP 逆向与易被封禁的公用代理方案，采用**全隔离虚拟机/容器环境 + 官方真实客户端进程常驻 + 真实硬件指纹拟真 + 单槽单独立网络出口 + 进槽前封控拦截**",
+          "向上游输出标准 OpenAI `/v1/chat/completions`、`/v1/responses` 与 Anthropic `/v1/messages` 兼容接口"
+        ]
+      }
+    },
+    "pch/rawmakase": {
+      "category": "content-media",
+      "one_liner": "跨平台 RAW 照片编辑器",
+      "intro": {
+        "one_liner": "Rust 编写的跨平台 RAW 照片编辑器",
+        "what_it_is": "RAWmakase 是一款用 Rust 编写的非破坏性 RAW 照片显影工具，支持 Linux、macOS 和 Windows，提供类似 Lightroom 的调整控件，并兼容 Lightroom 目录导入。",
+        "problem_solved": "为 Linux 等平台提供免费、快速、接近 Lightroom 工作流的 RAW 编辑与目录管理方案，并可迁移 Lightroom Classic 的评分、标记、关键词和兼容的显影设置。",
+        "who_should_care": "Linux 桌面用户、希望摆脱订阅制或寻找 Lightroom 替代方案的摄影师，以及关注 Rust 桌面图像应用的开发者。",
+        "use_cases": [
+          "在 Linux 上编辑 RAW/JPEG/TIFF 等照片并导出 JPEG、16-bit TIFF 或 PNG",
+          "从 Lightroom Classic 目录导入评分、标记、关键词和兼容显影设置",
+          "通过命令行或 MCP server 批量渲染、导出缩略图和自动化处理"
+        ],
+        "alternatives": "README 称其渲染目标是接近而非完全等同于 Lightroom；与 Lightroom 相比，它是免费、开源、跨平台的，但明确标注为早期软件，渲染引擎可能随版本变化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 项目创建于 2026-09，周增约 119 星，处于早期活跃开发阶段，热度可能随版本迭代波动。",
+        "risk_notes": "README 警告这是早期软件，1.0 前向后兼容性有限，升级后已编辑照片可能显示不同；Windows 安装包尚未代码签名；AUR 发布暂停；局部蒙版和污点修复为实验性功能。",
+        "evidence": [
+          "RAWmakase is a fast, non-destructive RAW photo developer for Linux, macOS and Windows, written in Rust.",
+          "RAWmakase is early software in active development. The rendering engine may change from one version to the next",
+          "It can also import a Lightroom Classic catalog with its ratings, flags, labels, keywords and compatible develop settings"
+        ]
+      }
+    },
+    "Jakeschincariol/instagram-agent-skill": {
+      "category": "ai-agent",
+      "one_liner": "Instagram 运营技能集",
+      "intro": {
+        "one_liner": "Instagram 内容创作技能集",
+        "what_it_is": "一组面向 Claude 的十三个技能，覆盖 Reels、文案、主页、评论、私信和复盘等 Instagram 运营环节，并附带本地 Python 文本工具。",
+        "problem_solved": "把选题、钩子、脚本节奏、文案首屏和去 AI 腔等步骤做成可检查的流程，减少发布前反复试错。",
+        "who_should_care": "用 Claude 辅助运营 Instagram 的创作者和小团队。",
+        "use_cases": [
+          "生成并评分 Reels 钩子",
+          "检查文案首屏与标签",
+          "清理草稿中的 AI 腔"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 579 星且仅一天上日榜。",
+        "risk_notes": "创建与最近提交同为 2026-09-13，项目很新；未关闭 Issue 有 41 个；README 称需人工确认后才发布。",
+        "evidence": [
+          "Thirteen Claude skills that run an Instagram account. Free, MIT, no signup, no API key, nothing to connect.",
+          "Nothing gets posted until you say yes. These skills write. You post.",
+          "一周新增 Star：579"
+        ]
+      }
+    },
+    "ithtelab/workbuddy-manager": {
+      "category": "dev-tools",
+      "one_liner": "账号池管理与反代控制台",
+      "intro": {
+        "one_liner": "账号池管理控制台",
+        "what_it_is": "这是腾讯 CodeBuddy 账号池的 Web 管理端，内置 OpenAI 兼容反代网关，提供扫码纳管、签到保活、密钥分发、白名单、日志和用量统计。",
+        "problem_solved": "把命令行账号池网关变成可视化面板，集中管理账号、密钥、定时任务、访问控制和调用记录，降低日常运维与分发成本。",
+        "who_should_care": "需要管理本人及亲属授权账号池、并给下游提供兼容接口的自托管用户。",
+        "use_cases": [
+          "扫码批量纳管账号并定时签到",
+          "按密钥分发额度与模型白名单",
+          "查看调用日志和用量统计"
+        ],
+        "alternatives": "相比只有命令行的 workbuddy2api，它补上可视化管理、密钥分发、IP 管控和统计。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 299 星，且曾有一天登上日榜。",
+        "risk_notes": "使用边界限定本人及亲属自愿授权账号，禁止商业转售等用途；Windows 安装器无 Authenticode 签名；直接暴露管理面风险高。",
+        "evidence": [
+          "腾讯 CodeBuddy 账号池管理控制台，内置 OpenAI 兼容反代网关：扫码批量纳管账号、定时签到与保活、密钥分组分发、IP 与模型白名单、调用日志与用量统计；支持带签名校验的一键更新。",
+          "本项目只用于管理本人及亲属自愿授权的账号；禁止批量注册、账号交易、代注册、接码、盗号、绕过平台风控，以及任何商业转售或盈利性用途。",
+          "当前安装器没有 Authenticode 签名，SmartScreen 可能显示警告；请确认文件来自可信 Release 或自行构建。"
+        ]
+      }
+    },
+    "HexRaysSA/ida-mcp": {
+      "category": "security",
+      "one_liner": "IDA 官方 MCP 服务",
+      "intro": {
+        "one_liner": "IDA 官方 MCP 服务",
+        "what_it_is": "这是 Hex-Rays 官方的 IDA MCP 服务，用 Python 编写，可让智能体通过标准输入输出或 HTTP 连接并操作 IDA。",
+        "problem_solved": "它让智能体更方便地调用 IDA 做逆向分析，并支持多个客户端共享和操作 IDA 数据库。",
+        "who_should_care": "使用 IDA 做逆向分析，并希望接入智能体的开发者。",
+        "use_cases": [
+          "让智能体分析样本文件",
+          "查询 IDA 图形界面当前打开文件",
+          "排查和导出会话日志"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 169 星，并曾登上日榜。",
+        "risk_notes": "需要 IDA 9.4 或更高版本、idalib 和 Python 3.11 及以上；建议禁用其他 IDA MCP 服务以减少智能体混淆；未关闭问题有 19 个。",
+        "evidence": [
+          "Official Hex-Rays IDA MCP Server, see the [announcement blog post](https://hex-rays.com/blog/hex-rays-ida-mcp-server) for more information.",
+          "IDA 9.4 or higher with idalib and Python 3.11+",
+          "The IDA MCP project is built on [IDA Nexus](https://github.com/HexRaysSA/ida-nexus),\nwhich allows multiple clients to seamlessly share and operate on IDA databases."
+        ]
+      }
+    },
+    "google/agentmesh": {
+      "category": "ai-agent",
+      "one_liner": "智能体协作网格框架",
+      "intro": {
+        "one_liner": "智能体私有网络",
+        "what_it_is": "Agent Mesh 是面向智能体的私有网络，节点可发布、发现并调用工具与模型，并提供可验证身份。",
+        "problem_solved": "让不同设备、容器和集群中的智能体安全互联，默认不暴露服务，并按策略授权调用。",
+        "who_should_care": "构建多智能体系统、需要跨环境调用工具和模型的开发者。",
+        "use_cases": [
+          "跨设备发现和调用智能体服务",
+          "把本地工具发布到私有网络",
+          "按策略路由模型请求"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 93 星，并曾有一天登上日榜。",
+        "risk_notes": "仍处于 1.0 之前，沙箱智能体方案和移动端为预览；共享测试网不承诺可用性；并非官方支持产品。",
+        "evidence": [
+          "Agent Mesh is a private network for AI agents.",
+          "Nothing is reachable by default.",
+          "Agent Mesh is pre-1.0."
+        ]
+      }
+    },
+    "dmoshehun-prog/learn-from-materials": {
+      "category": "learning-resource",
+      "one_liner": "材料转互动学习网页",
+      "intro": {
+        "one_liner": "把书与论文转成可追溯学习网页的 Agent 技能",
+        "what_it_is": "一个基于开放 Agent Skills 规范构建的跨 Agent 学习技能，用 Python 实现；它能把 PDF、EPUB、DOCX、PPTX、网页等多种材料转化为可追溯的知识库、交互式学习 HTML 页面和 Markdown。",
+        "problem_solved": "解决阅读书籍、论文、报告时难以系统化整理、难以核对原文出处、难以自测和做笔记的问题；它强调材料事实与模型补充内容严格分离，并支持离线运行和最小权限。",
+        "who_should_care": "需要精读论文或书籍的研究者、学生，以及使用 Claude Code、Codex、GitHub Copilot CLI 等可读写文件并执行本地命令的 Agent 环境的用户。",
+        "use_cases": [
+          "把一本 PDF 书转为带原文页码溯源、术语表和自测题的学习网页",
+          "对行业报告做快速概览，提取核心论点并核对引用",
+          "在本地知识库中累积可复用的方法论卡片，并跨材料检索"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：它依托 AI Agent 技能生态，属于当前 Agent 工具链中的新兴形态，但项目创建时间很短，长期价值仍需观察。",
+        "risk_notes": "项目创建于 2026-09-08，距今仅一个多月，成熟度有限；纯聊天环境无法完成材料抽取、覆盖校验和 HTML 渲染；README 内容较长，部分功能描述需自行验证。",
+        "evidence": [
+          "Turn PDFs, books and papers into interactive learning webpages｜将复杂材料转化为可追溯、可测验、可做笔记的学习网页",
+          "It works in agent environments that can read files, run local commands, and recognize `SKILL.md` — such as WorkBuddy, Codex, Claude Code, and GitHub Copilot CLI.",
+          "Distinguishes material-backed facts, areas not covered by the material, model-added content, and externally verified items"
+        ]
+      }
+    },
+    "FrizzleM/SideInstaller": {
+      "category": "mobile",
+      "one_liner": "设备端安装 SideStore",
+      "intro": {
+        "one_liner": "免电脑安装侧载工具",
+        "what_it_is": "这是一个用 Swift 为主的 iOS 应用，可在设备端安装 SideStore 和 LiveContainer，并处理配对、签名与安装流程。",
+        "problem_solved": "它解决侧载工具安装依赖电脑的问题，让没有电脑的用户也能在 iPhone 或 iPad 上完成初始配置。",
+        "who_should_care": "想在 iOS 27 及以上设备侧载应用、且没有电脑的普通用户。",
+        "use_cases": [
+          "在手机上装 SideStore",
+          "一并装 LiveContainer",
+          "导入配对文件或证书"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 65 星，曾有一天进入日榜。",
+        "risk_notes": "需输入 Apple 账户凭据，非官方构建可能窃取凭据；许可证限制商业使用和官方构建再分发；旧系统仍需电脑生成配对文件。",
+        "evidence": [
+          "Install SideStore and LiveContainer directly on your iPhone. No PC required.",
+          "Your Apple credentials never leave your device.",
+          "Redistributing the official builds (IPAs) or monetizing the project in any form requires written permission."
+        ]
+      }
+    },
+    "SimoHypers/limusic": {
+      "category": "desktop-system",
+      "one_liner": "原生桌面音乐客户端",
+      "intro": {
+        "one_liner": "原生桌面音乐客户端",
+        "what_it_is": "Limusic 是用 Rust、Tauri 和 SvelteKit 构建的桌面 YouTube Music 客户端，通过 libmpv 播放音频，不依赖 Electron。",
+        "problem_solved": "它把网页音乐服务搬进原生桌面应用，提供无广告音频播放、媒体库管理、歌词、记录同步和系统集成。",
+        "who_should_care": "常用 YouTube Music、重视桌面体验、歌词与记录同步的开发者和音乐用户。",
+        "use_cases": [
+          "桌面端无广告听歌",
+          "管理 YouTube Music 媒体库",
+          "同步歌词与播放记录"
+        ],
+        "alternatives": "不使用 Electron，直接调用内部接口并用 libmpv 播放，强调原生桌面集成。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 76 星，但只上过一天日榜。",
+        "risk_notes": "未关闭问题有 107 个；依赖 YouTube 内部接口；macOS 构建未签名，首次启动需额外处理。",
+        "evidence": [
+          "Feature rich, native desktop, YouTube Music client. Tauri + Rust + SvelteKit, ad-free playback through libmpv, Last.fm scrobbling and Discord Rich Presence, no Electron.",
+          "Limusic talks directly to YouTube's internal API and plays audio through libmpv: no bundled browser runtime, no backend server, no ads in the audio.",
+          "macOS (Apple Silicon) | `.dmg` | Self-updating. Unsigned, so the first launch needs `xattr -dr com.apple.quarantine /Applications/limusic.app`"
+        ]
+      }
+    },
+    "uint23/sxwm": {
+      "category": "desktop-system",
+      "one_liner": "简洁动态平铺窗管",
+      "intro": {
+        "one_liner": "简易动态平铺窗口管理器",
+        "what_it_is": "sxwm 是用 C 编写的动态平铺窗口管理器，面向 X11 桌面，提供配置文件、会话文件和源码构建安装方式。",
+        "problem_solved": "它用于自动排列和管理窗口，减少手动调整布局；同时提供配置选项，便于按个人习惯定制窗口行为。",
+        "who_should_care": "喜欢平铺式桌面、使用 X11 并愿意自行编译配置的 Linux 用户。",
+        "use_cases": [
+          "用 startx 启动平铺桌面",
+          "通过配置文件定制窗口行为",
+          "从源码编译安装窗口管理器"
+        ],
+        "alternatives": "借鉴 dwm 的平铺与源码、i3 的易配置，并受 sowm 和 tinywm 启发。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾有一天登上日榜，星数已破千。",
+        "risk_notes": "作者不维护任何软件包，第三方包需自行承担风险；项目创建于 2025 年 4 月，时间较短。",
+        "evidence": [
+          "a simple feature-rich dynamic tiling window manager",
+          "I don't maintain any packages. Use third-party packages at your own risk.",
+          "See [`default_sxwmrc`](default_sxwmrc) for a complete list of features and configuration options."
+        ]
+      }
+    },
+    "Maelic/RelateAnything": {
+      "category": "ai-model",
+      "one_liner": "实时开放词汇关系预测",
+      "intro": {
+        "one_liner": "开放词汇关系预测工具",
+        "what_it_is": "RelateAnything 是一个 Python 项目，用图像、目标区域和自定义关系词，实时输出带分数的主谓宾关系三元组。",
+        "problem_solved": "它让开发者无需重训即可指定关系词，从任意来源的框或掩码中预测空间与语义关系。",
+        "who_should_care": "做视觉理解、场景图、视频分析或交互应用的开发者。",
+        "use_cases": [
+          "为图片生成场景关系图",
+          "视频中跟踪区域间关系",
+          "浏览器里试用关系预测"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 47 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0；关系模型不负责目标检测，检测器需另行构建且许可独立；浏览器演示依赖 WebGPU 或 WASM。",
+        "evidence": [
+          "Real-time open-vocabulary relation prediction from any inputs.",
+          "Give RelateAnything **an image, object regions, and the relations you want to look for**. It returns scored `(subject, relation, object)` triplets",
+          "The relation model consumes regions; it does not detect objects itself. Demo detectors are rebuilt locally and have separate licenses."
+        ]
+      }
+    },
+    "MengMengCode/VoCat": {
+      "category": "hardware-iot",
+      "one_liner": "蜂窝模组网页控制台",
+      "intro": {
+        "one_liner": "蜂窝模组控制面板",
+        "what_it_is": "VoCat 是面向 Quectel EC20/EC25 等蜂窝模组的开源网页控制面板和工程工具，后端用 Go，前端内嵌进单个可执行文件，并用 SQLite 保存状态。",
+        "problem_solved": "把模组发现、无线状态、AT 与 USSD 终端、短信、WiFi Calling、eSIM、网络选择、代理路由和通知集中到一个自包含服务里，减少分散操作。",
+        "who_should_care": "使用兼容蜂窝模组做开发、调试、短信或网络管理的开发者与运维人员。",
+        "use_cases": [
+          "查看信号与注册状态",
+          "调试 AT 与 USSD 命令",
+          "管理短信、eSIM 与选网"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 115 星，且两天进入日榜。",
+        "risk_notes": "可用功能依赖模组固件、USB 组合、卡能力、驱动、网络和运营商配置；VoWiFi IMS 需要 Linux XFRM/IPsec；硬件访问模式需要较高权限。",
+        "evidence": [
+          "Vocat is an open-source web control panel and engineering toolkit for Quectel EC20/EC25-class and China Mobile ML307 series cellular modems.",
+          "The backend is written in Go, the interface is built with React and TypeScript, and the production frontend is embedded into the Go binary. A single executable contains the web application and uses SQLite for persistent state.",
+          "Available features depend on the module firmware, USB composition, SIM/eSIM capabilities, host drivers, radio network, and carrier configuration."
+        ]
+      }
+    },
+    "Lucas0623z/NoteLite": {
+      "category": "content-media",
+      "one_liner": "乐谱识别与练习工具",
+      "intro": {
+        "one_liner": "乐谱识别与练习工具",
+        "what_it_is": "NoteLite 是基于 Audiveris 的开源乐谱识别与编辑工具，可把 PDF 或图片转成 MusicXML、MIDI，并提供跟谱练习模式。",
+        "problem_solved": "它把纸质乐谱数字化、人工校正和演奏反馈串起来，减少从扫描件到可编辑乐谱、再到练习之间的切换成本。",
+        "who_should_care": "需要整理扫描乐谱、导出数字乐谱，或用 MIDI、麦克风跟谱练习的音乐学习者与开发者。",
+        "use_cases": [
+          "把扫描乐谱转成可编辑乐谱",
+          "校正识别结果并导出 MIDI",
+          "用 MIDI 或麦克风跟谱练习"
+        ],
+        "alternatives": "在 Audiveris 原有桌面编辑流程外，增加了独立练习模式、输入反馈和 Apple 客户端。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 47 星，曾有一天进入日榜。",
+        "risk_notes": "仓库含多种许可证，Audiveris 派生部分保留 AGPL 声明，不能视为纯 MIT。Apple 构建仅供开发测试，需自行签名；麦克风仅支持单音高声部，连续真实乐器演奏仍需验证。",
+        "evidence": [
+          "Open-source OMR and guided music practice: turn sheet music PDFs/images into MusicXML/MIDI, refine scores, and practice with MIDI or microphone feedback.",
+          "NoteLite builds on the Audiveris optical music recognition engine, keeping the original desktop editor and adding a separate practice mode.",
+          "Apple builds are currently for development and testing, with no App Store release. Installing on a physical device or distributing a build requires your own signing setup.",
+          "The complete Audiveris-derived application should not be treated as MIT-only."
+        ]
+      }
+    },
+    "iangcarroll/cookiemonster": {
+      "category": "security",
+      "one_liner": "无状态会话漏洞检测",
+      "intro": {
+        "one_liner": "会话 Cookie 弱点检测工具",
+        "what_it_is": "CookieMonster 是命令行工具和接口，用 Go 编写，可解码、验证并修改多种框架生成的无状态会话 Cookie。",
+        "problem_solved": "它帮助批量发现因弱密钥或错误配置导致的会话 Cookie 漏洞，并支持在自动化流程中快速筛查。",
+        "who_should_care": "安全测试人员、应用开发者和自动化漏洞扫描流程维护者。",
+        "use_cases": [
+          "批量检测会话 Cookie 弱密钥",
+          "验证多种框架 Cookie 签名",
+          "修改已解签的 Django Cookie"
+        ],
+        "alternatives": "支持 Laravel、Django、Flask、Rack、Express 等格式，并可扩展新格式。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾达到一千零五星且上过一次日榜。",
+        "risk_notes": "重签名能力有限，目前仅支持 Django 解码的 Cookie；Laravel 的 GCM 尚未支持；用于发现使用者配置问题，需合法授权测试。",
+        "evidence": [
+          "CookieMonster is a command-line tool and API for decoding and modifying vulnerable session cookies from several different frameworks.",
+          "It is designed to run in automation pipelines which must be able to efficiently process a large amount of these cookies to quickly discover vulnerabilities.",
+          "CookieMonster has limited support for resigning a cookie once it has been unsigned, with the `-resign` flag."
+        ]
+      }
+    },
+    "abrignoni/ALEAPP": {
+      "category": "security",
+      "one_liner": "安卓日志事件解析器",
+      "intro": {
+        "one_liner": "安卓取证解析工具",
+        "what_it_is": "ALEAPP 是解析 Android 日志、事件与 Protobuf 数据的 Python 工具，提供图形界面和命令行，也可使用预构建程序。",
+        "problem_solved": "它把安卓提取包、目录或磁盘镜像中的痕迹整理成报告，支持多类压缩、取证镜像和虚拟机磁盘输入。",
+        "who_should_care": "数字取证人员、安卓安全分析者和需要扩展痕迹插件的开发者。",
+        "use_cases": [
+          "解析安卓提取包生成报告",
+          "直接读取磁盘镜像痕迹",
+          "编写自定义痕迹插件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时星数为一千零四。",
+        "risk_notes": "源码运行要求 Python 3.11 或更高版本；Linux 还需单独安装 tkinter；部分依赖安装涉及锁定依赖链。",
+        "evidence": [
+          "Android Logs Events And Protobuf Parser",
+          "Pre-built releases need no Python installation",
+          "**Python 3.11 or above**"
+        ]
+      }
+    },
+    "ciddwd/overlay-translator": {
+      "category": "mobile",
+      "one_liner": "免 ROOT 屏幕实时翻译",
+      "intro": {
+        "one_liner": "安卓屏幕实时翻译器",
+        "what_it_is": "无需 ROOT 的开源 Android 屏幕实时翻译工具，用截屏、文字识别、翻译和悬浮窗把译文叠在画面上，也支持朗读。",
+        "problem_solved": "让游戏、视觉小说、漫画和视频里的外文内容不必切出应用即可识别、翻译和显示，并可选择离线或自建服务。",
+        "who_should_care": "玩外文游戏、看漫画和视觉小说，且重视离线与自建服务的安卓用户。",
+        "use_cases": [
+          "翻译游戏对话与界面文字",
+          "翻译竖排漫画和视觉小说",
+          "批量处理相册图片译文"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周新增 22 星，仅一天进入日榜。",
+        "risk_notes": "视频实时翻译为初版功能，识别准确度、断句、字幕延迟和服务兼容性仍在优化；在线识别会上传音频并可能产生费用。",
+        "evidence": [
+          "无需 ROOT 的开源 Android 屏幕实时翻译工具，适合游戏、视觉小说和漫画。支持端侧与云端 OCR、离线 LLM、多种翻译服务和文字朗读（TTS），译文可直接显示在画面上。",
+          "目前为初版功能，识别准确度、断句、字幕延迟和服务兼容性仍在持续优化，详见下方路线图。",
+          "在线识别会上传音频，并可能产生服务费用"
+        ]
+      }
+    },
+    "LeoKemp223/embed-ai-tool": {
+      "category": "hardware-iot",
+      "one_liner": "嵌入式开发 AI 技能集",
+      "intro": {
+        "one_liner": "嵌入式开发技能集",
+        "what_it_is": "面向 AI 编程助手的嵌入式开发技能集，提供 MCU 固件构建、烧录、调试、通信、分析与流水线编排能力。",
+        "problem_solved": "把嵌入式研发、调试、测试中的多工具链操作整理成可复用技能，帮助大模型按统一流程完成固件开发任务。",
+        "who_should_care": "使用 AI 编程助手的 MCU 固件开发者、嵌入式调试与测试人员。",
+        "use_cases": [
+          "编译并烧录 Keil 工程",
+          "用 GDB 排查固件崩溃",
+          "抓取串口日志并调试协议"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上榜一天。",
+        "risk_notes": "创建日期为 2026 年 4 月 17 日，资料未提供许可证、版本与生产落地信息；安装流程要求先确认选项，需留意工程目录影响。",
+        "evidence": [
+          "面向 AI 编程助手的嵌入式开发技能集，为大模型提供 MCU 固件开发全流程能力。",
+          "共 24 个 skill，按用途分为 6 类",
+          "破千时的 Star 数：1000；本周上日榜天数：1"
+        ]
+      }
+    },
+    "Stevoisiak/Stevos-AI-Blocklist": {
+      "category": "content-media",
+      "one_liner": "屏蔽生成式 AI 内容",
+      "intro": {
+        "one_liner": "屏蔽网页生成式 AI 功能",
+        "what_it_is": "这是给 uBlock Origin 和 AdGuard 等工具使用的过滤列表，用于隐藏网站中的生成式 AI 功能及被标注为 AI 生成的内容。",
+        "problem_solved": "帮助不想看到 AI 概览、AI 按钮、AI 摘要、AI 生成图片和聊天入口的用户，减少网页中的相关干扰。",
+        "who_should_care": "使用广告拦截器、希望减少网页 AI 功能干扰的普通用户。",
+        "use_cases": [
+          "隐藏搜索页的 AI 概览",
+          "屏蔽视频站 AI 摘要",
+          "过滤标注 AI 的图片"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天。",
+        "risk_notes": "额外规则可能误拦非 AI 内容或破坏站点功能；部分浏览器工具不完全支持，可能兼容性不佳。",
+        "evidence": [
+          "A filter list that hides website features which use Generative AI & content labeled as AI Generated.",
+          "A filter list for [uBlock Origin](https://github.com/gorhill/uBlock?tab=readme-ov-file#ublock-origin-ubo) and [AdGuard](https://adguard.com/en/adguard-browser-extension/overview.html) that hides specific website features which use Generative AI and content labeled as AI-generated.",
+          "They are more prone to accidentally blocking non-AI content or **breaking site functionality**."
+        ]
+      }
+    },
+    "H-mmer/pentest-agents": {
+      "category": "security",
+      "one_liner": "漏洞赏金智能体框架",
+      "intro": {
+        "one_liner": "漏洞赏金智能体框架",
+        "what_it_is": "面向多种 AI 编程工具的漏洞赏金框架，提供智能体、命令、命令行工具、技能、MCP 服务和跨工具安装包。",
+        "problem_solved": "把目标同步、信息收集、自动搜寻、验证、利用链构建、报告与去重串成工作流，并适配不同工具的原生配置。",
+        "who_should_care": "做漏洞赏金、渗透测试，且使用 AI 编程工具辅助的安全研究者。",
+        "use_cases": [
+          "初始化赏金项目工作区",
+          "按目标执行自动搜寻流程",
+          "验证发现并生成报告"
+        ],
+        "alternatives": "覆盖七种 AI 编程工具，提供原生格式转换、安装清单、漂移检测与卸载恢复。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周破千星且曾有一天登上日榜。",
+        "risk_notes": "涉及漏洞赏金平台接口与凭据配置；写入索引未随项目提供；部分平台集成仅为占位实现。",
+        "evidence": [
+          "Bug bounty agent framework for Claude Code, Codex, Gemini, Cursor, Windsurf, Copilot, and OpenClaw — 48 agents, 26 commands, 19 CLI tools, 2 MCP servers, autonomous hunt loops, exploit chain builder.",
+          "A complete bug bounty framework. Battle-tested hunting methodology with concrete payloads, 7-Question Gate validation, autonomous hunt loops, A→B exploit chain building, persistent brain with endpoint tracking, optional semantic writeup search (bring your own index), automatic cost tracking via CC hooks, live platform integration, and a cross-IDE installer that emits the native format for Claude Code, Codex, Gemini, Cursor, Windsurf, VS Code Copilot, and OpenClaw.",
+          "The writeup index is not bundled."
+        ]
+      }
+    },
+    "DataWithBaraa/sql-data-warehouse-project": {
+      "category": "learning-resource",
+      "one_liner": "SQL 数仓构建指南",
+      "intro": {
+        "one_liner": "SQL Server 数仓教学项目",
+        "what_it_is": "这是一个用 TSQL 在 SQL Server 中搭建现代数据仓库的教学项目，包含源文件、脚本、文档和数据质量检查。",
+        "problem_solved": "它把来自客户关系管理和企业资源计划系统的原始文件整合、清洗并建模，形成适合报表和分析的数据。",
+        "who_should_care": "适合想练习数据仓库、数据清洗、星型模型和 SQL 分析的开发者。",
+        "use_cases": [
+          "学习三层数仓架构",
+          "练习 ETL 与数据清洗",
+          "用 SQL 做业务分析"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周一天登上日榜。",
+        "risk_notes": "项目定位偏教学材料；只关注最新数据集，不要求历史化；脚本默认读取固定本地路径。",
+        "evidence": [
+          "A comprehensive guide to building a modern data warehouse with SQL Server, including ETL processes, data modeling, and analytics.",
+          "The materials of the data warehouse project: the source files, every script from the videos, and the docs.",
+          "Scope: Focus on the latest dataset only; historization of data is not required."
+        ]
+      }
+    },
+    "ChaozhongLiu/DyberPet": {
+      "category": "desktop-system",
+      "one_liner": "桌面赛博宠物框架",
+      "intro": {
+        "one_liner": "可扩展桌面宠物框架",
+        "what_it_is": "DyberPet 是基于 PySide6 的桌面宠物框架，提供动画、交互、养成、任务、商店和迷你宠物等功能。",
+        "problem_solved": "它让角色以桌宠形式住进桌面，并通过模组扩展角色、道具、音效和迷你宠物，也可接入大模型作助手。",
+        "who_should_care": "喜欢桌宠、想制作角色模组或做桌面陪伴应用的开发者。",
+        "use_cases": [
+          "在桌面养互动角色",
+          "制作并导入角色模组",
+          "用桌宠管理待办"
+        ],
+        "alternatives": "相比简单动图展示，它包含养成、任务、商店与模组扩展。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千星时达到一千星。",
+        "risk_notes": "大模型模块仍在开发且相关能力暂未完全开源；终端源码仅开源至旧版本；用户手册和部分开发文档仍在施工中。",
+        "evidence": [
+          "Desktop Cyber Pet Framework based on PySide6",
+          "不只是“GIF 展示器”：从动画、互动到养成与任务系统，已经是一套完整可玩的桌面宠物 App。",
+          "LLM 模块仍在持续开发中，相关能力暂未完全开源。"
+        ]
+      }
+    },
+    "tweedegolf/mailcrab": {
+      "category": "dev-tools",
+      "one_liner": "开发用邮件测试服务器",
+      "intro": {
+        "one_liner": "开发用邮件测试服务器",
+        "what_it_is": "MailCrab 是用 Rust 编写的开发用邮件测试服务器，提供接收邮件的 SMTP 服务和查看邮件的网页界面。",
+        "problem_solved": "它让开发者在本地或开发环境捕获应用发出的邮件，避免真实投递，并方便检查正文、附件、邮件头和原始内容。",
+        "who_should_care": "需要调试注册、通知、找回密码等邮件流程的开发者和测试人员。",
+        "use_cases": [
+          "本地调试应用发信",
+          "查看测试邮件内容",
+          "检查附件和邮件头"
+        ],
+        "alternatives": "受 MailHog 和 MailCatcher 启发，前后端均用 Rust 编写，并提供单二进制和容器镜像。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，星数达到一千。",
+        "risk_notes": "邮件默认只存内存，长期运行且邮件较多可能导致内存耗尽；大量邮件并发时网页连接可能滞后并丢消息。",
+        "evidence": [
+          "Email test server for development, written in Rust.",
+          "All email is stored in memory while the application is running.",
+          "This might cause an OOM when MailCrab lives long enough and receives enough messages."
+        ]
+      }
+    },
+    "KenneyNL/Starter-Kit-FPS": {
+      "category": "game",
+      "one_liner": "第一人称射击起步套件",
+      "intro": {
+        "one_liner": "Godot 第一人称射击模板",
+        "what_it_is": "这是一个用于 Godot 4.6 的第一人称射击基础模板，包含角色控制、武器切换、敌人和素材。",
+        "problem_solved": "它提供可修改的射击游戏起点，帮助开发者省去搭建角色、武器和敌人基础结构的步骤。",
+        "who_should_care": "用 Godot 制作第一人称射击原型或学习相关机制的开发者。",
+        "use_cases": [
+          "快速制作射击游戏原型",
+          "学习角色与武器配置",
+          "复用素材搭建练习项目"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，但缺少持续热度依据。",
+        "risk_notes": "定位是基础模板，功能范围有限；素材与代码许可不同，商用时需分别留意。",
+        "evidence": [
+          "This package includes a basic template for a first person shooter in Godot 4.6.",
+          "Includes features like;\n\n- Character controller\n- Weapons, switching weapons\n- Enemies\n- Sprites and 3D Models _(CC0 licensed)_",
+          "MIT License"
+        ]
+      }
+    },
+    "cosscom/ui": {
+      "category": "web-frontend",
+      "one_liner": "Cal.com 官方设计系统",
+      "intro": {
+        "one_liner": "Cal.com 官方设计系统",
+        "what_it_is": "这是 Cal.com 官方设计系统，包含 React 组件库、文档站点、共享组件包和多个 Next.js 应用，全部使用 TypeScript。",
+        "problem_solved": "为 React 应用提供可复制、可组合、可访问且已配好样式的界面组件，减少从零搭建设计系统的工作。",
+        "who_should_care": "使用 React、Tailwind CSS 和 Base UI 的前端开发者，以及关注 Cal.com 组件体系的团队。",
+        "use_cases": [
+          "复制组件到 React 应用",
+          "搭建统一风格的界面",
+          "参考组件库文档与实现"
+        ],
+        "alternatives": "基于 Base UI 与 Tailwind CSS，采用复制粘贴拥有代码的方式；仓库还保留支持有限的旧版组件快照。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时星数达 10,686，且本周上过一次日榜。",
+        "risk_notes": "新组件库仍在逐步采用中；旧版组件仅有限支持和维护；多应用本地开发需配置多个环境变量。",
+        "evidence": [
+          "coss.com/ui is the official Cal.com Design System.",
+          "**coss ui** is a collection of beautifully designed, accessible, and composable components for your React apps. Built on top of [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/), it's designed for you to copy, paste, and own.",
+          "Origin UI was a pre-acquisition collection of Radix-based, shadcn-style components that remains available for use, but with limited support and maintenance."
+        ]
+      }
+    },
+    "Anil-matcha/awesome-open-source-saas-alternatives": {
+      "category": "learning-resource",
+      "one_liner": "开源 SaaS 替代品清单",
+      "intro": {
+        "one_liner": "开源替代清单",
+        "what_it_is": "这是一个按类别整理的开源软件清单，收录付费软件即服务的替代方案，并列出许可证和星标数。",
+        "problem_solved": "帮助想降低订阅成本或自行托管的人，快速查找常见付费工具的开源替代品。",
+        "who_should_care": "关注自托管、开源选型和替代付费工具的开发者。",
+        "use_cases": [
+          "寻找笔记工具替代品",
+          "比较团队沟通方案",
+          "筛选可自托管工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 3,397 星，且本周上过一次日榜。",
+        "risk_notes": "清单中的许可证和星标数可能变化；部分条目标注为需查看仓库，信息完整度不一。",
+        "evidence": [
+          "Open source alternatives to paid SaaS apps: Notion, Slack, Auth0, Vercel and more. Curated list with licenses and GitHub stars.",
+          "A curated list of open source alternatives to paid SaaS apps, with licenses and GitHub stars.",
+          "Looking for a free, self-hostable replacement for a paid tool? Find the tool below and pick an alternative."
+        ]
+      }
+    },
+    "shadcn-labs/form-builder": {
+      "category": "web-frontend",
+      "one_liner": "动态表单构建工具",
+      "intro": {
+        "one_liner": "动态表单生成工具",
+        "what_it_is": "这是一个基于 React、Next.js 和 TypeScript 的动态表单构建工具，可创建、定制表单，并生成表单代码。",
+        "problem_solved": "它帮助开发者在网页应用中快速搭建带校验、响应式界面和可复用组件的表单，减少手写表单代码。",
+        "who_should_care": "使用 React、Next.js、shadcn、React Hook Form 或 Zod 的前端开发者。",
+        "use_cases": [
+          "可视化搭建业务表单",
+          "生成 React Hook Form 代码",
+          "安装 shadcn 表单组件"
+        ],
+        "alternatives": "支持生成 React Hook Form 或 TanStack Form 代码，并提供 shadcn registry。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千时已有 2,693 星且本周上过日榜。",
+        "risk_notes": "README 提供在线演示和开发启动步骤，但未说明生产部署要求；许可证为 MIT。",
+        "evidence": [
+          "A dynamic form-building tool that allows users to create, customize, and validate forms seamlessly within web applications.",
+          "Two Form Libraries: Generate React Hook Form or TanStack Form code, each starting with the one `shadcn add` command it needs.",
+          "This project is licensed under the MIT License."
+        ]
+      }
+    },
+    "OSINTVerseHQ/Social-Media-OSINT-Tools-Collection": {
+      "category": "security",
+      "one_liner": "社交媒体情报工具合集",
+      "intro": {
+        "one_liner": "社交媒体开源情报工具合集",
+        "what_it_is": "这是一个面向社交媒体开源情报工作的工具资源集合，仓库描述称其收录了实用的 SOCINT 工具。",
+        "problem_solved": "它把分散的社交媒体情报相关工具集中起来，便于查找和选用。",
+        "who_should_care": "做开源情报、社交媒体调查或安全研究的人员。",
+        "use_cases": [
+          "查找社媒调查工具",
+          "整理情报资源清单",
+          "辅助开源情报培训"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周仅一天上日榜，但星数和复刻数较高。",
+        "risk_notes": "缺少说明文档，项目成熟度、维护状态、工具质量与许可证信息均无法确认。",
+        "evidence": [
+          "A collection of most useful osint tools for SOCINT.",
+          "破千时的 Star 数：2026",
+          "Fork 数：246"
+        ]
+      }
+    },
+    "1lck/Lithe-IDEA": {
+      "category": "dev-tools",
+      "one_liner": "轻量跨平台 AI IDE",
+      "intro": {
+        "one_liner": "轻量级 Java 开发 IDE，面向 AI 协作",
+        "what_it_is": "Lithe 是一款跨平台轻量级 IDE，主要面向 Java 与 Spring Boot 开发者，保留浏览、编辑、导航、搜索、Maven、运行调试、Git diff 审查、本地历史与数据库等核心工作流。",
+        "problem_solved": "AI 编码工具承担了较多实现工作后，开发者仍需 IDE 理解代码、跟踪符号、运行调试与审查 diff，而常驻重型开发环境可能占用数 GB 内存；Lithe 通过按需启动语言服务、终端、构建工具与调试器来降低基线内存占用。",
+        "who_should_care": "使用 Codex、Claude Code 等 AI 编码工具、需要轻量 IDE 做代码理解与审查的 Java/Spring Boot 开发者，尤其是 macOS 与 Windows 用户。",
+        "use_cases": [
+          "在 AI 生成代码后浏览符号、搜索并审查 Git diff",
+          "Spring Boot 项目的 Maven 管理与断点调试",
+          "多项目、多文件在同一窗口内并行查看与编辑"
+        ],
+        "alternatives": "README 自述为 IntelliJ IDEA 的轻量替代方案，强调按需加载服务与较低基线内存；与其他同类项目的具体对比未提供。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：项目创建于 2026-08-02，周增约 253 星，尚处早期阶段",
+        "risk_notes": "项目创建时间很短（2026-08-02），open issues 75 个，成熟度与长期维护情况有待观察；macOS 手动下载包可能未经 Apple 公证，README 提供了绕过 Gatekeeper 的步骤，需自行确认来源可信；数据库插件目前仅支持 macOS。",
+        "evidence": [
+          "A low-memory IntelliJ IDEA alternative for Java development and AI collaboration",
+          "The Lithe application typically uses about **300–400 MB of baseline memory** after opening a regular project. Language servers, terminals, build tools, and debuggers start on demand.",
+          "AI writes the code. Lithe helps you understand it, run it, and review it."
+        ]
+      }
+    },
+    "liseami/CCBaga": {
+      "category": "other",
+      "one_liner": "用途不明的 Rust 项目",
+      "intro": {
+        "one_liner": "本地环境管理工具箱",
+        "what_it_is": "CCBaga 是面向 macOS、Linux 和 Windows 的 Rust 桌面工具箱，用两个应用管理本地 Claude 身份、浏览器指纹、系统设置和网络环境核验。",
+        "problem_solved": "它把本地身份归档切换、浏览器指纹轮换、区域设置调整，以及浏览器读数与网络出口对比，集中到可检查、可验证的工作流。",
+        "who_should_care": "需要管理自有 Claude 本地身份并核验桌面环境的开发者。",
+        "use_cases": [
+          "归档并切换本地 Claude 身份",
+          "轮换浏览器指纹并重启浏览器",
+          "核对浏览器、机器与网络出口读数"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 688 星，并曾进入日榜。",
+        "risk_notes": "用途被限定为管理自有 Claude 身份，且禁止违反官方服务条款；Windows 安装包未签名，可能触发 SmartScreen 或被安全策略拦截；平台支持有限，不支持 Intel macOS 和 Linux ARM64。",
+        "evidence": [
+          "A native macOS, Linux and Windows toolkit for a cleaner workspace and an environment you can verify.",
+          "Intended use: CCBaga is intended solely for people residing or traveling abroad to manage their own Claude identities. Use that violates Anthropic's official terms of service is prohibited.",
+          "The installer is not Authenticode signed and may show SmartScreen; managed security policy can block it."
+        ]
+      }
+    },
+    "Fei2411/DeepSeek-Bot": {
+      "category": "ai-agent",
+      "one_liner": "长驻多机器人协作框架",
+      "intro": {
+        "one_liner": "DeepSeek 多机器人插件",
+        "what_it_is": "这是一个把 DeepSeek Harness 变成长期机器人团队的插件，也有桌面应用，可创建机器人、互发消息和群聊。",
+        "problem_solved": "它让开发者通过对话配置和使用多个长期机器人，减少管理上下文、模型设置与协作流程的负担。",
+        "who_should_care": "使用 DeepSeek Harness、想搭建多机器人协作的开发者。",
+        "use_cases": [
+          "创建并管理长期机器人",
+          "让机器人之间互发消息",
+          "组织机器人群聊协作"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 716 星且曾上日榜。",
+        "risk_notes": "安装包尚未签名，可能被系统或杀毒软件拦截；DeepSeek 按用量收费；未关闭问题有 175 个。",
+        "evidence": [
+          "A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.",
+          "DS Bot is a bot plugin for DeepSeek Harness (DSH). It turns DSH into bots. You create your own bots, then talk and work with them.",
+          "The installer is not signed yet, so Windows does not know its publisher."
+        ]
+      }
+    },
+    "yashab-cyber/hackpilot": {
+      "category": "security",
+      "one_liner": "企业级 AI 渗透测试平台",
+      "intro": {
+        "one_liner": "AI 渗透测试平台",
+        "what_it_is": "这是一个面向企业安全团队的云原生 AI 渗透测试平台，结合人工智能、机器学习、微服务架构与安全框架，提供网络安全评估能力。",
+        "problem_solved": "它试图把漏洞扫描、攻击链分析、云与 Kubernetes 审计、接口安全和大模型红队测试整合到统一平台，减少孤立告警和人工整理。",
+        "who_should_care": "企业安全团队、渗透测试人员、DevSecOps 团队和安全研究者。",
+        "use_cases": [
+          "自动化渗透测试评估",
+          "云与 Kubernetes 安全审计",
+          "大模型与接口红队测试"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星 1,267 且本周上日榜 1 天。",
+        "risk_notes": "名称在资料中不一致；含代币地址与社区引导；创建于 2025 年 8 月，成熟度难以判断。",
+        "evidence": [
+          "HackPilot Enterprise is a production-ready, cloud-native AI-powered penetration testing platform designed for enterprise security teams.",
+          "HACKNOVA Enterprise is the next-generation autonomous cybersecurity operations and AI penetration testing ecosystem built for modern enterprises, DevSecOps teams, and frontier AI infrastructures.",
+          "破千时的 Star 数：1267；本周上日榜天数：1；创建日期：2025-08-14"
+        ]
+      }
+    }
+  }
+}

@@ -1198,23 +1198,23 @@
       "triage_quality": "suspicious",
       "triage_reason": "技能库星数高",
       "intro": {
-        "one_liner": "把投资大师判断结构化为 AI 技能包",
-        "what_it_is": "一个开源库，把优秀投资者的判断方式整理成可移植、结构化的纯文本技能包（SKILL.md 与可选的 invest.md），供人学习，也供 AI finance agent 直接调用。",
-        "problem_solved": "把分散在经典阅读、访谈和交易经验中的投资判断，转成机器可读、可复用的结构化格式，让 agent 能按明确的信号、过滤、仓位与风险规则行事，而不是泛泛总结。",
-        "who_should_care": "做 AI finance agent 的开发者、量化与投研工具构建者，以及希望系统化学习投资框架的个人研究者。",
+        "one_liner": "投资判断技能库",
+        "what_it_is": "一个把投资判断整理成可移植结构化格式的开源库，包含技能包、模板、模式和示例，供人学习与智能体调用。",
+        "problem_solved": "把优秀投资者的思考、筛选、风险衡量和不确定情境下的行动方式沉淀为可复用规则，便于研究和智能体应用。",
+        "who_should_care": "投资研究者、智能体开发者，以及想结构化整理投资方法的人。",
         "use_cases": [
-          "在 Claude Code、Cursor、Codex 等 agent 环境中加载某个投资大师的技能包，按既定流程分析标的",
-          "用 templates 与 spec 新建自定义投资者技能包，定义 universe、signals、sizing、risk",
-          "把 reading list、podcast、YouTube 资料作为参考材料，让 agent 按技能流程做压力测试"
+          "研究不同投资判断框架",
+          "为金融智能体添加技能包",
+          "用模板编写投资规则"
         ],
-        "alternatives": "unknown",
+        "alternatives": "以纯文本技能包、模板和模式组织投资判断，并兼顾 Questflow 与多种智能体环境。",
         "maturity": "可试用",
-        "hype_or_trend": "短期热点 + 理由：项目围绕 AI agent 技能包这一当下热门形态，且明确绑定 Questflow 生态，但创建时间很短、内容以模板与文档为主。",
-        "risk_notes": "README 中安装命令指向的仓库地址（xuboyuebobb/investorskills）与项目事实中的 questflowai/investorskills 不一致；核心的“exclusive skills”为闭源付费内容，开源部分主要是模板、schema 与资料清单；项目创建于 2026-05-27，历史很短。",
+        "hype_or_trend": "短期热点，一周涨了 448 星，并曾有一天进入日榜。",
+        "risk_notes": "模式示例标注为 alpha；部分技能为闭源且仅付费成员可用；创建时间较新。",
         "evidence": [
           "Investor Skills is an open-source library that turns durable investing judgment into portable, structured formats.",
           "Investor Skills are plain-text skill packages. You can use them in Claude Code, Codex, Cursor, OpenCode, or any other agent harness that can read `SKILL.md` instructions.",
-          "Questflow also includes **exclusive closed-source skills** not published here."
+          "version: alpha"
         ]
       }
     },

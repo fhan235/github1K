@@ -1,1 +1,610 @@
-{"date":"2026-08-30","headline":"域名邮箱项目领跑今日热度","points":["hieunc229/mailflare 单日新增 512，主打基于 Cloudflare 的域名邮箱客户端。","内容媒体、AI Agent、桌面系统各有 5 个项目，方向分布较集中。","wide-trace/open-higgsfield 与 Nexting-ai/nexting 分别聚焦图像视频创作和手机远程操控编程智能体。"],"items":{"hieunc229/mailflare":{"category":"web-frontend","one_liner":"基于 Cloudflare 的域名邮箱客户端"},"wide-trace/open-higgsfield":{"category":"content-media","one_liner":"统一生成图像视频的创作工作台"},"V380-Ori/Astris.Binaries":{"category":"game","one_liner":"苹果芯片 Switch 模拟器分发包"},"Nexting-ai/nexting":{"category":"ai-agent","one_liner":"手机远程操控编程智能体"},"bryllim/workout-guide":{"category":"content-media","one_liner":"开源健身动作插图与组件包"},"handsomejustin/easy_tdx":{"category":"data-finance","one_liner":"直连通达信的量化数据 SDK"},"SnowLuma/SnowLuma":{"category":"automation","one_liner":"远程机器人协议框架"},"SPlayer-Dev/SPlayer-Next":{"category":"desktop-system","one_liner":"跨平台桌面音乐播放器"},"zhouxiaoka/autoclip_mvp":{"category":"content-media","one_liner":"AI 视频高光剪辑工具"},"booklore-app/booklore":{"category":"content-media","one_liner":"自托管多用户电子书图书馆"},"GoogleChrome/modern-web-guidance-src":{"category":"learning-resource","one_liner":"现代 Web 指导源码资料"},"matlab/simulink-agentic-toolkit":{"category":"ai-agent","one_liner":"Simulink 智能体工具与知识包"},"917Dhj/DeepPaperNote":{"category":"ai-agent","one_liner":"论文深读生成研究笔记技能"},"brunolee-GIT/W3M0dP4tch32":{"category":"other","one_liner":"W3M0d 修补脚本工具"},"iMicknl/LoctekMotion_IoT":{"category":"hardware-iot","one_liner":"升降桌联网接入研究脚本"},"atlassian/atlassian-mcp-server":{"category":"ai-agent","one_liner":"Atlassian 官方远程 MCP 服务"},"abdullahtarek/football_analysis":{"category":"ai-model","one_liner":"足球视觉分析机器学习项目"},"Fausto-Korpsvart/Gruvbox-GTK-Theme":{"category":"desktop-system","one_liner":"Gruvbox 配色 GTK 主题"},"MountainCanaryDwell/Discord-Raid-Tool":{"category":"security","one_liner":"Discord 扰乱攻击工具集"},"omacom/omarchy":{"category":"desktop-system","one_liner":"美观现代的定制 Linux"},"omacom/omakub":{"category":"desktop-system","one_liner":"开箱即用的 Ubuntu 配置"},"felinics/Memoh":{"category":"ai-agent","one_liner":"开源多智能体运行平台"},"Biliverse/Universe":{"category":"content-media","one_liner":"哔哩哔哩功能增强模块集"},"diinki/linux-antiquity":{"category":"desktop-system","one_liner":"复古天文风格 Linux 主题"},"open-flight/openflight":{"category":"hardware-iot","one_liner":"DIY 雷达高尔夫发射监测器"}}}
+{
+  "date": "2026-08-30",
+  "headline": "域名邮箱项目领跑今日热度",
+  "points": [
+    "hieunc229/mailflare 单日新增 512，主打基于 Cloudflare 的域名邮箱客户端。",
+    "内容媒体、AI Agent、桌面系统各有 5 个项目，方向分布较集中。",
+    "wide-trace/open-higgsfield 与 Nexting-ai/nexting 分别聚焦图像视频创作和手机远程操控编程智能体。"
+  ],
+  "items": {
+    "hieunc229/mailflare": {
+      "category": "web-frontend",
+      "one_liner": "基于 Cloudflare 的域名邮箱客户端",
+      "intro": {
+        "one_liner": "自托管域名邮箱套件",
+        "what_it_is": "Mailflare 是基于 Cloudflare 的自托管邮箱应用，支持自定义域名邮箱，并集成日历、文件、预约和内置智能助手。",
+        "problem_solved": "它让个人或团队用自有域名收发邮件，并把邮件、日程、文件与预约管理放到可自行部署的系统里。",
+        "who_should_care": "想自建域名邮箱、使用 Cloudflare 或需要自托管协作工具的开发者。",
+        "use_cases": [
+          "搭建自定义域名邮箱",
+          "配置收信路由规则",
+          "用 Docker 自托管办公套件"
+        ],
+        "alternatives": "定位为 Google Workspace 的自托管替代，强调 Cloudflare 部署和多后端选择。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,322 星，且曾登上日榜。",
+        "risk_notes": "采用 AGPL-3.0 许可证；部署要求应用名固定为 mailflare，并需要配置 Cloudflare 接口令牌；未关闭 Issue 有 44 个。",
+        "evidence": [
+          "A self-hosted alternative to Google Workspace. Setup **custom domain Emails**, **Calendar, Drive, Booking** and **built-in AI agents**.",
+          "Run it on Cloudflare or Docker. Send and receive with Cloudflare, Resend or Amazon SES. Store files in R2, Backblaze B2 or AWS S3. Use D1, Postgres, MySQL or Turso for the database.",
+          "**`CF_TOKEN` is required.** Create a scoped [Cloudflare API token]"
+        ]
+      }
+    },
+    "wide-trace/open-higgsfield": {
+      "category": "content-media",
+      "one_liner": "统一生成图像视频的创作工作台",
+      "intro": {
+        "one_liner": "图像视频生成工作台",
+        "what_it_is": "一个用 TypeScript 编写的浏览器工作台，用统一提示栏调用图像和视频模型，并把生成结果集中到画廊。",
+        "problem_solved": "把多模型的提示词、专属参数、素材输入和结果管理放到一处，减少切换工具与重复配置。",
+        "who_should_care": "需要频繁迭代图像、视频生成提示词和参数的创作者与开发者。",
+        "use_cases": [
+          "比较不同模型的生成效果",
+          "复用历史结果重跑提示词",
+          "批量下载或整理生成素材"
+        ],
+        "alternatives": "强调开源、自托管、使用自有平台密钥，并以模型目录驱动设置与素材角色。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 288 星，但只上过一天日榜。",
+        "risk_notes": "需自备平台密钥；历史记录仅存浏览器且最多 60 条；结果链接可能随内容分发网络有效期失效。",
+        "evidence": [
+          "A studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery.",
+          "The free, open-source alternative to Higgsfield AI.",
+          "History persists in IndexedDB in this browser (60 records)."
+        ]
+      }
+    },
+    "V380-Ori/Astris.Binaries": {
+      "category": "game",
+      "one_liner": "苹果芯片 Switch 模拟器分发包",
+      "intro": {
+        "one_liner": "Mac 版 Switch 模拟器分发包",
+        "what_it_is": "这是 Astris 的发行二进制仓库。Astris 是基于 Ryujinx、面向 Apple silicon Mac 的 Nintendo Switch 1 模拟器，要求 macOS 15 及以上。",
+        "problem_solved": "为 Apple silicon Mac 用户提供可直接获取的 Switch 1 模拟器发行包，省去自行构建。",
+        "who_should_care": "使用 Apple silicon Mac、想在 macOS 15 及以上运行 Switch 1 模拟器的开发者和玩家。",
+        "use_cases": [
+          "在 Mac 上获取模拟器二进制",
+          "体验基于 Ryujinx 的分支",
+          "从镜像站点获取发行版"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 121 星，并曾有一天进入日榜。",
+        "risk_notes": "未关闭 Issue 有 169 个；与 Nintendo 无关联；仓库只分发二进制，成熟度未说明。",
+        "evidence": [
+          "Distribution binaries of Astris - a Nintendo Switch 1 emulator based on Ryujinx for Apple silicon Macs (macOS 15+).",
+          "Astris is not affiliated with Nintendo. All trademarks and registered trademarks are the property of their respective owners.",
+          "未关闭 Issue 数：169"
+        ]
+      }
+    },
+    "Nexting-ai/nexting": {
+      "category": "ai-agent",
+      "one_liner": "手机远程操控编程智能体",
+      "intro": {
+        "one_liner": "AI 编程 Agent 的远程遥控硬件",
+        "what_it_is": "Nexting 是一套软硬件组合：PIN 别针式可穿戴设备（$129）与 Ring 戒指（私测中）通过 BLE 连接 iPhone App，再经云端中继，远程查看并操控 Mac/PC 上运行的 Claude Code、Codex、Grok、Cursor、OpenClaw 等 AI Agent 会话。",
+        "problem_solved": "让开发者不必掏出手机、解锁、打字，就能在移动中向本机 AI Agent 派发任务并接收结果；README 称派发一次任务约 3 秒，而掏出手机操作约需 30 秒。",
+        "who_should_care": "重度使用 Claude Code、Codex、Cursor 等 CLI/桌面 Agent 的开发者，尤其是希望脱离工位仍能持续驱动 Agent 的人。",
+        "use_cases": [
+          "外出或走动时语音向本机 Claude Code 会话派发任务",
+          "在手机锁屏状态下让 Agent 后台执行并推送结果",
+          "通过 OpenClaw 插件或本地 OpenAI 兼容端点（Ollama、vLLM、LM Studio）接入自有 Agent"
+        ],
+        "alternatives": "README 强调其定位是「遥控而非聊天」，驱动用户已有的 Agent 而非锁定自有模型，并称是首个为 OpenClaw 打造的硬件产品；未给出与其他遥控类项目的具体对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：可穿戴 AI Agent 遥控属于新兴品类，项目创建于 2026-03 且一周涨星约 209，但硬件 PIN 刚发货、Ring 仍在私测，生态尚早期。",
+        "risk_notes": "核心体验依赖厂商云端中继与 iOS App（仅 App Store 链接，未见 Android）；Nexting Pro 为 $29/月订阅；安装脚本通过 curl | bash 从厂商域名拉取执行，需自行评估信任；仓库以 C 语言为主但主体能力在闭源服务端，开源范围有限；fork 仅 9 个，社区参与度低。",
+        "evidence": [
+          "Remote control for Claude Code, Codex, Grok, and Cursor on Mac or PC. View sessions, send tasks, and drive them remotely from your phone, PIN, or Ring.",
+          "Nexting is a terminal, not a model. Connect the agent you already run",
+          "The PIN ($129, shipping now) pins to your collar — the one you can get today. The Ring — our flagship, in private beta"
+        ]
+      }
+    },
+    "bryllim/workout-guide": {
+      "category": "content-media",
+      "one_liner": "开源健身动作插图与组件包",
+      "intro": {
+        "one_liner": "开源健身动作插图库与 npm 包",
+        "what_it_is": "一个包含 302 个健身动作、每个动作 3 帧插图的开放素材库，同时提供与框架无关的 TypeScript npm 包和可搜索的静态图库站点。",
+        "problem_solved": "为健身类应用开发者提供现成、结构化的动作插图和元数据，免去自行绘制或整理素材的成本。",
+        "who_should_care": "开发健身、训练类 App 的前端或 React Native 开发者，以及需要动作示意图的独立开发者。",
+        "use_cases": [
+          "在 React Native 健身 App 中按动作 ID 加载插图",
+          "按肌群和器械条件检索动作列表",
+          "搭建健身动作百科或教学页面"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：素材类仓库易在短期内获得关注，但项目创建仅数日，长期维护情况尚待观察。",
+        "risk_notes": "代码采用 MIT 许可，但视觉素材采用 CC BY-SA 4.0，商用或再分发时需遵守署名与相同方式共享要求；项目创建时间极短（2026-08-24），尚无长期维护记录。",
+        "evidence": [
+          "302 open exercise illustrations and a framework-neutral npm package by Bryl Lim",
+          "Code and documentation are available under the MIT License. Visual assets are licensed under CC BY-SA 4.0",
+          "The original pose artwork used by this project comes from Everkinetic under CC BY-SA 4.0"
+        ]
+      }
+    },
+    "handsomejustin/easy_tdx": {
+      "category": "data-finance",
+      "one_liner": "直连通达信的量化数据 SDK",
+      "intro": {
+        "one_liner": "通达信数据量化工具",
+        "what_it_is": "这是一个用 Python 编写的量化工具，面向 A 股、港股、美股数据，描述中提到协议直连、技术指标、缠论分析、回测引擎和 Web 可视化。",
+        "problem_solved": "它试图把行情获取、指标计算、策略回测和结果展示放在一起，并提供适合 AI Agent 使用的 JSON 输出。",
+        "who_should_care": "关注 A 股、港股、美股数据分析和 Python 量化开发的普通开发者。",
+        "use_cases": [
+          "获取多市场行情数据",
+          "计算指标并做回测",
+          "用 Web 界面查看结果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时有一千零六星。",
+        "risk_notes": "创建日期为 2026 年 5 月 21 日，资料不足；没有说明文档，功能细节、稳定性和维护状态均无法确认。",
+        "evidence": [
+          "免费Python量化SDK:通达信协议直连 A股/港股/美股数据,内置技术指标、缠论分析、回测引擎与 Web 可视化,JSON 输出适配 AI Agent",
+          "创建日期：2026-05-21",
+          "破千时的 Star 数：1006"
+        ]
+      }
+    },
+    "SnowLuma/SnowLuma": {
+      "category": "automation",
+      "one_liner": "远程机器人协议框架",
+      "intro": {
+        "one_liner": "QQ 会话协议运行时",
+        "what_it_is": "SnowLuma 是用 TypeScript 编写的 QQ 客户端互操作运行时，把 QQ 原生会话转换为 OneBot v11 动作与事件，并提供网页管理、开发包和 MCP 入口。",
+        "problem_solved": "它解决 QQ 会话接入应用时协议不统一、多账号管理和连接配置分散的问题，让消息、媒体、日志和调试在一个运行时中处理。",
+        "who_should_care": "做 QQ 机器人、OneBot 接入和多账号管理的开发者。",
+        "use_cases": [
+          "把 QQ 会话接入 OneBot 应用",
+          "用网页界面管理多账号连接",
+          "通过开发包或 MCP 调试动作"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜。",
+        "risk_notes": "源码可见但非开源许可，商业使用、公开发布修改版或衍生版需书面授权；与 QQ 无隶属或授权关系，仅供学习研究且风险自负；二进制发行包另受协议约束，并含专有原生附加组件。",
+        "evidence": [
+          "破千时的 Star 数：1007；本周上日榜天数：1",
+          "**让 QQ 原生会话，连接你的应用。**",
+          "SnowLuma 使用**源码可见非商业许可**，不是 OSI 开源许可。源码可用于查看、学习、非商业自托管及私下修改；商业使用，以及公开发布修改版或衍生版，均需事先取得书面授权。"
+        ]
+      }
+    },
+    "SPlayer-Dev/SPlayer-Next": {
+      "category": "desktop-system",
+      "one_liner": "跨平台桌面音乐播放器",
+      "intro": {
+        "one_liner": "跨平台桌面音乐播放器",
+        "what_it_is": "一个跨平台桌面音乐播放器，支持本地音频、丰富歌词、流媒体服务接入和系统媒体控制。",
+        "problem_solved": "把多格式播放、逐字歌词、音乐库管理、下载和桌面端媒体集成整合到同一个应用中。",
+        "who_should_care": "重视歌词体验、本地音乐库和自建音乐服务的桌面用户。",
+        "use_cases": [
+          "播放本地多格式音频",
+          "查看逐字歌词与翻译",
+          "连接多个流媒体服务器"
+        ],
+        "alternatives": "相比普通播放器，强调多格式解码、歌词窗口、原生模块和流媒体服务器接入。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 46 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0，修改分发需开源并保留署名；声明仅供个人学习研究，不建议商用；部分功能依赖第三方服务，可能有合规风险。",
+        "evidence": [
+          "🎵 Cross-platform desktop music player with rich lyric support and wide audio format compatibility.",
+          "This project is intended for personal learning and research only, and must not be used for commercial or unlawful purposes.",
+          "any modification or distribution must also be released under AGPL-3.0, with the complete source code provided."
+        ]
+      }
+    },
+    "zhouxiaoka/autoclip_mvp": {
+      "category": "content-media",
+      "one_liner": "AI 视频高光剪辑工具",
+      "intro": {
+        "one_liner": "智能视频切片工具",
+        "what_it_is": "这是一个基于 AI 的智能视频切片和合集推荐系统，支持 B 站视频下载、字幕提取、切片生成与网页端编辑。",
+        "problem_solved": "它把长视频中的高光片段识别、切分、排序和打包自动化，减少人工找片段、剪片段和整理合集的工作。",
+        "who_should_care": "做视频二创、内容剪辑、B 站素材整理和合集制作的开发者。",
+        "use_cases": [
+          "从 B 站视频生成高光切片",
+          "上传本地视频和字幕自动剪辑",
+          "手动编辑并打包下载合集"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜，但仓库已停止维护。",
+        "risk_notes": "仓库被标注为已迁移、停止维护，仅保留历史记录；使用需配置 AI 服务密钥；B 站下载依赖浏览器登录状态。",
+        "evidence": [
+          "本仓库（`autoclip_mvp`）是早期 MVP 版本，已停止维护，仅保留历史记录。",
+          "🎬 基于AI的智能视频切片和合集推荐系统，支持从B站视频自动下载、字幕提取、智能切片和合集生成。",
+          "破千时的 Star 数：1004；本周上日榜天数：1"
+        ]
+      }
+    },
+    "booklore-app/booklore": {
+      "category": "content-media",
+      "one_liner": "自托管多用户电子书图书馆",
+      "intro": {
+        "one_liner": "自托管数字书库",
+        "what_it_is": "BookLore 是可自托管、支持多用户的数字书库，可整理、阅读、批注和同步电子书、PDF 与漫画。",
+        "problem_solved": "把分散的藏书集中管理，提供自动元数据、智能书架、跨设备同步和内置阅读，减少依赖第三方服务。",
+        "who_should_care": "想自建书库、管理多用户阅读进度并同步 Kobo 或 KOReader 的读者。",
+        "use_cases": [
+          "用 Docker 搭建家庭书库",
+          "自动补全书籍元数据",
+          "同步阅读进度到设备"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "已进入维护模式，活跃开发转向官方后继项目；网络存储不受支持，相关写入和整理功能会被禁用；许可证为 GNU Affero General Public License v3.0。",
+        "evidence": [
+          "BookLore is a self-hosted app that brings your entire book collection under one roof.",
+          "BookLore is entering maintenance mode and will continue to receive occasional maintenance, bug fixes, and security updates.",
+          "Network-attached storage (NAS, NFS, SMB/CIFS mounts, cloud-backed FUSE, etc.) is unsupported and untested."
+        ]
+      }
+    },
+    "GoogleChrome/modern-web-guidance-src": {
+      "category": "learning-resource",
+      "one_liner": "现代 Web 指导源码资料",
+      "intro": {
+        "one_liner": "现代网页开发指南源码",
+        "what_it_is": "这是 Modern Web Guidance 的源码仓库，包含编写、校准和评估指南内容所需的代码与文档。",
+        "problem_solved": "为编码智能体提供精选的现代网页平台指南，减少旧式写法、冗余脚本和笨重兼容方案。",
+        "who_should_care": "使用编码智能体的前端开发者，以及维护网页开发指南的人。",
+        "use_cases": [
+          "为编码智能体安装网页指南",
+          "检索特定现代网页能力指南",
+          "贡献或评估指南内容"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上过一次日榜。",
+        "risk_notes": "当前是预览版，内容仍在增加，并欢迎贡献或反馈。",
+        "evidence": [
+          "This repo is the source repository for [GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/modern-web-guidance) and includes the code and documentation for authoring, calibrating, and evaluating its contents.",
+          "This is a **preview release** of Modern Web Guidance. We're actively adding new content",
+          "Coding agents often default to older patterns because LLM training data contains vast amounts of legacy code."
+        ]
+      }
+    },
+    "matlab/simulink-agentic-toolkit": {
+      "category": "ai-agent",
+      "one_liner": "Simulink 智能体工具与知识包",
+      "intro": {
+        "one_liner": "Simulink 智能体工具箱",
+        "what_it_is": "这是让 AI 智能体读写、编辑、查询和测试 Simulink 模型的工具箱，包含 MCP 工具、领域技能和自动安装配置。",
+        "problem_solved": "它给智能体补上 Simulink 与基于模型设计的上下文和最佳实践，减少误判、遗漏新功能和多余步骤。",
+        "who_should_care": "使用 Simulink 并尝试 AI 编码智能体的工程师与团队。",
+        "use_cases": [
+          "让智能体检查或修改模型",
+          "按最佳实践搭建仿真模型",
+          "为模型测试和需求工作提供技能"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 37 星，并曾登上日榜一天。",
+        "risk_notes": "需要 MATLAB R2023a 或更新版本及 Simulink；部分技能依赖额外工具箱；仍有 27 个未关闭问题。",
+        "evidence": [
+          "The Simulink Agentic Toolkit gives your AI agent both the tools and the expertise to work effectively with Simulink and Model-Based Design.",
+          "It connects agents to Simulink through the [MATLAB MCP Server](https://github.com/matlab/matlab-mcp-core-server), giving them the **ability** (tools) and the **knowledge** (skills) to work with Simulink models effectively.",
+          "MATLAB R2023a or later with Simulink"
+        ]
+      }
+    },
+    "917Dhj/DeepPaperNote": {
+      "category": "ai-agent",
+      "one_liner": "论文深读生成研究笔记技能",
+      "intro": {
+        "one_liner": "论文深读笔记技能",
+        "what_it_is": "这是一个面向多种编程智能体的技能，用 Python 编写，可把单篇论文整理成 Obsidian 风格的结构化研究笔记。",
+        "problem_solved": "它解决读论文后整理资料、组织方法脉络、保留图表与证据、生成可长期复用笔记的重复劳动。",
+        "who_should_care": "用 Obsidian、Zotero 和智能体做文献管理的开发者与研究者。",
+        "use_cases": [
+          "把本地论文转成深读笔记",
+          "为学术知识库沉淀单篇页面",
+          "从已有论文产物生成术语笔记"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 33 星，曾有一天进入日榜。",
+        "risk_notes": "依赖 Python 3.10 或更新版本及 PyMuPDF；浏览器扩展目前仅支持 macOS 上的 Chrome；仍有 5 个未关闭问题。",
+        "evidence": [
+          "DeepPaperNote is an agent skill for deep-reading a single paper and generating high-quality Obsidian-style research notes. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
+          "DeepPaperNote takes over that repetitive, mechanical, and surprisingly expensive layer of paper reading. It gathers the material, builds the structure, places figures in context, and shapes the final note so you can keep your attention on the paper's real ideas.",
+          "DeepPaperNote requires Python 3.10 or newer. `PyMuPDF` powers the core PDF extraction path."
+        ]
+      }
+    },
+    "brunolee-GIT/W3M0dP4tch32": {
+      "category": "other",
+      "one_liner": "W3M0d 修补脚本工具",
+      "intro": {
+        "one_liner": "W3M0d 补丁工具",
+        "what_it_is": "这是一个用于给 W3M0d 打补丁的脚本工具，提供下载发布页，并标注支持多种语言。",
+        "problem_solved": "主要解决 W3M0d 的补丁获取与使用问题，提供可下载版本和多语言入口。",
+        "who_should_care": "需要 W3M0d 补丁、批处理或 HTA 脚本的普通用户。",
+        "use_cases": [
+          "下载 W3M0d 补丁发布版",
+          "获取便携版 W3M0d",
+          "查看多语言说明入口"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，但公开信息不足以判断长期趋势。",
+        "risk_notes": "说明内容较少，用途边界不清；README 含第三方论坛与捐赠链接；未见许可证信息。",
+        "evidence": [
+          "作者填写的描述：W3M0dP4tch32 t0 P4tch W3M0d",
+          "You can download on the [**releases page**]",
+          "Languages: ... 中文（简体）"
+        ]
+      }
+    },
+    "iMicknl/LoctekMotion_IoT": {
+      "category": "hardware-iot",
+      "one_liner": "升降桌联网接入研究脚本",
+      "intro": {
+        "one_liner": "升降桌联网改造方案",
+        "what_it_is": "收集脚本、接线说明和 ESPHome 配置，用 ESP32 或 ESP8266 把部分 Flexispot 升降桌接入 Home Assistant。",
+        "problem_solved": "让带串口网口的升降桌可被智能家居系统控制，支持升降、预设、高度读取和久坐提醒等自动化。",
+        "who_should_care": "有兼容升降桌、会接线并使用 Home Assistant 的智能家居玩家。",
+        "use_cases": [
+          "用语音或自动化控制升降",
+          "读取桌面高度并触发提醒",
+          "单网口桌控用透传接入"
+        ],
+        "alternatives": "提供 ESPHome 与透传配置，并保留旧版 Arduino、树莓派等归档方案。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，破千星且已有九十九次分叉。",
+        "risk_notes": "改造电子设备有风险，需自行承担；高度调节实验功能可能过冲；不同面板单位或针脚可能不兼容。",
+        "evidence": [
+          "Be careful. Tinkering with electronics can be risky. Use this guide at your own risk.",
+          "This repository will guide you on connecting your desk to Home Assistant and other systems using the serial communication ports (RJ45).",
+          "Number entity may overshoot. The desk moves until the height sensor matches the requested height, which may cause overshooting due to reporting delays."
+        ]
+      }
+    },
+    "atlassian/atlassian-mcp-server": {
+      "category": "ai-agent",
+      "one_liner": "Atlassian 官方远程 MCP 服务",
+      "intro": {
+        "one_liner": "Atlassian 官方 MCP 服务",
+        "what_it_is": "这是 Atlassian 官方的云端 MCP 服务，让兼容的人工智能工具安全连接 Jira、Confluence、Bitbucket 等产品。",
+        "problem_solved": "它让人工智能工具在既有权限内搜索、汇总、创建和更新 Atlassian 数据，减少切换工具与复制粘贴。",
+        "who_should_care": "在集成开发环境或人工智能工具中使用 Atlassian 数据的开发者、内容创作者和项目团队。",
+        "use_cases": [
+          "跨产品搜索并汇总工作项与文档",
+          "用自然语言创建或更新页面和工作项",
+          "从会议记录或规格生成工作项"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，创建于 2025 年 8 月 1 日，一周内曾登上日榜 1 天。",
+        "risk_notes": "第二版为推荐版本，旧连接会自动暴露并使用第二版工具；不兼容的客户端可能需要清理缓存凭据。",
+        "evidence": [
+          "Official remote MCP server for Atlassian. Securely connect Jira, Confluence, Jira Service Management, Bitbucket, and Compass to Claude, ChatGPT, Cursor, VS Code, and other AI tools using OAuth 2.1 or API tokens.",
+          "The **official Atlassian MCP Server** is a cloud-based bridge between your Atlassian Cloud site and compatible external tools.",
+          "**v2 is now the recommended version.** New setups should use `https://mcp.atlassian.com/v2/mcp`, which exposes more tools and more products. Existing v1 connections automatically start to expose and use v2 tools; incompatible clients may need to clear cached client IDs or `.well-known` credentials to keep authenticating."
+        ]
+      }
+    },
+    "abdullahtarek/football_analysis": {
+      "category": "ai-model",
+      "one_liner": "足球视觉分析机器学习项目",
+      "intro": {
+        "one_liner": "足球视频视觉分析项目",
+        "what_it_is": "这是一个用 Jupyter Notebook 编写的足球视频分析项目，结合目标检测、像素聚类、光流和透视变换，分析球员、裁判与足球。",
+        "problem_solved": "它用于从比赛视频中检测和跟踪目标，区分球队，估算控球率，并把球员运动从像素换算为距离、速度等指标。",
+        "who_should_care": "适合学习计算机视觉、机器学习和足球视频分析的开发者。",
+        "use_cases": [
+          "检测跟踪球员与足球",
+          "按球衣颜色区分球队",
+          "测算球员速度与跑动距离"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内有一天登上日榜，星数达到一千。",
+        "risk_notes": "依赖外部训练模型与示例视频；未见许可证、版本发布和生产部署说明。",
+        "evidence": [
+          "This repository contains a comprehensive computer vision/machine learning football project that uses YOLO for object detection, Kmeans for pixel segmentation, optical flow for motion tracking, and perspective transformation to analyze player movements in football videos",
+          "The goal of this project is to detect and track players, referees, and footballs in a video using YOLO, one of the best AI object detection models available.",
+          "Finally, we will calculate a player's speed and the distance covered."
+        ]
+      }
+    },
+    "Fausto-Korpsvart/Gruvbox-GTK-Theme": {
+      "category": "desktop-system",
+      "one_liner": "Gruvbox 配色 GTK 主题",
+      "intro": {
+        "one_liner": "Gruvbox 风格 GTK 主题",
+        "what_it_is": "一个基于 Gruvbox 配色的 GTK 主题，主要使用 SCSS，面向 Gnome 桌面，也为其他桌面环境提供通用样式。",
+        "problem_solved": "为 GTK3、GTK4 应用和部分桌面环境提供统一的 Gruvbox 视觉风格，并支持颜色、尺寸、边框等安装选项。",
+        "who_should_care": "使用 Gnome、Cinnamon、XFCE、Mate 或平铺窗口管理器并喜欢 Gruvbox 配色的开发者。",
+        "use_cases": [
+          "统一 GTK3 应用外观",
+          "为 GTK4 应用配置主题",
+          "定制颜色与窗口样式"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注度近期上升。",
+        "risk_notes": "安装需要额外依赖；GTK4 需手动放置文件或建立链接；非 Gnome 桌面仅提供通用样式。",
+        "evidence": [
+          "A GTK theme based on the Gruvbox colour palette.",
+          "The theme is more focused on the Gnome Desktop, but supports Cinnamon, XFCE, Mate, etc. with generic styles.",
+          "Before installing the themes, make sure to install the following necessary packages: `sassc` `murrine-engine` and `gnome-themes-extra` packages for the correct rendering of themes."
+        ]
+      }
+    },
+    "MountainCanaryDwell/Discord-Raid-Tool": {
+      "category": "security",
+      "one_liner": "Discord 扰乱攻击工具集",
+      "intro": {
+        "one_liner": "Discord 袭扰工具",
+        "what_it_is": "仓库标签指向 Discord 机器人袭扰、服务器破坏和多用途工具集合。缺少说明，具体功能 unknown。",
+        "problem_solved": "从标签看，面向批量操作 Discord 服务器或频道的需求。缺少说明，实际解决的问题 unknown。",
+        "who_should_care": "关注 Discord 机器人与社区安全的开发者。",
+        "use_cases": [
+          "研究袭扰类工具行为",
+          "评估社区安全风险"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天进入日榜，但资料不足。",
+        "risk_notes": "缺少说明，功能、许可证和维护状态均 unknown；标签涉及袭扰与破坏，使用合规风险高。",
+        "evidence": [
+          "话题标签：discord-bot-raid、discord-multitools、discord-nuke、discord-raid、discord-raid-bot、discord-raid-tool、discord-raid-tools、discord-server-raid",
+          "本周上日榜天数：1",
+          "README：无"
+        ]
+      }
+    },
+    "omacom/omarchy": {
+      "category": "desktop-system",
+      "one_liner": "美观现代的定制 Linux",
+      "intro": {
+        "one_liner": "美观现代的 Linux 发行版",
+        "what_it_is": "Omarchy 是一个强调美观、现代和有明确取舍的 Linux 发行版，主要用 Shell 构建，并附带一份较完整的手册。",
+        "problem_solved": "它提供一套预配置的系统体验，涵盖入门、快捷键、主题、应用、配置、更新和故障排查等内容。",
+        "who_should_care": "想尝试开箱即用 Linux 桌面、从 macOS 或 Windows 迁移的开发者。",
+        "use_cases": [
+          "安装并体验预配置 Linux 桌面",
+          "按手册调整主题与快捷键",
+          "配置开发、终端和 AI 工具"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时星数达 34,797，本周曾有一天进入日榜。",
+        "risk_notes": "仓库创建于 2025 年 6 月 1 日，时间较短；资料未说明稳定版状态、硬件兼容范围和生产使用保障。",
+        "evidence": [
+          "Beautiful, Modern & Opinionated Linux",
+          "Omarchy is a beautiful, fun & agentic Linux distribution by DHH.",
+          "Omarchy is released under the [MIT License](https://opensource.org/licenses/MIT)."
+        ]
+      }
+    },
+    "omacom/omakub": {
+      "category": "desktop-system",
+      "one_liner": "开箱即用的 Ubuntu 配置",
+      "intro": {
+        "one_liner": "Ubuntu 开发环境一键配置",
+        "what_it_is": "Omakub 是一个 Shell 项目，用一条命令把全新 Ubuntu 配置成美观、现代、完整的 Web 开发环境。",
+        "problem_solved": "它减少为常用工具逐一编写配置的麻烦，也帮助开发者快速接触较新的命令行工具。",
+        "who_should_care": "使用 Ubuntu 的 Web 开发者，尤其是想快速搭好新机器的人。",
+        "use_cases": [
+          "新装 Ubuntu 后初始化开发环境",
+          "快速获得成套命令行工具",
+          "按统一偏好配置开发桌面"
+        ],
+        "alternatives": "提供带主观取舍的一键配置，并可通过扩展调整、替换或增强体验。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上过一天日榜，破千时已有八千一百零八星。",
+        "risk_notes": "配置带有强烈主观取舍，可能不适合已有定制环境；文档仍邀请社区改进。",
+        "evidence": [
+          "Turn a fresh Ubuntu installation into a fully-configured, beautiful, and modern web development system by running a single command.",
+          "No need to write bespoke configs for every essential tool just to get started or to be up on all the latest command-line tools.",
+          "Omakub is released under the [MIT License](https://opensource.org/licenses/MIT)."
+        ]
+      }
+    },
+    "felinics/Memoh": {
+      "category": "ai-agent",
+      "one_liner": "开源多智能体运行平台",
+      "intro": {
+        "one_liner": "开源多智能体云平台",
+        "what_it_is": "Memoh 是开源多智能体平台，为每个智能体提供独立云端电脑，包含文件系统、桌面、浏览器、网络和长期记忆。",
+        "problem_solved": "让智能体在电脑关闭后仍持续在线，跨会话和平台保留上下文，并集中托管自带密钥或已有编码智能体。",
+        "who_should_care": "需要自托管智能体、长期记忆和多渠道接入的开发者与团队。",
+        "use_cases": [
+          "托管 Claude Code 或 Codex",
+          "通过聊天平台访问智能体",
+          "运行定时浏览器任务"
+        ],
+        "alternatives": "强调每个智能体独占云端电脑，并支持多用户、多机器人和自托管。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 82 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0，托管或二次开发需注意开源义务；未关闭议题 77 个，部署涉及内部密钥和拆分服务配置。",
+        "evidence": [
+          "Memoh is an open-source multi-agent platform. Each agent gets its own cloud computer — a dedicated workspace with a filesystem, desktop, browser, network, and long-term memory. Your agents stay online 24/7, even when your laptop is closed.",
+          "Use your own API keys to run Memoh's built-in agent, or host your existing Claude Code and Codex agents inside Memoh workspaces.",
+          "LICENSE: AGPLv3"
+        ]
+      }
+    },
+    "Biliverse/Universe": {
+      "category": "content-media",
+      "one_liner": "哔哩哔哩功能增强模块集",
+      "intro": {
+        "one_liner": "哔哩哔哩功能增强模块集",
+        "what_it_is": "一组用于增强哔哩哔哩流媒体平台功能的模块，提供界面自定义、地区限制处理、线路切换、广告去除和可视化配置等能力。",
+        "problem_solved": "主要解决哔哩哔哩客户端界面、广告、播放线路、地区限制和配置不便等问题，让功能可按模块单独或搭配启用。",
+        "who_should_care": "使用代理工具并希望定制哔哩哔哩客户端体验的开发者和进阶用户。",
+        "use_cases": [
+          "自定义客户端界面元素",
+          "处理地区限制与线路切换",
+          "去除应用内广告"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾上日榜一天。",
+        "risk_notes": "需要启用重写、脚本和加密流量解密功能；部分工具仅兼容或部分兼容；配置依赖可视化面板订阅。",
+        "evidence": [
+          "哔哩哔哩流媒体平台功能增强系列模块",
+          "需要启用`重写`、`脚本`、`MitM（HTTPS解密）`功能",
+          "模块间互无依赖，均可单独或搭配使用"
+        ]
+      }
+    },
+    "diinki/linux-antiquity": {
+      "category": "desktop-system",
+      "one_liner": "复古天文风格 Linux 主题",
+      "intro": {
+        "one_liner": "复古天文风 Linux 主题",
+        "what_it_is": "这是一套可定制的 Linux 桌面主题，以新艺术风格、古旧天文科学和神话绘图为视觉核心，主要用 QML 实现。",
+        "problem_solved": "它把桌面外观、壁纸、天气组件、终端与文件管理器配置等整合成统一风格，减少自行搭配主题的成本。",
+        "who_should_care": "使用 Hyprland、Quickshell 且喜欢复古艺术桌面的开发者。",
+        "use_cases": [
+          "打造统一复古桌面外观",
+          "配置天气与壁纸组件",
+          "定制快捷键和终端配色"
+        ],
+        "alternatives": "unknown",
+        "maturity": "demo",
+        "hype_or_trend": "短期热点，一周涨了 28 星且曾上日榜，但增长幅度有限。",
+        "risk_notes": "0.1 版定位为概念验证，需自行承担安装使用风险；大量代码将重构，界面性能尚未优化；显示器、壁纸和天气数据仍需手动配置。",
+        "evidence": [
+          "A highly tasteful, customizable & feature-rich Linux-theme reminiscent of art-nouveau and old drawings related to astronomy, science, and mythology.",
+          "This theme is first and foremost an art project which entails that as of version 0.1 the main focus was to get a proof of concept done and ready for my video about this theme, so **INSTALL AND USE AT YOUR OWN RISK!**",
+          "Things such as Monitor details, wallpaper directories, and also creating an open weather map account for weather widget data have to be done manually for now."
+        ]
+      }
+    },
+    "open-flight/openflight": {
+      "category": "hardware-iot",
+      "one_liner": "DIY 雷达高尔夫发射监测器",
+      "intro": {
+        "one_liner": "开源高尔夫雷达监测器",
+        "what_it_is": "OpenFlight 是基于 OPS243-A 多普勒雷达的开源高尔夫发射监测器，可选配 TI IWR6843 角度雷达，运行在 Raspberry Pi 上。",
+        "problem_solved": "它让开发者用可采购硬件和开源软件搭建击球数据监测设备，获取球速、杆速、起飞角、落点距离等结果。",
+        "who_should_care": "喜欢自制硬件的高尔夫爱好者、Python 开发者和雷达数据实验者。",
+        "use_cases": [
+          "自制高尔夫发射监测器",
+          "练习场查看击球数据",
+          "实验雷达信号处理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,003 星且曾上日榜一天。",
+        "risk_notes": "项目处于活跃开发，功能可能不完整、不稳定或变更；部分指标为实验性；角度雷达需自定义固件，硬件装配和几何测量会影响结果。",
+        "evidence": [
+          "DIY Golf Launch Monitor using the OPS243-A Doppler Radar.",
+          "OpenFlight is an open-source golf launch monitor built around the OPS243-A\nDoppler radar, with an optional TI IWR6843 angle radar.",
+          "**This project is in active development.** Features may be incomplete, unstable, or change without notice."
+        ]
+      }
+    }
+  }
+}

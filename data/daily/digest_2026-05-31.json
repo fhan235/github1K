@@ -1,1 +1,541 @@
-{"date":"2026-05-31","headline":"AI Agent 与代理工具同日走热","points":["22 个破千项目中，AI Agent 有 7 个，a5c-ai/babysitter 与 deeplethe/forkd 聚焦智能体编排和隔离。","代理相关项目热度突出，IRNova/Nova-Proxy 与 databay-labs/free-proxy-list 分别面向订阅管理和免费代理表。","helloianneo/ian-xiaohei-illustrations 以中文怪诞配图生成技能领跑，单日新增 330。"],"items":{"helloianneo/ian-xiaohei-illustrations":{"category":"ai-agent","one_liner":"中文怪诞配图生成技能"},"IRNova/Nova-Proxy":{"category":"security","one_liner":"多协议代理订阅管理面板"},"databay-labs/free-proxy-list":{"category":"security","one_liner":"五分钟更新的免费代理表"},"a5c-ai/babysitter":{"category":"ai-agent","one_liner":"确定性智能体编排管控器"},"freestylefly/CodexGuide":{"category":"learning-resource","one_liner":"Codex 入门实践指南"},"deeplethe/forkd":{"category":"ai-agent","one_liner":"智能体微虚拟机秒级分叉"},"dsd2077/CyberVerse":{"category":"ai-agent","one_liner":"自托管实时数字人平台"},"borawong/AiMaMi":{"category":"desktop-system","one_liner":"Codex 桌面伴侣应用"},"lessweb/deepcode-cli":{"category":"ai-agent","one_liner":"终端智能编码助手"},"baijiuyang/collision-avoidance2":{"category":"learning-resource","one_liner":"避碰研究仿真分析仓库"},"Kiowx/c_cleaner_plus":{"category":"desktop-system","one_liner":"Windows 全盘垃圾清理工具"},"pass-with-high-score/blockads-android":{"category":"mobile","one_liner":"安卓本地 DNS 去广告器"},"777genius/agent-teams-ai":{"category":"ai-agent","one_liner":"看板式多智能体协作团队"},"millylee/anyrouter-check-in":{"category":"automation","one_liner":"多平台多账号自动签到"},"bambanah/deemix":{"category":"content-media","one_liner":"音乐下载工具"},"vinegarhq/sober":{"category":"desktop-system","one_liner":"Linux 运行 Roblox 运行时"},"shteeve3d/blender-wiggle-2":{"category":"content-media","one_liner":"Blender 物理摆动插件"},"PaddleJitLab/CUDATutorial":{"category":"learning-resource","one_liner":"CUDA 高性能编程教程"},"immortalwrt/homeproxy":{"category":"security","one_liner":"路由器现代代理平台"},"Dark-Xploit/CypherX":{"category":"other","one_liner":"Cypher X 官方仓库"},"proma-ai/Proma":{"category":"ai-agent","one_liner":"工作流通用智能体助手"},"Dark-Xploit/SPACE-MD":{"category":"other","one_liner":"SPACE-MD 项目仓库"}}}
+{
+  "date": "2026-05-31",
+  "headline": "AI Agent 与代理工具同日走热",
+  "points": [
+    "22 个破千项目中，AI Agent 有 7 个，a5c-ai/babysitter 与 deeplethe/forkd 聚焦智能体编排和隔离。",
+    "代理相关项目热度突出，IRNova/Nova-Proxy 与 databay-labs/free-proxy-list 分别面向订阅管理和免费代理表。",
+    "helloianneo/ian-xiaohei-illustrations 以中文怪诞配图生成技能领跑，单日新增 330。"
+  ],
+  "items": {
+    "helloianneo/ian-xiaohei-illustrations": {
+      "category": "ai-agent",
+      "one_liner": "中文怪诞配图生成技能",
+      "intro": {
+        "one_liner": "中文文章小黑手绘配图 Codex Skill",
+        "what_it_is": "这是一个 Codex Skill，用于指导 AI Agent 为中文文章、帖子、博客、Notion 文档和方法论内容生成 16:9 白底手绘正文配图，默认视觉 IP 是「小黑」角色。",
+        "problem_solved": "解决中文内容创作者难以把文章中的判断、流程、状态和隐喻转化为有记忆点的正文配图的问题，避免产出通用插画或 PPT 信息图。",
+        "who_should_care": "写中文文章、做知识型或方法论内容、使用 Codex 做内容生产并希望稳定复用一套视觉语言的人。",
+        "use_cases": [
+          "为中文长文规划 4-8 张配图 shot list",
+          "为单个抽象概念（如信任桥）生成一张正文配图",
+          "编辑已生成图片，去掉多余标题或错误文字"
+        ],
+        "alternatives": "README 明确说明它不是通用插画 prompt，也不是 PPT 信息图模板，核心差异在于先提炼文章认知锚点，再让「小黑」承担核心动作，而非装饰性配图。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 Codex Skill 与 AI Agent 生态的配图工作流，风格依赖单一 IP，热度可能随工具生态波动。",
+        "risk_notes": "AI 图像模型可能出现错字、幻觉标签、风格漂移或多余标题，生成后需人工检查；中文标注越短越稳定；不输出可编辑矢量源文件。",
+        "evidence": [
+          "它是一个 Codex Skill，用来指导 AI Agent 为中文文章、帖子、博客、Notion 文档和方法论内容生成正文配图",
+          "默认视觉 IP 是“小黑”：一个黑色实心、白点眼、细腿、空表情的小角色",
+          "AI 图像模型可能出现错字、幻觉标签、风格漂移或多余标题，生成后需要检查"
+        ]
+      }
+    },
+    "IRNova/Nova-Proxy": {
+      "category": "security",
+      "one_liner": "多协议代理订阅管理面板",
+      "intro": {
+        "one_liner": "自建代理管理面板",
+        "what_it_is": "这是一个部署到自有 Cloudflare Worker 的代理控制面板，可生成多用户订阅链接，并提供管理、路由和节点配置功能。",
+        "problem_solved": "它面向网络过滤环境，帮助自建代理服务、分配用户配额与订阅，并提供可用地址扫描、备用链接和客户端配置。",
+        "who_should_care": "需要自建多用户代理、熟悉 Cloudflare 部署并愿意自行维护的开发者。",
+        "use_cases": [
+          "为多人生成独立订阅链接",
+          "扫描并应用可用地址",
+          "通过机器人管理用户"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 329 星，并曾登上日榜。",
+        "risk_notes": "面板源码未公开，部署产物经过压缩混淆；4.3.0 起改为非商业许可，禁止转售和付费托管；免费方案不直接承载语音视频所需流量。",
+        "evidence": [
+          "The public repository holds a minified and obfuscated `worker.js` deployment artifact plus its deployment metadata. The maintainable panel source is kept private.",
+          "Starting with 4.3.0, Nova-authored changes are under PolyForm Noncommercial.",
+          "Free Cloudflare limits apply. Calls use UDP, which a plain free Worker cannot carry."
+        ]
+      }
+    },
+    "databay-labs/free-proxy-list": {
+      "category": "security",
+      "one_liner": "五分钟更新的免费代理表",
+      "intro": {
+        "one_liner": "免费代理列表仓库",
+        "what_it_is": "提供按协议和国家整理的免费代理列表，包含 HTTP、HTTPS、SOCKS4 与 SOCKS5，文件为逐行 IP 与端口。",
+        "problem_solved": "让开发者无需账号或密钥即可下载公开代理列表，并可按协议、国家筛选，减少自行收集和验证代理的工作。",
+        "who_should_care": "需要临时代理源、代理池测试或网络请求调试的开发者。",
+        "use_cases": [
+          "下载代理列表做请求测试",
+          "按国家筛选代理端点",
+          "用示例脚本接入代理"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，但创建时间较新。",
+        "risk_notes": "公开代理可能随时失效；发布与缓存可能滞后；网站接口和更广代理池需要登录。",
+        "evidence": [
+          "Download public proxies as plain `IP:PORT` GitHub files without an account or API key.",
+          "The publisher runs on a five-minute schedule. Lists can remain unchanged between publications, and raw/CDN caches can lag. A listed endpoint can stop working between checks",
+          "Website API requests require a valid Databay sign-in session."
+        ]
+      }
+    },
+    "a5c-ai/babysitter": {
+      "category": "ai-agent",
+      "one_liner": "确定性智能体编排管控器",
+      "intro": {
+        "one_liner": "智能体流程编排器",
+        "what_it_is": "Babysitter 是用代码定义并约束智能体工作流的工具，强调按步骤执行、质量门禁、人工审批和不可变决策记录。",
+        "problem_solved": "它试图解决复杂智能体任务难以按既定流程执行的问题，让流程推进前检查质量，并在关键节点要求人工确认。",
+        "who_should_care": "需要管理多智能体复杂流程的开发者和团队。",
+        "use_cases": [
+          "用代码定义复杂工作流",
+          "在流程中设置质量门禁",
+          "在持续集成中无头编排"
+        ],
+        "alternatives": "强调确定性自编排、审批断点、不可变日志，并支持多种编码工具适配。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 232 星且曾上日榜。",
+        "risk_notes": "多个适配器和命令行工具标注为测试或实验性质；未关闭议题有 461 个；需要 Node.js 20 及以上，部分命令行工具要求更高版本。",
+        "evidence": [
+          "Babysitter enforces obedience to agentic workforces, enabling them to manage extremely complex tasks and workflows through deterministic, hallucination-free self-orchestration.",
+          "Define your workflow in code - Babysitter enforces every step, ensures quality gates pass before progression, requires human approval at breakpoints, and records every decision in an immutable journal.",
+          "Node.js: Version 20.0.0+ (22.x LTS recommended). The host-side `adapters` CLI pins a higher floor of 22.13.0+"
+        ]
+      }
+    },
+    "freestylefly/CodexGuide": {
+      "category": "learning-resource",
+      "one_liner": "Codex 入门实践指南",
+      "intro": {
+        "one_liner": "Codex 实践指南",
+        "what_it_is": "面向初学者、创作者、开发者与团队的 Codex 中文实践知识库，提供在线阅读、学习路线、快速上手、进阶教程、实战案例和参考手册。",
+        "problem_solved": "帮助不同背景的人从第一次上手到接入真实工作流，减少摸索入口、任务设计、验证方式和团队沉淀方法的成本。",
+        "who_should_care": "初次使用 Codex 的人、想把 Codex 用进项目的开发者，以及需要团队规范的负责人。",
+        "use_cases": [
+          "按学习路线完成首个任务",
+          "用命令行改真实仓库",
+          "沉淀团队规则与案例库"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周上日榜一天，关注集中。",
+        "risk_notes": "内容依赖 Codex 官方资料，关键页面需按最后核对日期复核；仓库创建较新，长期维护情况 unknown。",
+        "evidence": [
+          "面向全球初学者、创作者、开发者与团队的 Codex 实践指南",
+          "从第一次上手，到把 Codex 接入真实工作流；帮助不同背景的人用 Codex 完成开发、创作、研究、自动化与团队协作。",
+          "当前已搭建：\n\n- Codex 桌面 App 入门路径。\n- ChatGPT 手机 App 协同桌面任务。\n- Codex CLI 和 IDE 使用路径。"
+        ]
+      }
+    },
+    "deeplethe/forkd": {
+      "category": "ai-agent",
+      "one_liner": "智能体微虚拟机秒级分叉",
+      "intro": {
+        "one_liner": "智能体沙箱调度器",
+        "what_it_is": "Sandstorm 是管理智能体沙箱生命周期的系统，支持 gVisor 容器和 Firecracker 微虚拟机，并提供主控、节点与网页控制台。",
+        "problem_solved": "它让空闲沙箱暂停、快照到磁盘，并在请求到来时快速恢复，以提高单机可承载的沙箱数量。",
+        "who_should_care": "需要大规模运行智能体沙箱、关注隔离与资源调度的开发者和平台团队。",
+        "use_cases": [
+          "按流量唤醒空闲智能体沙箱",
+          "统一管理容器与微虚拟机沙箱",
+          "查看沙箱状态和节点余量"
+        ],
+        "alternatives": "同时支持 gVisor 与 Firecracker，并用分层休眠、流量唤醒和网页控制台管理沙箱。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 474 星，并曾有一天登上日榜。",
+        "risk_notes": "部分延迟数据基于单次样本；不同主机配置的结果不宜直接横比；唤醒失败会直接拒绝请求。",
+        "evidence": [
+          "One machine, thousands of sandboxes.",
+          "Sandstorm pauses idle sandboxes and snapshots them to disk, then restores them quickly when a request arrives",
+          "It supports two sandbox backends, [gVisor](https://gvisor.dev) containers and [Firecracker](https://firecracker-microvm.github.io) microVMs."
+        ]
+      }
+    },
+    "dsd2077/CyberVerse": {
+      "category": "ai-agent",
+      "one_liner": "自托管实时数字人平台",
+      "intro": {
+        "one_liner": "自托管实时数字人 Agent 框架",
+        "what_it_is": "CyberVerse 是一个开源的实时数字人 Agent 框架，基于 WebRTC，结合 persona 记忆、工具调用、RAG 与可选的数字人视频能力，用于构建以语音交互为核心的 AI Agent。",
+        "problem_solved": "把语音对话、角色记忆、知识库检索和数字人视频形象整合成一套可自托管的实时交互系统，让用户用一张照片就能搭建可实时视频对话的数字人。",
+        "who_should_care": "想自建语音优先 AI 助手或数字人应用的个人开发者、AI 陪伴类产品团队，以及需要可替换 LLM、TTS、ASR 供应商的技术选型者。",
+        "use_cases": [
+          "搭建可实时视频对话的虚拟角色或 AI 陪伴应用",
+          "为角色导入知识库与传记资料，做带人设记忆的语音问答",
+          "在本地或云端 GPU 上部署数字人形象，接入 FlashHead、LiveAct 或百度曦灵、讯飞数字人等云服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，数字人加实时语音 Agent 是当前关注度较高的方向，但项目创建时间较新，长期维护情况尚待观察",
+        "risk_notes": "许可证为 GPL-3.0，商用集成需注意开源义务；README 中的演示角色明确说明不随项目分发、不可商用；本地数字人视频需要较高规格 GPU，纯语音会话则依赖第三方 API 成本。",
+        "evidence": [
+          "CyberVerse is an open-source real-time digital-human Agent framework. It uses WebRTC, persona memory, tools, RAG, and optional digital-human video capabilities",
+          "With just one photo, you can create a digital human ready for real-time video conversation.",
+          "The following characters are demo examples only. They are not bundled with CyberVerse and are not provided for commercial use."
+        ]
+      }
+    },
+    "borawong/AiMaMi": {
+      "category": "desktop-system",
+      "one_liner": "Codex 桌面伴侣应用",
+      "intro": {
+        "one_liner": "OpenAI Codex 桌面伴侣工具",
+        "what_it_is": "AiMaMi 是一个基于 Tauri 2、React 和 Rust 构建的桌面应用，用于集中管理 OpenAI Codex 的账号、路由、会话与本地配置。",
+        "problem_solved": "Codex 把账号、会话、MCP、Skills、路由与中转配置分散存放在 ~/.codex 下的多个文件中，多账号切换、配额耗尽、第三方模型接入和配置漂移都需要手工编辑 TOML、JSON 和 SQLite；AiMaMi 把这些高频操作整合到一个本地桌面界面中。",
+        "who_should_care": "重度使用 OpenAI Codex Desktop、需要多账号切换或接入第三方中转模型的开发者。",
+        "use_cases": [
+          "多账号切换与配额查看、导入导出",
+          "5 小时或每周配额耗尽时自动切换账号并重启 Codex",
+          "在 Codex Desktop 中通过本地代理使用中转模型，同时保持历史会话可恢复",
+          "批量清理本地会话线程，管理 MCP 条目与 Skills 生命周期"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕 Codex 生态的配套工具，一周新增约 124 star，但项目创建时间较新、open issues 达 105 个，成熟度仍待观察。",
+        "risk_notes": "项目创建于 2026-04-04，历史较短，open issues 105 个，维护压力可能较大；README 声明与 OpenAI 无关联，使用第三方中转服务需自行承担风险并遵守其服务条款；Linux 仅为尽力支持。",
+        "evidence": [
+          "A native desktop companion for OpenAI Codex — manage accounts, routing, sessions, and local configuration in one place.",
+          "Codex stores accounts, sessions, MCP entries, Skills, smart-router settings, and relay configuration across multiple files under `~/.codex`.",
+          "AiMaMi is an independent tool for local Codex workflows. It is not affiliated with, endorsed by, or sponsored by OpenAI."
+        ]
+      }
+    },
+    "lessweb/deepcode-cli": {
+      "category": "ai-agent",
+      "one_liner": "终端智能编码助手",
+      "intro": {
+        "one_liner": "面向 DeepSeek 优化的终端 AI 编码助手",
+        "what_it_is": "Deep Code CLI 是一个用 TypeScript 编写的终端 AI 编码助手，专为 deepseek-v4 模型优化，支持深度思考、推理强度控制、Agent Skills 与 MCP 集成。",
+        "problem_solved": "通用编码 Agent 的工具 schema 与上下文管理未必贴合特定模型的使用习惯；该项目通过为 DeepSeek 量身调优工具约束、上下文缓存与权限策略，提升该模型在终端编码任务中的稳定性与成本效率。",
+        "who_should_care": "主要使用 DeepSeek 模型、偏好终端工作流的开发者，以及需要细粒度权限控制与 Skills 扩展的团队。",
+        "use_cases": [
+          "在项目目录中启动终端对话式编码与重构",
+          "通过 /plan、/compact、/fork 等命令管理长会话与上下文",
+          "配置 MCP 连接 GitHub、浏览器、数据库等外部服务",
+          "通过 Skills 目录扩展助手能力并跨客户端互操作"
+        ],
+        "alternatives": "README 称其与 Claude Code + DeepSeek 组合相比在特定基准项目上具有效果优势，差异点在于只为 DeepSeek 调优的 harness 设计；其他同类终端 Agent 未在材料中对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：围绕单一模型深度调优的终端 Agent 属于当前关注方向，但项目创建时间较短、issue 积压较多，尚待观察。",
+        "risk_notes": "open issues 达 143 个，维护响应压力可能较大；README 含商业订阅产品 DeepCode Plus 的推广链接，需注意其与开源部分的边界；项目创建于 2026-04-28，历史较短。",
+        "evidence": [
+          "Deep Code 是专为 deepseek-v4 模型优化的终端 AI 编码助手，支持深度思考、推理强度控制以及 Agent Skills 以及 MCP 集成。",
+          "这正是 Deep Code 的架构出发点：只为 DeepSeek 量身调优，从而让 harness 本身持续贴合 DeepSeek 的行为特点。",
+          "Deep Code 内置了细粒度的权限控制机制，支持在 AI 助手执行 Shell 命令、读写文件、访问网络等操作前进行确认。"
+        ]
+      }
+    },
+    "baijiuyang/collision-avoidance2": {
+      "category": "learning-resource",
+      "one_liner": "避碰研究仿真分析仓库",
+      "intro": {
+        "one_liner": "行人避障建模工具",
+        "what_it_is": "面向 Bai movObst2 实验的行人移动障碍避让建模与分析框架，包含常微分方程仿真、模型拟合、数据导入和分析笔记本。",
+        "problem_solved": "用于整理实验数据、拟合转向与避障模型，并通过轨迹仿真和统计分析比较不同模型。",
+        "who_should_care": "研究行人避障、动态系统建模或实验数据分析的开发者和研究者。",
+        "use_cases": [
+          "仿真行人避障轨迹",
+          "拟合转向与避障模型",
+          "导入并分析实验数据"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上过一次日榜，破千星时为一千零五星。",
+        "risk_notes": "依赖原始实验数据自行放置；虚拟现实实验脚本需要 WorldViz Vizard；许可证细节仅指向文件，具体内容 unknown。",
+        "evidence": [
+          "This repo is created to serve simulaion and analysis on the data collected in Jiuyang Bai's dissertation research.",
+          "A computational modeling framework for pedestrian moving-obstacle avoidance behavior in the **Bai movObst2** experiment, based on dynamical systems approaches (Fajen-style steering and Cohen-style avoidance).",
+          "Raw data should be placed in `Raw_Data/` (or the path used in `fitting.py` and notebooks)."
+        ]
+      }
+    },
+    "Kiowx/c_cleaner_plus": {
+      "category": "desktop-system",
+      "one_liner": "Windows 全盘垃圾清理工具",
+      "intro": {
+        "one_liner": "Windows 开源清理工具",
+        "what_it_is": "这是一个面向 Windows 的开源清理工具，使用 Python 开发，提供图形界面，覆盖垃圾文件、大文件、重复文件、系统残留和应用卸载等清理场景。",
+        "problem_solved": "它用于扫描并清理磁盘中的临时文件、缓存、大文件、重复文件和卸载残留，也支持定时任务与自定义规则，帮助整理磁盘空间。",
+        "who_should_care": "需要维护 Windows 磁盘空间、管理缓存和卸载残留的普通用户与开发者。",
+        "use_cases": [
+          "清理临时文件和缓存",
+          "扫描大文件与重复文件",
+          "强力卸载并清理残留"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 84 星并曾上日榜。",
+        "risk_notes": "清理和卸载操作有风险，建议先创建还原点或备份重要数据；部分功能需要管理员权限；仅支持 Windows。",
+        "evidence": [
+          "Windows的开源强力清理工具，可扫描并清理全盘中的垃圾文件、大文件、重复文件及系统残留等",
+          "面向 Windows 的全盘清理工具，覆盖常规清理、大文件扫描、更多清理、应用强力卸载、定时任务和规则商店等常见场景。",
+          "清理和卸载操作有风险"
+        ]
+      }
+    },
+    "pass-with-high-score/blockads-android": {
+      "category": "mobile",
+      "one_liner": "安卓本地 DNS 去广告器",
+      "intro": {
+        "one_liner": "安卓本地广告拦截工具",
+        "what_it_is": "BlockAds 是开源安卓广告拦截器，用本地 VPN 或 root 代理模式过滤 DNS，并提供 HTTPS 过滤、规则列表和查询日志。",
+        "problem_solved": "它在无需 root、数据留在设备本地的前提下，系统级拦截广告、跟踪器、钓鱼和恶意域名，并支持按应用放行。",
+        "who_should_care": "重视隐私、想免 root 全局去广告的安卓用户和 Kotlin 开发者。",
+        "use_cases": [
+          "免 root 全局拦截广告",
+          "按应用设置过滤例外",
+          "查看实时域名查询日志"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 25 星，仅一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0，分发修改版需遵守开源义务；未关闭 Issue 有 50 个；HTTPS 过滤涉及证书安装与中间人处理。",
+        "evidence": [
+          "BlockAds is a free, open-source ad blocker for Android.",
+          "It blocks ads, trackers, and malware system-wide using local VPN-based DNS filtering — no root required, no data collection.",
+          "This project is licensed under the **GNU General Public License v3.0**."
+        ]
+      }
+    },
+    "777genius/agent-teams-ai": {
+      "category": "ai-agent",
+      "one_liner": "看板式多智能体协作团队",
+      "intro": {
+        "one_liner": "多智能体团队编排桌面应用",
+        "what_it_is": "这是一个用 TypeScript 编写的桌面应用，用看板组织多个 AI 智能体团队，让它们并行处理任务、互相沟通并复核工作。",
+        "problem_solved": "它把多智能体协作、任务流转、消息沟通、代码变更复核和用量预算集中到一个界面，减少人工协调成本。",
+        "who_should_care": "想用多个编码智能体协作、并需要看板与复核流程的开发者。",
+        "use_cases": [
+          "组建多角色智能体团队并行开发",
+          "查看任务看板并下发高层指令",
+          "复核代码变更与智能体互评"
+        ],
+        "alternatives": "强调跨团队沟通、组织视图、预算告警和逐项审批，差异点较明确。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 81 星，且本周上过日榜。",
+        "risk_notes": "采用 AGPL-3.0，商业集成需注意义务；有 40 个未关闭问题；安装说明提到 Windows 可能触发 SmartScreen。",
+        "evidence": [
+          "An orchestration layer for AI agent teams across Codex/Claude/OpenCode/Cursor/Grok/GitHub/Kiro/Z.AI/Xiaomi/MiniMax/Kimi...(300+ models, 200+ LLM providers, free models no auth)",
+          "Agents talk to each other — they communicate, create and manage their own tasks, review, leave comments",
+          "May trigger SmartScreen - click \"More info\" -> \"Run anyway\""
+        ]
+      }
+    },
+    "millylee/anyrouter-check-in": {
+      "category": "automation",
+      "one_liner": "多平台多账号自动签到",
+      "intro": {
+        "one_liner": "多平台自动签到工具",
+        "what_it_is": "这是一个用 Python 编写的多平台多账号自动签到工具，内置支持 AnyRouter 与 AgentRouter，并可通过配置适配 NewAPI、OneAPI 平台。",
+        "problem_solved": "它把每日签到、多账号管理、定时运行、失败容错和通知提醒集中到自动化流程中，减少手工登录与漏签。",
+        "who_should_care": "使用相关中转站、拥有多个账号并熟悉 GitHub Actions 的开发者。",
+        "use_cases": [
+          "多账号每日自动签到",
+          "自定义服务商签到配置",
+          "签到结果推送到机器人"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 20 星，曾有一天进入日榜。",
+        "risk_notes": "需要配置账号、会话或密码等敏感信息；会话可能提前失效；部分平台涉及 WAF 绕过与代理配置。",
+        "evidence": [
+          "支持 AnyRouter、AgentRouter 的多平台多账号签到，理论兼容所有基于 NewAPI、OneAPI 的平台。",
+          "多平台多账号自动签到，理论上支持所有 NewAPI、OneAPI 平台，目前内置支持 Any Router 与 Agent Router，其它可根据文档进行摸索配置。",
+          "脚本每 6 小时执行一次（1. action 无法准确触发，基本延时 1~1.5h；2. 目前观测到 anyrouter 的签到是每 24h 而不是零点就可签到）"
+        ]
+      }
+    },
+    "bambanah/deemix": {
+      "category": "content-media",
+      "one_liner": "音乐下载工具",
+      "intro": {
+        "one_liner": "Deezer 下载工具集",
+        "what_it_is": "这是一个 revived Deemix 项目的单仓库，包含 Deezer 接口封装、核心程序、网页界面、桌面应用和命令行工具。",
+        "problem_solved": "它提供网页、桌面、容器和命令行方式触发 Deezer 内容下载，并支持配置下载目录、端口、码率和文件权限。",
+        "who_should_care": "需要自建 Deezer 下载服务、使用容器或命令行下载的开发者。",
+        "use_cases": [
+          "用网页界面登录后下载",
+          "用容器部署下载服务",
+          "用命令行定时触发下载"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周上过一天日榜，破千时有一千零二星。",
+        "risk_notes": "桌面应用未签名，运行时需关闭安全警告；命令行需要有效登录凭据，否则无交互终端时会退出。",
+        "evidence": [
+          "This is the monorepo for the revived Deemix project",
+          "Note: The app is not signed (because it's crazy expensive), so you'll need to disable the security warnings when running it.",
+          "Without a valid ARL and without a TTY, the command exits 1 rather than waiting for input."
+        ]
+      }
+    },
+    "vinegarhq/sober": {
+      "category": "desktop-system",
+      "one_liner": "Linux 运行 Roblox 运行时",
+      "intro": {
+        "one_liner": "Linux 上的 Roblox 运行时",
+        "what_it_is": "Sober 是一个让用户在 Linux 桌面访问 Roblox 体验的运行时。仓库主要用于收集缺陷和功能建议。",
+        "problem_solved": "它解决 Linux 桌面用户访问 Roblox 体验的问题，并提供缺陷与功能建议的反馈入口。",
+        "who_should_care": "在 Linux 桌面玩 Roblox 的普通用户，以及愿意反馈问题的使用者。",
+        "use_cases": [
+          "在 Linux 桌面访问 Roblox 体验",
+          "提交运行时缺陷",
+          "提出功能建议"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周上日榜一天，破千时有一千零一颗星。",
+        "risk_notes": "与 Roblox 无关联；本仓库主要是问题跟踪，更多资料需看外部页面；成熟度未说明。",
+        "evidence": [
+          "Runtime for Roblox on Linux",
+          "Sober lets users visit Roblox experiences on their Linux desktops.",
+          "This GitHub repository serves as an issue tracker for bugs or feature suggestions."
+        ]
+      }
+    },
+    "shteeve3d/blender-wiggle-2": {
+      "category": "content-media",
+      "one_liner": "Blender 物理摆动插件",
+      "intro": {
+        "one_liner": "Blender 骨骼摆动插件",
+        "what_it_is": "Wiggle 2 是 Blender 的骨骼摆动插件重写版，提供新的物理逻辑、碰撞、固定、烘焙和界面。",
+        "problem_solved": "让绳索、链条等骨骼动画获得更真实的摆动，并支持碰撞、循环动画和一键烘焙为关键帧。",
+        "who_should_care": "使用 Blender 制作角色、绳索或链条动画的开发者和动画师。",
+        "use_cases": [
+          "制作绳索或链条摆动",
+          "为骨骼添加网格碰撞",
+          "烘焙循环摆动动画"
+        ],
+        "alternatives": "相比原版 wiggle bones add-on，是重写版，新增物理逻辑、固定、碰撞和库链接支持。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周曾有一天进入日榜。",
+        "risk_notes": "整体采用 GNU General Public License, Version 3，个别文件可能有不同但兼容的许可证。",
+        "evidence": [
+          "Wiggle 2 is a ground up rewrite of the [wiggle bones add-on](https://github.com/shteeve3d/blender-wiggle) for Blender.",
+          "Wiggling now behaves more realistically, especially when simulating simple ropes or chains.",
+          "Wiggle 2 as a whole is licensed under the GNU General Public License, Version 3."
+        ]
+      }
+    },
+    "PaddleJitLab/CUDATutorial": {
+      "category": "learning-resource",
+      "one_liner": "CUDA 高性能编程教程",
+      "intro": {
+        "one_liner": "CUDA 高性能编程教程",
+        "what_it_is": "这是一个从零开始学习 CUDA 高性能编程的中文教程，按新手、初阶、中阶、高阶组织内容，也包含 Triton 和大模型推理技术笔记。",
+        "problem_solved": "它把 CUDA 环境、Kernel、矩阵乘、Reduce、GEMM、卷积优化和推理系统源码解析整理成学习路线，降低自学门槛。",
+        "who_should_care": "想系统学习 CUDA 优化、算子实现和大模型推理底层机制的开发者。",
+        "use_cases": [
+          "按路线自学 CUDA 编程",
+          "练习矩阵乘与 Reduce 优化",
+          "阅读 vLLM 源码解析"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，且已破千星。",
+        "risk_notes": "高阶系列标注为补充中；正文未提供许可证、发布状态和生产使用说明。",
+        "evidence": [
+          "从零开始学习 CUDA 高性能编程，从入门到放弃，哦不！一起来边学习，边打笔记，日拱一卒！",
+          "### 高阶系列 ✈️\n\n+ 页锁定和主机内存\n+ CUDA 流和多流使用\n+ 使用多个 GPU 计算\n+ ...(补充中)",
+          "破千时的 Star 数：1000；本周上日榜天数：1"
+        ]
+      }
+    },
+    "immortalwrt/homeproxy": {
+      "category": "security",
+      "one_liner": "路由器现代代理平台",
+      "intro": {
+        "one_liner": "ImmortalWrt 代理平台",
+        "what_it_is": "这是面向 ARM64 和 AMD64 的 ImmortalWrt 代理平台，由 sing-box 提供支持，主要语言为 JavaScript。",
+        "problem_solved": "为 ImmortalWrt 设备提供代理平台能力，并规划改进订阅页响应、规则重构和设置页面整理。",
+        "who_should_care": "使用 ImmortalWrt 且需要代理平台能力的开发者和进阶用户。",
+        "use_cases": [
+          "在 ImmortalWrt 上配置代理",
+          "管理订阅节点",
+          "维护访问控制设置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周上日榜一天，已有 342 次分叉。",
+        "risk_notes": "待办事项包含订阅页节点多时响应慢、规则重构和设置迁移，部分功能仍待改进。",
+        "evidence": [
+          "The modern ImmortalWrt proxy platform for ARM64/AMD64 (powered by sing-box)",
+          "Subscription page slow response with a large number of nodes",
+          "Refactor nft rules"
+        ]
+      }
+    },
+    "Dark-Xploit/CypherX": {
+      "category": "other",
+      "one_liner": "Cypher X 官方仓库",
+      "intro": {
+        "one_liner": "会话部署仓库",
+        "what_it_is": "这是一个以 Dockerfile 为主的仓库，内容围绕复制仓库、会话编号和部署入口展开。",
+        "problem_solved": "提供复制仓库和部署相关入口，便于按说明获取会话编号并部署。",
+        "who_should_care": "想按说明复制并部署该仓库的开发者。",
+        "use_cases": [
+          "复制仓库后部署",
+          "获取会话编号",
+          "访问部署入口"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千时已有 2,796 星，且一周内有一天登上日榜。",
+        "risk_notes": "资料只列出复制、会话编号和部署入口，缺少功能、许可证与稳定性说明；分叉数高于星数，需谨慎判断热度来源。",
+        "evidence": [
+          "𝙏𝙃𝙀 𝙊𝙁𝙁𝙄𝘾𝙄𝘼𝙇 𝘾𝙔𝙋𝙃𝙀𝙍 𝙓 𝙍𝙀𝙋𝙊𝙎𝙄𝙏𝙊𝙍𝙔.",
+          "<strong>1. FORK REPOSITORY</strong>",
+          "<strong>2. SESSION ID & DEPLOYMENTS</strong>"
+        ]
+      }
+    },
+    "proma-ai/Proma": {
+      "category": "ai-agent",
+      "one_liner": "工作流通用智能体助手",
+      "intro": {
+        "one_liner": "专业用户桌面 Agent",
+        "what_it_is": "Proma 是面向专业用户的开源桌面端通用 Agent，提供会话、项目分区、记忆、文件编辑、内嵌浏览器和终端等能力。",
+        "problem_solved": "它把 Agent 能力接入日常工作流，帮助组织上下文、管理项目文件，并支持编程、研究和自动化任务。",
+        "who_should_care": "重度使用 Agent 的开发者、研究型用户和知识管理用户。",
+        "use_cases": [
+          "用内嵌终端辅助编程",
+          "并行探索研究路径",
+          "管理项目记忆与文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 45 星，曾有一天进入日榜。",
+        "risk_notes": "开源版更新和修复节奏被明确降低；未关闭议题有 216 个；采用 AGPL-3.0，商用需留意义务。",
+        "evidence": [
+          "Proma 是一款为专业用户打造的开源通用的桌面端 Agent 产品。",
+          "由于我们的精力实在过于有限，目前 Proma 开源版本处于无法及时更新的阶段",
+          "未关闭 Issue 数：216"
+        ]
+      }
+    },
+    "Dark-Xploit/SPACE-MD": {
+      "category": "other",
+      "one_liner": "SPACE-MD 项目仓库",
+      "intro": {
+        "one_liner": "已停维的机器人项目",
+        "what_it_is": "SPACE MD 是一个使用 JavaScript 的仓库，资料给出获取会话标识、部署到 Heroku 和下载机器人压缩包的步骤。",
+        "problem_solved": "资料主要说明如何分叉仓库、获取会话标识、部署并下载机器人压缩包，未说明具体业务问题。",
+        "who_should_care": "关注机器人部署流程或寻找历史资料的开发者。",
+        "use_cases": [
+          "分叉仓库",
+          "部署到 Heroku",
+          "下载机器人压缩包"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 1,098 星且仅一天上日榜。",
+        "risk_notes": "资料明确称项目不再维护并建议寻找其他替代方案；分叉数高于破千时的星数，需留意关注度来源。",
+        "evidence": [
+          "NOTE: THIS PROJECT IS NO LONGER MAINTAINED, KINDLY LOOK FOR OTHER ALTERNATIVES!!!",
+          "3. DEPLOY TO HEROKU",
+          "破千时的 Star 数：1098"
+        ]
+      }
+    }
+  }
+}

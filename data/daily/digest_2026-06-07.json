@@ -1,1 +1,612 @@
-{"date":"2026-06-07","headline":"AI Agent 与实用工具同日走热","points":["AI Agent 相关项目有 6 个，XingYu-Zhong/DeepSeek-GUI 提供 DeepSeek 模型智能体工作台。","microsoft/pg_durable 当日新增 611，主打 PostgreSQL 内持久化执行引擎。","开发工具、桌面系统、数据金融各有 3 个，Python 项目有 6 个，实用型工具密集出现。"],"items":{"microsoft/pg_durable":{"category":"dev-tools","one_liner":"PostgreSQL 内持久化执行引擎"},"AIEraDev/Clypra":{"category":"content-media","one_liner":"免费替代剪映高级功能的编辑器"},"XingYu-Zhong/DeepSeek-GUI":{"category":"ai-agent","one_liner":"DeepSeek 模型智能体工作台"},"cclank/cell-architecture-studio":{"category":"web-frontend","one_liner":"交互式 3D 细胞结构图库"},"seramo/v2ray-config-modifier":{"category":"security","one_liner":"多协议 V2Ray 配置生成器"},"anysearch-ai/anysearch-mcp-server":{"category":"ai-agent","one_liner":"智能体统一实时搜索技能"},"Ontos-AI/knowhere":{"category":"ai-agent","one_liner":"为智能体和 RAG 结构化解析"},"hanxi/cups-web":{"category":"desktop-system","one_liner":"USB 打印机变网络打印服务"},"securo-finance/securo":{"category":"data-finance","one_liner":"自托管隐私优先理财管理器"},"Astro-Han/karpathy-llm-wiki":{"category":"learning-resource","one_liner":"智能体技能兼容的 LLM 知识库"},"flopperam/unreal-engine-mcp":{"category":"ai-agent","one_liner":"自然语言控制虚幻引擎建模"},"landing-ai/ade-python":{"category":"ai-model","one_liner":"智能体文档抽取 Python 库"},"zclucas/RMT":{"category":"automation","one_liner":"开源 AHKv2 宏自动化工具"},"don-tnowe/godot-resources-as-sheets-plugin":{"category":"game","one_liner":"表格化编辑 Godot 资源插件"},"Dao-AILab/quack":{"category":"ai-model","one_liner":"CuTe 内核合集库"},"TheSnowGuru/PyTrader-python-mt4-mt5-trading-api-connector-drag-n-drop":{"category":"data-finance","one_liner":"拖拽连接 MT4/MT5 交易接口"},"avwo/whistle-client":{"category":"dev-tools","one_liner":"多协议网络调试代理客户端"},"c0ny1/java-memshell-scanner":{"category":"security","one_liner":"JSP 扫描 Java 内存马"},"wfrest/wfrest":{"category":"dev-tools","one_liner":"C++ REST API Web 框架"},"salahlalami/idurar-erp-crm":{"category":"data-finance","one_liner":"开源 ERP CRM 与开票系统"},"AgentWrapper/agent-orchestrator":{"category":"ai-agent","one_liner":"并行编码智能体编排器"},"genesislab-io/beatai":{"category":"learning-resource","one_liner":"通俗 AI 入门教程"},"builtbybel/FluentTweaker":{"category":"desktop-system","one_liner":"系统界面风格调校工具"},"Apps2Samsung/Apps2Samsung":{"category":"desktop-system","one_liner":"三星 Tizen 设备一键装应用"},"Lynpoint/CyberVerse":{"category":"ai-agent","one_liner":"自托管实时数字人智能体平台"}}}
+{
+  "date": "2026-06-07",
+  "headline": "AI Agent 与实用工具同日走热",
+  "points": [
+    "AI Agent 相关项目有 6 个，XingYu-Zhong/DeepSeek-GUI 提供 DeepSeek 模型智能体工作台。",
+    "microsoft/pg_durable 当日新增 611，主打 PostgreSQL 内持久化执行引擎。",
+    "开发工具、桌面系统、数据金融各有 3 个，Python 项目有 6 个，实用型工具密集出现。"
+  ],
+  "items": {
+    "microsoft/pg_durable": {
+      "category": "dev-tools",
+      "one_liner": "PostgreSQL 内持久化执行引擎",
+      "intro": {
+        "one_liner": "数据库内持久执行扩展",
+        "what_it_is": "这是一个用 Rust 编写的 PostgreSQL 扩展，把长时间运行、可容错的工作流定义成 SQL 步骤，并在数据库中记录检查点。",
+        "problem_solved": "它让后台任务在崩溃、重启或步骤失败后从检查点恢复，减少自行拼接定时任务、队列、工作进程和状态表的需求。",
+        "who_should_care": "已把状态放在 PostgreSQL 的后端、数据工程师、数据库管理员和站点可靠性工程师。",
+        "use_cases": [
+          "向量嵌入处理流水线",
+          "批量数据摄取与发布",
+          "可审计的定时维护流程"
+        ],
+        "alternatives": "相比外部编排器或队列加工作进程，它把工作流、重试状态和进度都放进 PostgreSQL，无需额外服务。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 740 星且曾登上日榜。",
+        "risk_notes": "发布的容器镜像仅用于评估和学习，不建议用于生产；需要安装扩展并运行后台工作进程；模型受 SQL 形态限制。",
+        "evidence": [
+          "Long-running, fault-tolerant SQL functions for teams that already keep their state in Postgres and want to stop stitching together cron jobs, workers, queues, and status tables to make background work reliable.",
+          "If the database crashes, restarts, or a step fails, execution resumes from the last durable checkpoint instead of making you reconstruct state by hand.",
+          "The published Docker image is intended for evaluating and learning pg_durable only — do not use it in production."
+        ]
+      }
+    },
+    "AIEraDev/Clypra": {
+      "category": "content-media",
+      "one_liner": "免费替代剪映高级功能的编辑器",
+      "intro": {
+        "one_liner": "开源免费的专业视频剪辑器",
+        "what_it_is": "Clypra 是一个基于 Rust、Tauri v2 和 React 19 构建的开源视频编辑器，采用 MIT 许可证，支持桌面端（macOS、Windows、Linux）与移动端（通过 Capacitor 支持 iOS、Android）。",
+        "problem_solved": "目标是免费提供 CapCut（剪映）等商业剪辑软件中的高级功能，做到无水印、无付费墙、无功能限制、无需订阅。",
+        "who_should_care": "需要免费且无水印剪辑工具的内容创作者、预算有限的视频剪辑用户，以及关注 Tauri 与 Rust 音视频处理架构的开发者。",
+        "use_cases": [
+          "多轨时间线视频剪辑与帧精确裁剪",
+          "硬件加速的视频预览与 ProRes/H.264 导出",
+          "带波形显示与音画同步的音频编辑"
+        ],
+        "alternatives": "README 自述聚焦于免费提供 CapCut 的高级功能，但未与其他开源剪辑器做具体对比，差异细节 unknown。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：周增 877 星、338 fork，但项目创建时间与推送时间字段存在异常，热度可持续性待观察。",
+        "risk_notes": "README 提到内置生产环境性能遥测（采集解码耗时、GPU 厂商型号等），对隐私敏感用户需留意；FFmpeg 依赖为 LGPL v2.1+，与项目 MIT 许可证并存需注意合规；项目创建与推送时间戳异常，维护活跃度难以核实。",
+        "evidence": [
+          "A modern video editor built with Tauri, React, and TypeScript. Focus on building free capabilities of premium capcut functionalities",
+          "Professional video editing—free and open source forever.",
+          "What We Collect: High-level numerical timings (decode μs, compose μs, P95 seek latency, dropped frame counts, OS family, and GPU vendor/model)."
+        ]
+      }
+    },
+    "XingYu-Zhong/DeepSeek-GUI": {
+      "category": "ai-agent",
+      "one_liner": "DeepSeek 模型智能体工作台",
+      "intro": {
+        "one_liner": "本地优先的 DeepSeek 桌面 AI 工作台",
+        "what_it_is": "一个基于 TypeScript 与 Electron 的桌面应用，把 Code、Work 与对话三种模式整合在同一个本地运行时中，模型由用户自行接入。",
+        "problem_solved": "把写代码、处理文档与论文、多 Agent 协作等分散的 AI 工作流集中到一个本地桌面工作台，并让会话、记忆与权限留在本机。",
+        "who_should_care": "希望在本机统一管理 AI 编码与文档工作流、且对数据本地化与权限审批有要求的开发者与研究者。",
+        "use_cases": [
+          "在 Code 模式中管理项目、终端、Git 与 Diff，并交给 Agent 实现",
+          "在 Work 模式中阅读论文、做笔记并让 Agent 分析表格与文档",
+          "通过 MCP/Skills、Loops 与 Extension 平台扩展自定义工作流"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 2153 stars 且首次登上日榜，热度集中但项目仍处早期版本（0.4.4）。",
+        "risk_notes": "许可证为 PolyForm Noncommercial 1.0.0，仅限学习、研究和非商业用途，商业使用需作者书面授权；外部贡献需签署 CLA；项目创建于 2026-05-21，版本仍为 0.4.x，成熟度有限。",
+        "evidence": [
+          "本地优先的 AI 工作台：写代码、做文档、和 Agent 一起推进事情。",
+          "会话、记忆和设置留在本机，模型由你自己接入。",
+          "[PolyForm Noncommercial 1.0.0](./LICENSE)，仅限学习、研究和非商业用途。"
+        ]
+      }
+    },
+    "cclank/cell-architecture-studio": {
+      "category": "web-frontend",
+      "one_liner": "交互式 3D 细胞结构图库",
+      "intro": {
+        "one_liner": "React+Three.js 交互式 3D 细胞结构画廊",
+        "what_it_is": "一个基于 React、Vite 和 Three.js 构建的交互式 3D 细胞结构展示应用，提供多种细胞类型的可选中 3D 模型、细胞器详情、对比模式与学习工具。",
+        "problem_solved": "把抽象的细胞生物学结构以可交互、可对比的 3D 形式呈现，并配套测验、闪卡与学习进度等教学功能，降低学习与讲解门槛。",
+        "who_should_care": "生物教师、科普内容创作者、教育类前端开发者，以及需要 3D 教学演示界面的团队。",
+        "use_cases": [
+          "课堂或在线课程中的细胞结构 3D 演示",
+          "学生自学与细胞器对比记忆",
+          "作为 Three.js + React 教育类 3D 界面的参考实现"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：项目创建于 2026-05，一周新增约 110 星，热度集中在视觉演示层面，尚处早期迭代。",
+        "risk_notes": "README 说明应用代码为 MIT，但内置 GLB 模型与图片资产另有来源与授权记录（见 docs/ASSETS.md），商用前需单独核查资产许可；部分细胞类型仍使用程序化占位几何体，非最终资产。",
+        "evidence": [
+          "Interactive 3D cell architecture gallery built with React and Three.js",
+          "The application code is licensed under the MIT License. Included GLB models and image assets retain their documented provenance in `docs/ASSETS.md`.",
+          "Procedural fallback geometry for specimens that do not yet have production GLB assets."
+        ]
+      }
+    },
+    "seramo/v2ray-config-modifier": {
+      "category": "security",
+      "one_liner": "多协议 V2Ray 配置生成器",
+      "intro": {
+        "one_liner": "批量生成代理配置工具",
+        "what_it_is": "这是一个基于网页的工具，用已有配置和指定地址或地址段，批量生成 VMESS、VLESS、WireGuard、Trojan 配置。",
+        "problem_solved": "它把逐个替换地址、转换 WireGuard 配置、批量导出配置等操作集中到浏览器里完成，减少手工整理。",
+        "who_should_care": "需要批量整理 V2Ray 系列配置、熟悉相关协议和地址段的开发者。",
+        "use_cases": [
+          "按地址段批量生成配置",
+          "转换标准 WireGuard 配置",
+          "复制或下载配置清单"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 124 星，并曾进入日榜一天。",
+        "risk_notes": "仓库未提供许可证信息；使用效果依赖已有配置、地址段和浏览器环境；未关闭问题为零不代表无缺陷。",
+        "evidence": [
+          "A web-based tool to generate V2Ray configurations for multiple IP addresses or ranges, supporting VMESS, VLESS, WireGuard, and Trojan protocols.",
+          "Users can input existing VMESS, VLESS, WireGuard, or Trojan configurations, specify IP addresses or ranges, or choose from predefined IP ranges of popular CDN providers like Cloudflare, Gcore, and Fastly.",
+          "Simple light and dark interface with no installation needed."
+        ]
+      }
+    },
+    "anysearch-ai/anysearch-mcp-server": {
+      "category": "ai-agent",
+      "one_liner": "智能体统一实时搜索技能",
+      "intro": {
+        "one_liner": "面向 AI Agent 的统一实时搜索 MCP 服务",
+        "what_it_is": "AnySearch MCP Server 是一个 MCP 服务器，提供通用网页搜索、垂直领域搜索、并行批量搜索和 URL 全文提取能力，通过 Streamable HTTP 远程端点接入各类 AI 客户端。",
+        "problem_solved": "为 AI Agent 提供统一的实时搜索与网页内容抽取入口，免去自行对接多个搜索源和抓取流程。",
+        "who_should_care": "使用 Claude Code、Cursor、VS Code、OpenCode 等 MCP 客户端的 AI 开发者与 Agent 构建者。",
+        "use_cases": [
+          "让编码助手在对话中实时检索网页资料",
+          "对金融、学术、法律、代码等垂直领域做结构化查询",
+          "一次调用并行执行多个独立搜索任务",
+          "抓取指定 URL 全文并转为 Markdown 供模型阅读"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：MCP 生态正快速扩张，但项目创建时间短、依赖托管云服务，长期价值待观察。",
+        "risk_notes": "核心能力依赖 api.anysearch.com 托管服务，非纯本地部署；README 引导 Agent 用用户真实邮箱自动注册账号并获取 API key，涉及凭据与隐私处理，需谨慎；匿名访问有更低速率限制。",
+        "evidence": [
+          "Unified real-time search MCP server supporting general web search, vertical domain search, parallel batch search, and full-page URL content extraction.",
+          "An API key is **optional but recommended**. Without a key, all features still work via anonymous access with lower rate limits.",
+          "The production endpoint is: https://api.anysearch.com/mcp"
+        ]
+      }
+    },
+    "Ontos-AI/knowhere": {
+      "category": "ai-agent",
+      "one_liner": "为智能体和 RAG 结构化解析",
+      "intro": {
+        "one_liner": "面向 AI Agent 的文档解析与检索记忆层",
+        "what_it_is": "Knowhere 是一个文档解析与检索系统，把复杂、杂乱的文档转换成持久、可导航的 AI Agent 记忆，在单一流水线中完成解析、层级重建、多模态结构化与图构建。",
+        "problem_solved": "传统 OCR 与文档智能流水线要求先逐元素精确抽取，在脏 PDF 和幻灯片上容易累积阅读顺序、版式、表格错误，导致模型上下文不可靠；Knowhere 用 Vision 与 Text 双轨解析避免这一脆弱前提。",
+        "who_should_care": "构建 Agentic RAG、向量 RAG 或 LLM 文档工作流的开发者，以及需要处理本地或离线文档集合的团队。",
+        "use_cases": [
+          "把大量脏 PDF、PPT 解析为带层级与引用的结构化 chunk，供 RAG 使用",
+          "通过 MCP 让外部 Agent 在文档语料中自主导航、检索与引用",
+          "处理数百页超长 PDF 与图集类文档的版面感知解析"
+        ],
+        "alternatives": "README 称传统 RAG 只做扁平向量检索并返回孤立片段，而 Knowhere 让 Agent 沿章节树与跨文档图导航，返回可追溯证据；MinerU 仅作为可选的细粒度页面文本抽取器且默认关闭。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点 + 项目于 2026 年开源并快速迭代 2.0 版本，契合 Agentic RAG 与 MCP 生态的当下关注点。",
+        "risk_notes": "项目创建于 2026-04-30、开源时间较短，成熟度与长期维护情况尚待观察；README 含 Knowhere Cloud 付费引导，自部署需另用 knowhere-self-hosted 仓库。",
+        "evidence": [
+          "Knowhere is a document parsing and retrieval system that turns complex, dirty files into persistent, navigable memory for AI agents",
+          "Both parsing paths produce the same chunk and metadata schema, so downstream storage, hierarchy, graph construction, and retrieval remain format-independent.",
+          "Traditional RAG does a flat vector lookup and returns isolated snippets. Knowhere's agents navigate the document's section tree and cross-document graph"
+        ]
+      }
+    },
+    "hanxi/cups-web": {
+      "category": "desktop-system",
+      "one_liner": "USB 打印机变网络打印服务",
+      "intro": {
+        "one_liner": "网页版打印管理工具",
+        "what_it_is": "基于 CUPS 的网页打印管理工具，可用浏览器上传文件、提交打印任务，并管理用户、驱动和打印记录。",
+        "problem_solved": "把家用 USB 打印机变成随时可访问的网络打印服务，减少本地连接和格式转换的麻烦。",
+        "who_should_care": "家庭、小型办公室、NAS 和 Docker 用户，以及需要共享打印机的人。",
+        "use_cases": [
+          "浏览器上传文件远程打印",
+          "多用户共享家用打印机",
+          "管理打印记录与驱动"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 38 星，曾有一天进入日榜。",
+        "risk_notes": "扫描功能需使用开发版镜像；上传 Debian 包会以容器 root 执行安装脚本；驱动持久化依赖卷挂载。",
+        "evidence": [
+          "把家用 USB 打印机变成随时可访问的网络打印服务",
+          "基于 CUPS 的网页版打印管理工具。通过浏览器上传文件、远程提交打印任务，支持多用户管理与打印记录追踪，适合家庭和小型办公室使用。",
+          "当前请拉 `hanxi/cups-web:dev`（每次 master push 自动更新）体验，或从源码 `make all` 自行构建；等 `master`/正式版镜像更新后再切回 `latest`。"
+        ]
+      }
+    },
+    "securo-finance/securo": {
+      "category": "data-finance",
+      "one_liner": "自托管隐私优先理财管理器",
+      "intro": {
+        "one_liner": "自托管个人财务管理器",
+        "what_it_is": "Securo 是开源个人财务管理器，主要用 Python 编写，强调自托管和隐私优先，可管理账户、交易、预算与资产。",
+        "problem_solved": "它让财务数据留在自己的基础设施中，避免第三方服务介入，同时提供账户、支出和习惯的可见性。",
+        "who_should_care": "重视隐私、愿意自托管并需要管理个人或家庭财务的开发者。",
+        "use_cases": [
+          "自建多账户记账系统",
+          "导入银行文件并分类交易",
+          "跟踪预算、资产和储蓄目标"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：一周涨了 22 星，曾有一天进入日榜。",
+        "risk_notes": "采用 AGPL-3.0，网络服务化修改也需开源；未关闭 Issue 有 283 个；可选银行同步、汇率和智能助手依赖额外配置。",
+        "evidence": [
+          "Open-source personal finance manager. Self-hosted, privacy-first.",
+          "Finance apps want your data. This one doesn't.",
+          "This means you can freely use, modify, and distribute this software, but any modifications — including when used as a network service (SaaS) — must also be released under the AGPL-3.0."
+        ]
+      }
+    },
+    "Astro-Han/karpathy-llm-wiki": {
+      "category": "learning-resource",
+      "one_liner": "智能体技能兼容的 LLM 知识库",
+      "intro": {
+        "one_liner": "Karpathy 式 LLM 知识库的 Agent Skill",
+        "what_it_is": "这是一个可安装的 Agent Skills 技能包，把 Karpathy 提出的 LLM Wiki 思路封装成 Claude Code、Cursor、Codex 等编码代理可直接调用的工作流。",
+        "problem_solved": "解决每次提问都要重新检索原始文档、知识无法沉淀的问题：它把原始资料编译成持久的 markdown wiki 页面，并维护交叉引用与索引。",
+        "who_should_care": "使用 Claude Code、Cursor、Codex 等 Agent Skills 工具、希望长期积累结构化个人或团队知识库的开发者与研究者。",
+        "use_cases": [
+          "把网页、论文、PDF 等资料 ingest 进 raw/ 并编译成 wiki 页面",
+          "基于已有 wiki 提问并获得带引用的回答",
+          "定期 lint wiki，检查断链、索引缺失与过期交叉引用"
+        ],
+        "alternatives": "README 将其与 RAG 对比：RAG 在查询时对原始分块做检索，知识存于向量；LLM Wiki 在 ingest 与维护阶段完成综合，知识存于人工策展的 markdown 页面，适合知识复利积累而非大语料广覆盖检索。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：借 Karpathy 概念与 Agent Skills 生态热度，周增约 64 星，但项目本身定位为轻量技能包而非平台。",
+        "risk_notes": "README 自述为 Karpathy 思路的非官方社区实现；项目创建于 2026-04-05，历史较短；README 中的使用统计（94 篇文章、99 份来源）为作者自述，无法独立核实。",
+        "evidence": [
+          "A reusable skill for building Karpathy-style LLM wikis with Claude Code, Cursor, Codex, and other Agent Skills tools.",
+          "Unofficial community implementation of the workflow from Karpathy's LLM Wiki idea.",
+          "The workflow is based on a real knowledge base with 94 articles and 99 sources maintained daily since April 2026."
+        ]
+      }
+    },
+    "flopperam/unreal-engine-mcp": {
+      "category": "ai-agent",
+      "one_liner": "自然语言控制虚幻引擎建模",
+      "intro": {
+        "one_liner": "自然语言控制虚幻引擎",
+        "what_it_is": "这是一个用自然语言通过 MCP 控制 Unreal Engine 5.5+ 的工具，包含本地服务端与 C++ 插件，可辅助搭建三维场景和建筑结构。",
+        "problem_solved": "它让开发者用自然语言命令操作实时编辑器，减少手动搭建场景、管理对象和编写基础蓝图操作的步骤。",
+        "who_should_care": "使用 Unreal Engine 5.5+ 的关卡设计、建筑可视化和原型开发者。",
+        "use_cases": [
+          "用自然语言生成城镇与城堡",
+          "批量创建和调整场景对象",
+          "辅助基础蓝图节点操作"
+        ],
+        "alternatives": "本地开源版工具较基础，README 提到托管版有更多工具，但两者代码不同。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 20 星且仅一天上日榜，热度有限。",
+        "risk_notes": "README 将推荐入口指向托管服务；本地版被描述为较简单的基础工具集。未关闭问题 6 个，需留意维护状态。",
+        "evidence": [
+          "Control Unreal Engine 5.5+ through AI with natural language. Build incredible 3D worlds and architectural masterpieces using MCP.",
+          "This repo includes a standalone local MCP server (`Python/`) and a C++ Unreal plugin (`UnrealMCP/`). This is a simpler, community-maintained toolset for basic Unreal Engine control — scene building, actor management, physics, and foundational Blueprint operations.",
+          "The hosted Flop MCP is a completely different, much more advanced server that shares no code with the local `Python/` server in this repo."
+        ]
+      }
+    },
+    "landing-ai/ade-python": {
+      "category": "ai-model",
+      "one_liner": "智能体文档抽取 Python 库",
+      "intro": {
+        "one_liner": "文档抽取 Python 库",
+        "what_it_is": "这是 Agentic Document Extraction 接口的官方 Python 库，可把 PDF 和图片解析为带定位信息的 Markdown，并按模式抽取字段。",
+        "problem_solved": "它让开发者用类型化接口处理文档解析、结构化字段抽取和大文档异步任务，减少自行封装接口与结果模型的工作。",
+        "who_should_care": "用 Python 做票据、表单、合同等文档信息抽取的开发者。",
+        "use_cases": [
+          "把 PDF 发票解析成 Markdown",
+          "按模型抽取发票号和总额",
+          "异步处理较大的文档"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内曾登上日榜一天，破千时有一千零一颗星。",
+        "risk_notes": "需要接口密钥并依赖在线服务；关闭定位的抽取属于预览行为，结果可能略有差异；部分页面解析失败时请求仍会成功。",
+        "evidence": [
+          "The official Python library for the [LandingAI Agentic Document Extraction (ADE) API](https://ade.landing.ai). Parse PDFs and images into structured, grounded Markdown, then extract typed fields with a JSON Schema or Pydantic model.",
+          "Use `client.v2` for new projects. It is the current API, powered by the DPT-3 model family.",
+          "Preview — with grounding off the `extraction` itself can differ slightly from a grounded run."
+        ]
+      }
+    },
+    "zclucas/RMT": {
+      "category": "automation",
+      "one_liner": "开源 AHKv2 宏自动化工具",
+      "intro": {
+        "one_liner": "开源按键宏工具",
+        "what_it_is": "RMT（若梦兔）是基于 AutoHotkey v2 的免费开源按键宏工具，支持通过简单配置实现自动化操作。",
+        "problem_solved": "它把重复按键、鼠标和手柄操作，以及图片、颜色、文本识别等流程交给配置化宏处理。",
+        "who_should_care": "需要自动化重复操作、游戏辅助或办公脚本的普通用户。",
+        "use_cases": [
+          "录制并播放按键鼠标宏",
+          "用图片或文本识别触发操作",
+          "共享和下载宏配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且本周一天登上日榜。",
+        "risk_notes": "备用网盘下载可能文件不全或被系统误杀；项目创建于 2025 年，生产可用性未明确。",
+        "evidence": [
+          "基于 AutoHotkey v2 的免费开源按键宏工具",
+          "支持功能包括：\n- ⌨️ **按键宏 / 鼠标宏 / 手柄宏** 的录制与播放  \n- 🔍 **图片识别、颜色识别、文本识别** 等视觉自动化能力  \n- ⚙️ **逻辑判断、流程控制、多线程执行**",
+          "阿里云盘或者百度网盘下载软件可能文件不全 或者 系统误杀删除部分文件"
+        ]
+      }
+    },
+    "don-tnowe/godot-resources-as-sheets-plugin": {
+      "category": "game",
+      "one_liner": "表格化编辑 Godot 资源插件",
+      "intro": {
+        "one_liner": "Godot 资源表格编辑插件",
+        "what_it_is": "这是一个面向 Godot 4 的插件，可把文件夹里的资源按行展示成数据表，并在编辑器中批量查看和修改。",
+        "problem_solved": "它解决逐个打开大量资源文件修改字段很繁琐的问题，支持表格内编辑、批量操作、筛选排序和撤销重做。",
+        "who_should_care": "使用 Godot 管理大量资源配置、数据表或插件资源的开发者。",
+        "use_cases": [
+          "批量修改资源字段",
+          "导入导出表格数据",
+          "筛选并批量处理资源"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千时星数一千零一。",
+        "risk_notes": "资料提到 Godot 3 与 Godot 4 分支，使用前需确认版本匹配；快捷键操作有场景节点选中限制。",
+        "evidence": [
+          "A plugin for Godot 4 that adds a tab for viewing and editing folders of Resources as data tables, one Resource per row.",
+          "CSV support - Import, Export or Edit directly with strongly-typed columns",
+          "Full Undo/Redo support."
+        ]
+      }
+    },
+    "Dao-AILab/quack": {
+      "category": "ai-model",
+      "one_liner": "CuTe 内核合集库",
+      "intro": {
+        "one_liner": "CuTe 算子集合",
+        "what_it_is": "一个用 Python 编写的 CuTe 算子集合，提供归一化、Softmax、交叉熵和矩阵乘等内核，并带部分 JAX 接口。",
+        "problem_solved": "为特定英伟达 GPU 上的常见深度学习算子提供可直接导入的 CuTe 实现，减少自行编写底层内核的工作。",
+        "who_should_care": "使用 H100、B200、B300 或 RTX 50 系列 GPU 的算子开发者。",
+        "use_cases": [
+          "调用归一化前向与反向内核",
+          "调用 Softmax 与交叉熵内核",
+          "使用 JAX 接口接入算子"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周内破千星且曾登上日榜。",
+        "risk_notes": "硬件与软件要求较窄；CUDA 13.x 安装暂不建议用 uv；部分 JAX 接口仅覆盖部分内核。",
+        "evidence": [
+          "Kernels are written in the [CuTe-DSL]",
+          "- H100, B200/B300, or RTX 50 GPU\n- CUDA toolkit 12.9+\n- Python 3.12",
+          "JAX bindings are also available for some kernels"
+        ]
+      }
+    },
+    "TheSnowGuru/PyTrader-python-mt4-mt5-trading-api-connector-drag-n-drop": {
+      "category": "data-finance",
+      "one_liner": "拖拽连接 MT4/MT5 交易接口",
+      "intro": {
+        "one_liner": "连接 Python 与交易终端",
+        "what_it_is": "这是一个用 Python 脚本、EA 和授权指示器连接 MT4、MT5 的连接器，通过 WebSocket 通信，支持拖拽安装。",
+        "problem_solved": "让 Python 策略能获取行情、账户和订单信息，并管理订单，减少连接交易终端的接入工作。",
+        "who_should_care": "用 Python 编写外汇策略并需要连接 MT4、MT5 的开发者。",
+        "use_cases": [
+          "下载历史柱状数据",
+          "获取实时行情推送",
+          "从 Python 管理订单"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天且破千星。",
+        "risk_notes": "演示模式仅支持有限品种；完整版本需另行获取；资料含推广链接，需自行判断。",
+        "evidence": [
+          "It consists of a Python script and an EA, plus an indicator for licensing.",
+          "Full Functionality in demo mode (limited instruments: EURUSD, AUDCHF, NZDCHF, GBPNZD, USDCAD).",
+          "Manage (open, change, close) orders directly from Python"
+        ]
+      }
+    },
+    "avwo/whistle-client": {
+      "category": "dev-tools",
+      "one_liner": "多协议网络调试代理客户端",
+      "intro": {
+        "one_liner": "Whistle 桌面抓包客户端",
+        "what_it_is": "这是 Whistle 的官方桌面客户端，用于跨平台网络抓包与调试，支持 macOS、Windows 和部分 Linux 发行版。",
+        "problem_solved": "它把代理端口、根证书、系统代理和插件安装集中到桌面界面，便于捕获和解析 HTTP、HTTPS 等请求。",
+        "who_should_care": "需要本机抓包、接口调试和代理配置的开发者。",
+        "use_cases": [
+          "解析 HTTPS 请求内容",
+          "配置系统代理与白名单",
+          "安装调试插件扩展能力"
+        ],
+        "alternatives": "无图形界面服务器或特殊设备需改用命令行版 Whistle。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "首次使用需安装根证书并设置系统代理；部分应用可能网络异常；Windows 用户版不支持伪协议调用。",
+        "evidence": [
+          "HTTP, HTTP2, HTTPS, Websocket debugging proxy client",
+          "本仓库为官方桌面客户端，支持系统：\n- macOS（Apple Silicon / Intel）\n- Windows\n- Linux（Fedora / Ubuntu）",
+          "启动后，请按以下步骤完成必要的初始设置（首次运行时必做）：\n1. 打开客户端顶部 `Whistle` 菜单项\n2. 点击 `Install Root CA`：安装系统根证书，用于解析 HTTPS 请求\n3. 开启 `Set as System Proxy`：设置系统代理，用于捕获系统的 Web 请求"
+        ]
+      }
+    },
+    "c0ny1/java-memshell-scanner": {
+      "category": "security",
+      "one_liner": "JSP 扫描 Java 内存马",
+      "intro": {
+        "one_liner": "Java 内存马扫描工具",
+        "what_it_is": "这是一个用 Java 编写的检测工具，通过 JSP 脚本扫描并查杀 Java Web 中的 Filter、Servlet、Listener 型内存马。",
+        "problem_solved": "帮助排查 Web 容器里隐藏的 Filter、Servlet、Listener 型内存马，并提供相对温和的查杀方式。",
+        "who_should_care": "Java Web 运维、安全应急人员和应用排查人员。",
+        "use_cases": [
+          "排查 Tomcat 内存马",
+          "扫描 Filter 与 Servlet",
+          "检测 Listener 型内存马"
+        ],
+        "alternatives": "相比 Java agent 方式更温和，且支持 Listener 型检测。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "需部署 JSP 脚本，使用场景偏应急排查；成熟度与维护状态未提供。",
+        "evidence": [
+          "通过jsp脚本扫描java web Filter/Servlet型内存马",
+          "通过jsp脚本扫描并查杀各类中间件内存马，比Java agent要温和一些。",
+          "增加Listener型内存马检测，如果不存在Listener则不显示该项"
+        ]
+      }
+    },
+    "wfrest/wfrest": {
+      "category": "dev-tools",
+      "one_liner": "C++ REST API Web 框架",
+      "intro": {
+        "one_liner": "C++ 异步 REST 框架",
+        "what_it_is": "基于 C++ Workflow 的异步微型 Web 框架，用 C++ 编写 HTTP 服务与 REST 接口。",
+        "problem_solved": "让 C++ 开发者更方便地构建异步网络服务，同时兼顾开发效率与性能需求。",
+        "who_should_care": "需要在 Linux 上用 C++ 开发 HTTP 或 REST 服务的开发者。",
+        "use_cases": [
+          "编写 REST 接口服务",
+          "处理表单、文件和 JSON",
+          "搭建静态文件服务"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周上日榜一天，破千星时为一千星。",
+        "risk_notes": "依赖 workflow v0.9.9 或更新版本；构建要求 Linux、Cmake 或 Xmake 及若干开发库。",
+        "evidence": [
+          "Fast🚀, efficient⌛️, and easiest💥 c++ async micro web framework based on [✨**C++ Workflow**✨](https://github.com/sogou/workflow).",
+          "* workflow, version v0.9.9 or newer\n* Linux , like ubuntu 16.04 or newer\n* Cmake or Xmake",
+          "svr.GET(\"/hello\", [](const HttpReq *req, HttpResp *resp)"
+        ]
+      }
+    },
+    "salahlalami/idurar-erp-crm": {
+      "category": "data-finance",
+      "one_liner": "开源 ERP CRM 与开票系统",
+      "intro": {
+        "one_liner": "开源 ERP 与客户关系管理系统",
+        "what_it_is": "IDURAR 是基于 Node.js、Express.js、MongoDB、React.js、Ant Design 和 Redux 的开源 ERP 与客户关系管理系统，包含发票、报价、付款、客户和会计等功能。",
+        "problem_solved": "它面向企业日常经营流程，提供自部署的客户、报价、发票、付款和会计管理能力，并说明可用于个人或商业用途。",
+        "who_should_care": "需要自部署进销存、开票与客户管理系统的中小团队和开发者。",
+        "use_cases": [
+          "管理客户与报价",
+          "开具并跟踪发票",
+          "记录付款与会计信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，且已有八千四百四十二星。",
+        "risk_notes": "采用 GNU Affero General Public License v3.0，商业部署需留意开源义务；安装依赖 MongoDB 账户和数据库集群。",
+        "evidence": [
+          "IDURAR is Open Source ERP / CRM (Invoice / Quote / Accounting ) Based on Advanced Mern Stack (Node.js / Express.js / MongoDb / React.js ) with Ant Design (AntD) and Redux",
+          "Yes You can use IDURAR for free for personal or Commercial use.",
+          "IDURAR is Free Open Source Released under the GNU Affero General Public License v3.0."
+        ]
+      }
+    },
+    "AgentWrapper/agent-orchestrator": {
+      "category": "ai-agent",
+      "one_liner": "并行编码智能体编排器",
+      "intro": {
+        "one_liner": "并行编码智能体编排器",
+        "what_it_is": "一个本地桌面工作区，用 TypeScript 编排多个编码智能体，为每个任务分配独立分支和工作树。",
+        "problem_solved": "解决多智能体并行开发时任务拆分、分支冲突、持续集成失败、评审意见和合并流程难以管理的问题。",
+        "who_should_care": "需要同时运行多个编码智能体并管理合并流程的开发者和团队。",
+        "use_cases": [
+          "并行拆分开发任务",
+          "自动跟进持续集成修复",
+          "集中查看评审与合并状态"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 91 星且本周上日榜一天。",
+        "risk_notes": "未关闭 Issue 有 860 个；不同智能体的工作、对话和评审支持存在差异。",
+        "evidence": [
+          "Agentic orchestrator for parallel coding agents — plans tasks, spawns agents, and autonomously handles CI    fixes, merge conflicts, and code reviews.",
+          "Orchestrator.inc is a local desktop workspace for that: every task gets its own agent, branch, and worktree, and your code stays on your machine.",
+          "Failed checks, review comments, and merge conflicts go back to the worker that owns the branch until the PR is approved."
+        ]
+      }
+    },
+    "genesislab-io/beatai": {
+      "category": "learning-resource",
+      "one_liner": "通俗 AI 入门教程",
+      "intro": {
+        "one_liner": "通俗 AI 入门教程",
+        "what_it_is": "面向学生和工程师的人工智能学习资料，覆盖神经网络、大模型、算法基础与工程实现，并整理智能体相关主题文章。",
+        "problem_solved": "降低人工智能学习门槛，帮助读者理解从下一 token 预测到 Transformer、大模型和智能体工程的基础原理。",
+        "who_should_care": "想系统入门人工智能的学生、开发者和工程师。",
+        "use_cases": [
+          "从零学习神经网络与大模型",
+          "理解 Transformer 核心机制",
+          "阅读智能体工程主题文章"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内有一天登上日榜，破千时已有四千六百七十九星。",
+        "risk_notes": "资料包含未来日期文章，内容时效与维护状态需自行核对；许可证信息未提供。",
+        "evidence": [
+          "不玩晦涩不搞少数派的 AI 入门圣经，从学生到工程师都能轻松掌握。",
+          "涵盖神经网络到大模型、顶层设计到微观原理、工程实现到算法基础。",
+          "最近 30 天发布 · 完整列表见 <https://beatai.org/ai-insights>"
+        ]
+      }
+    },
+    "builtbybel/FluentTweaker": {
+      "category": "desktop-system",
+      "one_liner": "系统界面风格调校工具",
+      "intro": {
+        "one_liner": "透明可逆的 Windows 调校工具",
+        "what_it_is": "一个用 C# 和 WinUI 3 构建的 Windows 调校工具，集中管理界面、任务栏、隐私、资源管理器、游戏与系统行为等设置。",
+        "problem_solved": "把分散在注册表、组策略和论坛经验里的手动调整，整理成可查看、分类且可撤销的选项，减少一键优化带来的不确定性。",
+        "who_should_care": "需要精细调整 Windows，又希望看清每项改动的高级用户。",
+        "use_cases": [
+          "查看并调整隐私设置",
+          "定制任务栏与界面行为",
+          "管理游戏和性能相关选项"
+        ],
+        "alternatives": "强调每项调整可检查、可分类、可撤销，避免一键批量修改和夸张性能承诺。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 3,076 星且曾上日榜。",
+        "risk_notes": "创建时间较新，成熟度未说明；未提供许可证、版本状态与发布信息。",
+        "evidence": [
+          "every tweak is inspectable, categorized and reversible. no giant \"optimize now\" buttons that secretly change 40 things at once and leave you guessing what broke afterwards.",
+          "UI, taskbar, privacy, AI features, Explorer behavior, gaming tweaks, performance settings, hidden policies, system behavior...all the stuff power users usually end up changing manually through obscure registry edits, group policies or random forum posts from 2012.",
+          "built with WinUI 3."
+        ]
+      }
+    },
+    "Apps2Samsung/Apps2Samsung": {
+      "category": "desktop-system",
+      "one_liner": "三星 Tizen 设备一键装应用",
+      "intro": {
+        "one_liner": "三星 Tizen 一键装应用",
+        "what_it_is": "这是一个跨平台工具，可向运行 Tizen 的三星电视、投影仪和智能显示器侧载应用，支持社区目录、Jellyfin、Moonlight 以及自备安装包。",
+        "problem_solved": "它把设备发现、证书、签名和安装流程整合起来，减少使用 Tizen Studio 或手动侧载时的配置与排错工作。",
+        "who_should_care": "拥有三星 Tizen 设备、想安装 Jellyfin 或社区应用的用户。",
+        "use_cases": [
+          "给三星电视安装 Jellyfin",
+          "从手机侧载社区应用",
+          "用命令行批量管理安装"
+        ],
+        "alternatives": "相比手动侧载和 Tizen Studio，它提供设备检测、证书处理、应用目录和安装管理的一体化流程。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 42 星，并曾进入日榜一天。",
+        "risk_notes": "存在稳定版和测试版并行；部分应用可获得电视 root，需要额外确认；iPhone 端依赖 SideStore 签名与刷新。",
+        "evidence": [
+          "One-click app installer for Samsung TVs, projectors and smart monitors (Tizen) — Jellyfin, Moonlight, and the whole community catalog.",
+          "It handles device detection, certificates, and installation so you don’t have to fight with Tizen Studio or manual sideloading.",
+          "Apps marked `(root)` in `catalog` gain root on the TV and only install with `--allow-root`."
+        ]
+      }
+    },
+    "Lynpoint/CyberVerse": {
+      "category": "ai-agent",
+      "one_liner": "自托管实时数字人智能体平台",
+      "intro": {
+        "one_liner": "自托管实时数字人智能体平台",
+        "what_it_is": "这是一个以语音交互为中心的实时数字人智能体框架，支持自托管，结合 WebRTC、角色记忆、工具、检索增强生成和可选数字人视频。",
+        "problem_solved": "它用于搭建能实时听说、可被随时打断、保留角色记忆并处理复杂任务的数字人，让对话更接近视频通话。",
+        "who_should_care": "想自建语音智能体、数字伴侣或数字人视频应用的开发者。",
+        "use_cases": [
+          "搭建语音优先的虚拟角色",
+          "制作可实时对话的数字人",
+          "为角色接入知识库和记忆"
+        ],
+        "alternatives": "差异在于整合实时数字人视频、多智能体任务、角色记忆和可替换模型组件。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千后一周新增 47 星，仅一天进入日榜。",
+        "risk_notes": "采用 GPL-3.0 许可证；本地数字人视频依赖较高硬件配置；依赖多项外部服务和密钥。",
+        "evidence": [
+          "Self hosted, real-time digital human agent platform. Build voice-first AI agents with WebRTC, persona memory, tools, RAG, and optional digital-human video.",
+          "CyberVerse is an open-source real-time digital-human Agent framework. It uses WebRTC, persona memory, tools, RAG, and optional digital-human video capabilities to help you build AI agents centered on voice interaction.",
+          "Brain, voice, hearing, tools, memory, and face are all replaceable modules."
+        ]
+      }
+    }
+  }
+}

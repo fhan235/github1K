@@ -1,1 +1,853 @@
-{"date":"2026-08-31","headline":"AI Agent 与开发工具同日升温","points":["AI Agent 有 6 个、AI 模型 5 个、开发工具 5 个，智能体与工程化工具仍是热点。","SegFault42/HeliosGen 以 597 领跑，主打自托管生成式 AI 平台。","arcboxlabs/arcbox 与 XiaoDuoYa/codex-with-chatgpt 聚焦隔离运行和规划执行协作。"],"items":{"SegFault42/HeliosGen":{"category":"ai-model","one_liner":"自托管生成式 AI 平台"},"MetaMask-AI/metamask-desktop":{"category":"data-finance","one_liner":"访问以太坊网站的桌面钱包"},"arcboxlabs/arcbox":{"category":"ai-agent","one_liner":"隔离微虚机运行 AI 智能体"},"XiaoDuoYa/codex-with-chatgpt":{"category":"ai-agent","one_liner":"ChatGPT 规划搭配 Codex 执行"},"daimon3332/OutlookRegister":{"category":"automation","one_liner":"Outlook 账号批量注册工具"},"N4darae/anti-mage":{"category":"dev-tools","one_liner":"多算法浏览器测试工具"},"gridex/gridex":{"category":"dev-tools","one_liner":"多数据库原生桌面 IDE"},"meta-llama/prompt-ops":{"category":"ai-model","one_liner":"大模型提示词优化工具"},"vercel-labs/vgpu":{"category":"web-frontend","one_liner":"跨运行时 WebGPU 图形库"},"swoole/typephp":{"category":"dev-tools","one_liner":"PHP 编译原生二进制工具"},"jhd3197/ServerKit":{"category":"dev-tools","one_liner":"轻量服务器管理控制面板"},"proxysoul/Empryo":{"category":"ai-agent","one_liner":"图谱驱动的 AI 编码智能体"},"SpaceZephyr/creator-buddy":{"category":"content-media","one_liner":"跨平台创作者趋势研究智能体"},"wilwaldon/Claude-Code-Frontend-Design-Toolkit":{"category":"learning-resource","one_liner":"Claude Code 前端美化资源集"},"xmanrui/dsh-im":{"category":"ai-agent","one_liner":"多平台机器人接入 DeepSeek"},"sallowayma-git/IELTS-practice":{"category":"learning-resource","one_liner":"雅思听说读写练习系统"},"tllovesxs/wandao":{"category":"automation","one_liner":"知识库 Markdown 导入导出工具"},"FrondEnt/PolymarketBTC15mAssistant":{"category":"data-finance","one_liner":"比特币短周期交易助手"},"hhyqhh/inno-agent":{"category":"ai-agent","one_liner":"带三层记忆的个人学习智能体"},"snflkd/fluent-korean":{"category":"ai-agent","one_liner":"Claude Code 韩语输出插件"},"liangdabiao/ecom-details-image":{"category":"content-media","one_liner":"电商视觉图一键生成技能"},"chen-006/gpt56_api_detector":{"category":"ai-model","one_liner":"检测接口是否路由真实模型"},"AgriciDaniel/banana-claude":{"category":"content-media","one_liner":"Claude Code 图像生成技能"},"kylezantos/design-motion-principles":{"category":"web-frontend","one_liner":"动效设计与审查技能"},"Formsmith746/SketchForge-3D":{"category":"web-frontend","one_liner":"本地优先浏览器 3D 编辑器"},"Anush008/fastembed-rs":{"category":"ai-model","one_liner":"本地向量嵌入与重排库"},"738/awesome-devbook":{"category":"learning-resource","one_liner":"韩国开发书籍清单"},"QwenAudio/Fun-Audio-Chat":{"category":"ai-model","one_liner":"低延迟语音交互音频大模型"},"syt2/zotero-scipdf":{"category":"learning-resource","one_liner":"Zotero 自动下载论文插件"},"FedericoBruzzone/tgt":{"category":"desktop-system","one_liner":"Rust 编写的 Telegram 终端界面"},"oprypin/nightly.link":{"category":"dev-tools","one_liner":"下载最新夜间构建产物"},"duguyihou/react-native-turbo-image":{"category":"mobile","one_liner":"React Native 快速图片加载库"},"zouyuxuan122/DSH-Desktop-EAC":{"category":"desktop-system","one_liner":"DeepSeek Harness 桌面启动器"},"ybdt/Exp-Hub":{"category":"security","one_liner":"漏洞复现与武器化资源库"},"RiDDiX/home-assistant-matter-hub":{"category":"hardware-iot","one_liner":"用 Matter 发布智能家居实例"}}}
+{
+  "date": "2026-08-31",
+  "headline": "AI Agent 与开发工具同日升温",
+  "points": [
+    "AI Agent 有 6 个、AI 模型 5 个、开发工具 5 个，智能体与工程化工具仍是热点。",
+    "SegFault42/HeliosGen 以 597 领跑，主打自托管生成式 AI 平台。",
+    "arcboxlabs/arcbox 与 XiaoDuoYa/codex-with-chatgpt 聚焦隔离运行和规划执行协作。"
+  ],
+  "items": {
+    "SegFault42/HeliosGen": {
+      "category": "ai-model",
+      "one_liner": "自托管生成式 AI 平台",
+      "intro": {
+        "one_liner": "本地自托管的可视化 AI 图像视频工作流工具",
+        "what_it_is": "HeliosGen 是一个基于 Tauri 2 的桌面应用，用无限节点画布把提示词、模型、参考图和自动化步骤串成可复用的 AI 图像与视频生成流水线，数据全部保存在本地。",
+        "problem_solved": "把多模型图像/视频生成从网页订阅制平台搬到本地，避免订阅费、积分过期和厂商锁定，用户自带 kie.ai API key 按量付费。",
+        "who_should_care": "需要批量或可复用 AI 图像/视频生成流程的创作者、设计师和小团队，以及重视数据本地化、不愿绑定订阅平台的用户。",
+        "use_cases": [
+          "在无限画布上搭建多模型串联的图像生成流水线",
+          "用参考图加自动化节点批量产出视频素材",
+          "本地保存生成历史与工作流，离线管理素材库"
+        ],
+        "alternatives": "与 Higgsfield、OpenArt、Freepik 等云端生成平台相比，主打本地运行、无账号、无订阅、自带 API key；README 未与其他开源节点式工具做对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：周增约 646 星、创建于 2026-04 且仅上榜 1 天，热度集中但项目仍处早期，Windows/Linux 构建尚缺、应用未签名。",
+        "risk_notes": "仓库未声明许可证（license 为 null），使用与再分发条款不明；macOS 构建未签名，Windows/Linux 构建需社区贡献；核心生成依赖第三方 kie.ai 服务与 API key，README 含推广返利链接；创建时间较新，长期维护情况待观察。",
+        "evidence": [
+          "HeliosGen is a free & open source visual AI workflow builder for image and video generation.",
+          "No cloud, no accounts — just a local app and your own kie.ai key.",
+          "The app is **not code-signed** yet"
+        ]
+      }
+    },
+    "MetaMask-AI/metamask-desktop": {
+      "category": "data-finance",
+      "one_liner": "访问以太坊网站的桌面钱包",
+      "intro": {
+        "one_liner": "跨平台桌面版 Web3 钱包与 dApp 浏览器",
+        "what_it_is": "MetaMask Desktop 是一个开源、跨平台的独立桌面钱包客户端，同时内置 Web3 dApp 浏览器，支持 EVM 链与 Solana。",
+        "problem_solved": "为不想依赖浏览器插件的用户提供隔离运行环境的桌面钱包，以降低插件注入、XSS 等浏览器扩展类风险。",
+        "who_should_care": "需要桌面端管理多链资产、频繁连接 dApp 的加密用户，以及关注钱包安全架构的开发者与安全研究者。",
+        "use_cases": [
+          "在桌面端管理 Ethereum、Polygon、BNB Chain 等链上的代币与 NFT",
+          "通过内置隔离浏览器连接 DeFi、NFT 等去中心化应用",
+          "导入助记词、切换多账户并配置自定义 RPC 网络"
+        ],
+        "alternatives": "README 自述其定位为浏览器扩展钱包的替代方案，强调隔离运行时与原生系统集成；未与其他具体同类项目做对比。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点：项目创建于 2026-08-28，约一个月内获得 1200+ stars，但周增仅 11，热度已明显回落。",
+        "risk_notes": "仓库名 MetaMask-AI 与官方 MetaMask 无关联证据，存在名称混淆风险；README 中下载链接为相对路径且指向 v1.6.0，需自行核实发布物真实性；语言标注为 CSS 与项目定位不符；创建时间与推送时间较近，维护历史尚短。",
+        "evidence": [
+          "MetaMask Desktop is an open-source, cross-platform standalone wallet client and Web3 dApp browser.",
+          "Built-in isolated dApp browser environment that mitigates common browser-extension vulnerabilities like cross-site scripting (XSS) and malicious extension injection.",
+          "This project is licensed under the MIT License"
+        ]
+      }
+    },
+    "arcboxlabs/arcbox": {
+      "category": "ai-agent",
+      "one_liner": "隔离微虚机运行 AI 智能体",
+      "intro": {
+        "one_liner": "本地容器与虚拟机运行时",
+        "what_it_is": "ArcBox 是用 Rust 编写的 macOS 本地运行时，提供 Docker 兼容容器、Kubernetes、Linux 与 macOS 虚拟机，以及面向智能体的隔离沙箱。",
+        "problem_solved": "它把容器、虚拟机和不可信代码隔离统一到本地守护进程与命令行中，减少对云端控制面板和闭源桌面运行时的依赖。",
+        "who_should_care": "在 Mac 上开发容器、测试智能体或运行隔离环境的开发者。",
+        "use_cases": [
+          "本地替代 Docker 桌面工作流",
+          "为智能体运行一次性隔离沙箱",
+          "启动本地 Kubernetes 集群",
+          "运行 Linux 或 macOS 虚拟机"
+        ],
+        "alternatives": "相比 Docker Desktop 和 OrbStack，强调开源、Rust 自研运行时，并统一容器、虚拟机与沙箱。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，曾破千星并上过日榜，但一周减少 370 星。",
+        "risk_notes": "处于公开测试阶段；沙箱要求 M3 或更新芯片、macOS 15 以上及默认虚拟化后端；星数一周回落明显。",
+        "evidence": [
+          "ArcBox is in public beta.",
+          "Sandboxes need nested virtualization: Apple Silicon **M3 or newer** with **macOS 15+**, on the default VZ backend.",
+          "Run AI agents on real and isolated machines — own kernel, filesystem, and network — with <100ms boot. Local first, OCI compatible, pure Rust."
+        ]
+      }
+    },
+    "XiaoDuoYa/codex-with-chatgpt": {
+      "category": "ai-agent",
+      "one_liner": "ChatGPT 规划搭配 Codex 执行",
+      "intro": {
+        "one_liner": "让 ChatGPT 网页版负责规划、Codex 负责执行",
+        "what_it_is": "一个 TypeScript 工具，通过只读 MCP 桥接把 ChatGPT 网页版接入 Codex 编码会话，让 ChatGPT 承担规划与审查，Codex 保留执行权。",
+        "problem_solved": "解决 ChatGPT Plus/Pro 网页版额度闲置、而 Codex 却在消耗紧张的 API 额度做规划和 Review 的问题。",
+        "who_should_care": "已订阅 ChatGPT Plus/Pro、同时使用 Codex 编码的开发者，以及希望降低 API 消耗的 AI 编码用户。",
+        "use_cases": [
+          "让 ChatGPT 网页版为 Codex 会话做方案规划与代码审查",
+          "在本地工作区中由 ChatGPT 按需只读读取代码片段，避免仓库整体上传",
+          "非技术用户通过一段提示词让 Codex 自动完成安装配置"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 ChatGPT 与 Codex 生态的组合玩法，周增约 1088 stars，但项目创建时间短、机制依赖外部网页与隧道。",
+        "risk_notes": "依赖 Cloudflare Quick Tunnel 临时地址，重启后地址变化需修复连接器；依赖 ChatGPT 网页版与 Codex 的界面行为，可能随上游变动失效；项目创建时间很短，长期维护情况未知。",
+        "evidence": [
+          "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
+          "本项目把\"思考\"交给你已付费的网页版 ChatGPT，Codex 只负责执行。不用 API Key、不搞逆向代理——官方网页 + 只读 MCP 桥接。",
+          "The default public address is a temporary Cloudflare URL. It changes when the bridge restarts"
+        ]
+      }
+    },
+    "daimon3332/OutlookRegister": {
+      "category": "automation",
+      "one_liner": "Outlook 账号批量注册工具",
+      "intro": {
+        "one_liner": "邮箱批量注册工具",
+        "what_it_is": "这是一个用 Python 编写的 Outlook、Hotmail 账号批量注册工具，通过浏览器自动化完成注册，并获取 OAuth2 刷新令牌。",
+        "problem_solved": "它把账号生成、表单填写、验证码处理、可选恢复邮箱绑定和令牌收集串成批量流程，减少重复手工操作。",
+        "who_should_care": "需要批量处理微软邮箱注册与授权凭据的自动化开发者。",
+        "use_cases": [
+          "批量注册 Outlook 邮箱",
+          "批量获取 OAuth2 刷新令牌",
+          "配合代理池并发执行任务"
+        ],
+        "alternatives": "相比上游项目，强调注册与 OAuth2 加固、恢复邮箱绑定、分批统计和中断摘要。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周涨了 23 星，仅上过一天日榜。",
+        "risk_notes": "涉及账号批量注册、验证码与代理配置，使用合规风险高；需自行准备代理，且配置文件含敏感信息。",
+        "evidence": [
+          "Outlook/Hotmail account batch registration tool.                          Outlook / Hotmail 账号批量注册工具，支持自动获取 OAuth2 refresh_token",
+          "Automated Outlook / Hotmail registration and Microsoft Graph OAuth2 refresh_token collection (browser automation via patchright).",
+          "Concurrent multi-proxy registration"
+        ]
+      }
+    },
+    "N4darae/anti-mage": {
+      "category": "dev-tools",
+      "one_liner": "多算法浏览器测试工具",
+      "intro": {
+        "one_liner": "检测反检测浏览器一致性的 Go 评分器",
+        "what_it_is": "一个用 Go 编写的非营利项目，通过 23 项独立读数（由浏览器端 34 项测量支撑）评估浏览器环境内部是否自洽，并返回一个 0-90 的分数、一个判定和一句话说明。",
+        "problem_solved": "针对反检测（anti-detect）浏览器伪装环境的问题，不依赖特征库或已知工具数据库，而是通过让浏览器自身的各个表面互相矛盾来识别环境被篡改。",
+        "who_should_care": "做浏览器指纹、反欺诈风控、爬虫对抗或隐私工具评估的开发者与安全研究人员。",
+        "use_cases": [
+          "评估 AdsPower、Camoufox 等反检测浏览器的环境一致性",
+          "作为风控系统判断客户端环境是否被篡改的参考信号",
+          "研究浏览器指纹表面之间的一致性校验方法"
+        ],
+        "alternatives": "README 明确说明不使用签名列表或已知工具数据库，也不需要持续更新，与基于特征匹配的检测方案思路不同；具体同类项目未提及。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：项目创建于 2026-08-22，一周内新增 214 star，且 README 自述会被逆向、定位为“起跑枪”，尚处早期。",
+        "risk_notes": "README 自述分数上限为 90，永远不会断言环境一定被修改；22 条参考数据中有 7 条尚未标记为已验证，相关读数会弃权；作者明言会被逆向工程。",
+        "evidence": [
+          "A non-profit Go project that scores how coherent a browser environment is",
+          "There is no signature list, no known-tool database, and nothing to keep updated.",
+          "The score tops out at 90. Nothing here will ever tell you an environment is certainly modified."
+        ]
+      }
+    },
+    "gridex/gridex": {
+      "category": "dev-tools",
+      "one_liner": "多数据库原生桌面 IDE",
+      "intro": {
+        "one_liner": "原生跨平台多数据库 IDE",
+        "what_it_is": "Gridex 是一个用 Swift 和 AppKit 构建的原生数据库 IDE，支持 macOS、Windows 和 Linux，可在单一应用中连接 PostgreSQL、MySQL、SQLite、Redis、MongoDB、SQL Server 和 ClickHouse。",
+        "problem_solved": "它把多引擎数据库管理、查询编辑、ER 图、备份恢复和 AI 辅助集中到一个原生应用里，避免用户为不同数据库切换多个工具，也避免使用基于 Electron 的笨重客户端。",
+        "who_should_care": "需要同时管理多种数据库的开发者、DBA，以及希望让 AI 客户端（如 Claude Desktop、Cursor）安全访问数据库的团队。",
+        "use_cases": [
+          "在一个应用中跨 PostgreSQL、MySQL、Redis 等引擎执行查询与浏览表结构",
+          "通过内置 MCP server 让 AI 代理在权限分级与审计下读取或写入数据库",
+          "生成 ER 图、执行备份恢复、从 TablePlus、Navicat、DataGrip、DBeaver 导入连接"
+        ],
+        "alternatives": "README 强调其原生实现（AppKit、WinUI 3、Qt 6，不使用 Electron 或 WebView 渲染表格）、内置 MCP server 与 AI chat，以及凭据本地存储；未直接点名具体竞品对比。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：AI-native 与 MCP 集成是当前关注点，但项目创建时间短、版本号仍为 0.0.11，尚处早期。",
+        "risk_notes": "版本号 0.0.11，属早期软件；README 中 MCP 的 DDL 与 Advanced 工具标注为 future，功能未完成；项目创建于 2026-04-16，维护历史较短。",
+        "evidence": [
+          "A native macOS / windows / Linux database IDE built with Swift and AppKit.",
+          "One app for PostgreSQL, MySQL, SQLite, Redis, MongoDB, SQL Server, and ClickHouse — with a built-in MCP server and AI chat.",
+          "Native. AppKit on macOS, WinUI 3 on Windows, Qt 6 on Linux. No Electron, no web views for the grid."
+        ]
+      }
+    },
+    "meta-llama/prompt-ops": {
+      "category": "ai-model",
+      "one_liner": "大模型提示词优化工具",
+      "intro": {
+        "one_liner": "提示词优化工具",
+        "what_it_is": "这是一个用 Python 编写的开源工具，可自动优化面向 Llama 模型的提示词，并用自有样例和指标评估结果。",
+        "problem_solved": "它减少手工反复调提示词的成本，把适用于其他模型的提示词迁移为更适合目标模型的版本。",
+        "who_should_care": "使用 Llama 模型、需要稳定提示词效果的应用开发者。",
+        "use_cases": [
+          "迁移已有系统提示词",
+          "用样例优化业务提示词",
+          "评估提示词改动效果"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且仅一天登上日榜。",
+        "risk_notes": "安装说明提到包名过渡，建议从源码安装；需要准备系统提示词、问答数据和配置文件。",
+        "evidence": [
+          "An open-source tool for LLM prompt optimization.",
+          "prompt-ops is a Python package that **automatically optimizes prompts** for Llama models.",
+          "We recommend installing from source as we are currently transitioning package names on PyPI."
+        ]
+      }
+    },
+    "vercel-labs/vgpu": {
+      "category": "web-frontend",
+      "one_liner": "跨运行时 WebGPU 图形库",
+      "intro": {
+        "one_liner": "跨运行时模块化 WebGPU 库",
+        "what_it_is": "vgpu 是一个 TypeScript 编写的 WebGPU 库，提供带类型的 WGSL shader 导入、精简的 GPU 优先 API，并让同一份代码在浏览器、无头 Node 和测试环境中运行。",
+        "problem_solved": "解决 WebGPU 使用中 shader 绑定声明需要手写、浏览器与 Node 环境代码不统一、测试依赖真实 GPU 等问题，通过类型化 WGSL 模块与统一 Gpu 上下文降低开发与测试成本。",
+        "who_should_care": "需要编写 WebGPU shader、做 GPU 渲染或 GPU 计算，并希望同一套代码覆盖浏览器、Node 与 CI 测试的前端与图形开发者。",
+        "use_cases": [
+          "浏览器端全屏 shader 特效与 3D 场景渲染",
+          "在无头 Node 环境中用 Dawn 后端做 GPU 渲染或计算",
+          "在 CI 中用确定性 mock 适配器运行 GPU 相关测试",
+          "为编码 agent 提供可检索的示例与文档资源"
+        ],
+        "alternatives": "README 未与其他同类项目做直接对比，无法判断差异；可确认的自身特点是类型化 WGSL 导入、单一 Gpu 上下文、25KB gzip 体积预算以及多运行时适配。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：WebGPU 生态仍在扩张，项目提供跨浏览器、Node 与测试的统一抽象，并面向 agent 工具链做了配套，但仓库较新、issue 数量尚多。",
+        "risk_notes": "项目创建时间较短（2026-05），open issues 44 个，成熟度与长期维护情况尚待观察；README 中大量外部链接与 CLI 命令仅作资料记录，未经验证。",
+        "evidence": [
+          "Modular cross-runtime WebGPU library for shaders, 3D scenes, GPU tensors, neural networks, and math viz",
+          "One public API surface across the browser, headless Node (`vgpu/node`, Dawn-backed), and a deterministic mock (`vgpu/mock`) built for tests and CI.",
+          "a complete fullscreen effect ships in 25 KB gzipped — a budget enforced in CI"
+        ]
+      }
+    },
+    "swoole/typephp": {
+      "category": "dev-tools",
+      "one_liner": "PHP 编译原生二进制工具",
+      "intro": {
+        "one_liner": "将 PHP 编译为原生二进制文件的 AOT 编译器",
+        "what_it_is": "TypePHP 是一个用 PHP 编写的 PHP 提前编译（AOT）编译器，它先把 PHP 源码降级为 C++17，再编译成原生机器码，可产出可执行文件、PHP 扩展或共享库。",
+        "problem_solved": "它试图解决 PHP 依赖解释器、启动预热和动态类型带来的性能与源码保护问题：编译产物是原生二进制，不经过 opcode 解释，源码被编译掉。",
+        "who_should_care": "需要分发闭源 PHP 程序、追求数值与容器密集路径性能，或希望在 Android、iOS、WASI 上复用 PHP 语法的开发者。",
+        "use_cases": [
+          "把 PHP 业务代码编译成单文件原生可执行程序分发",
+          "把性能敏感模块编译成 PHP 扩展供现有 Zend 项目调用",
+          "用 PHP 语法开发移动端或 WASI 组件的业务逻辑层"
+        ],
+        "alternatives": "README 中与 OPcache、PHP 8+ JIT 做了对比：TypePHP 产出原生可执行文件、无预热、全程序类型优化；但项目明确只支持一个可测试的 PHP 子集，不承诺与任意动态 PHP 程序直接兼容。",
+        "maturity": "可试用",
+        "hype_or_trend": "长期趋势：AOT 编译与原生分发是 PHP 生态长期存在的诉求，但项目自述仍在活跃开发中，且只覆盖 PHP 子集。",
+        "risk_notes": "许可证为 GPL-3.0，闭源商业分发需评估传染性；README 明确不支持全部 PHP 特性，迁移存量项目前需查阅不兼容特性列表；构建依赖 PHP 8.4–8.5、C++17、CMake 3.24+ 及 GMP/MPFR，部署包仍需携带 PHPX/libphp。",
+        "evidence": [
+          "TypePHP is an Ahead-Of-Time (AOT) compiler that translates PHP source code into C++ and then into native machine code.",
+          "TypePHP is under active development. It intentionally supports a defined, testable subset of PHP rather than claiming drop-in compatibility with every dynamic PHP program.",
+          "TypePHP is **written entirely in PHP** and is **fully self-hosting**"
+        ]
+      }
+    },
+    "jhd3197/ServerKit": {
+      "category": "dev-tools",
+      "one_liner": "轻量服务器管理控制面板",
+      "intro": {
+        "one_liner": "轻量级服务器控制面板",
+        "what_it_is": "ServerKit 是一个轻量、现代的服务器控制面板，后端使用 Python/Flask，前端使用 React，用于管理 Web 应用、数据库、Docker 容器与安全配置。",
+        "problem_solved": "它试图让用户不必承担 Kubernetes 的复杂度，也不必支付托管平台的费用，就能在一台 VPS 或独立服务器上部署、管理和监控服务。",
+        "who_should_care": "拥有 VPS 或独立服务器、希望用图形面板替代手工运维的个人开发者、小型团队和自建服务爱好者。",
+        "use_cases": [
+          "在 VPS 上通过模板或 Git 仓库一键部署 Web 应用",
+          "集中管理 Docker 容器、数据库与站点健康状态",
+          "查看服务器监控指标、配置告警与安全基线检查"
+        ],
+        "alternatives": "README 提到对标 CyberPanel 类托管控制面板，并强调相比 Kubernetes 更简单、相比托管平台零许可成本；具体功能差异未展开。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，理由：项目创建时间很短但周增约 126 星，热度上升快，长期稳定性尚待观察。",
+        "risk_notes": "项目创建于 2026-01，历史很短；README 中的测试用例数与路由数等指标为作者自述快照，未说明全部通过；一键安装脚本从外部域名拉取，需自行审查。",
+        "evidence": [
+          "ServerKit is a lightweight, modern server control panel for managing web applications, databases, and services on your VPS or dedicated server.",
+          "without the complexity of Kubernetes or the cost of managed platforms",
+          "5,089 backend test cases collected | clean-checkout collection; this is not a claim that every case passed or ran"
+        ]
+      }
+    },
+    "proxysoul/Empryo": {
+      "category": "ai-agent",
+      "one_liner": "图谱驱动的 AI 编码智能体",
+      "intro": {
+        "one_liner": "图谱驱动的代码智能体",
+        "what_it_is": "Empryo 是面向代码编辑的智能体，公开仓库包含 SoulForge v2 核心与引擎代码，主打按符号修改、代码地图和项目记忆。",
+        "problem_solved": "它试图让代码修改先理解影响范围，再按函数或类精确替换，并在同一轮里完成类型检查、静态检查和测试修复。",
+        "who_should_care": "关注智能编码代理、命令行工具与代码理解的开发者。",
+        "use_cases": [
+          "按符号重构函数或类",
+          "修改前查看影响范围",
+          "桌面、终端或无界面运行"
+        ],
+        "alternatives": "强调按符号编辑、完整语言服务与实时代码图谱，而非字符串替换。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 84 星，并有一天进入日榜。",
+        "risk_notes": "公开仓库不是 Empryo v3 完整源码；商业销售、托管、封装或捆绑需另行书面许可；创建日期晚于最近提交日期，时间信息存疑。",
+        "evidence": [
+          "Empryo is the graph-powered AI coding agent that edits symbols, not strings: AST surgery, full LSP, a live code genome.",
+          "It reads the map first. It knows what an edit will touch before it makes it.",
+          "This repository contains the public SoulForge v2 core and engine code under its existing license. It is not the full source of Empryo v3; the current desktop app, new surfaces and newest features are developed privately."
+        ]
+      }
+    },
+    "SpaceZephyr/creator-buddy": {
+      "category": "content-media",
+      "one_liner": "跨平台创作者趋势研究智能体",
+      "intro": {
+        "one_liner": "跨平台内容创作技能箱",
+        "what_it_is": "一套面向内容创作者的 Agent Skills 工具箱，覆盖公众号、小红书和视频的选题情报、写作、配图、剪辑与复盘流程。",
+        "problem_solved": "把跨平台热点、爆款和评论等公开内容研究，接到标题、正文、封面、字幕、视频等成品产出，减少凭感觉创作。",
+        "who_should_care": "公众号作者、小红书运营、视频创作者和自媒体增长团队。",
+        "use_cases": [
+          "搜索平台热点与爆款内容",
+          "生成标题、正文和排版",
+          "制作视频脚本、字幕与封面"
+        ],
+        "alternatives": "强调先取回公开内容和数据，再串联多平台创作流程，并明确不做账号自动化。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 120 星，曾有一天进入日榜。",
+        "risk_notes": "数据并非实时后台数据；生成式配图和视频需人工检查；部分平台访问依赖本机工具、令牌或扩展入口。",
+        "evidence": [
+          "Creator Buddy 是一套给内容创作者、运营和自媒体作者用的**全栈创作 Skill 工具箱**。",
+          "不是让 AI 凭感觉给你编选题，也不是给你一个「一键起号」按钮。",
+          "不是实时后台数据：平台数据来自公开页面、第三方数据源或入库快照。"
+        ]
+      }
+    },
+    "wilwaldon/Claude-Code-Frontend-Design-Toolkit": {
+      "category": "learning-resource",
+      "one_liner": "Claude Code 前端美化资源集",
+      "intro": {
+        "one_liner": "前端设计工具清单",
+        "what_it_is": "整理让 Claude Code 生成更好看前端页面的技能、插件、服务器和配置技巧，并按目标场景分类。",
+        "problem_solved": "缓解生成页面风格雷同、主题不统一、缺少设计约束和上下文的问题，提供可安装或参考的工具清单。",
+        "who_should_care": "用 Claude Code 做前端、需要改善界面观感的开发者。",
+        "use_cases": [
+          "为生成页面挑选设计风格",
+          "统一全站主题与设计变量",
+          "补齐动效、测试与文档上下文"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，破千星且一周上过一次日榜。",
+        "risk_notes": "内容以第三方工具清单为主，效果与维护状态需自行核验；创建时间较新。",
+        "evidence": [
+          "Everything I've found that actually makes Claude Code output better-looking frontends. Skills, plugins, MCP servers, CLAUDE.md tricks",
+          "`April 2026` · `70+ tools` · `10 sections`",
+          "破千时的 Star 数：1034"
+        ]
+      }
+    },
+    "xmanrui/dsh-im": {
+      "category": "ai-agent",
+      "one_liner": "多平台机器人接入 DeepSeek",
+      "intro": {
+        "one_liner": "把 9 个 IM 渠道接入 DeepSeek Harness 的插件",
+        "what_it_is": "这是一个 DeepSeek Harness 插件，通过扫码、App Manifest 或机器人凭据，把飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord、WhatsApp 等 IM 机器人接入本机 Harness，并统一管理各渠道的机器人。",
+        "problem_solved": "解决在多个 IM 平台上分别搭建和配置 AI 机器人、并分别维护连接与权限的问题；它提供单一插件和单一设置入口，统一管理多渠道、多机器人的接入。",
+        "who_should_care": "使用 DeepSeek Harness 并希望在飞书、微信、钉钉等现有 IM 中直接调用模型的开发者与团队；需要多机器人、多工作区隔离的运维者。",
+        "use_cases": [
+          "在飞书或钉钉群中 @ 机器人，让 Harness 流式回答并展示工具执行过程",
+          "在 Telegram、Discord、Slack 私聊中与模型对话，并回传生成的结果文件或图片",
+          "自动保存群聊记录与群文件，按需让机器人总结讨论或读取文件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：依托 DeepSeek Harness 生态与多 IM 渠道扫码接入的便利性，一周内新增约 98 星；但项目创建于 2026-08-14，仍属早期。",
+        "risk_notes": "项目较新，创建于 2026-08-14，open issues 达 88 个；Matrix 渠道标注为实验功能，加密能力明确说明未验证真实 homeserver 互通，不可视为完整端到端保密；部分渠道（Discord、Slack 群记录）尚待真实群验收；README 含赞助商推广内容。",
+        "evidence": [
+          "通过扫码、App Manifest 或已有机器人凭据把 IM 机器人接入 DeepSeek Harness，并让本机 Harness 主动连接公网 AI Office。",
+          "每个 IM 渠道都支持接入多个机器人，各机器人的连接状态、工作区、模型和会话绑定彼此独立",
+          "Matrix 加密目前仅供非敏感测试……请勿将其视为完整的端到端保密保障。"
+        ]
+      }
+    },
+    "sallowayma-git/IELTS-practice": {
+      "category": "learning-resource",
+      "one_liner": "雅思听说读写练习系统",
+      "intro": {
+        "one_liner": "雅思练习系统",
+        "what_it_is": "这是一个以 JavaScript 为主的雅思阅读与听力练习系统，支持题库浏览、套题练习、成绩记录、错题分析、数据备份与本地题库导入。",
+        "problem_solved": "它把题库练习、成绩统计、错题复盘和本地数据管理集中起来，方便个人备考时持续记录与复习。",
+        "who_should_care": "适合自行备考雅思、愿意本地运行或自托管的开发者与考生。",
+        "use_cases": [
+          "浏览并练习阅读题库",
+          "串联套题并汇总成绩",
+          "备份记录与分析错题"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但创建时间较新。",
+        "risk_notes": "题库、音频、文档等第三方内容有版权风险；使用说明限制公开分发、镜像和商业化；听力资源需自行准备。",
+        "evidence": [
+          "雅思阅读与听力练习系统，支持题库浏览、套题练习、成绩记录、错题分析、数据备份与本地题库导入。",
+          "Do not publicly redistribute websites, mirror sites, or archives that contain question sources, audio, PDFs, explanations, modified pages, or packaged builds.",
+          "For copyright compliance, the public repository and standard release packages do not include listening audio, question sources, PDFs, the full `ListeningPractice/` directory, or pre-generated listening indexes."
+        ]
+      }
+    },
+    "tllovesxs/wandao": {
+      "category": "automation",
+      "one_liner": "知识库 Markdown 导入导出工具",
+      "intro": {
+        "one_liner": "多平台知识库 Markdown 导入导出工具",
+        "what_it_is": "万能导 Wandao 是一个桌面端工具，可将飞书、语雀、印象笔记、有道云、知识星球、ima、OneNote 等平台的知识库导出为本地 Markdown，也能把本地 Markdown 批量导入部分平台，并尽量保留目录结构、图片与附件。",
+        "problem_solved": "解决多平台知识库之间迁移、备份和整理时只能手动复制粘贴、目录与图片易丢失的问题，用自动化任务代替重复劳动。",
+        "who_should_care": "需要做知识库备份或跨平台迁移的个人用户、团队知识管理者，以及希望把教学文档与源码整理给 AI 阅读的学习者。",
+        "use_cases": [
+          "把语雀、飞书 Wiki、印象笔记等知识库整体导出为本地 Markdown 备份",
+          "将本地 Markdown 批量导入飞书 Wiki、语雀或 ima 知识库并恢复目录层级",
+          "把课程资料与源码导出到同一目录，配合提示词交给 AI 辅助学习"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：多平台知识库迁移与 AI 辅助学习需求集中，但项目创建时间较新、仍在快速迭代。",
+        "risk_notes": "采用 AGPL-3.0 许可证，商用或二次分发需注意开源义务；macOS 正式 Release 未做 Developer ID 签名与 Apple 公证，首次打开可能被 Gatekeeper 拦截；导出依赖各平台网页自动化，平台改版可能导致功能失效；README 含赞助推广与兑换码信息。",
+        "evidence": [
+          "万能导是一个多平台知识库 Markdown 导入导出工具，目前支持飞书、语雀、阿里云 Thoughts、印象笔记、有道云笔记、为知笔记、OneNote、知识星球、ima 知识库、钉钉文档、WPS 文档、息流、Obsidian、Notion、知乎、CSDN、微信公众号和本地 Markdown 等内容来源与目标平台。",
+          "万能导不会破解登录或绕过平台权限。请只处理你有权访问的内容，并遵守对应平台的服务条款和版权要求。",
+          "当前正式 Release 未做 Developer ID 签名和 Apple 公证。"
+        ]
+      }
+    },
+    "FrondEnt/PolymarketBTC15mAssistant": {
+      "category": "data-finance",
+      "one_liner": "比特币短周期交易助手",
+      "intro": {
+        "one_liner": "BTC 短线交易助手",
+        "what_it_is": "这是一个面向 Polymarket 的 BTC 15 分钟交易助手，使用 JavaScript 编写。",
+        "problem_solved": "作者描述其用于实时辅助 BTC 15 分钟交易，但缺少更多资料说明具体解决的问题。",
+        "who_should_care": "关注 Polymarket 与 BTC 短周期交易的开发者或交易者。",
+        "use_cases": [
+          "辅助 BTC 15 分钟交易判断",
+          "查看实时交易辅助信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周内破千星且曾上日榜，但资料不足。",
+        "risk_notes": "缺少 README，功能、许可证、稳定性与生产可用性均无法确认；创建日期较新，星标与分叉数差异需谨慎看待。",
+        "evidence": [
+          "Real-time Polymarket BTC 15m trading assistant for every trader! created by @krajekis",
+          "破千时的 Star 数：1013",
+          "本周上日榜天数：1"
+        ]
+      }
+    },
+    "hhyqhh/inno-agent": {
+      "category": "ai-agent",
+      "one_liner": "带三层记忆的个人学习智能体",
+      "intro": {
+        "one_liner": "个人学习智能体",
+        "what_it_is": "一个开源个人学习智能体，提供三层记忆、主动调度、个人消息渠道和工作区练习实验室，基于 Pi SDK 构建。",
+        "problem_solved": "把长期学习支持组织成可追踪的记忆与学习闭环，提供个性化讲解、复习提醒、练习反馈和知识归档。",
+        "who_should_care": "想长期管理个人学习、知识和练习记录的开发者。",
+        "use_cases": [
+          "维护个人学习画像",
+          "构建可检索知识库",
+          "定时提醒与练习复盘"
+        ],
+        "alternatives": "强调分层记忆、可编辑学习者模型和上游兼容，而非通用软件工程智能体。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 82 星且曾上日榜。",
+        "risk_notes": "明确不支持多用户并发、横向扩展和团队部署；桌面安装包未签名；未关闭问题 9 个。",
+        "evidence": [
+          "An open-source personal learning agent with three-layer memory (learner profile / wiki knowledge base / cross-conversation recall), a proactive scheduler, personal IM channels, and a workspace-scoped Practice Lab — built on the Pi SDK.",
+          "No multi-user concurrency, no horizontal scaling.",
+          "unsigned; right-click → Open on first launch."
+        ]
+      }
+    },
+    "snflkd/fluent-korean": {
+      "category": "ai-agent",
+      "one_liner": "Claude Code 韩语输出插件",
+      "intro": {
+        "one_liner": "让 Claude Code 说清晰韩语的输出风格插件",
+        "what_it_is": "这是一个 Claude Code 的 output-style 插件，通过系统提示词约束 LLM 输出清晰、语义明确的韩语，并提供两个变体：保留编码指令的版本和移除编码指令的版本。",
+        "problem_solved": "针对 LLM 在韩语输出中出现的助词与语尾脱落、名词堆叠、比喻式替换词汇等机器韩语问题，减少语义误解，并避免低质量韩语在推理过程和多智能体链路中逐级累积。",
+        "who_should_care": "以韩语下达指令、或需要韩语产出物的 Claude Code 用户，以及使用 Claude 网页版、桌面版并希望改善韩语表达的非开发者。",
+        "use_cases": [
+          "在 Claude Code 中用韩语提问，并希望得到自然、无歧义的韩语报告",
+          "把 md 指令文本粘贴进 Claude 网页或桌面版的个人或项目指令中",
+          "在 settings.json 中把 outputStyle 设为默认值，让每次会话自动生效",
+          "按需追加礼貌称呼、初学者友好、禁用生僻词等可选指令块"
+        ],
+        "alternatives": "README 明确区分：本工具是系统提示词层面的 output-style，目标是语义不丢失的清晰韩语；翻译腔校正、去 AI 味、拼写纠错类需求可参考 im-not-ai、korean-skills、k-skill 的 korean-humanizer。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：它依附于 Claude Code 插件生态，属于提示词层面的轻量配置，技术门槛低、易被复制。",
+        "risk_notes": "README 自述效果可能不如预期，任务越长、指令越多越容易失效；会额外消耗 token 和上下文；插件安装后更新可能覆盖用户修改；文件名与配置大小写易出错；子代理是否遵守指令需自行观察。",
+        "evidence": [
+          "A Claude Code output style that stops Claude from writing broken machine-Korean: dropped particles and endings, telegraphic noun strings, and metaphor-swapped vocabulary.",
+          "이 도구는 기본적으로 output-style이므로, 시스템 프롬프트에 추가되어 한국어를 올바르게 사용하도록 사전에 규율합니다.",
+          "생각보다 원하는 만큼 동작하지 않을 수 있습니다. 주어진 지시가 다양할수록, 작업이 길게 진행되었을수록, Priming을 유발하는 텍스트가 많을수록 그런 경향이 강해집니다."
+        ]
+      }
+    },
+    "liangdabiao/ecom-details-image": {
+      "category": "content-media",
+      "one_liner": "电商视觉图一键生成技能",
+      "intro": {
+        "one_liner": "电商视觉生成技能",
+        "what_it_is": "这是一个面向代码智能体环境的电商视觉创作技能，提供案例、提示词和脚本，可生成简报或直接出图。",
+        "problem_solved": "它把商品图、详情页、广告图等需求整理成可执行提示词，并用风格锁定保持整套素材一致。",
+        "who_should_care": "电商运营、视觉设计、跨境卖家和用智能体批量做图的人。",
+        "use_cases": [
+          "生成商品主图与详情页图片",
+          "制作广告图、社媒图和横幅",
+          "规划整套商品视觉方案"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 1,093 星且曾上日榜。",
+        "risk_notes": "直接出图依赖外部命令行工具和账户积分；生成结果受所选模型影响；营销效果承诺需有证据支持。",
+        "evidence": [
+          "一个面向 claude code / Codex / workbuddy 的跨境电商和国内电商通用视觉创作 Skill。",
+          "它可以做两件事：- 生成可执行的视觉简报和 AI 生图 Prompt。- 直接生成图片：Codex 环境使用 agent 内置 `imagegen` 工具；其他环境（claude code / workbuddy 等）通过 `apiz` CLI 生图。",
+          "如果没有真实证据，Skill 只允许使用占位式证明表达，不编造认证、实验数据、评分、销量或真实评价。"
+        ]
+      }
+    },
+    "chen-006/gpt56_api_detector": {
+      "category": "ai-model",
+      "one_liner": "检测接口是否路由真实模型",
+      "intro": {
+        "one_liner": "检测 API 是否路由到真实 GPT 模型的指纹工具",
+        "what_it_is": "一个 Python 编写的本地 Web 工具，通过一组短问题的回答分布比对模型行为，输出指纹证据以判断 API 背后实际调用的模型。",
+        "problem_solved": "帮助用户识别第三方 API 中转或代理是否真的提供了其宣称的模型，避免被降级或替换。",
+        "who_should_care": "使用第三方 API 中转、账号池或聚合平台的开发者与团队，以及需要核验模型真实性的采购方。",
+        "use_cases": [
+          "核验中转站宣称的 GPT/Claude 模型是否真实",
+          "对比不同 API 供应商的模型一致性",
+          "在接入新 API 前做模型指纹抽检"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，围绕模型真伪核验的需求随中转生态扩张而升温，但工具本身依赖基准维护。",
+        "risk_notes": "无许可证信息；README 明确结果只是指纹证据，不构成身份认证或对服务商归因；在线版请求含 Key 需经第三方服务器；检测费用由用户 API 账户承担；基准需持续更新，旧分数不可直接与新分数比较。",
+        "evidence": [
+          "用于检测api是否路由真实gpt5.6模型",
+          "结果是指纹证据，不是身份认证，也不是对服务商行为的归因。",
+          "检测不符不等于中转站故意替换模型，也可能与上游路由变化、服务降级或基准局限有关；本工具不能单独判定原因。"
+        ]
+      }
+    },
+    "AgriciDaniel/banana-claude": {
+      "category": "content-media",
+      "one_liner": "Claude Code 图像生成技能",
+      "intro": {
+        "one_liner": "Claude Code 图像工作流插件",
+        "what_it_is": "这是给 Claude Code 使用的 Python 插件，把自然语言创意请求整理成可审阅的 Gemini 图像生成、编辑与复核流程。",
+        "problem_solved": "它让付费图像请求先离线生成计划，展示提示词、模型、设置、输出位置和估算，再由用户批准执行，降低误用和失控风险。",
+        "who_should_care": "用 Claude Code 做视觉内容、需要审批和复核 Gemini 图像请求的开发者。",
+        "use_cases": [
+          "生成活动图、封面和社交素材",
+          "对已有图像做一处明确修改",
+          "比较最多三组提示词与模型路线"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周新增 17 星且仅一天进入日榜。",
+        "risk_notes": "图像生成是付费服务；原生 Windows 尚不支持，需使用 WSL；生成结果不保证一致性、拼写、几何、权利清理或最终费用。",
+        "evidence": [
+          "Create, edit, compare, and review Gemini images from Claude Code.",
+          "It shows the prompt, model, data settings, output destination, and nominal estimate before any paid request.",
+          "Native Windows is not yet supported because output publication needs an atomic no-replace rename that the client does not implement there"
+        ]
+      }
+    },
+    "kylezantos/design-motion-principles": {
+      "category": "web-frontend",
+      "one_liner": "动效设计与审查技能",
+      "intro": {
+        "one_liner": "动效设计辅助技能",
+        "what_it_is": "这是一个给 AI 编程助手使用的动效设计技能，提供创建交互组件和审查现有动画两种模式，并按项目情境采用三种设计视角。",
+        "problem_solved": "它帮助开发者判断哪些界面值得动、怎样做得克制且精致，也能检查已有动画中的缺口和常见低质量问题。",
+        "who_should_care": "用 AI 编程助手开发前端界面、关注动效质量与可访问性的开发者。",
+        "use_cases": [
+          "为弹窗或提示生成动效",
+          "审查代码库中的动画",
+          "输出带演示的审查报告"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周破千星且曾上日榜，但创建时间较新。",
+        "risk_notes": "创建时间较新；内容是对公开作品的解释与提炼，未获三位设计师创作或背书；需依赖 AI 编程助手使用。",
+        "evidence": [
+          "A motion and interaction design skill with **two modes** — **build** interactive components with purposeful motion, or **audit** existing animations.",
+          "Works with Claude Code, Cursor, Windsurf, and other AI coding assistants.",
+          "The skill is **not authored or endorsed** by the designers below"
+        ]
+      }
+    },
+    "Formsmith746/SketchForge-3D": {
+      "category": "web-frontend",
+      "one_liner": "本地优先浏览器 3D 编辑器",
+      "intro": {
+        "one_liner": "浏览器本地三维编辑器",
+        "what_it_is": "SketchForge 是本地优先的浏览器三维设计编辑器，可搭建形状、切割孔洞、导入 STL，并导出模型。",
+        "problem_solved": "让轻量三维建模无需登录、云端项目存储或重型 CAD 安装，在浏览器中完成常用建模与导出。",
+        "who_should_care": "想快速制作零件、教学部署或本地改代码的开发者。",
+        "use_cases": [
+          "用基本形状组合并切孔",
+          "导入 STL 后继续编辑",
+          "导出 STL、OBJ 或 STEP"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星后一周仅涨七星，只上过一天日榜。",
+        "risk_notes": "采用 AGPL-3.0；未关闭问题三十九个；未签名 macOS 版本会触发系统警告。",
+        "evidence": [
+          "A local-first browser 3D design editor for building, cutting, importing STL files, and exporting models.",
+          "No login. No server project storage. No heavyweight CAD install just to make a useful part.",
+          "Unsigned releases have `-unsigned` in the file name. macOS shows a Gatekeeper warning for these releases."
+        ]
+      }
+    },
+    "Anush008/fastembed-rs": {
+      "category": "ai-model",
+      "one_liner": "本地向量嵌入与重排库",
+      "intro": {
+        "one_liner": "本地向量嵌入库",
+        "what_it_is": "一个用 Rust 编写、可在本地生成向量嵌入并重排序的库，支持多种文本、稀疏、图像嵌入和重排序模型。",
+        "problem_solved": "让 Rust 项目无需依赖 Tokio 或远程推理服务，也能生成检索所需向量，并对候选结果重排序。",
+        "who_should_care": "用 Rust 构建检索增强生成、向量检索或本地语义搜索的开发者。",
+        "use_cases": [
+          "为文档生成文本向量",
+          "构建本地向量检索流程",
+          "对召回结果做重排序"
+        ],
+        "alternatives": "提供 Python、Go、JavaScript 版本；Rust 版强调同步用法、不依赖 Tokio，并使用 ONNX 推理。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，本周曾上日榜，且已破千星。",
+        "risk_notes": "部分模型需要特定特性或后端；成熟度与许可证信息未提供。",
+        "evidence": [
+          "Rust library for generating vector embeddings, reranking locally!",
+          "Supports synchronous usage. No dependency on Tokio.",
+          "Uses [@pykeio/ort](https://github.com/pykeio/ort) for performant ONNX inference."
+        ]
+      }
+    },
+    "738/awesome-devbook": {
+      "category": "learning-resource",
+      "one_liner": "韩国开发书籍清单",
+      "intro": {
+        "one_liner": "韩国开发书单",
+        "what_it_is": "整理韩国出版的开发类图书清单，按领域分类，并用国际标准书号管理，提供网页书架浏览。",
+        "problem_solved": "帮助开发者从大量技术书中按主题、学习目标和出版信息筛选，减少选书和查找成本。",
+        "who_should_care": "韩语读者、初入行开发者、技术负责人和培训组织者。",
+        "use_cases": [
+          "按领域查找开发书",
+          "按成长目标选阅读路径",
+          "查看绝版与出版信息"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜。",
+        "risk_notes": "内容聚焦韩国出版图书；部分书已标注绝版；未给出许可证信息。",
+        "evidence": [
+          "📖 국내에 출간된 개발 도서 리스트입니다. 모든 책은 ISBN으로 관리되고, 링크·절판 여부는 매주 자동으로 확인합니다.",
+          "📚 **169권** · 38개 분야 · 2023년 이후 출간 44권 · 절판 표기 20권",
+          "분야별 선반 · 목적별 추천 경로 · 검색과 필터 · 표지를 누르면 상세 정보"
+        ]
+      }
+    },
+    "QwenAudio/Fun-Audio-Chat": {
+      "category": "ai-model",
+      "one_liner": "低延迟语音交互音频大模型",
+      "intro": {
+        "one_liner": "低延迟语音大模型",
+        "what_it_is": "一个面向自然、低延迟语音交互的大型音频语言模型，提供模型、训练和推理代码，并支持网页演示。",
+        "problem_solved": "面向语音问答、音频理解、语音函数调用等任务，尝试在保持语音质量与文本能力的同时降低计算量。",
+        "who_should_care": "做语音交互、音频理解和语音智能体开发的开发者。",
+        "use_cases": [
+          "构建语音问答应用",
+          "开发音频理解功能",
+          "试验语音函数调用"
+        ],
+        "alternatives": "采用双分辨率语音表示和核心混合训练，强调降低计算量并保留文本能力。",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，破千星且一周曾有一天登上日榜。",
+        "risk_notes": "推理约需 24GB 显存，训练需四张 80GB 显卡；依赖特定 Python、PyTorch 和 ffmpeg 环境。",
+        "evidence": [
+          "Fun-Audio-Chat is a Large Audio Language Model built for natural, low-latency voice interactions.",
+          "Fun-Audio-Chat-8B (model, training and inference code) released with state-of-the-art performance on multiple spoken question answering, audio understanding, speech function calling, speech instruction-following and voice empathy benchmarks",
+          "GPU Memory: ~24GB for inference, 4×80GB for training"
+        ]
+      }
+    },
+    "syt2/zotero-scipdf": {
+      "category": "learning-resource",
+      "one_liner": "Zotero 自动下载论文插件",
+      "intro": {
+        "one_liner": "Zotero 自动下载插件",
+        "what_it_is": "这是面向 Zotero 7 和 Zotero 8 的插件，用内置 PDF 解析器配置 Sci-Hub 地址，辅助下载文献全文。",
+        "problem_solved": "为缺少附件的条目补全 PDF，并在新条目含 DOI 且开启自动下载时尝试获取附件。",
+        "who_should_care": "使用 Zotero 管理文献、需要自动补全 PDF 的开发者或研究者。",
+        "use_cases": [
+          "为旧条目查找全文",
+          "新条目自动下载附件",
+          "自定义 Sci-Hub 站点"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周曾上日榜一天，星数破千。",
+        "risk_notes": "依赖 Sci-Hub 站点可用性；无 DOI 或已有附件的条目无法使用查找全文功能。",
+        "evidence": [
+          "Download PDF from Sci-Hub automatically For Zotero7",
+          "This is a Sci-Hub plugin designed for Zotero 7 and Zotero 8.",
+          "Items missing a `DOI` do not have the \"Find Full Text\" option and cannot be downloaded via Sci-Hub."
+        ]
+      }
+    },
+    "FedericoBruzzone/tgt": {
+      "category": "desktop-system",
+      "one_liner": "Rust 编写的 Telegram 终端界面",
+      "intro": {
+        "one_liner": "Rust 终端版 Telegram",
+        "what_it_is": "一个用 Rust 编写的 Telegram 终端界面客户端，可通过包管理器、源码、容器等方式安装，并提供配置与功能开关。",
+        "problem_solved": "让用户在终端里使用 Telegram，并提供可定制配置、语音消息播放和终端图片显示等可选能力。",
+        "who_should_care": "偏好终端操作、Rust 工具链或需要自定义配置的 Telegram 用户。",
+        "use_cases": [
+          "在终端里收发 Telegram 消息",
+          "用配置文件定制键位与行为",
+          "按需启用语音或图片显示"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，本周曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "默认语音功能需要 CMake；图片显示依赖 chafa；部分功能在 Windows ARM 不受支持。",
+        "evidence": [
+          "`tgt` is a terminal user interface for Telegram, written in Rust.",
+          "**From crates.io**\n\n```bash\ncargo install tgt\n```",
+          "`voice-message` | Play Telegram voice notes (OGG Opus) and other audio (e.g. MP3). **Requires CMake** to build the Opus dependency."
+        ]
+      }
+    },
+    "oprypin/nightly.link": {
+      "category": "dev-tools",
+      "one_liner": "下载最新夜间构建产物",
+      "intro": {
+        "one_liner": "GitHub 构建产物直链服务",
+        "what_it_is": "nightly.link 为 GitHub Actions 最新成功构建的产物生成可分享下载链接，公开仓库默认可访问。",
+        "problem_solved": "GitHub 没有直接链接到最新构建产物的方式，且下载产物通常要求访问者登录；该服务补上这一缺口。",
+        "who_should_care": "维护公开仓库、需要分发每日构建或测试产物的开发者。",
+        "use_cases": [
+          "分享最新构建产物下载链接",
+          "为公开仓库提供免登录下载",
+          "发布持续集成的每日构建"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点：本周上日榜一天，星数达到一千。",
+        "risk_notes": "使用 GNU Affero General Public License；自托管或再分发需留意协议义务。主实例免费且由作者自费维护，依赖捐赠。未安装应用时可能受全局接口限流影响。",
+        "evidence": [
+          "This service lets you get a shareable link to download a [build artifact][] from the latest successful [GitHub Actions][] build of a repository.",
+          "GitHub has no direct way to directly link to the *latest* build from GitHub actions of a given repository.",
+          "This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version."
+        ]
+      }
+    },
+    "duguyihou/react-native-turbo-image": {
+      "category": "mobile",
+      "one_liner": "React Native 快速图片加载库",
+      "intro": {
+        "one_liner": "React Native 图片加载库",
+        "what_it_is": "这是一个面向 React Native 的图片组件，借助 Nuke 和 Coil 提供图片加载、缓存、占位图与预取等能力。",
+        "problem_solved": "它主要解决应用内图片加载、缓存管理和列表展示体验问题，并提供授权请求头、特殊格式和占位图支持。",
+        "who_should_care": "需要在 React Native 应用中展示大量网络图片的开发者。",
+        "use_cases": [
+          "在列表中加载大量图片",
+          "为图片配置内存和磁盘缓存",
+          "显示占位图或模糊预览"
+        ],
+        "alternatives": "支持新架构，并提供多种缓存策略、占位图、预取和特殊格式支持。",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，曾有一天登上日榜，破千时星数为一千。",
+        "risk_notes": "基准结果注明会受网络、设备、图片尺寸和并发任务影响；成熟度信息不足。",
+        "evidence": [
+          "Performant image component for React Native. Powered by [Nuke](https://github.com/kean/Nuke) and [Coil](https://github.com/coil-kt/coil)",
+          "- Memory cache, aggressive LRU disk cache and HTTP disk cache",
+          "Results may vary in real-world applications depending on factors such as network conditions, device specifications, image sizes, and concurrent tasks."
+        ]
+      }
+    },
+    "zouyuxuan122/DSH-Desktop-EAC": {
+      "category": "desktop-system",
+      "one_liner": "DeepSeek Harness 桌面启动器",
+      "intro": {
+        "one_liner": "智能体桌面工作台",
+        "what_it_is": "这是基于 DeepSeek Harness 的开源桌面工作台，连接对话、项目文件、工具执行与插件生态，并随包提供运行环境。",
+        "problem_solved": "它把智能体运行、桌面窗口、项目文件协作和插件管理整合到一键启动的工作台，减少单独配置运行环境的步骤。",
+        "who_should_care": "想在桌面端使用智能体、管理项目文件与插件的开发者。",
+        "use_cases": [
+          "在工作目录发起智能体会话",
+          "查看并还原会话文件变更",
+          "安装、启停和管理插件"
+        ],
+        "alternatives": "unknown",
+        "maturity": "可试用",
+        "hype_or_trend": "短期热点，一周涨了 86 星并曾进入日榜。",
+        "risk_notes": "不同平台安装包版本不一致；环境管理不提供文件系统沙箱隔离；仍有 19 个未关闭问题。",
+        "evidence": [
+          "Deepseek Harness EAC 是基于 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的开源桌面工作台。它将对话、项目文件、工具执行与插件生态连接起来，配合原生窗口、独立运行环境和随包运行时，让你从安装直接进入工作。",
+          "DPX 收容默认路径与环境变量，**不提供文件系统沙箱隔离**；进程对显式绝对路径的访问仍由操作系统权限控制。",
+          "Windows 最新稳定版：**v6.0.0**。其余平台按包格式列出最近发布的下载文件，版本分别标注。"
+        ]
+      }
+    },
+    "ybdt/Exp-Hub": {
+      "category": "security",
+      "one_liner": "漏洞复现与武器化资源库",
+      "intro": {
+        "one_liner": "漏洞复现资料库",
+        "what_it_is": "这是一个围绕漏洞复现与武器化整理的资料项目，主要语言为 HTML。",
+        "problem_solved": "它汇总漏洞复现相关内容，帮助读者按主题查找和研究历史漏洞材料。",
+        "who_should_care": "安全研究者、竞赛选手和需要学习漏洞复现的开发者。",
+        "use_cases": [
+          "查找漏洞复现资料",
+          "辅助安全教学研究",
+          "备赛时参考历史漏洞"
+        ],
+        "alternatives": "unknown",
+        "maturity": "unknown",
+        "hype_or_trend": "短期热点，一周曾有一天登上日榜，破千时有一千二百五十六星。",
+        "risk_notes": "内容涉及漏洞利用，声明仅限研究或教育用途，并要求遵守当地法律法规。",
+        "evidence": [
+          "Vuln Reproducation and Weaponization",
+          "All the exps in current project only used for research or educational purpose, other uses must comply with local laws and regulations",
+          "A long time ago, i participated in an AWD CTF, which made me want to reproduce all the vulnerabilities."
+        ]
+      }
+    },
+    "RiDDiX/home-assistant-matter-hub": {
+      "category": "hardware-iot",
+      "one_liner": "用 Matter 发布智能家居实例",
+      "intro": {
+        "one_liner": "智能家居 Matter 桥接器",
+        "what_it_is": "一个用 TypeScript 编写的项目，把 Home Assistant 中的设备以 Matter 桥接形式发布给兼容的智能家居控制器。",
+        "problem_solved": "让 Home Assistant 设备接入 Apple Home、Google Home、Alexa 等 Matter 控制器，并通过本地通信减少端口转发等配置需求。",
+        "who_should_care": "使用 Home Assistant 并希望接入多种 Matter 生态的智能家居用户。",
+        "use_cases": [
+          "把灯和开关接入 Apple Home",
+          "让扫地机支持语音控制",
+          "将摄像头接入 SmartThings"
+        ],
+        "alternatives": "它是原项目停止维护后的社区分支，继续修复问题、增加功能并提供社区支持。",
+        "maturity": "生产可用",
+        "hype_or_trend": "短期热点，一周涨了 1,170 星且曾登上日榜。",
+        "risk_notes": "测试分支被标注为高度不稳定；升级后部分实体可能重新配对并丢失房间分配；部分摄像头功能仍缺真实硬件验证。",
+        "evidence": [
+          "Publish your Home-Assistant Instance using Matter.",
+          "This project simulates bridges to publish your entities from Home Assistant to any Matter-compatible controller like Alexa, Apple Home, Google Home, SmartThings or Aqara Home.",
+          "Stable | main | v2.0.59 | Production-ready, recommended for most users"
+        ]
+      }
+    }
+  }
+}
