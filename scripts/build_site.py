@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import gzip
+import html as _html
 import json
 import os
 import re
@@ -17,6 +18,7 @@ import shutil
 import sys
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta, timezone
+from email.utils import format_datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -401,7 +403,225 @@ def _dump(obj: object, path: Path) -> None:
     )
 
 
-def build(out: Path, created_since: str) -> int:
+# ── 静态分享页 / SEO / RSS ─────────────────────────────────────────────────
+#
+# SPA 里的内容搜索引擎和微信转发卡片抓不到，所以构建时额外生成：
+# - /w/<期号>/、/d/<日期>/ ：无 JS 也能读、带 OG 标签的静态页
+# - /feed.xml：RSS 订阅；/sitemap.xml、/robots.txt：给搜索引擎
+
+_PAGE_CSS = (
+    "body{margin:0;background:#f4f5f7;color:#1f2329;line-height:1.7;"
+    "font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif}"
+    "main{max-width:760px;margin:0 auto;padding:24px 18px 48px}"
+    "a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}"
+    ".meta{color:#8f959e;font-size:.85rem}"
+    ".box{background:#fff;border:1px solid #e4e6eb;border-radius:12px;"
+    "padding:16px 20px;margin:14px 0}"
+    ".box .hl{font-size:1.1rem;font-weight:700;margin:4px 0 8px}"
+    ".eyebrow{color:#2563eb;font-size:.78rem;font-weight:600;letter-spacing:1px}"
+    "ol{padding-left:1.4em}li{margin:8px 0}"
+    "li .t{font-weight:600}"
+    "h1{font-size:1.4rem}h2{font-size:1.05rem;margin-top:28px}"
+)
+
+
+def _esc(s: object) -> str:
+    return _html.escape(str(s or ""))
+
+
+def _render_week_page(w: dict, no: int, base: str) -> str:
+    title = f"第 {no} 期 GitHub 破千周榜（{w['start']} → {w['end']}）"
+    hl = w.get("highlights") or {}
+    desc = hl.get("headline") or (
+        f"本周 {w['total_breakthroughs'] or '—'} 个项目突破 1000 Star，"
+        f"精选 {len(w['finalists'])} 个"
+    )
+    url = f"{base}/w/{w['id']}/"
+    items = []
+    for p in w["finalists"]:
+        intro = p.get("intro") or {}
+        line = intro.get("one_liner") or (p.get("description") or "")[:60]
+        meta = [f"⭐ {p['current_stars'] or p['stars_at_breakthrough'] or '—'}"]
+        if p.get("weekly_gain"):
+            meta.append(f"一周 +{p['weekly_gain']:,}")
+        if p.get("language"):
+            meta.append(p["language"])
+        items.append(
+            f'<li><a href="{_esc(p["url"])}">{_esc(p["name"])}</a>'
+            f' <span class="t">{_esc(line)}</span>'
+            f' <span class="meta">{" · ".join(_esc(m) for m in meta)}</span></li>'
+        )
+    points = "".join(f"<li>{_esc(p)}</li>" for p in hl.get("points", []))
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{_esc(title)} · github1K</title>
+<meta name="description" content="{_esc(desc)}">
+<link rel="canonical" href="{_esc(url)}">
+<meta property="og:title" content="{_esc(title)}">
+<meta property="og:description" content="{_esc(desc)}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{_esc(url)}">
+<meta property="og:image" content="{_esc(base)}/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>{_PAGE_CSS}</style>
+</head>
+<body><main>
+<p class="meta"><a href="{_esc(base)}/">GitHub 破千周榜</a> / 第 {no} 期</p>
+<h1>{_esc(title)}</h1>
+<p class="meta">本周共 {w['total_breakthroughs'] or '—'} 个项目突破 1000 Star，
+精选 {len(w['finalists'])} 个 · 由 AI 解读</p>
+<div class="box"><div class="eyebrow">本周看点</div><p class="hl">{_esc(hl.get('headline', ''))}</p>
+<ul>{points}</ul></div>
+<h2>完整榜单（{len(w['finalists'])} 个）</h2>
+<ol>
+{''.join(items)}
+</ol>
+<p><a href="{_esc(base)}/#w={_esc(w['id'])}">查看交互版（筛选 / 走势 / 完整解读）→</a></p>
+<p class="meta">项目介绍由大模型根据 GitHub 公开信息与 README 生成，可能存在偏差 ·
+数据与源码：<a href="https://github.com/fhan235/github1K">github1K</a> ·
+<a href="{_esc(base)}/feed.xml">RSS 订阅</a></p>
+</main></body>
+</html>
+"""
+
+
+def _render_day_page(d: dict, base: str) -> str:
+    title = f"{d['date']} GitHub 破千日报"
+    desc = d.get("headline") or f"当天 {len(d['projects'])} 个项目突破 1000 Star"
+    url = f"{base}/d/{d['date']}/"
+    items = []
+    for p in d["projects"][:50]:
+        line = p.get("one_liner") or (p.get("description") or "")[:60]
+        meta = [f"⭐ {p['stars'] or '—'}"]
+        if p.get("gained"):
+            meta.append(f"当日 +{p['gained']:,}")
+        items.append(
+            f'<li><a href="{_esc(p["url"])}">{_esc(p["name"])}</a>'
+            f' <span class="t">{_esc(line)}</span>'
+            f' <span class="meta">{" · ".join(_esc(m) for m in meta)}</span></li>'
+        )
+    points = "".join(f"<li>{_esc(p)}</li>" for p in d.get("points", []))
+    box = ""
+    if points or d.get("headline"):
+        box = (
+            f'<div class="box"><div class="eyebrow">今日看点</div>'
+            f'<p class="hl">{_esc(d.get("headline", ""))}</p><ul>{points}</ul></div>'
+        )
+    more = ""
+    if len(d["projects"]) > 50:
+        more = (
+            f'<p class="meta">（共 {len(d["projects"])} 个，'
+            f"此处列出增量前 50，完整列表见交互版）</p>"
+        )
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{_esc(title)} · github1K</title>
+<meta name="description" content="{_esc(desc)}">
+<link rel="canonical" href="{_esc(url)}">
+<meta property="og:title" content="{_esc(title)}">
+<meta property="og:description" content="{_esc(desc)}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{_esc(url)}">
+<meta property="og:image" content="{_esc(base)}/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>{_PAGE_CSS}</style>
+</head>
+<body><main>
+<p class="meta"><a href="{_esc(base)}/">GitHub 破千周榜</a> / 日报</p>
+<h1>{_esc(title)}</h1>
+<p class="meta">当天 {len(d['projects'])} 个项目突破 1000 Star</p>
+{box}
+<ol>
+{''.join(items)}
+</ol>
+{more}
+<p><a href="{_esc(base)}/#v=daily&amp;d={_esc(d['date'])}">查看交互版 →</a></p>
+</main></body>
+</html>
+"""
+
+
+def _render_feed(weeks: list[dict], base: str) -> str:
+    items = []
+    # weeks 是最新在前；RSS 里新条目在前，期号 = 总期数 - 序号（最早的是第 1 期）
+    total = len(weeks)
+    for i, w in enumerate(weeks):
+        no = total - i
+        hl = w.get("highlights") or {}
+        desc = hl.get("headline", "")
+        top = "；".join(
+            f"{p['name']}（{(p.get('intro') or {}).get('one_liner') or ''}）"
+            for p in w["finalists"][:5]
+        )
+        body = _esc(desc + "\n" + top)
+        end = datetime.fromisoformat(w["end"]).replace(tzinfo=timezone.utc)
+        url = f"{base}/w/{w['id']}/"
+        suffix = _esc("：" + desc[:40] if desc else "")
+        items.append(
+            f"<item><title>第 {no} 期（{w['start']} → {w['end']}）{suffix}</title>"
+            f"<link>{_esc(url)}</link><guid isPermaLink=\"true\">{_esc(url)}</guid>"
+            f"<pubDate>{format_datetime(end)}</pubDate>"
+            f"<description>{body}</description></item>"
+        )
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>GitHub 破千周榜</title>
+<link>{_esc(base)}/</link>
+<description>每周精选刚突破 1000 Star 的 GitHub 新项目，AI 中文解读</description>
+<language>zh-CN</language>
+{''.join(items)}
+</channel></rss>
+"""
+
+
+def _render_sitemap(weeks: list[dict], days: list[dict], base: str) -> str:
+    urls = [f"<url><loc>{_esc(base)}/</loc></url>"]
+    urls += [
+        f"<url><loc>{_esc(base)}/w/{_esc(w['id'])}/</loc><lastmod>{w['end']}</lastmod></url>"
+        for w in weeks
+    ]
+    urls += [
+        f"<url><loc>{_esc(base)}/d/{_esc(d['date'])}/</loc><lastmod>{d['date']}</lastmod></url>"
+        for d in days
+    ]
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls)
+        + "\n</urlset>\n"
+    )
+
+
+_ANALYTICS_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,60}$")
+
+
+def _inject_index(out: Path, base: str, analytics: str) -> None:
+    path = out / "index.html"
+    page = path.read_text(encoding="utf-8").replace("__BASE_URL__", base)
+    if analytics:
+        if not _ANALYTICS_RE.match(analytics):
+            raise SystemExit(f"--analytics 的值不合法：{analytics!r}")
+        page = page.replace(
+            "script-src 'self'",
+            "script-src 'self' https://gc.zgo.at",
+        ).replace(
+            "connect-src 'self'",
+            "connect-src 'self' https://*.goatcounter.com",
+        ).replace(
+            "</body>",
+            f'<script data-goatcounter="https://{analytics}.goatcounter.com/count" '
+            f'async src="https://gc.zgo.at/count.js"></script>\n</body>',
+        )
+    path.write_text(page, encoding="utf-8")
+
+
+def build(out: Path, created_since: str, base_url: str, analytics: str = "") -> int:
     out = out.resolve()
     if out == ROOT or out in ROOT.parents:
         raise SystemExit(f"拒绝清空输出目录：{out}")
@@ -417,12 +637,27 @@ def build(out: Path, created_since: str) -> int:
     ]
     days.sort(key=lambda d: d["date"], reverse=True)
 
+    # 日报 ↔ 周榜互链
+    day_set = {d["date"] for d in days}
+    week_by_name = {
+        p["name"]: w["id"] for w in weeks for p in w["finalists"]
+    }
+    for w in weeks:
+        for p in w["finalists"]:
+            p["daily_page"] = bool(p.get("first_seen") and p["first_seen"] in day_set)
+    for d in days:
+        for p in d["projects"]:
+            p["week"] = week_by_name.get(p["name"])
+
     snapshots = SnapshotIndex(DATA_DIR, created_since)
     if len(snapshots):
         _attach_sparklines(weeks, snapshots)
         _attach_sparks([(d["projects"], _daily_spark_dates(d["date"])) for d in days], snapshots)
     else:
-        print(f"⚠️  未找到 created-since={created_since} 的快照，跳过走势曲线", file=sys.stderr)
+        print(
+            f"⚠️  未找到 created-since={created_since} 的快照，跳过走势曲线",
+            file=sys.stderr,
+        )
 
     if out.exists():
         shutil.rmtree(out)
@@ -467,6 +702,27 @@ def build(out: Path, created_since: str) -> int:
         },
         out / "data" / "index.json",
     )
+
+    # 静态分享页 / SEO / RSS
+    base = base_url.rstrip("/")
+    for no, w in enumerate(reversed(weeks), 1):
+        page = _render_week_page(w, no, base)
+        (out / "w" / w["id"]).mkdir(parents=True, exist_ok=True)
+        (out / "w" / w["id"] / "index.html").write_text(page, encoding="utf-8")
+    for d in days:
+        page = _render_day_page(d, base)
+        (out / "d" / d["date"]).mkdir(parents=True, exist_ok=True)
+        (out / "d" / d["date"] / "index.html").write_text(page, encoding="utf-8")
+    (out / "feed.xml").write_text(_render_feed(weeks, base), encoding="utf-8")
+    (out / "sitemap.xml").write_text(_render_sitemap(weeks, days, base), encoding="utf-8")
+    (out / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n", encoding="utf-8"
+    )
+    og = ROOT / "docs" / "assets" / "screenshot.png"
+    if og.exists():
+        (out / "assets").mkdir(exist_ok=True)
+        shutil.copyfile(og, out / "assets" / "og.png")
+    _inject_index(out, base, analytics)
     return len(weeks)
 
 
@@ -478,10 +734,20 @@ def main() -> None:
         default=os.environ.get("G1K_CREATED_SINCE", "2020-01-01"),
         help="使用哪一组每日快照画走势（默认 2020-01-01，与日榜配置一致）",
     )
+    parser.add_argument(
+        "--base-url",
+        default=os.environ.get("G1K_SITE_BASE_URL", "https://fhan235.github.io/github1K"),
+        help="站点根地址（用于 OG 标签、RSS、sitemap 的绝对链接）",
+    )
+    parser.add_argument(
+        "--analytics",
+        default=os.environ.get("G1K_GOATCOUNTER", ""),
+        help="GoatCounter 站点代码（如 mysite）；留空不加访问统计",
+    )
     args = parser.parse_args()
     if args.created_since and not _DATE_RE.match(args.created_since):
         parser.error("--created-since 必须是 YYYY-MM-DD")
-    n = build(args.out, args.created_since)
+    n = build(args.out, args.created_since, args.base_url, args.analytics)
     print(f"✅ 站点已生成：{args.out.resolve()}（共 {n} 期周榜）")
 
 

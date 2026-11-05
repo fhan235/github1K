@@ -113,6 +113,10 @@ function writeHash() {
 }
 
 const isKnownWeek = (id) => id === ALL || state.index.weeks.some((w) => w.id === id);
+const weekNo = (id) => {
+  const i = state.index.weeks.findIndex((w) => w.id === id);
+  return i < 0 ? null : state.index.weeks.length - i;
+};
 
 /* ---------------- Sparkline ---------------- */
 
@@ -329,12 +333,46 @@ function render() {
   podiumBox.hidden = podium.length === 0;
   podiumBox.replaceChildren(...podium.map(renderFeature));
 
-  $("list-title").textContent = showPodium ? "更多精选" : "精选项目";
+  $("list-title").textContent = showPodium ? "更多精选（按类别分组）" : "精选项目";
   $("result-count").textContent = `显示 ${list.length} / ${state.projects.length} 个项目`;
-  $("list").replaceChildren(
-    ...(rest.length ? rest.map(renderRow) : [el("p", { class: "empty", text: list.length ? "以上就是全部" : "没有符合条件的项目" })])
-  );
+  const listBox = $("list");
+  listBox.className = showPodium ? "groups" : "list";
+  if (showPodium) {
+    listBox.replaceChildren(
+      ...(rest.length ? renderGroups(rest) : [el("p", { class: "empty", text: "以上就是全部" })])
+    );
+  } else {
+    listBox.replaceChildren(
+      ...(rest.length ? rest.map(renderRow) : [el("p", { class: "empty", text: "没有符合条件的项目" })])
+    );
+  }
   renderContinuing();
+}
+
+/** 把 4 名以后的项目按类别折叠分组，每组显示数量、最高排名和合计涨幅。 */
+function renderGroups(projects) {
+  const byCat = new Map();
+  for (const p of projects) {
+    if (!byCat.has(p.category)) byCat.set(p.category, []);
+    byCat.get(p.category).push(p);
+  }
+  const groups = [...byCat.entries()].map(([cat, ps]) => ({
+    cat,
+    ps,
+    best: Math.min(...ps.map((p) => p.rank)),
+    gain: ps.reduce((s, p) => s + (p.weekly_gain || 0), 0),
+  }));
+  groups.sort((a, b) => a.best - b.best);
+  return groups.map((g) =>
+    el("details", { class: "group", open: true },
+      el("summary", {},
+        el("span", { class: "g-cat", text: catLabel(g.cat) }),
+        el("span", { class: "g-meta", text: `${g.ps.length} 个 · 最高 #${g.best}` + (g.gain ? ` · 一周合计 ${fmtGain(g.gain)}` : "") }),
+        el("span", { class: "chev", "aria-hidden": "true", text: "▾" }),
+      ),
+      el("div", { class: "list group-list" }, g.ps.map(renderRow)),
+    ),
+  );
 }
 
 /* ---------------- 详情块（大卡片与列表共用）---------------- */
@@ -357,6 +395,12 @@ function introList(intro, { skipWhat = false } = {}) {
     ...introRow("判断", judge),
     ...introRow("注意", intro.risk_notes),
   );
+}
+
+function dailyLink(p) {
+  return p.daily_page && p.first_seen
+    ? el("a", { href: `#v=daily&d=${encodeURIComponent(p.first_seen)}`, class: "xlink", title: "看它破千当天的日报" }, `📅 破千于 ${p.first_seen}`)
+    : null;
 }
 
 function metaTags(p, topicLimit = 4) {
@@ -406,6 +450,7 @@ function renderFeature(p) {
       : null,
     metaTags(p),
     riskNote(p),
+    dailyLink(p),
     intro
       ? el("details", { class: "more" }, el("summary", { text: "完整解读" }), introList(intro, { skipWhat: true }))
       : null,
@@ -444,6 +489,7 @@ function renderRow(p) {
       ),
       metaTags(p, 8),
       riskNote(p),
+      dailyLink(p),
     ),
   );
 }
@@ -640,12 +686,14 @@ function renderDaily() {
 function renderDailyRow(p) {
   const sp = sparkline(p.spark, { width: 130, height: 32 });
   const line = p.one_liner || p.description || "（作者未填写描述）";
+  const no = p.week ? weekNo(p.week) : null;
   return el("details", { class: "row" },
     el("summary", {},
       el("span", { class: "rank", text: String(p.rank), title: `当日第 ${p.rank}` }),
       el("div", { class: "main" },
         el("div", { class: "title" }, repoLink(p), el("span", { class: "cat", text: catLabel(p.category) }),
-          p.is_fork ? el("span", { class: "tag", text: "fork" }) : null),
+          p.is_fork ? el("span", { class: "tag", text: "fork" }) : null,
+          no ? el("a", { class: "tag week-badge", href: `#w=${encodeURIComponent(p.week)}`, title: "该项目入选了周榜" }, `🏆 第 ${no} 期周榜`) : null),
         el("div", { class: "line", text: line, title: line }),
       ),
       el("div", { class: "col-spark" }, sp ? sp.node : el("div", { class: "spark-none", text: "暂无走势" })),
@@ -692,9 +740,11 @@ async function init() {
   $("tab-daily").addEventListener("click", () => setView("daily"));
   window.addEventListener("hashchange", () => {
     const h = readHash();
-    if (h.v === "daily" && state.view !== "daily") setView("daily");
-    else if (h.v === "daily" && h.d && h.d !== state.daily.dayId) loadDay(h.d).catch(showError);
-    else if (h.w && h.w !== state.weekId && isKnownWeek(h.w)) {
+    if (h.v === "daily") {
+      if (h.d) state.daily.pendingDay = h.d;
+      if (state.view !== "daily") setView("daily");
+      else if (h.d && h.d !== state.daily.dayId) loadDay(h.d).catch(showError);
+    } else if (h.w && h.w !== state.weekId && isKnownWeek(h.w)) {
       if (state.view !== "week") setView("week");
       loadWeek(h.w).catch(showError);
     }

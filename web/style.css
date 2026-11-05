@@ -184,6 +184,27 @@ dl.intro ul { margin: 0; padding-left: 1.1em; }
 .result-count { color: var(--muted); font-size: .84rem; margin: 6px 0 10px; }
 
 .list { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+
+/* 类别分组 */
+.groups { display: grid; gap: 14px; }
+.group { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.group > summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px; user-select: none;
+}
+.group > summary::-webkit-details-marker { display: none; }
+.group > summary:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+.group .g-cat { font-weight: 650; font-size: .95rem; }
+.group .g-meta { color: var(--muted); font-size: .84rem; flex: 1; }
+.group .chev { color: var(--faint); transition: transform .15s ease; }
+.group:not([open]) .chev { transform: rotate(-90deg); }
+.group-list { border-top: 1px solid var(--border); }
+.group-list .row { background: transparent; }
+
+/* 互链 */
+.xlink { font-size: .84rem; }
+.week-badge { background: var(--accent-soft); color: var(--accent) !important; }
+.week-badge:hover { text-decoration: none; opacity: .85; }
 .row { border-bottom: 1px solid var(--border); }
 .row:last-child { border-bottom: none; }
 .row > summary {

@@ -37,6 +37,9 @@ jobs:
           python-version: "3.12"
 
       - name: Build static site
+        env:
+          G1K_SITE_BASE_URL: ${{ vars.G1K_SITE_BASE_URL || 'https://fhan235.github.io/github1K' }}
+          G1K_GOATCOUNTER: ${{ vars.G1K_GOATCOUNTER }}
         run: python scripts/build_site.py
 
       - uses: actions/configure-pages@v5

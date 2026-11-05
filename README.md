@@ -47,6 +47,10 @@ GitHub Trending 只看「今天谁涨得多」，老牌大项目常年霸榜，�
 | **往期** | 顶部「期数」下拉框切换，也可以选「全部往期」一起搜索 |
 | **分享某一期** | 链接带上 `#w=weekly-开始日期_to_结束日期`，例如 [`#w=weekly-2026-10-24_to_2026-10-30`](https://fhan235.github.io/github1K/#w=weekly-2026-10-24_to_2026-10-30) |
 | **日报** | 顶部「日报」标签按日期查看，分享某天：`#v=daily&d=2026-10-31` |
+| **静态分享页** | 每期周榜 / 每天日报都有纯静态页（SEO 与微信转发卡片友好）：`/w/<期号>/`、`/d/<日期>/` |
+| **RSS** | <https://fhan235.github.io/github1K/feed.xml> |
+
+周榜第 4 名起按类别折叠分组，日报与周榜互相链接（日报项目入选周榜会有徽章，周榜项目可跳回破千当天）。
 
 每张卡片上的 Star 曲线来自每日快照，金色虚线标出 1000 Star 的位置，一眼能看出项目是缓慢爬坡还是一夜爆发。
 
@@ -159,6 +163,8 @@ python -m http.server -d _site 8000         # 打开 http://localhost:8000 预�
 
 3. **Settings → Pages → Source** 选择 **GitHub Actions**
 4. 在 Actions 页面手动运行一次 `🚀 Daily 1K Milestone Tracker`，勾选「全量冷启动」
+
+可选 Variables：`G1K_SITE_BASE_URL`（自定义域名时改成你的站点地址）、`G1K_GOATCOUNTER`（填 GoatCounter 站点代码即开启访问统计，免费且不收集个人信息）。
 
 之后日榜、周榜和网站都会自动更新：
 
