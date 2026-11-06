@@ -1,9 +1,9 @@
 name: "🌐 Deploy Site"
 
 on:
-  # 周榜跑完后自动发布（bot 用 GITHUB_TOKEN 推送的提交不会触发 push 事件，所以要靠 workflow_run）
+  # 日榜 / 周榜跑完后自动发布（bot 用 GITHUB_TOKEN 推送的提交不会触发 push 事件，所以要靠 workflow_run）
   workflow_run:
-    workflows: ["📅 Weekly 1K Top Picks"]
+    workflows: ["🚀 Daily 1K Milestone Tracker", "📅 Weekly 1K Top Picks"]
     types: [completed]
   # 手动修改前端或数据时自动发布
   push:
