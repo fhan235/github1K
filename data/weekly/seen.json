@@ -11998,5 +11998,505 @@
     "week": "2026-W46",
     "date": "2026-11-13",
     "score": 47.5
+  },
+  "mdiri-ai/SoduWork": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 90.0
+  },
+  "erkamyaman/rust-anything": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 90.0
+  },
+  "RoutineMiku/apkstart": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 90.0
+  },
+  "ersinkoc/phonebox": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 87.9
+  },
+  "n8n-io/nod": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 84.6
+  },
+  "krisgfx9/Wireless-Device-Battery-Monitor": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 83.3
+  },
+  "FrigadeHQ/yogurt": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 81.4
+  },
+  "deepseek-ai/chat-demo": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 80.4
+  },
+  "HolyArrs/HolyArrs": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 80.3
+  },
+  "NVIDIA/SkillEvaluator": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 78.1
+  },
+  "Noniv/abyssal-garden": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 77.5
+  },
+  "imxieyi/Kernarium": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 76.2
+  },
+  "google-research/paper-orchestra": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 74.9
+  },
+  "Tencent/LoopForge": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 74.8
+  },
+  "simplexai-labs/linger": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 74.4
+  },
+  "cloudflare/kitesurf": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 74.3
+  },
+  "Eynnzerr/TelemetryCleaner": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 74.1
+  },
+  "CzzzzzzJ/mdldm-maitian": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 71.6
+  },
+  "Immortal-Protocols/lastbook": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 71.3
+  },
+  "t8y2/motty": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 71.0
+  },
+  "ZiChuanLan/freebie-radar": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 69.8
+  },
+  "Renly1994/xiaotang-daozai": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 69.4
+  },
+  "Hut-hzf/ung220z-tool": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 69.3
+  },
+  "elripalda/RecompLauncher": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 69.2
+  },
+  "Seagey/couch-tv": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 68.5
+  },
+  "mjmirza/app-store-compliance": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 67.6
+  },
+  "jesdga95/basalt": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 66.4
+  },
+  "sybil-solutions/inference-optimisation-skill": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 64.7
+  },
+  "Goblinmine/homelab-diagram": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 64.5
+  },
+  "wici-ai/inferssd": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 63.4
+  },
+  "yappologistic/CUI": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 63.2
+  },
+  "0sec-labs/0security": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 62.9
+  },
+  "adriadam10/mkw-recomp": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 62.8
+  },
+  "OpenSelena/libreget": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 61.0
+  },
+  "haziqahmedqasmi/PeakCut": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 60.7
+  },
+  "N3urda/hongguoTV": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 60.1
+  },
+  "NYLLON-SOFTWARE/SignuDoc": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 60.0
+  },
+  "Parcha-ai/agentrun": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 59.8
+  },
+  "LiberNT/LiberNT": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 59.8
+  },
+  "joshpuckett/allo": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 59.6
+  },
+  "duwqijlk/muse-protocol": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 59.5
+  },
+  "Keys-Wasserman/Imagination-Studio-by-keys-Wasserman": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 59.3
+  },
+  "JDhruv14/line-art-animation": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 58.7
+  },
+  "kolbicz/WQFiles": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 58.4
+  },
+  "mengangs/ipadn": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 58.4
+  },
+  "serveroshq/panel": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 58.1
+  },
+  "hyperionaidev/smolmaxxing": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 58.0
+  },
+  "snap-stanford/memorilla": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 57.7
+  },
+  "alexeyw/lot-map": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 57.7
+  },
+  "goodseafly/how-to-make-work-pay": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 57.5
+  },
+  "dabingfy-dot/solo-to-team-skills": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 57.2
+  },
+  "huami1314/GestaltX": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 57.0
+  },
+  "scenario-labs/blender-plugin": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 56.9
+  },
+  "zephyr4123/snug": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 55.9
+  },
+  "armanlife/arman-vpn-client": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 55.9
+  },
+  "Vibha-Ramprakash/claude-video-effects": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 55.2
+  },
+  "trypostit/trypost": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 55.1
+  },
+  "thesysdev/open-intelligent-ui": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 55.0
+  },
+  "CopilotKit/openfuse": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 54.6
+  },
+  "Ka1-S/LYNX-SHARE": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 54.3
+  },
+  "Thiago-code-lab/aws-certified-solutions-architect-associate-brasil": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 54.3
+  },
+  "tryliner/desktop": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 54.1
+  },
+  "konlu/story-studio": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 53.7
+  },
+  "s0ld13rr/pentestcode": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 53.4
+  },
+  "amitshekhariitbhu/ai-system-design": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 53.3
+  },
+  "raymondchins/Bridgeplay": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 53.1
+  },
+  "mxhm11cr/LinuxRunner": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 52.9
+  },
+  "kubai087/kubai-icons": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 52.8
+  },
+  "cskwork/scopeweaver": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 52.8
+  },
+  "Kizzuwatnaa/DLSS5-Autopilot": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 52.6
+  },
+  "JayPokale/Chisle": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 52.5
+  },
+  "Continuum-AI-Corp/OrcaReplay": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 52.3
+  },
+  "esengine/estella": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 52.1
+  },
+  "Ebony-Vinyl/EAC-Pack": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 52.0
+  },
+  "Gloridust/WowType": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 51.5
+  },
+  "VITASID57/bluntcore-intimacy-lab": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 50.9
+  },
+  "ItsAlphaNeon/Lemon-Studio": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 50.3
+  },
+  "Zfinix/eleven": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 50.3
+  },
+  "zqiren/Orbital": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 50.1
+  },
+  "zgsfsec/Full-Chain-Sentinel-System": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 49.9
+  },
+  "suversal/WrapPin": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 49.8
+  },
+  "haidrrrry/claude-remotion-skill": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 49.2
+  },
+  "whaleyxbt/claude-motion": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 48.9
+  },
+  "datazip-inc/olake-go": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 48.9
+  },
+  "antigravity-cn-community/Antigravity-Chinese-Localization": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 48.6
+  },
+  "auscaster/frantic-board": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 48.6
+  },
+  "Supra-3D/SUPRA-Tex": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 48.2
+  },
+  "dondai44423/donsetch": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 48.0
+  },
+  "omdsh-dev/dsh-mnemon": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 47.7
+  },
+  "freefrank/LostOdysseyRecomp": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 47.5
+  },
+  "AhmadHassan-BTed/RainGen-RainGenerator": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 47.5
+  },
+  "wasi-master/wmkeyboard": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 47.2
+  },
+  "HKUDS/PhoneGo": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 47.2
+  },
+  "helloHub1212/dsh-windows-mcp": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 46.6
+  },
+  "reylosql/reylo": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 46.0
+  },
+  "Helldez/BigMoeOnEdge": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 45.9
+  },
+  "Light0305/Light-Science": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 45.8
+  },
+  "Minglink/dsh-jailbreak-workflow": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 45.2
+  },
+  "AgriciDaniel/jev-seo": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 44.9
+  },
+  "asciimoo/nogon": {
+    "week": "2026-W47",
+    "date": "2026-11-20",
+    "score": 44.9
   }
 }
