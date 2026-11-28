@@ -12498,5 +12498,505 @@
     "week": "2026-W47",
     "date": "2026-11-20",
     "score": 44.9
+  },
+  "ivall/xcl": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 89.4
+  },
+  "XinaTian/MROffice": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 88.8
+  },
+  "EL4CTEO/fast-anything": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 87.2
+  },
+  "Marvisak/VIctory": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 86.0
+  },
+  "havenicec/google-qr-sms-helper": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 86.0
+  },
+  "RMvdesi/obsidian-prism": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 84.7
+  },
+  "iamajmeena/neonclipping": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 83.2
+  },
+  "4lwayz/portwatch-vi": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 82.0
+  },
+  "nexu-io/opengame": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 79.0
+  },
+  "FortoGraphy/prism-download-manager": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 78.0
+  },
+  "AFK-surf/xnulinux": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 77.5
+  },
+  "pithings/unkernel": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 77.4
+  },
+  "pierridotite/mobile-agent-testers": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 77.0
+  },
+  "atuizz/posewear": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 75.0
+  },
+  "INK-Q/agy-fast": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 74.3
+  },
+  "google-gemini/gemini-api-cli": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 73.7
+  },
+  "xcl-dev/xcl": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 73.7
+  },
+  "qianyiai/kurocat": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 73.1
+  },
+  "alesha-pro/llm.asm": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 73.0
+  },
+  "ubiquitarianism/leonida": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 72.5
+  },
+  "R0Y00/Xbox2Windows": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 72.5
+  },
+  "ybblab/Jiumi": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 72.1
+  },
+  "WhiteBr1ck/agy-powertools": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 71.7
+  },
+  "shirudo-dev/shirudo": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 70.6
+  },
+  "fxceless/victory-fork": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 69.5
+  },
+  "RainBowLuoCS/Gamer": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 69.2
+  },
+  "opensetlabs/openset-llm": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 68.6
+  },
+  "os6/nospeaker": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 68.5
+  },
+  "Avaneesh-Inamdar/Stream-Tube-Desktop": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 68.3
+  },
+  "DEEIX-AI/Winc": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 68.1
+  },
+  "xmwengxing/CFPilot": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 67.9
+  },
+  "Fei-Craft/DS-Bot": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 67.3
+  },
+  "cyber-xiaoya/cyber-xiaoya-live": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 65.4
+  },
+  "omonkeyz/xbox-emulator": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 65.3
+  },
+  "Lemxy/WinRust": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 64.7
+  },
+  "huaotem-bot/GeZi-downloader": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 64.1
+  },
+  "artemnovitckii/claude-animation-skills": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 63.7
+  },
+  "rustrak/rustrak": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 63.3
+  },
+  "Pilipala9919/MarcoMovie": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 63.3
+  },
+  "abdiraimov-otabek/dashboard-design-skill": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 62.9
+  },
+  "simpsoka/zigzag": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 62.9
+  },
+  "hgtuj5688/tvbox-desktop": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 62.7
+  },
+  "siliconjungle/shapeshift-labs-ink-studio": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 62.6
+  },
+  "LunarXuan/image-prompt-reverse": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 62.2
+  },
+  "deterministic-machines/deslop-please": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 61.8
+  },
+  "Dodaios/ste80-humanizer": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 61.7
+  },
+  "grape-dev/grape": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 61.6
+  },
+  "Koimsurai/Arke": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 61.6
+  },
+  "adswill/OnAir": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 61.5
+  },
+  "sun168567/cc-desk-tunnel": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 61.2
+  },
+  "whitecircle/halo": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 60.9
+  },
+  "leanprover-community/riemann-hypothesis": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 60.5
+  },
+  "respanai/respan-gateway": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 60.2
+  },
+  "NihilDigit/piko": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 60.0
+  },
+  "Smart-Paocai/VioletToolBox": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 59.9
+  },
+  "huggingface/pybot": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 59.6
+  },
+  "dansugc/reverse-engineer-marketing": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 59.3
+  },
+  "DayuanJiang/PecoFence": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 59.3
+  },
+  "BotHarness/DeepSeekBot": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 59.1
+  },
+  "solv4626/steam-achievement-manager-windows": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 58.6
+  },
+  "apekshik/anymachine": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 58.6
+  },
+  "setube/github-chinese": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 58.4
+  },
+  "SonicloudTech/mouse-sdk": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 58.2
+  },
+  "HeyChengC/wallstreet-explainer": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 58.1
+  },
+  "Dittobyte/Recompia": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 58.0
+  },
+  "CluvexStudio/ZedSecure": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 57.7
+  },
+  "looplj/reveric": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 57.7
+  },
+  "sgaofen/humanizer-local-model": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 57.6
+  },
+  "diggerhq/opencomputer": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 57.5
+  },
+  "danielwh2/sprite-stacking": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 57.5
+  },
+  "jiuyang5354/bilibili-margin": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 57.2
+  },
+  "Banan1cee/whale_girl": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 57.2
+  },
+  "OpenBMB/MiniCPM-OCR": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 56.8
+  },
+  "kai415-debug/ffmpeg-video-audio-converter": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 56.5
+  },
+  "anomalyco/browse": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 56.2
+  },
+  "CallMeGuLab/dsh-purge-safe": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 56.0
+  },
+  "chuanqisun/spaceship": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 56.0
+  },
+  "OpenSenseNova/SenseNova-RoboRSI": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 55.8
+  },
+  "pan8664716/HGTV": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 55.7
+  },
+  "finktheartist/sakuga-vfx": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 55.5
+  },
+  "artcraft-android/procraft": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 55.4
+  },
+  "Moh4696/cinematic-skill": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 55.2
+  },
+  "adunext/adu-motion-video": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.9
+  },
+  "op7418/dsh-guizang-design": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.9
+  },
+  "Aryanutkarsh/SeeCode": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.9
+  },
+  "AgenticOrgLab/ExecOrchestra": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.8
+  },
+  "agentverse-os/AgentVerse-OS": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.7
+  },
+  "codepawl/crucible": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.7
+  },
+  "mamcjr/BOTWRecompAndroid": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.4
+  },
+  "Indigo-0167/universal-game-mod-manager": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.3
+  },
+  "heardlabs/heard": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 54.1
+  },
+  "robertnisipeanu/mgu-store": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 53.9
+  },
+  "TG-Twilight/c001apk": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 52.7
+  },
+  "agharsallah/esp-labs-web": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 52.6
+  },
+  "zhanghao123vip/ai-manju-skills": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 52.0
+  },
+  "gulucaptain/Best-Paper-Writing-Skill": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 51.5
+  },
+  "annayal-consumerxai/prod-FARM-IOS-Core": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 51.5
+  },
+  "KevRojo/Dulus": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 51.1
+  },
+  "SelmiAbderrahim/rankme.fast": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 51.0
+  },
+  "wzc520pyfm/gen-ai-pose-image": {
+    "week": "2026-W48",
+    "date": "2026-11-27",
+    "score": 51.0
   }
 }
